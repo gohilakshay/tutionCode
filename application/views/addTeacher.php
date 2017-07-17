@@ -121,32 +121,15 @@
                                     <label>Courses</label> 
                                     <select class="form-control border-input" id="course" name="course" required>
                                         <option value="">---Select Course---</option>
-                                        <option value="9th">course1</option>
-                                        <option value="course2">course2</option>
-                                        <option value="course3">course3</option>
+                                        <option value="course1">School</option>
+                                        <option value="course2">11th and 12th science state board</option>
+                                        <option value="course3">Engineering</option>
                                     </select>
                                     <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
-                            <!--<div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Standard</label>
-                                        <div class="col-sm-12">
-                                            <select class="form-control border-input" id="standard" name="standard" required>
-                                                <option value="">---Select Standard---</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="Engineering">Engineering</option>
-                                                <option value="Commerce">Commerce</option>
-                                            </select>
-                                            
-                                        </div>
-                                    </div>
-                            </div>-->
                         </div><br> 
                        
-                            
                         <div id="subjects" style="display:none;">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -162,6 +145,52 @@
                                                 </label>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="marathi" name="subject[]">Marathi
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="college" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="Chemistry" name="college[]" >Chemistry
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="Biology" name="college[]">Biology
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="Physics" name="college[]">Physics
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="engineering" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="Data Structures" name="engineering[]" >Data Structures
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="OOPM" name="engineering[]">OOPM
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="Java" name="engineering[]">Java
                                                 </label>
                                             </div>
                                         </div>
