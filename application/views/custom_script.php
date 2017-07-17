@@ -18,23 +18,12 @@
 	</script>
 -->
 <script>
-    $('#standard').on('change',function(){
-        
+    $('#standard').on('change',function(){ 
         if( $(this).val()>0 && $(this).val()<11 ){
             $("#schoolSubjects").show()
         }
         else{
             $("#schoolSubjects").hide()
-        }
-    }); 
-    $('#standard').on('change',function(){
-        if( $(this).val()==="Engineering"){
-            $("#engiDegreeDetails").show()
-            $("#semesterDetails").show()
-        }
-        else{
-            $("#engiDegreeDetails").hide()
-            $("#semesterDetails").hide()
         }
     }); 
     $('#standard').on('change',function(){
@@ -47,15 +36,112 @@
             $("#commerce_semester").hide()
         }
     });
-    $('#commerceDetails,#commerce_semester').on('change',function(){
-        if( $("#commerceDetails").val()==="fybcom" && $("#commerce_semester").val()==="1"){
-            $("#commercesubjects").show()
+    $('#standard').on('change',function(){
+        if( $(this).val()==="Engineering"){
+            $("#engineer").show()
         }
         else{
-            $("#commercesubjects").hide()
+            $("#engineer").hide()
         }
     });
+    $('#engi_branch').on('change',function(){
+        if( $(this).val()==="Computer"){
+            $('#semester').on('change',function(){
+                if( $(this).val()==="1"){
+                    $("#engisem1").show()
+                    $("#engisem2").hide()
+                    $("#engisem3").hide()
+                    $("#engisem4").hide()
+                    $("#engisem5").hide()
+                    $("#engisem6").hide()
+                    $("#engisem7").hide()
+                    $("#engisem8").hide()
+                }
+                else if($(this).val()==="2"){
+                    $("#engisem1").hide()
+                    $("#engisem2").show()
+                    $("#engisem3").hide()
+                    $("#engisem4").hide()
+                    $("#engisem5").hide()
+                    $("#engisem6").hide()
+                    $("#engisem7").hide()
+                    $("#engisem8").hide()
+                    }
+                else if($(this).val()==="3"){ 
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engisem3").show()
+                    $("#engisem4").hide()
+                    $("#engisem5").hide()
+                    $("#engisem6").hide()
+                    $("#engisem7").hide()
+                    $("#engisem8").hide()
+                    }
+                else if($(this).val()==="4"){
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engisem3").hide()
+                    $("#engisem4").show()
+                    $("#engisem5").hide()
+                    $("#engisem6").hide()
+                    $("#engisem7").hide()
+                    $("#engisem8").hide()
+                    }
+                else if($(this).val()==="5"){
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engisem3").hide()
+                    $("#engisem4").hide()
+                    $("#engisem5").show()
+                    $("#engisem6").hide()
+                    $("#engisem7").hide()
+                    $("#engisem8").hide()
+                    }
+                else if($(this).val()==="6"){
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engisem3").hide()
+                    $("#engisem4").hide()
+                    $("#engisem5").hide()
+                    $("#engisem6").show()
+                    $("#engisem7").hide()
+                    $("#engisem8").hide()
+                    }
+                else if($(this).val()==="7"){
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engisem3").hide()
+                    $("#engisem4").hide()
+                    $("#engisem5").hide()
+                    $("#engisem6").hide()
+                    $("#engisem7").show()
+                    $("#engisem8").hide()
+                    }
+                else if($(this).val()==="8"){
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engisem3").hide()
+                    $("#engisem4").hide()
+                    $("#engisem5").hide()
+                    $("#engisem6").hide()
+                    $("#engisem7").hide()
+                    $("#engisem8").show()
+                    }
+                
+                else{
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engisem3").hide()
+                    $("#engisem4").hide()
+                    $("#engisem5").hide()
+                    $("#engisem6").hide()
+                    $("#engisem7").hide()
+                    $("#engisem8").hide()
+                    }
+        })
+        }});
     
+    /*start of add faculty script*/
     $('#course').on('change',function(){
         if( $(this).val()==="course1"){
             $("#subjects").show()
@@ -64,6 +150,25 @@
             $("#subjects").hide()
         }
     });
+    $('#course').on('change',function(){
+        if( $(this).val()==="course2"){
+            $("#college").show()
+        }
+        else{
+            $("#college").hide()
+        }
+    });
+    $('#course').on('change',function(){
+        if( $(this).val()==="course3"){
+            $("#engineering").show()
+        }
+        else{
+            $("#engineering").hide()
+        }
+    });
+    /*end of add faculty script*/
+    
+    
     // Activate Next Step
         $(document).ready(function() {
             var navListItems = $('ul.setup-panel li a'),
