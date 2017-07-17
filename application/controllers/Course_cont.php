@@ -8,7 +8,8 @@ class Course_cont extends CI_Controller
         $this->load->database();
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->course();  
-        
+        $this->load->model('SelectData');
+        $query['result1'] = $this->SelectData->standard(); 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('course_name', 'course_name', 'callback_customAlphanumeric');
         $this->form_validation->set_rules('coursetype','coursetype','required');

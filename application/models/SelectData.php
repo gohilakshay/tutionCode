@@ -37,5 +37,14 @@ class SelectData extends CI_Model {
        
         return $data;
     }
+    function standard(){
+        $q = $this->db->query("SELECT * FROM `standard`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
 }
 ?>

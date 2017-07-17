@@ -43,12 +43,21 @@
                                     <label>Standard</label> 
                                     <select class="form-control border-input" id="standard" name="standard" required>
                                         <option value="">---Select Standard---</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="Engineering">Engineering</option>
-                                        <option value="Commerce">Commerce</option>
-                                    </select>
+                                        <?php foreach($result1  as $value): 
+                                        if ($value->standard_name=="Engineering"){
+                                        ?>
+                                         <option value="Engineering"><?php echo $value->standard_name; ?></option>
+                                   <?php }
+                                        else if ($value->standard_name=="Commerce"){
+                                        ?>
+                                         <option value="Commerce"><?php echo $value->standard_name; ?></option>
+                                   <?php }
+                                        else {
+                                            ?>
+                                         <option value="<?php echo $value->standard_ID; ?>"><?php echo $value->standard_name; ?></option>
+                                        <?php
+                                        }
+                                        endforeach; ?> </select>
                                     <?php echo form_error('standard', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
