@@ -19,7 +19,7 @@ function table()
      $this->CreateTable->create_batch();
      $this->CreateTable->create_batch_student_mapping();
      $this->CreateTable->create_batch_course_mapping();
-     $this->CreateTable->create_attendance();
+     $this->CreateTable->create_student_attend();
      $this->CreateTable->create_stud_attend_mapping();
      $this->CreateTable->create_stud_fee();
      $this->CreateTable->create_fee_stud_mapping();

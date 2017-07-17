@@ -56,7 +56,7 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;"> Mark Attendance</button></center>
+                                    <center><button type="submit" class="btn btn-success" name="markattend" style="margin-top: 8px;"> Mark Attendance</button></center>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,8 @@
             </div>
         </div>
         <?php echo form_close();?>
-        <?php echo form_open('Attendance_cont/attendance'); ?>
+        <?php if(isset($_POST['markattend'])){?>
+        <?php echo form_open('Attendance_cont/StudentAttendance'); ?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -85,19 +86,20 @@
                                                 <td>Mark Attendance</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody><?php 
+                                              $i=1; $n=count($result);foreach($result  as $value): 
+                                            if($i!=$n){
+                                            ?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>101</td>
-                                                <td>John</td>
-                                                <td><input type="checkbox"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>102</td>
-                                                <td>Bill</td>
-                                                <td><input type="checkbox"></td>
-                                            </tr>
+                                                <td><?php echo $i; $i++; ?></td>
+                                                <td><input type="text" value ="<?php echo $value->stud_ID; ?>" name="stud_id[]" hidden><?php echo $value->stud_ID; ?></td>
+                                                <td><?php echo $value->stud_name; ?></td>
+                                                <td><input type="checkbox" value="<?php echo $value->stud_ID; ?>" name="attend[]" ></td>
+                                            </tr><?php }
+                                              else {
+                                                  ?><input type="text" value ="<?php echo end($result); ?>" name="attend_id" hidden><?PHP
+                                              }
+                                              endforeach; ?>
                                         </tbody>
                                     </table>    
                                 </div> 
@@ -114,6 +116,7 @@
             </div>
         </div>
         <?php echo form_close();?>
+        <?php } ?>
     </div>
 </div>
 <?php include "footer.php";?>

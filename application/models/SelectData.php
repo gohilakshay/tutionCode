@@ -46,5 +46,29 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function batchIDStudAttend($name,$time){
+        $q = $this->db->query("SELECT batch_ID FROM `batch` WHERE batch_name = '$name' AND batch_timing = '$time'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data=$row->batch_ID;
+            }
+        }
+      return $data;
+    }
+    function stud_attend_map($id,$attend_id){
+            $q = $this->db->query("SELECT stud_id FROM `batch_student_mapping` WHERE batch_id = '$id'");
+            if($q->num_rows() >0){
+                foreach($q->result() as $row){
+                     $stud_id = $row->stud_id;
+                    $q = $this->db->query("SELECT * FROM `student_details` WHERE stud_ID = '$stud_id'");
+                    if($q->num_rows() >0){
+                        foreach($q->result() as $row){
+                            $data[]= $row;
+                        }}
+                }
+            }
+        array_push($data,$attend_id);
+          return $data;
+    }
 }
 ?>

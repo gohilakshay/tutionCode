@@ -6,6 +6,7 @@ class Attendance_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
+        $this->load->database();
         $this->form_validation->set_rules('batchname', 'batchname', 'required|alpha_dash');
         $this->form_validation->set_rules('facultyname', 'facultyname', 'callback_customAlpha');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
@@ -16,13 +17,37 @@ class Attendance_cont extends CI_Controller
 		}
 		else
         {
-            redirect('Attendance_cont/markStudentAttendance');   	
+            $batch_name = $this->input->post('batchname');
+            $batch_timing = $this->input->post('batchtiming');
+            $this->load->model('SelectData');
+            $this->load->model('AddData');
+            $res = $this->SelectData->batchIDStudAttend($batch_name,$batch_timing);
+            $data = array(
+                'batch_id'=>$res,
+                'faculty_name'=>$this->input->post('facultyname'),
+                'attend_date'=>$this->input->post('date')
+            );
+            $this->AddData->addStudentAttendItem($data);
+            $attend_id = $this->db->insert_id();
+            $query['result'] = $this->SelectData->stud_attend_map($res,$attend_id);
+            $this->load->view('addStudentAttendance',$query);  	
 		}
     }
-    public function studentattendance()
+    public function StudentAttendance()
     {
         $this->load->helper('url');
-        $this->load->view('addStudentAttendance');            //html filename
+         $this->load->database();
+        $this->load->model('AddData');
+        $stud_id = $this->input->post('stud_id');
+        //$stud_id = implode(",",$stud_id);
+        $attend_id = $this->input->post('attend_id');
+        $attending = $this->input->post('attend');
+        $data=array(
+            'stud_id'=>$stud_id,
+            'attend_id'=>$attend_id,
+            'attend'=>$attending,
+        );
+        $this->AddData->markStudentAttendItem($data);
     }
     
     public function markTeacherAttendance()
@@ -46,6 +71,13 @@ class Attendance_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->view('addTeacherAttendance');            //html filename
+    }
+    public function customAlpha($str) 
+    {
+        if ( !preg_match('/^[a-zA-Z ]+$/i',$str) )
+        {
+            return false;
+        }
     }
 }
 ?>

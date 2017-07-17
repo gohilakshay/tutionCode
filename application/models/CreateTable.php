@@ -100,7 +100,7 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('batch_course_mapping'); 
     } 
-    function create_attendance()
+    function create_student_attend()
     { 
     /* Load db_forge - used to create databases and tables */
     $this->load->dbforge();
@@ -146,6 +146,10 @@ class CreateTable extends CI_Model {
                                           ),
                         'attend_id' => array(
                                                  'type' => 'INT',
+                                                 'constraint' => '100',
+                                          ),
+                        'attending' => array(
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                      );

@@ -55,5 +55,19 @@ class AddData extends CI_Model {
         
         return;
     }
+    function addStudentAttendItem($data){
+        $this->db->insert('student_attend', $data);
+        return;
+    }
+    function markStudentAttendItem($data){
+        $n = count($data['stud_id']);
+        foreach ($data as $value) {
+        if($data['stud_id']==$data['attend']){
+            echo 'absent'."<br>";
+        }
+        else echo "present";
+        }
+        print_r($data);
+    }
 }
 ?>
