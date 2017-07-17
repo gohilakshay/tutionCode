@@ -1,4 +1,4 @@
- <div class="main-panel">
+  <div class="main-panel">
 <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -32,6 +32,12 @@
                                 <li><a href="#">Another notification</a></li>
                               </ul>
                         </li>
+                        <li>
+                        <a href="<?php echo site_url()."/Schedular_cont/schedular" ?>">
+                            <i class="ti-wallet"></i>
+                            <p>Schedular</p>
+                        </a>
+                    </li>
 						<li>
                             <a href="#">
 								<i class="ti-upload"></i>
@@ -62,6 +68,7 @@
                                  </center>
                               </ul>
                         </li>
+                        
                     </ul>
 
                 </div>

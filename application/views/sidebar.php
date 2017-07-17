@@ -60,6 +60,7 @@
                             <p>Fee Details</p>
                         </a>
                     </li>
+                    
 
                     <!--<li>
                         <a href="maps.php">
