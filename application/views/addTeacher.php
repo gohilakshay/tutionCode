@@ -221,4 +221,4 @@
 <?php include "footer.php";?>
 <?php include "addModel.php"?>
 <?php include "script_include.php"; ?>
-<?php include "custom_script.php";?>
+<?php include "subject_script.php";?>

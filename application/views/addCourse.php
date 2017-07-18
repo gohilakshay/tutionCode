@@ -66,69 +66,68 @@
                         </div>
                         <!--start for branch-->
                         <div id="engineer" style="display:none;">
-                        <div class="row"> 
-                            <div class="col-md-6">
-                               
-                                    <div class="form-group">
-                                        <label>Branch:</label>
-                                        <select class="form-control border-input" id="engi_branch" name="engi_branch">
-                                            <option value="">---Select Branch---</option>
-                                            <option value="Computer">Computer</option>
-                                            <option value="IT">IT</option>
-                                            <option value="EXTC">EXTC</option>
-                                            <option value="Electronics">Electronics</option>
-                                            <option value="Mechanical">Mechanical</option>
-                                        </select>
-                                <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                    </div>
-                               
-                            </div>
-                            <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Semester:</label>
-                                        <select class="form-control border-input" id="semester" name="semester">
-                                            <option value="">---Select Semester---</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                        </select>
-                                <?php echo form_error('semester', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div id="commerceDetails" style="display:none;">
-                                    <div class="form-group">
-                                        <label>Branch:</label>
-                                        <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
-                                            <option value="">---Select Branch---</option>
-                                            <option value="fybcom">FY BCOM</option>
-                                            <option value="sybcom">SY BCOM</option>
-                                            <option value="tybcom">TY BCOM</option>
-                                        </select>
-                                    </div>
+                            <div class="row"> 
+                                <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label>Branch:</label>
+                                            <select class="form-control border-input" id="engi_branch" name="engi_branch">
+                                                <option value="">---Select Branch---</option>
+                                                <option value="Computer">Computer</option>
+                                                <option value="IT">IT</option>
+                                                <option value="EXTC">EXTC</option>
+                                                <option value="Electronics">Electronics</option>
+                                                <option value="Mechanical">Mechanical</option>
+                                            </select>
+                                    <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                        </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Semester:</label>
+                                            <select class="form-control border-input" id="semester" name="semester">
+                                                <option value="">---Select Semester---</option>
+                                                <option value="engi1">1</option>
+                                                <option value="engi2">2</option>
+                                                <option value="engi3">3</option>
+                                                <option value="engi4">4</option>
+                                                <option value="engi5">5</option>
+                                                <option value="engi6">6</option>
+                                                <option value="engi7">7</option>
+                                                <option value="engi8">8</option>
+                                            </select>
+                                    <?php echo form_error('semester', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                        </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div id="commerce_semester" style="display:none;">
+                        </div>
+                        
+                        <div id="commerce" style="display:none;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Branch:</label>
+                                            <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
+                                                <option value="">---Select Branch---</option>
+                                                <option value="fybcom">FY BCOM</option>
+                                                <option value="sybcom">SY BCOM</option>
+                                                <option value="tybcom">TY BCOM</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Semester</label>
-                                        <select class="form-control border-input" id="semester1" name="semester1">
-                                            <option value="">---Select Semester---</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
+                                            <select class="form-control border-input" id="commercesemester" name="commercesemester">
+                                                <option value="">---Select Semester---</option>
+                                                <option value="commerce1">1</option>
+                                                <option value="commerce2">2</option>
+                                                <option value="commerce3">3</option>
+                                                <option value="commerce4">4</option>
+                                                <option value="commerce5">5</option>
+                                                <option value="commerce6">6</option>
+                                            </select>
                                     </div>
                                 </div>
                             </div>
@@ -202,6 +201,41 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="commercesem1" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="accounts" name="commerce[]" >Accounts
+                                                </label>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="marketing" name="commerce[]">Marketing
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="commercesem2" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="finance" name="commerce1[]" >Finance
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <br>
                         <div class="form-group">
                              <button type="submit" class="btn btn-success">Add Course</button>
@@ -268,4 +302,5 @@
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
-<?php include "custom_script.php";?>
+<?php include "subject_script.php";?>
+<?php include "branch-sem_script.php";?>
