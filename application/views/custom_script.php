@@ -221,12 +221,22 @@
             
           var resources = document.getElementById('Resources').value;
           var minutes = document.getElementById('Minutes').value; 
+          
           var payamount = document.getElementById('Payamount').value;
          
           document.getElementById('answer').value=parseFloat(resources) - parseFloat(minutes);
+
+          var tempamount = document.getElementById('answer').value;
+          document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
          
-          document.form1.submit();
-        }
+
+
+          // for balance amount
+
+          var receive = document.getElementById('Received').value;
+          document.getElementById('balance').value=parseFloat(tempamount)-parseFloat(receive);
+           document.form1.submitt();
+        } 
  
     
   $('#Installment').on('change',function(){
