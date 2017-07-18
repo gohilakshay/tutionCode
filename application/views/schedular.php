@@ -3,7 +3,7 @@
 <?php include "nav.php";?>
 <br><br> 
 <div class="content">
-    <div class="container-fluid" style="margin-top:-50px;">
+    <div class="container-fluid" style="margin-top:-50px; ">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -25,3 +25,4 @@
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<?php include "custom_script.php";?>
