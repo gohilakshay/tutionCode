@@ -130,7 +130,6 @@
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
-<?php include "custom_script.php";?>
 <style> 
 input[id=staffsearch] {
     width: 5px;
