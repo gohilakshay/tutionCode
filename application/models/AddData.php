@@ -61,13 +61,32 @@ class AddData extends CI_Model {
     }
     function markStudentAttendItem($data){
         $n = count($data['stud_id']);
-        foreach ($data as $value) {
-        if($data['stud_id']==$data['attend']){
-            echo 'absent'."<br>";
-        }
-        else echo "present";
-        }
-        print_r($data);
+       $stud_id = $data['stud_id'];
+        echo $s_id = implode(",",$stud_id);
+       $attending = $data['attend'];
+        $attend_id = $data['attend_id'];
+        echo $absent_id = implode(",",$attending);
+        $new_data = array(
+            'stud_id'=>$s_id,
+            'attend_id'=>$attend_id,
+            'absent_stud_id'=>$absent_id
+        );
+        $this->db->insert('stud_attend_mapping', $new_data);
+        return;
+    }
+    function TeacherAttend($data){
+        $tcm_id = implode(",",$data['tcm_id']);
+        $new_data = array(
+            'date' => $data['date'],
+            'tcm_id' => $tcm_id,
+            'timing' => $data['timing']
+        );
+        $this->db->insert('teacher_attend', $new_data);
+       // print_r($new_data);
+    }
+    function markTeacherAttendItem($data){
+         $this->db->insert('t_attend_mapping', $data);
+        return;
     }
 }
 ?>

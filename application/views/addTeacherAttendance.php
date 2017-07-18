@@ -33,12 +33,10 @@
                                     <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
-                            
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Staff Name</label>
-                                    <input type="text" class="form-control border-input" name="staffname" value="<?php         if(isset($_POST['staffname'])){echo $_POST['staffname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  LastName">
-                                    <?php echo form_error('staffname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <label>Timing</label>
+                                    <input type="text" class="form-control border-input" name="timing" value="<?php         if(isset($_POST['timing'])){echo $_POST['timing'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  LastName">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -52,7 +50,7 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;"> Mark Attendance</button></center>
+                                    <center><button type="submit" name="markTeacher" class="btn btn-success" style="margin-top: 8px;"> Mark Attendance</button></center>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +59,8 @@
             </div>
         </div>
         <?php echo form_close();?>
-        <?php echo form_open('Attendance_cont/attendance'); ?>
+        <?php if(isset($_POST['markTeacher'])) { ?>
+        <?php echo form_open('Attendance_cont/TeacherAttendance'); ?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -82,20 +81,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $i=1; $n=count($result);foreach($result as $value):
+                                            if($i!=$n){
+                                            ?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>101</td>
-                                                <td>John</td>
-                                                <td><input type="checkbox"></td>
+                                                <td><?php echo $i; $i++; ?></td>
+                                                <td><input type="text" value ="<?php echo $value->t_ID; ?>" name="teach_id[]" hidden><?php echo $value->t_ID; ?></td>
+                                                <td><?php echo $value->t_name; ?></td>
+                                                <td><input type="checkbox" value="<?php echo $value->t_ID; ?>" name="attend[]" ></td>
                                             </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>102</td>
-                                                <td>Bill</td>
-                                                <td><input type="checkbox"></td>
-                                            </tr>
+                                            <?php }
+                                              else {
+                                                  ?><input type="text" value ="<?php echo end($result); ?>" name="t_attend_id" hidden><?PHP
+                                              }
+                                              endforeach; ?>
                                         </tbody>
-                                    </table>    
+                                    </table> 
+                                    
                                 </div> 
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -109,7 +111,8 @@
                 </div>
             </div>
         </div>
-        <?php echo form_close();?>
+        <?php echo form_close(); ?>
+        <?php }?>
     </div>
 </div>
 <?php include "footer.php";?>

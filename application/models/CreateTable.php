@@ -141,14 +141,14 @@ class CreateTable extends CI_Model {
                                                  'auto_increment' => TRUE
                                           ),
                         'stud_id' => array(
-                                                 'type' => 'INT',
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                         'attend_id' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
-                        'attending' => array(
+                        'absent_stud_id' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
@@ -731,11 +731,15 @@ class CreateTable extends CI_Model {
                                                  'auto_increment' => TRUE
                                           ),
                         't_id' => array(
-                                                  'type' => 'INT',
+                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                         't_attend_id' => array(
                                                  'type' => 'INT',
+                                                 'constraint' => '100',
+                                          ),
+                        'absent_teacher_attend_id' => array(
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                      );
@@ -759,11 +763,11 @@ class CreateTable extends CI_Model {
                         'date' => array(
                                                   'type' => 'DATE',
                                           ),
-                        'time_in' => array(
+                        'tcm_id' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
-                        'time_out' => array(
+                        'timing' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),

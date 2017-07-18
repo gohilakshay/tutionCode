@@ -88,5 +88,33 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function AttendCoursSubjTeacher($data){
+        $course = $data['course'];
+        $subject = $data['subject'];
+        $q = $this->db->query("SELECT subject_ID FROM `subject` where subject_name = '$subject'");
+            foreach($q->result() as $row){
+                $subj = $row->subject_ID;
+            }
+        $q1 = $this->db->query("SELECT course_ID FROM `course` where course_name = '$course'");
+            foreach($q1->result() as $row){
+                 $cour = $row->course_ID;
+            }
+        $q2 = $this->db->query("SELECT * FROM `teacher_course_mapping` where subject_id LIKE '%$subj%' AND course_id = '$cour' ");
+            foreach($q2->result() as $row){
+                $tcm_id[] = $row->tcm_ID;
+                $teach_id[] = $row->teacher_id;
+            }
+        foreach($teach_id as $id){
+           $q1 = $this->db->query("SELECT * FROM  `teacher` WHERE t_ID = '$id'");
+            foreach($q1->result() as $row){
+                 $name[] = $row;
+            }
+        }
+        $new_data = array(
+        'tcm_id' => $tcm_id,
+            'name' => $name
+        );
+        return $new_data;
+    }
 }
 ?>
