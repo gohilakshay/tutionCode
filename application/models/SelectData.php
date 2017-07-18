@@ -2,7 +2,7 @@
 
 class SelectData extends CI_Model {
     function teacher() {
-        $q = $this->db->query("SELECT * FROM `teacher`");
+        $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
                 $data[]=$row;
@@ -69,6 +69,24 @@ class SelectData extends CI_Model {
             }
         array_push($data,$attend_id);
           return $data;
+    }
+    function ViewBatch(){
+        $q = $this->db->query("SELECT * FROM `batch` ORDER BY batch_ID DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function SelectBatchCourse(){
+        $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
     }
 }
 ?>

@@ -6,12 +6,16 @@ class Batch_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->ViewBatch();
+        $query['result1'] = $this->SelectData->SelectBatchCourse();
         $this->form_validation->set_rules('batchname', 'batchname', 'required|alpha_dash');
         $this->form_validation->set_rules('batch_timing', 'batch_timing', 'required');
         $this->form_validation->set_message('alpha_dash','Please enter in the following format eg:IX-1');
         if($this->form_validation->run() == FALSE)
         {
-            $this->load->view('addBatches');       //html filename 
+            $this->load->view('addBatches',$query);       //html filename 
         }
         else
         {
@@ -28,11 +32,11 @@ class Batch_cont extends CI_Controller
         }
         
     }
-    public function batch()
+    /*public function batch()
     {
         $this->load->helper('url');
         $this->load->view('addBatches');         //html filename
-    }
+    }*/
     public function customAlphanumeric($strr){
          if ( !preg_match('/^[0-9a-zA-Z ]+$/',$strr) )
             {

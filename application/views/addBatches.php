@@ -34,9 +34,9 @@
                                     <label>Courses</label> 
                                     <select class="form-control border-input" id="course" name="course" required>
                                         <option value="">---Select Course---</option>
-                                        <option value="course1">course1</option>
-                                        <option value="course2">course2</option>
-                                        <option value="course3">course3</option>
+                                        <?php foreach($result1 as $value){?>
+                                        <option value="<?php echo $value->course_name;?>"><?php echo $value->course_name;?></option>
+                                        <?php }?>
                                     </select>
                                     <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
@@ -68,7 +68,7 @@
                                             <thead>
                                                 <tr style="font-weight: bold;">
                                                     <td>Sr No.</td>
-                                                    <td>Batch Name<? echo "$batchname";?></td>
+                                                    <td>Batch Name</td>
                                                     <td>Batch Timing</td>
                                                     <td>Course</td>
                                                     <td>Modify Data</td>
@@ -77,24 +77,15 @@
                                             </thead>
                                         
                                             <tbody>
-                                        
+                                                <?php $i=0; foreach($result as $value) {?>
                                                 <tr>
-                                                    <td>1.</td>
-                                                    <td>10</td>
-                                                    <td>10-11</td>
-                                                    <td>9-10th ssc board</td>
+                                                    <td><?php $i++;echo $i;?></td>
+                                                    <td><?php echo $value->batch_name;?></td>
+                                                    <td><?php echo $value->batch_timing;?></td>
+                                                    <td><?php echo $value->course_name;?></td>
                                                     <td><center><button type="edit" class="btn btn-success">Edit</button></center></td>
                                                     <td><center><button type="delete" class="btn btn-danger">Delete</button></center></td>
-                                                </tr>
-                                        
-                                                <tr>
-                                                    <td>2.</td>
-                                                    <td>11</td>
-                                                    <td>11-12</td>
-                                                    <td>12th Commerce state board</td>
-                                                    <td><center><button type="edit" class="btn btn-success">Edit</button></center></td>
-                                                    <td><center><button type="delete" class="btn btn-danger">Delete</button></center></td>
-                                                </tr>
+                                                </tr><?php }?>
                                             </tbody>
                                         </table>
                                           
