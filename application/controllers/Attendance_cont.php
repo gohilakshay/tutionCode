@@ -48,6 +48,7 @@ class Attendance_cont extends CI_Controller
             'attend'=>$attending,
         );
         $this->AddData->markStudentAttendItem($data);
+        redirect('Attendance_cont/markStudentAttendance');
     }
     
     public function markTeacherAttendance()
@@ -55,7 +56,6 @@ class Attendance_cont extends CI_Controller
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('subject', 'subject', 'required|alpha_dash');
-        $this->form_validation->set_rules('staffname', 'staffname', 'callback_customAlpha');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
 		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format science-1');
 		if($this->form_validation->run() == FALSE)
@@ -64,13 +64,44 @@ class Attendance_cont extends CI_Controller
 		}
 		else
         {
-            redirect('Attendance_cont/markTeacherAttendance');   	
+            $this->load->database();
+            $this->load->model('SelectData');
+            $this->load->model('AddData');
+            $data = array(
+                    'subject' => $this->input->post('subject'),
+                     'course' =>$this->input->post('course'),                     
+                );
+            $teacher_map = $this->SelectData->AttendCoursSubjTeacher($data);
+            $t_name['result'] = $teacher_map['name'];
+            $data1 = array(
+                'tcm_id' => $teacher_map['tcm_id'],
+                'timing' =>$this->input->post('timing'),
+                'date' => $this->input->post('date')
+            );
+            $this->AddData->TeacherAttend($data1);
+            $t_attend_id = $this->db->insert_id();
+            array_push($t_name['result'],$t_attend_id);
+            $this->load->view('addTeacherAttendance',$t_name); 	
 		}
     }
-    public function teacherattendance()
+    public function TeacherAttendance()
     {
         $this->load->helper('url');
-        $this->load->view('addTeacherAttendance');            //html filename
+        $this->load->model('AddData');
+         $this->load->database();
+        $t_ID = $this->input->post('teach_id');
+        $t_ID = implode(",",$t_ID);
+        $attending = $this->input->post('attend');
+        $t_attend_id = $this->input->post('t_attend_id');
+        $attending = implode(",",$attending);
+        $data=array(
+            't_id'=>$t_ID,
+            't_attend_id'=>$t_attend_id,
+            'absent_teacher_id'=>$attending,
+        );
+        print_r($data);
+        $this->AddData->markTeacherAttendItem($data);
+        redirect('Attendance_cont/markTeacherAttendance');             //html filename
     }
     public function customAlpha($str) 
     {
