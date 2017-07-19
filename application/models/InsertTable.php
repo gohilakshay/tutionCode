@@ -13,7 +13,7 @@ class InsertTable extends CI_Model {
         return;
     }
     function addEngiSubj($data){
-        $this->db->insert('engisubj', $data);
+        $this->db->insert('engisubject', $data);
         return;
     }
 }

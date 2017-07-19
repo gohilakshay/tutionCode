@@ -282,7 +282,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Mathematics I',
                 'semester_ID' => '1',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -290,7 +290,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Physics I',
                 'semester_ID' => '1',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -298,7 +298,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Chemistry I',
                 'semester_ID' => '1',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -306,7 +306,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Engineering Mechanics',
                 'semester_ID' => '1',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -314,7 +314,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Basic Electrical & Electronics Engineering',
                 'semester_ID' => '1',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -322,7 +322,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Enviornmental Studies',
                 'semester_ID' => '1',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -330,7 +330,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Mathematics II',
                 'semester_ID' => '2',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -338,7 +338,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Physics II',
                 'semester_ID' => '2',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -346,7 +346,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Chemistry II',
                 'semester_ID' => '2',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -354,7 +354,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Engineering Drawing',
                 'semester_ID' => '2',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -362,7 +362,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Structured Programming Approach',
                 'semester_ID' => '2',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -370,7 +370,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Communication Skills',
                 'semester_ID' => '2',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -378,7 +378,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Mathematics III',
                 'semester_ID' => '3',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -386,7 +386,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Object Oriented Programming Methodology',
                 'semester_ID' => '3',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -394,7 +394,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Data Structures',
                 'semester_ID' => '3',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -402,7 +402,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Digital Logic Design & Analysis',
                 'semester_ID' => '3',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -410,7 +410,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Discrete Structures',
                 'semester_ID' => '3',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -418,7 +418,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Electronic Circuits & Communication Fundamentals',
                 'semester_ID' => '3',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -426,7 +426,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Applied Mathematics IV',
                 'semester_ID' => '4',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -434,7 +434,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Analysis Of Algorithm',
                 'semester_ID' => '4',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -442,7 +442,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Computer Organization & Architecture',
                 'semester_ID' => '4',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -450,7 +450,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Database Management System',
                 'semester_ID' => '4',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -458,7 +458,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Theoretical Computer Science',
                 'semester_ID' => '4',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -466,7 +466,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Computer Graphics',
                 'semester_ID' => '4',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -474,7 +474,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Microprocessor',
                 'semester_ID' => '5',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -482,7 +482,7 @@ class DefaultData_cont extends CI_Controller
                 $data = array(
                 'subject_name' => 'Operating Systems',
                 'semester_ID' => '5',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -491,7 +491,7 @@ class DefaultData_cont extends CI_Controller
                 'subject_name' => 'Structured and Object Oriented  Analysis and
 Design',
                 'semester_ID' => '5',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -499,7 +499,7 @@ Design',
                 $data = array(
                 'subject_name' => 'Computer Networks',
                 'semester_ID' => '5',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -507,7 +507,7 @@ Design',
                 $data = array(
                 'subject_name' => 'Web Technologies Laboratory',
                 'semester_ID' => '5',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -515,7 +515,7 @@ Design',
                 $data = array(
                 'subject_name' => 'Business Communication and Ethics',
                 'semester_ID' => '5',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -524,7 +524,7 @@ Design',
                 'subject_name' => 'System Programming and Compiler
 Construction',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -532,7 +532,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Software Engineering',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -540,7 +540,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Distributed Databases',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -548,7 +548,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Mobile Communication and Computing',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -556,7 +556,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Network Programming Laboratory',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -564,7 +564,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Project Management',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -572,7 +572,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Operation Research',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -580,7 +580,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Foreigh Language – German',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -588,7 +588,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Foreigh Language – French',
                 'semester_ID' => '6',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -596,7 +596,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Digital Signal Processing',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -604,7 +604,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Cryptography and System Security',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -612,7 +612,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Artificial Intelligence',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -620,7 +620,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Network Threats and Attacks Laboratory',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -628,7 +628,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Artificial Intelligence',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -636,7 +636,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Advance Algorithms',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -644,7 +644,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Computer  Simulation and Modeling',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -652,7 +652,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Image Processing',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -660,7 +660,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Software Architecture',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -668,7 +668,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Soft Computing',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -676,7 +676,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'ERP  and Supply Chain Management',
                 'semester_ID' => '7',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -684,7 +684,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Data Warehouse and Mining',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -692,7 +692,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Human Machine Interaction',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -700,7 +700,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Parallel and distributed Systems',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -708,7 +708,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Cloud Computing Laboratory',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -716,7 +716,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Machine Learning',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -725,7 +725,7 @@ Construction',
                 'subject_name' => 'Embedded Systems
 ',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -733,7 +733,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Adhoc wireless networks',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -741,7 +741,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Digital Forensic',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
@@ -749,7 +749,7 @@ Construction',
                 $data = array(
                 'subject_name' => 'Big data Analytics',
                 'semester_ID' => '8',
-                'branch_ID' => '1'
+                'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
             }
