@@ -53,7 +53,7 @@
                                       </a>
                                   </li>
                               </ul>
-                        </li>
+                    </li>
                     <li <?php if($page == 'two'){ echo ' class="active"';}?>>
                         <a href="<?php echo site_url()."/Sms_cont/smsDetails" ?>">
                             <i class="ti-email"></i>
@@ -68,29 +68,11 @@
                     </li>
                     
                     
-                    <li>
+                    <li <?php if($page == 'nine'){ echo ' class="active"';}?>>
                         <a href="<?php echo site_url()."/Schedular_cont/schedular" ?>">
                            <p><img src="<?php echo base_url()?>assets/icon/scheduler.png">&emsp; Scheduler</p>
                         </a>
                     </li>
-                    <!--<li>
-                        <a href="maps.php">
-                            <i class="ti-pencil-alt"></i>
-                            <p>Reports</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="notifications.php">
-                            <i class="ti-bell"></i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>-->
-                    <!--<li class="active-pro">
-                        <a href="upgrade.php">
-                            <i class="ti-export"></i>
-                            <p>Upgrade to PRO</p>
-                        </a>
-                    </li>-->
                 </ul>
             </div>
         </div>

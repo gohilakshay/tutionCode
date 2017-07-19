@@ -18,6 +18,32 @@ class CreateTable extends CI_Model {
                 echo 'Database deleted!';
         }
     }
+    function create_branch()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'branch_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'branch_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'standard_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '11',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('branch_ID', TRUE);
+        // gives PRIMARY KEY (branch_ID)
+        $this->dbforge->create_table('branch'); 
+    }
     function create_batch()
     { 
     /* Load db_forge - used to create databases and tables */
@@ -354,7 +380,7 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
-                        'standard' => array(
+                        'standard_name' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
@@ -465,7 +491,7 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
-                        'standard' => array(
+                        'standard_name' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
@@ -473,7 +499,7 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
-                        'branch' => array(
+                        'branch_name' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                                  'null' => TRUE,
