@@ -14,7 +14,7 @@ class AddData extends CI_Model {
         $n = count($subject_name);
         $query = $this->db->get_where('course',array('course_name'=>$course_name));
         foreach($query->result() as $value){
-            $course_id = $value->course_ID;
+           echo $course_id = $value->course_ID;
         }
         $subject_id=array();
         for($i=0;$i<$n;$i++){

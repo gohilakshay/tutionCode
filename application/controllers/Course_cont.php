@@ -8,8 +8,8 @@ class Course_cont extends CI_Controller
         $this->load->database();
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->course();  
-        $this->load->model('SelectData');
         $query['result1'] = $this->SelectData->standard(); 
+        $query['result2'] = $this->SelectData->branch(); 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('course_name', 'course_name', 'callback_customAlphanumeric');
         $this->form_validation->set_rules('coursetype','coursetype','required');
@@ -38,8 +38,8 @@ class Course_cont extends CI_Controller
             $data = array(
                 'course_name' => $this->input->post('course_name'),
                 'course_type' => $this->input->post('coursetype'),
-                'standard' => $this->input->post('standard'),
-                'branch' => $branch,
+                'standard_name' => $this->input->post('standard'),
+                'branch_name' => $branch,
                 'semester' => $semester
             );
             $subject = $this->input->post('subject');

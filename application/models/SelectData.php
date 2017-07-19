@@ -10,6 +10,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function teacherProfile(){}
     function course() {
         $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
         $bj = array();
@@ -39,6 +40,15 @@ class SelectData extends CI_Model {
     }
     function standard(){
         $q = $this->db->query("SELECT * FROM `standard`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function branch(){
+        $q = $this->db->query("SELECT * FROM `branch`");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
                 $data[]=$row;

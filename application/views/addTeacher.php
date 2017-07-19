@@ -121,9 +121,9 @@
                                     <label>Courses</label> 
                                     <select class="form-control border-input" id="course" name="course" required>
                                         <option value="">---Select Course---</option>
-                                        <option value="course1">School</option>
-                                        <option value="course2">11th and 12th science state board</option>
-                                        <option value="course3">Engineering</option>
+                                        <?php foreach($result as $value):?>
+                                        <option value="<?php echo $value->course_name; ?>"><?php echo $value->course_name; ?></option>
+                                        <?php endforeach;?>
                                     </select>
                                     <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>

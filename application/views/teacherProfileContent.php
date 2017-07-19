@@ -1,3 +1,6 @@
+<?php foreach($result as $value): 
+echo $value->teacher_name;
+endforeach;?>
 <div class="content">
             <div class="container-fluid">
                 <div class="row">

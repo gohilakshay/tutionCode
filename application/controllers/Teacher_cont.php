@@ -13,7 +13,9 @@ class Teacher_cont extends CI_Controller
     public function teacherProfile()
     {
         $this->load->helper('url');
-        $this->load->view('teacherProfile');    //html filename
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->teacherProfile();
+        $this->load->view('teacherProfile',$query);    //html filename
     }
     public function updateTeacherProfile()
     {
@@ -24,6 +26,9 @@ class Teacher_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->course();
 		$this->form_validation->set_rules('teachersname', 'teachersname', 'callback_customAlpha');
 		$this->form_validation->set_rules('dob', 'dob', 'required');
 		$this->form_validation->set_rules('email', 'email', 'required|valid_email');
@@ -38,7 +43,7 @@ class Teacher_cont extends CI_Controller
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('addTeacher');			//html filename
+            $this->load->view('addTeacher',$query);			//html filename
 		}
 		else
         {

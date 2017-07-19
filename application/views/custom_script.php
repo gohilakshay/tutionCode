@@ -71,7 +71,7 @@
  
     
   $('#Installment').on('change',function(){
-        if( $(this).val()==="Yes"){
+        if( $(this).val()==="yes"){
             $("#installmenttype").show()
             
         }
