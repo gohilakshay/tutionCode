@@ -210,5 +210,96 @@ class DefaultData_cont extends CI_Controller
         }
     }
     /*End*/
+    
+    /*For Semester*/
+    public function defaultSemesterData()
+    {
+        $this->load->database();
+        $this->load->model('InsertTable');
+        for($i=1;$i<9;$i++)
+        {
+            if($i==1){
+                $data = array(
+                'semester' => '1'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            else if($i==2){
+                $data = array(
+                'semester' => '2'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            else if($i==3){
+                $data = array(
+                'semester' => '3'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            else if($i==4){
+                $data = array(
+                'semester' => '4'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            else if($i==5){
+                $data = array(
+                'semester' => '5'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            else if($i==6){
+                $data = array(
+                'semester' => '6'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            else if($i==7){
+                $data = array(
+                'semester' => '7'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            
+            else {
+                $data = array(
+                'semester' => '8'
+            );
+                $this->InsertTable->addSem($data);
+            }
+        }
+    }
+    /*End*/
+    
+    /*For Subject*/
+    public function defaultSubjectData()
+    {
+        $this->load->database();
+        $this->load->model('InsertTable');
+        for($i=1;$i<9;$i++)
+        {
+            if($i==1){
+                $data = array(
+                'subject_name' => 'Chemistry',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addEngiSubj($data);
+            }
+            else if($i==2){
+                $data = array(
+                'semester' => '2'
+            );
+                $this->InsertTable->addSem($data);
+            }
+            else {
+                $data = array(
+                'semester' => '8'
+            );
+                $this->InsertTable->addSem($data);
+            }
+        }
+    }
+    /*End*/
 }
 ?>

@@ -44,6 +44,58 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (branch_ID)
         $this->dbforge->create_table('branch'); 
     }
+    function create_semester()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'semester_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'semester' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '100',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('semester_ID', TRUE);
+        // gives PRIMARY KEY (semester_ID)
+        $this->dbforge->create_table('semester'); 
+    }
+    function create_engisubject()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'engisubj_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'subject_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'semester_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                        'branch_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('engisubj_ID', TRUE);
+        // gives PRIMARY KEY (engisubj_ID)
+        $this->dbforge->create_table('engisubject'); 
+    }
     function create_batch()
     { 
     /* Load db_forge - used to create databases and tables */
