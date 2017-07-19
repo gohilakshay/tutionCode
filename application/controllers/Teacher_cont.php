@@ -10,10 +10,13 @@ class Teacher_cont extends CI_Controller
         $query['result'] = $this->SelectData->teacher();  
         $this->load->view('teacher',$query);       //html filename
     }
-    public function teacherProfile()
+    public function teacherProfile($n)
     {
         $this->load->helper('url');
-        $this->load->view('teacherProfile');    //html filename
+        $this->load->database();
+         $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->teacherProfile($n);
+        $this->load->view('teacherProfile',$query);    //html filename
     }
     public function updateTeacherProfile()
     {

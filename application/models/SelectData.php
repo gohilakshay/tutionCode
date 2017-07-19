@@ -10,7 +10,15 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
-    function teacherProfile(){}
+    function teacherProfile($n){
+        $q = $this->db->query("SELECT * FROM `teacher` WHERE t_ID = '$n'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return ($data);
+    }
     function course() {
         $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
         $bj = array();

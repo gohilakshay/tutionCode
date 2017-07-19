@@ -1,4 +1,6 @@
+<?php foreach($result as $value):
 
+?>
 <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -14,7 +16,7 @@
                                   <h4 class="title">Teacher Name<br>
                                      <small>teacher@gmail.com</small><br>
                                       <small>8965231456</small><br>
-                                      <small>21st October</small>
+                                      <small><?php echo $value->t_dob; ?></small>
                                   </h4>
                                 </div>
                             </div>
@@ -95,7 +97,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6 ">
-                                                <b>FirstName MiddleName LastName</b>
+                                                <b><?php echo $value->t_name." ".$value->t_fathername." ".$value->t_surname;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -106,7 +108,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6 ">
-                                                <b>B.E in Computer Engineering</b>
+                                                <b><?php echo $value->qualification; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -117,7 +119,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>B/809,Gajanan Apartment,S.L Road,Opp. Big Bazar,Malad(west),Mumbai-400086.</b>
+                                                <b><?php echo $value->t_address; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -139,7 +141,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>7896541123 / 7569823654</b>
+                                                <b><?php echo $value->t_contact; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -212,3 +214,6 @@
                 </div>
             </div>
         </div>
+<?php                                                    
+ endforeach;
+?>
