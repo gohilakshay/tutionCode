@@ -1,16 +1,22 @@
- <?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Student_cont extends CI_Controller
 {
     public function student()
     {
-        $this->load->helper('url');  
-        $this->load->view('student');       //html filename
+        $this->load->helper('url'); 
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->student();
+        $this->load->view('student',$query);       //html filename
     }
-    public function studentProfile()
+    public function studentProfile($n)
     {
         $this->load->helper('url');
-        $this->load->view('studentProfile');     //html filename
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->studentProfile($n);
+        $this->load->view('studentProfile',$query);     //html filename
     }
     public function updateStudentProfile()
     {
@@ -21,11 +27,16 @@ class Student_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->ViewBatch();
+        $query['result1'] = $this->SelectData->standard(); 
+        $query['result2'] = $this->SelectData->branch(); 
+        $query['result3'] = $this->SelectData->engisubject(); 
         $this->form_validation->set_rules('surname', 'surname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('studentname', 'studentname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('fathername', 'fathername', 'callback_custom_Alpha');
         $this->form_validation->set_rules('mothername', 'mothername', 'callback_custom_Alpha');
-         
         $this->form_validation->set_rules('dob', 'dob', 'required');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email');
         $this->form_validation->set_rules('contactnumber', 'contactnumber', 'required|numeric|exact_length[10]');
@@ -43,7 +54,7 @@ class Student_cont extends CI_Controller
         $this->form_validation->set_rules('date', 'date', 'required');
         if($this->form_validation->run() == FALSE)
         {
-            $this->load->view('addStudent');        
+            $this->load->view('addStudent',$query);        
         }
         else
         {
@@ -71,7 +82,7 @@ class Student_cont extends CI_Controller
                 'board' => $this->input->post('board'),
                 // 'batch_id' => $this->input->post('batch'),
                 // 'batch_timing' => $this->input->post('batch_timing'),
-                // 'standard' => $this->input->post('standard'),
+                 'standard_name' => $this->input->post('standard'),
                 'place' => $this->input->post('place'),
                 'form_date' => $this->input->post('date')
                 
@@ -92,9 +103,12 @@ class Student_cont extends CI_Controller
                 'recieved_fee' => $this->input->post('received'),
                 'balance_fee' => $this->input->post('balance'),
                 );
-           
-            
             $this->AddData->addStudentfeeItem($data1);
+             $batch = array(
+                 'batch_id' => $this->input->post('batch'),
+                 'stud_ID'=>$n
+                           );
+            $this->AddData->addStudentBatchItem($batch);
             redirect('Student_cont/addStudent');      
         }
     }

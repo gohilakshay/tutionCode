@@ -1,10 +1,10 @@
+
 <?php include "header.php";?>
 <?php $page = 'four';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 <?php echo form_open_multipart('Student_cont/addStudent'); ?>
 <br>
-
     <div class="content">   
         <div class="container-fluid">
             <div class="row">
@@ -198,9 +198,9 @@
                                                 <label>Batch</label>
                                                 <select  class="form-control border-input" id="batch" name="batch" required>
                                                     <option value="none">--Select Batch--</option>
-                                                    <option value="9Std-1">9Std-1</option>
-                                                    <option value="9Std-2">9Std-2</option>
-                                                    <option value="9Std-3">9Std-3</option>
+                                                    <?php foreach($result as $value) {?>
+                                                    <option value="<?php echo $value->batch_ID; ?>"><?php echo $value->batch_name; ?></option>
+                                                    <?php }?>
                                                 </select>
                                                 <?php echo form_error('batch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                             </div>
@@ -210,8 +210,9 @@
                                             <div>
                                                 <select  class="form-control border-input" id="batch_timing" name="batch_timing" required>
                                                     <option>--Select Batch Timing--</option>
-                                                    <option>3:00pm To 6:00pm</option>
-                                                    <option>6:00pm To 9:00pm</option>
+                                                    <?php foreach($result as $value) {?>
+                                                    <option><?php echo $value->batch_timing; ?></option>
+                                                    <?php }?>
                                                 </select>
                                                  <?php echo form_error('batch_timing', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                             </div>
@@ -226,11 +227,9 @@
                                             <div>
                                                 <select  class="form-control border-input" id="standard" name="standard" required>
                                                     <option value="">---Select Standard---</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="Engineering">Engineering</option>
-                                                    <option value="Commerce">Commerce</option>
+                                                    <?php foreach ($result1 as $value){?>
+                                                    <option value="<?php echo $value->standard_name;?>"><?php echo $value->standard_name;?></option>
+                                                    <?php }?>
                                                 </select>
                                                  <?php echo form_error('standard', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                             </div>
@@ -245,11 +244,10 @@
                                                 <label>Branch:</label>
                                                 <select class="form-control border-input" id="engi_branch" name="engi_branch">
                                                     <option value="">---Select Branch---</option>
-                                                    <option value="Computer">Computer</option>
-                                                    <option value="IT">IT</option>
-                                                    <option value="EXTC">EXTC</option>
-                                                    <option value="Electronics">Electronics</option>
-                                                    <option value="Mechanical">Mechanical</option>
+                                                    <?php foreach($result2 as $value){
+                                                    if($value->standard_ID==13){?>
+                                                    <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
+                                                    <?php } } ?>
                                                 </select>
                                                 <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                             </div>
@@ -281,9 +279,11 @@
                                                 <label>Branch:</label>
                                                     <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
                                                         <option value="">---Select Branch---</option>
-                                                        <option value="fybcom">FY BCOM</option>
-                                                        <option value="sybcom">SY BCOM</option>
-                                                        <option value="tybcom">TY BCOM</option>
+                                                        <option value="">---Select Branch---</option>
+                                                    <?php foreach($result2 as $value){
+                                                    if($value->standard_ID==14){?>
+                                                    <option value="Computer"><?php echo $value->branch_name;?></option>
+                                                    <?php } } ?>
                                                     </select>
                                             </div>
                                         </div>

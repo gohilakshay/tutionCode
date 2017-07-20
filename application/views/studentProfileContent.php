@@ -1,3 +1,8 @@
+<?php
+$student_data = $result[0];
+$batch_data = $result[1];
+$fee_data = end($result);
+?>
 <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -10,10 +15,10 @@
                                 <div class="author">
                                     <img class="avatar border-white" src="<?php echo base_url()?>assets/img/faces/face-1.jpg">
                                   
-                                  <h4 class="title">Student Name<br>
-                                     <small>student@gmail.com</small><br>
-                                      <small>8965231456</small><br>
-                                      <small>21st October</small>
+                                  <h4 class="title"><?php echo $student_data->stud_surname." ".$student_data->stud_name." ".$student_data->father_name." ".$student_data->mother_name;?><br>
+                                     <small><?php echo $student_data->stud_email;?></small><br>
+                                      <small><?php echo $student_data->stud_contact;?></small><br>
+                                      <small><?php echo $student_data->stud_dob;?></small>
                                   </h4>
                                 </div>
                             </div>
@@ -21,13 +26,13 @@
                             <div class="text-center">
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-1">
-                                        <h5>Batch<br /><small>XII-science</small></h5>
+                                        <h5>Batch<br /><small><?php echo $batch_data->batch_name;?></small></h5>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5>Timing<br /><small>Morning</small></h5>
+                                        <h5>Timing<br /><small><?php echo $batch_data->batch_timing;?></small></h5>
                                     </div>
                                     <div class="col-md-3">
-                                        <h5>Year<br /><small>2017-18</small></h5>
+                                        <h5>Year<br /><small><?php echo $student_data->admission_year;?></small></h5>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +50,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-3 text-right">
-                                                <b>48000</b>
+                                                <b><?php echo $fee_data->total_fee; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -56,7 +61,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-3 text-right">
-                                                <b>20000</b>
+                                                <b><?php echo $fee_data->recieved_fee;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -67,7 +72,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-3 text-right">
-                                                <b>28000</b>
+                                                <b><?php echo $fee_data->balance_fee;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -107,7 +112,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6 ">
-                                                <b>FirstName MiddleName LastName</b>
+                                                <b><?php echo $student_data->stud_name." ".$student_data->stud_surname;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -118,7 +123,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>Father's Name</b>
+                                                <b><?php echo $student_data->father_name." ".$student_data->stud_surname;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -129,7 +134,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6">
-                                                <b>Mother's Name</b>
+                                                <b><?php echo $student_data->mother_name." ".$student_data->stud_surname;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -140,7 +145,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>B/809,Gajanan Apartment,S.L Road,Opp. Big Bazar,Malad(west),Mumbai-400086.</b>
+                                                <b><?php echo $student_data->stud_address;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -162,7 +167,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>7896541123 / 7569823654</b>
+                                                <b><?php echo $student_data->stud_contact;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -173,7 +178,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>School Name</b>
+                                                <b><?php echo $student_data->sch_coll_name;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -184,7 +189,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>State Board</b>
+                                                <b><?php echo $student_data->board;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -195,7 +200,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>Regular</b>
+                                                <b><?php echo $student_data->course_type;?></b>
                                             </div>
                                         </div>
                                     </li>

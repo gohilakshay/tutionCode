@@ -10,6 +10,7 @@ class Course_cont extends CI_Controller
         $query['result'] = $this->SelectData->course();  
         $query['result1'] = $this->SelectData->standard(); 
         $query['result2'] = $this->SelectData->branch(); 
+        $query['result3'] = $this->SelectData->engisubject(); 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('course_name', 'course_name', 'callback_customAlphanumeric');
         $this->form_validation->set_rules('coursetype','coursetype','required');
@@ -35,15 +36,17 @@ class Course_cont extends CI_Controller
                 $branch = null;
                 $semester = NULL;
             }
+            $subject = $this->input->post('subject');
+            $subject_id = implode(",",$subject);
             $data = array(
                 'course_name' => $this->input->post('course_name'),
                 'course_type' => $this->input->post('coursetype'),
                 'standard_name' => $this->input->post('standard'),
                 'branch_name' => $branch,
-                'semester' => $semester
+                'semester' => $semester,
+                'subject_id'=>$subject_id
             );
-            $subject = $this->input->post('subject');
-            $this->AddData->addCourseItem($data,$subject);
+            $this->AddData->addCourseItem($data);
             redirect('Course_cont/addCourse');      
         }
     }

@@ -33,11 +33,14 @@ class AddData extends CI_Model {
     }
     function addStudentfeeItem($data1){
         $this->db->insert('stud_fee', $data1);
-        
         return;
     }
-    function addCourseItem($data,$data1){
-        $subject_name = $data1;
+    function addStudentBatchItem($data){
+        $this->db->insert('batch_student_mapping',$data);
+        return;
+    }
+    function addCourseItem($data){
+        /*$subject_name = $data1;
         $n = count($subject_name);
         $subject_id=array();
         for($i=0;$i<$n;$i++){
@@ -50,7 +53,7 @@ class AddData extends CI_Model {
         $subject_array = array('subject_id'=>$subject);
         $data =$data+$subject_array;
        // array_push($data,$subject_array);
-        print_r($data);
+        print_r($data);*/
         $this->db->insert('course', $data);
         
         return;

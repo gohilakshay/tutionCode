@@ -13,9 +13,9 @@
                                 <div class="author">
                                     <img class="avatar border-white" src="<?php echo base_url()?>assets/img/faces/face-1.jpg">
                                   
-                                  <h4 class="title">Teacher Name<br>
-                                     <small>teacher@gmail.com</small><br>
-                                      <small>8965231456</small><br>
+                                  <h4 class="title"><?php echo $value->t_name." ".$value->t_fathername." ".$value->t_surname;?><br>
+                                     <small><?php echo $value->t_email; ?></small><br>
+                                      <small><?php echo $value->t_contact; ?></small><br>
                                       <small><?php echo $value->t_dob; ?></small>
                                   </h4>
                                 </div>
@@ -35,7 +35,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-3 text-right">
-                                                <b>50000</b>
+                                                <b><?php echo $value->salary; ?></b>
                                             </div>
                                         </div>
                                     </li>
