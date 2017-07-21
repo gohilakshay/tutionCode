@@ -1,4 +1,6 @@
+<?php foreach($result as $value):
 
+?>
 <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -11,10 +13,10 @@
                                 <div class="author">
                                     <img class="avatar border-white" src="<?php echo base_url()?>assets/img/faces/face-1.jpg">
                                   
-                                  <h4 class="title">Teacher Name<br>
-                                     <small>teacher@gmail.com</small><br>
-                                      <small>8965231456</small><br>
-                                      <small>21st October</small>
+                                  <h4 class="title"><?php echo $value->t_name." ".$value->t_fathername." ".$value->t_surname;?><br>
+                                     <small><?php echo $value->t_email; ?></small><br>
+                                      <small><?php echo $value->t_contact; ?></small><br>
+                                      <small><?php echo $value->t_dob; ?></small>
                                   </h4>
                                 </div>
                             </div>
@@ -33,7 +35,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-3 text-right">
-                                                <b>50000</b>
+                                                <b><?php echo $value->salary; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -95,7 +97,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6 ">
-                                                <b>FirstName MiddleName LastName</b>
+                                                <b><?php echo $value->t_name." ".$value->t_fathername." ".$value->t_surname;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -106,7 +108,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-6 ">
-                                                <b>B.E in Computer Engineering</b>
+                                                <b><?php echo $value->qualification; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -117,7 +119,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>B/809,Gajanan Apartment,S.L Road,Opp. Big Bazar,Malad(west),Mumbai-400086.</b>
+                                                <b><?php echo $value->t_address; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -139,7 +141,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>7896541123 / 7569823654</b>
+                                                <b><?php echo $value->t_contact; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -212,3 +214,6 @@
                 </div>
             </div>
         </div>
+<?php                                                    
+ endforeach;
+?>

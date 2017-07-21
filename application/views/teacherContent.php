@@ -157,7 +157,7 @@
                                             <tr>
                                                 <td><?php echo $i;$i++; ?></td>
                                                 <td><?php echo $value->t_ID; ?></td>
-                                                <td><a href="<?php echo site_url("Teacher_cont/teacherProfile") ?>"><?php echo $value->t_name; ?></a></td>
+                                                <td><a href="<?php echo site_url("Teacher_cont/teacherProfile/$value->t_ID") ?>"><?php echo $value->t_name; ?></a></td>
                                                 <td><?php echo $value->t_contact; ?></td>
                                                 <td>adads</td>
                                                 <td>asdas</td>

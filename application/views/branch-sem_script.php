@@ -5,12 +5,12 @@
             $("#schoolSubjects").show()
             $("#engisem1").hide()
             $("#engisem2").hide()
-            $("#engisem3").hide()
-            $("#engisem4").hide()
-            $("#engisem5").hide()
-            $("#engisem6").hide()
-            $("#engisem7").hide()
-            $("#engisem8").hide()
+            $("#engicomp3").hide()
+            $("#engicomp4").hide()
+            $("#engicomp5").hide()
+            $("#engicomp6").hide()
+            $("#engicomp7").hide()
+            $("#engicomp8").hide()
             $("#commercesem1").hide()
             $("#commercesem2").hide()
             $("#commercesem3").hide()
@@ -31,12 +31,12 @@
             $("#schoolSubjects").hide()
             $("#engisem1").hide()
             $("#engisem2").hide()
-            $("#engisem3").hide()
-            $("#engisem4").hide()
-            $("#engisem5").hide()
-            $("#engisem6").hide()
-            $("#engisem7").hide()
-            $("#engisem8").hide()
+            $("#engicomp3").hide()
+            $("#engicomp4").hide()
+            $("#engicomp5").hide()
+            $("#engicomp6").hide()
+            $("#engicomp7").hide()
+            $("#engicomp8").hide()
         }
         else{
             $("#commerce").hide()
@@ -55,19 +55,19 @@
     });
     /*End*/
     
-    /*For Engineering subjects according to branch and semester*/
+    /*For  Computer Engineering subjects according to branch and semester*/
     $('#engi_branch').on('change',function(){
-        if( $(this).val()==="Computer"){
+        if( $(this).val()==="Computer Engineering"){
             $('#semester').on('change',function(){
-                if( $(this).val()==="engi1"){
+                if( $(this).val()==="1"){
                     $("#engisem1").show()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
-                    $("#engisem5").hide()
-                    $("#engisem6").hide()
-                    $("#engisem7").hide()
-                    $("#engisem8").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -75,15 +75,15 @@
                     $("#commercesem5").hide()
                     $("#commercesem6").hide()
                 }
-                else if($(this).val()==="engi2"){
+                else if($(this).val()==="2"){
                     $("#engisem1").hide()
                     $("#engisem2").show()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
-                    $("#engisem5").hide()
-                    $("#engisem6").hide()
-                    $("#engisem7").hide()
-                    $("#engisem8").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -91,15 +91,15 @@
                     $("#commercesem5").hide()
                     $("#commercesem6").hide()
                     }
-                else if($(this).val()==="engi3"){ 
+                else if($(this).val()==="3"){ 
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").show()
-                    $("#engisem4").hide()
-                    $("#engisem5").hide()
-                    $("#engisem6").hide()
-                    $("#engisem7").hide()
-                    $("#engisem8").hide()
+                    $("#engicomp3").show()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -107,15 +107,15 @@
                     $("#commercesem5").hide()
                     $("#commercesem6").hide()
                     }
-                else if($(this).val()==="engi4"){
+                else if($(this).val()==="4"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").show()
-                    $("#engisem5").hide()
-                    $("#engisem6").hide()
-                    $("#engisem7").hide()
-                    $("#engisem8").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").show()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -123,15 +123,15 @@
                     $("#commercesem5").hide()
                     $("#commercesem6").hide()
                     }
-                else if($(this).val()==="engi5"){
+                else if($(this).val()==="5"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
-                    $("#engisem5").show()
-                    $("#engisem6").hide()
-                    $("#engisem7").hide()
-                    $("#engisem8").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").show()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -139,15 +139,15 @@
                     $("#commercesem5").hide()
                     $("#commercesem6").hide()
                     }
-                else if($(this).val()==="engi6"){
+                else if($(this).val()==="6"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
-                    $("#engisem5").hide()
-                    $("#engisem6").show()
-                    $("#engisem7").hide()
-                    $("#engisem8").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").show()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -155,15 +155,15 @@
                     $("#commercesem5").hide()
                     $("#commercesem6").hide()
                     }
-                else if($(this).val()==="engi7"){
+                else if($(this).val()==="7"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
-                    $("#engisem5").hide()
-                    $("#engisem6").hide()
-                    $("#engisem7").show()
-                    $("#engisem8").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").show()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -171,15 +171,15 @@
                     $("#commercesem5").hide()
                     $("#commercesem6").hide()
                     }
-                else if($(this).val()==="engi8"){
+                else if($(this).val()==="8"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
-                    $("#engisem5").hide()
-                    $("#engisem6").hide()
-                    $("#engisem7").hide()
-                    $("#engisem8").show()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").show()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -191,12 +191,12 @@
                 else{
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
-                    $("#engisem5").hide()
-                    $("#engisem6").hide()
-                    $("#engisem7").hide()
-                    $("#engisem8").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
                     $("#commercesem1").hide()
                     $("#commercesem2").hide()
                     $("#commercesem3").hide()
@@ -206,83 +206,83 @@
                     }
             })
         }
-    if( $(this).val()==="IT"){
+   /* if( $(this).val()==="Information Technology Engineering"){
             $('#semester').on('change',function(){
-                if( $(this).val()==="engi1"){
-                    $("#engisem1").hide()
+                if( $(this).val()==="1"){
+                    $("#engisem1").show()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").hide()
                     $("#engisem7").hide()
                     $("#engisem8").hide()
                 }
-                else if($(this).val()==="engi2"){
+                else if($(this).val()==="2"){
                     $("#engisem1").hide()
                     $("#engisem2").show()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").hide()
                     $("#engisem7").hide()
                     $("#engisem8").hide()
                     }
-                else if($(this).val()==="engi3"){ 
+                else if($(this).val()==="3"){ 
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").show()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").hide()
                     $("#engisem7").hide()
                     $("#engisem8").hide()
                     }
-                else if($(this).val()==="engi4"){
+                else if($(this).val()==="4"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").show()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").hide()
                     $("#engisem7").hide()
                     $("#engisem8").hide()
                     }
-                else if($(this).val()==="engi5"){
+                else if($(this).val()==="5"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").show()
                     $("#engisem6").hide()
                     $("#engisem7").hide()
                     $("#engisem8").hide()
                     }
-                else if($(this).val()==="engi6"){
+                else if($(this).val()==="6"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").show()
                     $("#engisem7").hide()
                     $("#engisem8").hide()
                     }
-                else if($(this).val()==="engi7"){
+                else if($(this).val()==="7"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").hide()
                     $("#engisem7").show()
                     $("#engisem8").hide()
                     }
-                else if($(this).val()==="engi8"){
+                else if($(this).val()==="8"){
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").hide()
                     $("#engisem7").hide()
@@ -292,15 +292,16 @@
                 else{
                     $("#engisem1").hide()
                     $("#engisem2").hide()
-                    $("#engisem3").hide()
-                    $("#engisem4").hide()
+                    $("#engicomp3").hide()
+                    $("#engicomp4").hide()
                     $("#engisem5").hide()
                     $("#engisem6").hide()
                     $("#engisem7").hide()
                     $("#engisem8").hide()
                     }
             })
-        }});
+        }*/
+    });
     /*END for Engineering Subjects*/
     
     /*For Commerce subjects according to branch and semester*/

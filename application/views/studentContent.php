@@ -152,29 +152,19 @@
                                                 <td>course</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody><?php $i=0;foreach($result as $value):?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>101</td>
-                                                <td><a href="<?php echo site_url("Student_cont/studentProfile") ?>">John</a></td>
-                                                <td>9874563216</td>
-                                                <td>10th</td>
-                                                <td>X-A</td>
-                                                <td>SAKEC</td>
-                                                <td>State Board</td>
-                                                <td>Regular</td>
+                                                <td><?php $i++;echo $i;?></td>
+                                                <td><?php echo $value->stud_ID?></td>
+                                                <td><a href="<?php echo site_url("Student_cont/studentProfile/$value->stud_ID") ?>"><?php echo $value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name;?></a></td>
+                                                <td><?php echo $value->stud_contact;?></td>
+                                                <td><?php echo $value->standard_name;?></td>
+                                                <td><?php echo "batch"?></td>
+                                                <td><?php echo $value->sch_coll_name;?></td>
+                                                <td><?php echo $value->board;?></td>
+                                                <td><?php echo $value->course_type;?></td>
                                             </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>102</td>
-                                                <td><a href="#">Bill</a></td>
-                                                <td>8659321456</td>
-                                                <td>12th</td>
-                                                <td>XII-science</td>
-                                                <td>Universal</td>
-                                                <td>CBSE</td>
-                                                <td>Crash</td>
-                                            </tr>
+                                            <?php endforeach;?>
                                         </tbody>
                                     </table>    
                                 </div>                          

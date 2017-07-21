@@ -165,15 +165,13 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
+                                                <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 1){
+                                                ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="Data Structures" name="engineering[]" >Data Structures
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
                                                 </label>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="OOPM" name="engineering[]">OOPM
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="Java" name="engineering[]">Java
-                                                </label>
+                                                <?php } endforeach;?>
                                             </div>
                                         </div>
                                     </div>
@@ -187,15 +185,121 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
+                                               <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 2){?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="Data Structures" name="engineering1[]" >Drawing
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
                                                 </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="engicomp3" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 3){?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="OOPM" name="engineering1[]">BEE
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
                                                 </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div id="engicomp4" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 4){?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="Java" name="engineering1[]">Mechanics
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
                                                 </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div id="engicomp5" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 5){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div id="engicomp6" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 6){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div id="engicomp7" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 7){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div id="engicomp8" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result3 as $value):
+                                                if($value->semester_ID == 8){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
                                             </div>
                                         </div>
                                     </div>
