@@ -745,14 +745,23 @@ Construction',
             );
                 $this->InsertTable->addEngiSubj($data);
             }
-            else{
+            else if($i==59){
                 $data = array(
                 'subject_name' => 'Big data Analytics',
                 'semester_ID' => '8',
                 'branch_ID' => '5'
             );
                 $this->InsertTable->addEngiSubj($data);
+            }     
+            else{
+                $data = array(
+                'subject_name' => '',
+                'semester_ID' => '3',
+                'branch_ID' => '6'
+            );
+                $this->InsertTable->addEngiSubj($data);
             }
+            
         }
     }
     /*End*/
