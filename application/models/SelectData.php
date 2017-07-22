@@ -1,5 +1,5 @@
 <?php
-echo "bravo";
+
 class SelectData extends CI_Model {
     function teacher() {
         $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
