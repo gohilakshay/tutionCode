@@ -18,6 +18,25 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function student_detail_fee($table) {
+        $q = $this->db->query("SELECT * FROM `student_details` ORDER BY stud_ID DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $stud_id = $row->stud_ID;
+                $q1 = $this->db->query("SELECT * FROM `stud_fee` where stud_id='$stud_id'");
+                foreach($q1->result() as $row1){
+                    $data1[]=$row1;
+                }
+                $data[]=$row;
+            }
+        }
+        $new = array(
+            'stud' => $data,
+            'fee' => $data1,
+            'table'=>$table
+        );
+        return $new;
+    }
     function studentProfile($n) {
         $q = $this->db->query("SELECT * FROM `student_details` WHERE stud_ID = '$n'");
         if($q->num_rows() >0){

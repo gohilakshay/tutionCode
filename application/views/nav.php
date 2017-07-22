@@ -37,7 +37,7 @@
                                     </a>
                                   </li>
                                   <li>
-                                      <a href="<?php echo site_url()."/Student_cont/feeDetail" ?>">
+                                      <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>">
                                           Fee Details
                                       </a>
                                   </li>

@@ -119,10 +119,13 @@ class Student_cont extends CI_Controller
                 return false;
             }
         }  
-     public function feeDetail()
+     public function feeDetail($table)
     {
         $this->load->helper('url');
-        $this->load->view('feeDetail');         //html filename
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->student_detail_fee($table);
+        $this->load->view('feeDetail',$query);         //html filename
     }
 }
 ?>
