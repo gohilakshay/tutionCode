@@ -16,5 +16,14 @@ class InsertTable extends CI_Model {
         $this->db->insert('engisubject', $data);
         return;
     }
+    function addCollegeSubj($data){
+        $this->db->insert('collegesubject', $data);
+        return;
+    }
+    function addCommerceSubj($data){
+        $this->db->insert('Commercesubject', $data);
+        return;
+    }
+    
 }
 ?>

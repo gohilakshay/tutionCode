@@ -96,6 +96,66 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (engisubj_ID)
         $this->dbforge->create_table('engisubject'); 
     }
+    function create_collegesubject()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'colgsubj_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'subject_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'semester_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                        'branch_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('colgsubj_ID', TRUE);
+        // gives PRIMARY KEY (colgsubj_ID)
+        $this->dbforge->create_table('collegesubject'); 
+    }
+    function create_Commercesubject()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'Commercesubj_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'subject_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'semester_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                        'branch_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('Commercesubj_ID', TRUE);
+        // gives PRIMARY KEY (Commercesubj_ID)
+        $this->dbforge->create_table('Commercesubject'); 
+    }
     function create_batch()
     { 
     /* Load db_forge - used to create databases and tables */

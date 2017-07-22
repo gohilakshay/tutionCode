@@ -147,7 +147,7 @@ class DefaultData_cont extends CI_Controller
             }
             else if($i==13){
                 $data = array(
-                'branch_name' => 'Bachelor of Mass Media',
+                'branch_name' => 'Bachelor of Management Studies',
                 'standard_ID' => '14'
             );
                 $this->InsertTable->addBranch($data);
@@ -1033,17 +1033,18 @@ Systems',
                 'branch_ID' => '7'
             );
                 $this->InsertTable->addEngiSubj($data);
-            }                                                             else if($i==96){                                                     
+            }                                                            
+            else if($i==96){                                                     
                 $data = array(                                   
                 'subject_name' => 'Power Electronics I',
                 'semester_ID' => '6',
                 'branch_ID' => '7'
             );
                 $this->InsertTable->addEngiSubj($data);
-            }                                                             else if($i==97){                                                     
+            }   
+            else if($i==97){                                                     
                 $data = array(                                   
-                'subject_name' => 'Digital Signal Processing
-and Processors',
+                'subject_name' => 'Digital Signal Processing and Processors',
                 'semester_ID' => '6',
                 'branch_ID' => '7'
             );
@@ -1051,9 +1052,7 @@ and Processors',
             }
             else if($i==98){                                                     
                 $data = array(                                   
-                'subject_name' => 'Modern Information
-Technology for
-Management ',
+                'subject_name' => 'Modern Information Technology for Management ',
                 'semester_ID' => '6',
                 'branch_ID' => '7'
             );
@@ -1061,8 +1060,7 @@ Management ',
             }
             else if($i==99){                                                     
                 $data = array(                                   
-                'subject_name' => 'Embedded System
-Design',
+                'subject_name' => 'Embedded System Design',
                 'semester_ID' => '7',
                 'branch_ID' => '7'
             );
@@ -1086,9 +1084,7 @@ Design',
             }
             else if($i==102){                                                     
                 $data = array(                                   
-                'subject_name' => 'Computer
-Communication
-Networks',
+                'subject_name' => 'Computer Communication Networks',
                 'semester_ID' => '7',
                 'branch_ID' => '7'
             );
@@ -1096,8 +1092,7 @@ Networks',
             }
             else if($i==103){                                                     
                 $data = array(                                   
-                'subject_name' => 'Digital Image Processing
-',
+                'subject_name' => 'Digital Image Processing',
                 'semester_ID' => '7',
                 'branch_ID' => '7'
             );
@@ -1137,8 +1132,7 @@ Networks',
             }
             else if($i==108){                                                     
                 $data = array(                                   
-                'subject_name' => 'Advanced Networking
-Technologies',
+                'subject_name' => 'Advanced Networking Technologies',
                 'semester_ID' => '8',
                 'branch_ID' => '7'
             );
@@ -1170,8 +1164,7 @@ Technologies',
             }
             else if($i==112){                                                     
                 $data = array(                                   
-                'subject_name' => 'Digital Control System
-',
+                'subject_name' => 'Digital Control System',
                 'semester_ID' => '8',
                 'branch_ID' => '7'
             );
@@ -1203,8 +1196,7 @@ Technologies',
             }
             else if($i==116){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Circuits and Transmission
-Lines',
+                'subject_name' => 'Circuits and Transmission Lines',
                 'semester_ID' => '3',
                 'branch_ID' => '8'
             );
@@ -1212,8 +1204,7 @@ Lines',
             }
             else if($i==117){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Electronic Instruments
-and Measurements',
+                'subject_name' => 'Electronic Instruments and Measurements',
                 'semester_ID' => '3',
                 'branch_ID' => '8'
             );
@@ -1229,8 +1220,7 @@ and Measurements',
             }
             else if($i==119){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Microprocessor and
-Peripherals',
+                'subject_name' => 'Microprocessor and Peripherals',
                 'semester_ID' => '4',
                 'branch_ID' => '8'
             );
@@ -1238,8 +1228,7 @@ Peripherals',
             }
             else if($i==120){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Wave Theory and
-Propagation',
+                'subject_name' => 'Wave Theory and Propagation',
                 'semester_ID' => '4',
                 'branch_ID' => '8'
             );
@@ -1263,8 +1252,7 @@ Propagation',
             }
             else if($i==123){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Microcontrollers and
-Applications',
+                'subject_name' => 'Microcontrollers and Applications',
                 'semester_ID' => '5',
                 'branch_ID' => '8'
             );
@@ -1280,8 +1268,7 @@ Applications',
             }
             else if($i==125){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Random Signal
-Analysis',
+                'subject_name' => 'Random Signal Analysis',
                 'semester_ID' => '5',
                 'branch_ID' => '8'
             );
@@ -1289,8 +1276,7 @@ Analysis',
             }
             else if($i==126){                                                                            
                 $data = array(                                   
-                'subject_name' => 'RF Modeling and
-Antennas',
+                'subject_name' => 'RF Modeling and Antennas',
                 'semester_ID' => '5',
                 'branch_ID' => '8'
             );
@@ -1314,8 +1300,7 @@ Antennas',
             }
             else if($i==129){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Discrete Time Signal
-Processing',
+                'subject_name' => 'Discrete Time Signal Processing',
                 'semester_ID' => '6',
                 'branch_ID' => '8'
             );
@@ -1323,8 +1308,7 @@ Processing',
             }
             else if($i==130){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Computer Communication
-and Telecom Networks',
+                'subject_name' => 'Computer Communication and Telecom Networks',
                 'semester_ID' => '6',
                 'branch_ID' => '8'
             );
@@ -1356,8 +1340,7 @@ and Telecom Networks',
             }
             else if($i==134){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Image and Video
-Processing',
+                'subject_name' => 'Image and Video Processing',
                 'semester_ID' => '7',
                 'branch_ID' => '8'
             );
@@ -1365,8 +1348,7 @@ Processing',
             }
             else if($i==135){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Mobile
-Communication',
+                'subject_name' => 'Mobile Communication',
                 'semester_ID' => '7',
                 'branch_ID' => '8'
             );
@@ -1374,9 +1356,7 @@ Communication',
             }
             else if($i==136){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Optical
-Communication and
-Networks',
+                'subject_name' => 'Optical Communication and Networks',
                 'semester_ID' => '7',
                 'branch_ID' => '8'
             );
@@ -1384,8 +1364,7 @@ Networks',
             }
             else if($i==137){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Microwave and
-Radar Engineering',
+                'subject_name' => 'Microwave and Radar Engineering',
                 'semester_ID' => '7',
                 'branch_ID' => '8'
             );
@@ -1433,9 +1412,7 @@ Radar Engineering',
             }
             else if($i==143){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Satellite
-communication and
-Networks',
+                'subject_name' => 'Satellite communication and Networks',
                 'semester_ID' => '8',
                 'branch_ID' => '8'
             );
@@ -1443,8 +1420,7 @@ Networks',
             }
             else if($i==144){                                                                            
                 $data = array(                                   
-                'subject_name' => 'Internet and Voice
-Communication',
+                'subject_name' => 'Internet and Voice Communication',
                 'semester_ID' => '8',
                 'branch_ID' => '8'
             );
@@ -1484,8 +1460,7 @@ Communication',
             }
             else if($i==149){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Thermodynamics
-',
+                'subject_name' => 'Thermodynamics',
                 'semester_ID' => '3',
                 'branch_ID' => '9'
             );
@@ -1517,8 +1492,7 @@ Communication',
             }
             else if($i==153){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Data Base & Information
-Retrieval System',
+                'subject_name' => 'Data Base & Information Retrieval System',
                 'semester_ID' => '3',
                 'branch_ID' => '9'
             );
@@ -1590,8 +1564,7 @@ Retrieval System',
             }
             else if($i==162){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Mechanical Measurements
-and Control',
+                'subject_name' => 'Mechanical Measurements and Control',
                 'semester_ID' => '5',
                 'branch_ID' => '9'
             );
@@ -1623,8 +1596,7 @@ and Control',
             }
             else if($i==166){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Metrology and Quality
-Engineering',
+                'subject_name' => 'Metrology and Quality Engineering',
                 'semester_ID' => '6',
                 'branch_ID' => '9'
             );
@@ -1648,8 +1620,7 @@ Engineering',
             }
             else if($i==169){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Thermal and Fluid Power
-Engineering',
+                'subject_name' => 'Thermal and Fluid Power Engineering',
                 'semester_ID' => '6',
                 'branch_ID' => '9'
             );
@@ -1689,8 +1660,7 @@ Engineering',
             }
             else if($i==174){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Mechanical Utility
-Systems ',
+                'subject_name' => 'Mechanical Utility Systems ',
                 'semester_ID' => '7',
                 'branch_ID' => '9'
             );
@@ -1698,8 +1668,7 @@ Systems ',
             }
             else if($i==175){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Production Planning and
-Control',
+                'subject_name' => 'Production Planning and Control',
                 'semester_ID' => '7',
                 'branch_ID' => '9'
             );
@@ -1707,8 +1676,7 @@ Control',
             }
             else if($i==176){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Design of Mechanical
-Systems',
+                'subject_name' => 'Design of Mechanical Systems',
                 'semester_ID' => '8',
                 'branch_ID' => '9'
             );
@@ -1716,8 +1684,7 @@ Systems',
             }
             else if($i==177){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Industrial Engineering
-and Management',
+                'subject_name' => 'Industrial Engineering and Management',
                 'semester_ID' => '8',
                 'branch_ID' => '9'
             );
@@ -1725,8 +1692,7 @@ and Management',
             }
             else if($i==178){                                                                                         
                 $data = array(                                   
-                'subject_name' => 'Refrigeration and Air
-Conditioning',
+                'subject_name' => 'Refrigeration and Air Conditioning',
                 'semester_ID' => '8',
                 'branch_ID' => '9'
             );
@@ -1750,8 +1716,7 @@ Conditioning',
             }
             else if($i==181){                                                                                                                   
                 $data = array(                                   
-                'subject_name' => 'Building Materials and
-Construction',
+                'subject_name' => 'Building Materials and Construction',
                 'semester_ID' => '3',
                 'branch_ID' => '10'
             );
@@ -1775,8 +1740,7 @@ Construction',
             }
             else if($i==184){                                                                                                                   
                 $data = array(                                   
-                'subject_name' => 'Database and Information
-Retrieval System',
+                'subject_name' => 'Database and Information Retrieval System',
                 'semester_ID' => '3',
                 'branch_ID' => '10'
             );
@@ -1800,8 +1764,7 @@ Retrieval System',
             }
             else if($i==187){                                                                                                                   
                 $data = array(                                   
-                'subject_name' => 'Building Design and
-Drawing – I',
+                'subject_name' => 'Building Design and Drawing – I',
                 'semester_ID' => '4',
                 'branch_ID' => '10'
             );
@@ -1833,8 +1796,7 @@ Drawing – I',
             }
             else if($i==191){                                                                                                                   
                 $data = array(                                   
-                'subject_name' => 'Building Design and
-Drawing – II ',
+                'subject_name' => 'Building Design and Drawing – II ',
                 'semester_ID' => '5',
                 'branch_ID' => '10'
             );
@@ -1875,8 +1837,7 @@ Corporate Skills',
             }
             else if($i==196){                                                                                                                   
                 $data = array(                                   
-                'subject_name' => 'Design and Drawing of
-Steel Structures',
+                'subject_name' => 'Design and Drawing of Steel Structures',
                 'semester_ID' => '6',
                 'branch_ID' => '10'
             );
@@ -1892,8 +1853,7 @@ Steel Structures',
             }
             else if($i==198){                                                                                                                   
                 $data = array(                                   
-                'subject_name' => 'Transportation Engg. –
-II',
+                'subject_name' => 'Transportation Engg. – II',
                 'semester_ID' => '6',
                 'branch_ID' => '10'
             );
@@ -1909,14 +1869,989 @@ II',
             }
             else {                                                                                                                   
                 $data = array(                                   
-                'subject_name' => 'Theory of Reinforced
-Prestressed Concrete',
+                'subject_name' => 'Theory of Reinforced Prestressed Concrete',
                 'semester_ID' => '6',
                 'branch_ID' => '10'
             );
                 $this->InsertTable->addEngiSubj($data);        
             }                                                   //Civil Ends sem7 & 8 subjects are not available
         }
+    }
+    /*End*/
+    
+    /*For College Subjects*/
+    public function defaultColgSubjData()
+    {
+        $this->load->database();
+        $this->load->model('InsertTable');
+        for($i=1;$i<21;$i++)
+        {    
+            if($i==1){                         //11th & 12th Science
+                $data = array(
+                'subject_name' => 'English',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==2){                         
+                $data = array(
+                'subject_name' => 'Hindi',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==3){                         
+                $data = array(
+                'subject_name' => 'Marathi',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==4){                         
+                $data = array(
+                'subject_name' => 'Mathematics',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==5){                         
+                $data = array(
+                'subject_name' => 'Biology',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==6){                         
+                $data = array(
+                'subject_name' => 'Physics',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==7){                         
+                $data = array(
+                'subject_name' => 'Chemistry',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==8){                         
+                $data = array(
+                'subject_name' => 'Enviornmental Studies',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==9){                         
+                $data = array(
+                'subject_name' => 'vocational',
+                'semester_ID' => '1',
+                'branch_ID' => '1'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }                                       /*11th & 12th science ends*/
+            
+            else if($i==10){                      //11th & 12th commerce
+                $data = array(
+                'subject_name' => 'English',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==11){
+                $data = array(
+                'subject_name' => 'Marathi',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==12){
+                $data = array(
+                'subject_name' => 'Hindi',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==13){
+                $data = array(
+                'subject_name' => 'Urdu',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==14){
+                $data = array(
+                'subject_name' => 'Arabic',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==15){
+                $data = array(
+                'subject_name' => 'Information Technology',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==16){
+                $data = array(
+                'subject_name' => 'Environment Education',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==17){
+                $data = array(
+                'subject_name' => 'Book-keeping and Accountancy',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==18){
+                $data = array(
+                'subject_name' => 'Organisation of Commerce',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==19){
+                $data = array(
+                'subject_name' => 'Economics',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else if($i==20){
+                $data = array(
+                'subject_name' => 'Mathematics & Statistics',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }
+            else {
+                $data = array(
+                'subject_name' => 'Secretarial Practice',
+                'semester_ID' => '1',
+                'branch_ID' => '2'
+            );
+                $this->InsertTable->addCollegeSubj($data);
+            }                                                 /*11th & 12th commerce ends*/
+            
+        }
+    }
+    /*End*/
+    
+    /*For Commerce Subjects*/
+    public function defaultCommerceSubjData()
+    {
+        $this->load->database();
+        $this->load->model('InsertTable');
+        for($i=1;$i<100;$i++)
+        {    
+            if($i==1){                         //BAF starts
+                $data = array(
+                'subject_name' => 'Financial Accounting-I',
+                'semester_ID' => '1',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==2){                         
+                $data = array(
+                'subject_name' => 'Cost Accounting-I',
+                'semester_ID' => '1',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==3){                         
+                $data = array(
+                'subject_name' => 'Economics-I',
+                'semester_ID' => '1',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==4){                         
+                $data = array(
+                'subject_name' => 'Commerce-I',
+                'semester_ID' => '1',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==5){                         
+                $data = array(
+                'subject_name' => 'Information Technology-I',
+                'semester_ID' => '1',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==6){                         
+                $data = array(
+                'subject_name' => 'Business Communication-I',
+                'semester_ID' => '1',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==7){                         
+                $data = array(
+                'subject_name' => 'Foundation Course-I',
+                'semester_ID' => '1',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==8){                         
+                $data = array(
+                'subject_name' => 'Financial Accounting-II',
+                'semester_ID' => '2',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }\
+            else if($i==9){                         
+                $data = array(
+                'subject_name' => 'Auditing-I',
+                'semester_ID' => '2',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==10){                         
+                $data = array(
+                'subject_name' => 'Financial Management-I',
+                'semester_ID' => '2',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==11){                         
+                $data = array(
+                'subject_name' => 'Taxation-I',
+                'semester_ID' => '2',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==12){                         
+                $data = array(
+                'subject_name' => 'Business Law-I',
+                'semester_ID' => '2',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==13){                         
+                $data = array(
+                'subject_name' => 'Quantitative Methods for Business-I',
+                'semester_ID' => '2',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==14){                         
+                $data = array(
+                'subject_name' => 'Business Communication-II',
+                'semester_ID' => '2',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==15){                         
+                $data = array(
+                'subject_name' => 'Financial Accounting-III',
+                'semester_ID' => '3',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==16){                         
+                $data = array(
+                'subject_name' => 'Cost Accounting-II',
+                'semester_ID' => '3',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==17){                         
+                $data = array(
+                'subject_name' => 'Auditing-II',
+                'semester_ID' => '3',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==18){                         
+                $data = array(
+                'subject_name' => 'Economics-II',
+                'semester_ID' => '3',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==19){                         
+                $data = array(
+                'subject_name' => 'Management-I',
+                'semester_ID' => '3',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==20){                         
+                $data = array(
+                'subject_name' => 'Business Law-II',
+                'semester_ID' => '3',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==21){                         
+                $data = array(
+                'subject_name' => 'Quantitative Methods for Business-II',
+                'semester_ID' => '3',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==22){                         
+                $data = array(
+                'subject_name' => 'Financial Accounting-IV',
+                'semester_ID' => '4',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==23){                         
+                $data = array(
+                'subject_name' => 'Management Accounting-I',
+                'semester_ID' => '4',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==24){                         
+                $data = array(
+                'subject_name' => 'Taxation-II',
+                'semester_ID' => '4',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==25){                         
+                $data = array(
+                'subject_name' => 'Commerce-II',
+                'semester_ID' => '4',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==26){                         
+                $data = array(
+                'subject_name' => 'Business Law-III',
+                'semester_ID' => '4',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==27){                         
+                $data = array(
+                'subject_name' => 'Information Technology-II',
+                'semester_ID' => '4',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==28){                         
+                $data = array(
+                'subject_name' => 'Foundation Course-II',
+                'semester_ID' => '4',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==29){                         
+                $data = array(
+                'subject_name' => 'Financial Accounting- V',
+                'semester_ID' => '5',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==30){                         
+                $data = array(
+                'subject_name' => 'Cost Accounting- III',
+                'semester_ID' => '5',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==31){                         
+                $data = array(
+                'subject_name' => 'Financial Accounting-VI',
+                'semester_ID' => '5',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==32){                         
+                $data = array(
+                'subject_name' => 'Management Accounting- II',
+                'semester_ID' => '5',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==33){                         
+                $data = array(
+                'subject_name' => 'Taxation- III',
+                'semester_ID' => '5',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==34){                         
+                $data = array(
+                'subject_name' => 'Economics-III',
+                'semester_ID' => '5',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==35){                         
+                $data = array(
+                'subject_name' => 'Financial Accounting- VII',
+                'semester_ID' => '6',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==36){                         
+                $data = array(
+                'subject_name' => 'Cost Accounting –IV',
+                'semester_ID' => '6',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==37){                         
+                $data = array(
+                'subject_name' => 'Auditing- III',
+                'semester_ID' => '6',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==38){                         
+                $data = array(
+                'subject_name' => 'Financial Accounting- VIII',
+                'semester_ID' => '6',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==39){                         
+                $data = array(
+                'subject_name' => 'Taxation-IV',
+                'semester_ID' => '6',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==40){                         
+                $data = array(
+                'subject_name' => 'Management-II',
+                'semester_ID' => '6',
+                'branch_ID' => '11'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }                                       /*BAF Ends*/
+            
+            else if($i==41){                        /*Bcom starts*/                    
+                $data = array(
+                'subject_name' => 'Foundation Course – Paper I',
+                'semester_ID' => '1',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==42){                                      
+                $data = array(
+                'subject_name' => 'Environmental Studies',
+                'semester_ID' => '1',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==43){                                      
+                $data = array(
+                'subject_name' => 'Accounting and Financial Management – Paper I',
+                'semester_ID' => '1',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==44){                                      
+                $data = array(
+                'subject_name' => 'Mathematical and Statistical Techniques',
+                'semester_ID' => '1',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==45){                                      
+                $data = array(
+                'subject_name' => 'Commerce – Paper I',
+                'semester_ID' => '1',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==46){                                      
+                $data = array(
+                'subject_name' => 'Business Economics – Paper I',
+                'semester_ID' => '1',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==47){                                      
+                $data = array(
+                'subject_name' => 'Business Communication',
+                'semester_ID' => '1',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==48){                                      
+                $data = array(
+                'subject_name' => 'Foundation Course – Paper II',
+                'semester_ID' => '3',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==49){                                      
+                $data = array(
+                'subject_name' => 'Business Law',
+                'semester_ID' => '3',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==50){                                      
+                $data = array(
+                'subject_name' => 'Accounting and Financial Management – Paper II',
+                'semester_ID' => '3',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==51){                                      
+                $data = array(
+                'subject_name' => 'Applied Component (Advertising / Economic System / Computer Programming)',
+                'semester_ID' => '3',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==52){                                      
+                $data = array(
+                'subject_name' => 'Commerce – Paper II',
+                'semester_ID' => '3',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==53){                                      
+                $data = array(
+                'subject_name' => 'Business Economics – Paper II',
+                'semester_ID' => '3',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==54){                                      
+                $data = array(
+                'subject_name' => 'Financial Accounting and Auditing – Paper I',
+                'semester_ID' => '5',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==55){                                      
+                $data = array(
+                'subject_name' => 'Financial Accounting and Auditing – Paper II',
+                'semester_ID' => '5',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==56){                                      
+                $data = array(
+                'subject_name' => 'Business Economics – Paper III',
+                'semester_ID' => '5',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==57){                                      
+                $data = array(
+                'subject_name' => 'Commerce – Paper III',
+                'semester_ID' => '5',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==58){                                      
+                $data = array(
+                'subject_name' => 'Related Applied Component',
+                'semester_ID' => '5',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==59){                                      
+                $data = array(
+                'subject_name' => 'Applied Component – Paper I ',
+                'semester_ID' => '5',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==60){                                      
+                $data = array(
+                'subject_name' => 'Applied Component – Paper II',
+                'semester_ID' => '5',
+                'branch_ID' => '12'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }                                       /*bcom ends*/
+            else if($i==61){                        /*BMS starts*/                                    
+                $data = array(
+                'subject_name' => 'Foundation of Human Skill-l',
+                'semester_ID' => '1',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==62){                                                          
+                $data = array(
+                'subject_name' => 'Finance and Cost Accounting',
+                'semester_ID' => '1',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==63){                                                          
+                $data = array(
+                'subject_name' => 'Business Law',
+                'semester_ID' => '1',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==64){                                                          
+                $data = array(
+                'subject_name' => 'Quantitative Methods for Business-1',
+                'semester_ID' => '1',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==65){                                                          
+                $data = array(
+                'subject_name' => 'Effective Communication-l',
+                'semester_ID' => '1',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==66){                                                          
+                $data = array(
+                'subject_name' => 'Principles of Management-l',
+                'semester_ID' => '1',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==67){                                                          
+                $data = array(
+                'subject_name' => 'Introduction to Computers',
+                'semester_ID' => '1',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==68){                                                          
+                $data = array(
+                'subject_name' => 'Foundation of Human Skill-ll',
+                'semester_ID' => '2',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==69){                                                          
+                $data = array(
+                'subject_name' => 'Industrial Law',
+                'semester_ID' => '2',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==70){                                                          
+                $data = array(
+                'subject_name' => 'Computer Application in Business',
+                'semester_ID' => '2',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==71){                                                          
+                $data = array(
+                'subject_name' => 'Business Environment',
+                'semester_ID' => '2',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==72){                                                          
+                $data = array(
+                'subject_name' => 'Managerial Economics-l',
+                'semester_ID' => '2',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==73){                                                          
+                $data = array(
+                'subject_name' => 'Production Management',
+                'semester_ID' => '2',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==74){                                                          
+                $data = array(
+                'subject_name' => 'Environmental Management',
+                'semester_ID' => '2',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==75){                                                          
+                $data = array(
+                'subject_name' => 'Management Accounting',
+                'semester_ID' => '3',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==76){                                                          
+                $data = array(
+                'subject_name' => 'Managerial Economics-ll',
+                'semester_ID' => '3',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==77){                                                          
+                $data = array(
+                'subject_name' => 'Marketing Management',
+                'semester_ID' => '3',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==78){                                                          
+                $data = array(
+                'subject_name' => 'Materials Management',
+                'semester_ID' => '3',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==79){                                                          
+                $data = array(
+                'subject_name' => 'Effective Communication-ll',
+                'semester_ID' => '3',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==80){                                                          
+                $data = array(
+                'subject_name' => 'Principles of Management-ll',
+                'semester_ID' => '3',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==81){                                                          
+                $data = array(
+                'subject_name' => 'International Marketing',
+                'semester_ID' => '4',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==82){                                                          
+                $data = array(
+                'subject_name' => 'Elements of Direct and Indirect Taxes',
+                'semester_ID' => '4',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==83){                                                          
+                $data = array(
+                'subject_name' => 'Export-Import Procedures and Documentation',
+                'semester_ID' => '4',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==84){                                                          
+                $data = array(
+                'subject_name' => 'Management of Small Scale Industries',
+                'semester_ID' => '4',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==85){                                                          
+                $data = array(
+                'subject_name' => 'Productivity and Quality Management',
+                'semester_ID' => '4',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==86){                                                          
+                $data = array(
+                'subject_name' => 'Public Relations Management',
+                'semester_ID' => '4',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==87){                                                          
+                $data = array(
+                'subject_name' => 'Human Resource Management',
+                'semester_ID' => '5',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==88){                                                          
+                $data = array(
+                'subject_name' => 'Service Sector Management',
+                'semester_ID' => '5',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==89){                                                          
+                $data = array(
+                'subject_name' => 'Financial Management',
+                'semester_ID' => '5',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==90){                                                          
+                $data = array(
+                'subject_name' => 'Elements of Logistics Management',
+                'semester_ID' => '5',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==91){                                                          
+                $data = array(
+                'subject_name' => 'Management of Co-operatives',
+                'semester_ID' => '5',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==92){                                                          
+                $data = array(
+                'subject_name' => 'Rural Marketing',
+                'semester_ID' => '5',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==93){                                                          
+                $data = array(
+                'subject_name' => 'Entrepreneurship',
+                'semester_ID' => '6',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==94){                                                          
+                $data = array(
+                'subject_name' => 'Quantitative Method of Business-ll',
+                'semester_ID' => '6',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==95){                                                          
+                $data = array(
+                'subject_name' => 'Marketing Research',
+                'semester_ID' => '6',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==96){                                                          
+                $data = array(
+                'subject_name' => 'Indian Management Thought and Practices',
+                'semester_ID' => '6',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else if($i==97){                                                          
+                $data = array(
+                'subject_name' => 'Econometrics or International Finance',
+                'semester_ID' => '6',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }
+            else{                                                          
+                $data = array(
+                'subject_name' => 'Special Study in Finance or Special Study in Marketing',
+                'semester_ID' => '6',
+                'branch_ID' => '13'
+            );
+                $this->InsertTable->addCommerceSubj($data);
+            }                                            //BMS Ends
     }
     /*End*/
 }

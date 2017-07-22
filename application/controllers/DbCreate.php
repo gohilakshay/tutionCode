@@ -19,6 +19,8 @@ function table()
     $this->CreateTable->create_branch();
     $this->CreateTable->create_semester();
     $this->CreateTable->create_engisubject();
+    $this->CreateTable->create_collegesubject();
+    $this->CreateTable->create_Commercesubject();
     $this->CreateTable->create_batch();
     $this->CreateTable->create_batch_student_mapping();
     $this->CreateTable->create_batch_course_mapping();
