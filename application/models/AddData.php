@@ -91,5 +91,13 @@ class AddData extends CI_Model {
          $this->db->insert('t_attend_mapping', $data);
         return;
     }
+    function addTest($data){
+         $this->db->insert('test', $data);
+        return;
+    }
+    function addMarks($data){
+         $this->db->insert('marks', $data);
+        return;
+    }
 }
 ?>

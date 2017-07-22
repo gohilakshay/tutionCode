@@ -1,5 +1,4 @@
 <?php
-
 class SelectData extends CI_Model {
     function teacher() {
         $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
@@ -120,6 +119,16 @@ class SelectData extends CI_Model {
         }
       return $data;
     }
+    function batchIDBatch($name){
+        $q = $this->db->query("SELECT batch_ID FROM `batch` WHERE batch_name = '$name'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data=$row->batch_ID;
+            }
+        }
+      return $data;
+    }
+    
     function stud_attend_map($id,$attend_id){
             $q = $this->db->query("SELECT stud_id FROM `batch_student_mapping` WHERE batch_id = '$id'");
             if($q->num_rows() >0){
@@ -180,6 +189,48 @@ class SelectData extends CI_Model {
             'name' => $name
         );
         return $new_data;
+    }
+    function test_detail(){
+        $q = $this->db->query("SELECT * FROM `test` ORDER BY test_ID DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $batch_id = $row->batch_id;
+                $q1 = $this->db->query("SELECT * FROM `batch` where batch_ID = '$batch_id'");
+                foreach($q1->result() as $row1){
+                    $row->batch_id = $row1->batch_name;
+                }
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function selectTest($id){
+         $q = $this->db->query("SELECT * FROM `test` where test_ID = '$id'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $batch_id = $row->batch_id;
+                $q1 = $this->db->query("SELECT * FROM `batch` where batch_ID = '$batch_id'");
+                foreach($q1->result() as $row1){
+                    $row->batch_id = $row1->batch_name;
+                }
+                $data[] = $row;
+            }
+        }
+        $q2 = $this->db->query("SELECT * FROM `batch_student_mapping` where batch_id = '$batch_id'");
+        foreach($q2->result() as $row1){
+            $stud_id = $row1->stud_id;
+            $q3 = $this->db->query("SELECT * FROM `student_details` where stud_ID = '$stud_id'");
+            foreach($q3->result() as $row2){
+                $name[] = $row2->stud_name." ".$row2->father_name." ".$row2->stud_surname." ".$row2->mother_name;
+            }
+            $new[] = $row1;
+        }
+        $n = array(
+            'data' => $data,
+            'stud' => $new,
+            'stud_name'=>$name
+        );
+        return ($n);
     }
 }
 ?>

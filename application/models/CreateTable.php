@@ -783,11 +783,11 @@ class CreateTable extends CI_Model {
                                                  'constraint' => '100',
                                           ),
                         'stud_id' => array(
-                                                 'type' => 'INT',
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                         'marks_obtained' => array(
-                                                 'type' => 'INT',
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                      );

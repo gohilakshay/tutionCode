@@ -4,6 +4,13 @@
 <?php $this->load->library('form_validation'); ?>
 <?php echo form_open('Marks_cont/addMarks'); ?>
 <br>
+<?php 
+if(isset($_POST['testid'])){
+    $data = $result['data'];
+    $stud = $result['stud'];
+    $name = $result['stud_name'];
+}
+?>
 <div class="content">
     <div class="container-fluid">
         <?php echo form_open('Marks_cont/addMarks'); ?>
@@ -22,32 +29,31 @@
                                 <?php echo form_error('testid', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
+                            <?php if(isset($_POST['addMarks'])){
+                                    foreach($data as $value):                   
+                            ?>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Test Date</label>
-                                    <input type="text" class="form-control border-input" name="testdate" value="<?php   if(isset($_POST['testdate'])){echo $_POST['testdate'];} ?>" required readonly>
-                                    <?php echo form_error('testdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="testdate" value="<?php echo $value->test_date; ?>" required readonly>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Test Time</label>
-                                    <input type="text" class="form-control border-input" name="testtime" value="<?php  if(isset($_POST['testtime'])){echo $_POST['testtime'];} ?>" required readonly>
-                                    <?php echo form_error('testtime', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="testtime" value="<?php  echo $value->test_time;  ?>" required readonly>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Total Marks</label>
-                                    <input type="text" class="form-control border-input" name="totalmarks" value="<?php   if(isset($_POST['totalmarks'])){echo $_POST['totalmarks'];} ?>" required readonly>
-                                    <?php echo form_error('totalmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="totalmarks" value="<?php    echo $value->total_marks; ?>" required readonly>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Passing Marks</label>
-                                    <input type="text" class="form-control border-input" name="passingmarks" value="<?php         if(isset($_POST['passingmarks'])){echo $_POST['passingmarks'];} ?>" required readonly>
-                                    <?php echo form_error('passingmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="passingmarks" value="<?php  echo $value->passing_marks; ?>" required readonly>
                                 </div>
                             </div>
                         </div>
@@ -56,29 +62,27 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Batch Name</label>
-                                    <input type="text" class="form-control border-input" name="batchname" value="<?php         if(isset($_POST['batchname'])){echo $_POST['batchname'];} ?>" required readonly>
-                                    <?php echo form_error('batchname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="batchname" value="<?php echo $value->batch_id;?>" required readonly>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php         if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" required readonly>
-                                    <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="subject" value="<?php  echo $value->subject_id; ?>" required readonly>
                                 </div>
                             </div>
                             
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Supervisor Name</label>
-                                    <input type="text" class="form-control border-input" name="supervisorname" value="<?php         if(isset($_POST['supervisorname'])){echo $_POST['supervisorname'];} ?>" required readonly>
-                                    <?php echo form_error('supervisorname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="supervisorname" value="<?php  echo $value->supervisor_name; ?>" required readonly>
                                 </div>
                             </div>
+                            <?php endforeach; }?>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Add Marks</button></center>
+                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;" name="addMarks">Add Marks</button></center>
                                 </div>
                             </div>
                         </div>
@@ -87,6 +91,7 @@
             </div>
         </div>
         <?php echo form_close();?>
+        <?php if(isset($_POST['addMarks'])){?>
         <?php echo form_open('Marks_cont/Marks'); ?>
         <div class="content">
             <div class="container-fluid">
@@ -98,6 +103,7 @@
                                     <h3 class="text-uppercase">Student Details</h3>
                                 </div>
                                 <div class="table-responsive">
+                                    <input type="hidden" name="test_id" value="<?php echo $_POST['testid'];?>" >
                                     <table class="table table-striped table-bordered" >
                                         <thead>
                                             <tr style="font-weight: bold;">
@@ -108,18 +114,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $i=0;foreach($stud as $value1):
+                                               
+                                            ?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>101</td>
-                                                <td>John</td>
-                                                <td><input type="text"></td>
+                                                <td><?php echo $i;?></td>
+                                                <td><input type="hidden" name="stud_id[]" value="<?php echo $value1->stud_id;?>"><?php echo $value1->stud_id;?></td>
+                                                <td><?php echo $name[$i];?></td>
+                                                <td><input type="text" name="marks[]"></td>
                                             </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>102</td>
-                                                <td>Bill</td>
-                                                <td><input type="text"></td>
-                                            </tr>
+                                            <?php $i++; endforeach;?>
                                         </tbody>
                                     </table>    
                                 </div> 
@@ -136,6 +140,7 @@
             </div>
         </div>
         <?php echo form_close();?>
+        <?php } ?>
     </div>
 </div>
 

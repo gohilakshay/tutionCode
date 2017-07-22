@@ -1,4 +1,4 @@
-
+ 
 		Web2Cal.defaultPlugins=function(){}
 		/**
 		 * Utility function. Invoked when creating a new event. Populates Date fields. 
@@ -336,7 +336,7 @@
 			var load=function()
 			{
 
-				if(_windowDefaultPluginLoaded == false) //Load only once per page.
+				if(_windowDefaultPluginLoaded == true) //Load only once per page.
 				{ 
 					jQuery("body").append(createWeekEventTemplate())
 								.append(createWeekSlotTemplate())

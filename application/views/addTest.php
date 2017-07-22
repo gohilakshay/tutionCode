@@ -1,4 +1,4 @@
-<?php include "header.php";?>
+ <?php include "header.php";?>
 <?php $page="*";include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
@@ -112,30 +112,19 @@
                                                 <td>Delete Data</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody><?php $i=1;foreach($result as $value): ?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>01</td>
-                                                <td>16/8/2017</td>
-                                                <td>XII-science</td>
-                                                <td>10.00-1.00</td>
-                                                <td>English</td>
-                                                <td>80</td>
+                                                <td><?php echo $i;$i++; ?></td>
+                                                <td><?php echo $value->test_ID; ?></td>
+                                                <td><?php echo $value->test_date; ?></td>
+                                                <td><?php echo $value->batch_id ; ?></td>
+                                                <td><?php echo $value->test_time; ?></td>
+                                                <td><?php echo $value->subject_id; ?></td>
+                                                <td><?php echo $value->total_marks; ?></td>
                                                 <td><center><button type="submit" class="btn btn-success">Edit</button></center></td>
                                                 <td><center><button type="submit" class="btn btn-danger">Delete</button></center></td>
                                             </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>02</td>
-                                                <td>20/8/2017</td>
-                                                <td>IX-1</td>
-                                                <td>1.00-3.00</td>
-                                                <td>History</td>
-                                                <td>60</td>
-                                                <td><center><button type="submit" class="btn btn-success">Edit</button></center></td>
-                                                <td><center><button type="submit" class="btn btn-danger">Delete</button></center></td>
-                                            </tr>
-                                        </tbody>
+                                        <?php endforeach; ?></tbody>
                                     </table>    
                                 </div> 
                             </div>
