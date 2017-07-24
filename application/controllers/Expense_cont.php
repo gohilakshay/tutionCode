@@ -4,32 +4,52 @@ class Expense_cont extends CI_Controller
 {
     public function expense()
     {
+        
         $this->load->helper('url');
-        $this->load->view('expense');           //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('expense');           //html filename
+        }else echo "Error 404 : Access Denied";      
     }
     public function staffDetails()
     {
+        $this->load->library('session');
         $this->load->helper('url');
-        $this->load->view('staffDetails');     //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('staffDetails');     //html filename
+        }else echo "Error 404 : Access Denied"; 
     }
     public function updateStaffDetails()
     {
+        $this->load->library('session');
         $this->load->helper('url');
-        $this->load->view('updateStaffDetails');      //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('updateStaffDetails');      //html filename
+        }else echo "Error 404 : Access Denied"; 
     }
     public function staffPaymentDetails()
     {
+        $this->load->library('session');
         $this->load->helper('url');
-        $this->load->view('staffPaymentDetails');       //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('staffPaymentDetails');       //html filename
+        }else echo "Error 404 : Access Denied";
     }
     public function meals()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('mealDetails');		//html filename	
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('mealDetails');		//html filename	
+            }else echo "Error 404 : Access Denied";
 		}
 		else
         {
@@ -38,12 +58,16 @@ class Expense_cont extends CI_Controller
     }
     public function maintenance()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('maintenanceDetails');		//html filename	
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('maintenanceDetails');		//html filename	
+            }else echo "Error 404 : Access Denied";
 		}
 		else
         {
@@ -52,12 +76,16 @@ class Expense_cont extends CI_Controller
     }
     public function transport()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('transportDetails');       //html filename		
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('transportDetails');       //html filename
+            }else echo "Error 404 : Access Denied";
         }
 		else
         {
@@ -67,12 +95,16 @@ class Expense_cont extends CI_Controller
     }
     public function rent()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('rentDetails');		//html filename	
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('rentDetails');		//html filename	
+            }else echo "Error 404 : Access Denied";
 		}
 		else
         {
@@ -81,12 +113,16 @@ class Expense_cont extends CI_Controller
     }
     public function utilities()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('utilitiesDetails');		//html filename	
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('utilitiesDetails');		//html filename	
+            }else echo "Error 404 : Access Denied";
 		}
 		else
         {

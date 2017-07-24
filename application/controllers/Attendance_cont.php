@@ -4,6 +4,7 @@ class Attendance_cont extends CI_Controller
 {
      public function markStudentAttendance()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->database();
@@ -13,7 +14,10 @@ class Attendance_cont extends CI_Controller
 		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format eg:IX-1');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('addStudentAttendance');		//html filename	
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('addStudentAttendance');	
+            }else echo "Error 404 : Access Denied";//html filename	
 		}
 		else
         {
@@ -53,6 +57,7 @@ class Attendance_cont extends CI_Controller
     
     public function markTeacherAttendance()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('subject', 'subject', 'required|alpha_dash');
@@ -60,7 +65,10 @@ class Attendance_cont extends CI_Controller
 		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format science-1');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('addTeacherAttendance');		//html filename	
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+            $this->load->view('addTeacherAttendance');
+             }else echo "Error 404 : Access Denied";//html filename	
 		}
 		else
         {
