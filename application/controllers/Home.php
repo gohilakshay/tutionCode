@@ -13,20 +13,12 @@ class Home extends CI_Controller
     }
     public function mainP()
     {
-        $this->load->helper('url');  
         $this->load->library('session');
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $this->load->database();
-        $this->load->model('SelectData');
-        $query = $this->SelectData->adminSelect($username,$password);
-       if($query == 1){
-           $session = $this->session->set_userdata('username',$username);
-           $this->load->view('mainPage');
-       }
-        else if(isset($session)){
+        $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
             $this->load->view('mainPage');
-        }
-        else echo "Error 404 : Access Denied";
+        }else echo "Error 404 : Access Denied";
+       
     }     
 }
