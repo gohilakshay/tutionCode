@@ -36,11 +36,16 @@ class Batch_cont extends CI_Controller
         }
         
     }
-    /*public function batch()
+    public function updateBatches()
     {
-        $this->load->helper('url');
-        $this->load->view('addBatches');         //html filename
-    }*/
+        $this->load->library('session');
+        $this->load->helper('form');
+        $this->load->helper('url');  
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('updateBatches');   //html filename
+        }else echo "Error 404 : Access Denied";  
+    }
     public function customAlphanumeric($strr){
          if ( !preg_match('/^[0-9a-zA-Z ]+$/',$strr) )
             {

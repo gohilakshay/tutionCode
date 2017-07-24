@@ -139,6 +139,7 @@ class Student_cont extends CI_Controller
      public function feeDetail($table)
     {
         $this->load->library('session');
+        $this->load->helper('form');
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('SelectData');

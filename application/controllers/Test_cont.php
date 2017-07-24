@@ -59,6 +59,16 @@ class Test_cont extends CI_Controller
             $this->load->view('addTest');         //html filename
          }else echo "Error 404 : Access Denied";   
     }
+    public function updateTest()
+    {
+        $this->load->library('session');
+        $this->load->helper('form');
+        $this->load->helper('url');  
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('updateTest');   //html filename
+        }else echo "Error 404 : Access Denied";  
+    }
     public function customAlpha($strrr) 
         {
             if ( !preg_match('/^[a-zA-Z ]+$/i',$strrr) )

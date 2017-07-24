@@ -51,8 +51,8 @@
                 </div>
             </div> 
         </div>
-        <?php form_close() ?>
-        <?php echo form_open('Batch_cont/batch'); ?>
+        <?php echo form_close(); ?>
+       
         <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -84,7 +84,13 @@
                                                     <td><?php echo $value->batch_name;?></td>
                                                     <td><?php echo $value->batch_timing;?></td>
                                                     <td><?php echo $value->course_name;?></td>
-                                                    <td><center><button type="edit" class="btn btn-success">Edit</button></center></td>
+                                                    <td>
+                                                        <?php echo form_open('Batch_cont/updateBatches'); ?>
+                                                            <div class="text-center">
+                                                                <center><button type="submit" class="btn btn-success">Edit</button></center>
+                                                            </div>
+                                                        <?php echo form_close(); ?>
+                                                    </td>
                                                     <td><center><button type="delete" class="btn btn-danger">Delete</button></center></td>
                                                 </tr><?php }?>
                                             </tbody>
@@ -97,7 +103,6 @@
                     </div>
                 </div>
             </div>
-        <?php form_close() ?>
     </div>
 </div>
 <?php include "footer.php";?>
