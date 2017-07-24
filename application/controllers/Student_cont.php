@@ -4,27 +4,40 @@ class Student_cont extends CI_Controller
 {
     public function student()
     {
+        $this->load->library('session');
         $this->load->helper('url'); 
         $this->load->database();
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->student();
-        $this->load->view('student',$query);       //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('student',$query);       //html filename
+        }else echo "Error 404 : Access Denied";
     }
     public function studentProfile($n)
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->studentProfile($n);
-        $this->load->view('studentProfile',$query);     //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('studentProfile',$query);     //html filename
+        }else echo "Error 404 : Access Denied";
     }
     public function updateStudentProfile()
     {
+        $this->load->library('session');
         $this->load->helper('url');  
-        $this->load->view('updateStudentProfile');   //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('updateStudentProfile');   //html filename
+        }else echo "Error 404 : Access Denied";  
     }
     public function addStudent()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->database();
@@ -53,8 +66,12 @@ class Student_cont extends CI_Controller
         $this->form_validation->set_rules('place', 'place', 'required');
         $this->form_validation->set_rules('date', 'date', 'required');
         if($this->form_validation->run() == FALSE)
-        {
-            $this->load->view('addStudent',$query);        
+        { 
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('addStudent',$query);
+            }else echo "Error 404 : Access Denied";
+                    
         }
         else
         {
@@ -121,11 +138,15 @@ class Student_cont extends CI_Controller
         }  
      public function feeDetail($table)
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->student_detail_fee($table);
-        $this->load->view('feeDetail',$query);         //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('feeDetail',$query);         //html filename
+        }else echo "Error 404 : Access Denied";
     }
 }
 ?>

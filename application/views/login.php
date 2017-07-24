@@ -24,7 +24,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Password</label>
-                                <input type="text" class="form-control border-input" placeholder="Company" name="password" value="Chet">
+                                <input type="password" class="form-control border-input" placeholder="Company" name="password" value="Chet">
                         </div>
                     </div>
                 </div>

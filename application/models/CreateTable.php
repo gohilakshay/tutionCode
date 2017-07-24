@@ -18,6 +18,32 @@ class CreateTable extends CI_Model {
                 echo 'Database deleted!';
         }
     }
+    function create_admin()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'admin_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'admin_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'admin_password' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '11',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('admin_ID', TRUE);
+        // gives PRIMARY KEY (branch_ID)
+        $this->dbforge->create_table('admin'); 
+    }
     function create_branch()
     { 
     /* Load db_forge - used to create databases and tables */
@@ -405,10 +431,6 @@ class CreateTable extends CI_Model {
                                                  'constraint' => '100',
                                           ),
                         'recieved_fee' => array(
-                                                 'type' => 'INT',
-                                                 'constraint' => '100',
-                                          ),
-                        'service_tax' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),

@@ -4,6 +4,7 @@ class Batch_cont extends CI_Controller
 {
     public function addBatch()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->database();
@@ -15,7 +16,10 @@ class Batch_cont extends CI_Controller
         $this->form_validation->set_message('alpha_dash','Please enter in the following format eg:IX-1');
         if($this->form_validation->run() == FALSE)
         {
-            $this->load->view('addBatches',$query);       //html filename 
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('addBatches',$query); 
+                }else echo "Error 404 : Access Denied";//html filename 
         }
         else
         {

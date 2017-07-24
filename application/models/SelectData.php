@@ -1,5 +1,13 @@
 <?php
 class SelectData extends CI_Model {
+    function adminSelect($username,$password){
+        $q = $this->db->query("SELECT * FROM `admin` where admin_name = '$username' and admin_password ='$password'");
+        if($q->num_rows() >0){
+            return TRUE;
+        }
+        else return FALSE;
+        
+    }
     function teacher() {
         $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
         if($q->num_rows() >0){

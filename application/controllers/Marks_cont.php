@@ -1,15 +1,19 @@
 <?php 
- defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Marks_cont extends CI_Controller
 {
     public function addMarks()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('testid', 'testid', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('addMarks');			//html filename
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('addMarks');			//html filename
+            }else echo "Error 404 : Access Denied";
 		}
 		else
         {
@@ -17,12 +21,16 @@ class Marks_cont extends CI_Controller
             $this->load->database();
             $this->load->model('SelectData');
             $query['result'] = $this->SelectData->selectTest($test_id);
-            $this->load->view('addMarks',$query);
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('addMarks',$query);
+            }else echo "Error 404 : Access Denied";
             //redirect('Marks_cont/addMarks');   	
 		}
     }
     public function marks()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('AddData');
@@ -37,7 +45,10 @@ class Marks_cont extends CI_Controller
             'marks_obtained'=>$marks
         );
         $this->AddData->addMarks($data);
-        $this->load->view('addMarks');         //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('addMarks');         //html filename
+        }else echo "Error 404 : Access Denied";
     }
 }
 ?>

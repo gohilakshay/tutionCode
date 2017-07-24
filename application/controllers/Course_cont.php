@@ -4,6 +4,7 @@ class Course_cont extends CI_Controller
 {
    public function addCourse()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('SelectData');
@@ -17,7 +18,10 @@ class Course_cont extends CI_Controller
         $this->form_validation->set_message('customAlphanumeric','Please enter in the following format eg:STD 9 or Engineering <br> Special characters are not allowed');
         if($this->form_validation->run() == FALSE)
         {
-            $this->load->view('addCourse',$query);       //html filename   
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('addCourse',$query);       //html filename   
+            }else echo "Error 404 : Access Denied";
         }
         else
         {

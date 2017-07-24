@@ -1,30 +1,43 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Teacher_cont extends CI_Controller
-{
+{  
     public function teacher()
     {
+        $this->load->library('session');
         $this->load->helper('url');  
         $this->load->database();
         $this->load->model('SelectData');
-        $query['result'] = $this->SelectData->teacher();  
-        $this->load->view('teacher',$query);       //html filename
+        $query['result'] = $this->SelectData->teacher(); 
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('teacher',$query);       //html filename
+        }else echo "Error 404 : Access Denied";
     }
     public function teacherProfile($n)
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->database();
          $this->load->model('SelectData');
         $query['result'] = $this->SelectData->teacherProfile($n);
-        $this->load->view('teacherProfile',$query);    //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('teacherProfile',$query);    //html filename
+        }else echo "Error 404 : Access Denied";
     }
     public function updateTeacherProfile()
     {
+        $this->load->library('session');
         $this->load->helper('url');  
-        $this->load->view('updateTeacherProfile');    //html filename
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('updateTeacherProfile');    //html filename
+        }else echo "Error 404 : Access Denied";
     }
     public function addTeacher()
     {
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->database();
@@ -44,7 +57,10 @@ class Teacher_cont extends CI_Controller
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
 		if($this->form_validation->run() == FALSE)
 		{
-            $this->load->view('addTeacher',$query);			//html filename
+            $username = $this->session->userdata('username');
+            if(isset($username)){
+                $this->load->view('addTeacher',$query);			//html filename
+            }else echo "Error 404 : Access Denied";
 		}
 		else
         {
