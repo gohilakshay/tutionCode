@@ -9,12 +9,13 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                <center>
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>&emsp;
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:10px; padding-right:10px;" class="btn btn-primary btn-lg">OutStanding</button></a>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/7" ?>"> <button type="button" style="border-radius:10px; background-color:chartreuse;; border-color:chartreuse;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Payment</button></a>
                 </center>
             </div>
         </div>
@@ -80,12 +81,13 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                <center>
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>&emsp;
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/7" ?>"> <button type="button" style="border-radius:10px; background-color:chartreuse;; border-color:chartreuse;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Payment</button></a>
                 </center>
             </div>
         </div>
@@ -147,12 +149,13 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                <center>
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>&emsp;
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/7" ?>"> <button type="button" style="border-radius:10px; background-color:chartreuse;; border-color:chartreuse;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Payment</button></a>
                 </center>
             </div>
         </div>
@@ -213,12 +216,13 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                <center>
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>&emsp;
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/7" ?>"> <button type="button" style="border-radius:10px; background-color:chartreuse;; border-color:chartreuse;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Payment</button></a>
                 </center>
             </div>
         </div>
@@ -280,12 +284,13 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                <center>
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>&emsp;
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/7" ?>"> <button type="button" style="border-radius:10px; background-color:chartreuse;; border-color:chartreuse;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Payment</button></a>
                 </center>
             </div>
         </div>
@@ -346,12 +351,13 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                <center>
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a>&emsp;
-                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a>&emsp;
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/7" ?>"> <button type="button" style="border-radius:10px; background-color:chartreuse;; border-color:chartreuse;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Payment</button></a>
                 </center>
             </div>
         </div>
@@ -398,6 +404,78 @@
                                     </table>    
                                 </div>                          
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php }?>
+<?php if($table==7){?>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+               <center>
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black; padding:11px; padding-left:27px; padding-right:27px;" class="btn btn-primary btn-lg">OutStanding</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverDue</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">OverAll</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Recieved</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Uncleared</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/6" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb;; border-color:#b7ddfb;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Discount</button></a> 
+                   <a href="<?php echo site_url()."/Student_cont/feeDetail/7" ?>"> <button type="button" style="border-radius:10px; background-color:chartreuse;; border-color:black;; margin-bottom:10px; color:black;" class="btn btn-primary btn-lg">Payment</button></a>
+                </center>
+            </div>
+        </div>
+        <br>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Payment Status</h4>
+                        </div>
+
+                        <div class="content">
+                            <?php echo form_open('Student_cont/feeDetail'); ?>
+                                <div class="row" >                        
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                        <label>Student ID</label>
+                                            <input type="text" class="form-control border-input"  name="studentid" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label>Student Name</label>
+                                                <input type="password" class="form-control border-input" name="studentname" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label>Batch</label>
+                                                <input type="password" class="form-control border-input" name="batch" value="" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <div class="form-group">
+                                            <label>Amount</label>
+                                                <input type="text" class="form-control border-input" name="amount" value="" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
+                                </div>
+                                <div class="clearfix"></div>
+                            <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Course_cont extends CI_Controller
 {
-   public function addCourse()
+    public function addCourse()
     {
         $this->load->library('session');
         $this->load->helper('url');
@@ -54,11 +54,16 @@ class Course_cont extends CI_Controller
             redirect('Course_cont/addCourse');      
         }
     }
-    /*public function course()
+    public function updateCourse()
     {
-        $this->load->helper('url');
-        $this->load->view('addCourse');         //html filename
-    } */
+        $this->load->library('session');
+        $this->load->helper('form');
+        $this->load->helper('url');  
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->view('updateCourse');   //html filename
+        }else echo "Error 404 : Access Denied";  
+    }
     public function customAlphanumeric($strr){
          if ( !preg_match('/^[0-9a-zA-Z ]+$/',$strr) )
             {

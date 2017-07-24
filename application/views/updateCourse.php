@@ -12,7 +12,7 @@
             <div class="col-lg-12 col-lg-12 ">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Add Course</h4>
+                        <h4 class="title">Update Course</h4>
                     </div>
 
                     <div class="content">
@@ -343,73 +343,15 @@
                         </div>
                         <br>
                         <div class="form-group">
-                             <button type="submit" class="btn btn-success">Add Course</button>
+                             <button type="submit" class="btn btn-success">Update Course</button>
                         </div>
                     </div>
                 </div>
             </div> 
         </div>
         <?php echo form_close();?>
-        
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="card">
-                            <div class="col-1">
-                                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-                                    <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                        <h3 class="text-uppercase">Course Details</h3>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered" >
-                                            <thead>
-                                                <tr style="font-weight: bold;">
-                                                    <td>Sr No.</td>
-                                                    <td>Course ID</td>
-                                                    <td>Course Name</td>
-                                                    <td>Course Type</td>
-                                                    <td>Standard</td>
-                                                    <td>Subjects</td>
-                                                    <td>Branch</td>
-                                                    <td>Semester</td>
-                                                    <td>Modify Data</td>
-                                                    <td>Delete Data</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php $i=1; foreach($result  as $value): ?>
-                                                <tr>
-                                                    <td><?php echo $i;$i++; ?></td>
-                                                    <td><?php echo $value->course_ID; ?></td>
-                                                    <td><?php echo $value->course_name; ?></td>
-                                                    <td><?php echo $value->course_type; ?></td>
-                                                    <td><?php echo $value->standard_name; ?></td>
-                                                    <td><?php echo $value->subject_id; ?></td>
-                                                    <td><?php echo $value->branch_name; ?></td>
-                                                    <td><?php echo $value->semester; ?></td>
-                                                    <td>
-                                                        <?php echo form_open('Course_cont/updateCourse'); ?>
-                                                            <div class="text-center">
-                                                                <center><button type="submit" class="btn btn-success">Edit</button></center>
-                                                            </div>
-                                                        <?php echo form_close(); ?>
-                                                    </td>
-                                                    <td><center><button type="submit" class="btn btn-danger">Delete</button></center></td>
-                                                 <?php endforeach; ?></tr>
-                                            </tbody>
-                                        </table>    
-                                    </div>                          
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-       
     </div>
 </div>
-                <!--End View Course-->
-
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>

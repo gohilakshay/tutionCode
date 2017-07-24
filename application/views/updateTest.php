@@ -11,14 +11,14 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Add Test</h4>
+                        <h4 class="title">Update Test</h4>
                     </div>
                     <div class="content">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
                                 <label>Test ID</label>
-                                <input type="text" class="form-control border-input" name="testid" value="<?php         if(isset($_POST['testid'])){echo $_POST['testid'];} ?>" required>
+                                <input type="text" class="form-control border-input" name="testid" value="<?php         if(isset($_POST['testid'])){echo $_POST['testid'];} ?>" required readonly>
                                 <?php echo form_error('testid', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Add Test</button></center>
+                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Update Test</button></center>
                                 </div>
                             </div>
                         </div>
@@ -86,59 +86,7 @@
                 </div>
             </div>
         </div>
-        <?php echo form_close(); ?>
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="card">
-                        <div class="col-1">
-                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-                                <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                    <h3 class="text-uppercase">Test Schedule</h3>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered" >
-                                        <thead>
-                                            <tr style="font-weight: bold;">
-                                                <td>Sr No.</td>
-                                                <td>Test ID</td>
-                                                <td>Test Date</td>
-                                                <td>Batch Name</td>
-                                                <td>Test time</td>
-                                                <td>Subject</td>
-                                                <td>Marks</td>
-                                                <td>Modify Data</td>
-                                                <td>Delete Data</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody><?php $i=1;foreach($result as $value): ?>
-                                            <tr>
-                                                <td><?php echo $i;$i++; ?></td>
-                                                <td><?php echo $value->test_ID; ?></td>
-                                                <td><?php echo $value->test_date; ?></td>
-                                                <td><?php echo $value->batch_id ; ?></td>
-                                                <td><?php echo $value->test_time; ?></td>
-                                                <td><?php echo $value->subject_id; ?></td>
-                                                <td><?php echo $value->total_marks; ?></td>
-                                                <td>
-                                                    <?php echo form_open('Test_cont/updateTest'); ?>
-                                                    <div class="text-center">
-                                                        <center><button type="submit" class="btn btn-success">Edit</button></center>
-                                                    </div>
-                                                    <?php echo form_close(); ?>
-                                                </td>
-                                                <td><center><button type="submit" class="btn btn-danger">Delete</button></center></td>
-                                            </tr>
-                                        <?php endforeach; ?></tbody>
-                                    </table>    
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
+        <?php echo form_close();?>
     </div>
 </div>
 <?php include "footer.php";?>
