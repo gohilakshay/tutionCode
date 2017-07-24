@@ -2,6 +2,14 @@
 
 class CreateTable extends CI_Model {
 
+    function addDb($data){
+       $this->load->dbforge();
+        $db_name = $data['db_name'];
+        /*if ($this->dbforge->create_database($db_name))
+        {
+                echo 'Database created!';
+        } */ 
+    }
     function create_db()
     {
         $this->load->dbforge();

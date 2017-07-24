@@ -8,9 +8,11 @@ class CreateNewDb extends CI_Controller
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
+        $this->load->database();
+        //$this->db->database;
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $this->load->database();
+        
         $this->load->model('SelectData');
         $query = $this->SelectData->adminSelect($username,$password);
        if($query == 1){

@@ -7,6 +7,7 @@ class SelectData extends CI_Model {
         }
         else return FALSE;
         
+           
     }
     function teacher() {
         $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");

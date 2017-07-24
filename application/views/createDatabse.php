@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
+                    <button type="submit" class="btn btn-info btn-fill btn-wd" name="addDb">Submit</button>
                 </div>
                 <div class="clearfix"></div>
             <?php echo form_close(); ?>
