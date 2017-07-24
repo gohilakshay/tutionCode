@@ -1,10 +1,15 @@
 <?php include "header.php" ?>
 <body>
     <div class="col-sm-4 col-sm-offset-4">
-        <center><h1><b style="color: #68B3C8;">Create Database</b></h1></center></div>
+        <?php echo form_open('Home/mainP'); ?>
+            <div class="text-center">
+                <button class="btn btn-success" style="margin-top: 20px;">HOME PAGE</button>
+            </div>
+        <?php echo form_close(); ?>
+        <center><h2><b style="color: #68B3C8;">Create Database</b></h2></center></div>
     <div class="col-sm-4 col-sm-offset-4" align="center" style="margin-top: 20px;">
     <div class="card">
-        <div class="content" padding-left="10px" >
+        <div class="content" padding-left="10px" style="margin-top:-35px">
             <?php echo form_open('Home/mainP'); ?>
                 <div class="row" >                        
                     <div class="col-md-12">
@@ -38,9 +43,9 @@
         </div>
     </div>
         <?php echo form_open('CreateNewDb/deleteDb'); ?>
-        <div class="text-center">
-            <button type="submit" class="btn btn-danger btn-fill btn-wd">Delete</button>
-        </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger btn-fill btn-wd">Delete</button>
+            </div>
         <?php echo form_close(); ?>
     <?php include "footer.php" ?>
  </div>
