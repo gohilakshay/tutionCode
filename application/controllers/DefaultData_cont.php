@@ -2130,7 +2130,7 @@ Corporate Skills',
                 'branch_ID' => '11'
             );
                 $this->InsertTable->addCommerceSubj($data);
-            }\
+            }
             else if($i==9){                         
                 $data = array(
                 'subject_name' => 'Auditing-I',
@@ -2852,7 +2852,8 @@ Corporate Skills',
             );
                 $this->InsertTable->addCommerceSubj($data);
             }                                            //BMS Ends
-    }
+        }
     /*End*/
+    }
 }
 ?>
