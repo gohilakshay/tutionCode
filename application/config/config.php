@@ -521,3 +521,11 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+$config['sysdb'] =  array(
+ 'hostname'=>'localhost','username'=>'root','password'=>'',
+ 'database'=>'', /* this will be changed "on the fly" in controler */
+ 'dbdriver'=>'mysqli','dbprefix'=>'',
+ 'pconnect'=>FALSE,'db_debug'=>TRUE,'cache_on'=>FALSE
+ );
