@@ -5,6 +5,7 @@ class DefaultData_cont extends CI_Controller
     /*For Adding Standard*/
     public function defaultData()
     {
+         $this->load->library('session');
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('InsertTable');
@@ -57,6 +58,7 @@ class DefaultData_cont extends CI_Controller
     /*For Branch*/
     public function defaultBranchData()
     {
+         $this->load->library('session');
        $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('InsertTable');
@@ -189,6 +191,7 @@ class DefaultData_cont extends CI_Controller
     /*For Semester*/
     public function defaultSemesterData()
     {
+         $this->load->library('session');
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('InsertTable');
@@ -250,6 +253,7 @@ class DefaultData_cont extends CI_Controller
     /*For computer Subject*/
     public function defaultSubjectData()
     {
+         $this->load->library('session');
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('InsertTable');
@@ -1886,6 +1890,7 @@ Corporate Skills',
     /*For College Subjects*/
     public function defaultColgSubjData()
     {
+         $this->load->library('session');
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('InsertTable');
@@ -2068,6 +2073,7 @@ Corporate Skills',
     /*For Commerce Subjects*/
     public function defaultCommerceSubjData()
     {
+         $this->load->library('session');
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('InsertTable');
@@ -2861,5 +2867,85 @@ Corporate Skills',
         }
     /*End*/
     }
+    
+    /*For school Subjects*/
+    public function defaultSchoolSubjData()
+    {
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
+        $this->load->model('InsertTable');
+        for($i=1;$i<11;$i++)
+        {    
+            if($i==1){                         
+                $data = array(
+                'subject_name' => 'English'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==2){                         
+                $data = array(
+                'subject_name' => 'Hindi'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==3){                         
+                $data = array(
+                'subject_name' => 'Marathi'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==4){                         
+                $data = array(
+                'subject_name' => 'Mathematics'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==5){                         
+                $data = array(
+                'subject_name' => 'Science'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==6){                         
+                $data = array(
+                'subject_name' => 'History'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==7){                         
+                $data = array(
+                'subject_name' => 'Geography'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==8){                         
+                $data = array(
+                'subject_name' => 'Economics'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==9){                         
+                $data = array(
+                'subject_name' => 'Sanskrit'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else if($i==10){                         
+                $data = array(
+                'subject_name' => 'French'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            else {                         
+                $data = array(
+                'subject_name' => 'Gujarati'
+            );
+                $this->InsertTable->addSchoolSubj($data);
+            }
+            
+        }
+    }
+    /*END*/
 }
 ?>
