@@ -8,7 +8,7 @@ class CreateTable extends CI_Model {
         if ($this->dbforge->create_database($db_name))
         {
                 echo 'Database created!';
-        }  
+        }   
     }
     function create_db()
     {
