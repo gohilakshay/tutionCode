@@ -2,19 +2,22 @@
 class DbCreate extends CI_Controller{
  function create_db()
 {
-    $this->load->database();
+    $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
     $this->load->model('CreateTable');
     $this->CreateTable->create_db();
 }   
 function delete_db()
 {
-    $this->load->database();
+    $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
     $this->load->model('CreateTable');
     $this->CreateTable->delete_db();
 }   
 function table()
 {
-    $this->load->database();
+    $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
     $this->load->model('CreateTable');
     $this->CreateTable->create_branch();
     $this->CreateTable->create_semester();

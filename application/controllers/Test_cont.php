@@ -7,7 +7,8 @@ class Test_cont extends CI_Controller
          $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->test_detail();
 		$this->form_validation->set_rules('testid', 'testid', 'required|numeric');
@@ -28,7 +29,8 @@ class Test_cont extends CI_Controller
 		else
         {
             $this->load->helper('form');
-            $this->load->database();
+            $db = $this->session->userdata('db');//load db      
+            $this->load->database($db);//call db
             $this->load->model('AddData');
             $this->load->model('SelectData');
             $batch_name = $this->input->post('batchname');

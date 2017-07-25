@@ -5,7 +5,8 @@ class DefaultData_cont extends CI_Controller
     /*For Adding Standard*/
     public function defaultData()
     {
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('InsertTable');
         for($i=1;$i<13;$i++)
         {
@@ -56,7 +57,8 @@ class DefaultData_cont extends CI_Controller
     /*For Branch*/
     public function defaultBranchData()
     {
-        $this->load->database();
+       $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('InsertTable');
         for($i=1;$i<18;$i++)
         {
@@ -187,7 +189,8 @@ class DefaultData_cont extends CI_Controller
     /*For Semester*/
     public function defaultSemesterData()
     {
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('InsertTable');
         for($i=1;$i<9;$i++)
         {
@@ -247,7 +250,8 @@ class DefaultData_cont extends CI_Controller
     /*For computer Subject*/
     public function defaultSubjectData()
     {
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('InsertTable');
         for($i=1;$i<200;$i++)
         {
@@ -1882,7 +1886,8 @@ Corporate Skills',
     /*For College Subjects*/
     public function defaultColgSubjData()
     {
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('InsertTable');
         for($i=1;$i<21;$i++)
         {    
@@ -2063,7 +2068,8 @@ Corporate Skills',
     /*For Commerce Subjects*/
     public function defaultCommerceSubjData()
     {
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('InsertTable');
         for($i=1;$i<100;$i++)
         {    

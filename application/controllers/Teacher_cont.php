@@ -6,7 +6,8 @@ class Teacher_cont extends CI_Controller
     {
         $this->load->library('session');
         $this->load->helper('url');  
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->teacher(); 
         $username = $this->session->userdata('username');
@@ -18,7 +19,8 @@ class Teacher_cont extends CI_Controller
     {
         $this->load->library('session');
         $this->load->helper('url');
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
          $this->load->model('SelectData');
         $query['result'] = $this->SelectData->teacherProfile($n);
         $username = $this->session->userdata('username');
@@ -40,7 +42,8 @@ class Teacher_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->course();
 		$this->form_validation->set_rules('teachersname', 'teachersname', 'callback_customAlpha');
@@ -66,7 +69,8 @@ class Teacher_cont extends CI_Controller
         {
             
             $this->load->helper('form');
-            $this->load->database();
+            $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
             $this->load->model('AddData');
             $this->load->model('ProfileImg');
             $name = strtolower(preg_replace('/\s+/', '', $this->input->post('teachersname')));

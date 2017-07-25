@@ -18,7 +18,8 @@ class Marks_cont extends CI_Controller
 		else
         {
             $test_id = $this->input->post('testid');
-            $this->load->database();
+            $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
             $this->load->model('SelectData');
             $query['result'] = $this->SelectData->selectTest($test_id);
             $username = $this->session->userdata('username');
@@ -32,7 +33,8 @@ class Marks_cont extends CI_Controller
     {
         $this->load->library('session');
         $this->load->helper('url');
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('AddData');
         $test_id = $this->input->post('test_id');
         $stud_id = $this->input->post('stud_id');
