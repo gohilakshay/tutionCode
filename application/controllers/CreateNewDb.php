@@ -8,8 +8,7 @@ class CreateNewDb extends CI_Controller
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
-        //$this->load->database();
-        //$this->db->database;
+        
         $configdbfly=$this->config->config['sysdb'];
         $configdbfly['database'] = 'TutionCode'; /* Change db */
         $this->load->database($configdbfly);

@@ -1,4 +1,4 @@
- 
+
 /*
 * Web2Cal - for creating ajax events calendar
 * Copyright (c) 2008 web2cal.  All Rights Reserved. 
