@@ -7,7 +7,8 @@ class Batch_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->ViewBatch();
         $query['result1'] = $this->SelectData->SelectBatchCourse();
@@ -24,7 +25,8 @@ class Batch_cont extends CI_Controller
         else
         {
             $this->load->helper('form');
-            $this->load->database();
+            $db = $this->session->userdata('db');//load db      
+            $this->load->database($db);//call db
             $this->load->model('AddData');
             $data = array(
                 'batch_name' => $this->input->post('batchname'),

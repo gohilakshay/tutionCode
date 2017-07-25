@@ -6,7 +6,8 @@ class Course_cont extends CI_Controller
     {
         $this->load->library('session');
         $this->load->helper('url');
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->course();  
         $query['result1'] = $this->SelectData->standard(); 
@@ -26,7 +27,8 @@ class Course_cont extends CI_Controller
         else
         {
             $this->load->helper('form');
-            $this->load->database();
+            $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
             $this->load->model('AddData');
             if($this->input->post('engi_branch')!=''){ 
                 $branch = $this->input->post('engi_branch'); 

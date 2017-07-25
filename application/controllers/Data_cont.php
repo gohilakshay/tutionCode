@@ -5,7 +5,8 @@ class Data_cont extends CI_Controller
     function add()
     {
     $this->load->helper('form');
-    $this->load->database();
+    $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
     $this->load->model('AddData');
     $data = array(
         'class_name' => $this->input->post('name'),

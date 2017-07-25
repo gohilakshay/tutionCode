@@ -7,7 +7,8 @@ class Attendance_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         $this->form_validation->set_rules('batchname', 'batchname', 'required|alpha_dash');
         $this->form_validation->set_rules('facultyname', 'facultyname', 'callback_customAlpha');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
@@ -40,7 +41,8 @@ class Attendance_cont extends CI_Controller
     public function StudentAttendance()
     {
         $this->load->helper('url');
-         $this->load->database();
+        $db = $this->session->userdata('db');//load db     
+        $this->load->database($db);//call db
         $this->load->model('AddData');
         $stud_id = $this->input->post('stud_id');
         //$stud_id = implode(",",$stud_id);
@@ -72,7 +74,8 @@ class Attendance_cont extends CI_Controller
 		}
 		else
         {
-            $this->load->database();
+            $db = $this->session->userdata('db');//load db    
+            $this->load->database($db);//call db
             $this->load->model('SelectData');
             $this->load->model('AddData');
             $data = array(
@@ -96,7 +99,8 @@ class Attendance_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->model('AddData');
-         $this->load->database();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $t_ID = $this->input->post('teach_id');
         $t_ID = implode(",",$t_ID);
         $attending = $this->input->post('attend');
