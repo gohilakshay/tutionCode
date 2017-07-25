@@ -9,12 +9,15 @@ class CreateNewDb extends CI_Controller
         $this->load->helper('form');
         $this->load->helper('url');
         
+        /* select multiple db start */
         $configdbfly=$this->config->config['sysdb'];
-        $configdbfly['database'] = 'TutionCode'; /* Change db */
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = 'admin_db'; /* Default db */
         $this->load->database($configdbfly);
+        /* session login*/
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        
         $this->load->model('SelectData');
         $query = $this->SelectData->adminSelect($username,$password);
        if($query == 1){
@@ -25,6 +28,7 @@ class CreateNewDb extends CI_Controller
             $this->load->view('createDatabse');
         }
         else echo "Error 404 : Access Denied";
+        /* session checked*/       
     }
     public function deleteDb()
 	{

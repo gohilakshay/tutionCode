@@ -26,6 +26,7 @@ class Home extends CI_Controller
             $this->CreateTable->addDb($db_data);
         }
         $username = $this->session->userdata('username');
+        $db = $this->session->userdata('db');
         if(isset($username)){
             $this->load->view('mainPage');
         }else echo "Error 404 : Access Denied";

@@ -62,11 +62,11 @@
             <div class="col-sm-12" align="center" style="margin-top: 30px;">
                 <div class="card">
                     <div class="content" padding-left="10px" style="margin-top:-25px">
-                    <?php echo form_open('Home/mainP'); ?>
+                    <?php echo form_open('SelectDataBase_cont/select'); ?>
                         <div class="row" >                        
                             <div class="col-md-12">
                                 <div class="form-group">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd" name="selectdb">Tution Code</button>
+                                <button type="submit" class="btn btn-info btn-fill btn-wd" name="db" value="tutioncode">Tution Code</button>
                                 </div>
                             </div>
                         </div>

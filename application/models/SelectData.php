@@ -1,7 +1,7 @@
 <?php
 class SelectData extends CI_Model {
     function adminSelect($username,$password){
-        $q = $this->db->query("SELECT * FROM `admin` where admin_name = '$username' and admin_password ='$password'");
+        $q = $this->db->query("SELECT * FROM `admin_user` where admin_name = '$username' and admin_password ='$password'");
         if($q->num_rows() >0){
             return TRUE;
         }

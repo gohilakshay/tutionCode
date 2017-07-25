@@ -524,7 +524,7 @@ $config['proxy_ips'] = '';
 
 
 $config['sysdb'] =  array(
- 'hostname'=>'localhost','username'=>'root','password'=>'',
+ 'hostname'=>'localhost','username'=>'','password'=>'',
  'database'=>'', /* this will be changed "on the fly" in controler */
  'dbdriver'=>'mysqli','dbprefix'=>'',
  'pconnect'=>FALSE,'db_debug'=>TRUE,'cache_on'=>FALSE
