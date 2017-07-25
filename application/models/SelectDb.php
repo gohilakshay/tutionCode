@@ -9,8 +9,7 @@ class SelectDb extends CI_Model {
             }
         }
         $configdbfly=$this->config->config['sysdb'];
-        $db = $data->dbName; /* Change db */
         
-        return ($db);
+        return ($data);
     }
 }
