@@ -3,8 +3,15 @@
 class CreateTable extends CI_Model {
 
     function addDb($data){
-       $this->load->dbforge();
-        $db_name = $data['db_name'];
+        /*for insert db values in admin_db table*/
+        $configdbfly=$this->config->config['sysdb'];
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = 'admin_db'; /* Default db */
+        $this->load->database($configdbfly);
+        $this->db->insert('admin', $data);
+        $this->load->dbforge();
+        $db_name = $data['dbName'];
         if ($this->dbforge->create_database($db_name))
         {
                 echo 'Database created!';

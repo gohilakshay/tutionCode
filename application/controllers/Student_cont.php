@@ -10,7 +10,7 @@ class Student_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->student();
-        echo $username = $this->session->userdata('username');
+        $username = $this->session->userdata('username');
         if(isset($username)){
             $this->load->view('student',$query);       //html filename
         }else echo "Error 404 : Access Denied";

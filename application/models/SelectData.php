@@ -5,9 +5,16 @@ class SelectData extends CI_Model {
         if($q->num_rows() >0){
             return TRUE;
         }
-        else return FALSE;
-        
-           
+        else return FALSE;       
+    }
+    function dbSelect(){
+        $q = $this->db->query("SELECT * FROM `admin ");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;       
     }
     function teacher() {
         $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
