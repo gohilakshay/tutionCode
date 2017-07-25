@@ -15,7 +15,7 @@
                 <div class="row" >                        
                     <div class="col-md-12">
                         <div class="form-group">
-                        <label>Username</label>
+                            <label>Username</label>
                             <input type="text" class="form-control border-input" placeholder="Username" name="username" value="">
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Password</label>
-                                <input type="password" class="form-control border-input" placeholder="password" name="password" value="">
+                            <input type="password" class="form-control border-input" placeholder="password" name="password" value="">
                         </div>
                     </div>
                 </div>
