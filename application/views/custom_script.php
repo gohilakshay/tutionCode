@@ -206,4 +206,5 @@ var ical;
             dateField: "eventEndDate"
         });
     });
+
 </script>

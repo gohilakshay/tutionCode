@@ -26,6 +26,14 @@
                         </div>
                         <div class="row" >                        
                             <div class="col-md-12">
+                                <div class="form-group">   
+                                <label>Database Type</label>
+                                    <input type="text" class="form-control border-input" placeholder="Insert comma(,) between two types"  name="databasetype" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" >                        
+                            <div class="col-md-12">
                                 <div class="form-group">
                                 <label>Username</label>
                                     <input type="text" class="form-control border-input" placeholder="Username" name="username" value="">
