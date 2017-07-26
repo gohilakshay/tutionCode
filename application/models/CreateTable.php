@@ -15,7 +15,6 @@ class CreateTable extends CI_Model {
         if ($this->dbforge->create_database($db_name))
         {
             $this->db->insert('admin', $data);
-                echo 'Database created!';
         }   
     }
     /*function create_db()

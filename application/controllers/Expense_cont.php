@@ -4,9 +4,10 @@ class Expense_cont extends CI_Controller
 {
     public function expense()
     {
-        
+        $this->load->library('session');
         $this->load->helper('url');
         $username = $this->session->userdata('username');
+        $db = $this->session->userdata('db');
         if(isset($username)){
             $this->load->view('expense');           //html filename
         }else echo "Error 404 : Access Denied";      
