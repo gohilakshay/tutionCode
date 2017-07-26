@@ -69,21 +69,21 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <?php echo form_open('Home/mainP'); ?>
-            <div class="text-center">
-                <button type="submit" class="btn btn-success btn-fill btn-wd">Finish</button>
-            </div>
-            <?php echo form_close(); ?>
-        </div><br>
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-                <?php echo form_open('Home/mainP'); ?>
-                    <center>
-                        <p>If Already Created <button type="submit" class="btn btn-warning btn-fill ">Skip</button></p>
-                    </center>
-                <?php echo form_close(); ?>
-            </div>
+    <div class="row">
+        <?php echo form_open('DbCreate/Table'); ?>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success btn-fill btn-wd">Finish</button>
         </div>
+        <?php echo form_close(); ?>
+    </div><br>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <?php echo form_open('Home/mainP'); ?>
+            <center>
+                <p>If Already Created <button type="submit" class="btn btn-warning btn-fill ">Skip</button></p>
+            </center>
+            <?php echo form_close(); ?>
+        </div>
+    </div>
     </div>
 </body>

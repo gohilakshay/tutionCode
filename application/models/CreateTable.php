@@ -15,24 +15,39 @@ class CreateTable extends CI_Model {
         if ($this->dbforge->create_database($db_name))
         {
             $this->db->insert('admin', $data);
-                echo 'Database created!';
-        }   
+        }  
+        $this->db->close();
+        $configdbfly=$this->config->config['sysdb'];
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = $db_name; /* Default db */
+        $this->load->database($configdbfly);
+        $this->session->set_userdata('db',$configdbfly); 
     }
-    function create_db()
+    /*function create_db()
     {
         $this->load->dbforge();
         if ($this->dbforge->create_database('tutionCode'))
         {
                 echo 'Database created!';
         } 
-    }
-    function delete_db()
+    }*/
+    function delete_db($data)
     {
+        /*for insert db values in admin_db table*/
+        $configdbfly=$this->config->config['sysdb'];
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = 'admin_db'; /* Default db */
+        $this->load->database($configdbfly);
         $this->load->dbforge();
-        if ($this->dbforge->drop_database('tutionCode'))
+        if ($this->dbforge->drop_database($data['dbName']))
         {
+            $this -> db -> where('dbName', $data['dbName']);
+            $this -> db -> delete('admin');
                 echo 'Database deleted!';
         }
+        
     }
     function create_admin()
     { 
@@ -75,8 +90,8 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
-                        'standard_ID' => array(
-                                                 'type' => 'INT',
+                        'standard_name' => array(
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '11',
                                           ),
                      );

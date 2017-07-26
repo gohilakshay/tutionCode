@@ -16,9 +16,22 @@ class Home extends CI_Controller
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        $db = $this->session->userdata('db');
+        if(isset($username)){
+            $this->load->view('mainPage');
+        }else echo "Error 404 : Access Denied";
+       
+    }
+    public function tomainP()
+    {
+        $this->load->library('session');
+        $this->load->helper('form');
+        $this->load->helper('url');
         if(isset($_POST['addDb'])){
             $db_data =array(
                 'dbName' => $this->input->post('databasename'),
+                'dbType' => $this->input->post('databasetype'),
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('password')
             );
@@ -28,8 +41,9 @@ class Home extends CI_Controller
         }
         $username = $this->session->userdata('username');
         $db = $this->session->userdata('db');
+        $this->load->database($db);
         if(isset($username)){
-            $this->load->view('mainPage');
+            $this->load->view('createInitTable');
         }else echo "Error 404 : Access Denied";
        
     }     
