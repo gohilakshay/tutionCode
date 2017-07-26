@@ -14,15 +14,13 @@ class SelectDataBase_cont extends CI_Controller
         $configdbfly['password'] = ''; /* Default db */
         $configdbfly['database'] = 'admin_db'; /* Default db */
         $this->load->database($configdbfly);
-        $db = $this->SelectDb->select($new); //tutionCode db name
+        $db = $this->SelectDb->select($new); //default db name
         $this->db->close(); //close previous connection
-        $configdbfly['username'] = $db->username; /* change db */
-        $configdbfly['password'] = $db->password; /* change db */
-        $configdbfly['database'] = $db->dbName;
+        $configdbfly['database'] = $db->dbName; //new db name
         $this->load->database($configdbfly);
             /* multi dp end; db selected*/
         $this->session->set_userdata('db',$configdbfly); //session for db
-        $this->load->view('createTable');
+        $this->load->view('createInitTable');
     }
 }
 
