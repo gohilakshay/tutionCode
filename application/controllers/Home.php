@@ -19,6 +19,7 @@ class Home extends CI_Controller
         if(isset($_POST['addDb'])){
             $db_data =array(
                 'dbName' => $this->input->post('databasename'),
+                'dbType' => $this->input->post('databasetype'),
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('password')
             );

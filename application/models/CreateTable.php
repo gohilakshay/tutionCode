@@ -18,14 +18,14 @@ class CreateTable extends CI_Model {
                 echo 'Database created!';
         }   
     }
-    function create_db()
+    /*function create_db()
     {
         $this->load->dbforge();
         if ($this->dbforge->create_database('tutionCode'))
         {
                 echo 'Database created!';
         } 
-    }
+    }*/
     function delete_db()
     {
         $this->load->dbforge();
@@ -75,8 +75,8 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
-                        'standard_ID' => array(
-                                                 'type' => 'INT',
+                        'standard_name' => array(
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '11',
                                           ),
                      );

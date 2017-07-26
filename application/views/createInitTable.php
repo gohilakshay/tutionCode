@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="row">
-        <?php echo form_open('Home/mainP'); ?>
+        <?php echo form_open('DbCreate/Table'); ?>
         <div class="text-center">
             <button type="submit" class="btn btn-success btn-fill btn-wd">Finish</button>
         </div>
