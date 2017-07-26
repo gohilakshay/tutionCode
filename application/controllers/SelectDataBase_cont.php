@@ -21,8 +21,8 @@ class SelectDataBase_cont extends CI_Controller
         $configdbfly['database'] = $db->dbName;
         $this->load->database($configdbfly);
             /* multi dp end; db selected*/
-         $this->session->set_userdata('db',$configdbfly); //session for db
-        redirect('Home/mainP');
+        $this->session->set_userdata('db',$configdbfly); //session for db
+        $this->load->view('createTable');
     }
 }
 
