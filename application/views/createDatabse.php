@@ -18,11 +18,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" >                        
+                        <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group">   
-                                <label>Database Type</label>
-                                    <input type="text" class="form-control border-input" placeholder="Insert comma(,) between two types"  name="databasetype" value="">
+                                <div class="form-group">
+                                    <label>Database Type</label>
+                                    <select class="form-control border-input" id="databasetype" name="databasetype">
+                                        <option value="">---Select Type---</option>
+                                        <option value="school">School</option>
+                                        <option value="jrcolg_sci">Jr. College (science)</option>
+                                        <option value="jrcolg_com">Jr. College (commerce)</option>
+                                        <option value="engicolg">Engineering College</option>
+                                        <option value="comcolg">Commerce College</option>
+                                        <option value="school,jrcolg_sci">School & Jr. College (science)</option>          
+                                        <option value="school,jrcolg_com">School & Jr. College (commerce)</option>          
+                                        <option value="jrcolg_sci,jrcolg_com">Jr. College (science) & Jr. College (commerce)</option>          
+                                        <option value="jrcolg_sci,engicolg">Jr. College (science) & Engineering college</option>          
+                                        <option value="jrcolg_com,comcolg">Jr. College (commerce) & Commerce college</option>          
+                                    </select>
                                 </div>
                             </div>
                         </div>
