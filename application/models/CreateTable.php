@@ -9,11 +9,12 @@ class CreateTable extends CI_Model {
         $configdbfly['password'] = ''; /* Default db */
         $configdbfly['database'] = 'admin_db'; /* Default db */
         $this->load->database($configdbfly);
-        $this->db->insert('admin', $data);
+        
         $this->load->dbforge();
         $db_name = $data['dbName'];
         if ($this->dbforge->create_database($db_name))
         {
+            $this->db->insert('admin', $data);
                 echo 'Database created!';
         }   
     }

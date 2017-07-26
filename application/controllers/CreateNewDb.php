@@ -19,7 +19,7 @@ class CreateNewDb extends CI_Controller
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $this->load->model('SelectData');
-        $query = $this->SelectData->adminSelect($username,$password);
+        $query = $this->SelectData->SuperadminSelect($username,$password);
         $query1['result'] = $this->SelectData->dbSelect();
        if($query == 1){
            $session = $this->session->set_userdata('username',$username);
@@ -28,7 +28,16 @@ class CreateNewDb extends CI_Controller
         else if(isset($session)){
             $this->load->view('createDatabse',$query1);
         }
-        else echo "Error 404 : Access Denied";
+        else {
+            $query = $this->SelectData->adminSelect($username,$password);
+            if($query == 1){
+                $session = $this->session->set_userdata('username',$username);
+                $this->load->view('mainPage');
+            }
+            else {
+                echo "Error 404 : Access Denied";
+            }
+        }
         /* session checked*/       
     }
     public function deleteDb()
