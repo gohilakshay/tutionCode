@@ -11,11 +11,10 @@
                             </div>
                             <div class="content">
                                 <div class="author">
-                                    <img class="avatar border-white" src="<?php echo base_url()?>assets/img/faces/face-1.jpg">
+                                    <img class="avatar border-white" src="<?php echo base_url()?><?php echo $value->t_profile;?>">
                                   
                                   <h4 class="title"><?php echo $value->t_name." ".$value->t_fathername." ".$value->t_surname;?><br>
                                      <small><?php echo $value->t_email; ?></small><br>
-                                      <small><?php echo $value->t_contact; ?></small><br>
                                       <small><?php echo $value->t_dob; ?></small>
                                   </h4>
                                 </div>
@@ -58,13 +57,6 @@
                                             </div>
                                             <div class="col-xs-3 text-right">
                                                 <b>10000</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">                                        
-                                            <div class="col-xs-11 text-right">
-                                                <a>more Details</a>
                                             </div>
                                         </div>
                                     </li>
@@ -126,22 +118,22 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                City
+                                                Contact
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>Mumbai</b>
+                                                <b><?php echo $value->t_contact; ?></b>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                Contact
+                                                Email
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b><?php echo $value->t_contact; ?></b>
+                                                <b><?php echo $value->t_email; ?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -159,44 +151,11 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                Board
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>State Board</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
                                                 Subjects
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
                                                 <b>History</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                                Attendance
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>80/90</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                               Performance Of Students
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>78.90%</b>
                                             </div>
                                         </div>
                                     </li>

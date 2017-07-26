@@ -41,6 +41,7 @@ class Attendance_cont extends CI_Controller
     public function StudentAttendance()
     {
         $this->load->helper('url');
+        $this->load->library('session');
         $db = $this->session->userdata('db');//load db     
         $this->load->database($db);//call db
         $this->load->model('AddData');

@@ -114,16 +114,16 @@ if(isset($_POST['testid'])){
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $i=0;foreach($stud as $value1):
+                                            <?php $j=1;$i=0;foreach($stud as $value1):
                                                
                                             ?>
                                             <tr>
-                                                <td><?php echo $i;?></td>
+                                                <td><?php echo $j;?></td>
                                                 <td><input type="hidden" name="stud_id[]" value="<?php echo $value1->stud_id;?>"><?php echo $value1->stud_id;?></td>
                                                 <td><?php echo $name[$i];?></td>
                                                 <td><input type="text" name="marks[]"></td>
                                             </tr>
-                                            <?php $i++; endforeach;?>
+                                            <?php $i++;$j++; endforeach;?>
                                         </tbody>
                                     </table>    
                                 </div> 
