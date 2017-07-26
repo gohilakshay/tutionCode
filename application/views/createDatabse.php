@@ -1,14 +1,8 @@
 <?php include "header.php" ?>
 <body>
+    <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="col-sm-offset-11">
-                <?php echo form_open('Home/mainP'); ?>
-                    <div class="text-center">
-                        <button class="btn btn-success" style="margin-top: 20px;">HOME PAGE</button>
-                    </div>
-                <?php echo form_close(); ?>
-            </div>
             <div class="col-sm-12">
                 <center><h2><b style="color: #68B3C8;">Create Database</b></h2></center>
             </div>
@@ -64,26 +58,27 @@
         </div>
         
         <div class="col-md-6">
-            <div class="col-sm-12" style="margin-top: 62px;">
+            <div class="col-sm-12" style="margin-top: 3px;">
                 <center><h2><b style="color: #68B3C8;">Select Database</b></h2></center>
             </div>
             <div class="col-sm-12" align="center" style="margin-top: 30px;">
                 <div class="card">
                     <div class="content" padding-left="10px" style="margin-top:-25px">
-                    <?php echo form_open('SelectDataBase_cont/select'); ?>
+                        <?php echo form_open('SelectDataBase_cont/select'); ?>
+                        <?php foreach($result as $value):?>
                         <div class="row" > 
-                            <?php foreach($result as $value):?>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd" name="db" value="<?php echo $value->dbName; ?>"><?php echo $value->dbName; ?></button>
+                                    <button type="submit" class="btn btn-info btn-fill btn-wd" name="db" value="<?php echo $value->dbName; ?>"><?php echo $value->dbName; ?></button>
                                 </div>
                             </div>
-                            <?php endforeach;?>
                         </div>
+                        <?php endforeach;?>
                         <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>

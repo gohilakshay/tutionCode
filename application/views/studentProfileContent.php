@@ -13,7 +13,7 @@ $fee_data = end($result);
                             </div>
                             <div class="content">
                                 <div class="author">
-                                    <img class="avatar border-white" src="<?php echo base_url()?>assets/img/faces/face-1.jpg">
+                                    <img class="avatar border-white" src="<?php echo base_url()?><?php echo $student_data->stud_profile;?>">
                                   
                                   <h4 class="title"><?php echo $student_data->stud_surname." ".$student_data->stud_name." ".$student_data->father_name." ".$student_data->mother_name;?><br>
                                      <small><?php echo $student_data->stud_email;?></small><br>
@@ -76,13 +76,13 @@ $fee_data = end($result);
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <!--<li>
                                         <div class="row">                                        
                                             <div class="col-xs-11 text-right">
                                                 <a>more Details</a>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                         </div>
@@ -152,17 +152,6 @@ $fee_data = end($result);
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                City
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>Mumbai</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
                                                 Contact
                                                 <br>
                                             </div>
@@ -212,28 +201,6 @@ $fee_data = end($result);
                                             </div>
                                             <div class="col-xs-9">
                                                 <b>Maths, Science, English, Marathi, Hindi</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                                Attendance
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>80/90</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                                Overall Performance
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>78.90%</b>
                                             </div>
                                         </div>
                                     </li>

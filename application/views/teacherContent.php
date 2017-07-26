@@ -71,32 +71,6 @@
                         <div class="row">
                             <div class="col-xs-5">
                                 <div class="icon-big icon-info text-center">
-                                    <img src="<?php echo base_url()?>assets/icon/portion.png"  >
-                                </div>
-                            </div>
-                            <div class="col-xs-7">
-                                <div class="numbers">
-                                    <p>Syllabus</p>
-                                    <!--Details-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer"><hr>
-                            <div class="stats">
-                                <a href="">
-                                    <i class="ti-plus"></i>Update Portion 
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="card">
-                    <div class="content">
-                        <div class="row">
-                            <div class="col-xs-5">
-                                <div class="icon-big icon-info text-center">
                                     <img src="<?php echo base_url()?>assets/icon/upload.png"  >
                                 </div>
                             </div>

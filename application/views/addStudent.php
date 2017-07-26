@@ -115,15 +115,16 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group"></div>                     
-                                        <label class="col-sm-6">Profile photo:</label>
+                                    <div class="form-group">                    
+                                    <label class="col-sm-6">Profile photo:</label>
                                         <div class="row">
-                                            <input type="file" class="form-control" name="photo" accept="image/*"><br>
+                                            <div class="col-sm-12">
+                                                <input type="file" class="form-control" name="photo" accept="image/*"><br>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                 <div class="row">
+                                <div class="row">
                                     <div class="text-center">
                                         <button type="next"  id="activate-step-2" class="btn btn-info btn-fill btn-wd"> Next</button>
                                     </div>
