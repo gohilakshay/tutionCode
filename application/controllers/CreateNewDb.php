@@ -47,6 +47,15 @@ class CreateNewDb extends CI_Controller
         $this->load->helper('url');
         $username = $this->session->userdata('username');
         if(isset($username)){
+            if(isset($_POST['delete'])){
+                $db_data =array(
+                'dbName' => $this->input->post('databasename'),
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('password')
+            );
+            $this->load->model('CreateTable');
+            $this->CreateTable->delete_db($db_data);
+            }
 		$this->load->view('deleteDatabase');        //html filename
          }else echo "Error 404 : Access Denied";      
     } 

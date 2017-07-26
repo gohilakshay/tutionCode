@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-danger btn-fill btn-wd">DELETE</button>
+                    <button type="submit" class="btn btn-danger btn-fill btn-wd" name="delete">DELETE</button>
                 </div>
                 <div class="clearfix"></div>
             <?php echo form_close(); ?>
