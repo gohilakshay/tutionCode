@@ -34,6 +34,7 @@ class Batch_cont extends CI_Controller
                 'course_name' => $this->input->post('course')
             );
             $this->AddData->addBatchItem($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Batch_cont/addBatch');      
         }
         

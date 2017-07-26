@@ -24,6 +24,7 @@ class Home extends CI_Controller
             );
             $this->load->model('CreateTable');
             $this->CreateTable->addDb($db_data);
+            $this->session->set_flashdata('success','You have Successfully Created Database.');
         }
         $username = $this->session->userdata('username');
         $db = $this->session->userdata('db');

@@ -53,6 +53,7 @@ class Course_cont extends CI_Controller
                 'subject_id'=>$subject_id
             );
             $this->AddData->addCourseItem($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }
     }

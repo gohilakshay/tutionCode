@@ -6,6 +6,13 @@
 <br>
 <div class="content">   
     <div class="container-fluid">
+        <?php if($this->session->flashdata('success')) { ?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
+        <?php } ?>
+        <!--form-->
         <?php echo form_open('Batch_cont/addBatch'); ?>
         <div class="row">
             <div class="col-lg-12 col-lg-12 ">
@@ -52,7 +59,8 @@
             </div> 
         </div>
         <?php echo form_close(); ?>
-       
+        
+       <!--table-->
         <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -94,8 +102,7 @@
                                                     <td><center><button type="delete" class="btn btn-danger">Delete</button></center></td>
                                                 </tr><?php }?>
                                             </tbody>
-                                        </table>
-                                          
+                                        </table>  
                                     </div>                          
                                 </div>
                             </div>
@@ -110,4 +117,3 @@
 <?php include "script_include.php"; ?>
 <?php include "subject_script.php";?>
 <?php include "branch-sem_script.php";?>
-<?php ?>
