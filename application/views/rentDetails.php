@@ -34,7 +34,7 @@
                                 <div class="form-group">
                                     <label>Payment Mode</label>
                                     <div>
-                                        <select  class="form-control border-input" required>
+                                        <select  class="form-control border-input" name="paymentmode" required>
                                             <option value="">Payment Mode</option>
                                             <option value="cash">Cash</option>
                                             <option value="cheque">Cheque</option>
@@ -91,14 +91,14 @@
                                                 <td>Payment Date</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1.</td>
-                                                <td>Paid office rent for june-july month</td>
-                                                <td>16000</td>
-                                                <td>cheque</td>
-                                                <td>02/08/2017</td>
-                                            </tr>
+                                        <tbody><?php $i=1; ?>
+                                            <tr><?php foreach($result as $value) { ?>
+                                                <td><?php echo $i++; ?></td>
+                                                <td><?php echo $value->title ?></td>
+                                                <td><?php echo $value->amount ?></td>
+                                                <td><?php echo $value->payment_mode ?></td>
+                                                <td><?php echo $value->payment_date ?></td>
+                                            </tr><?php } ?>
                                         </tbody>
                                     </table>    
                                 </div> 
@@ -113,3 +113,4 @@
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<?php include "custom_script.php";?>

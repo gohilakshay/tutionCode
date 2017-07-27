@@ -99,5 +99,34 @@ class AddData extends CI_Model {
          $this->db->insert('marks', $data);
         return;
     }
+    function staffDetails($data){
+        $this->db->insert('staff_details', $data);
+        return;
+    }
+    function utilitiesDetails($data){
+        $this->db->insert('utilities', $data);
+        return;
+    }
+     function transportDetails($data){
+        $this->db->insert('transport', $data);
+        return;
+    }
+    
+    function mealsDetails($data){
+        $this->db->insert('meals_entertain', $data);
+        return;
+    }
+     function maintenanceDetails($data){
+        $this->db->insert(' maintenance', $data);
+        return;
+    }
+     function rentDetails($data){
+        $this->db->insert('rent', $data);
+        return;
+    }
+    function staffPaymentDetails($data){
+        $this->db->insert('staff', $data);
+        return;
+    }
 }
 ?>

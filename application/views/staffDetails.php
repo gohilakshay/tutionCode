@@ -3,6 +3,7 @@
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 
+
 <br>
 <div class="content">
     <div class="container-fluid" style="margin-top:-50px;">
@@ -46,22 +47,22 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Staff Contact</label>
-                                    <input type="text" class="form-control border-input" name="staffsalary" value="<?php         if(isset($_POST['staffsalary'])){echo $_POST['staffsalary'];} ?>" required>
-                                    <?php echo form_error('staffsalary', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="staffcontact" value="<?php         if(isset($_POST['staffcontact'])){echo $_POST['staffcontact'];} ?>" required>
+                                    <?php echo form_error('staffcontact', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Staff Address</label>
-                                    <input type="text" class="form-control border-input" name="staffsalary" value="<?php         if(isset($_POST['staffsalary'])){echo $_POST['staffsalary'];} ?>" required>
-                                    <?php echo form_error('staffsalary', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="staffaddress" value="<?php         if(isset($_POST['staffaddress'])){echo $_POST['staffaddress'];} ?>" required>
+                                    <?php echo form_error('staffaddress','<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             
                             <div class="col-md-1">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px; margin-left: -15px;"> ADD</button></center>
+                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px; margin-left: -15px;">ADD</button></center>
                                 </div>
                             </div>
                         </div>
@@ -101,21 +102,25 @@
                                                 <td>Name</td>
                                                 <td>Contact</td>
                                                 <td>Salary</td>
+                                                <td>Address</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1.</td>
-                                                <td><a href="<?php echo site_url()."/Expense_cont/updateStaffDetails" ?>">Ramu</a></td>
-                                                <td>7896541236</td>
-                                                <td>1200</td>
-                                            </tr>
-                                            <tr>
+                                        <tbody><?php $i=1; ?>
+                                            <tr><?php foreach ($result as $key):  ?>
+                                                <td><?php echo $i++; ?></td>
+                                                <td><a href="<?php echo site_url()."/Expense_cont/updateStaffDetails" ?>">
+                                                    <?php  echo $key->staff_name; ?>
+                                                </a></td>
+                                                <td><?php  echo $key->staff_contact; ?></td>
+                                                <td><?php  echo $key->staff_salary; ?></td>
+                                                <td><?php  echo $key->staff_address; ?></td>
+                                            </tr><?php endforeach; ?>
+                                            <!-- <tr>
                                                 <td>2.</td>
                                                 <td>Ramesh</td>
                                                 <td>5896236512</td>
                                                 <td>2000</td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>    
                                 </div> 
@@ -130,6 +135,7 @@
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<?php include "custom_script.php";?>
 <style> 
 input[id=staffsearch] {
     width: 5px;

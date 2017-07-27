@@ -274,5 +274,131 @@ class SelectData extends CI_Model {
         );
         return ($n);
     }
+
+    function bar() 
+     {
+                   
+          $categoryArray=array();
+          $dataseries1=array();
+          $dataseries2=array();
+          $dataseries3=array(); 
+          $res = $this->db->query("SELECT DISTINCT category,value1,value2,value3 FROM  `bar`");
+         if($res->num_rows() >0){
+          foreach ($res->result_array() as $row) {
+            array_push($categoryArray, array(
+            "label" => $row["category"]
+          )
+        );
+        array_push($dataseries1, array(
+          "value" => $row["value1"]
+          )
+        );
+
+        array_push($dataseries2, array(
+          "value" => $row["value2"]
+          )
+        );
+        array_push($dataseries3, array(
+          "value" => $row["value3"]
+          )
+        );
+       
+        $data[]=$row;
+      }      
+      }  
+       return $data; 
+    }
+
+
+    public function staff()
+    {
+        $sql = $this->db->query("SELECT * FROM staff_details where status='unpaid' order by staff_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }   
+     public function utilities()
+    {
+        $sql = $this->db->query("SELECT * FROM utilities order by utilities_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }   
+    public function transport()
+    {
+        $sql = $this->db->query("SELECT * FROM transport order by transport_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    } 
+       
+    public function mealsentertain()
+    {
+        $sql = $this->db->query("SELECT * FROM meals_entertain order by meals_entertain_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }  
+     public function maintenance()
+    {
+        $sql = $this->db->query("SELECT * FROM maintenance order by maintenance_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }   
+     public function rent()
+    {
+        $sql = $this->db->query("SELECT * FROM rent order by rent_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    // public function staffpayment()
+    // {
+    //     $sql = $this->db->query("SELECT * FROM staff_details order by staff_ID DESC");
+    //     if($sql->num_rows() > 0){
+    //          foreach($sql->result() as $row){
+    //             $data[]=$row;
+    //         }
+
+    //      } 
+    //       // return $data;
+    //      $sql = $this->db->query("SELECT * FROM staff");
+    //     if($sql->num_rows() > 0){
+    //          foreach($sql->result() as $row){
+    //             $data[]=$row;
+    //         }
+    //     }
+
+    //      return $data;
+    // } 
+    function staffPaidDetails($data1){
+        // echo $data['staff_name'];
+        $sql = $this->db->query("SELECT * FROM staff");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+          return $data1;
+    }              
 }
 ?>

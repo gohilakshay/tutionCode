@@ -34,7 +34,7 @@
                                 <div class="form-group">
                                     <label>Payment Mode</label>
                                     <div>
-                                        <select  class="form-control border-input">
+                                        <select  class="form-control border-input" name="paymentmode">
                                             <option value="">Payment Mode</option>
                                             <option value="cash">Cash</option>
                                             <option value="cheque">Cheque</option>
@@ -91,20 +91,20 @@
                                                 <td>Payment Date</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1.</td>
-                                                <td>Visited seminar of xyz</td>
-                                                <td>100</td>
-                                                <td>cash</td>
-                                                <td>02/08/2017</td>
+                                        <tbody><?php $i=1;?>
+                                            <tr><?php foreach ($result as $value):?>
+                                                <td><?php echo $i++; ?></td>
+                                                <td><?php echo $value->title?></td>
+                                                <td><?php echo $value->amount?></td>
+                                                <td><?php echo $value->payment_mode?></td>
+                                                <td><?php echo $value->payment_date?></td>
                                             </tr>
-                                            <tr>
-                                                <td>2.</td>
+                                            <tr><?php endforeach; ?>
+                                                <!-- td>2.</td>
                                                 <td>Parcel</td>
                                                 <td>20</td>
                                                 <td>cash</td>
-                                                <td>07/08/2017</td>
+                                                <td>07/08/2017</td> -->
                                             </tr>
                                         </tbody>
                                     </table>    
@@ -120,3 +120,4 @@
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<?php include "custom_script.php";?>

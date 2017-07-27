@@ -34,7 +34,7 @@
                                 <div class="form-group">
                                     <label>Payment Mode</label>
                                     <div>
-                                        <select  class="form-control border-input" required>
+                                        <select  class="form-control border-input" name="paymentmode"required>
                                             <option value="">Payment Mode</option>
                                             <option value="cash">Cash</option>
                                             <option value="cheque">Cheque</option>
@@ -91,21 +91,21 @@
                                                 <td>Payment Date</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1.</td>
-                                                <td>Papers</td>
-                                                <td>100</td>
-                                                <td>cash</td>
-                                                <td>02/08/2017</td>
-                                            </tr>
-                                            <tr>
+                                        <tbody><?php $i=1; ?>
+                                            <tr><?php foreach ($result as $value):  ?>
+                                                <td><?php echo $i++; ?></td>
+                                                <td><?php echo $value->title ?></td>
+                                                <td><?php echo $value->amount ?></td>
+                                                <td><?php echo $value->payment_mode ?></td>
+                                                <td><?php echo $value->payment_date ?></td>
+                                            </tr><?php endforeach; ?>
+                                            <!-- <tr>
                                                 <td>2.</td>
                                                 <td>Pen</td>
                                                 <td>20</td>
                                                 <td>cash</td>
                                                 <td>07/08/2017</td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>    
                                 </div> 
@@ -120,3 +120,4 @@
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<?php include "custom_script.php";?>
