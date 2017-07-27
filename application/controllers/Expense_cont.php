@@ -4,131 +4,286 @@ class Expense_cont extends CI_Controller
 {
     public function expense()
     {
-        $this->load->library('session');
         $this->load->helper('url');
-        $username = $this->session->userdata('username');
-        $db = $this->session->userdata('db');
-        if(isset($username)){
-            $this->load->view('expense');           //html filename
-        }else echo "Error 404 : Access Denied";      
+        $this->load->view('expense');           //html filename
     }
+
+    // public function staff()
+    // {
+    //     $this->load->helper('url');  
+    //     $this->load->database();
+    //     $this->load->model('StaffData');
+    //     $query['result']=$this->StaffData->staff();
+    //     // print_r($query);
+    //     $this->load->view('staffDetails',$query);   
+    // }
+    // public function staffpayment()
+    // {
+    //     $this->load->helper('url');
+    //     // $this->load->library('form_validation');
+    //     $this->load->database();
+    //     $this->load->model('SelectData');
+    //     $query['result'] =$this->SelectData->staffpayment();
+    //     // print_r($query);
+    //     $this->load->view('staffPaymentDetails',$query);
+          
+    // }
     public function staffDetails()
     {
-        $this->load->library('session');
         $this->load->helper('url');
-        $username = $this->session->userdata('username');
-        if(isset($username)){
-            $this->load->view('staffDetails');     //html filename
-        }else echo "Error 404 : Access Denied"; 
+        $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result']=$this->SelectData->staff();
+        $this->form_validation->set_rules('staffname','staffname','callback_custom_Alpha');
+        $this->form_validation->set_rules('staffcontact', 'staffcontact', 'required|numeric|exact_length[10]');
+        $this->form_validation->set_rules('staffaddress', 'staffaddress', 'required'); 
+        // $this->form_validation->set_message('numeric','10 digits required');  
+        if($this->form_validation->run() == FALSE)
+        {
+            $this->load->view('staffDetails',$query);
+        }
+        else
+        {
+            $this->load->helper('form');
+            $this->load->database();
+            $this->load->model('AddData');
+            $data = array(
+            'staff_name'=> $this->input->post('staffname'),
+            'staff_salary'=> $this->input->post('staffsalary'),
+            'staff_contact'=> $this->input->post('staffcontact'),
+            'staff_address'=> $this->input->post('staffaddress'),
+            );
+
+           
+
+             $this->AddData->staffDetails($data);
+             
+              // $n=$this->db->insert_id();
+            //  $this->load->database();
+            // $this->load->model('AddData');
+//             $data1 = array(
+//             'staff_ID'=>$n,
+//             'staff_name'=> $this->input->post('staffname'),
+//             'salary'=> $this->input->post('staffsalary'),
+//             'payment_mode'=> $this->input->post('paymentmode'),
+//             'payment_date'=> $this->input->post('paymentdate'),
+//             ); 
+// $this->AddData->staffPaymentDetails($data1);
+            
+             redirect('Expense_cont/staffDetails');
+        }//html filename
     }
     public function updateStaffDetails()
     {
-        $this->load->library('session');
         $this->load->helper('url');
-        $username = $this->session->userdata('username');
-        if(isset($username)){
-            $this->load->view('updateStaffDetails');      //html filename
-        }else echo "Error 404 : Access Denied"; 
+         $this->load->view('updateStaffDetails');
+       
     }
     public function staffPaymentDetails()
     {
-        $this->load->library('session');
+       
         $this->load->helper('url');
-        $username = $this->session->userdata('username');
-        if(isset($username)){
-            $this->load->view('staffPaymentDetails');       //html filename
-        }else echo "Error 404 : Access Denied";
+        $this->load->library('form_validation');
+        $this->load->database();
+        
+        $this->load->model('SelectData');
+        $query['result'] =$this->SelectData->staff();
+        
+        
+        $this->form_validation->set_rules('staffname','staffname','callback_custom_Alpha');
+        $this->form_validation->set_rules('staffsalary', 'staffsalary', 'required|numeric');
+        if($this->form_validation->run() == FALSE)
+        {
+             $this->load->view('staffPaymentDetails',$query);
+        }
+        else
+         {
+          
+            $this->load->database();
+            $this->load->model('AddData');
+            $data = array(
+            'staff_ID'=>1,
+            'staff_name'=> $this->input->post('staffname'),
+            'salary'=> $this->input->post('staffsalary'),
+            'payment_mode'=> $this->input->post('paymentmode'),
+            'payment_date'=> $this->input->post('paymentdate'),
+            ); 
+               // print_r($data);
+            $this->AddData->staffPaymentDetails($data);
+            
+            $this->load->database();
+            $this->load->model('SelectData'); 
+            $this->SelectData->staffPaidDetails($data);
+            print_r($data);
+            $query['result'] =$this->SelectData->staffPaidDetails($data);
+              // $this->load->view('staffPaymentDetails',$query);
+            print_r($query);
+            // print_r($data); 
+            // redirect('Expense_cont/staffPaymentDetails',$query);   //html filename
+      } 
+           //html filename
     }
     public function meals()
     {
-        $this->load->library('session');
         $this->load->helper('url');
+         $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result']=$this->SelectData->mealsentertain();
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $this->load->view('mealDetails');		//html filename	
-            }else echo "Error 404 : Access Denied";
+            $this->load->view('mealDetails',$query);		//html filename	
 		}
 		else
         {
+            $this->load->helper('form');
+            $this->load->database();
+            $this->load->model('AddData');
+            $data = array(
+            'message'=> $this->input->post('message'),
+            'amount'=> $this->input->post('amt'),
+            'payment_mode'=> $this->input->post('paymentmode'),
+            'payment_date'=> $this->input->post('paymentdate'),
+            );
+
+
+
+            $this->AddData-> mealsDetails($data);
             redirect('Expense_cont/meals');   	
 		}
     }
     public function maintenance()
     {
-        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result']=$this->SelectData->maintenance();
+       
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $this->load->view('maintenanceDetails');		//html filename	
-            }else echo "Error 404 : Access Denied";
+            $this->load->view('maintenanceDetails',$query);		//html filename	
 		}
 		else
         {
+            $this->load->helper('form');
+            $this->load->database();
+            $this->load->model('AddData');
+            $data = array(
+            'title'=> $this->input->post('title'),
+            'amount'=> $this->input->post('amt'),
+            'payment_mode'=> $this->input->post('paymentmode'),
+            'payment_date'=> $this->input->post('paymentdate'),
+            );
+
+
+
+            $this->AddData->maintenanceDetails($data);
             redirect('Expense_cont/maintenance');   	
 		}
     }
     public function transport()
     {
-        $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result']=$this->SelectData->transport();
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $this->load->view('transportDetails');       //html filename
-            }else echo "Error 404 : Access Denied";
+            $this->load->view('transportDetails',$query);       //html filename		
         }
 		else
         {
+            $this->load->helper('form');
+            $this->load->database();
+            $this->load->model('AddData');
+            $data = array(
+            'title'=> $this->input->post('title'),
+            'amount'=> $this->input->post('amt'),
+            'payment_mode'=> $this->input->post('paymentmode'),
+            'payment_date'=> $this->input->post('paymentdate'),
+            );
+
+
+
+            $this->AddData->transportDetails($data);
             redirect('Expense_cont/transport');   	
 		}
         
     }
     public function rent()
     {
-        $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result']=$this->SelectData->rent();
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $this->load->view('rentDetails');		//html filename	
-            }else echo "Error 404 : Access Denied";
+            $this->load->view('rentDetails',$query);		//html filename	
 		}
 		else
         {
+             $this->load->helper('form');
+            $this->load->database();
+            $this->load->model('AddData');
+            $data = array(
+            'title'=> $this->input->post('title'),
+            'amount'=> $this->input->post('amt'),
+            'payment_mode'=> $this->input->post('paymentmode'),
+            'payment_date'=> $this->input->post('paymentdate'),
+            );
+            $this->AddData->rentDetails($data);
             redirect('Expense_cont/rent');   	
 		}
     }
     public function utilities()
     {
-        $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('form_validation');
+        $this->load->database();
+        $this->load->model('SelectData');
+        $query['result']=$this->SelectData->utilities();
         $this->load->library('form_validation');
 		$this->form_validation->set_rules('amt', 'amt', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $this->load->view('utilitiesDetails');		//html filename	
-            }else echo "Error 404 : Access Denied";
+            $this->load->view('utilitiesDetails',$query);		//html filename	
 		}
 		else
-        {
+        {   
+            $this->load->helper('form');
+            $this->load->database();
+            $this->load->model('AddData');
+            $data = array(
+            'title'=> $this->input->post('title'),
+            'amount'=> $this->input->post('amt'),
+            'payment_mode'=> $this->input->post('paymentmode'),
+            'payment_date'=> $this->input->post('paymentdate'),
+            );
+
+
+
+            $this->AddData->utilitiesDetails($data);
             redirect('Expense_cont/utilities');   	
 		}
     }
+
+     public function custom_Alpha($strrr) 
+        {
+            if ( !preg_match('/^[a-zA-Z ]+$/i',$strrr) )
+            {
+                return false;
+            }
+        }  
 }
 ?>
