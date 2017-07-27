@@ -34,7 +34,7 @@
                                 <div class="form-group">
                                     <label>Payment Mode</label>
                                     <div>
-                                        <select  class="form-control border-input" required>
+                                        <select  class="form-control border-input" name="paymentmode" required>
                                             <option value="">Payment Mode</option>
                                             <option value="cash">Cash</option>
                                             <option value="cheque">Cheque</option>
@@ -97,19 +97,16 @@
                                                 <td>Salary</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody><?php $i=1;foreach($result as $value):
+                                            if($value->status == 'paid'){
+                                            ?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>Rama</td>
-                                                <td>7896541236</td>
-                                                <td>1900</td>
+                                                <td><?php echo $i;$i++;?></td>
+                                                <td><?php echo $value->staff_name;?></td>
+                                                <td><?php echo $value->staff_contact;?></td>
+                                                <td><?php echo $value->staff_salary;?></td>
                                             </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>Suresh</td>
-                                                <td>5896236512</td>
-                                                <td>2500</td>
-                                            </tr>
+                                            <?php }endforeach; ?>
                                         </tbody>
                                     </table>    
                                 </div> 
@@ -151,19 +148,16 @@
                                                 <td>Salary</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody><?php $i=1;foreach($result as $value):
+                                            if($value->status == 'unpaid'){
+                                            ?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>Ramu</td>
-                                                <td>7896541236</td>
-                                                <td>1200</td>
+                                                <td><?php echo $i;$i++;?></td>
+                                                <td><?php echo $value->staff_name;?></td>
+                                                <td><?php echo $value->staff_contact;?></td>
+                                                <td><?php echo $value->staff_salary;?></td>
                                             </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td>Ramesh</td>
-                                                <td>5896236512</td>
-                                                <td>2000</td>
-                                            </tr>
+                                            <?php }endforeach; ?>
                                         </tbody>
                                     </table>    
                                 </div> 

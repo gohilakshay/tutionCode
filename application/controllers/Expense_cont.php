@@ -100,17 +100,13 @@ class Expense_cont extends CI_Controller
         }
         else
          {
-          
-            
             $this->load->model('AddData');
             $data = array(
-            'staff_ID'=>1,
             'staff_name'=> $this->input->post('staffname'),
             'salary'=> $this->input->post('staffsalary'),
             'payment_mode'=> $this->input->post('paymentmode'),
             'payment_date'=> $this->input->post('paymentdate'),
             ); 
-               // print_r($data);
             $this->AddData->staffPaymentDetails($data);
             
             $this->load->database();
