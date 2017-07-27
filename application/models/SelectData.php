@@ -312,7 +312,7 @@ class SelectData extends CI_Model {
 
     public function staff()
     {
-        $sql = $this->db->query("SELECT * FROM staff_details where status='unpaid' order by staff_ID DESC");
+        $sql = $this->db->query("SELECT * FROM staff_details order by staff_ID DESC");
         if($sql->num_rows() > 0){
              foreach($sql->result() as $row){
                 $data[]=$row;

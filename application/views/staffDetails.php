@@ -62,7 +62,7 @@
                             <div class="col-md-1">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px; margin-left: -15px;">ADD</button></center>
+                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px; margin-left: -15px;" >ADD</button></center>
                                 </div>
                             </div>
                         </div>

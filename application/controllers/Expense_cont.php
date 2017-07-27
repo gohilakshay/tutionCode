@@ -32,7 +32,9 @@ class Expense_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result']=$this->SelectData->staff();
         $this->form_validation->set_rules('staffname','staffname','callback_custom_Alpha');
@@ -46,17 +48,14 @@ class Expense_cont extends CI_Controller
         else
         {
             $this->load->helper('form');
-            $this->load->database();
             $this->load->model('AddData');
             $data = array(
             'staff_name'=> $this->input->post('staffname'),
             'staff_salary'=> $this->input->post('staffsalary'),
             'staff_contact'=> $this->input->post('staffcontact'),
             'staff_address'=> $this->input->post('staffaddress'),
+            'status'=> 'unpaid'
             );
-
-           
-
              $this->AddData->staffDetails($data);
              
               // $n=$this->db->insert_id();
@@ -85,7 +84,9 @@ class Expense_cont extends CI_Controller
        
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         
         $this->load->model('SelectData');
         $query['result'] =$this->SelectData->staff();
@@ -100,7 +101,7 @@ class Expense_cont extends CI_Controller
         else
          {
           
-            $this->load->database();
+            
             $this->load->model('AddData');
             $data = array(
             'staff_ID'=>1,
@@ -128,7 +129,9 @@ class Expense_cont extends CI_Controller
     {
         $this->load->helper('url');
          $this->load->library('form_validation');
-        $this->load->database();
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result']=$this->SelectData->mealsentertain();
         $this->load->library('form_validation');
@@ -140,7 +143,7 @@ class Expense_cont extends CI_Controller
 		else
         {
             $this->load->helper('form');
-            $this->load->database();
+            
             $this->load->model('AddData');
             $data = array(
             'message'=> $this->input->post('message'),
@@ -159,7 +162,9 @@ class Expense_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result']=$this->SelectData->maintenance();
        
@@ -171,7 +176,7 @@ class Expense_cont extends CI_Controller
 		else
         {
             $this->load->helper('form');
-            $this->load->database();
+           
             $this->load->model('AddData');
             $data = array(
             'title'=> $this->input->post('title'),
@@ -190,7 +195,9 @@ class Expense_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result']=$this->SelectData->transport();
         $this->load->library('form_validation');
@@ -202,7 +209,7 @@ class Expense_cont extends CI_Controller
 		else
         {
             $this->load->helper('form');
-            $this->load->database();
+           
             $this->load->model('AddData');
             $data = array(
             'title'=> $this->input->post('title'),
@@ -222,7 +229,9 @@ class Expense_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result']=$this->SelectData->rent();
         $this->load->library('form_validation');
@@ -234,7 +243,7 @@ class Expense_cont extends CI_Controller
 		else
         {
              $this->load->helper('form');
-            $this->load->database();
+           
             $this->load->model('AddData');
             $data = array(
             'title'=> $this->input->post('title'),
@@ -250,7 +259,9 @@ class Expense_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->database();
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result']=$this->SelectData->utilities();
         $this->load->library('form_validation');
@@ -262,7 +273,7 @@ class Expense_cont extends CI_Controller
 		else
         {   
             $this->load->helper('form');
-            $this->load->database();
+            
             $this->load->model('AddData');
             $data = array(
             'title'=> $this->input->post('title'),
