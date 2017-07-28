@@ -13,20 +13,14 @@ foreach($result as $value){
 <script>
     /*start of add faculty script*/
     var course_name = <?php echo json_encode($coursename); ?>;
-    var j;
-    for (i = 0; i < course_name.length; i++) {
-    
-        if(i==1){
-            j = course_name[i];
-        $('#course').on('change',function(){
-            if( $(this).val()== j){
+    $('#course').on('change',function(){
+            if( $(this).val()== ab){
                 $("#subjects").show()
             }
             else{
                 $("#subjects").hide()
             }
         });
-        }  
     }
     /*$('#course').on('change',function(){
         if( $(this).val()==="course2"){
