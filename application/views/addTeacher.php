@@ -135,7 +135,7 @@
                                 </div>
                             </div>
                         </div><br> 
-                       
+        
                         <div id="subjects" style="display:none;">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -143,15 +143,11 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
+                                                <?php foreach($result3 as $subject):?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="hindi" name="subject[]" >Hindi
+                                                  <input type="checkbox" value="hindi" name="subject[]" ><?php echo $subject->subject_name; ?>
                                                 </label>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="english" name="subject[]">English
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="marathi" name="subject[]">Marathi
-                                                </label>
+                                                <?php endforeach;?>
                                             </div>
                                         </div>
                                     </div>

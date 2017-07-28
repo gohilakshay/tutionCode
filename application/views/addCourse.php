@@ -79,10 +79,10 @@
                                             <label>Branch:</label>
                                             <select class="form-control border-input" id="engi_branch" name="engi_branch">
                                                 <option value="">---Select Branch---</option>
-                                                <?php foreach($result2  as $value): 
-                                                    if ($value->standard_ID==13){ ?>
+                                                <?php foreach($result2  as $value): ?>
+                                                   
                                                 <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
-                                                 <?php } endforeach; ?>
+                                                 <?php  endforeach; ?>
                                             </select>
                                     <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
@@ -117,9 +117,9 @@
                                             <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
                                                 <option value="">---Select Branch---</option>
                                                 <?php foreach($result2  as $value): 
-                                                    if ($value->standard_ID==14){ ?>
+                                                   ?>
                                                 <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
-                                                 <?php } endforeach; ?>
+                                                 <?php  endforeach; ?>
                                             </select>
                                     </div>
                                 </div>
@@ -148,15 +148,11 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                            <div class="row">
+                                               <?php foreach($result3 as $value): ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="hindi" name="subject[]" >Hindi
+                                                  <input type="checkbox" value="<?php echo $value->subject_name ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
                                                 </label>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="english" name="subject[]">English
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="marathi" name="subject[]">Marathi
-                                                </label>
+                                                <?php endforeach;?>
                                             </div>
                                         </div>
                                     </div>

@@ -105,7 +105,7 @@ class SelectData extends CI_Model {
                     $name = explode(",",$subj_id);
                     $n = count($name);$a=0;
                     for($i=0;$i<$n;$i++){ 
-                        $q1 = $this->db->query("SELECT subject_name FROM `engisubject` where engisubj_ID = '$name[$i]'");
+                        $q1 = $this->db->query("SELECT subject_name FROM `subject` where subject_ID = '$name[$i]'");
                         if($q1->num_rows() >0){
                             foreach($q1->result() as $row1){
                                 
@@ -147,7 +147,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
-    function semester(){
+    /*function semester(){
         $q = $this->db->query("SELECT * FROM `semester`");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
@@ -155,7 +155,7 @@ class SelectData extends CI_Model {
             }
         }
         return $data;
-    }
+    }*/
     
     function subject(){
         $q = $this->db->query("SELECT * FROM `subject`");
@@ -228,7 +228,7 @@ class SelectData extends CI_Model {
             $q = $this->db->query("SELECT stud_id FROM `batch_student_mapping` WHERE batch_id = '$id'");
             if($q->num_rows() >0){
                 foreach($q->result() as $row){
-                     $stud_id = $row->stud_id;
+                     echo $stud_id = $row->stud_id;
                     $q = $this->db->query("SELECT * FROM `student_details` WHERE stud_ID = '$stud_id'");
                     if($q->num_rows() >0){
                         foreach($q->result() as $row){
