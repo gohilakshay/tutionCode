@@ -11,22 +11,24 @@ foreach($result as $value){
 ?>
 
 <script>
+    $(document).ready(function(){
+        $('#course').change(function() {
+            var j = $('#course option:selected').text();
+            alert(j);
+        });  
+    });
+       
     /*start of add faculty script*/
     var course_name = <?php echo json_encode($coursename); ?>;
-    var j;
-    for (i = 0; i < course_name.length; i++) { 
-        myfunction(course_name[i]);        
-    }
-    function myfunction(ab){
-        $('#course').on('change',function(){
-            if( $(this).val()== ab){
+    $('#course').on('change',function(){
+            if($.inArray($(this).val(), course_name) > -1){
                 $("#subjects").show()
             }
             else{
                 $("#subjects").hide()
             }
         });
-    }
+    
     /*$('#course').on('change',function(){
         if( $(this).val()==="course2"){
             $("#college").show()

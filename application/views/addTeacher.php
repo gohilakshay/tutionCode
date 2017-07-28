@@ -121,33 +121,21 @@
                     </div>
 
                     <div class="content">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Courses</label> 
-                                    <select class="form-control border-input" id="course" name="course" required>
-                                        <option value="">---Select Course---</option>
-                                        <?php foreach($result as $value):?>
-                                        <option value="<?php echo $value->course_name; ?>"><?php echo $value->course_name; ?></option>
-                                        <?php endforeach;?>
-                                    </select>
-                                    <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                </div>
-                            </div>
-                        </div><br> 
-        
-                        <div id="subjects" style="display:none;">
+                        
+                
+                        <div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                                <?php foreach($result3 as $subject):?>
+                                                <?php foreach($result3 as $subject):
+                                                ?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="hindi" name="subject[]" ><?php echo $subject->subject_name; ?>
                                                 </label>
-                                                <?php endforeach;?>
+                                                <?php endforeach;?> 
                                             </div>
                                         </div>
                                     </div>
@@ -155,7 +143,7 @@
                             </div>
                         </div>
                         
-                        <div id="college" style="display:none;">
+                       <!-- <div id="college" style="display:none;">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
@@ -199,7 +187,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         
                     </div>
                 </div>

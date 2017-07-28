@@ -284,7 +284,7 @@
                                                 <label>Branch:</label>
                                                     <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
                                                         <option value="">---Select Branch---</option>
-                                                        <option value="">---Select Branch---</option>
+                                                        
                                                     <?php foreach($result2 as $value){
                                                     if($value->standard_ID==14){?>
                                                     <option value="Computer"><?php echo $value->branch_name;?></option>
