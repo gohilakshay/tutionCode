@@ -14,20 +14,18 @@ foreach($result as $value){
     /*start of add faculty script*/
     var course_name = <?php echo json_encode($coursename); ?>;
     var j;
-    for (i = 0; i < course_name.length; i++) {
-    
-        if(i==1){
-            j = course_name[i];
-            alert(j);
+    for (i = 0; i < course_name.length; i++) { 
+        myfunction(course_name[i]);        
+    }
+    function myfunction(ab){
         $('#course').on('change',function(){
-            if( $(this).val()== j){
+            if( $(this).val()== ab){
                 $("#subjects").show()
             }
             else{
                 $("#subjects").hide()
             }
         });
-        }  
     }
     /*$('#course').on('change',function(){
         if( $(this).val()==="course2"){
