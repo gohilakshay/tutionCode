@@ -45,6 +45,50 @@ class Teacher_cont extends CI_Controller
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('SelectData');
+        
+        
+        $this->db->close();
+        $configdbfly=$this->config->config['sysdb'];
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = 'admin_db'; /* Default db */
+        $this->load->database($configdbfly);
+        $query['result'] = $this->SelectData->dbSelect();
+        $this->db->close();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
+        $dbname = $db['database'];
+        foreach($query as $value){
+            foreach($value as $value1){
+                $dbName = $value1->dbName;
+                if($dbName == $dbname){
+                    $type=$value1->dbType; //finding the database name and the name stored in the admin tb
+                }
+            }
+        }
+        $ntype = explode(",",$type);
+       // print_r($ntype);
+        $n = count($ntype); 
+        foreach($ntype as $value){
+             
+            if($value == 'school'){
+                $query['result3'] = $this->SelectData->subject();
+            }
+            else if($value == 'jrcolg_sci'){
+                $query['result3'] = $this->SelectData->collegesubject();
+            }
+            else if($value == 'jrcolg_com'){
+                $query['result3'] = $this->SelectData->collegesubject();
+            }
+            else if($value == 'engicolg'){ 
+                $query['result3'] = $this->SelectData->engisubject();
+            }
+            else if($value == 'comcolg'){ 
+                $query['result3'] = $this->SelectData->commercesubject();
+            }
+        }
+        
+        
         $query['result'] = $this->SelectData->course();
 		$this->form_validation->set_rules('teachersname', 'teachersname', 'callback_customAlpha');
 		$this->form_validation->set_rules('dob', 'dob', 'required');
@@ -103,7 +147,7 @@ class Teacher_cont extends CI_Controller
     }
     public function customAlpha($str) 
     {
-        if ( !preg_match('/^[a-zA-Z ]+$/i',$str) )
+        if (!preg_match('/^[a-zA-Z ]+$/i',$str))
         {
             return false;
         }
