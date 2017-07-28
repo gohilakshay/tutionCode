@@ -45,10 +45,48 @@ class Student_cont extends CI_Controller
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
+        $this->db->close();
+        $configdbfly=$this->config->config['sysdb'];
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = 'admin_db'; /* Default db */
+        $this->load->database($configdbfly);
+        $query['result'] = $this->SelectData->dbSelect();
+        $this->db->close();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
+        $dbname = $db['database'];
+        foreach($query as $value){
+            foreach($value as $value1){
+                $dbName = $value1->dbName;
+                if($dbName == $dbname){
+                    $type=$value1->dbType; //finding the database name and the name stored in the admin tb
+                }
+            }
+        }
+        $ntype = explode(",",$type);
+        $n = count($ntype);
         $query['result'] = $this->SelectData->ViewBatch();
-        $query['result1'] = $this->SelectData->standard(); 
-        $query['result2'] = $this->SelectData->branch(); 
-        $query['result3'] = $this->SelectData->engisubject(); 
+        foreach($ntype as $value){
+            $query['result1'] = $this->SelectData->standard(); 
+            $query['result2'] = $this->SelectData->branch();
+            if($value == 'school'){
+                $query['result3'] = $this->SelectData->subject();
+            }
+            else if($value == 'jrcolg_sci'){
+                $query['result3'] = $this->SelectData->collegesubject();
+            }
+            else if($value == 'jrcolg_com'){
+                $query['result3'] = $this->SelectData->collegesubject();
+            }
+            else if($value == 'engicolg'){ 
+                $query['result3'] = $this->SelectData->engisubject();
+            }
+            else if($value == 'comcolg'){ 
+                $query['result3'] = $this->SelectData->commercesubject();
+            }
+        }
+        
         $this->form_validation->set_rules('surname', 'surname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('studentname', 'studentname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('fathername', 'fathername', 'callback_custom_Alpha');

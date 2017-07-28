@@ -125,6 +125,9 @@ class SelectData extends CI_Model {
 
         return $data;
     }
+    /*
+    start of different school,jrcolg,engi,comm  dbTypes
+    */
     function standard(){
         $q = $this->db->query("SELECT * FROM `standard`");
         if($q->num_rows() >0){
@@ -134,15 +137,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
-    function engisubject(){
-        $q = $this->db->query("SELECT * FROM `engisubject`");
-        if($q->num_rows() >0){
-            foreach($q->result() as $row){
-                $data[]=$row;
-            }
-        }
-        return $data;
-    }
+    
     function branch(){
         $q = $this->db->query("SELECT * FROM `branch`");
         if($q->num_rows() >0){
@@ -152,6 +147,64 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function semester(){
+        $q = $this->db->query("SELECT * FROM `semester`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    
+    function subject(){
+        $q = $this->db->query("SELECT * FROM `subject`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function collegesubject(){
+        $q = $this->db->query("SELECT * FROM `collegesubject`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    /*function collegesubject(){
+        $q = $this->db->query("SELECT * FROM `collegesubject`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }*/
+    function engisubject(){
+        $q = $this->db->query("SELECT * FROM `engisubject`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function commercesubject(){
+        $q = $this->db->query("SELECT * FROM `commercesubject`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    /*
+    end of different school,jrcolg,engi,comm  dbTypes
+    */
     function batchIDStudAttend($name,$time){
         $q = $this->db->query("SELECT batch_ID FROM `batch` WHERE batch_name = '$name' AND batch_timing = '$time'");
         if($q->num_rows() >0){

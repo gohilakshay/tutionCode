@@ -328,30 +328,29 @@
                                         </div>
                                     </div>
                                 </div>
-                        
-                                <div id="engisem1" style="display:none;">
+                        <?php for($i=1;$i<9;$i++){ ?>
+                                <div id="engisem<?php echo $i;?>" style="display:none;">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label>Subjects:</label>
                                                 <div class="col-sm-12">
                                                     <div class="row">
+                                                        <?php foreach($result3 as $value):
+                                                        if($value->semester_ID == $i){
+                                                        ?>
                                                         <label class="checkbox-inline">
-                                                          <input type="checkbox" value="Data Structures" name="engineering[]" >Data Structures
+                                                          <input type="checkbox" value="Data Structures" name="engineering[]" ><?php echo $value->subject_name;?>
                                                         </label>
-                                                        <label class="checkbox-inline">
-                                                          <input type="checkbox" value="OOPM" name="engineering[]">OOPM
-                                                        </label>
-                                                        <label class="checkbox-inline">
-                                                          <input type="checkbox" value="Java" name="engineering[]">Java
-                                                        </label>
+                                                    <?php } endforeach;?>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="engisem2" style="display:none;">
+                                <?php }?>
+                                <!--<div id="engisem2" style="display:none;">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
@@ -372,7 +371,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <br>
                                          
                                 <div class="row">

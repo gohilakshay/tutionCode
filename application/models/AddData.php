@@ -126,6 +126,16 @@ class AddData extends CI_Model {
     }
     function staffPaymentDetails($data){
         $this->db->insert('staff', $data);
+        $name = $data['staff_name'];
+        $this->db->set('status', 'paid'); //value that used to update column  
+        $this->db->where('staff_name', $name); //which row want to upgrade  
+        $this->db->update('staff_details');  //table name
+        return;
+    }
+    function staffpaymentDefault(){
+        $this->db->set('status', 'unpaid'); //value that used to update column  
+        //$this->db->where('staff_name', $name); //which row want to upgrade  
+        $this->db->update('staff_details');  //table name
         return;
     }
 }

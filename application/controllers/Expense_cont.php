@@ -39,10 +39,27 @@ class Expense_cont extends CI_Controller
         $query['result']=$this->SelectData->staff();
         $this->form_validation->set_rules('staffname','staffname','callback_custom_Alpha');
         $this->form_validation->set_rules('staffcontact', 'staffcontact', 'required|numeric|exact_length[10]');
-        $this->form_validation->set_rules('staffaddress', 'staffaddress', 'required'); 
-        // $this->form_validation->set_message('numeric','10 digits required');  
+        $this->form_validation->set_rules('staffaddress', 'staffaddress', 'required');  
         if($this->form_validation->run() == FALSE)
         {
+            $this->load->helper('form');
+            $this->load->model('AddData');
+                if(date("m") == 2){
+                    if(date("d") == 28){
+                        $this->AddData->staffpaymentDefault();
+                    }
+                }
+                else if(date("m") == 1 ||date("m") == 3 ||date("m") == 5 ||date("m") == 7 ||date("m") == 8 ||date("m") == 10 ||date("m") == 12){
+                    if(date("d") == 31){
+                        $this->AddData->staffpaymentDefault();
+                    }
+                }
+                else{
+                    if(date("d") == 30){
+                        $this->AddData->staffpaymentDefault();
+                    }
+                }
+                    
             $this->load->view('staffDetails',$query);
         }
         else
@@ -57,19 +74,6 @@ class Expense_cont extends CI_Controller
             'status'=> 'unpaid'
             );
              $this->AddData->staffDetails($data);
-             
-              // $n=$this->db->insert_id();
-            //  $this->load->database();
-            // $this->load->model('AddData');
-//             $data1 = array(
-//             'staff_ID'=>$n,
-//             'staff_name'=> $this->input->post('staffname'),
-//             'salary'=> $this->input->post('staffsalary'),
-//             'payment_mode'=> $this->input->post('paymentmode'),
-//             'payment_date'=> $this->input->post('paymentdate'),
-//             ); 
-// $this->AddData->staffPaymentDetails($data1);
-            
              redirect('Expense_cont/staffDetails');
         }//html filename
     }
@@ -112,14 +116,9 @@ class Expense_cont extends CI_Controller
             $this->load->database();
             $this->load->model('SelectData'); 
             $this->SelectData->staffPaidDetails($data);
-            print_r($data);
             $query['result'] =$this->SelectData->staffPaidDetails($data);
-              // $this->load->view('staffPaymentDetails',$query);
-            print_r($query);
-            // print_r($data); 
-            // redirect('Expense_cont/staffPaymentDetails',$query);   //html filename
+             redirect('Expense_cont/staffPaymentDetails',$query);   //html filename
       } 
-           //html filename
     }
     public function meals()
     {
