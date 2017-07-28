@@ -18,6 +18,7 @@ class Enquiry_cont extends CI_Controller
         $this->load->helper('url');  
         $username = $this->session->userdata('username');
         if(isset($username)){
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             $this->load->view('enquiryreply');      //html filename
         }else echo "Error 404 : Access Denied";
     }     

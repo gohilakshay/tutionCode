@@ -35,6 +35,7 @@ class Test_cont extends CI_Controller
             $this->load->model('SelectData');
             $batch_name = $this->input->post('batchname');
             $subject_name = $this->input->post('subject');
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             $batch_id = $this->SelectData->batchIDBatch($batch_name);
            // $subj_id = $this->SelectData->subjIDSubj($subject_name); //YET TO BE COMPLETE BECAUSE SUBJETS NOT ENTERED
             

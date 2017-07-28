@@ -142,6 +142,7 @@ class Teacher_cont extends CI_Controller
             $subject = $this->input->post('subject');
             $data1 = array('course'=>$course,'subject'=>$subject);
             $this->AddData->addTeacherSubjItem($data1,$insert_id);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Teacher_cont/addTeacher');   
 		}
     }
