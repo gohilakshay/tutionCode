@@ -51,6 +51,7 @@ class Course_cont extends CI_Controller
             else if($value == 'comcolg'){ 
                 $query['result3'] = $this->SelectData->commercesubject();
             }
+            print_r($result3);
         }
         
         $this->load->library('form_validation');

@@ -18,7 +18,6 @@ foreach($result as $value){
     
         if(i==1){
             j = course_name[i];
-            alert(j);
         $('#course').on('change',function(){
             if( $(this).val()== j){
                 $("#subjects").show()
