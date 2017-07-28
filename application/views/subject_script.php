@@ -21,7 +21,11 @@ foreach($result as $value){
     /*start of add faculty script*/
     var course_name = <?php echo json_encode($coursename); ?>;
     $('#course').on('change',function(){
+
             if($.inArray($(this).val(), course_name) > -1){
+
+            if( $(this).val()== ab){
+
                 $("#subjects").show()
             }
             else{
