@@ -648,7 +648,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Mathematics I',
                         'semester_ID' => '1',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -656,7 +656,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Physics I',
                         'semester_ID' => '1',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -664,7 +664,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Chemistry I',
                         'semester_ID' => '1',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -672,7 +672,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Engineering Mechanics',
                         'semester_ID' => '1',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -680,7 +680,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Basic Electrical & Electronics Engineering',
                         'semester_ID' => '1',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -688,7 +688,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Enviornmental Studies',
                         'semester_ID' => '1',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -696,7 +696,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Mathematics II',
                         'semester_ID' => '2',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -704,7 +704,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Physics II',
                         'semester_ID' => '2',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -712,7 +712,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Chemistry II',
                         'semester_ID' => '2',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -720,7 +720,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Engineering Drawing',
                         'semester_ID' => '2',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -728,7 +728,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Structured Programming Approach',
                         'semester_ID' => '2',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -736,7 +736,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Communication Skills',
                         'semester_ID' => '2',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -744,7 +744,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Mathematics III',
                         'semester_ID' => '3',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -752,7 +752,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Object Oriented Programming Methodology',
                         'semester_ID' => '3',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -760,7 +760,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Data Structures',
                         'semester_ID' => '3',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -768,7 +768,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Digital Logic Design & Analysis',
                         'semester_ID' => '3',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -776,7 +776,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Discrete Structures',
                         'semester_ID' => '3',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -784,7 +784,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Electronic Circuits & Communication Fundamentals',
                         'semester_ID' => '3',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -792,7 +792,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Mathematics IV',
                         'semester_ID' => '4',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -800,7 +800,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Analysis Of Algorithm',
                         'semester_ID' => '4',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -808,7 +808,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Computer Organization & Architecture',
                         'semester_ID' => '4',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -816,7 +816,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Database Management System',
                         'semester_ID' => '4',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -824,7 +824,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Theoretical Computer Science',
                         'semester_ID' => '4',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -832,7 +832,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Computer Graphics',
                         'semester_ID' => '4',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -840,7 +840,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Microprocessor',
                         'semester_ID' => '5',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -848,7 +848,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Operating Systems',
                         'semester_ID' => '5',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -857,7 +857,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Structured and Object Oriented  Analysis and
         Design',
                         'semester_ID' => '5',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -865,7 +865,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Computer Networks',
                         'semester_ID' => '5',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -873,7 +873,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Web Technologies  ',
                         'semester_ID' => '5',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -881,7 +881,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Communication and Ethics',
                         'semester_ID' => '5',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -890,7 +890,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'System Programming and Compiler
         Construction',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -898,7 +898,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Software Engineering',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -906,7 +906,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Distributed Databases',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -914,7 +914,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Mobile Communication and Computing',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -922,7 +922,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Network Programming  ',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -930,7 +930,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Project Management',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -938,7 +938,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Operation Research',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -946,7 +946,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foreigh Language – German',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -954,7 +954,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foreigh Language – French',
                         'semester_ID' => '6',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -962,7 +962,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Digital Signal Processing',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -970,7 +970,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Cryptography and System Security',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -978,7 +978,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Artificial Intelligence',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -986,7 +986,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Network Threats and Attacks',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -994,7 +994,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Artificial Intelligence',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1002,7 +1002,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Advance Algorithms',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1010,7 +1010,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Computer  Simulation and Modeling',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1018,7 +1018,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Image Processing',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1026,7 +1026,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Software Architecture',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1034,7 +1034,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Soft Computing',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1042,7 +1042,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'ERP  and Supply Chain Management',
                         'semester_ID' => '7',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1050,7 +1050,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Data Warehouse and Mining',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1058,7 +1058,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Human Machine Interaction',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1066,7 +1066,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Parallel and distributed Systems',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1074,7 +1074,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Cloud Computing',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1082,7 +1082,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Machine Learning',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1091,7 +1091,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Embedded Systems
         ',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1099,7 +1099,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Adhoc wireless networks',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1107,7 +1107,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Digital Forensic',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1115,7 +1115,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Big data Analytics',
                         'semester_ID' => '8',
-                        'branch_ID' => '5'
+                        'branch_ID' => 'Computer Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);           //computer branch End
                     }     
@@ -1123,7 +1123,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                    //IT starts
                         'subject_name' => 'Data Structure & Algorithm Analysis',
                         'semester_ID' => '3',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1131,7 +1131,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                    
                         'subject_name' => 'Analog & Digital Circuits',
                         'semester_ID' => '3',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1140,7 +1140,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Principles of Analog &
         Digital Communication',
                         'semester_ID' => '3',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1148,7 +1148,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Automata Theory',
                         'semester_ID' => '4',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1156,7 +1156,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(           
                         'subject_name' => 'Web Programming',
                         'semester_ID' => '4',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1164,7 +1164,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                    
                         'subject_name' => 'Information Theory and Coding',
                         'semester_ID' => '4',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1173,7 +1173,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Computer Graphics
         and Virtual Reality',
                         'semester_ID' => '5',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1182,7 +1182,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Microcontroller and
         Embedded Systems',
                         'semester_ID' => '5',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1191,7 +1191,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Advanced Database
         Management Systems',
                         'semester_ID' => '5',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1200,7 +1200,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Open Source
         Technologies',
                         'semester_ID' => '5',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1208,7 +1208,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                    
                         'subject_name' => 'Distributed Systems',
                         'semester_ID' => '6',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1217,7 +1217,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'System & Web
         Security',
                         'semester_ID' => '6',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1226,7 +1226,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Data Mining &
         Business Intelligence',
                         'semester_ID' => '6',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1235,7 +1235,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Advance Internet
         Technology',
                         'semester_ID' => '6',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1243,7 +1243,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                    
                         'subject_name' => 'Intelligent System',
                         'semester_ID' => '7',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1252,7 +1252,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Wireless
         Technology',
                         'semester_ID' => '7',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1261,7 +1261,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Storage Network Management and
         Retrieval',
                         'semester_ID' => '8',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1269,7 +1269,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                    
                         'subject_name' => 'Big Data Analytics',
                         'semester_ID' => '8',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1277,7 +1277,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Computer Simulation and Modeling',
                         'semester_ID' => '8',
-                        'branch_ID' => '6'
+                        'branch_ID' => 'Information Technology Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    //IT ENDS
@@ -1286,7 +1286,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Electronic Devices',
                         'semester_ID' => '3',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1295,7 +1295,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Digital Circuits and
         Design',
                         'semester_ID' => '3',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1303,7 +1303,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Circuit Theory',
                         'semester_ID' => '3',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1312,7 +1312,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Electronic Instruments and
         Measurements',
                         'semester_ID' => '3',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1320,7 +1320,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Discrete Electronic Circuits',
                         'semester_ID' => '4',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1329,7 +1329,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Microprocessor and
         Peripherals',
                         'semester_ID' => '4',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1338,7 +1338,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Principles of Control
         Systems',
                         'semester_ID' => '4',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1347,7 +1347,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Fundamentals of
         Communication Engineering',
                         'semester_ID' => '4',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1355,7 +1355,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Electrical Machines',
                         'semester_ID' => '4',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1364,7 +1364,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Microcontrollers and
         Applications',
                         'semester_ID' => '5',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1373,7 +1373,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Design with Linear
         Integrated Circuits',
                         'semester_ID' => '5',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1382,7 +1382,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Electromagnetic
         Engineering',
                         'semester_ID' => '5',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1390,7 +1390,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Signals and Systems',
                         'semester_ID' => '5',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1398,7 +1398,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Digital Communication',
                         'semester_ID' => '5',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1406,7 +1406,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Basic VLSI Design',
                         'semester_ID' => '6',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1415,7 +1415,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Advanced Instrumentation
         Systems',
                         'semester_ID' => '6',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                                    
@@ -1423,7 +1423,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Computer Organization',
                         'semester_ID' => '6',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }                                                            
@@ -1431,7 +1431,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Power Electronics I',
                         'semester_ID' => '6',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }   
@@ -1439,7 +1439,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Digital Signal Processing and Processors',
                         'semester_ID' => '6',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1447,7 +1447,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Modern Information Technology for Management ',
                         'semester_ID' => '6',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1455,7 +1455,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Embedded System Design',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1463,7 +1463,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'IC Technology',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1471,7 +1471,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Power Electronics –II',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1479,7 +1479,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Computer Communication Networks',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1487,7 +1487,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Digital Image Processing',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1495,7 +1495,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Artificial Intelligence',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1503,7 +1503,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'ASIC Verification',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1511,7 +1511,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Optical Fiber Communication',
                         'semester_ID' => '7',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1519,7 +1519,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'CMOS VLSI Design',
                         'semester_ID' => '8',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1527,7 +1527,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Advanced Networking Technologies',
                         'semester_ID' => '8',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1535,7 +1535,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'MEMS Technology',
                         'semester_ID' => '8',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1543,7 +1543,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Robotics',
                         'semester_ID' => '8',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1551,7 +1551,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Mobile Communication',
                         'semester_ID' => '8',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1559,7 +1559,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Digital Control System',
                         'semester_ID' => '8',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);
                     }
@@ -1567,7 +1567,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Biomedical Electronics',
                         'semester_ID' => '8',
-                        'branch_ID' => '7'
+                        'branch_ID' => 'Electronics Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        //Electronics Ends
                     }
@@ -1575,7 +1575,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Analog Electronics I',
                         'semester_ID' => '3',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1583,7 +1583,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Digital Electronics',
                         'semester_ID' => '3',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1591,7 +1591,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Circuits and Transmission Lines',
                         'semester_ID' => '3',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1599,7 +1599,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Electronic Instruments and Measurements',
                         'semester_ID' => '3',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1607,7 +1607,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Analog Electronics II ',
                         'semester_ID' => '4',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1615,7 +1615,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Microprocessor and Peripherals',
                         'semester_ID' => '4',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1623,7 +1623,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Wave Theory and Propagation',
                         'semester_ID' => '4',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1631,7 +1631,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Signals and Systems',
                         'semester_ID' => '4',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1639,7 +1639,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Control Systems',
                         'semester_ID' => '4',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1647,7 +1647,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Microcontrollers and Applications',
                         'semester_ID' => '5',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1655,7 +1655,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Analog Communication ',
                         'semester_ID' => '5',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1663,7 +1663,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Random Signal Analysis',
                         'semester_ID' => '5',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1671,7 +1671,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'RF Modeling and Antennas',
                         'semester_ID' => '5',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1679,7 +1679,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Integrated Circuits',
                         'semester_ID' => '5',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1687,7 +1687,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Digital Communication',
                         'semester_ID' => '6',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1695,7 +1695,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Discrete Time Signal Processing',
                         'semester_ID' => '6',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1703,7 +1703,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Computer Communication and Telecom Networks',
                         'semester_ID' => '6',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1711,7 +1711,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Television Engineering',
                         'semester_ID' => '6',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1719,7 +1719,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Operating Systems',
                         'semester_ID' => '6',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1727,7 +1727,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'VLSI Design',
                         'semester_ID' => '6',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1735,7 +1735,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Image and Video Processing',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1743,7 +1743,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Mobile Communication',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1751,7 +1751,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Optical Communication and Networks',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1759,7 +1759,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Microwave and Radar Engineering',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1767,7 +1767,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Data Compression and Encryption ',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1775,7 +1775,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Statistical Signal Processing',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1783,7 +1783,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Neural Network and Fuzzy Logic ',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1791,7 +1791,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Analog and Mixed Signal VLSI',
                         'semester_ID' => '7',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1799,7 +1799,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Wireless Networks',
                         'semester_ID' => '8',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1807,7 +1807,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Satellite communication and Networks',
                         'semester_ID' => '8',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1815,7 +1815,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Internet and Voice Communication',
                         'semester_ID' => '8',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1823,7 +1823,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Speech Processing ',
                         'semester_ID' => '8',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1831,7 +1831,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Telecom Network Management',
                         'semester_ID' => '8',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1839,7 +1839,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Microwave Integrated Circuits',
                         'semester_ID' => '8',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1847,7 +1847,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Ultra Wideband Communication',
                         'semester_ID' => '8',
-                        'branch_ID' => '8'
+                        'branch_ID' => 'Electronics and Telecommunication'
                     );
                         $this->InsertTable->addEngiSubj($data);        //EXTC Ends
                     }
@@ -1855,7 +1855,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Thermodynamics',
                         'semester_ID' => '3',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1863,7 +1863,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Strength of Materials',
                         'semester_ID' => '3',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1871,7 +1871,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Production Process- I',
                         'semester_ID' => '3',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1879,7 +1879,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => ' Computer Aided M/c Drawing',
                         'semester_ID' => '3',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1887,7 +1887,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Data Base & Information Retrieval System',
                         'semester_ID' => '3',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1895,7 +1895,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Machine Shop Practice- I',
                         'semester_ID' => '3',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1903,7 +1903,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Fluid Mechanics',
                         'semester_ID' => '4',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1911,7 +1911,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Theory of Machines- I',
                         'semester_ID' => '4',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1919,7 +1919,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Production Process- II',
                         'semester_ID' => '4',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1927,7 +1927,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Material Technology',
                         'semester_ID' => '4',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1935,7 +1935,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Industrial Electronics$',
                         'semester_ID' => '4',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1943,7 +1943,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Machine Shop Practice- II',
                         'semester_ID' => '4',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1951,7 +1951,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'I C Engines',
                         'semester_ID' => '5',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1959,7 +1959,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Mechanical Measurements and Control',
                         'semester_ID' => '5',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1967,7 +1967,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Production Process-III',
                         'semester_ID' => '5',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1975,7 +1975,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Theory of Machines- II',
                         'semester_ID' => '5',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1983,7 +1983,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Heat Transfer',
                         'semester_ID' => '5',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1991,7 +1991,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Metrology and Quality Engineering',
                         'semester_ID' => '6',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -1999,7 +1999,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Machine Design I',
                         'semester_ID' => '6',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2007,7 +2007,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Mechanical Vibrations',
                         'semester_ID' => '6',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2015,7 +2015,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Thermal and Fluid Power Engineering',
                         'semester_ID' => '6',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2023,7 +2023,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Mechatronics',
                         'semester_ID' => '6',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2031,7 +2031,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Finite Element Analysis',
                         'semester_ID' => '6',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2039,7 +2039,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Machine Design -II',
                         'semester_ID' => '7',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2047,7 +2047,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'CAD/CAM/CAE',
                         'semester_ID' => '7',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2055,7 +2055,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Mechanical Utility Systems ',
                         'semester_ID' => '7',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2063,7 +2063,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Production Planning and Control',
                         'semester_ID' => '7',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2071,7 +2071,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Design of Mechanical Systems',
                         'semester_ID' => '8',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2079,7 +2079,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Industrial Engineering and Management',
                         'semester_ID' => '8',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2087,7 +2087,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Refrigeration and Air Conditioning',
                         'semester_ID' => '8',
-                        'branch_ID' => '9'
+                        'branch_ID' => 'Mechanical Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);           //Mechanics Ends       
                     }
@@ -2095,7 +2095,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Surveying – I ',
                         'semester_ID' => '3',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2103,7 +2103,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Strength of Materials ',
                         'semester_ID' => '3',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2111,7 +2111,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Building Materials and Construction',
                         'semester_ID' => '3',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2119,7 +2119,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Engineering Geology ',
                         'semester_ID' => '3',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2127,7 +2127,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Fluid Mechanics – I',
                         'semester_ID' => '3',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2135,7 +2135,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Database and Information Retrieval System',
                         'semester_ID' => '3',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2143,7 +2143,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Surveying – II ',
                         'semester_ID' => '4',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2151,7 +2151,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Structural Analysis – I ',
                         'semester_ID' => '4',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2159,7 +2159,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Building Design and Drawing – I',
                         'semester_ID' => '4',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2167,7 +2167,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Concrete Technology ',
                         'semester_ID' => '4',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2175,7 +2175,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Fluid Mechanics – II',
                         'semester_ID' => '4',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2183,7 +2183,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Geotechnical Engg.– I ',
                         'semester_ID' => '5',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2191,7 +2191,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Building Design and Drawing – II ',
                         'semester_ID' => '5',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2199,7 +2199,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Applied Hydraulics – I',
                         'semester_ID' => '5',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2207,7 +2207,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Transportation Engg. – I',
                         'semester_ID' => '5',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2216,7 +2216,7 @@ class CreateDbTable_cont extends CI_Controller
                         'subject_name' => 'Employment and
         Corporate Skills',
                         'semester_ID' => '5',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2224,7 +2224,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Geotechnical Engg. – II ',
                         'semester_ID' => '6',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2232,7 +2232,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Design and Drawing of Steel Structures',
                         'semester_ID' => '6',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2240,7 +2240,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Applied Hydraulics – II',
                         'semester_ID' => '6',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2248,7 +2248,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Transportation Engg. – II',
                         'semester_ID' => '6',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2256,7 +2256,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Environmental Engg – I',
                         'semester_ID' => '6',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }
@@ -2264,7 +2264,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(                                   
                         'subject_name' => 'Theory of Reinforced Prestressed Concrete',
                         'semester_ID' => '6',
-                        'branch_ID' => '10'
+                        'branch_ID' => 'Civil Engineering'
                     );
                         $this->InsertTable->addEngiSubj($data);        
                     }                                //Civil Ends sem7 & 8 subjects are not available

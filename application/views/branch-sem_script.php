@@ -206,6 +206,26 @@
                     }
             })
         }
+        if( $(this).val()==="Information Technology Engineering"){
+            $('#semester').on('change',function(){
+                if( $(this).val()==="3"){
+                    $("#engisem1").hide()
+                    $("#engisem2").hide()
+                    $("#engiIT3").show()
+                    $("#engicomp4").hide()
+                    $("#engicomp5").hide()
+                    $("#engicomp6").hide()
+                    $("#engicomp7").hide()
+                    $("#engicomp8").hide()
+                    $("#commercesem1").hide()
+                    $("#commercesem2").hide()
+                    $("#commercesem3").hide()
+                    $("#commercesem4").hide()
+                    $("#commercesem5").hide()
+                    $("#commercesem6").hide()
+                }
+            })
+        }
    /* if( $(this).val()==="Information Technology Engineering"){
             $('#semester').on('change',function(){
                 if( $(this).val()==="1"){
