@@ -168,6 +168,7 @@ class Student_cont extends CI_Controller
                  'stud_ID'=>$n
                            );
             $this->AddData->addStudentBatchItem($batch);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Student_cont/addStudent');      
         }
     }

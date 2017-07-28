@@ -33,6 +33,7 @@ class Attendance_cont extends CI_Controller
                 'attend_date'=>$this->input->post('date')
             );
             $this->AddData->addStudentAttendItem($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             $attend_id = $this->db->insert_id();
             $query['result'] = $this->SelectData->stud_attend_map($res,$attend_id);
             $this->load->view('addStudentAttendance',$query);  	
@@ -91,6 +92,7 @@ class Attendance_cont extends CI_Controller
                 'date' => $this->input->post('date')
             );
             $this->AddData->TeacherAttend($data1);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             $t_attend_id = $this->db->insert_id();
             array_push($t_name['result'],$t_attend_id);
             $this->load->view('addTeacherAttendance',$t_name); 	

@@ -1,4 +1,3 @@
-
 <?php include "header.php";?>
 <?php $page = 'four';include "sidebar.php";?>
 <?php include "nav.php";?>
@@ -7,10 +6,15 @@
 <br>
     <div class="content">   
         <div class="container-fluid">
+            <?php if($this->session->flashdata('success')) { ?>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right:    25px;"><span aria-hidden="true">&times;</span></button>
+                    <h5><?php echo $this->session->flashdata('success'); ?></h5>
+                </div>
+            <?php } ?>
             <div class="row">
                 <div class="col-lg-10 col-md-10 ">
                     <div class="card">
-                        
                         <div class="header">
                             <h4 class="title">Add Student</h4>
                             <ul class="nav nav-pills nav-justified thumbnail setup-panel" >

@@ -47,6 +47,7 @@ class Marks_cont extends CI_Controller
             'marks_obtained'=>$marks
         );
         $this->AddData->addMarks($data);
+        $this->session->set_flashdata('success','You have Successfully submitted data.');
         $username = $this->session->userdata('username');
         if(isset($username)){
             $this->load->view('addMarks');         //html filename

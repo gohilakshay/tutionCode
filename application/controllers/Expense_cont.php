@@ -73,14 +73,15 @@ class Expense_cont extends CI_Controller
             'staff_address'=> $this->input->post('staffaddress'),
             'status'=> 'unpaid'
             );
-             $this->AddData->staffDetails($data);
-             redirect('Expense_cont/staffDetails');
+            $this->AddData->staffDetails($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
+            redirect('Expense_cont/staffDetails');
         }//html filename
     }
     public function updateStaffDetails()
     {
         $this->load->helper('url');
-         $this->load->view('updateStaffDetails');
+        $this->load->view('updateStaffDetails');
        
     }
     public function staffPaymentDetails()
@@ -91,11 +92,8 @@ class Expense_cont extends CI_Controller
         $this->load->library('session');
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
-        
         $this->load->model('SelectData');
         $query['result'] =$this->SelectData->staff();
-        
-        
         $this->form_validation->set_rules('staffname','staffname','callback_custom_Alpha');
         $this->form_validation->set_rules('staffsalary', 'staffsalary', 'required|numeric');
         if($this->form_validation->run() == FALSE)
@@ -112,7 +110,7 @@ class Expense_cont extends CI_Controller
             'payment_date'=> $this->input->post('paymentdate'),
             ); 
             $this->AddData->staffPaymentDetails($data);
-            
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             $this->load->database();
             $this->load->model('SelectData'); 
             $this->SelectData->staffPaidDetails($data);
@@ -123,7 +121,7 @@ class Expense_cont extends CI_Controller
     public function meals()
     {
         $this->load->helper('url');
-         $this->load->library('form_validation');
+        $this->load->library('form_validation');
         $this->load->library('session');
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
@@ -146,10 +144,8 @@ class Expense_cont extends CI_Controller
             'payment_mode'=> $this->input->post('paymentmode'),
             'payment_date'=> $this->input->post('paymentdate'),
             );
-
-
-
             $this->AddData-> mealsDetails($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/meals');   	
 		}
     }
@@ -171,7 +167,6 @@ class Expense_cont extends CI_Controller
 		else
         {
             $this->load->helper('form');
-           
             $this->load->model('AddData');
             $data = array(
             'title'=> $this->input->post('title'),
@@ -179,10 +174,8 @@ class Expense_cont extends CI_Controller
             'payment_mode'=> $this->input->post('paymentmode'),
             'payment_date'=> $this->input->post('paymentdate'),
             );
-
-
-
             $this->AddData->maintenanceDetails($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/maintenance');   	
 		}
     }
@@ -212,10 +205,8 @@ class Expense_cont extends CI_Controller
             'payment_mode'=> $this->input->post('paymentmode'),
             'payment_date'=> $this->input->post('paymentdate'),
             );
-
-
-
             $this->AddData->transportDetails($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/transport');   	
 		}
         
@@ -247,6 +238,7 @@ class Expense_cont extends CI_Controller
             'payment_date'=> $this->input->post('paymentdate'),
             );
             $this->AddData->rentDetails($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/rent');   	
 		}
     }
@@ -268,7 +260,6 @@ class Expense_cont extends CI_Controller
 		else
         {   
             $this->load->helper('form');
-            
             $this->load->model('AddData');
             $data = array(
             'title'=> $this->input->post('title'),
@@ -276,10 +267,8 @@ class Expense_cont extends CI_Controller
             'payment_mode'=> $this->input->post('paymentmode'),
             'payment_date'=> $this->input->post('paymentdate'),
             );
-
-
-
             $this->AddData->utilitiesDetails($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/utilities');   	
 		}
     }
