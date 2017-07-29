@@ -9,13 +9,13 @@ class AddData extends CI_Model {
         return;
     }
     function addTeacherSubjItem($data1,$insert_id){
-        $course_name = $data1['course'];
-        $subject_name = $data1['subject'];
+        //$course_name = $data1['course'];
+         $subject_name = $data1['subject'];
         $n = count($subject_name);
-        $query = $this->db->get_where('course',array('course_name'=>$course_name));
+        /*$query = $this->db->get_where('course',array('course_name'=>$course_name));
         foreach($query->result() as $value){
            echo $course_id = $value->course_ID;
-        }
+        }*/
         $subject_id=array();
         for($i=0;$i<$n;$i++){
             $query1 = $this->db->get_where('subject',array('subject_name'=>$subject_name[$i]));
@@ -24,8 +24,8 @@ class AddData extends CI_Model {
             }
         }
         $subject= implode(",",$subject_id);
-         $new = array('teacher_id'=>$insert_id,'course_id'=>$course_id,'subject_id'=>$subject);
-         $this->db->insert('teacher_course_mapping', $new);
+         $new = array('teacher_id'=>$insert_id,'course_id'=>'course_id','subject_id'=>$subject);
+        $this->db->insert('teacher_course_mapping', $new);
     }
     function addStudentItem($data){
         $this->db->insert('student_details', $data);

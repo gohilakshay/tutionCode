@@ -133,7 +133,7 @@
                                                 <?php foreach($result3 as $subject):
                                                 ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="hindi" name="subject[]" ><?php echo $subject->subject_name; ?>
+                                                  <input type="checkbox" value="<?php echo $subject->subject_name; ?>" name="subject[]" ><?php echo $subject->subject_name; ?>
                                                 </label>
                                                 <?php endforeach;?> 
                                             </div>

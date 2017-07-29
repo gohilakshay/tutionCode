@@ -123,7 +123,7 @@
                                                 <td><?php echo $value->test_date; ?></td>
                                                 <td><?php echo $value->batch_id ; ?></td>
                                                 <td><?php echo $value->test_time; ?></td>
-                                                <td><?php echo $value->subject_id; ?></td>
+                                                <td><?php echo $value->subject_name; ?></td>
                                                 <td><?php echo $value->total_marks; ?></td>
                                                 <td>
                                                     <?php echo form_open('Test_cont/updateTest'); ?>

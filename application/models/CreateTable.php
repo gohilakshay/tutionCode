@@ -869,8 +869,8 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
-                        'subject_id' => array(
-                                                 'type' => 'INT',
+                        'subject_name' => array(
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                      );

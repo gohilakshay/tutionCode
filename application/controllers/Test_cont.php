@@ -37,7 +37,7 @@ class Test_cont extends CI_Controller
             $subject_name = $this->input->post('subject');
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             $batch_id = $this->SelectData->batchIDBatch($batch_name);
-           // $subj_id = $this->SelectData->subjIDSubj($subject_name); //YET TO BE COMPLETE BECAUSE SUBJETS NOT ENTERED
+            //$subj_id = $this->SelectData->subjIDSubj($subject_name);
             
             $data = array(
                 'test_ID'=>$this->input->post('testid'),
@@ -47,7 +47,7 @@ class Test_cont extends CI_Controller
                 'total_marks'=>$this->input->post('totalmarks'),
                 'passing_marks'=>$this->input->post('passingmarks'),
                 'supervisor_name'=>$this->input->post('supervisorname'),
-                'subject_id'=>'notYet'
+                'subject_name'=>$subject_name
             );
             $ti = $this->AddData->addTest($data);
             redirect('Test_cont/addTest');

@@ -1,5 +1,6 @@
-<?php foreach($result as $value):
-
+<?php 
+$value = $result[0];
+$subj = $result[1];
 ?>
 <div class="content">
             <div class="container-fluid">
@@ -155,7 +156,7 @@
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>History</b>
+                                                <b><?php echo $subj->subject_id;?></b>
                                             </div>
                                         </div>
                                     </li>
@@ -173,6 +174,3 @@
                 </div>
             </div>
         </div>
-<?php                                                    
- endforeach;
-?>

@@ -73,11 +73,7 @@
                            <p><img src="<?php echo base_url()?>assets/icon/scheduler.png">&emsp; Scheduler</p>
                         </a>
                     </li>
-                    <li <?php if($page == 'ten'){ echo ' class="active"';}?>>
-                        <a href="<?php echo site_url()."/bar/bar" ?>">
-                           <p><img src="<?php echo base_url()?>assets/icon/scheduler.png">&emsp; chart</p>
-                        </a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>

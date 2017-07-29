@@ -74,7 +74,7 @@ if(isset($_POST['testid'])){
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php  echo $value->subject_id; ?>" required readonly>
+                                    <input type="text" class="form-control border-input" name="subject" value="<?php  echo $value->subject_name; ?>" required readonly>
                                 </div>
                             </div>
                             

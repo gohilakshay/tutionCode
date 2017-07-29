@@ -106,7 +106,7 @@
                         </div>
                         <div class="footer"><hr>
                             <div class="stats">
-                                <a href="">
+                                 <a href="<?php echo site_url()."/Bar_cont/bar" ?>">
                                     <i class="ti-plus"></i> view Performance 
                                 </a>
                             </div>
