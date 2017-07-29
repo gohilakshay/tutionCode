@@ -40,16 +40,16 @@ class Course_cont extends CI_Controller
                 $query['result3'] = $this->SelectData->subject();
             }
             else if($value == 'jrcolg_sci'){
-                $query['result3'] = $this->SelectData->collegesubject();
+                $query['result5'] = $this->SelectData->collegesubject();
             }
             else if($value == 'jrcolg_com'){
-                $query['result3'] = $this->SelectData->collegesubject();
+                $query['result6'] = $this->SelectData->collegesubject();
             }
             else if($value == 'engicolg'){ 
-                $query['result3'] = $this->SelectData->engisubject();
+                $query['result7'] = $this->SelectData->engisubject();
             }
             else if($value == 'comcolg'){ 
-                $query['result3'] = $this->SelectData->commercesubject();
+                $query['result8'] = $this->SelectData->commercesubject();
             }
         }
         
