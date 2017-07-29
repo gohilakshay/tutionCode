@@ -220,14 +220,14 @@ class CreateDbTable_cont extends CI_Controller
                     if($i==1){
                         $data = array(
                         'branch_name' => 'Science',
-                        'standard_name' => '11'
+                        'standard_name' => 'Science'
                     );
                         $this->InsertTable->addBranch($data);
                     }
                     else if($i==2){
                         $data = array(
                         'branch_name' => 'Science',
-                        'standard_name' => '12'
+                        'standard_name' => 'Science'
                     );
                         $this->InsertTable->addBranch($data);
                     }
@@ -240,14 +240,14 @@ class CreateDbTable_cont extends CI_Controller
                     if($i==1){
                         $data = array(
                         'branch_name' => 'Commerce',
-                        'standard_name' => '11'
+                        'standard_name' => 'Commerce'
                     );
                         $this->InsertTable->addBranch($data);
                     }
                     else if($i==2){
                         $data = array(
                         'branch_name' => 'Commerce',
-                        'standard_name' => '12'
+                        'standard_name' => 'Commerce'
                     );
                         $this->InsertTable->addBranch($data);
                     }
@@ -469,7 +469,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'English',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -477,7 +477,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Hindi',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -485,7 +485,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Marathi',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -493,7 +493,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Mathematics',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -501,7 +501,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Biology',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -509,7 +509,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Physics',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -517,7 +517,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Chemistry',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -525,7 +525,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Enviornmental Studies',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -533,7 +533,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'vocational',
                         'semester_ID' => '1',
-                        'branch_ID' => '1'
+                        'branch_ID' => 'Science'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }                                       /*11th & 12th science ends*/    
@@ -546,7 +546,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                             'subject_name' => 'English',
                             'semester_ID' => '1',
-                            'branch_ID' => '2'
+                            'branch_ID' => 'Commerce'
                         );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -554,7 +554,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Marathi',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -562,7 +562,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Hindi',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -570,7 +570,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Urdu',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -578,7 +578,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Arabic',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -586,7 +586,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Information Technology',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -594,7 +594,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Environment Education',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -602,7 +602,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Book-keeping and Accountancy',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -610,7 +610,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Organisation of Commerce',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -618,7 +618,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Economics',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -626,7 +626,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Mathematics & Statistics',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }
@@ -634,7 +634,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Secretarial Practice',
                         'semester_ID' => '1',
-                        'branch_ID' => '2'
+                        'branch_ID' => 'Commerce'
                     );
                         $this->InsertTable->addCollegeSubj($data);
                     }                                                 /*11th & 12th commerce ends*/
