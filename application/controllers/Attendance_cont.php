@@ -102,6 +102,7 @@ class Attendance_cont extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->model('AddData');
+        $this->load->library('session');
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $t_ID = $this->input->post('teach_id');
@@ -112,7 +113,7 @@ class Attendance_cont extends CI_Controller
         $data=array(
             't_id'=>$t_ID,
             't_attend_id'=>$t_attend_id,
-            'absent_teacher_id'=>$attending,
+            'absent_teacher_attend_id'=>$attending,
         );
         print_r($data);
         $this->AddData->markTeacherAttendItem($data);

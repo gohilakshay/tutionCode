@@ -83,7 +83,7 @@
                                                 <td>Sr No.</td>
                                                 <td>Teacher ID</td>
                                                 <td>Teacher Name</td>
-                                                <td>Mark Attendance</td>
+                                                <td>Mark Absent Attendance</td>
                                             </tr>
                                         </thead>
                                         <tbody>

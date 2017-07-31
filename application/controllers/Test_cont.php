@@ -72,6 +72,57 @@ class Test_cont extends CI_Controller
             $this->load->view('updateTest');   //html filename
         }else echo "Error 404 : Access Denied";  
     }
+    public function TestMarkDetail($n)
+    {     
+        $this->load->helper('form');
+        $this->load->helper('url');  
+        $this->load->library('session');
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
+            $this->load->model('SelectData');
+            $test= $this->SelectData->test_detail();  
+            $marks = $this->SelectData->marks_detail();
+            $student = $this->SelectData->student();
+            $pass = 0;
+            $fail = 0;$i=0;
+            $render = array();
+            foreach($test as $value){
+                if($value->test_ID == $n){
+                    $test_detail[] = $value; 
+                    $test_id = $value->test_ID;
+                    foreach($marks as $mvalue){
+                        $marks_detail[] = $mvalue;
+                        $mtest_id = $mvalue->test_id;
+                        if($test_id == $mtest_id){
+                            $marks_obt =$mvalue->marks_obtained;
+                            $marks_obt = explode(",",$marks_obt);
+                            foreach($marks_obt as $asd){
+                                if($asd >= $value->passing_marks){
+                                    $pass++;
+                                }
+                                else
+                                    $fail++;
+                            }
+                        }
+                    }
+                    $total = $pass + $fail; 
+                    $avg = $pass/$total;
+                    $data[$i] = array(
+                        'category' => $test_id,
+                        'value1' => $pass,
+                        'value2' => $avg,
+                        'value3' => $fail,
+                        'test_detail' => $test_detail,
+                        'marks_detail' => $marks_detail,
+                    );
+                    $i++;
+                    $pass = 0;
+                    $fail = 0;
+                }
+            }
+        $new = array('data' => $data);
+        $this->load->view("test_detail_view",$new);
+    }
     public function customAlpha($strrr) 
         {
             if ( !preg_match('/^[a-zA-Z ]+$/i',$strrr) )

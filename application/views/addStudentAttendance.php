@@ -90,7 +90,7 @@
                                                 <td>Sr No.</td>
                                                 <td>Student ID</td>
                                                 <td>Student Name</td>
-                                                <td>Mark Attendance</td>
+                                                <td>Mark Absent Attendance</td>
                                             </tr>
                                         </thead>
                                         <tbody><?php 

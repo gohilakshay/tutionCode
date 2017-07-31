@@ -19,8 +19,8 @@
                     $arrData = array(
                         "chart" => array(
                         "subCaption"=> "Student Perfomance Graph",
-                        "xAxisname"=> "Subject",
-                        "yAxisName"=> "Marks",
+                        "xAxisname"=> "Test",
+                        "yAxisName"=> "Total",
                         "numberPrefix"=> "",
                         "exportEnabled" =>"1",
                         "yAxisMaxValue"=> "100",
@@ -32,7 +32,7 @@
                     $categoryArray=array();
                     $dataseries1=array();
                     $dataseries2=array();
-                    $dataseries3=array();  
+                    $dataseries3=array(); 
                     foreach($result as $row){
                         array_push($categoryArray, array(
                             "label" => $row["category"]
@@ -75,32 +75,35 @@
                             <thead>
                                 <tr style="font-weight: bold;">
                                     <td>Sr No.</td>
-                                    <td>Student ID</td>
-                                    <td>Student Name</td>
-                                    <td>Exam</td>
-                                    <td>Highest Marks</td>
-                                    <td>Obtained Marks</td>
-                                    <td>Average Marks</td>
-                                    <td>% Obatined</td>
+                                    <td>Test ID</td>
+                                    <td>Test Date</td>
+                                    <td>Test Time</td>
+                                    <td>Batch ID</td>
+                                    <td>Total Marks</td>
+                                    <td>Passing Marks</td>
+                                    <td>Supervisor Name</td>
+                                    <td>Subject Name</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i=1; ?> 
-                                <tr> <?php foreach ($result2 as $value):?> 
+                                
+                                <?php $i=1; 
+                                    foreach($result as $value):
+                                    $test = $value["test_detail"];
+                                    foreach($test as $v):
+                                ?> 
+                                <tr>
                                     <td><?php echo $i++; ?></td>
-                                    <td>  <?php foreach ($result1 as $key ) {
-                                            echo  $key->stud_ID;
-                                            } ?></td>
-                                    <td><a href="<?php echo site_url("Student_cont/studentProfile") ?>
-                                           "><?php echo $key->stud_name; ?></a></td>
-                                    <td> <?php  
-                                        echo $value['category'];
-                                        ?>  </td>
-                                    <td><?php echo $value['value1']; ?></td>
-                                    <td><?php echo $value['value2']?></td>
-                                    <td><?php echo $value['value3']?></td>
-                                    <td>45.00%</td>          
-                                </tr>  <?php endforeach; ?>
+                                    <td><a href="<?php echo site_url();?>/Test_cont/TestMarkDetail/<?php echo $v->test_ID;?>"><?php echo $v->test_ID; ?></a></td>
+                                    <td><?php echo $v->test_date; ?></td>
+                                    <td><?php echo $v->test_time; ?>  </td>
+                                    <td><?php echo $v->batch_id; ?></td>
+                                    <td><?php echo $v->total_marks;?></td>
+                                    <td><?php echo $v->passing_marks;?></td>
+                                    <td><?php echo $v->supervisor_name;?></td>
+                                    <td><?php echo $v->subject_name;?></td>
+                                              
+                                </tr>  <?php endforeach; break;endforeach; ?>
                             </tbody>
                         </table>    
                     </div>                                 

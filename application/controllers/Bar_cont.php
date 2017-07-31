@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         public function bar()
         {
             $this->load->library('session');
-            $db = $this->session->userdata('db');//load db   
+            $db = $this->session->userdata('db');//load db 
             $this->load->database($db);//call db
             $this->load->model('SelectData');
             $test= $this->SelectData->test_detail();  
@@ -34,6 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 $fail++;
                         }
                     }
+                    
                 }
                 $total = $pass + $fail; 
             $avg = $pass/$total;
@@ -41,10 +42,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 'category' => $test_id,
                 'value1' => $pass,
                 'value2' => $avg,
-                'value3' => $fail
+                'value3' => $fail,
+                'test_detail' => $test
             );
                 $i++;
-             
+              $pass = 0;
+            $fail = 0;
             }
             $render['result'] =  $data;
             $this->load->view('chart',$render);    
