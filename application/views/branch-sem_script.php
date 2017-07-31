@@ -166,9 +166,11 @@
     
     /*For  Computer Engineering subjects according to branch and semester*/
     $('#engi_branch').on('change',function(){
-        if( $(this).val()==="Computer Engineering"){   //Comp
-            $('#semester').on('change',function(){
+        if( $(this).val()==="Computer Engineering"){   //Comp 
+            $('#engisemester').on('change',function(){
+                //debugger;
                 if( $(this).val()==="1"){
+                    debugger;
                     $("#engisem1").show()
                     $("#engisem2").hide()
                     $("#engicomp3").hide()
