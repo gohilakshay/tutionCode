@@ -69,7 +69,7 @@
                                         }
                                         else {
                                         ?>
-                                        <option value="<?php echo $value->Standard_name; ?>"><?php echo $value->standard_name; ?></option>
+                                        <option value="<?php echo $value->standard_ID; ?>"><?php echo $value->standard_name; ?></option>
                                         <?php }
                                         endforeach; ?> </select>
                                     <?php echo form_error('standard', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
@@ -104,7 +104,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div id="engineer" style="display:none;">
                             <div class="row"> 
                                 <div class="col-md-6">
@@ -125,7 +124,7 @@
                                 <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Semester:</label>
-                                            <select class="form-control border-input" id="semester" name="semester">
+                                            <select class="form-control border-input" id="engisemester" name="engisemester">
                                                 <option value="">---Select Semester---</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -137,7 +136,7 @@
                                                 <option value="8">8</option>
                                                
                                             </select>
-                                    <?php echo form_error('semester', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <?php echo form_error('engisemester', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                 </div>
                             </div>
@@ -174,7 +173,7 @@
                             </div>
                         </div>
 
-                        <!--end for branch   
+                        <!--end for branch   -->
                         <div id="schoolSubjects" style="display:none;">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -192,7 +191,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                         <!--for science college-->
                         <div id="scienceSubjects" style="display:none;">
                             <div class="row">
@@ -242,7 +241,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                                <?php foreach($result3 as $value):
+                                                <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 1){
                                                 ?>
                                                 <label class="checkbox-inline">
@@ -262,7 +261,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 2){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -281,7 +280,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 3 && $value->branch_ID == 'Computer Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -299,7 +298,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 4 && $value->branch_ID == 'Computer Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -317,7 +316,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 5 && $value->branch_ID == 'Computer Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -335,7 +334,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 6 && $value->branch_ID == 'Computer Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -353,7 +352,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 7 && $value->branch_ID == 'Computer Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -372,7 +371,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == 8 && $value->branch_ID == 'Computer Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -392,7 +391,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '3' && $value->branch_ID == 'Information Technology Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -411,7 +410,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '4' && $value->branch_ID == 'Information Technology Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -430,7 +429,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '5' && $value->branch_ID == 'Information Technology Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -449,7 +448,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '6' && $value->branch_ID == 'Information Technology Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -468,7 +467,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '7' && $value->branch_ID == 'Information Technology Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -487,7 +486,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '8' && $value->branch_ID == 'Information Technology Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -508,7 +507,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '3' && $value->branch_ID == 'Electronics Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -527,7 +526,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '4' && $value->branch_ID == 'Electronics Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -546,7 +545,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '5' && $value->branch_ID == 'Electronics Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -565,7 +564,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '6' && $value->branch_ID == 'Electronics Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -584,7 +583,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '7' && $value->branch_ID == 'Electronics Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -603,7 +602,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '8' && $value->branch_ID == 'Electronics Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -624,7 +623,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '3' && $value->branch_ID == 'Electronics and Telecommunication'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -643,7 +642,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '4' && $value->branch_ID == 'Electronics and Telecommunication'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -662,7 +661,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '5' && $value->branch_ID == 'Electronics and Telecommunication'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -681,7 +680,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '6' && $value->branch_ID == 'Electronics and Telecommunication'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -700,7 +699,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '7' && $value->branch_ID == 'Electronics and Telecommunication'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -719,7 +718,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '8' && $value->branch_ID == 'Electronics and Telecommunication'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -740,7 +739,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '3' && $value->branch_ID == 'Mechanical Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -759,7 +758,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '4' && $value->branch_ID == 'Mechanical Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -778,7 +777,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '5' && $value->branch_ID == 'Mechanical Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -797,7 +796,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '6' && $value->branch_ID == 'Mechanical Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -816,7 +815,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '7' && $value->branch_ID == 'Mechanical Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -835,7 +834,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '8' && $value->branch_ID == 'Mechanical Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -856,7 +855,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '3' && $value->branch_ID == 'Civil Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -875,7 +874,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '4' && $value->branch_ID == 'Civil Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -894,7 +893,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '5' && $value->branch_ID == 'Civil Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -913,7 +912,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '6' && $value->branch_ID == 'Civil Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -932,7 +931,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '7' && $value->branch_ID == 'Civil Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
@@ -951,7 +950,7 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                             <div class="row">
-                                               <?php foreach($result3 as $value):
+                                               <?php foreach($result7 as $value):
                                                 if($value->semester_ID == '8' && $value->branch_ID == 'Civil Engineering'){?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->engisubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
