@@ -32,9 +32,9 @@
                                     <label>Courses</label> 
                                     <select class="form-control border-input" id="course" name="course" required>
                                         <option value="">---Select---</option>
-                                        <option value="course1">course1</option>
-                                        <option value="course2">course2</option>
-                                        <option value="course3">course3</option>
+                                        <?php foreach($result as $value): ?>
+                                        <option value="<?php echo $value->course_ID ?>"><?php echo $value->course_name ?></option>
+                                        <?php endforeach;?>
                                     </select>
                                     <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
@@ -42,7 +42,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Timing</label>
-                                    <input type="text" class="form-control border-input" name="timing" value="<?php         if(isset($_POST['timing'])){echo $_POST['timing'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  LastName">
+                                    <input type="text" class="form-control border-input" name="timing" value="<?php if(isset($_POST['timing'])){echo $_POST['timing'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  LastName">
                                 </div>
                             </div>
                             <div class="col-md-3">

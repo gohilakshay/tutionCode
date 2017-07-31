@@ -62,7 +62,11 @@ class Attendance_cont extends CI_Controller
     public function markTeacherAttendance()
     {
         $this->load->library('session');
+        $db = $this->session->userdata('db');//load db    
+        $this->load->database($db);//call db
         $this->load->helper('url');
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->course();
         $this->load->library('form_validation');
         $this->form_validation->set_rules('subject', 'subject', 'required|alpha_dash');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
@@ -71,13 +75,11 @@ class Attendance_cont extends CI_Controller
 		{
             $username = $this->session->userdata('username');
             if(isset($username)){
-            $this->load->view('addTeacherAttendance');
+            $this->load->view('addTeacherAttendance',$query);
              }else echo "Error 404 : Access Denied";//html filename	
 		}
 		else
         {
-            $db = $this->session->userdata('db');//load db    
-            $this->load->database($db);//call db
             $this->load->model('SelectData');
             $this->load->model('AddData');
             $data = array(
