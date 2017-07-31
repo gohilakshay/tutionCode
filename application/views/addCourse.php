@@ -57,12 +57,12 @@
                                         ?>
                                          <option value="Commerce"><?php echo $value->standard_name; ?></option>
                                    <?php }
-                                        else if($value->standard_name== "11"){ 
+                                        else if($value->standard_name== "11th"){ 
                                             ?>
                                          <option value="11"><?php echo $value->standard_name; ?></option>
                                         <?php
                                         }
-                                        else if($value->standard_name== "12"){ 
+                                        else if($value->standard_name== "12th"){ 
                                             ?>
                                          <option value="12"><?php echo $value->standard_name; ?></option>
                                         <?php
