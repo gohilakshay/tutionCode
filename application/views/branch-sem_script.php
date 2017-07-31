@@ -3,6 +3,8 @@
     $('#standard').on('change',function(){ 
         if( $(this).val()>0 && $(this).val()<11 ){
             $("#schoolSubjects").show()
+            $("#scienceSubjects").hide()
+            $("#commerceSubjects").hide() 
             $("#engisem1").hide()
             $("#engisem2").hide()
             $("#engicomp3").hide()
@@ -44,6 +46,8 @@
         }
         else{
             $("#schoolSubjects").hide()
+            $("#scienceSubjects").hide()
+            $("#commerceSubjects").hide() 
             $("#engisem1").hide()
             $("#engisem2").hide()
             $("#engicomp3").hide()
@@ -88,7 +92,7 @@
     
     /*For college view of Branch and Semester*/
     $('#standard').on('change',function(){
-        if( $(this).val()>10 || $(this).val()>13){
+        if( $(this).val()>10 || $(this).val()<13){
             $("#college").show()
         }
         else{
@@ -99,39 +103,25 @@
     
     /*For college Subjects*/
     $('#stream').on('change',function(){
-        if( $(this).val()==="Science"){                 
-            $('#semester').on('change',function(){
-                if( $(this).val()==="1")
-                {
-                     $("#scienceSubjects").show()
-                     $("#commerceSubjects").hide()
-                }
-                else if( $(this).val()==="Commerce")
-                {
-                    $("#scienceSubjects").hide()
-                    $("#commerceSubjects").show()
-                }
-                else
-                {
-                    $("#scienceSubjects").hide()
-                    $("#commerceSubjects").hide()              
-                }
-            })
-        }
-    });
-    
-    /*
-    $('#standard').on('change',function(){ 
-        if( $(this).val()== "11" ){
+        if( $(this).val()==="Science")                
+        {
             $("#scienceSubjects").show()
             $("#commerceSubjects").hide()
+            $("#schoolSubjects").hide()
         }
-        else{
+        else if( $(this).val()==="Commerce")
+        {
             $("#scienceSubjects").hide()
-            $("#commerceSubjects").hide()
+            $("#commerceSubjects").show()
+            $("#schoolSubjects").hide()
         }
-    }); */
-    /*End*/
+        else
+        {
+            $("#scienceSubjects").hide()
+            $("#commerceSubjects").hide()   
+            $("#schoolSubjects").hide()
+        }  
+    });
     
     /*For Commerce view of Branch and Semester*/
     $('#standard').on('change',function(){
@@ -168,9 +158,7 @@
     $('#engi_branch').on('change',function(){
         if( $(this).val()==="Computer Engineering"){   //Comp 
             $('#engisemester').on('change',function(){
-                //debugger;
                 if( $(this).val()==="1"){
-                    debugger;
                     $("#engisem1").show()
                     $("#engisem2").hide()
                     $("#engicomp3").hide()
@@ -2365,65 +2353,377 @@
     
     /*For Commerce subjects according to branch and semester*/
     $('#commerce_branch').on('change',function(){
-        if( $(this).val()==="fybcom"){
+        if( $(this).val()==="Bachelor of Accounting and Finance"){
             $('#commercesemester').on('change',function(){
-                if( $(this).val()==="commerce1"){
-                    $("#commercesem1").show()
-                    $("#commercesem2").hide()
-                    $("#commercesem3").hide()
-                    $("#commercesem4").hide()
-                    $("#commercesem5").hide()
-                    $("#commercesem6").hide()
+                if( $(this).val()==="1"){
+                    $("#commsem1").show()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
                 }
-                else if($(this).val()==="commerce2"){
-                    $("#commercesem1").hide()
-                    $("#commercesem2").show()
-                    $("#commercesem3").hide()
-                    $("#commercesem4").hide()
-                    $("#commercesem5").hide()
-                    $("#commercesem6").hide()
+                else if($(this).val()==="2"){
+                    $("#commsem1").hide()
+                    $("#commsem2").show()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
                     }
-                else if($(this).val()==="commerce3"){ 
-                    $("#commercesem1").hide()
-                    $("#commercesem2").hide()
-                    $("#commercesem3").show()
-                    $("#commercesem4").hide()
-                    $("#commercesem5").hide()
-                    $("#commercesem6").hide()
+                else if($(this).val()==="3"){ 
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").show()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
                     }
-                else if($(this).val()==="commerce4"){
-                    $("#commercesem1").hide()
-                    $("#commercesem2").hide()
-                    $("#commercesem3").hide()
-                    $("#commercesem4").show()
-                    $("#commercesem5").hide()
-                    $("#commercesem6").hide()
+                else if($(this).val()==="4"){
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").show()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
                     }
-                else if($(this).val()==="commerce5"){
-                    $("#commercesem1").hide()
-                    $("#commercesem2").hide()
-                    $("#commercesem3").hide()
-                    $("#commercesem4").hide()
-                    $("#commercesem5").show()
-                    $("#commercesem6").hide()
+                else if($(this).val()==="5"){
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").show()
+                    $("#commsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
                     }
-                else if($(this).val()==="commerce6"){
-                    $("#commercesem1").hide()
-                    $("#commercesem2").hide()
-                    $("#commercesem3").hide()
-                    $("#commercesem4").hide()
-                    $("#commercesem5").hide()
-                    $("#commercesem6").show()
+                else if($(this).val()==="6"){
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").show()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
                     }
                 else{
-                    $("#commercesem1").hide()
-                    $("#commercesem2").hide()
-                    $("#commercesem3").hide()
-                    $("#commercesem4").hide()
-                    $("#commercesem5").hide()
-                    $("#commercesem6").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
                     }
             })
-        }});
+        }
+    
+        if( $(this).val()==="Bachelor of Commerce"){
+            $('#commercesemester').on('change',function(){
+                if( $(this).val()==="1"){
+                    $("#bcommsem1").show()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                }
+                else if($(this).val()==="2"){
+                    $("#bcommsem1").show()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    }
+                else if($(this).val()==="3"){ 
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").show()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    }
+                else if($(this).val()==="4"){
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").show()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    }
+                else if($(this).val()==="5"){
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").show()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    }
+                else if($(this).val()==="6"){
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").show()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    }
+                else{
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    }
+            })
+        }
+        
+        if( $(this).val()==="Bachelor of Management Studies"){
+            $('#commercesemester').on('change',function(){
+                if( $(this).val()==="1"){
+                    $("#bmscommsem1").show()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                }
+                else if($(this).val()==="2"){
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").show()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    }
+                else if($(this).val()==="3"){ 
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").show()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    }
+                else if($(this).val()==="4"){
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").show()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    }
+                else if($(this).val()==="5"){
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").show()
+                    $("#bmscommsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    }
+                else if($(this).val()==="6"){
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").show()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    }
+                else{
+                    $("#bmscommsem1").hide()
+                    $("#bmscommsem2").hide()
+                    $("#bmscommsem3").hide()
+                    $("#bmscommsem4").hide()
+                    $("#bmscommsem5").hide()
+                    $("#bmscommsem6").hide()
+                    $("#bcommsem1").hide()
+                    $("#bcommsem3").hide()
+                    $("#bcommsem5").hide()
+                    $("#commsem1").hide()
+                    $("#commsem2").hide()
+                    $("#commsem3").hide()
+                    $("#commsem4").hide()
+                    $("#commsem5").hide()
+                    $("#commsem6").hide()
+                    }
+            })
+        }
+    });
     /*END for Commerce Subjects*/
 </script>

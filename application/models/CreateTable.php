@@ -203,8 +203,8 @@ class CreateTable extends CI_Model {
                                                  'constraint' => '10',
                                           ),
                         'branch_ID' => array(
-                                                 'type' => 'INT',
-                                                 'constraint' => '10',
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '500',
                                           ),
                      );
       
