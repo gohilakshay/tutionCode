@@ -302,7 +302,7 @@ class CreateDbTable_cont extends CI_Controller
                 }
             }
             else if($type == 'comcolg'){
-                for($i=5;$i<18;$i++)
+                for($i=11;$i<14;$i++)
                 {
                      if($i==11){
                         $data = array(
@@ -318,37 +318,9 @@ class CreateDbTable_cont extends CI_Controller
                     );
                         $this->InsertTable->addBranch($data);
                     }
-                    else if($i==13){
-                        $data = array(
-                        'branch_name' => 'Bachelor of Management Studies',
-                        'standard_name' => 'Commerce'
-                    );
-                        $this->InsertTable->addBranch($data);
-                    }
-                    else if($i==14){
-                        $data = array(
-                        'branch_name' => 'Bachelor of Finance and Marketing',
-                        'standard_name' => 'Commerce'
-                    );
-                        $this->InsertTable->addBranch($data);
-                    }
-                    else if($i==15){
-                        $data = array(
-                        'branch_name' => 'Bachelor Business Administration',
-                        'standard_name' => 'Commerce'
-                    );
-                        $this->InsertTable->addBranch($data);
-                    }
-                    else if($i==16){
-                        $data = array(
-                        'branch_name' => 'Chattered Accountant',
-                        'standard_name' => 'Commerce'
-                    );
-                        $this->InsertTable->addBranch($data);
-                    }
                     else {
                         $data = array(
-                        'branch_name' => 'Company Secretary',
+                        'branch_name' => 'Bachelor of Management Studies',
                         'standard_name' => 'Commerce'
                     );
                         $this->InsertTable->addBranch($data);
@@ -2278,7 +2250,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting-I',
                         'semester_ID' => '1',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2286,7 +2258,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Cost Accounting-I',
                         'semester_ID' => '1',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2294,7 +2266,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Economics-I',
                         'semester_ID' => '1',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2302,7 +2274,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Commerce-I',
                         'semester_ID' => '1',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2310,7 +2282,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Information Technology-I',
                         'semester_ID' => '1',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2318,7 +2290,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Communication-I',
                         'semester_ID' => '1',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2326,7 +2298,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foundation Course-I',
                         'semester_ID' => '1',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2334,7 +2306,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting-II',
                         'semester_ID' => '2',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2342,7 +2314,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Auditing-I',
                         'semester_ID' => '2',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2350,7 +2322,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Management-I',
                         'semester_ID' => '2',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2358,7 +2330,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Taxation-I',
                         'semester_ID' => '2',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2366,7 +2338,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Law-I',
                         'semester_ID' => '2',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2374,7 +2346,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Quantitative Methods for Business-I',
                         'semester_ID' => '2',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2382,7 +2354,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Communication-II',
                         'semester_ID' => '2',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2390,7 +2362,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting-III',
                         'semester_ID' => '3',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2398,7 +2370,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Cost Accounting-II',
                         'semester_ID' => '3',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2406,7 +2378,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Auditing-II',
                         'semester_ID' => '3',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2414,7 +2386,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Economics-II',
                         'semester_ID' => '3',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2422,7 +2394,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Management-I',
                         'semester_ID' => '3',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2430,7 +2402,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Law-II',
                         'semester_ID' => '3',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2438,7 +2410,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Quantitative Methods for Business-II',
                         'semester_ID' => '3',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2446,7 +2418,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting-IV',
                         'semester_ID' => '4',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2454,7 +2426,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Management Accounting-I',
                         'semester_ID' => '4',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2462,7 +2434,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Taxation-II',
                         'semester_ID' => '4',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2470,7 +2442,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Commerce-II',
                         'semester_ID' => '4',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2478,7 +2450,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Law-III',
                         'semester_ID' => '4',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2486,7 +2458,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Information Technology-II',
                         'semester_ID' => '4',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2494,7 +2466,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foundation Course-II',
                         'semester_ID' => '4',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2502,7 +2474,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting- V',
                         'semester_ID' => '5',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2510,7 +2482,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Cost Accounting- III',
                         'semester_ID' => '5',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2518,7 +2490,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting-VI',
                         'semester_ID' => '5',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2526,7 +2498,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Management Accounting- II',
                         'semester_ID' => '5',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2534,7 +2506,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Taxation- III',
                         'semester_ID' => '5',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2542,7 +2514,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Economics-III',
                         'semester_ID' => '5',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2550,7 +2522,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting- VII',
                         'semester_ID' => '6',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2558,7 +2530,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Cost Accounting –IV',
                         'semester_ID' => '6',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2566,7 +2538,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Auditing- III',
                         'semester_ID' => '6',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2574,7 +2546,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting- VIII',
                         'semester_ID' => '6',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2582,7 +2554,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Taxation-IV',
                         'semester_ID' => '6',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2590,7 +2562,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Management-II',
                         'semester_ID' => '6',
-                        'branch_ID' => '11'
+                        'branch_ID' => 'Bachelor of Accounting and Finance'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }                                       /*BAF Ends*/
@@ -2599,7 +2571,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foundation Course – Paper I',
                         'semester_ID' => '1',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2607,7 +2579,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Environmental Studies',
                         'semester_ID' => '1',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2615,7 +2587,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Accounting and Financial Management – Paper I',
                         'semester_ID' => '1',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2623,7 +2595,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Mathematical and Statistical Techniques',
                         'semester_ID' => '1',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2631,7 +2603,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Commerce – Paper I',
                         'semester_ID' => '1',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2639,7 +2611,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Economics – Paper I',
                         'semester_ID' => '1',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2647,7 +2619,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Communication',
                         'semester_ID' => '1',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2655,7 +2627,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foundation Course – Paper II',
                         'semester_ID' => '3',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2663,7 +2635,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Law',
                         'semester_ID' => '3',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2671,7 +2643,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Accounting and Financial Management – Paper II',
                         'semester_ID' => '3',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2679,7 +2651,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Component (Advertising / Economic System / Computer Programming)',
                         'semester_ID' => '3',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2687,7 +2659,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Commerce – Paper II',
                         'semester_ID' => '3',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2695,7 +2667,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Economics – Paper II',
                         'semester_ID' => '3',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2703,7 +2675,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting and Auditing – Paper I',
                         'semester_ID' => '5',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2711,7 +2683,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Accounting and Auditing – Paper II',
                         'semester_ID' => '5',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2719,7 +2691,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Economics – Paper III',
                         'semester_ID' => '5',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2727,7 +2699,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Commerce – Paper III',
                         'semester_ID' => '5',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2735,7 +2707,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Related Applied Component',
                         'semester_ID' => '5',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2743,7 +2715,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Component – Paper I ',
                         'semester_ID' => '5',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2751,7 +2723,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Applied Component – Paper II',
                         'semester_ID' => '5',
-                        'branch_ID' => '12'
+                        'branch_ID' => 'Bachelor of Commerce'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }                                       /*bcom ends*/
@@ -2759,7 +2731,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foundation of Human Skill-l',
                         'semester_ID' => '1',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2767,7 +2739,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Finance and Cost Accounting',
                         'semester_ID' => '1',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2775,7 +2747,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Law',
                         'semester_ID' => '1',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2783,7 +2755,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Quantitative Methods for Business-1',
                         'semester_ID' => '1',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2791,7 +2763,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Effective Communication-l',
                         'semester_ID' => '1',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2799,7 +2771,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Principles of Management-l',
                         'semester_ID' => '1',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2807,7 +2779,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Introduction to Computers',
                         'semester_ID' => '1',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2815,7 +2787,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Foundation of Human Skill-ll',
                         'semester_ID' => '2',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2823,7 +2795,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Industrial Law',
                         'semester_ID' => '2',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2831,7 +2803,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Computer Application in Business',
                         'semester_ID' => '2',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2839,7 +2811,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Business Environment',
                         'semester_ID' => '2',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2847,7 +2819,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Managerial Economics-l',
                         'semester_ID' => '2',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2855,7 +2827,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Production Management',
                         'semester_ID' => '2',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2863,7 +2835,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Environmental Management',
                         'semester_ID' => '2',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2871,7 +2843,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Management Accounting',
                         'semester_ID' => '3',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2879,7 +2851,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Managerial Economics-ll',
                         'semester_ID' => '3',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2887,7 +2859,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Marketing Management',
                         'semester_ID' => '3',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2895,7 +2867,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Materials Management',
                         'semester_ID' => '3',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2903,7 +2875,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Effective Communication-ll',
                         'semester_ID' => '3',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2911,7 +2883,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Principles of Management-ll',
                         'semester_ID' => '3',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2919,7 +2891,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'International Marketing',
                         'semester_ID' => '4',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2927,7 +2899,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Elements of Direct and Indirect Taxes',
                         'semester_ID' => '4',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2935,7 +2907,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Export-Import Procedures and Documentation',
                         'semester_ID' => '4',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2943,7 +2915,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Management of Small Scale Industries',
                         'semester_ID' => '4',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2951,7 +2923,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Productivity and Quality Management',
                         'semester_ID' => '4',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2959,7 +2931,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Public Relations Management',
                         'semester_ID' => '4',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2967,7 +2939,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Human Resource Management',
                         'semester_ID' => '5',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2975,7 +2947,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Service Sector Management',
                         'semester_ID' => '5',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2983,7 +2955,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Financial Management',
                         'semester_ID' => '5',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2991,7 +2963,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Elements of Logistics Management',
                         'semester_ID' => '5',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -2999,7 +2971,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Management of Co-operatives',
                         'semester_ID' => '5',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -3007,7 +2979,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Rural Marketing',
                         'semester_ID' => '5',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -3015,7 +2987,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Entrepreneurship',
                         'semester_ID' => '6',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -3023,7 +2995,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Quantitative Method of Business-ll',
                         'semester_ID' => '6',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -3031,7 +3003,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Marketing Research',
                         'semester_ID' => '6',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -3039,7 +3011,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Indian Management Thought and Practices',
                         'semester_ID' => '6',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -3047,7 +3019,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Econometrics or International Finance',
                         'semester_ID' => '6',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }
@@ -3055,7 +3027,7 @@ class CreateDbTable_cont extends CI_Controller
                         $data = array(
                         'subject_name' => 'Special Study in Finance or Special Study in Marketing',
                         'semester_ID' => '6',
-                        'branch_ID' => '13'
+                        'branch_ID' => 'Bachelor of Management Studies'
                     );
                         $this->InsertTable->addCommerceSubj($data);
                     }                                            //BMS Ends

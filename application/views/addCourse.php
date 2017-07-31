@@ -91,17 +91,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Semester:</label>
-                                        <select class="form-control border-input" id="semester" name="semester">
-                                            <option value="">---Select Semester---</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>   
-                                        </select>
-                                        <?php echo form_error('semester', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div id="engineer" style="display:none;">
@@ -112,10 +101,12 @@
                                             <label>Branch:</label>
                                             <select class="form-control border-input" id="engi_branch" name="engi_branch">
                                                 <option value="">---Select Branch---</option>
-                                                <?php foreach($result2  as $value): ?>
-                                                   
+                                                <?php foreach($result2  as $value): 
+                                                if($value->standard_name==="Engineering") :
+                                                ?>
+                                                 
                                                 <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
-                                                 <?php  endforeach; ?>
+                                                 <?php endif; endforeach; ?>
                                             </select>
                                     <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
@@ -233,6 +224,297 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <!--for commerce degree college-->
+                        <div id="commsem1" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 1 && $value->branch_ID == 'Bachelor of Accounting and Finance'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="commsem2" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 2 && $value->branch_ID == 'Bachelor of Accounting and Finance'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="commsem3" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 3 && $value->branch_ID == 'Bachelor of Accounting and Finance'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="commsem4" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 4 && $value->branch_ID == 'Bachelor of Accounting and Finance'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="commsem5" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 5 && $value->branch_ID == 'Bachelor of Accounting and Finance'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="commsem6" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 6 && $value->branch_ID == 'Bachelor of Accounting and Finance'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Bachelor of Commerce-->
+                        <div id="bcommsem1" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 1 && $value->branch_ID == 'Bachelor of Commerce'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bcommsem3" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 3 && $value->branch_ID == 'Bachelor of Commerce'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bcommsem5" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 5 && $value->branch_ID == 'Bachelor of Commerce'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!--BMS-->
+                        <div id="bmscommsem1" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 1 && $value->branch_ID == 'Bachelor of Management Studies'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bmscommsem2" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 2 && $value->branch_ID == 'Bachelor of Management Studies'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bmscommsem3" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 3 && $value->branch_ID == 'Bachelor of Management Studies'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bmscommsem4" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 4 && $value->branch_ID == 'Bachelor of Management Studies'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bmscommsem5" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 5 && $value->branch_ID == 'Bachelor of Management Studies'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bmscommsem6" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result8 as $value):
+                                                if($value->semester_ID == 6 && $value->branch_ID == 'Bachelor of Management Studies'){?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->Commercesubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php }endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!--for engi college-->
                         <div id="engisem1" style="display:none;">
                             <div class="row">
@@ -291,7 +573,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><div id="engicomp4" style="display:none;">
+                        </div>
+                        <div id="engicomp4" style="display:none;">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
@@ -963,41 +1246,6 @@
                             </div>
                         </div>
                         
-                        <div id="commercesem1" style="display:none;">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Subjects:</label>
-                                        <div class="col-sm-12">
-                                            <div class="row">
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="accounts" name="commerce[]" >Accounts
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="marketing" name="commerce[]">Marketing
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="commercesem2" style="display:none;">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Subjects:</label>
-                                        <div class="col-sm-12">
-                                            <div class="row">
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="finance" name="commerce1[]" >Finance
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <br>
                         <div class="form-group">
                              <button type="submit" class="btn btn-success">Add Course</button>
