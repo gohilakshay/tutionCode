@@ -92,7 +92,7 @@ class CreateTable extends CI_Model {
                                           ),
                         'standard_name' => array(
                                                  'type' => 'VARCHAR',
-                                                 'constraint' => '11',
+                                                 'constraint' => '500',
                                           ),
                      );
       
@@ -166,7 +166,7 @@ class CreateTable extends CI_Model {
                                           ),
                         'subject_name' => array(
                                                  'type' => 'VARCHAR',
-                                                 'constraint' => '100',
+                                                 'constraint' => '500',
                                           ),
                         'semester_ID' => array(
                                                  'type' => 'INT',
