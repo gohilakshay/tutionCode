@@ -4,7 +4,7 @@ class Test_cont extends CI_Controller
 {
     public function addTest()
     {
-         $this->load->library('session');
+        $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');//load db      
