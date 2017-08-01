@@ -42,7 +42,7 @@ function table()
     $this->CreateTable->create_schedules();
     $this->CreateTable->create_teacher();
     //$this->CreateTable->create_subject();
-    $this->CreateTable->create_teacher_course_stubject_mapping();
+    $this->CreateTable->create_teacher_stubject_mapping();
     $this->CreateTable->create_test();
     $this->CreateTable->create_marks();
     $this->CreateTable->create_t_attend_mapping();

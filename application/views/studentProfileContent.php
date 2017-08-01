@@ -195,17 +195,6 @@ $fee_data = end($result);
                                     </li>
                                     <li>
                                         <div class="row">
-                                            <div class="col-xs-3">
-                                                Subjects
-                                                <br>
-                                            </div>
-                                            <div class="col-xs-9">
-                                                <b>Maths, Science, English, Marathi, Hindi</b>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
                                             <div class="col-xs-*"><br>
                                                 <center><a href="<?php echo site_url("Student_cont/updateStudentProfile") ?>"><button class="btn btn-success">Edit Profile</button></a></center>
                                             </div>

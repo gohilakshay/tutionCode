@@ -805,7 +805,7 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('subject'); 
     }
-    function create_teacher_course_stubject_mapping()
+    function create_teacher_stubject_mapping()
     { 
     /* Load db_forge - used to create databases and tables */
     $this->load->dbforge();
@@ -816,8 +816,8 @@ class CreateTable extends CI_Model {
                                                  'unsigned' => TRUE,
                                                  'auto_increment' => TRUE
                                           ),
-                        'course_id' => array(
-                                                 'type' => 'INT',
+                        'standard_name' => array(
+                                                 'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
                         'teacher_id' => array(
@@ -828,12 +828,20 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
+                        'branch_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'semester_name' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '100',
+                                          ),
                      );
       
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('tcm_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('teacher_course_mapping'); 
+        $this->dbforge->create_table('teacher_subject_mapping'); 
     }
     function create_test()
     { 
