@@ -159,7 +159,21 @@
                                                 <td><a href="<?php echo site_url("Student_cont/studentProfile/$value->stud_ID") ?>"><?php echo $value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name;?></a></td>
                                                 <td><?php echo $value->stud_contact;?></td>
                                                 <td><?php echo $value->standard_name;?></td>
-                                                <td><?php echo "batch"?></td>
+                                                <td>
+                                                    <?php 
+                                                    foreach($result1 as $value1):
+                                                    if($value->stud_ID == $value1->stud_id):
+                                                        $id = $value1->batch_id;
+                                                        foreach($result2 as $value2):
+                                                        if($value2->batch_ID == $id):
+                                                        echo $value2->batch_name;
+                                                        endif;
+                                                        endforeach;
+                                                    endif;
+                                                    endforeach;
+                                                    
+                                                    ?>
+                                                </td>
                                                 <td><?php echo $value->sch_coll_name;?></td>
                                                 <td><?php echo $value->board;?></td>
                                                 <td><?php echo $value->course_type;?></td>
