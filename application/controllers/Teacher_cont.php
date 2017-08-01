@@ -70,6 +70,7 @@ class Teacher_cont extends CI_Controller
        // print_r($ntype);
         $n = count($ntype); 
         foreach($ntype as $value){
+            $query['dbtype'] = $value;
             $query['result1'] = $this->SelectData->standard();  
              $query['result2'] = $this->SelectData->branch(); 
             if($value == 'school'){

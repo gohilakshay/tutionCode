@@ -121,28 +121,8 @@
                     </div>
 
                     <div class="content">
-                        
-                
-                        <!--<div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Subjects:</label>
-                                        <div class="col-sm-12">
-                                            <div class="row">
-                                                <?php foreach($result3 as $subject):
-                                                ?>
-                                                <label class="checkbox-inline">
-                                                  <input type="checkbox" value="<?php echo $subject->subject_name; ?>" name="subject[]" ><?php echo $subject->subject_name; ?>
-                                                </label>
-                                                <?php endforeach;?> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Standard</label> 
                                     <select class="form-control border-input" id="standard" name="standard" required>
@@ -151,11 +131,11 @@
                                         if ($value->standard_name=="Engineering"){
                                         ?>
                                          <option value="Engineering"><?php echo $value->standard_name; ?></option>
-                                   <?php }
+                                        <?php }
                                         else if ($value->standard_name=="Commerce"){
                                         ?>
                                          <option value="Commerce"><?php echo $value->standard_name; ?></option>
-                                   <?php }
+                                        <?php }
                                         else if($value->standard_name== "11th"){ 
                                             ?>
                                          <option value="11"><?php echo $value->standard_name; ?></option>
@@ -174,13 +154,80 @@
                                     <?php echo form_error('standard', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
-                                            
-                            </div> 
+                        </div>    
+                        
+                    <div id="engineer" style="display:none;">
+                        <div class="row"> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Branch:</label>
+                                    <select class="form-control border-input" id="engi_branch" name="engi_branch">
+                                        <option value="">---Select Branch---</option>
+                                        <?php foreach($result2  as $value): 
+                                        if($value->standard_name==="Engineering") :
+                                        ?>
+                                                         
+                                        <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
+                                        <?php endif; endforeach; ?>
+                                    </select>
+                                    <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Semester:</label>
+                                    <select class="form-control border-input" id="engisemester" name="engisemester">
+                                        <option value="">---Select Semester---</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>       
+                                    </select>
+                                    <?php echo form_error('engisemester', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                        
+                    <div id="commerce" style="display:none;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Branch:</label>
+                                    <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
+                                        <option value="">---Select Branch---</option>
+                                        <?php foreach($result2  as $value): 
+                                        ?>
+                                        <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
+                                        <?php  endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Semester</label>
+                                    <select class="form-control border-input" id="commercesemester" name="semester1">
+                                        <option value="">---Select Semester---</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
                         <!--start for branch-->
                         <div id="college" style="display:none;">
                             <div class="row"> 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Branch:</label>
                                         <select class="form-control border-input" id="stream" name="stream">
@@ -192,75 +239,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="engineer" style="display:none;">
-                            <div class="row"> 
-                                <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Branch:</label>
-                                            <select class="form-control border-input" id="engi_branch" name="engi_branch">
-                                                <option value="">---Select Branch---</option>
-                                                <?php foreach($result2  as $value): 
-                                                if($value->standard_name==="Engineering") :
-                                                ?>
-                                                 
-                                                <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
-                                                 <?php endif; endforeach; ?>
-                                            </select>
-                                    <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                        </div>
-
-                                </div>
-                                <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Semester:</label>
-                                            <select class="form-control border-input" id="engisemester" name="engisemester">
-                                                <option value="">---Select Semester---</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                               
-                                            </select>
-                                    <?php echo form_error('engisemester', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
                         
-                        <div id="commerce" style="display:none;">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Branch:</label>
-                                            <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
-                                                <option value="">---Select Branch---</option>
-                                                <?php foreach($result2  as $value): 
-                                                   ?>
-                                                <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
-                                                 <?php  endforeach; ?>
-                                            </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Semester</label>
-                                            <select class="form-control border-input" id="commercesemester" name="semester1">
-                                                <option value="">---Select Semester---</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                            </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <!--end for branch   -->
                         <div id="schoolSubjects" style="display:none;">
@@ -1343,11 +1322,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div> 
+                        </div> <!--content close-->
+                </div> <!--card close-->
+            </div>
         </div>
-    </div>
+    </div> 
 </div>
 <div class="content">
     <div class="container-fluid">
