@@ -1290,8 +1290,14 @@
                                                     <td><?php echo $value->course_type; ?></td>
                                                     <td><?php echo $value->standard_name; ?></td>
                                                     <td><?php echo $value->subject_id; ?></td>
-                                                    <td><?php echo $value->branch_name; ?></td>
-                                                    <td><?php echo $value->semester; ?></td>
+                                                    <td><?php $b = $value->branch_name;
+                                                            if($b==""){ echo "--";}
+                                                            else echo $b;
+                                                        ?></td>
+                                                    <td><?php $s = $value->semester; 
+                                                        if($s==""){ echo "--";}
+                                                            else echo $s;
+                                                        ?></td>
                                                     <td>
                                                         <?php echo form_open('Course_cont/updateCourse'); ?>
                                                             <div class="text-center">
