@@ -60,7 +60,7 @@ foreach($data as $value){
                     endif;endforeach;
                     $arrData["categories"]=array(array("category"=>$categoryArray));
                     // creating dataset object
-                    $arrData["dataset"] = array(array("seriesName"=> "Marks Obtained ", "data"=>$dataseries1), array("seriesName"=> "Average",  "renderAs"=>"line", "data"=>$dataseries2),array("seriesName"=> "Failed",  "data"=>$dataseries3));
+                    $arrData["dataset"] = array(array("seriesName"=> "Marks Obtained ", "data"=>$dataseries1)/*, array("seriesName"=> "Average",  "renderAs"=>"line", "data"=>$dataseries2),array("seriesName"=> "Failed",  "data"=>$dataseries3)*/);
                     /*JSON Encode the data to retrieve the string containing the JSON representation of     the data in the array. */
                     $jsonEncodedData = json_encode($arrData);
                     // chart object

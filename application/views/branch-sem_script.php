@@ -92,7 +92,7 @@
     
     /*For college view of Branch and Semester*/
     $('#standard').on('change',function(){
-        if( $(this).val()>10 || $(this).val()<13){
+        if( $(this).val()>10 && $(this).val()<13){
             $("#college").show()
         }
         else{
