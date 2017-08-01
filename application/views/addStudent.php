@@ -151,7 +151,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Date</label>
-                                            <input type="date" class="form-control border-input" placeholder="admissiondate" name="date" value="<?php if(isset($_POST['date'])){echo $_POST['date'];} ?>" required>
+                                            <input type="date" class="form-control border-input"  name="date" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('date', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -508,7 +508,7 @@
                                     <div class="form-group">
                                         <label>Date</label>
                                         <div>
-                                            <input type="date" class="form-control border-input" name="date1" value="<?php if(isset($_POST['date1'])){echo $_POST['date1'];} ?>" required>
+                                            <input type="date" class="form-control border-input" name="date1" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('date1', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
