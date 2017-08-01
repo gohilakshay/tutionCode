@@ -118,15 +118,16 @@ class SelectData extends CI_Model {
             return ($data);
         }
     }
-    function course($ntype) {
+    /*function course($ntype) {
         $dbtype = $ntype;
-        $n = count($dbtype);$a=0;
-        foreach($dbtype as $value){
+         $n = count($dbtype);$a=0;
+        for($i=0;$i<$n;$i++){
+            $value = $dbtype[$i];
             if($value == 'school'){
                 $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
                 if($q->num_rows() >0){ 
                     foreach($q->result() as $row){
-                        $subj_id = $row->subject_id."<br>";
+                        $subj_id = $row->subject_id;
                         $subj_id = explode(",",$subj_id);
                         foreach($subj_id as $subid){
                             $q1 = $this->db->query("SELECT subject_name FROM `subject` where subject_ID = '$subid'");
@@ -151,7 +152,7 @@ class SelectData extends CI_Model {
                 $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
                 if($q->num_rows() >0){ 
                     foreach($q->result() as $row){
-                        $subj_id = $row->subject_id."<br>";
+                        echo $subj_id = $row->subject_id."<br>";
                         $subj_id = explode(",",$subj_id);
                         foreach($subj_id as $subid){
                             $q1 = $this->db->query("SELECT subject_name FROM `collegesubject` where colgsubj_ID = '$subid'");
@@ -248,36 +249,210 @@ class SelectData extends CI_Model {
                 return $data;
             }
         }      
-    }
+    }*/
         
     
-        /*$q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
-        if($q->num_rows() >0){ 
-            foreach($q->result() as $row){
-                if(!empty($row->subject_id)){ 
-                    $bj = array();
-                    $subj_id = $row->subject_id;
-                    $name = explode(",",$subj_id);
-                    $n = count($name);$a=0;
-                    for($i=0;$i<$n;$i++){ 
-                        $q1 = $this->db->query("SELECT subject_name FROM `subject` where subject_ID = '$name[$i]'");
-                        if($q1->num_rows() >0){
-                            foreach($q1->result() as $row1){
-                                
-                                $bj[$a] = $row1->subject_name;
-                                $a++;
-                            } 
+        
+    function course($ntype) {
+        $dbtype = $ntype;
+         $n = count($dbtype);$a=0;
+                $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
+                if($q->num_rows() >0){ 
+                    foreach($q->result() as $row){
+                        $subj_id = $row->subject_id;
+                        $subj_id = explode(",",$subj_id);
+                        $std_name = $row->standard_name;
+                        if($std_name <= '10'){
+                            foreach($subj_id as $subid){
+                                $q1 = $this->db->query("SELECT subject_name FROM `subject` where    subject_ID = '$subid'");
+                                if($q1->num_rows() >0){
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
                             
-                        }    
-                    }
-                    $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
-                    unset($bj);
-                    $row->subject_id =$bj1;
-                } 
-                $data[]=$row;
-            }
-        }
-        */
+                                }    
+                            }
+                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            unset($bj);
+                            $row->subject_id =$bj1;
+                            $data[] = $row;
+                        }
+                        else if($std_name == '11'){
+                            foreach($subj_id as $subid){
+                                $q1 = $this->db->query("SELECT subject_name FROM `collegesubject` where    colgsubj_ID = '$subid'");
+                                if($q1->num_rows() >0){
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }    
+                            }
+                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            unset($bj);
+                            $row->subject_id =$bj1;
+                            $data[] = $row;
+                        }
+                        else if($std_name == '12'){
+                            foreach($subj_id as $subid){
+                                $q1 = $this->db->query("SELECT subject_name FROM `collegesubject` where    colgsubj_ID = '$subid'");
+                                if($q1->num_rows() >0){
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }    
+                            }
+                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            unset($bj);
+                            $row->subject_id =$bj1;
+                            $data[] = $row;
+                        }
+                        else if($std_name == 'Engineering'){
+                            foreach($subj_id as $subid){
+                                $q1 = $this->db->query("SELECT subject_name FROM `engisubject` where    engisubj_ID = '$subid'");
+                                if($q1->num_rows() >0){
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }    
+                            }
+                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            unset($bj);
+                            $row->subject_id =$bj1;
+                            $data[] = $row;
+                        }
+                        else if($std_name == 'Commerce'){
+                            foreach($subj_id as $subid){
+                                $q1 = $this->db->query("SELECT subject_name FROM `commercesubject` where    Commercesubj_ID = '$subid'");
+                                if($q1->num_rows() >0){
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }    
+                            }
+                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            unset($bj);
+                            $row->subject_id =$bj1;
+                            $data[] = $row;
+                        }
+                    }   
+                }
+                return $data;
+            
+           
+                /*$q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
+                    if($q->num_rows() >0){ 
+                    foreach($q->result() as $row){
+                        echo $subj_id = $row->subject_id."<br>";
+                        $subj_id = explode(",",$subj_id);
+                        foreach($subj_id as $subid){
+                            $q1 = $this->db->query("SELECT subject_name FROM `collegesubject` where colgsubj_ID = '$subid'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                   
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                } 
+                            
+                            }    
+                        }
+                        $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                        unset($bj);
+                        $row->subject_id =$bj1;
+                        $data[] = $row; 
+                    }   
+                }
+                return $data;
+            
+           
+                $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
+                if($q->num_rows() >0){ 
+                    foreach($q->result() as $row){
+                        $subj_id = $row->subject_id."<br>";
+                        $subj_id = explode(",",$subj_id);
+                        foreach($subj_id as $subid){
+                            $q1 = $this->db->query("SELECT subject_name FROM `collegesubject` where colgsubj_ID = '$subid'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                   
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                } 
+                            
+                            }    
+                        }
+                        $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                        unset($bj);
+                        $row->subject_id =$bj1;
+                        $data[] = $row; 
+                    }   
+                }
+                return $data;
+            
+            
+                $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
+                if($q->num_rows() >0){ 
+                    foreach($q->result() as $row){
+                        $subj_id = $row->subject_id."<br>";
+                        $subj_id = explode(",",$subj_id);
+                        foreach($subj_id as $subid){
+                            $q1 = $this->db->query("SELECT subject_name FROM `engisubject` where engisubj_ID = '$subid'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                   
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                } 
+                            
+                            }    
+                        }
+                        $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                        unset($bj);
+                        $row->subject_id =$bj1;
+                        $data[] = $row; 
+                    }   
+                }
+                return $data;
+            
+           
+                $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
+                if($q->num_rows() >0){ 
+                    foreach($q->result() as $row){
+                        $subj_id = $row->subject_id."<br>";
+                        $subj_id = explode(",",$subj_id);
+                        foreach($subj_id as $subid){
+                            $q1 = $this->db->query("SELECT subject_name FROM `commercesubject` where Commercesubj_ID = '$subid'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                   
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                } 
+                            
+                            }    
+                        }
+                        $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                        unset($bj);
+                        $row->subject_id =$bj1;
+                        $data[] = $row; 
+                    }   
+                }
+                return $data;*/
+            
+              
+    }
         
     
     /*

@@ -40,7 +40,6 @@ class AddData extends CI_Model {
         return;
     }
     function addCourseItem($data){
-        print_r($data);
         $this->db->insert('course', $data);
         
        // return;

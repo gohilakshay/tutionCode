@@ -193,7 +193,7 @@
                                                <?php foreach($result5 as $value):
                                                if($value->branch_ID == 'Science'){ ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="<?php echo $value->subject_name ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
+                                                  <input type="checkbox" value="<?php echo $value->colgsubj_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
                                                 </label>
                                                 <?php } endforeach;?>
                                             </div>
@@ -214,7 +214,7 @@
                                                <?php foreach($result6 as $value):
                                                if($value->branch_ID == 'Commerce'){ ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="<?php echo $value->subject_name ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
+                                                  <input type="checkbox" value="<?php echo $value->colgsubj_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
                                                 </label>
                                                 <?php } endforeach;?>
                                             </div>
