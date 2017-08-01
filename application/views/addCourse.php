@@ -96,7 +96,6 @@
                         <div id="engineer" style="display:none;">
                             <div class="row"> 
                                 <div class="col-md-6">
-
                                         <div class="form-group">
                                             <label>Branch:</label>
                                             <select class="form-control border-input" id="engi_branch" name="engi_branch">

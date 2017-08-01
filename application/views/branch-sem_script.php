@@ -523,7 +523,7 @@
             })
         }
         if( $(this).val()==="Information Technology Engineering"){  //IT
-            $('#semester').on('change',function(){
+            $('#engisemester').on('change',function(){
                 if( $(this).val()==="1"){
                     $("#engisem1").show()
                     $("#engisem2").hide()
@@ -887,7 +887,7 @@
             })
         }
         if( $(this).val()==="Electronics Engineering"){   //Electronics Engineering
-            $('#semester').on('change',function(){
+            $('#engisemester').on('change',function(){
                 if( $(this).val()==="1"){
                     $("#engisem1").show()
                     $("#engisem2").hide()
@@ -1253,7 +1253,7 @@
             })
         }
         if( $(this).val()==="Electronics and Telecommunication"){   //Electronics and Telecommunication
-            $('#semester').on('change',function(){
+            $('#engisemester').on('change',function(){
                 if( $(this).val()==="1"){
                     $("#engisem1").show()
                     $("#engisem2").hide()
@@ -1618,7 +1618,7 @@
             })
         }
         if( $(this).val()==="Mechanical Engineering"){   //Mechanical Engineering
-            $('#semester').on('change',function(){
+            $('#engisemester').on('change',function(){
                 if( $(this).val()==="1"){
                     $("#engisem1").show()
                     $("#engisem2").hide()
@@ -1983,7 +1983,7 @@
             })
         }
         if( $(this).val()==="Civil Engineering"){   //Civil Engineering
-            $('#semester').on('change',function(){
+            $('#engisemester').on('change',function(){
                 if( $(this).val()==="1"){
                     $("#engisem1").show()
                     $("#engisem2").hide()
