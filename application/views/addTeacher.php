@@ -158,7 +158,7 @@
                         
                     <div id="engineer" style="display:none;">
                         <div class="row"> 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Branch:</label>
                                     <select class="form-control border-input" id="engi_branch" name="engi_branch">
@@ -173,7 +173,7 @@
                                     <?php echo form_error('engi_branch', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Semester:</label>
                                     <select class="form-control border-input" id="engisemester" name="engisemester">
@@ -195,7 +195,7 @@
                         
                     <div id="commerce" style="display:none;">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Branch:</label>
                                     <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
@@ -207,7 +207,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Semester</label>
                                     <select class="form-control border-input" id="commercesemester" name="semester1">
