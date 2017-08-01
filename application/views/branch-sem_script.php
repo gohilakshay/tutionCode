@@ -101,26 +101,21 @@
     });
     /*End*/
     
-    /*For college Subjects*/
-    $('#stream').on('change',function(){
-        if( $(this).val()==="Science")                
-        {
-            $("#scienceSubjects").show()
-            $("#commerceSubjects").hide()
-            $("#schoolSubjects").hide()
+    $('#standard').on('change',function(){
+        if( $(this).val()==="11"){
+            $('#stream').on('change',function(){
+                if( $(this).val()==="Science") 
+                {
+                    $("#scienceSubjects").show()
+                   /* $("#commerceSubjects").hide()
+                    $("#schoolSubjects").hide()*/
+                }
+                else
+                    {
+                        $("#scienceSubjects").hide()
+                    }
+            })
         }
-        else if( $(this).val()==="Commerce")
-        {
-            $("#scienceSubjects").hide()
-            $("#commerceSubjects").show()
-            $("#schoolSubjects").hide()
-        }
-        else
-        {
-            $("#scienceSubjects").hide()
-            $("#commerceSubjects").hide()   
-            $("#schoolSubjects").hide()
-        }  
     });
     
     /*For Commerce view of Branch and Semester*/

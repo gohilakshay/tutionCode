@@ -241,7 +241,7 @@
                         </div>
                         
 
-                        <!--end for branch   -->
+                        <!--end for branch-->
                         <div id="schoolSubjects" style="display:none;">
                             <div class="row">
                                 <div class="col-sm-12">
