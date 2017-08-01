@@ -83,11 +83,58 @@ foreach($data as $value){
                         <h4 class="title">Test Details</h4>
                     </div>
                     <div class="content">
+                        <?php foreach($test_detail as $value):?>
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
                                 <label>Test ID</label>
-                                <input type="text" class="form-control border-input" name="testid" value="<?php echo $category ; ?>" required>
+                                <input type="text" class="form-control border-input" name="testid" style="padding-left:10px; padding-right:10px;" value="<?php echo $category ; ?>" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Batch Name</label>
+                                    <input type="text" class="form-control border-input" name="batchname" value="<?php echo $value->batch_id;?>" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Subject</label>
+                                    <input type="text" class="form-control border-input" name="subject" value="<?php  echo $value->subject_name; ?>" required readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Supervisor Name</label>
+                                    <input type="text" class="form-control border-input" name="supervisorname" value="<?php  echo $value->supervisor_name; ?>" required readonly>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Test Date</label>
+                                    <input type="text" class="form-control border-input" name="testdate" value="<?php echo $value->test_date; ?>" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Test Time</label>
+                                    <input type="text" class="form-control border-input" name="testtime" value="<?php  echo $value->test_time;  ?>" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label>Total</label>
+                                    <input type="text" class="form-control border-input" name="totalmarks" style="padding-left:10px; padding-right:10px;" value="<?php    echo $value->total_marks; ?>" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label>Passing</label>
+                                    <input type="text" class="form-control border-input" name="passingmarks" style="padding-left:10px; padding-right:10px;" value="<?php  echo $value->passing_marks; ?>" required readonly>
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -109,55 +156,7 @@ foreach($data as $value){
                                 </div>
                             </div>
                         </div>
-                        <?php foreach($test_detail as $value):?>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Test Date</label>
-                                    <input type="text" class="form-control border-input" name="testdate" value="<?php echo $value->test_date; ?>" required readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Test Time</label>
-                                    <input type="text" class="form-control border-input" name="testtime" value="<?php  echo $value->test_time;  ?>" required readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label>Total Marks</label>
-                                    <input type="text" class="form-control border-input" name="totalmarks" value="<?php    echo $value->total_marks; ?>" required readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label>Passing Marks</label>
-                                    <input type="text" class="form-control border-input" name="passingmarks" value="<?php  echo $value->passing_marks; ?>" required readonly>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Batch Name</label>
-                                    <input type="text" class="form-control border-input" name="batchname" value="<?php echo $value->batch_id;?>" required readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php  echo $value->subject_name; ?>" required readonly>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Supervisor Name</label>
-                                    <input type="text" class="form-control border-input" name="supervisorname" value="<?php  echo $value->supervisor_name; ?>" required readonly>
-                                </div>
-                            </div>
-                        </div><?php endforeach;?>
+                        <?php endforeach;?>
                     </div><hr>
                 </div>
             </div>
