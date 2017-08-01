@@ -32,7 +32,7 @@ class Course_cont extends CI_Controller
         }
         $ntype = explode(",",$type);
         $n = count($ntype);
-        $query['result'] = $this->SelectData->course(); 
+        $query['result'] = $this->SelectData->course($ntype); 
         foreach($ntype as $value){
             $query['result1'] = $this->SelectData->standard();  
              $query['result2'] = $this->SelectData->branch(); 
@@ -67,12 +67,12 @@ class Course_cont extends CI_Controller
         else
         {
             $this->load->helper('form');
-            $db = $this->session->userdata('db');//load db      
-        $this->load->database($db);//call db
-            $this->load->model('AddData');
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
+            $this->load->model('AddData');         
             if($this->input->post('engi_branch')!=''){ 
                 $branch = $this->input->post('engi_branch'); 
-                $semester = $this->input->post('semester'); 
+                $semester = $this->input->post('engisemester'); 
             }
             elseif($this->input->post('commerce_branch')!=''){ 
                 $branch = $this->input->post('commerce_branch'); 
@@ -90,8 +90,9 @@ class Course_cont extends CI_Controller
                 'standard_name' => $this->input->post('standard'),
                 'branch_name' => $branch,
                 'semester' => $semester,
-                'subject_id'=>$subject_id
+                'subject_id'=>$subject_id,
             );
+            print_r($data);
             $this->AddData->addCourseItem($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      

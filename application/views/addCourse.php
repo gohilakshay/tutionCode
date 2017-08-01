@@ -174,7 +174,7 @@
                                            <div class="row">
                                                <?php foreach($result3 as $value): ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="<?php echo $value->subject_name ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
+                                                  <input type="checkbox" value="<?php echo $value->subject_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
                                                 </label>
                                                 <?php endforeach;?>
                                             </div>

@@ -40,22 +40,10 @@ class AddData extends CI_Model {
         return;
     }
     function addCourseItem($data){
-        $subject_name = $data['subject_id'];
-        $subject_name = explode(",",$subject_name);
-        $n = count($subject_name);
-        $subject_id=array();
-        for($i=0;$i<$n;$i++){
-            $query1 = $this->db->get_where('subject',array('subject_name'=>$subject_name[$i]));
-            foreach($query1->result() as $value){ 
-                 $subject_id[$i]=$value->subject_ID;
-            }
-        }
-         $subject= implode(",",$subject_id);
-        $data['subject_id'] = $subject;
-        
+        print_r($data);
         $this->db->insert('course', $data);
         
-        return;
+       // return;
     }
     function addStudentAttendItem($data){
         $this->db->insert('student_attend', $data);
