@@ -2,12 +2,12 @@
 <?php $page='seven';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
-
+<?php print_r($course);?>
 <br>
 <!-- Start Add Course-->
 <div class="content">   
     <div class="container-fluid">
-        <?php echo form_open('Course_cont/addCourse'); ?>
+        <?php echo form_open('Course_cont/updateCourse'); ?>
         <div class="row">
             <div class="col-lg-12 col-lg-12 ">
                 <div class="card">

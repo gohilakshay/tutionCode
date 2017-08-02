@@ -95,29 +95,68 @@ class SelectData extends CI_Model {
         return $data;
     }
     
-    function teacherProfile($n){
+    function teacherProfile($n,$dbtype){
         $q = $this->db->query("SELECT * FROM `teacher` WHERE t_ID = '$n'");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
                 $data[]=$row;
             }
         }
-        $q = $this->db->query("SELECT * FROM `teacher_course_mapping` WHERE teacher_id = '$n'");
+        $q = $this->db->query("SELECT * FROM `teacher_subject_mapping` WHERE teacher_id = '$n'");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
                 $bj = array();
                 $subj_id = $row->subject_id;
                 $name = explode(",",$subj_id);
                 $n = count($name);$a=0;
-                for($i=0;$i<$n;$i++){ 
-                    $q1 = $this->db->query("SELECT subject_name FROM `subject` where subject_ID = '$name[$i]'");
-                    if($q1->num_rows() >0){
-                        foreach($q1->result() as $row1){
-                            $bj[$a] = $row1->subject_name;
-                            $a++;
-                        }           
-                    } 
-                    
+                for($i=0;$i<$n;$i++){
+                    foreach($dbtype as $value){
+                        if($value == 'school'){
+                            $q1 = $this->db->query("SELECT subject_name FROM `subject` where subject_ID = '$name[$i]'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                }           
+                            }
+                        }
+                        else if($value == 'jrcolg_sci'){
+                            $q1 = $this->db->query("SELECT subject_name FROM `collegesubject` where    colgsubj_ID = '$name[$i]'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                }           
+                            }
+                        }
+                        else if($value == 'jrcolg_com'){
+                            $q1 = $this->db->query("SELECT subject_name FROM `collegesubject` where    colgsubj_ID = '$name[$i]'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                }           
+                            }
+                        }
+                        else if($value == 'engicolg'){
+                            $q1 = $this->db->query("SELECT subject_name FROM `engisubject` where    engisubj_ID = '$name[$i]'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                }           
+                            }
+                        }
+                        else if($value == 'comcolg'){
+                            $q1 = $this->db->query("SELECT subject_name FROM `commercesubject` where    Commercesubj_ID = '$name[$i]'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                }           
+                            }
+                        }
+                    }    
                 }
                 $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
                 unset($bj);
@@ -359,19 +398,42 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
-    function AttendCoursSubjTeacher($data){
-        $course = $data['course'];
+    function AttendSubjTeacher($data){
+        $dbtype = $data['dbtype'];
         $subject = $data['subject'];
-        
-        $q = $this->db->query("SELECT subject_ID FROM `subject` where subject_name = '$subject'");
-            foreach($q->result() as $row){
-                $subj = $row->subject_ID;
+        foreach($dbtype as $value){
+            if($value == 'school'){
+                $q = $this->db->query("SELECT subject_ID FROM `subject` where subject_name =    '$subject'");
+                foreach($q->result() as $row){
+                    $subj = $row->subject_ID;
+                }
             }
-        /*$q1 = $this->db->query("SELECT course_ID FROM `course` where course_name = '$course'");
-            foreach($q1->result() as $row){
-                 $cour = $row->course_ID;
-            }*/
-        $q2 = $this->db->query("SELECT * FROM `teacher_course_mapping` where subject_id LIKE '%$subj%' AND course_id = '$course' ");
+            else if($value == 'jrcolg_sci'){
+                $q = $this->db->query("SELECT colgsubj_ID FROM `collegesubject` where subject_name =     '$subject'");
+                foreach($q->result() as $row){
+                    $subj = $row->colgsubj_ID;
+                }
+            }
+            else if($value == 'jrcolg_com'){
+                $q = $this->db->query("SELECT colgsubj_ID FROM `collegesubject` where subject_name =    '$subject'");
+                foreach($q->result() as $row){
+                    $subj = $row->colgsubj_ID;
+                }
+            }
+            else if($value == 'engicolg'){
+                $q = $this->db->query("SELECT engisubj_ID FROM `engisubject` where subject_name =    '$subject'");
+                foreach($q->result() as $row){
+                   $subj = $row->engisubj_ID;
+                }
+            }
+            else if($value == 'comcolg'){
+                $q = $this->db->query("SELECT Commercesubj_ID FROM `commercesubject` where subject_name = '$subject'");
+                foreach($q->result() as $row){
+                    $subj = $row->Commercesubj_ID;
+                }
+            }
+        }
+        $q2 = $this->db->query("SELECT * FROM `teacher_subject_mapping` where subject_id LIKE '%$subj%' ");
             foreach($q2->result() as $row){
                 $tcm_id[] = $row->tcm_ID;
                 $teach_id[] = $row->teacher_id;

@@ -27,7 +27,7 @@
                                     <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                           <!-- <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Courses</label> 
                                     <select class="form-control border-input" id="course" name="course" required>
@@ -38,7 +38,7 @@
                                     </select>
                                     <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Timing</label>

@@ -66,7 +66,28 @@ class Attendance_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->helper('url');
         $this->load->model('SelectData');
-        $query['result'] = $this->SelectData->course();
+        
+        $this->db->close();
+        $configdbfly=$this->config->config['sysdb'];
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = 'admin_db'; /* Default db */
+        $this->load->database($configdbfly);
+        $query['result'] = $this->SelectData->dbSelect();
+        $this->db->close();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
+        $dbname = $db['database'];
+        foreach($query as $value){
+            foreach($value as $value1){
+                $dbName = $value1->dbName;
+                if($dbName == $dbname){
+                    $type=$value1->dbType; //finding the database name and the name stored in the admin tb
+                }
+            }
+        }
+        $ntype = explode(",",$type);
+        //$query['result'] = $this->SelectData->course();
         $this->load->library('form_validation');
         $this->form_validation->set_rules('subject', 'subject', 'required|alpha_dash');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
@@ -84,9 +105,9 @@ class Attendance_cont extends CI_Controller
             $this->load->model('AddData');
             $data = array(
                     'subject' => $this->input->post('subject'),
-                     'course' =>$this->input->post('course'),                     
+                     'dbtype' =>$ntype,                     
                 );
-            $teacher_map = $this->SelectData->AttendCoursSubjTeacher($data);
+            $teacher_map = $this->SelectData->AttendSubjTeacher($data);
             $t_name['result'] = $teacher_map['name'];
             $data1 = array(
                 'tcm_id' => $teacher_map['tcm_id'],

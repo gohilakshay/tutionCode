@@ -831,10 +831,12 @@ class CreateTable extends CI_Model {
                         'branch_name' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
+                                                    'null' => TRUE,
                                           ),
                         'semester_name' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
+                                                'null' => TRUE,
                                           ),
                      );
       

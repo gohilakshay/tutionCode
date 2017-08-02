@@ -1300,6 +1300,7 @@
                                                     <td>
                                                         <?php echo form_open('Course_cont/updateCourse'); ?>
                                                             <div class="text-center">
+                                                                <input type="hidden" value="<?php echo $value->course_ID; ?>" name="course_id">
                                                                 <center><button type="submit" class="btn btn-success">Edit</button></center>
                                                             </div>
                                                         <?php echo form_close(); ?>

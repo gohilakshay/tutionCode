@@ -22,7 +22,28 @@ class Teacher_cont extends CI_Controller
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
          $this->load->model('SelectData');
-        $query['result'] = $this->SelectData->teacherProfile($n);
+        
+        $this->db->close();
+        $configdbfly=$this->config->config['sysdb'];
+        $configdbfly['username'] = 'root'; /* Default db */
+        $configdbfly['password'] = ''; /* Default db */
+        $configdbfly['database'] = 'admin_db'; /* Default db */
+        $this->load->database($configdbfly);
+        $query['result'] = $this->SelectData->dbSelect();
+        $this->db->close();
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
+        $dbname = $db['database'];
+        foreach($query as $value){
+            foreach($value as $value1){
+                $dbName = $value1->dbName;
+                if($dbName == $dbname){
+                    $type=$value1->dbType; //finding the database name and the name stored in the admin tb
+                }
+            }
+        }
+        $ntype = explode(",",$type);
+        $query['result'] = $this->SelectData->teacherProfile($n,$ntype);
         $username = $this->session->userdata('username');
         if(isset($username)){
             $this->load->view('teacherProfile',$query);    //html filename
@@ -67,7 +88,6 @@ class Teacher_cont extends CI_Controller
             }
         }
         $ntype = explode(",",$type);
-       // print_r($ntype);
         $n = count($ntype); 
         foreach($ntype as $value){
             $query['dbtype'] = $value;
@@ -140,10 +160,26 @@ class Teacher_cont extends CI_Controller
              $insert_id = $this->db->insert_id();
             $img = $_FILES['photo']['name'] ; 
             $this->ProfileImg->addImg($img,$name);
-           // $course = $this->input->post('course');
-            $subject = $this->input->post('subject');
-            $data1 = array('subject'=>$subject);
-            $this->AddData->addTeacherSubjItem($data1,$insert_id);
+            $engi_branch = $this->input->post('engi_branch');
+            $engisemester = $this->input->post('engisemester');
+            $commerce_branch = $this->input->post('commerce_branch');
+            $semester1 = $this->input->post('semester1');
+            $stream = $this->input->post('stream');
+            if(!empty($engi_branch)){ $branch_name = $engi_branch;} 
+            else if(!empty($commerce_branch)){ $branch_name = $commerce_branch;}
+            else if(!empty($stream)){ $branch_name = $stream;} 
+            if(!empty($engisemester)){ $semester_name = $engisemester;}
+            else if(!empty($semester1)){ $semester_name = $semester1;}
+            $subject = implode(",",$this->input->post('subject'));
+            $data1 = array(
+                'teacher_id' => $insert_id,
+                'subject_id'=> $subject,
+                'standard_name'=>$this->input->post('standard'),
+                'branch_name'=>$branch_name,
+                'semester_name'=>$semester_name
+            );
+
+            $this->AddData->addTeacherSubjItem($data1);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Teacher_cont/addTeacher');   
 		}

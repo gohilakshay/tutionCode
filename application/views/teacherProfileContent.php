@@ -145,7 +145,29 @@ $subj = $result[1];
                                                 <br>
                                             </div>
                                             <div class="col-xs-9">
-                                                <b>8,9,10th</b>
+                                                <b><?php echo $subj->standard_name;?></b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                Branch
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b><?php if($subj->branch_name!= NULL ){echo $subj->branch_name;}else echo "--";?></b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                Semester
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b><?php if($subj->semester_name != NULL){echo $subj->semester_name;} else echo "--";?></b>
                                             </div>
                                         </div>
                                     </li>
