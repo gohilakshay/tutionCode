@@ -188,10 +188,10 @@ class Course_cont extends CI_Controller
                 'semester' => $semester,
                 'subject_id'=>$subject_id,
             );
-            print_r($data);
-            $this->AddData->addCourseItem($data);
+            //print_r($data);
+            $this->AddData->updateCourseItem($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
-            redirect('Course_cont/addCourse');      
+            redirect('Course_cont/updateCourse');      
         }
     }
     public function customAlphanumeric($strr){
