@@ -5,5 +5,11 @@ class deleteData extends CI_Model {
         $this->db->delete('course');
         return;
     }
+    function deleteBatch($batch_id){
+        $this->db->where('batch_id', $batch_id);
+        $this->db->delete('batch');
+        return;
+    }
 }
+
 ?>

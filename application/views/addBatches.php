@@ -95,11 +95,17 @@
                                                     <td>
                                                         <?php echo form_open('Batch_cont/updateBatches'); ?>
                                                             <div class="text-center">
+                                                                <input type="hidden" value="<?php echo $value->batch_ID; ?>" name="batch_id" >
                                                                 <center><button type="submit" class="btn btn-success">Edit</button></center>
                                                             </div>
                                                         <?php echo form_close(); ?>
                                                     </td>
-                                                    <td><center><button type="delete" class="btn btn-danger">Delete</button></center></td>
+                                                    <td>
+                                                        <?php echo form_open('Batch_cont/DeleteBatches'); ?>
+                                                        <input type="hidden" value="<?php echo $value->batch_ID; ?>" name="batch_id" >
+                                                        <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                        <?php echo form_close(); ?>
+                                                    </td>
                                                 </tr><?php }?>
                                             </tbody>
                                         </table>  

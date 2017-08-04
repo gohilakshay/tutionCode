@@ -4,6 +4,12 @@ class AddData extends CI_Model {
         $this->db->insert('batch', $data);
         return;
     }
+    function UpdateBatchItem($data){
+        $batch_name = $data['batch_name'];
+        $this->db->where('batch_name',$batch_name);
+        $this->db->update('batch',$data);
+        return;
+    }
     function addTeacherItem($data){
         $this->db->insert('teacher', $data);
         return;

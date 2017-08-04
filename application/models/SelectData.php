@@ -487,6 +487,15 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function UpdateBatch($id){
+        $q = $this->db->query("SELECT * FROM `batch` WHERE batch_ID = '$id'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
     function SelectBatchCourse(){
         $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
         if($q->num_rows() >0){
