@@ -21,6 +21,13 @@ class CreateNewDb extends CI_Controller
         $this->load->model('SelectData');
         $query = $this->SelectData->SuperadminSelect($username,$password);
         $query1['result'] = $this->SelectData->dbSelect();
+        foreach($query1 as $value){
+            foreach($value as $var){
+                 if ($var->username == $username){
+                     $dbname = $var->dbName;
+                 }
+            }
+        }
        if($query == 1){
            $session = $this->session->set_userdata('username',$username);
            $this->load->view('createDatabse',$query1);
@@ -31,8 +38,15 @@ class CreateNewDb extends CI_Controller
         else {
             $query = $this->SelectData->adminSelect($username,$password);
             if($query == 1){
+                $this->db->close();
+                $configdbfly=$this->config->config['sysdb'];
+                $configdbfly['username'] = 'root'; /* Default db */
+                $configdbfly['password'] = ''; /* Default db */
+                $configdbfly['database'] = $dbname; /* Default db */
+                $this->load->database($configdbfly);
                 $session = $this->session->set_userdata('username',$username);
-                $this->load->view('mainPage');
+                $this->session->set_userdata('db',$configdbfly);
+                redirect('Home/mainP');
             }
             else {
                 echo "Error 404 : Access Denied";

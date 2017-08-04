@@ -18,7 +18,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         
 						<li>
-                            <a href="#">
+                            <a href=" <?php echo site_url()."/Upload_FileCont/upload" ?> ">
 								<i class="ti-upload"></i>
 								<p>Upload</p>
                             </a>
@@ -43,29 +43,6 @@
                                   </li>
                               </ul>
                         </li>
-                        
-                        <!--<li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <p class="notification">5</p>
-									<p></p>
-									<b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>-->
-                        <!--
-                        <li>
-                            <a href="<?php echo site_url()."/Schedular_cont/schedular" ?>">
-                                <i class="ti-wallet"></i>
-                                <p>Schedular</p>
-                            </a>
-                        </li>-->
                          <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url()?>assets/profile/admin.jpg" width="30" height="25" class="img-circle">

@@ -120,7 +120,7 @@ class Student_cont extends CI_Controller
         {
             $this->load->helper('form');
             $db = $this->session->userdata('db');//load db 
-        $this->load->database($db);//call db
+            $this->load->database($db);//call db
             $this->load->model('AddData');
             $this->load->model('ProfileImg');
             $name = strtolower(preg_replace('/\s+/', '', $this->input->post('studentname')));

@@ -1,4 +1,4 @@
-<?php ?>
+
 <?php include "header.php";?>
 <?php $page="eight";include "sidebar.php";?>
 <?php include "nav.php";?>
@@ -121,5 +121,5 @@
 <?php include "footer.php";?>
 <?php include "addModel.php"?>
 <?php include "script_include.php"; ?>
-<?php include "subject_script.php";?>
+<!--<?php include "subject_script.php";?>-->
 <?php include "branch-sem_script.php";?>
