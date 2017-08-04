@@ -165,16 +165,18 @@ class Course_cont extends CI_Controller
             $this->load->helper('form');
             $db = $this->session->userdata('db');//load db 
             $this->load->database($db);//call db
-            $this->load->model('AddData');         
-            if($this->input->post('engi_branch')!=''){ 
+            $this->load->model('AddData'); 
+            if($this->input->post('engi_branch')!=""){ 
                 $branch = $this->input->post('engi_branch'); 
                 $semester = $this->input->post('engisemester'); 
             }
-            elseif($this->input->post('commerce_branch')!=''){ 
+            
+             else if($this->input->post('commerce_branch')!=""){ 
                 $branch = $this->input->post('commerce_branch'); 
                 $semester = $this->input->post('semester1');
             }
             else {
+                echo "BRAVO3";
                 $branch = null;
                 $semester = NULL;
             }
@@ -188,10 +190,9 @@ class Course_cont extends CI_Controller
                 'semester' => $semester,
                 'subject_id'=>$subject_id,
             );
-            //print_r($data);
             $this->AddData->updateCourseItem($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
-            redirect('Course_cont/updateCourse');      
+            redirect('Course_cont/addCourse');      
         }
     }
     public function customAlphanumeric($strr){
