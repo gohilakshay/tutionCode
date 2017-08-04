@@ -147,7 +147,7 @@ class Course_cont extends CI_Controller
                 $query['result8'] = $this->SelectData->commercesubject();
             }
         }
-        $course_id = $this->input->post('course_id');
+         $course_id = $this->input->post('course_id');
         $query['course'] = $this->SelectData->courseUpdate($course_id);
         $this->load->library('form_validation');
         $this->form_validation->set_rules('course_name', 'course_name', 'callback_customAlphanumeric');
@@ -180,6 +180,7 @@ class Course_cont extends CI_Controller
                 $branch = null;
                 $semester = NULL;
             }
+            
             $subject = $this->input->post('subject');
             $subject_id = implode(",",$subject);
             $data = array(
@@ -194,6 +195,20 @@ class Course_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }
+    }
+    public function deleteCourse(){
+        $this->load->library('session');
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('deleteData'); // model for delete
+        $course_id = $this->input->post("course_id");
+        $this->deleteData->deleteCourse($course_id); // call function from model
+        if($this->db->affected_rows() > 0){
+            redirect('Course_cont/addCourse'); 
+        }
+        
     }
     public function customAlphanumeric($strr){
          if ( !preg_match('/^[0-9a-zA-Z ]+$/',$strr) )

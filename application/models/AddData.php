@@ -29,10 +29,10 @@ class AddData extends CI_Model {
         return;
     }
     function updateCourseItem($data){
-        print_r($data);
         $course_name = $data['course_name'];
         $this->db->where('course_name',$course_name);
         $this->db->update('course',$data);
+        return;
     }
     function addStudentAttendItem($data){
         $this->db->insert('student_attend', $data);
