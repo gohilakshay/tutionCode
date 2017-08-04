@@ -362,8 +362,7 @@ class SelectData extends CI_Model {
                         }
                     }   
                 }
-        print_r($data);
-                //return $data;  
+        return $data;  
     }
     /*
     start of different school,jrcolg,engi,comm  dbTypes

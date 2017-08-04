@@ -148,7 +148,7 @@ class Course_cont extends CI_Controller
             }
         }
         $course_id = $this->input->post('course_id');
-        $query['course'] = $this->SelectData->course($course_id);
+        $query['course'] = $this->SelectData->courseUpdate($course_id);
         $this->load->library('form_validation');
         $this->form_validation->set_rules('course_name', 'course_name', 'callback_customAlphanumeric');
         $this->form_validation->set_rules('coursetype','coursetype','required');
