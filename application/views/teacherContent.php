@@ -70,6 +70,32 @@
                     <div class="content">
                         <div class="row">
                             <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/present.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Payment</p>
+                                   <!--Present-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"><hr>
+                            <div class="stats">
+                                <a href="<?php echo site_url("Teacher_cont/TeacherPaymentDetails") ?>">
+                                    <i class="ti-plus"></i> Faculty Payment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
                                 <div class="icon-big icon-info text-center">
                                     <img src="<?php echo base_url()?>assets/icon/upload.png"  >
                                 </div>
@@ -83,7 +109,7 @@
                         </div>
                         <div class="footer"><hr>
                             <div class="stats">
-                                <a href="">
+                                <a href=" <?php echo site_url()."/Upload_FileCont/upload" ?> ">
                                     <i class="ti-plus"></i>Upload Assignments 
                                 </a>
                             </div>
