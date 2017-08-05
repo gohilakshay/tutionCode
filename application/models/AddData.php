@@ -34,6 +34,13 @@ class AddData extends CI_Model {
         $this->db->insert('stud_fee', $data1);
         return;
     }
+    function updateStudFee($data){
+         $stud_id = $data['stud_id'];
+        $this->db->set($data); //value that used to update column  
+        $this->db->where('stud_id', $stud_id); //which row want to upgrade  
+        $this->db->update('stud_fee');  //table name
+        return;
+    }
     function addStudentBatchItem($data){
         $this->db->insert('batch_student_mapping',$data);
         return;

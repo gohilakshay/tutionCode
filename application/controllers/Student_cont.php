@@ -186,13 +186,40 @@ class Student_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
-       $db = $this->session->userdata('db');//load db 
+        $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->student_detail_fee($table);
         $username = $this->session->userdata('username');
         if(isset($username)){
             $this->load->view('feeDetail',$query);         //html filename
+        }else echo "Error 404 : Access Denied";
+    }
+    public function Payfee(){
+        $this->load->library('session');
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('AddData');
+        $this->load->model('SelectData');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+                $studentid=$this->input->post('studentid');
+                /*'studentname'=$this->input->post('studentname');
+                'batch'=$this->input->post('batch');*/
+                $amount=$this->input->post('amount');
+            $query = $this->SelectData->studentProfile($studentid);
+            print_r($query[2]);
+             $recieved_fee = $amount + $query[2]->recieved_fee."<br>";
+             $balance_fee =  $query[2]->balance_fee - $amount;
+            $data = array(
+                'stud_id' => $studentid,
+                'recieved_fee' => $recieved_fee,
+                'balance_fee' => $balance_fee,
+            );
+            $this->AddData->updateStudFee($data);
+            redirect('Student_cont/feeDetail/3');         //html filename
         }else echo "Error 404 : Access Denied";
     }
 }
