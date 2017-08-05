@@ -2,31 +2,30 @@
 <?php $page = 'seven';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
-
 <br><br>
 <div class="content">
     <div class="container-fluid" style="margin-top:-50px;">
-        <?php echo form_open('Expense_cont/staffPaymentDetails'); ?>
+        <?php echo form_open('Teacher_cont/TeacherPaymentDetails'); ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Staff Payment Details</h4>
+                        <h4 class="title">Faculty Payment Details</h4>
                     </div>
                     <div class="content">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Staff Name</label>
-                                    <input type="text" class="form-control border-input" name="staffname" value="<?php         if(isset($_POST['staffname'])){echo $_POST['staffname'];}?>" required>
-                                    <?php echo form_error('staffname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <label>Faculty ID</label>
+                                    <input type="text" class="form-control border-input" name="teacherid" value="<?php if(isset($_POST['teacherid'])){echo $_POST['teacherid'];}?>" required>
+                                    <?php echo form_error('teachername', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Staff Salary</label>
-                                    <input type="text" class="form-control border-input" name="staffsalary" value="<?php         if(isset($_POST['staffsalary'])){echo $_POST['staffsalary'];} ?>" required>
-                                    <?php echo form_error('staffsalary', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <label>Faculty Salary</label>
+                                    <input type="text" class="form-control border-input" name="salary" value="<?php if(isset($_POST['salary'])){echo $_POST['salary'];} ?>" required>
+                                    <?php echo form_error('salary', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             
@@ -91,6 +90,7 @@
                                         <thead>
                                             <tr style="font-weight: bold;">
                                                 <td>Sr No.</td>
+                                                <td>Faculty ID.</td>
                                                 <td>Name</td>
                                                 <td>Contact</td>
                                                 <td>Salary</td>
@@ -100,13 +100,14 @@
                                         <tbody><?php $i=1;foreach($result as $value):?>
                                             <tr>
                                                 <td><?php echo $i;$i++;?></td>
-                                                <td><?php echo $value->staff_name;?></td>
-                                                <td><?php echo $value->staff_contact;?></td>
-                                                <td><?php echo $value->staff_salary;?></td>
-                                                <?php if($value->status == 'paid'){ ?>
-                                                <td><font color="green"><?php echo $value->status?></font></td>
+                                                <td><?php echo $value->t_ID;?></td>
+                                                <td><?php echo $value->t_name;?></td>
+                                                <td><?php echo $value->t_contact;?></td>
+                                                <td><?php echo $value->salary;?></td>
+                                                <?php if($value->salary_status == 'paid'){ ?>
+                                                <td><font color="green"><?php echo $value->salary_status?></font></td>
                                                 <?php }else { ?>
-                                                <td><font color="red"><?php echo $value->status?></font></td>
+                                                <td><font color="red"><?php echo $value->salary_status?></font></td>
                                                 <?php }?>
                                             </tr>
                                             <?php endforeach; ?>

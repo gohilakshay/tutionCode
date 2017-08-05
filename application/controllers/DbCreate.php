@@ -41,6 +41,7 @@ function table()
     $this->CreateTable->create_course();
     $this->CreateTable->create_schedules();
     $this->CreateTable->create_teacher();
+    $this->CreateTable->create_teacher_expense();
     //$this->CreateTable->create_subject();
     $this->CreateTable->create_teacher_stubject_mapping();
     $this->CreateTable->create_test();
@@ -53,6 +54,9 @@ function table()
     $this->CreateTable->create_maintenance();
     $this->CreateTable->create_transport();
     $this->CreateTable->create_utilities();
+    $this->CreateTable->create_staff_details();
+    $this->CreateTable->create_rent();
+    $this->CreateTable->createUpload();
     $this->load->view('mainPage');
 }   
 }

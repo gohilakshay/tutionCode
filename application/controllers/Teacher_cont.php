@@ -154,7 +154,8 @@ class Teacher_cont extends CI_Controller
                 'salary' => $this->input->post('salary'),
                 't_address' => $this->input->post('address'),
                 't_profile' => $img_address,
-                'join_date' => $this->input->post('joiningdate')
+                'join_date' => $this->input->post('joiningdate'),
+                'salary_status' => 'unpaid'
             );
             $this->AddData->addTeacherItem($data);
              $insert_id = $this->db->insert_id();
@@ -183,6 +184,55 @@ class Teacher_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Teacher_cont/addTeacher');   
 		}
+    }
+    public function TeacherPaymentDetails(){
+        $this->load->helper('url');
+        $this->load->library('form_validation');
+        $this->load->library('session');
+        $db = $this->session->userdata('db');//load db   
+        $this->load->database($db);//call db
+        $this->load->model('SelectData');
+        $query['result'] =$this->SelectData->teacher();
+        $this->form_validation->set_rules('teachername','teachername','numeric');
+        $this->form_validation->set_rules('salary', 'salary', 'required|numeric');
+        if($this->form_validation->run() == FALSE)
+        {
+            $this->load->helper('form');
+            $this->load->model('AddData');
+                if(date("m") == 2){
+                    if(date("d") == 28){
+                        $this->AddData->teacherpaymentDefault();
+                    }
+                }
+                else if(date("m") == 1 ||date("m") == 3 ||date("m") == 5 ||date("m") == 7 ||date("m") == 8 ||date("m") == 10 ||date("m") == 12){
+                    if(date("d") == 31){
+                        $this->AddData->teacherpaymentDefault();
+                    }
+                }
+                else{
+                    if(date("d") == 30){
+                        $this->AddData->teacherpaymentDefault();
+                    }
+                }
+             $this->load->view('teacherPayment',$query);
+        }
+        else
+         {
+            $this->load->model('AddData');
+            $data = array(
+            'teacher_id'=> $this->input->post('teacherid'),
+            'salary'=> $this->input->post('salary'),
+            'payment_mode'=> $this->input->post('paymentmode'),
+            'payment_date'=> $this->input->post('paymentdate'),
+            ); 
+            $this->AddData->teacherPaymentDetails($data);
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
+            $this->load->database();
+            $this->load->model('SelectData'); 
+            $this->SelectData->teacher();
+            $query['result'] =$this->SelectData->teacher();
+             redirect('Teacher_cont/TeacherPaymentDetails',$query);   //html filename
+      } 
     }
     public function customAlpha($str) 
     {

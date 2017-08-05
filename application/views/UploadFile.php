@@ -40,6 +40,12 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
+                                    <label>Faculty Name</label>
+                                    <input type="text" class="form-control border-input" name="facultyname" placeholder="Enter Faculty name">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
                                     <label>File</label>
                                     <input type="file" class="form-control border-input" name="filename" >
                                 </div>

@@ -21,11 +21,20 @@ class Upload_FileCont extends CI_Controller
         echo $this->input->post('filename');
         $this->load->model('UploadFileModel');
         $name = strtolower(preg_replace('/\s+/', '', $this->input->post('filename')));
-        $img_address = 'assets/profile/'.$name.'.jpg';
-        $img = $_FILES['filename']['name'] ;
-        $n = $this->UploadFileModel->addFile($img,$name);
+        $file_address = 'assets/profile/'.$name.'.jpg';
+        $file = $_FILES['filename']['name'] ;
+        $n = $this->UploadFileModel->addFile($file,$name);
         if($n == 1){
-            redirect('Upload_FileCont/upload');
+            $data = array(
+                'filename' => $this->input->post('filename'),
+                'discription'=>$this->input->post('discription'),
+                'date'=>$this->input->post('date'),
+                'facultyname'=>$this->input->post('facultyname'),
+                'fileLink'=>$file_address
+            );
+            $this->load->model('AddData');
+            $this->AddData->uploadfile($data);
+            //redirect('Upload_FileCont/upload');
         }
         else
         {echo "<h1> Upload Failed </h1>" ;}

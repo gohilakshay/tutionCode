@@ -113,8 +113,8 @@ class Expense_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             $this->load->database();
             $this->load->model('SelectData'); 
-            $this->SelectData->staffPaidDetails($data);
-            $query['result'] =$this->SelectData->staffPaidDetails($data);
+            $this->SelectData->staffPaidDetails();
+            $query['result'] =$this->SelectData->staffPaidDetails();
              redirect('Expense_cont/staffPaymentDetails',$query);   //html filename
       } 
     }

@@ -9,14 +9,20 @@
     <div class="container-fluid" style="margin-top:-50px;">
         <div class="row">
             <div class="col-md-12">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <center>
                         <h3>
-                            <a href="<?php echo site_url()."/Expense_cont/staffPaymentDetails" ?>"><button type="submit" class="btn btn-success">Make Payment</button></a>
+                            <a href="<?php echo site_url()."/Expense_cont/staffPaymentDetails" ?>"><button type="submit" class="btn btn-success">Make Staff Payment</button></a>
                         </h3>
                         </center>
                     </div>
-                
+                <div class="col-md-6">
+                        <center>
+                        <h3>
+                            <a href="<?php echo site_url()."/Teacher_cont/TeacherPaymentDetails" ?>"><button type="submit" class="btn btn-success">Make Faculty Payment</button></a>
+                        </h3>
+                        </center>
+                </div>
             </div>
         </div>
         <?php echo form_open('Expense_cont/staffDetails'); ?>

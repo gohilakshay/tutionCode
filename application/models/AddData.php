@@ -15,8 +15,16 @@ class AddData extends CI_Model {
         return;
     }
     function addTeacherSubjItem($data1){
-        
         $this->db->insert('teacher_subject_mapping', $data1);
+        return;
+    }
+    function teacherPaymentDetails($data){
+         $this->db->insert('teacher_expense', $data);
+        $teacher_id = $data['teacher_id'];
+        $this->db->set('salary_status', 'paid'); //value that used to update column  
+        $this->db->where('t_ID', $teacher_id); //which row want to upgrade  
+        $this->db->update('teacher');  //table name
+        return;
     }
     function addStudentItem($data){
         $this->db->insert('student_details', $data);
@@ -118,6 +126,16 @@ class AddData extends CI_Model {
         $this->db->set('status', 'unpaid'); //value that used to update column  
         //$this->db->where('staff_name', $name); //which row want to upgrade  
         $this->db->update('staff_details');  //table name
+        return;
+    }
+    function teacherpaymentDefault(){
+        $this->db->set('salary_status', 'unpaid'); //value that used to update column  
+        //$this->db->where('staff_name', $name); //which row want to upgrade  
+        $this->db->update('teacher_expense');  //table name
+        return;
+    }
+    function uploadfile($data){
+        $this->db->insert('upload',$data);
         return;
     }
 }

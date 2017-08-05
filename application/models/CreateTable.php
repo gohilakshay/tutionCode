@@ -768,10 +768,10 @@ class CreateTable extends CI_Model {
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
-//                        'subject_id' => array(
-//                                                 'type' => 'INT',
-//                                                 'constraint' => '100',
-//                                          ),
+                        'salary_status' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          )
 //                        'course_id' => array(
 //                                                 'type' => 'INT',
 //                                                 'constraint' => '100',
@@ -782,6 +782,40 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_key('t_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('teacher'); 
+    }
+    function create_teacher_expense()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        't_exp_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'teacher_id' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'salary' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'payment_mode' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'payment_date' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('t_exp_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('teacher_expense'); 
     }
     function create_subject()
     { 
@@ -1066,6 +1100,44 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('staff'); 
     }
+    function create_staff_details()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'staffDetail_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'staff_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'staff_salary' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'staff_contact' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'staff_address' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'status' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('staffDetail_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('staff_details'); 
+    }
     function create_meals_entertain()
     { 
     /* Load db_forge - used to create databases and tables */
@@ -1197,6 +1269,77 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_key('utilities_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('utilities'); 
+    }
+    function create_rent()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'rent_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'title' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'amount' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                        'payment_mode' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'payment_date' => array(
+                                                 'type' => 'DATE',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('rent_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('rent'); 
+    }
+    function createUpload()
+    {
+        /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'upload_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'filename' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'discription' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'date' => array(
+                                                 'type' => 'DATE',
+                                          ),
+                        'facultyname' => array(
+                                                 'type' => 'VARCHAR',
+                                                'constraint' => '100',
+                                          ),
+                        'fileLink' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+          
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('upload_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('upload'); 
     }
 }
 ?>

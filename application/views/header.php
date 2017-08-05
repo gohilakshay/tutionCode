@@ -27,8 +27,8 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="<?php echo base_url(); ?>assets/css/demo.css" rel="stylesheet" />
     <link href="<?php echo base_url(); ?>assets/css/modal.css" rel="stylesheet" />
-
-
+    <link href="<?php echo base_url(); ?>assets/css/toggel.css" rel="stylesheet" />
+    
     <!--  Fonts and icons     -->
 <!--    <link href="<?php echo base_url(); ?>assets/css/font-awesome.min.css" rel="stylesheet">-->
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
