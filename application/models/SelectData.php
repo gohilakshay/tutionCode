@@ -467,7 +467,7 @@ class SelectData extends CI_Model {
             $q = $this->db->query("SELECT stud_id FROM `batch_student_mapping` WHERE batch_id = '$id'");
             if($q->num_rows() >0){
                 foreach($q->result() as $row){
-                     echo $stud_id = $row->stud_id;
+                     $stud_id = $row->stud_id;
                     $q = $this->db->query("SELECT * FROM `student_details` WHERE stud_ID = '$stud_id'");
                     if($q->num_rows() >0){
                         foreach($q->result() as $row){
@@ -477,6 +477,38 @@ class SelectData extends CI_Model {
             }
         array_push($data,$attend_id);
           return $data;
+    }
+    function student_attend_batch(){
+        $q = $this->db->query("SELECT * FROM `student_attend` ORDER BY attend_date DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $q1 = $this->db->query("SELECT batch_name FROM batch WHERE batch_ID = '$row->batch_id'");
+                foreach($q1->result() as $r){
+                     $row->batch_id = $r->batch_name;
+                }
+               
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function attedBatch($n){
+         $q = $this->db->query("SELECT * FROM `stud_attend_mapping` WHERE attend_id = '$n'");
+        $new = array();
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $studid = explode(",",$row->stud_id);
+                $length = count($studid);
+                for($i=0;$i<$length;$i++){
+                    $q1 = $this->db->query("SELECT stud_name FROM `student_details` WHERE stud_id = '$studid[$i]'");
+                 foreach($q1->result() as $row1){
+                       $new = $row1->stud_name;
+                 }
+                }
+                $data[]=$row;
+            }
+        }
+       return($data);
     }
     function ViewBatch(){
         $q = $this->db->query("SELECT * FROM `batch` ORDER BY batch_ID DESC");

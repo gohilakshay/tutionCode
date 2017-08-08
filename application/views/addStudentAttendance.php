@@ -3,6 +3,10 @@
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 <br>
+
+
+    
+<br>
 <div class="content">
     <div class="container-fluid">
         <?php if($this->session->flashdata('success')) { ?>
@@ -11,7 +15,17 @@
                 <h5><?php echo $this->session->flashdata('success'); ?></h5>
             </div>
         <?php } ?>
-        
+        <div class="card">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-md-12">
+                    <center>
+                        <h3>To View Student Attendance Click Here -->
+                            <a href="<?php echo site_url()."/Attendance_cont/viewStudentAttendance" ?>"><button type="submit" class="btn btn-success">View Student Attendance</button></a>
+                        </h3>
+                    </center>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">

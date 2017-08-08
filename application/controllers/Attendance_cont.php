@@ -58,7 +58,26 @@ class Attendance_cont extends CI_Controller
         $this->AddData->markStudentAttendItem($data);
         redirect('Attendance_cont/markStudentAttendance');
     }
-    
+    public function viewStudentAttendance(){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $db = $this->session->userdata('db');//load db     
+        $this->load->database($db);//call db
+        $this->load->model('SelectData');//call db
+        $query['result'] = $this->SelectData->student_attend_batch();//call db
+        $this->load->view('studentAttendView',$query);
+    }
+    public function viewAttendanceDetail($n){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $db = $this->session->userdata('db');//load db     
+        $this->load->database($db);//call db
+        $this->load->model('SelectData');//call db
+        $query['result'] = $this->SelectData->attedBatch($n);//call db
+        $this->load->view('studAttendDetails',$query);
+    }
     public function markTeacherAttendance()
     {
         $this->load->library('session');

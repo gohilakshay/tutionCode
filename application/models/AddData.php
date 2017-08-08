@@ -62,10 +62,10 @@ class AddData extends CI_Model {
     function markStudentAttendItem($data){
         $n = count($data['stud_id']);
        $stud_id = $data['stud_id'];
-        echo $s_id = implode(",",$stud_id);
+         $s_id = implode(",",$stud_id);
        $attending = $data['attend'];
         $attend_id = $data['attend_id'];
-        echo $absent_id = implode(",",$attending);
+         $absent_id = implode(",",$attending);
         $new_data = array(
             'stud_id'=>$s_id,
             'attend_id'=>$attend_id,
