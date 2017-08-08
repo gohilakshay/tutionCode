@@ -1341,5 +1341,59 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('upload'); 
     }
+    function createEnquiry()
+    {
+        /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'enquiry_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'date' => array(
+                                                 'type' => 'date'
+                                          ),
+                        'reference' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'senderEmail' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'mobile' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'subject' => array(
+                                                 'type' => 'VARCHAR',
+                                                'constraint' => '100',
+                                          ),
+                        'query' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'repledBy' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'reply' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+          
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('enquiry_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('enquiry'); 
+    }
 }
 ?>

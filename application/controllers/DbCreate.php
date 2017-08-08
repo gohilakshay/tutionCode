@@ -57,6 +57,7 @@ function table()
     $this->CreateTable->create_staff_details();
     $this->CreateTable->create_rent();
     $this->CreateTable->createUpload();
+    $this->CreateTable->createEnquiry();
     $this->load->view('mainPage');
 }   
 }

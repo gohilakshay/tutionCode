@@ -4,6 +4,7 @@
 <?php $this->load->library('form_validation'); ?>
 <?php echo form_open('Enquiry_cont/enquirySend'); ?>
 <br>
+<?php foreach($result as $value):?>
 <div class="content">
     <div class="container-fluid">
         <?php if($this->session->flashdata('success')) { ?>
@@ -15,37 +16,13 @@
         <div class="row">
             <div class="col-lg-offset-2 col-md-8 col-sm-12 col-xs-12">
                 <div class="card">
-                    <div class="header">
-                        <center>
-                            <?php
-                            $status="joined";
-                            if($status == "joined")
-                            {
-                                ?>
-                                <button type="submit" id="joined" style="background-color:#7ac29a; color:black;" class="btn btn-success">Joined</button>&emsp;&emsp;
-                           <?php 
-                            }else if($status == "inprocess")
-                            {                               
-                                ?>
-                                <button type="submit" id="inprocess" style="background-color:#F3BB45; color:black;" class="btn btn-warning">In Process</button>&emsp;&emsp;
-                           <?php 
-                            }else if($status == "notjoined")
-                            {
-                                ?>
-                                <button type="submit" id="notjoined" style="background-color:#EB5E28; color:black;" class="btn btn-danger">Not Joined</button>
-                           <?php 
-                            }
-                            ?>
-                        </center>
-                    </div>
    
                     <div class="content">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control border-input" name="enquirename" value="<?php if(isset($_POST['enquirename'])){echo $_POST['enquirename'];} ?>" >
-                                    <?php echo form_error('enquirename', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="enquirename" value="<?php echo $value->name; ?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -53,15 +30,13 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label>EmailID</label>
-                                    <input type="email" class="form-control border-input" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" >
-                                    <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="email" class="form-control border-input" name="email" value="<?php echo $value->senderEmail; ?>" readonly>
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Mobile</label>
-                                    <input type="text" class="form-control border-input" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" >
-                                    <?php echo form_error('mobile', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="mobile" value="<?php echo $value->mobile; ?>" readonly >
                                 </div>
                             </div>
                         </div>
@@ -69,8 +44,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" >
-                                    <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="subject" value="<?php echo $value->subject; ?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -78,8 +52,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Reference</label>
-                                    <input type="text" class="form-control border-input" name="reference" value="<?php if(isset($_POST['reference'])){echo $_POST['reference'];} ?>" readonly>
-                                    <?php echo form_error('reference', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text" class="form-control border-input" name="reference" value="<?php echo $value->reference; ?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -87,8 +60,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Query</label>
-                                    <textarea rows="5" type="text" class="form-control border-input" name="query" value="<?php if(isset($_POST['query'])){echo $_POST['query'];} ?>" readonly></textarea>
-                                    <?php echo form_error('query', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <input type="text"  class="form-control border-input" name="query" value="<?php echo $value->query; ?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +69,6 @@
                                 <div class="form-group">
                                     <label>Replied By</label>
                                     <input type="text" class="form-control border-input" name="repliedby" value="<?php if(isset($_POST['repliedby'])){echo $_POST['repliedby'];} ?>" >
-                                    <?php echo form_error('repliedby', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +89,7 @@
             </div> 
         </div>
     </div>
-</div>
+</div><?php endforeach;?>
 <div class="content">
     <div class="container-fluid">
         <div class="row">

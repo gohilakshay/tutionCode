@@ -732,7 +732,25 @@ class SelectData extends CI_Model {
                 $data[]=$row;
             }
         }
-          return $data1;
-    }              
+          return $data;
+    }
+    function enquiry(){
+        $sql = $this->db->query("SELECT * FROM enquiry");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+          return $data;
+    }
+    function enquiryselect($id){
+        $sql = $this->db->query("SELECT * FROM enquiry where enquiry_ID = '$id'");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+          return $data;
+    }
 }
 ?>

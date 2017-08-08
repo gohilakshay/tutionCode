@@ -31,19 +31,13 @@
                                                 <td>Date</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody><?php $i=1; foreach($result as $value):?>
                                             <tr>
-                                                <td>1.</td>
-                                                <td><a href="<?php echo site_url("Enquiry_cont/enquiryReply")?>">Enquiry for fees(10th std)</a></td>
-                                                <td>advertisement</td>
-                                                <td>02/08/2017</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2.</td>
-                                                <td><a>Enquiry for admi</a></td>
-                                                <td>Friend</td>
-                                                <td>07/08/2017</td>
-                                            </tr>
+                                                <td><?php echo $i;$i++;?></td>
+                                                <td><a href="<?php echo site_url("Enquiry_cont/enquiryReply/").$value->enquiry_ID;?>"><?php echo $value->subject;?></a></td>
+                                                <td><?php echo $value->reference;?></td>
+                                                <td><?php echo $value->date;?></td>
+                                            </tr><?php endforeach;?>
                                         </tbody>
                                     </table>    
                                 </div> 
