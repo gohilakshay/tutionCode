@@ -403,18 +403,18 @@
                                     <div class="col-sm-8 col-sm-offset-2">
                                         <div class="form-group">
                                             <label>Student Name</label>
-                                                <input type="password" class="form-control border-input" name="studentname" value="">
+                                                <input type="text" class="form-control border-input" name="studentname" value="">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!--<div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                         <div class="form-group">
                                             <label>Batch</label>
-                                                <input type="password" class="form-control border-input" name="batch" value="" >
+                                                <input type="text" class="form-control border-input" name="batch" value="" >
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                         <div class="form-group">

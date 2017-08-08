@@ -2,7 +2,7 @@
 <?php $page = 'three';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
-<?php echo form_open('Enquiry_cont/enquiryReply'); ?>
+<?php echo form_open('Enquiry_cont/enquirySend'); ?>
 <br>
 <div class="content">
     <div class="container-fluid">
@@ -44,7 +44,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control border-input" name="enquirename" value="<?php if(isset($_POST['enquirename'])){echo $_POST['enquirename'];} ?>" readonly>
+                                    <input type="text" class="form-control border-input" name="enquirename" value="<?php if(isset($_POST['enquirename'])){echo $_POST['enquirename'];} ?>" >
                                     <?php echo form_error('enquirename', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -53,14 +53,14 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label>EmailID</label>
-                                    <input type="email" class="form-control border-input" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" readonly>
+                                    <input type="email" class="form-control border-input" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" >
                                     <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Mobile</label>
-                                    <input type="text" class="form-control border-input" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" readonly>
+                                    <input type="text" class="form-control border-input" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" >
                                     <?php echo form_error('mobile', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" readonly>
+                                    <input type="text" class="form-control border-input" name="subject" value="<?php if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" >
                                     <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Replied By</label>
-                                    <input type="text" class="form-control border-input" name="repliedby" value="<?php if(isset($_POST['repliedby'])){echo $_POST['repliedby'];} ?>" required>
+                                    <input type="text" class="form-control border-input" name="repliedby" value="<?php if(isset($_POST['repliedby'])){echo $_POST['repliedby'];} ?>" >
                                     <?php echo form_error('repliedby', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>

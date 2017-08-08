@@ -205,21 +205,22 @@ class Student_cont extends CI_Controller
         $this->load->model('SelectData');
         $username = $this->session->userdata('username');
         if(isset($username)){
-                $studentid=$this->input->post('studentid');
-                /*'studentname'=$this->input->post('studentname');
-                'batch'=$this->input->post('batch');*/
+                $studentid = $this->input->post('studentid');
+                $input_name = $studentname = preg_replace('/\s+/', '',strtolower($this->input->post('studentname')));
                 $amount=$this->input->post('amount');
             $query = $this->SelectData->studentProfile($studentid);
-            print_r($query[2]);
-             $recieved_fee = $amount + $query[2]->recieved_fee."<br>";
-             $balance_fee =  $query[2]->balance_fee - $amount;
-            $data = array(
-                'stud_id' => $studentid,
-                'recieved_fee' => $recieved_fee,
-                'balance_fee' => $balance_fee,
-            );
-            $this->AddData->updateStudFee($data);
-            redirect('Student_cont/feeDetail/3');         //html filename
+            $stud_name = $query[0]->stud_surname.$query[0]->stud_name.$query[0]->father_name.$query[0]->mother_name;
+            if($input_name == $stud_name){
+                $recieved_fee = $amount + $query[2]->recieved_fee."<br>";
+                $balance_fee =  $query[2]->balance_fee - $amount;
+                $data = array(
+                    'stud_id' => $studentid,
+                    'recieved_fee' => $recieved_fee,
+                    'balance_fee' => $balance_fee,
+                );
+                $this->AddData->updateStudFee($data);
+                redirect('Student_cont/feeDetail/3');         //html filename
+            }else echo "<h2>Error : Student ID and Name does not Match</h2>";
         }else echo "Error 404 : Access Denied";
     }
 }
