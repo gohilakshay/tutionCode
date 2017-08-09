@@ -127,29 +127,28 @@
                                             <div class="col-md-4">
                                                 <h3 class="text-uppercase">Student Details&emsp;</h3>
                                             </div>
-                                            <form name="search">
-                                                <div class="col-md-8" style="margin-top:-2px;">
+                                            <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
-                                                        <input type="text" id="studentsearch" name="studentsearch" placeholder="Search..." style="width: 80%;" required> 
-                                                        <button type="submit" class="btn btn-success">search</button></h3>
+                                                         <input type="text" id="teachersearch"
+                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required> 
+                                                    </h3>
                                                 </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered" >
+                                    <table class="table table-striped table-bordered" id="myTable" >
                                         <thead>
-                                            <tr style="font-weight: bold;">
-                                                <td>Sr No.</td>
-                                                <td>Student ID</td>
-                                                <td>Student Name</td>
-                                                <td>Mobile</td>
-                                                <td>Standard</td>
-                                                <td>Batch</td>
-                                                <td>School/college Name</td>
-                                                <td>Board</td>
-                                                <td>course</td>
+                                            <tr style="font-weight: bold;" class="header">
+                                                <th style="font-weight: bold;">Sr No.</th>
+                                                <th style="font-weight: bold;">Student ID</th>
+                                                <th style="font-weight: bold;">Student Name</th>
+                                                <th style="font-weight: bold;">Mobile</th>
+                                                <th style="font-weight: bold;">Standard</th>
+                                                <th style="font-weight: bold;">Batch</th>
+                                                <th style="font-weight: bold;">School/college Name</th>
+                                                <th style="font-weight: bold;">Board</th>
+                                                <th style="font-weight: bold;">course</th>
                                             </tr>
                                         </thead>
                                         <tbody><?php $i=0;foreach($result as $value):?>
@@ -191,7 +190,7 @@
     </div>
 </div>
 <style> 
-input[id=studentsearch] {
+input[id=teachersearch] {
     width: 5px;
     box-sizing: border-box;
     border: 2px solid #ccc;

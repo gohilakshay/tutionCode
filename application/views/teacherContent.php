@@ -130,26 +130,28 @@
                                             <div class="col-md-4">
                                                 <h3 class="text-uppercase">Teacher Details&emsp;</h3>
                                             </div>
-                                            <form name="search">
+                                            
                                                 <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
-                                                        <input type="text" id="teachersearch" name="teachersearch" placeholder="Search..." style="width: 80%;" required> 
-                                                        <button type="submit" class="btn btn-success">search</button></h3>
+                                                    <input type="text" id="teachersearch"
+                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required> 
+                                                        
+                                                    </h3>
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered" >
-                                        <thead>
-                                            <tr style="font-weight: bold;">
-                                                <td>Sr No.</td>
-                                                <td>Teacher ID</td>
-                                                <td>Teacher Name</td>
-                                                <td>Mobile</td>
-                                                <td>Course</td>
-                                                <td>Subject</td>
+                                    <table class="table table-striped table-bordered" id="myTable" >
+                                        <thead class="header" >
+                                            <tr >
+                                                <th style="font-weight: bold;">Sr No.</th>
+                                                <th style="font-weight: bold;">Teacher ID</th>
+                                                <th style="font-weight: bold;">Teacher Name</th>
+                                                <th style="font-weight: bold;">Mobile</th>
+                                                <th style="font-weight: bold;">Course</th>
+                                                <th style="font-weight: bold;">Subject</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -187,6 +189,12 @@ input[id=teachersearch] {
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[id=search]:focus {
+    width: 100%;
 }
 
 input[id=teachersearch]:focus {

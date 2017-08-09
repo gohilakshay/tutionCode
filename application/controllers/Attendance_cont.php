@@ -108,7 +108,7 @@ class Attendance_cont extends CI_Controller
         $ntype = explode(",",$type);
         //$query['result'] = $this->SelectData->course();
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('subject', 'subject', 'required|alpha_dash');
+        $this->form_validation->set_rules('subject', 'subject', 'required');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
 		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format science-1');
 		if($this->form_validation->run() == FALSE)
@@ -160,6 +160,26 @@ class Attendance_cont extends CI_Controller
         print_r($data);
         $this->AddData->markTeacherAttendItem($data);
         redirect('Attendance_cont/markTeacherAttendance');             //html filename
+    }
+    public function viewTeacherAttendance(){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $db = $this->session->userdata('db');//load db     
+        $this->load->database($db);//call db
+        $this->load->model('SelectData');//call db
+        $query['result'] = $this->SelectData->teacher_attend();//call db
+        $this->load->view('teacherAttendView',$query);
+    }
+    public function viewTeacherAttendanceDetail($n){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $db = $this->session->userdata('db');//load db     
+        $this->load->database($db);//call db
+        $this->load->model('SelectData');//call db
+        $query['result'] = $this->SelectData->teacherAttendMap($n);//call db
+        $this->load->view('teacherAttendDetails',$query);
     }
     public function customAlpha($str) 
     {

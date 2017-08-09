@@ -68,20 +68,33 @@
                             <div class="col-1">
                                 <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                                     <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                        <h3 class="text-uppercase">Batch Details</h3>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <h3 class="text-uppercase">Batch Details&emsp;</h3>
+                                            </div>
+                                            <div class="col-md-8" style="margin-top:-2px;">
+                                                    <h3>
+                                                         <input type="text" id="teachersearch"
+                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required> 
+                                                    </h3>
+                                                </div>
+                                        </div>
                                     </div>
+                                </div>
                                     <div class="table-responsive">
                                         
-                                        <table class="table table-striped table-bordered" >
+                                        <table class="table table-striped table-bordered" id="myTable" >
                                        
                                             <thead>
-                                                <tr style="font-weight: bold;">
-                                                    <td>Sr No.</td>
-                                                    <td>Batch Name</td>
-                                                    <td>Batch Timing</td>
-                                                    <td>Course</td>
-                                                    <td>Modify Data</td>
-                                                    <td>Delete Data</td>
+                                                <tr class="header" >
+                                                    <th style="font-weight: bold;">Sr No.</th>
+                                                    <th style="font-weight: bold;">Batch ID</th>
+                                                    <th style="font-weight: bold;">Batch Name</th>
+                                                    <th style="font-weight: bold;">Batch Timing</th>
+                                                    <th style="font-weight: bold;">Course</th>
+                                                    <th style="font-weight: bold;">Modify Data</th>
+                                                    <th style="font-weight: bold;">Delete Data</th>
                                                 </tr>
                                             </thead>
                                         
@@ -89,6 +102,7 @@
                                                 <?php $i=0; foreach($result as $value) {?>
                                                 <tr>
                                                     <td><?php $i++;echo $i;?></td>
+                                                    <td><?php echo $value->batch_ID;?></td>
                                                     <td><?php echo $value->batch_name;?></td>
                                                     <td><?php echo $value->batch_timing;?></td>
                                                     <td><?php echo $value->course_name;?></td>
@@ -118,6 +132,25 @@
             </div>
     </div>
 </div>
+<style> 
+input[id=teachersearch] {
+    width: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('<?php echo base_url()?>assets/icon/search.png');
+    background-position: 7px 1px; 
+    background-repeat: no-repeat;
+    background-size: 21px;
+    padding-left: 35px;
+}
+
+input[id=studentsearch]:focus {
+    width: 80%;
+}
+</style>
 <?php include "footer.php";?>
 <?php include "addModel.php"?>
 <?php include "script_include.php"; ?>

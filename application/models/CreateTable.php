@@ -346,6 +346,7 @@ class CreateTable extends CI_Model {
                         'absent_stud_id' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
+                                                 'null' => TRUE,
                                           ),
                      );
       
@@ -976,6 +977,7 @@ class CreateTable extends CI_Model {
                         'absent_teacher_attend_id' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
+                                                 'null' => 'TRUE',
                                           ),
                      );
       

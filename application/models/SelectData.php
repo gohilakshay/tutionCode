@@ -165,7 +165,26 @@ class SelectData extends CI_Model {
             }
             return ($data);
         }
-    }     
+    }  
+    function teacher_attend(){
+        $q = $this->db->query("SELECT * FROM `teacher_attend` ORDER BY date DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function teacherAttendMap($n){
+        $q = $this->db->query("SELECT * FROM `t_attend_mapping` WHERE t_attend_id = '$n'");
+        $new = array();
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+       return($data);
+    }
     function course($ntype) {
         $dbtype = $ntype;
          $n = count($dbtype);$a=0;
@@ -568,10 +587,11 @@ class SelectData extends CI_Model {
             else if($value == 'comcolg'){
                 $q = $this->db->query("SELECT Commercesubj_ID FROM `commercesubject` where subject_name = '$subject'");
                 foreach($q->result() as $row){
-                    $subj = $row->Commercesubj_ID;
+                     $subj = $row->Commercesubj_ID;
                 }
             }
         }
+        
         $q2 = $this->db->query("SELECT * FROM `teacher_subject_mapping` where subject_id LIKE '%$subj%' ");
             foreach($q2->result() as $row){
                 $tcm_id[] = $row->tcm_ID;

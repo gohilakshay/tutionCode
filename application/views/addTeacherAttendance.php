@@ -11,6 +11,17 @@
                 <h5><?php echo $this->session->flashdata('success'); ?></h5>
             </div>
         <?php } ?>
+        <div class="card">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-md-12">
+                    <center>
+                        <h3>To View Teacher Attendance Click Here -->
+                            <a href="<?php echo site_url()."/Attendance_cont/viewTeacherAttendance" ?>"><button type="submit" class="btn btn-success">View Teacher Attendance</button></a>
+                        </h3>
+                    </center>
+                </div>
+            </div>
+        </div>
         <?php echo form_open('Attendance_cont/markTeacherAttendance'); ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

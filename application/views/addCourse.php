@@ -1262,22 +1262,34 @@
                             <div class="col-1">
                                 <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                                     <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                        <h3 class="text-uppercase">Course Details</h3>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <h3 class="text-uppercase">Course Details&emsp;</h3>
+                                            </div>
+                                            <div class="col-md-8" style="margin-top:-2px;">
+                                                    <h3>
+                                                         <input type="text" id="teachersearch"
+                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required> 
+                                                    </h3>
+                                                </div>
+                                        </div>
                                     </div>
+                                </div>
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered" >
+                                        <table class="table table-striped table-bordered" id="myTable">
                                             <thead>
-                                                <tr style="font-weight: bold;">
-                                                    <td>Sr No.</td>
-                                                    <td>Course ID</td>
-                                                    <td>Course Name</td>
-                                                    <td>Course Type</td>
-                                                    <td>Standard</td>
-                                                    <td>Subjects</td>
-                                                    <td>Branch</td>
-                                                    <td>Semester</td>
-                                                    <td>Modify Data</td>
-                                                    <td>Delete Data</td>
+                                                <tr class="header">
+                                                    <th style="font-weight: bold;">Sr No.</th>
+                                                    <th style="font-weight: bold;">Course ID</th>
+                                                    <th style="font-weight: bold;">Course Name</th>
+                                                    <th style="font-weight: bold;">Course Type</th>
+                                                    <th style="font-weight: bold;">Standard</th>
+                                                    <th style="font-weight: bold;">Subjects</th>
+                                                    <th style="font-weight: bold;">Branch</th>
+                                                    <th style="font-weight: bold;">Semester</th>
+                                                    <th style="font-weight: bold;">Modify Data</th>
+                                                    <th style="font-weight: bold;">Delete Data</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1325,7 +1337,25 @@
        
     </div>
 </div>
-                <!--End View Course-->
+    <style> 
+input[id=teachersearch] {
+    width: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('<?php echo base_url()?>assets/icon/search.png');
+    background-position: 7px 1px; 
+    background-repeat: no-repeat;
+    background-size: 21px;
+    padding-left: 35px;
+}
+
+input[id=studentsearch]:focus {
+    width: 80%;
+}
+</style>            <!--End View Course-->
 
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
