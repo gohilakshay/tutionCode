@@ -7,6 +7,8 @@ class Schedular_cont extends CI_Controller
 	{
         $this->load->library('session');
         $this->load->helper('url');
+        $db = $this->session->userdata('db');//load db      
+        $this->load->database($db);//call db
         $username = $this->session->userdata('username');
         if(isset($username)){
             $this->load->view('schedular');
