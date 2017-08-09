@@ -158,7 +158,7 @@ class SelectData extends CI_Model {
                         }
                     }    
                 }
-                $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                 unset($bj);
                 $row->subject_id =$bj1;
                 $data[]=$row;
@@ -206,7 +206,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -223,7 +223,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -240,7 +240,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -257,7 +257,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -274,7 +274,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -306,7 +306,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -323,7 +323,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -340,7 +340,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -357,7 +357,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;
@@ -374,7 +374,7 @@ class SelectData extends CI_Model {
                             
                                 }    
                             }
-                            $bj1 = "<pre>".implode(",\n",$bj)."</pre>";
+                            $bj1 = "<pre style='width:250px;'>".implode(",\n",$bj)."</pre>";
                             unset($bj);
                             $row->subject_id =$bj1;
                             $data[] = $row;

@@ -23,18 +23,19 @@
                                             $studid =explode(",",$value->stud_id); 
                                             $studAbsentid =explode(",",$value->absent_stud_id); 
                                                 $n = count($studid); 
+                                                $n1 = count($studAbsentid); 
                                                 for($j=0;$j<$n;$j++){
                                             ?>
                                             <tr>
                                                 <td><?php echo $i; $i++; ?></td>
                                                 <td><a href="<?php echo site_url("Student_cont/studentProfile/$studid[$j]") ?>"><?php echo $studid[$j]; ?></a></td>
-                                                <?php if($studid[$j] == $studAbsentid[$j]){?>
+                                                <?php for($k=0;$k<$n1;$k++){if($studid[$j] == $studAbsentid[$k]){?>
                                                 <td><font color="red"><?php echo "Absent"; ?></font></td>
                                                 <?php }
                                                 else {
                                                     ?>
                                                 <td><font color="green"><?php echo "Present"; ?></font></td>
-                                                <?php } ?>
+                                                <?php } }?>
                                             </tr><?php } endforeach; ?>
                                         </tbody>
                                     </table>    

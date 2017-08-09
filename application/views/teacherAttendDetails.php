@@ -23,18 +23,23 @@
                                             $teacherid =explode(",",$value->t_id); 
                                             $teachAbsentid =explode(",",$value->absent_teacher_attend_id); 
                                                 $n = count($teacherid); 
+                                                $n1 = count($teachAbsentid); 
                                                 for($j=0;$j<$n;$j++){
                                             ?>
                                             <tr>
                                                 <td><?php echo $i; $i++; ?></td>
                                                 <td><a href="<?php echo site_url("Teacher_cont/teacherProfile/$teacherid[$j]") ?>"><?php echo $teacherid[$j]; ?></a></td>
-                                                <?php if($teacherid[$j] == $teachAbsentid[$j]){?>
+                                                <?php 
+                                                    for($k=0;$k<$n1;$k++){
+                                                    if($teacherid[$j] == $teachAbsentid[$k]){
+                                                
+                                                ?>
                                                 <td><font color="red"><?php echo "Absent"; ?></font></td>
                                                 <?php }
                                                 else {
                                                     ?>
                                                 <td><font color="green"><?php echo "Present"; ?></font></td>
-                                                <?php } ?>
+                                                <?php } }?>
                                             </tr><?php } endforeach; ?>
                                         </tbody>
                                     </table>    
