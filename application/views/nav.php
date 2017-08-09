@@ -8,11 +8,6 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                 
-                        
-                 
-
-            <a class="navbar-brand"><input type="text" id="search" name="search" placeholder="Search.."></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -73,24 +68,3 @@
                 </div>
             </div>
         </nav>
-<style> 
-input[id=search] {
-    width: 5px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 50px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('<?php echo base_url()?>assets/icon/search.png');
-    background-position: 7px 1px; 
-    background-repeat: no-repeat;
-    background-size: 21px;
-    padding-left: 35px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-input[id=search]:focus {
-    width: 100%;
-}
-</style>
