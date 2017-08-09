@@ -1,7 +1,6 @@
 <?php include "header.php";?>
 <?php $page="six";include "sidebar.php";?>
 <?php include "nav.php";?>
-<?php print_r($result);?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -17,7 +16,6 @@
                                             <tr style="font-weight: bold;">
                                                 <td>Sr No.</td>
                                                 <td>Student ID</td>
-                                                <td>Student Name</td>
                                                 <td>Attendance</td>
                                             </tr>
                                         </thead>
@@ -29,16 +27,13 @@
                                             ?>
                                             <tr>
                                                 <td><?php echo $i; $i++; ?></td>
-                                       
-                                                <td><?php echo $studid[$j]; ?></td>
-                                                
-                                                <td><?php echo "sadf"; ?></td>
+                                                <td><a href="<?php echo site_url("Student_cont/studentProfile/$studid[$j]") ?>"><?php echo $studid[$j]; ?></a></td>
                                                 <?php if($studid[$j] == $studAbsentid[$j]){?>
-                                                <td><?php echo "Absent"; ?></td>
+                                                <td><font color="red"><?php echo "Absent"; ?></font></td>
                                                 <?php }
                                                 else {
                                                     ?>
-                                                <td><?php echo "Present"; ?></td>
+                                                <td><font color="green"><?php echo "Present"; ?></font></td>
                                                 <?php } ?>
                                             </tr><?php } endforeach; ?>
                                         </tbody>
