@@ -1,4 +1,5 @@
-  <div class="main-panel">
+
+<div class="main-panel">
 <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -51,7 +52,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <center><b><h4>Admin</h4></b></center>
+                                            <center><b><h4><?php echo $username = $this->session->userdata('username');?></h4></b></center>
                                         </div>
                                     </div>
                                  
