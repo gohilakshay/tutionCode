@@ -67,12 +67,12 @@
                         </a>
                     </li>
                     
-                    
-                    <li <?php if($page == 'nine'){ echo ' class="active"';}?>>
+                    <!--keep it for upgrade after beta version-->
+                    <!--<li <?php if($page == 'nine'){ echo ' class="active"';}?>>
                         <a href="<?php echo site_url()."/Schedular_cont/schedular" ?>">
                            <p><img src="<?php echo base_url()?>assets/icon/scheduler.png">&emsp; Scheduler</p>
                         </a>
-                    </li>
+                    </li>-->
                     
                 </ul>
             </div>
