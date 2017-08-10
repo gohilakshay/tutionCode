@@ -26,7 +26,7 @@ class Marks_cont extends CI_Controller
             if(isset($username)){
                 $this->load->view('addMarks',$query);
             }else echo "Error 404 : Access Denied";
-            //redirect('Marks_cont/addMarks');   	
+            redirect('Marks_cont/addMarks');   	
 		}
     }
     public function marks()

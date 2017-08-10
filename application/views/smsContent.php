@@ -1,3 +1,13 @@
+<?php 
+$total = count($result);
+$sent = 0;
+$failed = 0;
+foreach($result as $value){
+    if($value->status == 'sent'){
+        $sent++;
+    }
+    else $failed++;
+}?>
 <div class="content">
     <div class="container-fluid">
         <!--<div class="row">
@@ -13,9 +23,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-sm-12">
-                        <center><button type="button" style="border-radius:10px; color:black; border-color: #51d8dc; background-color:#51d8dc; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-primary btn-lg">Total<br>111</button>&emsp;
-                        <button type="button" style="border-radius:10px; color:black; border-color: #7ac29a; background-color:#7ac29a; padding:11px; padding-left:70px; padding-right:70px;" class="btn btn-success btn-lg">Success<br>111</button>&emsp;
-                        <button type="button" style="border-radius:10px; color:black; border-color: #e44554; background-color:#e44554; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Failed<br>0</button>&emsp;
+                        <center><button type="button" style="border-radius:10px; color:black; border-color: #51d8dc; background-color:#51d8dc; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-primary btn-lg">Total<br><?php echo $total; ?></button>&emsp;
+                        <button type="button" style="border-radius:10px; color:black; border-color: #7ac29a; background-color:#7ac29a; padding:11px; padding-left:70px; padding-right:70px;" class="btn btn-success btn-lg">Success<br><?php echo $sent;?></button>&emsp;
+                        <button type="button" style="border-radius:10px; color:black; border-color: #e44554; background-color:#e44554; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Failed<br><?php echo $failed;?></button>&emsp;
                         <a href="<?php echo site_url()."/Sms_cont/sendSMS" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Send<br>SMS</button></a></center>
                     </div>
                 </div><br>
@@ -29,13 +39,13 @@
                                             <div class="col-md-4">
                                                 <h3 class="text-uppercase">SMS Details</h3>
                                             </div>
-                                            <form name="search">
+                                            <!--<form name="search">
                                                 <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
                                                         <input type="text" id="smssearch" name="smssearch" placeholder="Search..." style="width: 80%;" required> 
-                                                        <button type="submit" class="btn btn-success">search</button></h3>
+                                                        </h3>
                                                 </div>
-                                            </form>
+                                            </form>-->
                                         </div>
                                     </div>
                                 </div>
@@ -54,22 +64,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach($result as $value):?>
                                             <tr>
-                                                <td><i class="ti-email"></i>&emsp;Name&emsp;(8965314569)<br>
-                                                    &emsp;&emsp;The lecture for mathematics of K.P Sir has been cancelled and has been scheduled on 25th of july from 2.00 to 5.00pm<br>
-                                                    &emsp;&emsp;<i class="ti-timer"></i>&emsp;Date and time</td>
+                                                <?php $sname = explode(",",$value->student_name);
+                                                 $scontact = explode(",",$value->student_contact);
+                                                $n = count($scontact);
+                                                for($i=0;$i<$n;$i++){
+                                                ?>
+                                                
+                                                <td><i class="ti-email"></i>&emsp;<?php echo $sname[$i]; ?>&emsp;<?php echo $scontact[$i]; ?><br>
+                                                    &emsp;&emsp;<?php echo $value->message?><br>
+                                                    &emsp;&emsp;<b>BATCH NAME -> <?php $b = explode(",",$value->batch);echo $b[1]; ?></b>&emsp;&emsp;<i class="ti-timer"></i>&emsp;Date and time</td>
                                             </tr>
-                                            <tr>
-                                                <td><i class="ti-email"></i>&emsp;Name&emsp;(9655314569)<br>
-                                                    &emsp;&emsp;Message<br>
-                                                    &emsp;&emsp;<i class="ti-timer"></i>&emsp;Date and time</td>
-                                            </tr>
-                                            <tr>
-                                                <td><i class="ti-email"></i>&emsp;Name&emsp;(7665314569)<br>
-                                                    &emsp;&emsp;Message<br>
-                                                    &emsp;&emsp;<i class="ti-timer"></i>&emsp;Date and time</td>
-                                            </tr>
-                                        </tbody>
+                                            <?php }endforeach;?>
                                     </table>    
                                 </div>                          
                             </div>

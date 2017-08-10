@@ -145,5 +145,9 @@ class AddData extends CI_Model {
         $this->db->insert('upload',$data);
         return;
     }
+    function smsAdd($data){
+        $this->db->insert('sms',$data);
+        return;
+    }
 }
 ?>

@@ -804,5 +804,14 @@ class SelectData extends CI_Model {
         }
           return $data;
     }
+    function ViewSms(){
+        $sql = $this->db->query("SELECT * FROM sms order by sms_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+          return $data;
+    }
 }
 ?>

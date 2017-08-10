@@ -1397,5 +1397,47 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('enquiry'); 
     }
+    function createSms()
+    {
+        /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'sms_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'batch' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'student_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'student_cont' => array(
+                                                 'type' => 'DATE',
+                                          ),
+                        'sms_sent_to' => array(
+                                                 'type' => 'VARCHAR',
+                                                'constraint' => '100',
+                                          ),
+                        'message' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'status' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+          
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('sms_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('sms'); 
+    }
 }
 ?>

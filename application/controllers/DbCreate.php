@@ -58,6 +58,7 @@ function table()
     $this->CreateTable->create_rent();
     $this->CreateTable->createUpload();
     $this->CreateTable->createEnquiry();
+    $this->CreateTable->createSms();
     $this->load->view('mainPage');
 }   
 }

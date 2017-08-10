@@ -10,7 +10,7 @@
                     <a href="<?php echo site_url()."/Home/mainP" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; border-color:#b7ddfb; color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Student Login</button></a>&emsp;
                     <a href="<?php echo site_url()."/Home/mainP" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; border-color:#b7ddfb; color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">SMS History</button></a>&emsp;</ul>
             </div>
-        </div>
+        </div><?php echo form_open('Sms_cont/sendSMS'); ?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -21,30 +21,19 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-3">
-                                                <select class="form-control border-input" id="standard" name="standard" required>
-                                                    <option value="">Academic Year</option>
-                                                    <option value="2015">2015</option>
-                                                    <option value="2016">2016</option>
-                                                    <option value="2017">2017</option>
-                                                    <option value="2018">2018</option>
-                                                    <option value="2019">2019</option>
+                                                <select class="form-control border-input" id="batch" name="batch" required>
+                                                    <option value=" <?php if(isset($_POST['batch1'])){echo $_POST['batch'];} ?>"><?php         if(isset($_POST['batch1'])){echo $_POST['batch'];}else echo '----Select Batch----'; ?></option>
+                                                    <?php foreach($result as $value):?>
+                                                    <option value="<?php echo $value->batch_ID.','.$value->batch_name; ?>"><?php echo $value->batch_name; ?></option>
+                                                    <?php endforeach;?>
                                                 </select>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <select class="form-control border-input" id="standard" name="standard" required>
-                                                    <option value="">Select Batch</option>
-                                                    <option value="9SB1">9SB1</option>
-                                                    <option value="9sb2">9SB2</option>
-                                                    <option value="9sb3">9SB3</option>
-                                                    <option value="9sb4">9SB4</option>
-                                                    <option value="9sb5">9SB5</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <input type="text" id="studentsearch" name="studentsearch" placeholder="Search..." style="width:100%; margin-top:5px;" required>
+                                                <?php echo form_error('batch', '<div class="alert alert-danger contact-warning">', '</div>');?> 
                                             </div>
                                             <div class="col-md-1">
-                                                <button type="submit" class="btn btn-success" style="margin-left:-15px;">search</button>
+                                                <button type="submit" class="btn btn-success" style="margin-left:-15px;" name="batch1">Enter</button>
+                                            </div><?php echo form_close();?>
+                                            <div class="col-md-5">
+                                                <input type="text" id="studentsearch" name="studentsearch" placeholder="Search..." style="width:100%; margin-top:5px;" >
                                             </div>
                                         </div>
                                     </div>
@@ -54,38 +43,36 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div><?php if(isset($_POST['batch1'])){?>
+        <?php array_pop($result1) //remove the laste element as it is not needed here;?>
+        <?php echo form_open('Sms_cont/sendSMSSender');?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="card">
                         <div class="col-1">
+                            <input type="hidden" name="batch" value="<?php echo $_POST['batch']; ?>" >
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" >
                                         <thead>
                                             <tr style="font-weight: bold;">
-                                                <td><input type="checkbox">&emsp;Select All</td>
+                                                <td><input type="checkbox" id="ckbCheckAll">&emsp;Select All</td>
                                             </tr>
                                         </thead>
+                                        <p id="checkBoxes">
                                         <tbody>
-                                            <tr>
-                                                <td><input type="checkbox">&emsp;Ramu</td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="checkbox">&emsp;shamu</td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="checkbox">&emsp;akshay</td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="checkbox">&emsp;ubaid</td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="checkbox">&emsp;Leela</td>
-                                            </tr>
                                             
+                                            <?php foreach($result1 as $value): ?>
+                                            <tr>
+                                                <td><input type="checkbox" class="checkBoxClass" value="<?php echo $value->stud_contact.",".$value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name; ?>" name="contact[]">&emsp;<?php echo $value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name;?>
+                                                    
+                                                  
+                                                </td>
+                                            </tr>
+                                            <?php endforeach;?>
                                         </tbody>
+                                        </p>
                                     </table>    
                                 </div>  
                                 <div class="row">
@@ -109,8 +96,8 @@
                                         <div class="form-group">
                                             <label>&emsp;SMS Route :</label>
                                             <div class="row">
-                                                <div class="col-md-4"> &emsp;<input type="radio" name="route" value="community" checked>Community</div>
-                                                <div class="col-md-4">&emsp;<input type="radio" name="route" value="promotional">Promotional</div>
+                                                <div class="col-md-4"> &emsp;<input type="radio" name="route" value="3" checked>EnterpriseSMS</div>
+                                                <div class="col-md-4">&emsp;<input type="radio" name="route" value="1">Promotional</div>
                                             </div>
                                         </div>
                                     </div> 
@@ -132,19 +119,21 @@
             </div>
         </div>
         <div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <center><button type="submit" class="btn btn-success">Send</button></center>
-                    <!--<button type="reset" class="btn btn-danger">Clear Form</button>-->	
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <center><button type="submit" class="btn btn-success">Send</button></center>
+                            <!--<button type="reset" class="btn btn-danger">Clear Form</button>-->	
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <?php echo form_close();?>
+        <?php }?>
     </div>
-</div>
     </div>
-</div>
 <style> 
 input[id=studentsearch] {
     width: 5px;
