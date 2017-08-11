@@ -55,25 +55,28 @@ class AddData extends CI_Model {
         $this->db->update('course',$data);
         return;
     }
+    //insert into stud_attend table
     function addStudentAttendItem($data){
         $this->db->insert('student_attend', $data);
         return;
     }
+    //insert in stud_attend_mapping
     function markStudentAttendItem($data){
-        $n = count($data['stud_id']);
+        $n = count($data['stud_id']); //count no. of student in batch
        $stud_id = $data['stud_id'];
-         $s_id = implode(",",$stud_id);
-       $attending = $data['attend'];
+         $s_id = implode(",",$stud_id);//join all student_id by ","
+       $attending = $data['attend'];//get absent student_id  
         $attend_id = $data['attend_id'];
-         $absent_id = implode(",",$attending);
+         $absent_id = implode(",",$attending);//join all ABSENT student_id by ","
         $new_data = array(
             'stud_id'=>$s_id,
             'attend_id'=>$attend_id,
             'absent_stud_id'=>$absent_id
         );
-        $this->db->insert('stud_attend_mapping', $new_data);
+        $this->db->insert('stud_attend_mapping', $new_data);//insert Data
         return;
     }
+    //insert in teacher_attend
     function TeacherAttend($data){
         $tcm_id = implode(",",$data['tcm_id']);
         $new_data = array(
@@ -84,6 +87,7 @@ class AddData extends CI_Model {
         $this->db->insert('teacher_attend', $new_data);
        // print_r($new_data);
     }
+    //insert in t_attend_mapping
     function markTeacherAttendItem($data){
          $this->db->insert('t_attend_mapping', $data);
         return;

@@ -166,6 +166,7 @@ class SelectData extends CI_Model {
             return ($data);
         }
     }  
+    //select all teacher from teacher_attend table
     function teacher_attend(){
         $q = $this->db->query("SELECT * FROM `teacher_attend` ORDER BY date DESC");
         if($q->num_rows() >0){
@@ -175,6 +176,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    //select all from t_attend_mapping table
     function teacherAttendMap($n){
         $q = $this->db->query("SELECT * FROM `t_attend_mapping` WHERE t_attend_id = '$n'");
         $new = array();
@@ -463,6 +465,7 @@ class SelectData extends CI_Model {
     /*
     end of different school,jrcolg,engi,comm  dbTypes
     */
+    //getting batch_ID from bbatch name and time 
     function batchIDStudAttend($name,$time){
         $q = $this->db->query("SELECT batch_ID FROM `batch` WHERE batch_name = '$name' AND batch_timing = '$time'");
         if($q->num_rows() >0){
@@ -481,7 +484,7 @@ class SelectData extends CI_Model {
         }
       return $data;
     }
-    
+    //Select student detail from id->stud_id and attend_id
     function stud_attend_map($id,$attend_id){
             $q = $this->db->query("SELECT stud_id FROM `batch_student_mapping` WHERE batch_id = '$id'");
             if($q->num_rows() >0){
@@ -497,6 +500,7 @@ class SelectData extends CI_Model {
         array_push($data,$attend_id);
           return $data;
     }
+    //replacing batch_id with batch_name in student
     function student_attend_batch(){
         $q = $this->db->query("SELECT * FROM `student_attend` ORDER BY attend_date DESC");
         if($q->num_rows() >0){
@@ -511,6 +515,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    //select from stud_attend_mapping
     function attedBatch($n){
          $q = $this->db->query("SELECT * FROM `stud_attend_mapping` WHERE attend_id = '$n'");
         $new = array();
@@ -556,6 +561,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    //select subject_id according to subject name and dbtype
     function AttendSubjTeacher($data){
         $dbtype = $data['dbtype'];
         $subject = $data['subject'];

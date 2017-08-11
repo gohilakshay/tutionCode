@@ -7,45 +7,51 @@ class Attendance_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $db = $this->session->userdata('db');//load db   
-        $this->load->database($db);//call db
+        $db = $this->session->userdata('db');   //load db   
+        $this->load->database($db); //call db
+        /*validation starts*/
         $this->form_validation->set_rules('batchname', 'batchname', 'required|alpha_dash');
         $this->form_validation->set_rules('facultyname', 'facultyname', 'callback_customAlpha');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
 		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format eg:IX-1');
+        /*validation ends*/
 		if($this->form_validation->run() == FALSE)
 		{
-            $username = $this->session->userdata('username');
+            $username = $this->session->userdata('username');   //session mane
             if(isset($username)){
                 $this->load->view('addStudentAttendance');	
-            }else echo "Error 404 : Access Denied";//html filename	
+            }else echo "Error 404 : Access Denied"; //html filename	
 		}
+        //form after giving right output
 		else
         {
-            $batch_name = $this->input->post('batchname');
+            $batch_name = $this->input->post('batchname');  //input
             $batch_timing = $this->input->post('batchtiming');
-            $this->load->model('SelectData');
-            $this->load->model('AddData');
+            $this->load->model('SelectData');   //to select data from db
+            $this->load->model('AddData');  //to insert or update data from db
+            //getting batch_ID from bbatch name and time
             $res = $this->SelectData->batchIDStudAttend($batch_name,$batch_timing);
             $data = array(
                 'batch_id'=>$res,
                 'faculty_name'=>$this->input->post('facultyname'),
                 'attend_date'=>$this->input->post('date')
             );
-            $this->AddData->addStudentAttendItem($data);
-            $this->session->set_flashdata('success','You have Successfully submitted data.');
-            $attend_id = $this->db->insert_id();
+            //insert into stud_attend table
+            $this->AddData->addStudentAttendItem($data);    //passing $data to AddData model
+            $this->session->set_flashdata('success','You have Successfully submitted data.');//if success show alert
+            $attend_id = $this->db->insert_id();    //laster inserted ID from above insert
+            //Select student detail from id->stud_id and attend_id
             $query['result'] = $this->SelectData->stud_attend_map($res,$attend_id);
-            $this->load->view('addStudentAttendance',$query);  	
+            $this->load->view('addStudentAttendance',$query);  	//html filename
 		}
     }
     public function StudentAttendance()
     {
         $this->load->helper('url');
         $this->load->library('session');
-        $db = $this->session->userdata('db');//load db     
-        $this->load->database($db);//call db
-        $this->load->model('AddData');
+        $db = $this->session->userdata('db');   //load db     
+        $this->load->database($db);     //call db
+        $this->load->model('AddData');      //to insert or update data from db
         $stud_id = $this->input->post('stud_id');
         //$stud_id = implode(",",$stud_id);
         $attend_id = $this->input->post('attend_id');
@@ -55,121 +61,123 @@ class Attendance_cont extends CI_Controller
             'attend_id'=>$attend_id,
             'attend'=>$attending,
         );
-        $this->AddData->markStudentAttendItem($data);
-        redirect('Attendance_cont/markStudentAttendance');
+        $this->AddData->markStudentAttendItem($data);   //insert in stud_attend_mapping
+        redirect('Attendance_cont/markStudentAttendance');  //redirect to addStudentAttendance.php
     }
     public function viewStudentAttendance(){
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->library('form_validation');
-        $db = $this->session->userdata('db');//load db     
-        $this->load->database($db);//call db
-        $this->load->model('SelectData');//call db
-        $query['result'] = $this->SelectData->student_attend_batch();//call db
-        $this->load->view('studentAttendView',$query);
+        $db = $this->session->userdata('db');   //load db     
+        $this->load->database($db); //call db
+        $this->load->model('SelectData');   //call db
+        $query['result'] = $this->SelectData->student_attend_batch();   //replacing batch_id with batch_name in student
+        $this->load->view('studentAttendView',$query);  //html filename
     }
     public function viewAttendanceDetail($n){
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->library('form_validation');
-        $db = $this->session->userdata('db');//load db     
-        $this->load->database($db);//call db
-        $this->load->model('SelectData');//call db
-        $query['result'] = $this->SelectData->attedBatch($n);//call db
-        $this->load->view('studAttendDetails',$query);
+        $db = $this->session->userdata('db');   //load db     
+        $this->load->database($db); //call db
+        $this->load->model('SelectData');   //call db
+        $query['result'] = $this->SelectData->attedBatch($n);   //select from stud_attend_mapping
+        $this->load->view('studAttendDetails',$query);  //html filename
     }
     public function markTeacherAttendance()
     {
         $this->load->library('session');
-        $db = $this->session->userdata('db');//load db    
-        $this->load->database($db);//call db
+        $db = $this->session->userdata('db');   //load db    
+        $this->load->database($db); //call db
         $this->load->helper('url');
         $this->load->model('SelectData');
         
         $this->db->close();
         $configdbfly=$this->config->config['sysdb'];
-        $configdbfly['username'] = 'root'; /* Default db */
-        $configdbfly['password'] = ''; /* Default db */
-        $configdbfly['database'] = 'admin_db'; /* Default db */
+        $configdbfly['username'] = 'root';  /* Default db */
+        $configdbfly['password'] = '';   /* Default db */
+        $configdbfly['database'] = 'admin_db';  /* Default db */
         $this->load->database($configdbfly);
         $query['result'] = $this->SelectData->dbSelect();
         $this->db->close();
-        $db = $this->session->userdata('db');//load db      
-        $this->load->database($db);//call db
+        $db = $this->session->userdata('db');   //load db      
+        $this->load->database($db); //call db
         $dbname = $db['database'];
         foreach($query as $value){
             foreach($value as $value1){
                 $dbName = $value1->dbName;
                 if($dbName == $dbname){
-                    $type=$value1->dbType; //finding the database name and the name stored in the admin tb
+                    $type=$value1->dbType;  //finding the database name and the name stored in the admin tb
                 }
             }
         }
-        $ntype = explode(",",$type);
+        $ntype = explode(",",$type);    //seperating the database type and inserting into array $ntype
         //$query['result'] = $this->SelectData->course();
         $this->load->library('form_validation');
+        /*form validating begin*/
         $this->form_validation->set_rules('subject', 'subject', 'required');
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
 		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format science-1');
+        /*ends*/
 		if($this->form_validation->run() == FALSE)
 		{
             $username = $this->session->userdata('username');
             if(isset($username)){
-            $this->load->view('addTeacherAttendance',$query);
-             }else echo "Error 404 : Access Denied";//html filename	
+            $this->load->view('addTeacherAttendance',$query);   //html filename before inserting values in html form
+             }else echo "Error 404 : Access Denied";
 		}
+        /*after inserting values in html form*/
 		else
         {
-            $this->load->model('SelectData');
-            $this->load->model('AddData');
+            $this->load->model('SelectData');   //to select data from db
+            $this->load->model('AddData');  //to insert or update data from db
             $data = array(
                     'subject' => $this->input->post('subject'),
                      'dbtype' =>$ntype,                     
                 );
-            $teacher_map = $this->SelectData->AttendSubjTeacher($data);
-            $t_name['result'] = $teacher_map['name'];
+            $teacher_map = $this->SelectData->AttendSubjTeacher($data); //select subject_id according to subject name and dbtype
+            $t_name['result'] = $teacher_map['name'];   //subject name to an array
             $data1 = array(
                 'tcm_id' => $teacher_map['tcm_id'],
                 'timing' =>$this->input->post('timing'),
                 'date' => $this->input->post('date')
             );
-            $this->AddData->TeacherAttend($data1);
-            $this->session->set_flashdata('success','You have Successfully submitted data.');
+            $this->AddData->TeacherAttend($data1);  //insert in teacher_attend
+            $this->session->set_flashdata('success','You have Successfully submitted data.'); //if successfully inserted
             $t_attend_id = $this->db->insert_id();
             array_push($t_name['result'],$t_attend_id);
-            $this->load->view('addTeacherAttendance',$t_name); 	
+            $this->load->view('addTeacherAttendance',$t_name); 	//html filename
 		}
     }
     public function TeacherAttendance()
     {
         $this->load->helper('url');
-        $this->load->model('AddData');
+        $this->load->model('AddData');  //insert or update data in html 
         $this->load->library('session');
-        $db = $this->session->userdata('db');//load db      
-        $this->load->database($db);//call db
+        $db = $this->session->userdata('db');   //load db      
+        $this->load->database($db); //call db
         $t_ID = $this->input->post('teach_id');
-        $t_ID = implode(",",$t_ID);
+        $t_ID = implode(",",$t_ID); //teacher_id in one variable seperated by "," 
         $attending = $this->input->post('attend');
         $t_attend_id = $this->input->post('t_attend_id');
-        $attending = implode(",",$attending);
+        $attending = implode(",",$attending);//abent teacher_id in one variable seperated by ","
         $data=array(
             't_id'=>$t_ID,
             't_attend_id'=>$t_attend_id,
             'absent_teacher_attend_id'=>$attending,
         );
-        print_r($data);
-        $this->AddData->markTeacherAttendItem($data);
+        $this->AddData->markTeacherAttendItem($data);   //insert in t_attend_mapping
         redirect('Attendance_cont/markTeacherAttendance');             //html filename
     }
     public function viewTeacherAttendance(){
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->library('form_validation');
-        $db = $this->session->userdata('db');//load db     
-        $this->load->database($db);//call db
-        $this->load->model('SelectData');//call db
-        $query['result'] = $this->SelectData->teacher_attend();//call db
-        $this->load->view('teacherAttendView',$query);
+        $db = $this->session->userdata('db');   //load db     
+        $this->load->database($db); //call db
+        $this->load->model('SelectData');   //load model to select data from db
+        $query['result'] = $this->SelectData->teacher_attend(); //select all teacher from teacher_attend table
+        $this->load->view('teacherAttendView',$query); //html filename
     }
     public function viewTeacherAttendanceDetail($n){
         $this->load->helper('url');
@@ -177,10 +185,11 @@ class Attendance_cont extends CI_Controller
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');//load db     
         $this->load->database($db);//call db
-        $this->load->model('SelectData');//call db
-        $query['result'] = $this->SelectData->teacherAttendMap($n);//call db
-        $this->load->view('teacherAttendDetails',$query);
+        $this->load->model('SelectData');   //load model to select data from db
+        $query['result'] = $this->SelectData->teacherAttendMap($n); //select all from t_attend_mapping table
+        $this->load->view('teacherAttendDetails',$query);   //html filename
     }
+    /*used for validation of the input values from html form*/
     public function customAlpha($str) 
     {
         if ( !preg_match('/^[a-zA-Z ]+$/i',$str) )
