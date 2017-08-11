@@ -17,7 +17,13 @@ class CreateNewDb extends CI_Controller
         $this->load->database($configdbfly);
         /* session login*/
         $username = $this->input->post('username');
-        $password = $this->input->post('password');
+        /*Encryption starts*/
+        $str = $this->input->post('password'); 
+        $salt = "JafeelAhmed";
+        $enc = sha1($salt);
+        $s = $str.$enc;
+        $password = md5($s);
+        /*Encryption Ends*/
         $this->load->model('SelectData');
         $query = $this->SelectData->SuperadminSelect($username,$password);
         $query1['result'] = $this->SelectData->dbSelect();

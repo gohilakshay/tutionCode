@@ -37,9 +37,9 @@
             <?php echo form_close(); ?>
         </div>
     </div>
-        <?php echo form_open('CreateNewDb/createDb'); ?>
+        <?php echo form_open('Home'); ?>
         <div class="text-center">
-            <button type="submit" class="btn btn-success btn-fill btn-wd">Create</button>
+            <button type="submit" class="btn btn-success btn-fill btn-wd">LogOut</button>
         </div>
         <?php echo form_close(); ?>
     <?php include "footer.php" ?>
