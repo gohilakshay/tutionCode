@@ -53,12 +53,13 @@ foreach($result as $value){
                                     <table class="table table-bordered" >
                                         <thead>
                                             <tr style="font-weight: bold;">
-                                                <td>Date : 21st july
-                                                    <div class="pull-right">
+                                                <td><?php echo date("F j, Y");  ?>
+                                                    <div class="pull-right"><?php echo form_open('Sms_cont/filterDate'); ?>
                                                         <label>To :&emsp;</label><input type="date" name="to">
                                                         <label>From :&emsp;</label><input type="date" name="from">
-                                                        <button type="submit"> Search</button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                                        <button>All</button><button>success</button><button>Failed</button>
+                                                        <button type="submit"> Search</button>
+                                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                        <?php echo form_close();?>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -72,9 +73,14 @@ foreach($result as $value){
                                                 for($i=0;$i<$n;$i++){
                                                 ?>
                                                 
-                                                <td><i class="ti-email"></i>&emsp;<?php echo $sname[$i]; ?>&emsp;<?php echo $scontact[$i]; ?><br>
-                                                    &emsp;&emsp;<?php echo $value->message?><br>
-                                                    &emsp;&emsp;<b>BATCH NAME -> <?php $b = explode(",",$value->batch);echo $b[1]; ?></b>&emsp;&emsp;<i class="ti-timer"></i>&emsp;Date and time</td>
+                                                <td><i class="ti-email"></i>&emsp;<?php echo $sname[$i]; ?>&emsp;<?php echo $scontact[$i]; ?>
+                                                  <span style="float:right;">
+                                                      <b>BATCH NAME -> <?php $b = explode(",",$value->batch);echo $b[1]; ?></b>&emsp;&emsp;
+                                                      <i class="ti-timer"></i>
+                                                      <?php echo $value->time;?>&emsp;&emsp;<?php echo $value->date;?></span>  
+                                                    <br>
+                                                    &emsp;&emsp;&emsp;&emsp;<?php echo $value->message?>
+                                                </td>
                                             </tr>
                                             <?php }endforeach;?>
                                     </table>    

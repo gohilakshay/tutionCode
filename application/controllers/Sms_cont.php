@@ -113,7 +113,9 @@ class Sms_cont extends CI_Controller
                 'student_contact'=>$mobileNumber,
                 'sms_sent_to'=>$send,
                 'message'=>$message,
-                    'status'=>'sent'
+                'date'=>date('Y-m-d'),
+                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                'status'=>'sent'
             );
             $this->AddData->smsAdd($data);    
             redirect('Sms_cont/sendSMS');
@@ -128,15 +130,25 @@ class Sms_cont extends CI_Controller
                 'student_contact'=>$mobileNumber,
                 'sms_sent_to'=>$send,
                 'message'=>$message,
+                'date'=>date('Y-m-d'),
+                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
                 'status'=>'failed'
                );
             $this->AddData->smsAdd($data);
             echo $output;
             }
         }
-            
-        
-         
-        
-    }     
+     }
+    function filterDate(){
+        $this->load->library('session');
+        $this->load->helper('url');  
+        $this->load->library('form_validation');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('SelectData');
+        $to = $this->input->post('to');
+        $from = $this->input->post('from');
+        $query['result'] = $this->SelectData->filterByDate($to,$from);
+        $this->load->view('sms',$query);
+    }
 }

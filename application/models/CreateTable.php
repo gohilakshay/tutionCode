@@ -1427,6 +1427,14 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
+                        'date' => array(
+                                                 'type' => 'DATE',
+                                                 
+                                          ),
+                        'time' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
                         'status' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
