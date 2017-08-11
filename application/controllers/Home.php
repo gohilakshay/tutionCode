@@ -30,18 +30,18 @@ class Home extends CI_Controller
         $this->load->helper('form');
         $this->load->helper('url');
         /*Encryption starts*/
-        $str = $this->input->post('password'); 
+        /*$str = $this->input->post('password'); 
         $salt = "JafeelAhmed";
         $enc = sha1($salt);
         $s = $str.$enc;
-        $password = md5($s);
+        $password = md5($s);*/
         /*Encryption ends*/
         if(isset($_POST['addDb'])){
             $db_data =array(
                 'dbName' => $this->input->post('databasename'),
                 'dbType' => $this->input->post('databasetype'),
                 'username' => $this->input->post('username'),
-                'password' => $password
+                'password' => $this->input->post('password')
             );
             $this->load->model('CreateTable');
             $this->CreateTable->addDb($db_data);

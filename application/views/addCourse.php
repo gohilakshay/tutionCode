@@ -86,8 +86,19 @@
                                         <label>Branch:</label>
                                         <select class="form-control border-input" id="stream" name="stream">
                                             <option value="">---Select Branch---</option>
-                                            <option value="Science">Science</option>
+                                            <?php ;foreach($result9 as $v):
+                                            if($v == 'jrcolg_com'){
+                                            ?>
+                                            <!--<option value="Science">Science</option>-->
                                             <option value="Commerce">Commerce</option>
+                                            <?php }
+                                               else if($v == 'jrcolg_sci'){
+                                                  ?>
+                                            <option value="Science">Science</option>
+                                            <?php  
+                                                    
+                                                }
+                                            endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -202,7 +213,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <!--for commerce college-->
                         <div id="commerceSubjects" style="display:none;">
                             <div class="row">

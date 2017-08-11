@@ -61,21 +61,21 @@
         }
         /*For college view of Branch and Semester*/
         else if( $(obj).val()>10 && $(obj).val()<13){
-            $("#college").show()
-        }
-        else if( $(obj).val()==="11"){
+            
+            $("#college").show();
             $('#stream').on('change',function(){
-                if( $(obj).val()==="Science") 
+                var str = $('#stream');
+                if( $(str).val()==="Science") 
                 {
                     $("#scienceSubjects").show()
                    /* $("#commerceSubjects").hide();
                     $("#schoolSubjects").hide();*/
                 }
-                else
-                    {
-                        $("#scienceSubjects").hide();
-                    }
-            })
+                else if($(str).val()==="Commerce")
+                {
+                    $("#commerceSubjects").show();
+                }
+            });
         }
         /*For Commerce view of Branch and Semester*/
         else if( $(obj).val()==="Commerce"){

@@ -32,6 +32,7 @@ class Course_cont extends CI_Controller
         }
         $ntype = explode(",",$type);
         $n = count($ntype);
+        $query['result9'] = $ntype;
         $query['result'] = $this->SelectData->course($ntype); 
         foreach($ntype as $value){
             $query['result1'] = $this->SelectData->standard();  
