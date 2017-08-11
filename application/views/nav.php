@@ -41,15 +41,15 @@
                         </li>
                          <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo base_url()?>assets/profile/admin.jpg" width="30" height="25" class="img-circle">
+                                <i class="ti-user"></i>
 								<p>Profile</p>
                             </a>
                              <ul class="dropdown-menu">
-                                    <div class="row">
+                                    <!--<div class="row">
                                         <div class="col-md-12">
                                             <img src="<?php echo base_url()?>assets/profile/admin.jpg" width="200" height="150" class="img-circle" style="padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px;">
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="row">
                                         <div class="col-md-12">
                                             <center><b><h4><?php echo $username = $this->session->userdata('username');?></h4></b></center>

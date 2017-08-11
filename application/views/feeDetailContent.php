@@ -68,7 +68,7 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->balance_fee;?></td>
                                                <?php endif;?>
                                             </tr>
-                                            <?php endforeach;?>
+                                            <?php $i++;endforeach; ?>
                                         </tbody><?php endforeach;?>
                                     </table>    
                                 </div>                          
@@ -139,7 +139,7 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->balance_fee;?></td>
                                                <?php endif;?>
                                             </tr>
-                                            <?php endforeach;?>
+                                            <?php $i++;endforeach;?>
                                         </tbody><?php endforeach;?>
                                     </table>    
                                 </div>                          
@@ -208,7 +208,7 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->recieved_fee;?></td>
                                                 <?php endif;?>
                                             </tr>
-                                            <?php endforeach;?>
+                                            <?php $i++;endforeach;?>
                                         </tbody><?php endforeach;?>
                                     </table>    
                                 </div>                          
@@ -279,7 +279,7 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->recieved_fee;?></td>
                                                 <?php endif; ?>
                                             </tr>
-                                            <?php endforeach;?>
+                                            <?php $i++;endforeach;?>
                                         </tbody><?php endforeach;?>
                                     </table>    
                                 </div>                          
@@ -351,7 +351,7 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->final_fee;?></td>
                                                 <?php endif;?>
                                             </tr>
-                                            <?php endforeach;?>
+                                            <?php $i++;endforeach;?>
                                         </tbody><?php endforeach;?>
                                     </table>    
                                 </div>                          

@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="col-xs-5">
                                 <div class="icon-big icon-success text-center">
-                                    <img src="<?php echo base_url()?>assets/icon/present.png"  >
+                                    <img src="<?php echo base_url()?>assets/icon/wallet.png"  >
                                 </div>
                             </div>
                             <div class="col-xs-7">
