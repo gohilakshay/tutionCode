@@ -153,7 +153,40 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (engisubj_ID)
         $this->dbforge->create_table('engisubject'); 
     }
-    function create_collegesubject()
+    /*function create_collegesubject()
+    { 
+     Load db_forge - used to create databases and tables 
+    $this->load->dbforge();
+      $fields = array(
+                        'colgsubj_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'subject_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '500',
+                                          ),
+                        'semester_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                        'branch_ID' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '500',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('colgsubj_ID', TRUE);
+        // gives PRIMARY KEY (colgsubj_ID)
+        $this->dbforge->create_table('collegesubject'); 
+    }*/
+    
+    
+    /*for jr colg commerce*/
+    function create_jrColgCom()
     { 
     /* Load db_forge - used to create databases and tables */
     $this->load->dbforge();
@@ -181,11 +214,44 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('colgsubj_ID', TRUE);
         // gives PRIMARY KEY (colgsubj_ID)
-        $this->dbforge->create_table('collegesubject'); 
+        $this->dbforge->create_table('jrColgCom'); 
     }
-    function create_Commercesubject()
+    
+    /*for jr colg science*/
+    function create_jrColgSci()
     { 
     /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'colgsubj_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'subject_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '500',
+                                          ),
+                        'semester_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '10',
+                                          ),
+                        'branch_ID' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '500',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('colgsubj_ID', TRUE);
+        // gives PRIMARY KEY (colgsubj_ID)
+        $this->dbforge->create_table('jrColgSci'); 
+    }
+    
+    function create_Commercesubject()
+    { 
+    /* Load db_forge - used to create degree commerce databases and tables */
     $this->load->dbforge();
       $fields = array(
                         'Commercesubj_ID' => array(

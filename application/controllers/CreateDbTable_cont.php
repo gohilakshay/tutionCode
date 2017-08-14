@@ -434,7 +434,7 @@ class CreateDbTable_cont extends CI_Controller
                 }
             }
             else if($type=='jrcolg_sci'){
-                $this->CreateTable->create_collegesubject();
+                $this->CreateTable->create_jrColgSci();
                     for($i=1;$i<10;$i++)
                 {    
                     if($i==1){                         //11th & 12th Science
@@ -443,7 +443,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==2){                         
                         $data = array(
@@ -451,7 +451,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==3){                         
                         $data = array(
@@ -459,7 +459,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==4){                         
                         $data = array(
@@ -467,7 +467,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==5){                         
                         $data = array(
@@ -475,7 +475,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==6){                         
                         $data = array(
@@ -483,7 +483,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==7){                         
                         $data = array(
@@ -491,7 +491,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==8){                         
                         $data = array(
@@ -499,7 +499,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }
                     else if($i==9){                         
                         $data = array(
@@ -507,12 +507,12 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Science'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addSciSubj($data);
                     }                                       /*11th & 12th science ends*/    
                 }
             }
             else if($type=='jrcolg_com'){
-                $this->CreateTable->create_collegesubject();
+                $this->CreateTable->create_jrColgCom();
                 for($i=10;$i<22;$i++){
                      if($i==10){                      //11th & 12th commerce
                         $data = array(
@@ -520,7 +520,7 @@ class CreateDbTable_cont extends CI_Controller
                             'semester_ID' => '1',
                             'branch_ID' => 'Commerce'
                         );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==11){
                         $data = array(
@@ -528,7 +528,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==12){
                         $data = array(
@@ -536,7 +536,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==13){
                         $data = array(
@@ -544,7 +544,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==14){
                         $data = array(
@@ -552,7 +552,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==15){
                         $data = array(
@@ -560,7 +560,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==16){
                         $data = array(
@@ -568,7 +568,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==17){
                         $data = array(
@@ -576,7 +576,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==18){
                         $data = array(
@@ -584,7 +584,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==19){
                         $data = array(
@@ -592,7 +592,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else if($i==20){
                         $data = array(
@@ -600,7 +600,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }
                     else {
                         $data = array(
@@ -608,7 +608,7 @@ class CreateDbTable_cont extends CI_Controller
                         'semester_ID' => '1',
                         'branch_ID' => 'Commerce'
                     );
-                        $this->InsertTable->addCollegeSubj($data);
+                        $this->InsertTable->addComSubj($data);
                     }                                                 /*11th & 12th commerce ends*/
                 }
             }

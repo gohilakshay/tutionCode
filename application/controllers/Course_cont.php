@@ -41,10 +41,10 @@ class Course_cont extends CI_Controller
                 $query['result3'] = $this->SelectData->subject();
             }
             else if($value == 'jrcolg_sci'){
-                $query['result5'] = $this->SelectData->collegesubject();
+                $query['result5'] = $this->SelectData->jrColgSci();
             }
             else if($value == 'jrcolg_com'){
-                $query['result6'] = $this->SelectData->collegesubject();
+                $query['result6'] = $this->SelectData->jrColgCom();
             }
             else if($value == 'engicolg'){ 
                 $query['result7'] = $this->SelectData->engisubject();
@@ -136,10 +136,10 @@ class Course_cont extends CI_Controller
                 $query['result3'] = $this->SelectData->subject();
             }
             else if($value == 'jrcolg_sci'){
-                $query['result5'] = $this->SelectData->collegesubject();
+                $query['result5'] = $this->SelectData->jrColgSci();
             }
             else if($value == 'jrcolg_com'){
-                $query['result6'] = $this->SelectData->collegesubject();
+                $query['result6'] = $this->SelectData->jrColgCom();
             }
             else if($value == 'engicolg'){ 
                 $query['result7'] = $this->SelectData->engisubject();
