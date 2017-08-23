@@ -1,5 +1,5 @@
 <?php
-	/**its acopypase code
+	/**sdfasdasdasdsasdsfsadasdfasdsadasdsdad
 	 * GIT DEPLOYMENT SCRIPT
 	 *
 	 * Used for automatically deploying websites via github or bitbucket, more deets here:

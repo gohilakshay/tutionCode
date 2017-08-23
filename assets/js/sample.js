@@ -1,3 +1,3 @@
-function test() { 
-   alert('AKSHAY'); 
+function test() { 
+   alert('AKSHAY'); 
 }
