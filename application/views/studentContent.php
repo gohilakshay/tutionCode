@@ -137,7 +137,7 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered" id="myTable" >
+                                    <table class="table table-striped table-bordered"  >
                                         <thead>
                                             <tr style="font-weight: bold;" class="header">
                                                 <th style="font-weight: bold;">Sr No.</th>
@@ -151,7 +151,7 @@
                                                 <th style="font-weight: bold;">course</th>
                                             </tr>
                                         </thead>
-                                        <tbody><?php $i=0;foreach($result as $value):?>
+                                        <tbody id="myTable"><?php $i=0;foreach($result as $value):?>
                                             <tr>
                                                 <td><?php $i++;echo $i;?></td>
                                                 <td><?php echo $value->stud_ID?></td>
