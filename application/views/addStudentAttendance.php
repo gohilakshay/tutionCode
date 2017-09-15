@@ -3,8 +3,6 @@
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 <br>
-    
-<br>
 <div class="content">
     <div class="container-fluid">
         <?php if($this->session->flashdata('success')) { ?>
@@ -13,29 +11,72 @@
                 <h5><?php echo $this->session->flashdata('success'); ?></h5>
             </div>
         <?php } ?>
-        <div class="card">
-            <div class="row" style="margin-top: 0px;">
-                <div class="col-md-12">
-                    <center>
-                        <h3>To View Student Attendance Click Here -->
-                            <a href="<?php echo site_url()."/Attendance_cont/viewStudentAttendance" ?>"><button type="submit" class="btn btn-success">View Student Attendance</button></a>
-                        </h3>
-                    </center>
+        <div class="col-lg-6 col-sm-12">
+            <a href="<?php echo site_url()."/Attendance_cont/viewStudentAttendance" ?>">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/present.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Student Attendance</p>
+                                   <!--Present-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"><hr>
+                            <div class="stats">
+                                <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
+                                    <i class="ti-plus"></i> Mark Student Attendance
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <a href="<?php echo site_url("Attendance_cont/viewTeacherAttendance"); ?>">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/present.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Faculty Attendance</p>
+                                   <!--Present-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"><hr>
+                            <div class="stats">
+                                <a href="<?php echo site_url("Attendance_cont/markTeacherAttendance") ?>">
+                                    <i class="ti-plus"></i> Mark Faculty Attendance
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
-                    <div class="row" style="margin-top: 0px;">
+                    <div class="row" >
                         <div class="col-md-12">
-                            <center>
-                                <h3>
-                                    <a href="<?php echo site_url()."/Attendance_cont/markTeacherAttendance" ?>"><button type="submit" class="btn btn-success">Mark Faculty Attendance</button></a>
+                                <h3 class="header"> Student Attendance
                                 </h3>
-                            </center>
                         </div>
                     </div>
+                    <hr>
                     <div class="header">
                         <h4 class="title">Mark Attendance</h4>
                     </div>
@@ -59,21 +100,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--<div class="col-md-2">
-                                <div class="form-group">
-                                    <label>Batch Timing</label>
-                                    <input type="text" class="form-control border-input" name="batchtiming" value="<?php         if(isset($_POST['batchtiming'])){echo $_POST['batchtiming'];} ?>" placeholder="10.00 - 1.00" required>
-                                    <?php echo form_error('batchtiming', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                </div>
-                            </div>-->
-                            
-                            <div class="col-md-3">
+                            <!--<div class="col-md-3">
                                 <div class="form-group">
                                     <label>Faculty Name</label>
                                     <input type="text" class="form-control border-input" name="facultyname" value="<?php         if(isset($_POST['facultyname'])){echo $_POST['facultyname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  LastName">
                                     <?php echo form_error('facultyname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Date</label>

@@ -80,6 +80,62 @@
             
         }
     }); 
-    
+    /*NExt button diabled*/
+    function validateInput() {
+        var ins=document.getElementsByClassName("student_details");
+        //var ins1=document.getElementsByClassName("student_admission");
+        
+        pass = true;
+        passICount=0;
+        passTCount=0;
+
+        for (var i=0; i<ins.length;i++) {
+            if (ins[i].value =="") {
+                pass = false;
+                passICount++;
+            }
+        }
+
+        document.getElementById("activate-step-2").disabled=!pass?true:false;
+        document.getElementById("activate-step-2").value=!pass?(passICount+passTCount) + " questions remains":"Go to next questions";
+    }
+    /*NExt button diabled*/
+    function validateInput1() {
+       // var ins=document.getElementsByClassName("student_details");
+        var ins=document.getElementsByClassName("student_admission");
+       
+        pass = true;
+        passICount=0;
+        passTCount=0;
+
+        for (var i=0; i<ins.length;i++) {
+            if (ins[i].value =="") {
+                pass = false;
+                passICount++;
+            }
+        }
+
+        document.getElementById("activate-step-3").disabled=!pass?true:false;
+        document.getElementById("activate-step-3").value=!pass?(passICount+passTCount) + " questions remains":"Go to next questions";
+    }
+    /*NExt button diabled*/
+    function validateInput2() {
+       // var ins=document.getElementsByClassName("student_details");
+        var ins=document.getElementsByClassName("student_payment");
+       
+        pass = true;
+        passICount=0;
+        passTCount=0;
+
+        for (var i=0; i<ins.length;i++) {
+            if (ins[i].value =="") {
+                pass = false;
+                passICount++;
+            }
+        }
+
+        document.getElementById("activate-step-3").disabled=!pass?true:false;
+        document.getElementById("activate-step-3").value=!pass?(passICount+passTCount) + " questions remains":"Go to next questions";
+    }
    
 </script>

@@ -23,6 +23,31 @@ class SelectData extends CI_Model {
         }
         return $data;       
     }
+    /*function tableExists(){
+        $data = array();
+        $q = $this->db->query("select 1 from `standard` LIMIT 1");
+        if($q->num_rows() >0){
+            array_push($data,array('standard'=>'exists'));
+        }
+        else{
+            array_push($data,array('standard'=>'donotexists'));
+        }
+        $q1 = $this->db->query("select 1 from `semester` LIMIT 1");
+        if($q1->num_rows() >0){
+            array_push($data,array('semester'=>'exists'));
+        }
+        else{
+            array_push($data,array('semester'=>'donotexists'));
+        }
+        $q2 = $this->db->query("select 1 from `branch` LIMIT 1");
+        if($q2->num_rows() >0){
+            array_push($data,array('branch'=>'exists'));
+        }
+        else{
+            array_push($data,array('branch'=>'donotexists'));
+        }
+        return $data;       
+    }*/
     function teacher() {
         $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
         if($q->num_rows() >0){

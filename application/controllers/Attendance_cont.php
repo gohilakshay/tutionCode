@@ -35,7 +35,7 @@ class Attendance_cont extends CI_Controller
             $res = $this->SelectData->batchIDStudAttend($batch_name,$batch_timing);
             $data = array(
                 'batch_id'=>$res,
-                'faculty_name'=>$this->input->post('facultyname'),
+                /*'faculty_name'=>$this->input->post('facultyname'),*/
                 'attend_date'=>$this->input->post('date')
             );
             //insert into stud_attend table

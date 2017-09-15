@@ -53,6 +53,8 @@ class Home extends CI_Controller
         $db = $this->session->userdata('db');
         $this->load->database($db);
         if(isset($username)){
+            /*$this->load->model('SelectData');
+            $query['tablename'] = $this->SelectData->tableExists();*/
             $this->load->view('createInitTable');
         }else echo "Error 404 : Access Denied";
        
