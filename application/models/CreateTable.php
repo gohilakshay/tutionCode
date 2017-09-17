@@ -97,7 +97,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('admin_ID', TRUE);
         // gives PRIMARY KEY (branch_ID)
-        $this->dbforge->create_table('admin'); 
+        $this->dbforge->create_table('admin', TRUE); 
     }
     function create_branch()
     { 
@@ -123,7 +123,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('branch_ID', TRUE);
         // gives PRIMARY KEY (branch_ID)
-        $this->dbforge->create_table('branch'); 
+        $this->dbforge->create_table('branch', TRUE); 
     }
     function create_semester()
     { 
@@ -145,7 +145,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('semester_ID', TRUE);
         // gives PRIMARY KEY (semester_ID)
-        $this->dbforge->create_table('semester'); 
+        $this->dbforge->create_table('semester', TRUE); 
     }
     function create_engisubject()
     { 
@@ -175,7 +175,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('engisubj_ID', TRUE);
         // gives PRIMARY KEY (engisubj_ID)
-        $this->dbforge->create_table('engisubject'); 
+        $this->dbforge->create_table('engisubject', TRUE); 
     }
     /*function create_collegesubject()
     { 
@@ -238,7 +238,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('colgsubj_ID', TRUE);
         // gives PRIMARY KEY (colgsubj_ID)
-        $this->dbforge->create_table('jrColgCom'); 
+        $this->dbforge->create_table('jrColgCom', TRUE); 
     }
     
     /*for jr colg science*/
@@ -270,7 +270,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('colgsubj_ID', TRUE);
         // gives PRIMARY KEY (colgsubj_ID)
-        $this->dbforge->create_table('jrColgSci'); 
+        $this->dbforge->create_table('jrColgSci', TRUE); 
     }
     
     function create_Commercesubject()
@@ -301,7 +301,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('Commercesubj_ID', TRUE);
         // gives PRIMARY KEY (Commercesubj_ID)
-        $this->dbforge->create_table('Commercesubject'); 
+        $this->dbforge->create_table('Commercesubject', TRUE); 
     }
     function create_batch()
     { 
@@ -331,7 +331,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('batch_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('batch'); 
+        $this->dbforge->create_table('batch', TRUE); 
     }
     function create_batch_student_mapping()
     { 
@@ -357,7 +357,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('bsm_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('batch_student_mapping'); 
+        $this->dbforge->create_table('batch_student_mapping', TRUE); 
     }  
     function create_batch_course_mapping()
     { 
@@ -383,7 +383,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('bcm_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('batch_course_mapping'); 
+        $this->dbforge->create_table('batch_course_mapping', TRUE); 
     } 
     function create_student_attend()
     { 
@@ -412,7 +412,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('attend_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('student_attend'); 
+        $this->dbforge->create_table('student_attend', TRUE); 
     }
     function create_stud_attend_mapping()
     { 
@@ -443,7 +443,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('stud_attend_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('stud_attend_mapping'); 
+        $this->dbforge->create_table('stud_attend_mapping', TRUE); 
     } 
     function create_stud_fee()
     { 
@@ -501,7 +501,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('fee_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('stud_fee'); 
+        $this->dbforge->create_table('stud_fee', TRUE); 
     }   
     function create_fee_stud_mapping()
     { 
@@ -527,7 +527,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('fsm_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('fee_stud_mapping'); 
+        $this->dbforge->create_table('fee_stud_mapping', TRUE); 
     } 
     function create_fee_cal()
     { 
@@ -565,7 +565,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('fee_cal_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('fee_cal'); 
+        $this->dbforge->create_table('fee_cal', TRUE); 
     } 
     function create_student_details()
     { 
@@ -655,7 +655,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('stud_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('student_details'); 
+        $this->dbforge->create_table('student_details', TRUE); 
     }  
     function create_standard()
     { 
@@ -677,7 +677,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('standard_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('standard'); 
+        $this->dbforge->create_table('standard', TRUE); 
     }
     function create_field_semester()
     { 
@@ -703,7 +703,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('field_semester_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('field_semester'); 
+        $this->dbforge->create_table('field_semester', TRUE); 
     }
     function create_field_std_mapping()
     { 
@@ -729,7 +729,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('field_std_mapping_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('field_std_mapping'); 
+        $this->dbforge->create_table('field_std_mapping', TRUE); 
     }
     function create_course()
     { 
@@ -773,7 +773,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('course_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('course'); 
+        $this->dbforge->create_table('course', TRUE); 
     }
     function create_schedules()
     { 
@@ -803,7 +803,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('schedules_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('schedules'); 
+        $this->dbforge->create_table('schedules', TRUE); 
     }
     function create_teacher()
     { 
@@ -877,7 +877,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('t_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('teacher'); 
+        $this->dbforge->create_table('teacher', TRUE); 
     }
     function create_teacher_expense()
     { 
@@ -911,7 +911,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('t_exp_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('teacher_expense'); 
+        $this->dbforge->create_table('teacher_expense', TRUE); 
     }
     function create_subject()
     { 
@@ -933,7 +933,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('subject_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('subject'); 
+        $this->dbforge->create_table('subject', TRUE); 
     }
     function create_teacher_stubject_mapping()
     { 
@@ -973,7 +973,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('tcm_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('teacher_subject_mapping'); 
+        $this->dbforge->create_table('teacher_subject_mapping', TRUE); 
     }
     function create_test()
     { 
@@ -1018,7 +1018,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('test_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('test'); 
+        $this->dbforge->create_table('test', TRUE); 
     }
     function create_marks()
     { 
@@ -1048,7 +1048,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('marks_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('marks'); 
+        $this->dbforge->create_table('marks', TRUE); 
     }
     function create_t_attend_mapping()
     { 
@@ -1079,7 +1079,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('t_attend_mapping_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('t_attend_mapping'); 
+        $this->dbforge->create_table('t_attend_mapping', TRUE); 
     }
     function create_t_attend()
     { 
@@ -1108,7 +1108,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('t_attend_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('teacher_attend'); 
+        $this->dbforge->create_table('teacher_attend', TRUE); 
     }
     function create_expense()
     { 
@@ -1154,7 +1154,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('expense_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('expense'); 
+        $this->dbforge->create_table('expense', TRUE); 
     }
     function create_staff()
     { 
@@ -1195,7 +1195,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('staff_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('staff'); 
+        $this->dbforge->create_table('staff', TRUE); 
     }
     function create_staff_details()
     { 
@@ -1233,7 +1233,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('staffDetail_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('staff_details'); 
+        $this->dbforge->create_table('staff_details', TRUE); 
     }
     function create_meals_entertain()
     { 
@@ -1266,7 +1266,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('meals_entertain_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('meals_entertain'); 
+        $this->dbforge->create_table('meals_entertain', TRUE); 
     }
     function create_maintenance()
     { 
@@ -1299,7 +1299,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('maintenance_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('maintenance'); 
+        $this->dbforge->create_table('maintenance', TRUE); 
     }
     function create_transport()
     { 
@@ -1332,7 +1332,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('transport_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('transport'); 
+        $this->dbforge->create_table('transport', TRUE); 
     }
     function create_utilities()
     { 
@@ -1365,7 +1365,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('utilities_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('utilities'); 
+        $this->dbforge->create_table('utilities', TRUE); 
     }
     function create_rent()
     { 
@@ -1398,7 +1398,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('rent_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('rent'); 
+        $this->dbforge->create_table('rent', TRUE); 
     }
     function createUpload()
     {
@@ -1436,7 +1436,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('upload_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('upload'); 
+        $this->dbforge->create_table('upload', TRUE); 
     }
     function createEnquiry()
     {
@@ -1490,7 +1490,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('enquiry_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('enquiry'); 
+        $this->dbforge->create_table('enquiry', TRUE); 
     }
     function createSms()
     {
@@ -1540,7 +1540,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('sms_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('sms'); 
+        $this->dbforge->create_table('sms', TRUE); 
     }
 }
 ?>

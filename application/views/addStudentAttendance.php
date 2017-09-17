@@ -3,6 +3,7 @@
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 <br>
+<?php print_r($result1);?>
 <div class="content">
     <div class="container-fluid">
         <?php if($this->session->flashdata('success')) { ?>
@@ -100,13 +101,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <!--<div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Faculty Name</label>
-                                    <input type="text" class="form-control border-input" name="facultyname" value="<?php         if(isset($_POST['facultyname'])){echo $_POST['facultyname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  LastName">
-                                    <?php echo form_error('facultyname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                </div>
-                            </div>-->
+                           
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Date</label>
@@ -149,7 +144,7 @@
                                             </tr>
                                         </thead>
                                         <tbody><?php 
-                                              $i=1; $n=count($result);foreach($result  as $value): 
+                                              $i=1; $n=count($result1);foreach($result1  as $value): 
                                             if($i!=$n){
                                             ?>
                                             <tr>
