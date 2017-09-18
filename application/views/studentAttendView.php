@@ -30,7 +30,7 @@
                                                 <td>Sr No.</td>
                                                 <td>Attend Date</td>
                                                 <td>Batch ID</td>
-                                                <td>Faculty Name</td>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody id="myTable"><?php $i=1; foreach($result  as $value): ?>
@@ -38,8 +38,6 @@
                                                 <td><?php echo $i; $i++; ?></td>
                                                 <td><a href="<?php echo site_url().'/Attendance_cont/viewAttendanceDetail/'.$value->attend_ID; ?>"><?php echo $value->attend_date; ?></a></td>
                                                 <td><?php echo $value->batch_id; ?></td>
-                                                <td><?php echo $value->faculty_name; ?></td>
-                                                
                                             </tr><?php endforeach; ?>
                                         </tbody>
                                     </table>    

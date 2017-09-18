@@ -16,8 +16,8 @@ class Attendance_cont extends CI_Controller
         $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
 		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format eg:IX-1');
          $query['result'] = $this->SelectData->ViewBatch(); 
-        /*validation ends*/
-		if($this->form_validation->run() == FALSE)
+         /*validation ends*/
+		if(! isset($_POST['markattend']))
 		{ 
             $username = $this->session->userdata('username');   //session mane
             if(isset($username)){
@@ -26,7 +26,7 @@ class Attendance_cont extends CI_Controller
 		}
         //form after giving right output
 		else
-        { 
+        {   
             $batch = explode(",",$this->input->post('batchname'));
             $batch_name = $batch[0];  //input
             $batch_timing = $batch[1];
@@ -45,7 +45,6 @@ class Attendance_cont extends CI_Controller
             $attend_id = $this->db->insert_id();    //laster inserted ID from above insert
             //Select student detail from id->stud_id and attend_id
             $query['result1'] = $this->SelectData->stud_attend_map($res,$attend_id);
-           print_r($query);
             $this->load->view('addStudentAttendance',$query);  	//html filename
 		}
     }

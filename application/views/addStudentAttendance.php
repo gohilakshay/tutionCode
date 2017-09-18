@@ -3,7 +3,6 @@
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 <br>
-<?php print_r($result1);?>
 <div class="content">
     <div class="container-fluid">
         <?php if($this->session->flashdata('success')) { ?>
@@ -87,18 +86,33 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Batch Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Timing</label>
-                                    <select name="batchname" class="form-control border-input"  required <?php if(isset($_POST['markattend'])){ echo 'readonly'; } ?> >
+                                    <select style="word-spacing: 160px;" name="batchname" class="form-control border-input"  required <?php if(isset($_POST['markattend'])){ echo 'readonly'; } ?> >
                                     <?php foreach($result as $value): ?>
                                         <?php $batchname = $value->batch_name;
                                               $batchtime = $value->batch_timing; ?>
                                         <?php if(isset($_POST['markattend'])){ 
                                               $batch = explode(",",$_POST['batchname']);
                                         ?>
-                                        <option value="<?php echo $batch[0].','.$batch[1]; ?>"><?php echo $batch[0]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$batch[1]; ?></option>
+                                        <option value="<?php echo $batch[0].','.$batch[1]; ?>"><?php echo $batch[0]." ".$batch[1]; ?></option>
                                         <?php } ?>
-                                        <option value="<?php echo $batchname.','.$batchtime; ?>"><?php echo $batchname."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$batchtime; ?></option>
+                                        
+                                        <option value="<?php echo $batchname.','.$batchtime; ?>">
+                                           
+                                            <?php echo $batchname." ".$batchtime; ?>
+                                            
+                                        </option>
                                         <?php endforeach; ?>
                                     </select>
+                                    
+                                    
+                                    
+                                     <!--<a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown menu <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Label <span class="kbd">Alt+S</span></a></li>
+                                    </ul>-->
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                            
@@ -154,7 +168,7 @@
                                                 <td><input type="checkbox" value="<?php echo $value->stud_ID; ?>" name="attend[]" ></td>
                                             </tr><?php }
                                               else {
-                                                  ?><input type="text" value ="<?php echo end($result); ?>" name="attend_id" hidden><?PHP
+                                                  ?><input type="text" value ="<?php echo end($result1); ?>" name="attend_id" hidden><?PHP
                                               }
                                               endforeach; ?>
                                         </tbody>
