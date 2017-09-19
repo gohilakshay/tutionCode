@@ -1,4 +1,4 @@
-<!-- <?php include "header.php";?> <!-- -->
+<?php include "header.php";?> 
 <?php $page = 'nine';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php include"fusioncharts.php";?>
@@ -7,11 +7,9 @@
     <head>     
         <title>Performance charts</title>
     </head>
-    <script src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
-    <script src="http://static.fusioncharts.com/code/latest/fusioncharts.charts.js"></script>
-    <script src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.zune.js"></script>
+   
     <div class="content">
-        <div class="container-fluid">
+       <div class="container-fluid">
             <div class="row">
                 
                 <div class="card">                               
@@ -66,7 +64,6 @@
                 </div>
             </div>
         </div>
-    
         <div class="container-fluid">
             <div class="row">
                 <div class="card">                     
@@ -131,5 +128,6 @@ input[id=studentsearch]:focus {
 }
 </style>
 <?php include_once "footer.php";?>
+   
 <?php include_once "script_include.php";?>
 </html>

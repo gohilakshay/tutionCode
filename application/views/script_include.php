@@ -1,19 +1,12 @@
 <!--   Core JS Files   -->
 
-
-
-
-
-
-
     <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap-checkbox-radio.js"></script>
 
-	<!--  Charts Plugin -->
-	<script src="<?php echo base_url(); ?>assets/js/chartist.min.js"></script>
+
 
     <!--  Notifications Plugin    -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap-notify.js"></script>
