@@ -10,6 +10,7 @@
             </div>
         </div>
         <div class="row">
+            <a href="<?php echo site_url("Teacher_cont/teacher") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -37,8 +38,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+            </a>
+            <a href="<?php echo site_url("Attendance_cont/markTeacherAttendance") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -65,6 +66,8 @@
                     </div>
                 </div>
             </div>
+            </a>
+            <a href="<?php echo site_url("Teacher_cont/TeacherPaymentDetails") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -91,6 +94,8 @@
                     </div>
                 </div>
             </div>
+            </a>
+            <a href="<?php echo site_url("Upload_FileCont/upload") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -117,6 +122,7 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
         <div class="content">
             <div class="container-fluid">

@@ -27,7 +27,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == "[::1]")
     $config['base_url'] = '';
 }
 else{
-    $config['base_url'] = 'http://classguru.in/';
+    $config['base_url'] = 'http://classes.classguru.in/';
 }
 
 

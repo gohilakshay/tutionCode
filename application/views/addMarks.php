@@ -4,7 +4,7 @@
 <?php $this->load->library('form_validation'); ?>
 <?php echo form_open('Marks_cont/addMarks'); ?>
 <br>
-<?php print_r($result1);
+<?php 
 if(isset($_POST['testid'])){
     $testid = $_POST['testid'];
     $data = $result['data'];

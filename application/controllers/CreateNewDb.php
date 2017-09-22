@@ -72,7 +72,11 @@ class CreateNewDb extends CI_Controller
                 redirect('Home/mainP');
             }
             else {
-                echo "Error 404 : Access Denied";
+                $name=site_url().'/Home';
+              echo "<script>
+                    alert('Invalid Usrname or Password');
+                    window.location.href='$name';
+                    </script>";
             }
         }
         /* session checked*/       

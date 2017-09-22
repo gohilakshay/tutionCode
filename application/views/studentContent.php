@@ -9,7 +9,9 @@
                 </div>
             </div>
         </div>
+        
         <div class="row">
+            <a href="<?php echo site_url("Student_cont/student") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -35,6 +37,8 @@
                     </div>
                 </div>
             </div>
+            </a>
+            <a href="<?php echo site_url("Bar_cont/bar") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -61,6 +65,8 @@
                     </div>
                 </div>
             </div>
+            </a>
+            <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -87,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            
+            </a>
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
