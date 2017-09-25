@@ -8,8 +8,11 @@ class Upload_FileCont extends CI_Controller
         $this->load->helper('url');
         $username = $this->session->userdata('username');
         $db = $this->session->userdata('db');
+        $this->load->database($db);
+        $this->load->model('SelectData');
         if(isset($username)){
-            $this->load->view('UploadFile');
+            $uploadView['files'] = $this->SelectData->uploadView();
+            $this->load->view('UploadFile',$uploadView);
         }else echo "Error 404 : Access Denied";
     }
     public function uploadfile(){
@@ -21,7 +24,7 @@ class Upload_FileCont extends CI_Controller
         echo $this->input->post('filename');
         $this->load->model('UploadFileModel');
         $name = strtolower(preg_replace('/\s+/', '', $this->input->post('filename')));
-        $file_address = 'assets/profile/'.$name.'.jpg';
+        $file_address = 'assets/upload/'.$name.'.jpg';
         $file = $_FILES['filename']['name'] ;
         $n = $this->UploadFileModel->addFile($file,$name);
         if($n == 1){

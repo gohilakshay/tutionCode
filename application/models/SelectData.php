@@ -909,5 +909,14 @@ class SelectData extends CI_Model {
         }
           return $data;
     }
+    function uploadView(){
+        $sql = $this->db->query("SELECT * FROM `upload` ORDER by upload_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+          return $data;
+    }
 }
 ?>
