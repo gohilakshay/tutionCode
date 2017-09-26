@@ -37,31 +37,25 @@ class Home extends CI_Controller
         $s = $str.$enc;
         $password = md5($s);*/
         /*Encryption ends*/
-        if($this->input->post('password') == $this->input->post('repassword')){
-            if(isset($_POST['addDb'])){
-                $databasetype = implode(",",$this->input->post('databasetype')); 
-                $db_data =array(
-                    'dbName' => $this->input->post('databasename'),
-                    'dbType' => $databasetype,
-                    'username' => $this->input->post('username'),
-                    'password' => $this->input->post('password')
-                );
-                $this->load->model('CreateTable');
-                $this->CreateTable->addDb($db_data);
-                $this->session->set_flashdata('success','You have Successfully Created Database.');
-            }
-            $username = $this->session->userdata('username');
+        if(isset($_POST['addDb'])){
+            $databasetype = implode(",",$this->input->post('databasetype')); 
+            $db_data =array(
+                'dbName' => $this->input->post('databasename'),
+                'dbType' => $databasetype,
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('password')
+            );
+            $this->load->model('CreateTable');
+            $this->CreateTable->addDb($db_data);
+            $this->session->set_flashdata('success','You have Successfully Created Database.');
+        }
+        $username = $this->session->userdata('username');
         $db = $this->session->userdata('db');
         $this->load->database($db);
         if(isset($username)){
            
             $this->load->view('createInitTable');
         }else echo "Error 404 : Access Denied";
-        }
-        else{
-            echo "Password Do Not Match";
-        }
-        
        
     }     
 }

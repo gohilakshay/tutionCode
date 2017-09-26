@@ -68,18 +68,22 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Password</label>
-                                        <input type="password" class="form-control border-input" placeholder="Password" name="password" value="">
+                                        <input type="password" class="form-control border-input" placeholder="Password" name="password" id="password" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-10">
                                 <div class="form-group">
                                     <label>Re-Password</label>
-                                        <input type="password" class="form-control border-input" placeholder="Re Type Password" name="repassword" value="">
+                                        <input type="password" class="form-control border-input" placeholder="Re Type Password" id="confirm_password" name="repassword" value="">
                                 </div>
                             </div>
+                            <div style="margin-top:29px;" class="col-md-2">
+                                <span id='message'></span>
+                            </div>
                         </div>
+                        <span id='message'></span>
                         <div class="text-center">
                             <button type="submit" class="btn btn-info btn-fill btn-wd" name="addDb">Submit</button>
                         </div>
@@ -120,4 +124,12 @@
     </div>
     </div>
 </body>
+<script>
+$('#password, #confirm_password').on('keyup', function () {
+    if ($('#password').val() == $('#confirm_password').val()) {
+        $('#message').html('Matching').css('color', 'green');
+    } else 
+        $('#message').html('Not Matching').css('color', 'red');
+});
+</script>
 
