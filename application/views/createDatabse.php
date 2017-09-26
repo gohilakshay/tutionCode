@@ -72,6 +72,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Re-Password</label>
+                                        <input type="password" class="form-control border-input" placeholder="Re Type Password" name="repassword" value="">
+                                </div>
+                            </div>
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-info btn-fill btn-wd" name="addDb">Submit</button>
                         </div>
