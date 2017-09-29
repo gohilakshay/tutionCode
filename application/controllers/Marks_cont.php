@@ -7,18 +7,17 @@ class Marks_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('SelectData');
 		$this->form_validation->set_rules('testid', 'testid', 'required|numeric');
 		if($this->form_validation->run() == FALSE)
 		{
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $query['result1'] = $this->SelectData->test_detail();
+            $query['result1'] = $this->SelectData->test_detail();
                 $this->load->view('addMarks',$query);			//html filename
-            }else echo "Error 404 : Access Denied";
-		}
+        }
 		else
         {
             $test_id = $this->input->post('testid');
@@ -27,16 +26,19 @@ class Marks_cont extends CI_Controller
             $this->load->model('SelectData');
             $query['result'] = $this->SelectData->selectTest($test_id);
             $username = $this->session->userdata('username');
-            if(isset($username)){
+            //if(isset($username)){
                 $this->load->view('addMarks',$query);
-            }else echo "Error 404 : Access Denied";
+            //}else echo "Error 404 : Access Denied";
            // $this->load->view('addMarks');	  	
 		}
+        }else echo "Error 404 : Access Denied";
     }
     public function marks()
     {
         $this->load->library('session');
         $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('AddData');
@@ -52,9 +54,7 @@ class Marks_cont extends CI_Controller
         );
         $this->AddData->addMarks($data);
         $this->session->set_flashdata('success','You have Successfully submitted data.');
-        $username = $this->session->userdata('username');
-        if(isset($username)){
-            $this->load->view('addMarks');         //html filename
+        $this->load->view('addMarks');         //html filename
         }else echo "Error 404 : Access Denied";
     }
 }

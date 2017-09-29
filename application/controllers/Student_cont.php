@@ -6,34 +6,36 @@ class Student_cont extends CI_Controller
     {
         $this->load->library('session');
         $this->load->helper('url'); 
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->student();
         $query['result1'] = $this->SelectData->student_batch_map();
         $query['result2'] = $this->SelectData->ViewBatch();
-        $username = $this->session->userdata('username');
-        if(isset($username)){
-            $this->load->view('student',$query);       //html filename
+        $this->load->view('student',$query);       //html filename
         }else echo "Error 404 : Access Denied";
     }
     public function studentProfile($n)
     {
         $this->load->library('session');
         $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->studentProfile($n);
-        $username = $this->session->userdata('username');
-        if(isset($username)){
-            $this->load->view('studentProfile',$query);     //html filename
+        $this->load->view('studentProfile',$query);     //html filename
         }else echo "Error 404 : Access Denied";
     }
     public function updateStudentProfile($n)
     {
         $this->load->library('session');
         $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db 
         $this->load->library('form_validation');
         $this->load->database($db);//call db
@@ -41,8 +43,7 @@ class Student_cont extends CI_Controller
         $query['result'] = $this->SelectData->studentProfile($n);
         $query['standard'] = $this->SelectData->standard(); 
         $query['ViewBatch'] = $this->SelectData->ViewBatch();
-        $username = $this->session->userdata('username');
-
+        
         $this->form_validation->set_rules('surname', 'surname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('studentname', 'studentname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('fathername', 'fathername', 'callback_custom_Alpha');
@@ -57,11 +58,7 @@ class Student_cont extends CI_Controller
         $this->form_validation->set_message('custom_Alpha', 'Only Alphabets Allowed');
         if($this->form_validation->run() == FALSE)
         {
-
-
-        if(isset($username)){
             $this->load->view('updateStudentProfile',$query);   //html filename
-        }else echo "Error 404 : Access Denied";  
         }else{
              $this->load->helper('form');
             $db = $this->session->userdata('db');//load db 
@@ -100,6 +97,7 @@ class Student_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Student_cont/student'); 
         }
+            }else echo "Error 404 : Access Denied";
 
     }
     public function addStudent()
@@ -107,6 +105,8 @@ class Student_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->library('form_validation');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -181,11 +181,7 @@ class Student_cont extends CI_Controller
         $this->form_validation->set_rules('date', 'date', 'required');
         if($this->form_validation->run() == FALSE)
         { 
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $this->load->view('addStudent',$query);
-            }else echo "Error 404 : Access Denied";
-                    
+            $this->load->view('addStudent',$query);
         }
         else
         {
@@ -244,6 +240,7 @@ class Student_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Student_cont/addStudent');      
         }
+            }else echo "Error 404 : Access Denied";
     }
     public function custom_Alpha($strrr) 
         {
@@ -257,12 +254,12 @@ class Student_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
-        $db = $this->session->userdata('db');//load db 
-        $this->load->database($db);//call db
-        $this->load->model('SelectData');
-        $query['result'] = $this->SelectData->student_detail_fee($table);
         $username = $this->session->userdata('username');
         if(isset($username)){
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
+            $this->load->model('SelectData');
+            $query['result'] = $this->SelectData->student_detail_fee($table);
             $this->load->view('feeDetail',$query);         //html filename
         }else echo "Error 404 : Access Denied";
     }
@@ -270,15 +267,15 @@ class Student_cont extends CI_Controller
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
-        $db = $this->session->userdata('db');//load db 
-        $this->load->database($db);//call db
-        $this->load->model('AddData');
-        $this->load->model('SelectData');
         $username = $this->session->userdata('username');
         if(isset($username)){
-                $studentid = $this->input->post('studentid');
-                $input_name = $studentname = preg_replace('/\s+/', '',strtolower($this->input->post('studentname')));
-                $amount=$this->input->post('amount');
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
+            $this->load->model('AddData');
+            $this->load->model('SelectData');
+            $studentid = $this->input->post('studentid');
+            $input_name = $studentname = preg_replace('/\s+/', '',strtolower($this->input->post('studentname')));
+            $amount=$this->input->post('amount');
             $query = $this->SelectData->studentProfile($studentid);
             $stud_name = $query[0]->stud_surname.$query[0]->stud_name.$query[0]->father_name.$query[0]->mother_name;
             if($input_name == $stud_name){

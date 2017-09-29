@@ -18,8 +18,8 @@ class Home extends CI_Controller
         $this->load->helper('url');
         $username = $this->session->userdata('username');
         $db = $this->session->userdata('db');
-        $this->load->database($db);
         if(isset($username)){
+            $this->load->database($db);//to avoid no database error load inside if
            // print_r($db); to check if db is working
             $this->load->view('mainPage');
         }else echo "Error 404 : Access Denied";
@@ -51,9 +51,9 @@ class Home extends CI_Controller
         }
         $username = $this->session->userdata('username');
         $db = $this->session->userdata('db');
-        $this->load->database($db);
+        
         if(isset($username)){
-           
+            $this->load->database($db);
             $this->load->view('createInitTable');
         }else echo "Error 404 : Access Denied";
        

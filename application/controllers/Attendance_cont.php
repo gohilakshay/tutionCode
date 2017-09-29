@@ -198,6 +198,7 @@ class Attendance_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');   //load model to select data from db
         $query['result'] = $this->SelectData->teacherAttendMap($n); //select all from t_attend_mapping table
+        $query['teacher_detail'] = $this->SelectData->teacher(); //select all from t_attend_mapping table
         $this->load->view('teacherAttendDetails',$query);   //html filename
     }
     /*used for validation of the input values from html form*/

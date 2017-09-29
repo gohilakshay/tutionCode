@@ -6,6 +6,8 @@ class Course_cont extends CI_Controller
     {
         $this->load->library('session');
         $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -68,10 +70,8 @@ class Course_cont extends CI_Controller
         $this->form_validation->set_message('customAlphanumeric','Please enter in the following format eg:STD 9 or Engineering <br> Special characters are not allowed');
         if($this->form_validation->run() == FALSE)
         {
-            $username = $this->session->userdata('username');
-            if(isset($username)){
+            
                 $this->load->view('addCourse',$query);       //html filename   
-            }else echo "Error 404 : Access Denied";
         }
         else
         {
@@ -106,16 +106,19 @@ class Course_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }
+        }else echo "Error 404 : Access Denied";
     }
     public function updateCourse()
     {
         $this->load->library('session');
         $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         
-        
+        /*close the connection for new connection*/
         $this->db->close();
         $configdbfly=$this->config->config['sysdb'];
         /*localHost*/
@@ -172,10 +175,7 @@ class Course_cont extends CI_Controller
         $this->form_validation->set_message('customAlphanumeric','Please enter in the following format eg:STD 9 or Engineering <br> Special characters are not allowed');
         if($this->form_validation->run() == FALSE)
         {
-            $username = $this->session->userdata('username');
-            if(isset($username)){
-                $this->load->view('updateCourse',$query);       //html filename   
-            }else echo "Error 404 : Access Denied";
+            $this->load->view('updateCourse',$query);       //html filename   
         }
         else
         {
@@ -212,6 +212,7 @@ class Course_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }
+            }else echo "Error 404 : Access Denied";
     }
     public function deleteCourse(){
         
@@ -222,7 +223,7 @@ class Course_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('DeleteData');
         $course = $this->input->post("course_id");
-        $this->deleteData->deleteCourse($course); // call function from model
+        $this->DeleteData->deleteCourse($course); // call function from model
         if($this->db->affected_rows() > 0){
             redirect('Course_cont/addCourse'); 
         }

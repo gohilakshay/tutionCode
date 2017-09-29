@@ -2,7 +2,7 @@
 <?php $page = 'five';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
-<?php echo form_open('Teacher_cont/updateTeacherProfile'); ?>
+<?php echo form_open_multipart('Teacher_cont/updateTeacherProfile'); ?>
 <?php $teacher_data = $result[0];?>
 <br>
 <div class="content">
@@ -107,7 +107,7 @@
                                 <div class="form-group">                   
                                 <label class="col-sm-6">Profile photo:</label>
                                 <div class="row">
-                                    <input type="file" class="form-control" name="photo" accept="image/*"><br>
+                                    <input type="file" class="form-control" name="photo" accept="image/jpeg"><br>
                                 </div>
                                 </div>
                             </div>

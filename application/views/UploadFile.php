@@ -127,7 +127,8 @@
           <h4 class="modal-title">Uploaded File</h4>
         </div>
         <div class="modal-body upload_img">
-            <img alt="No File Found" id = "imageUpload" />
+            <!--<img alt="No File Found" id = "imageUpload" />-->
+            <iframe alt="No File Found" id = "imageUpload" ></iframe>
          </div>
         <div class="modal-footer ">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

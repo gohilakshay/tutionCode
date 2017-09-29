@@ -8,7 +8,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="" class="simple-text">
-                        Digital Education
+                       Class Guru
                     </a>
                 </div>
                 <ul class="nav">
