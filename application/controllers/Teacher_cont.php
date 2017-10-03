@@ -13,7 +13,10 @@ class Teacher_cont extends CI_Controller
             $this->load->model('SelectData');
             $query['result'] = $this->SelectData->teacher(); 
             $this->load->view('teacher',$query);       //html filename
-        }else echo "Error 404 : Access Denied";
+       }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function teacherProfile($n)
     {
@@ -55,7 +58,10 @@ class Teacher_cont extends CI_Controller
             $ntype = explode(",",$type);
             $query['result'] = $this->SelectData->teacherProfile($n,$ntype);
             $this->load->view('teacherProfile',$query);    //html filename
-        }else echo "Error 404 : Access Denied";
+       }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function updateTeacherProfile($tid)
     {
@@ -189,7 +195,10 @@ class Teacher_cont extends CI_Controller
                 $this->session->set_flashdata('success','You have Successfully submitted data.');
                 redirect('Teacher_cont/teacher');  
             }
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function addTeacher()
     {
@@ -326,12 +335,17 @@ class Teacher_cont extends CI_Controller
                 $this->session->set_flashdata('success','You have Successfully submitted data.');
                 redirect('Teacher_cont/addTeacher');   
             }
-            }else echo "Error 404 : Access Denied";
+            }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function TeacherPaymentDetails(){
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -376,15 +390,25 @@ class Teacher_cont extends CI_Controller
             $query['result'] =$this->SelectData->teacher();
              redirect('Teacher_cont/TeacherPaymentDetails',$query);   //html filename
       } 
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function TeacherPaymentHistory($id){
         $this->load->helper('url');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['payhistory'] =$this->SelectData->teacherExpense($id);
         $this->load->view('teacherExpenseView',$query);
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function customAlpha($str) 
     {

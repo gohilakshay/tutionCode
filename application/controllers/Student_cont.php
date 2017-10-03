@@ -15,7 +15,10 @@ class Student_cont extends CI_Controller
         $query['result1'] = $this->SelectData->student_batch_map();
         $query['result2'] = $this->SelectData->ViewBatch();
         $this->load->view('student',$query);       //html filename
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";
+        }
     }
     public function studentProfile($n)
     {
@@ -28,7 +31,10 @@ class Student_cont extends CI_Controller
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->studentProfile($n);
         $this->load->view('studentProfile',$query);     //html filename
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";
+        }
     }
     public function updateStudentProfile($n)
     {
@@ -44,10 +50,10 @@ class Student_cont extends CI_Controller
         $query['standard'] = $this->SelectData->standard(); 
         $query['ViewBatch'] = $this->SelectData->ViewBatch();
         
-        $this->form_validation->set_rules('surname', 'surname', 'callback_custom_Alpha');
+        //$this->form_validation->set_rules('surname', 'surname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('studentname', 'studentname', 'callback_custom_Alpha');
         $this->form_validation->set_rules('fathername', 'fathername', 'callback_custom_Alpha');
-        $this->form_validation->set_rules('mothername', 'mothername', 'callback_custom_Alpha');
+        //$this->form_validation->set_rules('mothername', 'mothername', 'callback_custom_Alpha');
         $this->form_validation->set_rules('dob', 'dob', 'required');
         $this->form_validation->set_rules('email', 'email', 'valid_email');
         $this->form_validation->set_rules('contactnumber', 'contactnumber', 'required|numeric|exact_length[10]');
@@ -97,7 +103,10 @@ class Student_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Student_cont/student'); 
         }
-            }else echo "Error 404 : Access Denied";
+            }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";
+        }
 
     }
     public function addStudent()
@@ -240,7 +249,10 @@ class Student_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Student_cont/addStudent');      
         }
-            }else echo "Error 404 : Access Denied";
+            }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";
+        }
     }
     public function custom_Alpha($strrr) 
         {
@@ -261,7 +273,10 @@ class Student_cont extends CI_Controller
             $this->load->model('SelectData');
             $query['result'] = $this->SelectData->student_detail_fee($table);
             $this->load->view('feeDetail',$query);         //html filename
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";
+        }
     }
     public function Payfee(){
         $this->load->library('session');
@@ -289,7 +304,10 @@ class Student_cont extends CI_Controller
                 $this->AddData->updateStudFee($data);
                 redirect('Student_cont/feeDetail/3');         //html filename
             }else echo "<h2>Error : Student ID and Name does not Match</h2>";
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";
+        }
     }
 }
 ?>

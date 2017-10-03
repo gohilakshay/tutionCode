@@ -15,7 +15,10 @@ class Sms_cont extends CI_Controller
         $this->load->model('SelectData');  
         $query['result'] = $this->SelectData->ViewSms();
         $this->load->view('sms',$query);        //html filename
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function sendSMS()
     {
@@ -39,7 +42,10 @@ class Sms_cont extends CI_Controller
             $query['result1'] = $this->SelectData->stud_attend_map($id,1);
             $this->load->view('sendSMS',$query);		//html filename
         }       
-        }else echo "Error 404 : Access Denied";   
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }  
     public function sendSMSSender()
     {
@@ -140,8 +146,10 @@ class Sms_cont extends CI_Controller
         }
      }
     function filterDate(){
+        $this->load->helper('url');
         $this->load->library('session');
-        $this->load->helper('url');  
+        $username = $this->session->userdata('username');
+        if(isset($username)){  
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
@@ -150,25 +158,41 @@ class Sms_cont extends CI_Controller
         $from = $this->input->post('from');
         $query['result'] = $this->SelectData->filterByDate($to,$from);
         $this->load->view('sms',$query);
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }     
     }
     function successSms(){
         $this->load->library('session');
-        $this->load->helper('url');  
+        $this->load->helper('url'); 
+        $username = $this->session->userdata('username');
+        if(isset($username)){ 
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->ViewSms();
         $this->load->view('sucSms',$query);
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }  
     }
     function failesSms(){
         $this->load->library('session');
-        $this->load->helper('url');  
+        $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){  
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->ViewSms();
         $this->load->view('failedSms',$query);
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
 }

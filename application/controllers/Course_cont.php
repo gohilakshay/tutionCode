@@ -101,12 +101,14 @@ class Course_cont extends CI_Controller
                 'semester' => $semester,
                 'subject_id'=>$subject_id,
             );
-            print_r($data);
             $this->AddData->addCourseItem($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function updateCourse()
     {
@@ -212,12 +214,16 @@ class Course_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }
-            }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function deleteCourse(){
-        
-        $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $this->load->helper('form');
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
@@ -227,7 +233,10 @@ class Course_cont extends CI_Controller
         if($this->db->affected_rows() > 0){
             redirect('Course_cont/addCourse'); 
         }
-        
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }  
     }
     public function customAlphanumeric($strr){
          if ( !preg_match('/^[0-9a-zA-Z ]+$/',$strr) )

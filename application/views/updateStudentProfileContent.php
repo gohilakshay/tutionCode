@@ -38,7 +38,7 @@ $fee_data = end($result);
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Surname</label>
-                                            <input type="text" class="form-control border-input"  placeholder="Surname" name="surname" value="<?php echo $student_data->stud_surname; ?>" required>
+                                            <input type="text" class="form-control border-input"  placeholder="Surname" name="surname" value="<?php echo $student_data->stud_surname; ?>" >
                                     <?php echo form_error('surname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@ $fee_data = end($result);
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Mother Name</label>
-                                            <input type="text" class="form-control border-input" placeholder="Mother Name" name="mothername" value="<?php echo $student_data->mother_name; ?>" required>
+                                            <input type="text" class="form-control border-input" placeholder="Mother Name" name="mothername" value="<?php echo $student_data->mother_name; ?>" >
                                     <?php echo form_error('mothername', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@ $fee_data = end($result);
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Email address</label>
-                                            <input type="email" class="form-control border-input" placeholder="Email" name=email value="<?php echo $student_data->stud_email; ?>" required>
+                                            <input type="email" class="form-control border-input" placeholder="Email" name=email value="<?php echo $student_data->stud_email; ?>" >
                                     <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>

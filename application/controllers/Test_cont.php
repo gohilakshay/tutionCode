@@ -53,7 +53,10 @@ class Test_cont extends CI_Controller
                $ti = $this->AddData->addTest($data);
                redirect('Test_cont/addTest');
             }
-             }else echo "Error 404 : Access Denied";
+            }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function testDetails()
     {
@@ -62,7 +65,10 @@ class Test_cont extends CI_Controller
         $username = $this->session->userdata('username');
         if(isset($username)){
             $this->load->view('addTest');         //html filename
-         }else echo "Error 404 : Access Denied";   
+         }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }   
     }
     public function updateTest()
     {
@@ -114,12 +120,16 @@ class Test_cont extends CI_Controller
             $ti = $this->AddData->UpdateTest($data);
             redirect('Test_cont/addTest');
         }
-         }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function deleteTest(){
-        
-        $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $this->load->helper('form');
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
@@ -129,13 +139,18 @@ class Test_cont extends CI_Controller
         if($this->db->affected_rows() > 0){
             redirect('Test_cont/addTest'); 
         }
-        
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function TestMarkDetail($n)
     {     
         $this->load->helper('form');
         $this->load->helper('url');  
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
             $db = $this->session->userdata('db');//load db 
             $this->load->database($db);//call db
             $this->load->model('SelectData');
@@ -181,6 +196,10 @@ class Test_cont extends CI_Controller
             }
         $new = array('data' => $data);
         $this->load->view("test_detail_view",$new);
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function customAlpha($strrr) 
         {

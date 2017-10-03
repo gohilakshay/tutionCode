@@ -39,7 +39,10 @@ class Batch_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Batch_cont/addBatch');      
         }
-        }else echo "Error 404 : Access Denied";//html filename 
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
         
     }
     public function updateBatches()
@@ -77,12 +80,16 @@ class Batch_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Batch_cont/addBatch');      
         }
-            }
-            else echo "Error 404 : Access Denied"; 
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }  
     }
     public function DeleteBatches(){
-        $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $this->load->helper('form');
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
@@ -92,6 +99,10 @@ class Batch_cont extends CI_Controller
         if($this->db->affected_rows() > 0){
             redirect('Batch_cont/addBatch'); 
         }
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     //to view all the students in perticular batch
     public function Student_batch_view($batchid){
@@ -105,7 +116,10 @@ class Batch_cont extends CI_Controller
             $this->load->model('SelectData');
             $query['batch_student_mapping'] = $this->SelectData->stud_attend_map($batchid,$notuse);
             $this->load->view('batch_student_view',$query); 
-        }else echo "Error 404 : Access Denied";//html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function customAlphanumeric($strr){
          if ( !preg_match('/^[0-9a-zA-Z ]+$/',$strr) )

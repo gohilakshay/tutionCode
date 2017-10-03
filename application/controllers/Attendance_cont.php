@@ -5,7 +5,10 @@ class Attendance_cont extends CI_Controller
      public function markStudentAttendance()
     {
         $this->load->library('session');
-        $this->load->helper('url');
+         $this->load->helper('url');
+         $username = $this->session->userdata('username');   //session mane
+            if(isset($username)){
+        
          $this->load->model('SelectData');
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');   //load db   
@@ -19,10 +22,7 @@ class Attendance_cont extends CI_Controller
          /*validation ends*/
 		if(! isset($_POST['markattend']))
 		{ 
-            $username = $this->session->userdata('username');   //session mane
-            if(isset($username)){
-                $this->load->view('addStudentAttendance',$query);	
-            }else echo "Error 404 : Access Denied"; //html filename	
+            $this->load->view('addStudentAttendance',$query);		
 		}
         //form after giving right output
 		else
@@ -47,11 +47,17 @@ class Attendance_cont extends CI_Controller
             $query['result1'] = $this->SelectData->stud_attend_map($res,$attend_id);
             $this->load->view('addStudentAttendance',$query);  	//html filename
 		}
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function StudentAttendance()
     {
         $this->load->helper('url');
         $this->load->library('session');
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
         $db = $this->session->userdata('db');   //load db     
         $this->load->database($db);     //call db
         $this->load->model('AddData');      //to insert or update data from db
@@ -66,33 +72,51 @@ class Attendance_cont extends CI_Controller
         );
         $this->AddData->markStudentAttendItem($data);   //insert in stud_attend_mapping
         redirect('Attendance_cont/markStudentAttendance');  //redirect to addStudentAttendance.php
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function viewStudentAttendance(){
         $this->load->helper('url');
         $this->load->library('session');
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');   //load db     
         $this->load->database($db); //call db
         $this->load->model('SelectData');   //call db
         $query['result'] = $this->SelectData->student_attend_batch();   //replacing batch_id with batch_name in student
         $this->load->view('studentAttendView',$query);  //html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }    
     }
     public function viewAttendanceDetail($n){
         $this->load->helper('url');
         $this->load->library('session');
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');   //load db     
         $this->load->database($db); //call db
         $this->load->model('SelectData');   //call db
         $query['result'] = $this->SelectData->attedBatch($n);   //select from stud_attend_mapping
         $this->load->view('studAttendDetails',$query);  //html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }    
     }
     public function markTeacherAttendance()
     {
+        $this->load->helper('url');
         $this->load->library('session');
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
         $db = $this->session->userdata('db');   //load db    
         $this->load->database($db); //call db
-        $this->load->helper('url');
         $this->load->model('SelectData');
         
         $this->db->close();
@@ -159,12 +183,18 @@ class Attendance_cont extends CI_Controller
             array_push($t_name['result'],$t_attend_id);
             $this->load->view('addTeacherAttendance',$t_name); 	//html filename
 		}
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }   
     }
     public function TeacherAttendance()
     {
         $this->load->helper('url');
-        $this->load->model('AddData');  //insert or update data in html 
         $this->load->library('session');
+        $this->load->model('AddData');  //insert or update data in html 
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
         $db = $this->session->userdata('db');   //load db      
         $this->load->database($db); //call db
         $t_ID = $this->input->post('teach_id');
@@ -179,20 +209,32 @@ class Attendance_cont extends CI_Controller
         );
         $this->AddData->markTeacherAttendItem($data);   //insert in t_attend_mapping
         redirect('Attendance_cont/markTeacherAttendance');             //html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function viewTeacherAttendance(){
         $this->load->helper('url');
         $this->load->library('session');
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');   //load db     
         $this->load->database($db); //call db
         $this->load->model('SelectData');   //load model to select data from db
         $query['result'] = $this->SelectData->teacher_attend(); //select all teacher from teacher_attend table
         $this->load->view('teacherAttendView',$query); //html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function viewTeacherAttendanceDetail($n){
         $this->load->helper('url');
         $this->load->library('session');
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');//load db     
         $this->load->database($db);//call db
@@ -200,6 +242,10 @@ class Attendance_cont extends CI_Controller
         $query['result'] = $this->SelectData->teacherAttendMap($n); //select all from t_attend_mapping table
         $query['teacher_detail'] = $this->SelectData->teacher(); //select all from t_attend_mapping table
         $this->load->view('teacherAttendDetails',$query);   //html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     /*used for validation of the input values from html form*/
     public function customAlpha($str) 

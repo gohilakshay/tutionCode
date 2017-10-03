@@ -4,15 +4,23 @@ class Expense_cont extends CI_Controller
 {
     public function expense()
     {
-        $this->load->library('session');
         $this->load->helper('url');
-        $this->load->view('expense');           //html filename
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+        $this->load->view('expense');
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function staffDetails()
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -57,13 +65,22 @@ class Expense_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/staffDetails');
         }//html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function updateStaffDetails()
     {
-        $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $this->load->view('updateStaffDetails');
-       
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function staffPaymentDetails()
     {
@@ -71,6 +88,8 @@ class Expense_cont extends CI_Controller
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -98,12 +117,18 @@ class Expense_cont extends CI_Controller
             $query['result'] =$this->SelectData->staffPaidDetails();
              redirect('Expense_cont/staffPaymentDetails',$query);   //html filename
       } 
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function meals()
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -129,12 +154,18 @@ class Expense_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/meals');   	
 		}
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function maintenance()
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -159,12 +190,18 @@ class Expense_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/maintenance');   	
 		}
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function transport()
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -190,13 +227,18 @@ class Expense_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/transport');   	
 		}
-        
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function rent()
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -222,12 +264,18 @@ class Expense_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/rent');   	
 		}
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function utilities()
     {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
@@ -252,6 +300,10 @@ class Expense_cont extends CI_Controller
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Expense_cont/utilities');   	
 		}
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
 
      public function custom_Alpha($strrr) 

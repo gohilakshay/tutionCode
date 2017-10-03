@@ -18,6 +18,24 @@
                 <div class="card">
                     <div class="content">
                         <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Status</label>
+                                   <select name="status" class="form-control border-input"  >
+                                        <option style="color:#ffbc00" value="inprocess">In Process</option>
+                                        <option style="color:green" value="joined">Joined</option>
+                                        <option style="color:red" value="notjoined">Not Joined</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="float:right">
+                                <div class="form-group">
+                                    <label>Enquiry Date</label>
+                                   <input  class="form-control " type="date" name="enq_date" value="<?php echo date('Y-m-d')?>" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Name</label>
@@ -47,18 +65,30 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Subject</label>
                                     <input type="text" class="form-control border-input" name="subject" value="<?php echo $value->subject; ?>" >
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Fees Told / Asked</label>
+                                    <input type="text" class="form-control border-input" name="fees" value="<?php echo $value->reference; ?>" >
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Reference</label>
                                     <input type="text" class="form-control border-input" name="reference" value="<?php echo $value->reference; ?>" >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>College</label>
+                                    <input type="text" class="form-control border-input" name="college" value="<?php if(isset($_POST['college'])){echo $_POST['college'];} ?>" >
                                 </div>
                             </div>
                         </div>
@@ -70,20 +100,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>College</label>
-                                    <input type="text" class="form-control border-input" name="college" value="<?php if(isset($_POST['college'])){echo $_POST['college'];} ?>" >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
+                       <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Addresss</label>
                                     <textarea rows="4" type="text" class="form-control border-input" name="address" value="<?php if(isset($_POST['address'])){echo $_POST['address'];} ?>" required></textarea>
                                     <?php echo form_error('address', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" style="float:right">
+                                <div class="form-group">
+                                    <label>Followup Date</label>
+                                   <input  class="form-control border-input" type="date" name="followup_date"   />
                                 </div>
                             </div>
                         </div>

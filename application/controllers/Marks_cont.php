@@ -31,7 +31,10 @@ class Marks_cont extends CI_Controller
             //}else echo "Error 404 : Access Denied";
            // $this->load->view('addMarks');	  	
 		}
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
     public function marks()
     {
@@ -55,7 +58,10 @@ class Marks_cont extends CI_Controller
         $this->AddData->addMarks($data);
         $this->session->set_flashdata('success','You have Successfully submitted data.');
         $this->load->view('addMarks');         //html filename
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        }
     }
 }
 ?>
