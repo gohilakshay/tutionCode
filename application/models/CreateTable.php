@@ -1449,7 +1449,10 @@ class CreateTable extends CI_Model {
                                                  'unsigned' => TRUE,
                                                  'auto_increment' => TRUE
                                           ),
-                        'date' => array(
+                        'enq_date' => array(
+                                                 'type' => 'date'
+                                          ),
+                        'followup_date' => array(
                                                  'type' => 'date'
                                           ),
                         'reference' => array(
@@ -1457,6 +1460,10 @@ class CreateTable extends CI_Model {
                                                  'constraint' => '100',
                                           ),
                         'name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'fees' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
@@ -1480,7 +1487,27 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
+                        'gender' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
                         'reply' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'status' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'college' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'address' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'action' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),

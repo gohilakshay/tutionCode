@@ -23,15 +23,54 @@ class Enquiry_cont extends CI_Controller
         $username = $this->session->userdata('username');
         if(isset($username)){
             $db = $this->session->userdata('db');//load db      
-            $this->load->database($db);//call db
-            $this->load->model('SelectData');
-            $enquiry['result'] = $this->SelectData->enquiryselect($id);
             // $this->session->set_flashdata('success','You have Successfully submitted data.');
             $this->load->view('enquiryreply',$enquiry);      //html filename
         }else echo "Error 404 : Access Denied";
     }
+    public function enquiryInfo($id)
+    {
+        $this->load->library('session');
+        $this->load->helper('url');  
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $db = $this->session->userdata('db');//load db      
+            $this->load->database($db);//call db
+            $this->load->model('SelectData');
+            $enquiry['result'] = $this->SelectData->enquiryselect($id);
+            $this->load->view('enquiryInfo',$enquiry);      //html filename
+        }else echo "Error 404 : Access Denied";
+    }
     public function enquirySend()
     {
+        if(isset($_POST['save'])){
+            $this->load->library('session');
+            $db = $this->session->userdata('db');//load db      
+            $this->load->database($db);//call db
+            $this->load->helper('url');
+            $this->load->helper('form');
+            $this->load->model('AddData');
+            $data = array (
+                'name' => $this->input->post('enquirename'),
+                'senderEmail' => $this->input->post('email'),
+                'mobile' => $this->input->post('mobile'),
+                'subject' => $this->input->post('subject'),
+                'repledBy' => $this->input->post('repliedby'),
+                'reply' => $this->input->post('reply'),
+                'status' => $this->input->post('status'),
+                'enq_date' => $this->input->post('enq_date'),
+                'fees' => $this->input->post('fees'),
+                'reference' => $this->input->post('reference'),
+                'college' => $this->input->post('college'),
+                'gender' => $this->input->post('gender'),
+                'query' => $this->input->post('query'),
+                'address' => $this->input->post('address'),
+                'followup_date' => $this->input->post('followup_date'),
+                'action' => 'saved'
+            );
+            $this->AddData->enquirySave($data);
+            redirect('Enquiry_cont/enquiry');
+        }
+        else{
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->helper('form');
@@ -41,8 +80,26 @@ class Enquiry_cont extends CI_Controller
         $Subject = $this->input->post('subject');
         $replyBy = $this->input->post('repliedby');
         $Message = $this->input->post('reply');
-        
-        
+        /*add the email sent data to db also*/
+        $this->load->model('AddData');
+            $data = array (
+                'name' => $this->input->post('enquirename'),
+                'senderEmail' => $this->input->post('email'),
+                'mobile' => $this->input->post('mobile'),
+                'subject' => $this->input->post('subject'),
+                'repledBy' => $this->input->post('repliedby'),
+                'reply' => $this->input->post('reply'),
+                'status' => $this->input->post('status'),
+                'enq_date' => $this->input->post('enq_date'),
+                'fees' => $this->input->post('fees'),
+                'reference' => $this->input->post('reference'),
+                'college' => $this->input->post('college'),
+                'query' => $this->input->post('query'),
+                'address' => $this->input->post('address'),
+                'followup_date' => $this->input->post('followup_date'),
+                'action'=>'sent'
+            );
+            $this->AddData->enquirySave($data);
         
         
         /*Send email API*/
@@ -98,5 +155,26 @@ class Enquiry_cont extends CI_Controller
                 </script>";
              redirect("Enquiry_cont/enquiry");
          }
+        }
+    }
+    public function DeleteEnquiry(){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+        $this->load->helper('form');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('DeleteData'); // model for delete
+        $e_id = $this->input->post("e_id");
+        $this->DeleteData->DeleteEnqy($e_id); // call function from model
+        if($this->db->affected_rows() > 0){
+            redirect('Enquiry_cont/enquiry'); 
+        }
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
+    
     }
 }

@@ -4,7 +4,7 @@
 <?php $this->load->library('form_validation'); ?>
 <?php echo form_open('Enquiry_cont/enquirySend'); ?>
 <br>
-<?php foreach($result as $value):?>
+
 <div class="content">
     <div class="container-fluid">
         <?php if($this->session->flashdata('success')) { ?>
@@ -31,7 +31,7 @@
                             <div class="col-md-4" style="float:right">
                                 <div class="form-group">
                                     <label>Enquiry Date</label>
-                                   <input  class="form-control " type="date" name="enq_date" value="<?php echo date('Y-m-d')?>" readonly />
+                                   <input  class="form-control " type="date" name="enq_date" value="<?php echo date('Y-m-d');?>" readonly />
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control border-input" name="enquirename" value="<?php echo $value->name; ?>" >
+                                    <input type="text" class="form-control border-input" name="enquirename" >
                                 </div>
                             </div>
                         </div>
@@ -54,13 +54,13 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label>EmailID</label>
-                                    <input type="email" class="form-control border-input" name="email" value="<?php echo $value->senderEmail; ?>" >
+                                    <input type="email" class="form-control border-input" name="email">
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Mobile</label>
-                                    <input type="text" class="form-control border-input" name="mobile" value="<?php echo $value->mobile; ?>"  >
+                                    <input type="text" class="form-control border-input" name="mobile">
                                 </div>
                             </div>
                         </div>
@@ -68,13 +68,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php echo $value->subject; ?>" >
+                                    <input type="text" class="form-control border-input" name="subject">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Fees Told / Asked</label>
-                                    <input type="text" class="form-control border-input" name="fees" value="<?php echo $value->reference; ?>" >
+                                    <input type="text" class="form-control border-input" name="fees">
                                 </div>
                             </div>
                         </div>
@@ -82,13 +82,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Reference</label>
-                                    <input type="text" class="form-control border-input" name="reference" value="<?php echo $value->reference; ?>" >
+                                    <input type="text" class="form-control border-input" name="reference">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>College</label>
-                                    <input type="text" class="form-control border-input" name="college" value="<?php if(isset($_POST['college'])){echo $_POST['college'];} ?>" >
+                                    <input type="text" class="form-control border-input" name="college">
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Query</label>
-                                    <input type="text"  class="form-control border-input" name="query" value="<?php echo $value->query; ?>" >
+                                    <input type="text"  class="form-control border-input" name="query">
                                 </div>
                             </div>
                         </div>
@@ -104,8 +104,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Addresss</label>
-                                    <textarea rows="4" type="text" class="form-control border-input" name="address" value="<?php if(isset($_POST['address'])){echo $_POST['address'];} ?>" required></textarea>
-                                    <?php echo form_error('address', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <textarea rows="4" type="text" class="form-control border-input" name="address" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -117,6 +116,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Reply By</label>
+                                    <input type="text"  class="form-control border-input" name="repliedby">
+                                </div>
+                            </div>
+                        </div>
+                       <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Reply</label>
+                                    <textarea rows="4" type="text" class="form-control border-input" name="reply" ></textarea>
+                                </div>
+                            </div>
+                        </div>
                     </div><hr>
                 </div>
             </div>
@@ -125,19 +140,51 @@
             </div> 
         </div>
     </div>
-</div><?php endforeach;?>
-<div class="content">
+</div>
+<!--<div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <center><button type="submit" class="btn btn-success">Send</button></center>
+                    <center><button type="submit" class="btn btn-success" name="send">Send</button></center>
+                    <button type="reset" class="btn btn-danger">Clear Form</button>	
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                   <center> <button type="submit" class="btn btn-success" name="save">Save</button></center>
+                    <button type="reset" class="btn btn-danger">Clear Form</button>	
+                </div>
+            </div>
+             <div class="col-md-6">
+                <div class="form-group">
+                    <center><button type="submit" class="btn btn-success" name="send">Send</button></center>
                     <!--<button type="reset" class="btn btn-danger">Clear Form</button>-->	
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!--
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <center><button type="submit" class="btn btn-success" name="send">Send</button></center>
+                    <button type="reset" class="btn btn-danger">Clear Form</button>	
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
 <?php echo form_close(); ?>
 <?php include "footer.php";?>
 <?php include "addModel.php"?>
