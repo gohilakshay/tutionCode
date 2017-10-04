@@ -27,7 +27,7 @@ foreach($result as $value){
                         <center><a href="<?php echo site_url()."/Sms_cont/smsDetails" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #51d8dc; background-color:#51d8dc; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-primary btn-lg">Total<br><?php echo $total; ?></button></a>&emsp;
                       <a href="<?php echo site_url()."/Sms_cont/successSms" ?>">  <button type="button" style="border-radius:10px; color:black; border-color: #7ac29a; background-color:#7ac29a; padding:11px; padding-left:70px; padding-right:70px;" class="btn btn-success btn-lg">Success<br><?php echo $sent;?></button></a>&emsp;
                       <a href="<?php echo site_url()."/Sms_cont/failesSms" ?>">  <button type="button" style="border-radius:10px; color:black; border-color: #e44554; background-color:#e44554; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Failed<br><?php echo $failed;?></button> </a>&emsp;
-                        <a href="<?php echo site_url()."/Sms_cont/sendSMS" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Send<br>SMS</button></a></center>
+                        <a href="<?php echo site_url()."/Sms_cont/sendSMS/1" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Send<br>SMS</button></a></center>
                     </div>
                 </div><br>
                 <div class="row">
@@ -55,8 +55,8 @@ foreach($result as $value){
                                             <tr style="font-weight: bold;">
                                                 <td><?php echo date("F j, Y");  ?>
                                                     <div class="pull-right"><?php echo form_open('Sms_cont/filterDate'); ?>
-                                                        <label>To :&emsp;</label><input type="date" name="to">
-                                                        <label>From :&emsp;</label><input type="date" name="from">
+                                                        <label>To :&emsp;</label><input type="date" name="to" value="<?php if(isset($_POST['to'])){echo $_POST['to'];} ?>">
+                                                        <label>From :&emsp;</label><input type="date" name="from" value="<?php if(isset($_POST['from'])){echo $_POST['from'];} ?>">
                                                         <button type="submit"> Search</button>
                                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                         <?php echo form_close();?>

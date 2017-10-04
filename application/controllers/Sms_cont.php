@@ -20,7 +20,7 @@ class Sms_cont extends CI_Controller
             echo "<script>window.location.href='$name';</script>";         
         }
     }
-    public function sendSMS()
+    public function sendSMS($button1)
     {
         $this->load->library('session');
         $this->load->helper('url');  
@@ -31,7 +31,13 @@ class Sms_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');  
         $query['result'] = $this->SelectData->ViewBatch();
+        $query['teacher'] = $this->SelectData->teacher();
+        array_push($query['result'],$button1);
+            if($_POST['batch']){
         $this->form_validation->set_rules('batch', 'batch', 'required');
+            }if($_POST['teacher']){
+        $this->form_validation->set_rules('teacher', 'teacher', 'required');
+            }
         if($this->form_validation->run() == FALSE)
         {
            $this->load->view('sendSMS',$query);		//html filename
