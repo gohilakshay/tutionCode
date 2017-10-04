@@ -23,7 +23,6 @@ class Enquiry_cont extends CI_Controller
         $username = $this->session->userdata('username');
         if(isset($username)){
             $db = $this->session->userdata('db');//load db      
-            // $this->session->set_flashdata('success','You have Successfully submitted data.');
             $this->load->view('enquiryreply',$enquiry);      //html filename
         }else echo "Error 404 : Access Denied";
     }
@@ -169,12 +168,59 @@ class Enquiry_cont extends CI_Controller
         $e_id = $this->input->post("e_id");
         $this->DeleteData->DeleteEnqy($e_id); // call function from model
         if($this->db->affected_rows() > 0){
-            redirect('Enquiry_cont/enquiry'); 
+            echo "<script>alert('deleted Successfully')</script>;";
+            $name=site_url().'/Enquiry_cont/enquiry';
+            echo "<script>window.location.href='$name';</script>"; 
         }
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         
         } 
     
+    }
+    public function updateEnquiry(){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->helper('form');
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
+            $id = $this->input->post("e_id");
+            $this->load->model('SelectData');
+            $enquiry['result'] = $this->SelectData->enquiryselect($id);
+            $this->load->view('enquiryInfo',$enquiry);
+            if(isset($_POST['edit'])){
+                $this->load->model('AddData');
+                $data = array(
+                    'enquiry_ID'=>$this->input->post("e_id"),
+                    'name' => $this->input->post('enquirename'),
+                    'senderEmail' => $this->input->post('email'),
+                    'mobile' => $this->input->post('mobile'),
+                    'subject' => $this->input->post('subject'),
+                    'repledBy' => $this->input->post('repliedby'),
+                    'reply' => $this->input->post('reply'),
+                    'status' => $this->input->post('status'),
+                    'enq_date' => $this->input->post('enq_date'),
+                    'fees' => $this->input->post('fees'),
+                    'reference' => $this->input->post('reference'),
+                    'college' => $this->input->post('college'),
+                    'query' => $this->input->post('query'),
+                    'address' => $this->input->post('address'),
+                    'followup_date' => $this->input->post('followup_date')
+                );
+                $this->AddData->UpdateEnq($data);
+                $name=site_url().'/Enquiry_cont/enquiry';
+                 $this->session->set_flashdata('success','You have Successfully submitted data.');
+                echo "<script>window.location.href='$name';</script>";
+            }/*else {
+                $this->load->view('enquiryInfo',$enquiry);      //html filename      
+            } */
+    
+        }
+        else {
+                $name=site_url().'/Home';
+                echo "<script>window.location.href='$name';</script>";         
+            }
     }
 }

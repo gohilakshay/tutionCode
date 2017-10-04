@@ -4,6 +4,12 @@
 <?php $this->load->library('form_validation'); ?>
 
 <br><br>
+<?php if($this->session->flashdata('success')) { ?>
+              <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+                  <h5><?php echo $this->session->flashdata('success'); ?></h5>
+              </div>
+        <?php } ?>
 <div class="content">
     <div class="container-fluid">
         <a href="<?php echo site_url("Enquiry_cont/enquiry") ?>">
@@ -59,7 +65,8 @@
                                             <tr style="font-weight: bold;">
                                                 <td>Sr No.</td>
                                                 <td>ID.</td>
-                                                <td>Title</td>
+                                                <td>Subject</td>
+                                                <td>Query</td>
                                                 <td>Reference</td>
                                                 <td>Followup Date</td>
                                                 <td>Enquiry Date</td>
@@ -72,11 +79,12 @@
                                                 <td><?php echo $i;$i++;?></td>
                                                 <td><?php echo $eid = $value->enquiry_ID;?></td>
                                                 <td><a href="<?php echo site_url("Enquiry_cont/enquiryInfo/").$value->enquiry_ID;?>"><?php echo $value->subject;?></a></td>
+                                                <td style="padding:10px"><?php echo $value->query;?></td>
                                                 <td><?php echo $value->reference;?></td>
                                                 <td><?php echo $value->followup_date;?></td>
                                                 <td><?php echo $value->enq_date;?></td>
                                                 <td>
-                                                        <?php echo form_open('Enquiry_cont/updateBatches'); ?>
+                                                        <?php echo form_open('Enquiry_cont/updateEnquiry'); ?>
                                                             <div class="text-center">
                                                                 <input type="hidden" value="<?php echo $eid; ?>" name="e_id" >
                                                                 <center><button type="submit" class="btn btn-success">Edit</button></center>

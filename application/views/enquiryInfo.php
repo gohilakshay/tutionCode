@@ -2,7 +2,7 @@
 <?php $page = 'three';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
-<?php echo form_open('Enquiry_cont/enquirySend'); ?>
+<?php echo form_open('Enquiry_cont/updateEnquiry'); ?>
 <br>
 <?php $enquiryDetail = $result[0];?>
 <div class="content">
@@ -147,7 +147,7 @@
                     </div><hr>
                 </div>
             </div>
-
+            <input type="hidden" value="<?php echo $enquiryDetail->enquiry_ID; ?>" name="e_id" >
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             </div> 
         </div>
@@ -168,18 +168,8 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                   <center> <button type="submit" class="btn btn-success" name="save">Save</button></center>
-                    <button type="reset" class="btn btn-danger">Clear Form</button>	
-                </div>
-            </div>
-             <div class="col-md-6">
-                <div class="form-group">
-                    <center><button type="submit" class="btn btn-success" name="send">Send</button></center>
-                    <!--<button type="reset" class="btn btn-danger">Clear Form</button>-->	
-                </div>
-            </div>
+            <div class="form-group">
+                <center><button type="submit" class="btn btn-success" name="edit">Edit</button></center> </div>
         </div>
     </div>
 </div>

@@ -120,6 +120,12 @@ class AddData extends CI_Model {
         $this->db->update('test',$data);
         return;
     }
+    function UpdateEnq($data){
+        $enq_id = $data['enquiry_ID'];
+        $this->db->where('enquiry_ID',$enq_id );
+        $this->db->update('enquiry',$data);
+        return;
+    }
 
     function addMarks($data){
          $this->db->insert('marks', $data);
