@@ -184,9 +184,21 @@ class AddData extends CI_Model {
         $this->db->insert('sms',$data);
         return;
     }
+    function smsBulkAdd($data){
+        $this->db->insert('smsbulk',$data);
+        $insert_id = $this->db->insert_id();
+        $sms = array('bulkID' => $insert_id);
+        $this->db->insert('sms',$sms);
+        return;
+    }
     function enquirySave($data){
         $this->db->insert('enquiry', $data);
         return;
+    }
+    public function insertCSV($data)
+    {
+        $this->db->insert('import', $data);
+        return TRUE;
     }
 }
 ?>

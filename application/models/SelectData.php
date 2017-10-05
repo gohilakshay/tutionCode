@@ -927,5 +927,14 @@ class SelectData extends CI_Model {
         }
           return $data;
     }
+    function ImportContactView(){
+        $sql = $this->db->query("SELECT * FROM `import` ORDER by import_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+          return $data;
+    }
 }
 ?>

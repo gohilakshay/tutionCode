@@ -3,6 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Sms_cont extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
 	public function smsDetails()
 	{
         $this->load->library('session');
@@ -29,15 +33,40 @@ class Sms_cont extends CI_Controller
         if(isset($username)){
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
-        $this->load->model('SelectData');  
+        $this->load->model('SelectData');
+        if($button1==3){
+            $query = array('result'=> array($button1));
+            if(isset($_POST['excel_submit'])){
+            $this->load->model('AddData');
+             $filename = $_FILES['excel_file']["tmp_name"];
+            $file = fopen($filename, "r");
+             while (($importdata = fgetcsv($file, 10000, ",")) !== FALSE)
+             {
+                    $data = array(
+                        'name' => $importdata[0],
+                        'contact' =>$importdata[1],
+                        'location' =>$importdata[2],
+                        'created_date' => date('Y-m-d'),
+                        );
+                 $this->AddData->insertCSV($data);
+             }                    
+            fclose($file);
+            $this->session->set_flashdata('success', 'Imported successfully !!!!');
+               $this->load->view('sendSMS',$query);
+            }
+           $query['importContact'] = $this->SelectData->ImportContactView();
+            $this->load->view('sendSMS',$query);
+            
+        }
+        else{    
         $query['result'] = $this->SelectData->ViewBatch();
         $query['teacher'] = $this->SelectData->teacher();
         array_push($query['result'],$button1);
             if($_POST['batch']){
         $this->form_validation->set_rules('batch', 'batch', 'required');
-            }if($_POST['teacher']){
+            }/*if($_POST['teacher']){
         $this->form_validation->set_rules('teacher', 'teacher', 'required');
-            }
+            }*/
         if($this->form_validation->run() == FALSE)
         {
            $this->load->view('sendSMS',$query);		//html filename
@@ -47,12 +76,14 @@ class Sms_cont extends CI_Controller
             $id = $this->input->post('batch');
             $query['result1'] = $this->SelectData->stud_attend_map($id,1);
             $this->load->view('sendSMS',$query);		//html filename
-        }       
+        }
+        }
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         
         }
     }  
+    /*for student */
     public function sendSMSSender()
     {
         $this->load->library('session');
@@ -151,6 +182,202 @@ class Sms_cont extends CI_Controller
             }
         }
      }
+    /*for techer */
+    public function sendTeacherSMSSender()
+    {
+        $this->load->library('session');
+        $this->load->helper('url');  
+        $this->load->library('form_validation');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('AddData');
+        //Your authentication key
+        $username = "peaceinfotech";
+        $password = "peaceinfotech";
+        //Sender ID,While using route4 sender id should be 6 characters long.
+         $senderId = "akshay";
+         $teacher_IDname = $this->input->post('teacherid');
+         $contact = $this->input->post('t_contact');
+        //$student = $this->input->post('student');
+        //$send = $this->input->post('send');
+        $route = $this->input->post('route');
+         $message = $this->input->post('msg'); //Your message to send, Add URL encoding here.
+        $i=0;
+        foreach($contact as $value){
+            $c = explode(",",$value);
+            $contac[] = $c[0];
+               $teacher_name[] = $c[1];
+        }
+        //Multiple mobiles numbers separated by comma
+        $mobileNumber = implode(",",$contac);
+        $teacher_name = implode(",",$teacher_name);
+        //Define route 
+        $route = 3;
+        //Prepare you post parameters
+        $postData = array(
+            'username' => $username,
+            'password' => $password,
+            'number' => $mobileNumber,
+            'message' => $message,
+            'senderid' => $senderId,
+            'route' => $route
+        );
+        //API URL
+        $url="http://text.bluemedia.in/http-api.php";
+
+        // init the resource
+        $ch = curl_init();
+        curl_setopt_array($ch, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $postData
+            //,CURLOPT_FOLLOWLOCATION => true
+        ));
+
+        //Ignore SSL certificate verification
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        //get response
+        $output = curl_exec($ch);
+        //Print error if any
+        if(curl_errno($ch))
+        {
+            echo 'error:' . curl_error($ch);
+        }
+        curl_close($ch);
+        $result = (explode(" ",$output));
+            if($result[0] == 'msg-id'){
+                $data = array(
+                //'batch'=>$batch_IDname,
+                'teacher_name'=>$teacher_name,
+                'teacher_cont'=>$mobileNumber,
+                //'sms_sent_to'=>$send,
+                'message'=>$message,
+                'date'=>date('Y-m-d'),
+                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                'status'=>'sent'
+            );
+            $this->AddData->smsAdd($data);    
+            redirect('Sms_cont/sendSMS/2');
+        }
+        else 
+        {
+            $result = (explode(" ",$output));
+            if($result[0] == 'msg-id'){
+                $data = array(
+               // 'batch'=>$batch_IDname,
+                'teacher_name'=>$teacher_name,
+                'teacher_cont'=>$mobileNumber,
+                //'sms_sent_to'=>$send,
+                'message'=>$message,
+                'date'=>date('Y-m-d'),
+                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                'status'=>'failed'
+               );
+            $this->AddData->smsAdd($data);
+            echo $output;
+            }
+        }
+       
+     }
+    /*for bulk sms*/
+    function sendBulkSMSSender(){
+        $this->load->library('session');
+        $this->load->helper('url');  
+        $this->load->library('form_validation');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('AddData');
+        //Your authentication key
+        $username = "peaceinfotech";
+        $password = "peaceinfotech";
+        //Sender ID,While using route4 sender id should be 6 characters long.
+         $senderId = "akshay";
+        // $teacher_IDname = $this->input->post('teacherid');
+         $contact = $this->input->post('contact');
+        //$student = $this->input->post('student');
+        //$send = $this->input->post('send');
+        $route = $this->input->post('route');
+         $message = $this->input->post('msg'); //Your message to send, Add URL encoding here.
+        $i=0;
+        foreach($contact as $value){
+            $c = explode(",",$value);
+            $contac[] = $c[0];
+               $cont_name[] = $c[1];
+        }
+        //Multiple mobiles numbers separated by comma
+        $mobileNumber = implode(",",$contac);
+        $cont_name = implode(",",$cont_name);
+        //Define route 
+        $route = 3;
+        //Prepare you post parameters
+        $postData = array(
+            'username' => $username,
+            'password' => $password,
+            'number' => $mobileNumber,
+            'message' => $message,
+            'senderid' => $senderId,
+            'route' => $route
+        );
+        //API URL
+        $url="http://text.bluemedia.in/http-api.php";
+
+        // init the resource
+        $ch = curl_init();
+        curl_setopt_array($ch, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $postData
+            //,CURLOPT_FOLLOWLOCATION => true
+        ));
+
+        //Ignore SSL certificate verification
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        //get response
+        $output = curl_exec($ch);
+        //Print error if any
+        if(curl_errno($ch))
+        {
+            echo 'error:' . curl_error($ch);
+        }
+        curl_close($ch);
+        $result = (explode(" ",$output));
+            if($result[0] == 'msg-id'){
+                $data = array(
+                //'batch'=>$batch_IDname,
+                'cont_name'=>$cont_name,
+                'contact'=>$mobileNumber,
+                //'sms_sent_to'=>$send,
+                'message'=>$message,
+                'date'=>date('Y-m-d'),
+                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                'status'=>'sent'
+            );
+            $this->AddData->smsBulkAdd($data);    
+            redirect('Sms_cont/sendSMS/3');
+        }
+        else 
+        {
+            $result = (explode(" ",$output));
+            if($result[0] == 'msg-id'){
+                $data = array(
+               // 'batch'=>$batch_IDname,
+                'cont_name'=>$cont_name,
+                'contact'=>$mobileNumber,
+                //'sms_sent_to'=>$send,
+                'message'=>$message,
+                'date'=>date('Y-m-d'),
+                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                'status'=>'failed'
+               );
+            $this->AddData->smsBulkAdd($data);
+            echo $output;
+            }
+        }
+    }
     function filterDate(){
         $this->load->helper('url');
         $this->load->library('session');

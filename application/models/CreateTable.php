@@ -1530,24 +1530,93 @@ class CreateTable extends CI_Model {
                                                  'unsigned' => TRUE,
                                                  'auto_increment' => TRUE
                                           ),
+                        'bulkID' => array(
+                                                'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE, 
+                                          ),
                         'batch' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
+                                                 'null' => TRUE,    
                                           ),
                         'student_name' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
+                                                 'null' => TRUE, 
                                           ),
                         'student_cont' => array(
-                                                 'type' => 'DATE',
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE, 
+                                          ),
+                        'teacher_name' => array(
+                                                'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE, 
+                                          ),
+                        'teacher_cont' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE, 
                                           ),
                         'sms_sent_to' => array(
                                                  'type' => 'VARCHAR',
-                                                'constraint' => '100',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE, 
                                           ),
                         'message' => array(
+                                                'type' => 'VARCHAR',
+                                                 'constraint' => '100', 
+                                                    'null' => TRUE,
+                                          ),
+                        'date' => array(
+                                                 'type' => 'DATE',
+                                                    'null' => TRUE,
+                                                 
+                                          ),
+                        'time' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
+                                                    'null' => TRUE,
+                                          ),
+                        'status' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                    'null' => TRUE,
+                                          ),
+          
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('sms_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('sms', TRUE); 
+    }
+    function createSmsBulk()
+    {
+        /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'sms_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'cont_name' => array(
+                                                'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE, 
+                                          ),
+                        'contact' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE, 
+                                          ),
+                        'message' => array(
+                                                'type' => 'VARCHAR',
+                                                 'constraint' => '100', 
                                           ),
                         'date' => array(
                                                  'type' => 'DATE',
@@ -1567,7 +1636,41 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('sms_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
-        $this->dbforge->create_table('sms', TRUE); 
+        $this->dbforge->create_table('smsBulk', TRUE); 
+    }
+    function createImport()
+    {
+        /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'import_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'contact' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'location' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'created_date' => array(
+                                                 'type' => 'DATE',
+                                          ),
+                    
+                );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('import_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('import', TRUE); 
     }
 }
 ?>
