@@ -54,6 +54,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo "<script>window.location.href='$name';</script>";         
         } 
         }
+        function OneStudentMarks($student_id){
+            $this->load->helper('url');
+            $this->load->library('session');
+            $username = $this->session->userdata('username');   //session mane
+            if(isset($username)){
+                $db = $this->session->userdata('db');//load db 
+                $this->load->database($db);//call db
+                $this->load->model('SelectData');
+               // $test= $this->SelectData->test_detail();  
+                $marks = $this->SelectData->marks_detail();
+                //print_r($marks);
+                foreach($marks as $value){
+                    $studentIds = explode(",",$value->stud_id);
+                    $marksObtaineds = explode(",",$value->marks_obtained);
+                    if(in_array($student_id, $studentIds)){
+                        $indexStud = array_search($student_id, $studentIds);
+                        $student_marks[] = $marksObtaineds[$indexStud];
+                        $testIds[] = $value->test_id;
+                    }
+                }
+                $data = array(
+                    'stud_id'=> $student_id,
+                    'student_marks' => $student_marks,
+                    'testIds' => $testIds
+                );
+                $student_marks_data['Student_marks_data'] = $data;
+                $this->load->view('oneStudentMarks',$student_marks_data);
+            }
+            else {
+                $name=site_url().'/Home';
+                echo "<script>window.location.href='$name';</script>";         
+            }
+        }
              
    }
         

@@ -4,18 +4,53 @@ $batch_data = $result[1];
 $fee_data = end($result);
 ?>
 <div class="content">
-            <div class="container-fluid">
-                <!--<div class="row">
-                    <div class="col-lg-4 col-md-5">
-                        <div class="col-md-6">
-                            <center>
-                                <h3>
-                                    <a href="<?php echo site_url()."/Expense_cont/staffPaymentDetails" ?>"><button type="submit" class="btn btn-success">Student Attendance</button></a>
-                                </h3>
-                            </center>
+    <div class="container-fluid">
+        <div class="row">
+        <a href="<?php echo site_url("Bar_cont/OneStudentMarks/$student_data->stud_ID") ?>">
+            <div class="col-lg-4 col-md-5">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-warning text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/test.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p style="color:rgb(79, 172, 205);">Test Marks</p>
+                                    <!--Marks-->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>-->
+                </div>
+            </div>
+        </a>
+        <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
+            <div class="col-lg-4 col-md-5">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/present.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p style="color:rgb(79, 172, 205);">Attendance</p>
+                                   <!--Present-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-5">
                         <div class="card card-user">
