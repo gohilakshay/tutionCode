@@ -18,6 +18,7 @@ class Sms_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');  
         $query['result'] = $this->SelectData->ViewSms();
+        $query['bulksms'] = $this->SelectData->ViewBulkSms();
         $this->load->view('sms',$query);        //html filename
         }else {
             $name=site_url().'/Home';
@@ -161,7 +162,7 @@ class Sms_cont extends CI_Controller
                 'status'=>'sent'
             );
             $this->AddData->smsAdd($data);    
-            redirect('Sms_cont/sendSMS');
+            redirect('Sms_cont/sendSMS/1');
         }
         else 
         {

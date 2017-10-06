@@ -909,6 +909,15 @@ class SelectData extends CI_Model {
         }
           return $data;
     }
+    function ViewBulkSms(){
+        $sql = $this->db->query("SELECT * FROM smsBulk order by sms_ID DESC");
+        if($sql->num_rows() > 0){
+             foreach($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+          return $data;
+    }
     function filterByDate($to,$from){
         $sql = $this->db->query("SELECT * FROM sms WHERE date BETWEEN '" . $to . "' AND  '" . $from . "'ORDER by date DESC");
         if($sql->num_rows() > 0){

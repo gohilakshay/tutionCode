@@ -65,7 +65,45 @@ foreach($result as $value){
                                             </tr>
                                         </thead>
                                         <tbody id="myTable">
-                                            <?php foreach($result as $value):?>
+                                            <?php foreach($result as $value):
+                                                if($value->bulkID != NULL){
+                                                    foreach($bulksms as $bulksmsDetails){
+                                                        if($bulksmsDetails->sms_ID==$value->bulkID){
+                                                            print_r();
+                                                        
+                                            ?>
+                                            <tr>
+                                                <td><i class="ti-user"></i>&nbsp;<?php echo "<strong>".$bulksmsDetails->cont_name."</strong>&emsp;(Bulk sms)"; ?>&emsp;<?php echo $scontact[$i]; ?>
+                                                  <span style="float:right;">
+                                                      &emsp;&emsp;
+                                                      <i class="ti-timer"></i>
+                                                      <?php echo $bulksmsDetails->time;?>&emsp;&emsp;<?php echo $bulksmsDetails->date;?></span>  
+                                                    <br>
+                                                    &emsp;&nbsp;<i class="ti-email"></i>&nbsp;<?php echo $bulksmsDetails->message?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                                        }
+                                                    }
+                                                
+                                                }
+                                            else if($value->teacher_name != NULL){
+                                                ?>
+                                            <tr>
+                                                <td><i class="ti-user"></i>&nbsp;<?php echo "<strong>".$value->teacher_name."</strong>&emsp;(Faculty sms)"; ?>&emsp;<?php echo $scontact[$i]; ?>
+                                                  <span style="float:right;">
+                                                     &emsp;&emsp;
+                                                      <i class="ti-timer"></i>
+                                                      <?php echo $value->time;?>&emsp;&emsp;<?php echo $value->date;?></span>  
+                                                    <br>
+                                                    &emsp;&nbsp;<i class="ti-email"></i>&nbsp;<?php echo $value->message?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                            }
+                                            
+                                            else{
+                                            ?>
                                             <tr>
                                                 <?php $sname = explode(",",$value->student_name);
                                                  $scontact = explode(",",$value->student_contact);
@@ -73,16 +111,17 @@ foreach($result as $value){
                                                 for($i=0;$i<$n;$i++){
                                                 ?>
                                                 
-                                                <td><i class="ti-email"></i>&emsp;<?php echo $sname[$i]; ?>&emsp;<?php echo $scontact[$i]; ?>
+                                                <td><i class="ti-user"></i>&nbsp;<?php echo "<strong>".$sname[$i]."</strong>&emsp;(Student sms)"; ?>&emsp;<?php echo $scontact[$i]; ?>
                                                   <span style="float:right;">
                                                       <b>BATCH NAME -> <?php $b = explode(",",$value->batch);echo $b[1]; ?></b>&emsp;&emsp;
                                                       <i class="ti-timer"></i>
                                                       <?php echo $value->time;?>&emsp;&emsp;<?php echo $value->date;?></span>  
                                                     <br>
-                                                    &emsp;&emsp;&emsp;&emsp;<?php echo $value->message?>
+                                                    &emsp;&nbsp;<i class="ti-email"></i>&nbsp;<?php echo $value->message?>
                                                 </td>
                                             </tr>
-                                            <?php }endforeach;?>
+                                            <?php }}endforeach;?>
+                                        </tbody>
                                     </table>    
                                 </div>                          
                             </div>
