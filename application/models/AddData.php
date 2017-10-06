@@ -187,7 +187,7 @@ class AddData extends CI_Model {
     function smsBulkAdd($data){
         $this->db->insert('smsBulk',$data);
         $insert_id = $this->db->insert_id();
-        $sms = array('bulkID' => $insert_id);
+        $sms = array('bulkID' => $insert_id,'status'=>'sent');
         $this->db->insert('sms',$sms);
         return;
     }

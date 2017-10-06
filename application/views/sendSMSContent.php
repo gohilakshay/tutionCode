@@ -283,8 +283,8 @@
                                     <table class="table table-striped table-bordered"  >
                                        <thead>
                                             <tr class="header" >
-                                                <th style="font-weight: bold;">Sr No.</th>
-                                                <th style="font-weight: bold;"></th>
+                                                <th style="font-weight: bold;width:10%;">Sr No.</th>
+                                                <th style="font-weight: bold;width:6%;"><input type="checkbox" onclick="toggle(this);" />All</th>
                                                 <th style="font-weight: bold;">Name</th>
                                                 <th style="font-weight: bold;">Location</th>
                                                 <th style="font-weight: bold;">Contact</th>
@@ -370,3 +370,12 @@ input[id=studentsearch]:focus {
     width: 80%;
 }
 </style>
+<script>
+function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+}
+</script>
