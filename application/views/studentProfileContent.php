@@ -27,7 +27,7 @@ $fee_data = end($result);
                 </div>
             </div>
         </a>
-        <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
+        <a href="<?php echo site_url("Attendance_cont/OneStudentAttendance/$student_data->stud_ID") ?>">
             <div class="col-lg-4 col-md-5">
                 <div class="card">
                     <div class="content">

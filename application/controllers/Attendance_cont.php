@@ -109,6 +109,37 @@ class Attendance_cont extends CI_Controller
             echo "<script>window.location.href='$name';</script>";         
         }    
     }
+    function OneStudentAttendance($id){
+       $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');   //session mane
+        if(isset($username)){
+            $this->load->library('form_validation');
+            $db = $this->session->userdata('db');   //load db     
+            $this->load->database($db); //call db
+            $this->load->model('SelectData');
+            $stud_attend_mapping = $this->SelectData->stud_attend_mapping();   //select from stud_attend_mapping
+            $studentAttendDetails['attendDetails'] = array();
+            foreach($stud_attend_mapping as $stud_id){
+                $studIds = explode(",",$stud_id->stud_id);
+                if(in_array($id,$studIds)){
+                    $attendStud = explode(",",$stud_id->absent_stud_id);
+                     $student_attend = $this->SelectData->student_attend_oneAttendOneStudent($stud_id->attend_id);   //select from student_attend
+                    if(in_array($id,$attendStud)){
+                       array_push($studentAttendDetails['attendDetails'],array('dayDetails'=>$student_attend,'attendP/A'=>'absent'));
+                    }
+                    else{
+                        array_push($studentAttendDetails['attendDetails'],array('dayDetails'=>$student_attend,'attendP/A'=>'present'));
+                    }
+                    
+                }
+            }
+            $this->load->view('oneStudAttend',$studentAttendDetails);  //html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
+    }
     public function markTeacherAttendance()
     {
         $this->load->helper('url');

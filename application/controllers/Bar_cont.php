@@ -77,7 +77,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $data = array(
                     'stud_id'=> $student_id,
                     'student_marks' => $student_marks,
-                    'testIds' => $testIds
+                    'testIds' => $testIds,
+                    //'testDetails' => $this->SelectData->selectTest()
                 );
                 $student_marks_data['Student_marks_data'] = $data;
                 $this->load->view('oneStudentMarks',$student_marks_data);

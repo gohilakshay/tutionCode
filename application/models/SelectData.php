@@ -591,6 +591,20 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function student_attend_oneAttendOneStudent($attendId){
+        $q = $this->db->query("SELECT * FROM `student_attend` WHERE attend_ID = '$attendId'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $q1 = $this->db->query("SELECT batch_name FROM batch WHERE batch_ID = '$row->batch_id'");
+                foreach($q1->result() as $r){
+                     $row->batch_id = $r->batch_name;
+                }
+               
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
     //select from stud_attend_mapping
     function attedBatch($n){
          $q = $this->db->query("SELECT * FROM `stud_attend_mapping` WHERE attend_id = '$n'");
@@ -609,6 +623,13 @@ class SelectData extends CI_Model {
             }
         }
        return($data);
+    }
+    function stud_attend_mapping(){
+        $q = $this->db->query("SELECT * FROM `stud_attend_mapping`");
+                 foreach($q->result() as $row){
+                       $data[] = $row;
+                 }
+        return $data;
     }
     function ViewBatch(){
         $q = $this->db->query("SELECT * FROM `batch` ORDER BY batch_ID DESC");
