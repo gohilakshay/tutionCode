@@ -40,7 +40,7 @@
                         ));
                         
                     }
-
+                     $noOftest = count($Student_marks_data['testIds']);
                     /*$marks_obtained = explode(",",$value1->marks_obtained);*/
                     foreach($Student_marks_data['student_marks'] as $marks){
                         array_push($dataseries1, array(
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <!--<div class="container-fluid">
+        <div class="container-fluid">
             <div class="row">
                 <div class="card">                     
                     <div class="table-responsive">
@@ -84,6 +84,7 @@
                                     <td>Test Date</td>
                                     <td>Test Time</td>
                                     <td>Batch ID</td>
+                                    <td>Marks Obtained</td>
                                     <td>Total Marks</td>
                                     <td>Passing Marks</td>
                                     <td>Supervisor Name</td>
@@ -93,9 +94,12 @@
                             <tbody>
                                 
                                 <?php $i=1; 
-                                    foreach($result as $value):
-                                    $test = $value["test_detail"];
-                                    foreach($test as $v):
+                                $testid = $Student_marks_data['testIds'];
+                                $marks = $Student_marks_data['student_marks'];
+                                foreach($Student_marks_data['testDetails'] as $value):
+                                foreach($value as $v ){
+                                for($k=0;$k < $noOftest;$k++){
+                                    if($testid[$k] == $v->test_ID){
                                 ?> 
                                 <tr>
                                     <td><?php echo $i++; ?></td>
@@ -103,18 +107,19 @@
                                     <td><?php echo $v->test_date; ?></td>
                                     <td><?php echo $v->test_time; ?>  </td>
                                     <td><?php echo $v->batch_id; ?></td>
+                                    <td><?php echo $marks[$k]; ?></td>
                                     <td><?php echo $v->total_marks;?></td>
                                     <td><?php echo $v->passing_marks;?></td>
                                     <td><?php echo $v->supervisor_name;?></td>
                                     <td><?php echo $v->subject_name;?></td>
                                               
-                                </tr>  <?php endforeach; break;endforeach; ?>
+                                </tr>  <?php }}}endforeach; ?>
                             </tbody>
                         </table>    
                     </div>                                 
                 </div>
             </div>
-        </div>-->
+        </div>
     </div>
     <style> 
 input[id=studentsearch] {

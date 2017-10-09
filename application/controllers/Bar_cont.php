@@ -72,13 +72,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         $indexStud = array_search($student_id, $studentIds);
                         $student_marks[] = $marksObtaineds[$indexStud];
                         $testIds[] = $value->test_id;
+                        $testDetails[] = $this->SelectData->test_update($value->test_id);
                     }
                 }
                 $data = array(
                     'stud_id'=> $student_id,
                     'student_marks' => $student_marks,
                     'testIds' => $testIds,
-                    //'testDetails' => $this->SelectData->selectTest()
+                    'testDetails' => $testDetails
                 );
                 $student_marks_data['Student_marks_data'] = $data;
                 $this->load->view('oneStudentMarks',$student_marks_data);
