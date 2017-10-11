@@ -273,7 +273,73 @@
                 </div>
             </div>
         </div>
-        
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+                        <div class="col-1">
+                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                                
+                                <div class="row"><br>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <label>&emsp;SMS Route :</label>
+                                            <div class="row">
+                                                <div class="col-md-4"> &emsp;<input type="radio" name="route" value="3" checked>EnterpriseSMS</div>
+                                                <div class="col-md-4">&emsp;<input type="radio" name="route" value="1">Promotional</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                                 <input type="text" id="teachersearch"
+                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" >
+                                            </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>&emsp;Message :</label>
+                                            <div style="margin-left:15px; margin-right:15px;">
+                                                &emsp;<textarea rows="2" type="text" class="form-control border-input" name="msg" required><?php if(isset($_POST['msg'])){echo $_POST['msg'];} ?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered"  >
+                                       <thead>
+                                            <tr class="header" >
+                                                <th style="font-weight: bold;width:10%;">Sr No.</th>
+                                                <!--<th style="font-weight: bold;width:6%;"><input type="checkbox" onclick="toggle(this);" />All</th>-->
+                                                <th style="font-weight: bold;">List Name</th>
+                                                <th style="font-weight: bold;">Date</th>
+                                                <th style="font-weight: bold;">Delete</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody id="myTable">
+                                                <?php $i=0; foreach($ListContact as $contacts){?>
+                                                <tr>
+                                                    <td><?php $i++;echo $i;?></td>
+                                                    <!--<td></td>-->
+                                                    <td><?php echo $contacts->list_name;?></td>
+                                                    <td><?php echo $contacts->created_date;?></td>
+                                                    <td>
+                                                        <?php echo form_open('Sms_cont/DeleteList'); ?>
+                                                        <input type="hidden" value="<?php echo $contacts->list_name; ?>" name="listName" >
+                                                        <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                        <?php echo form_close(); ?>
+                                                    </td>
+                                                </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>  
+                                    </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php }
         else if($button == 4){ ?>
             <?php echo form_open_multipart('Sms_cont/sendSMS/4'); ?>

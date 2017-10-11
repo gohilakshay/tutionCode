@@ -967,7 +967,7 @@ class SelectData extends CI_Model {
           return $data;
     }
     function ListContactView(){
-        $sql = $this->db->query("SELECT DISTINCT list_name FROM `import`; ");
+        $sql = $this->db->query("SELECT DISTINCT list_name,created_date FROM `import`; ");
         if($sql->num_rows() > 0){
              foreach($sql->result() as $row){
                 $data[]=$row;

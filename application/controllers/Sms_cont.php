@@ -53,9 +53,11 @@ class Sms_cont extends CI_Controller
                  $this->AddData->insertCSV($data);
              }                    
             fclose($file);
+            
             $this->session->set_flashdata('success', 'Imported successfully !!!!');
                $this->load->view('sendSMS',$query);
             }
+            $query['ListContact'] = $this->SelectData->ListContactView();
            $query['importContact'] = $this->SelectData->ImportContactView();
             $this->load->view('sendSMS',$query);
             
@@ -438,5 +440,25 @@ class Sms_cont extends CI_Controller
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         
         }
+    }
+    function DeleteList(){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+        $this->load->helper('form');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('deleteData'); // model for delete
+        $listName = $this->input->post("listName");
+        $this->deleteData->DeleteList($listName); // call function from model
+        if($this->db->affected_rows() > 0){
+            $this->session->set_flashdata('success', 'Deleted successfully !!!!');
+            redirect('Sms_cont/sendSMS/3'); 
+        }
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
 }

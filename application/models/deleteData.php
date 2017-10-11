@@ -10,6 +10,11 @@ class deleteData extends CI_Model {
         $this->db->delete('batch');
         return;
     }
+    function DeleteList($list_name){
+        $this->db->where('list_name', $list_name);
+        $this->db->delete('import');
+        return;
+    }
     function deleteTest($test_id){
         $this->db->where('test_ID', $test_id);
         $this->db->delete('test');
