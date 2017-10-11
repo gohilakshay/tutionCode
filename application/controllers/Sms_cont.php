@@ -48,6 +48,7 @@ class Sms_cont extends CI_Controller
                         'contact' =>$importdata[1],
                         'location' =>$importdata[2],
                         'created_date' => date('Y-m-d'),
+                        'list_name' => $this->input->post('list_name'),
                         );
                  $this->AddData->insertCSV($data);
              }                    
@@ -59,6 +60,13 @@ class Sms_cont extends CI_Controller
             $this->load->view('sendSMS',$query);
             
         }
+            else if($button1==4){
+                $query = array('result'=> array($button1));
+                $query['ListContact'] = $this->SelectData->ListContactView();
+                $ListName = $this->input->post('listSelect');
+                $query['importContact'] = $this->SelectData->ImportContactView($ListName);
+                $this->load->view('sendSMS',$query);
+            }
         else{    
         $query['result'] = $this->SelectData->ViewBatch();
         $query['teacher'] = $this->SelectData->teacher();
@@ -358,7 +366,7 @@ class Sms_cont extends CI_Controller
                 'status'=>'sent'
             );
             $this->AddData->smsBulkAdd($data);    
-            redirect('Sms_cont/sendSMS/3');
+            redirect('Sms_cont/sendSMS/4');
         }
         else 
         {
@@ -407,6 +415,7 @@ class Sms_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->ViewSms();
+        $query['bulksms'] = $this->SelectData->ViewBulkSms();
         $this->load->view('sucSms',$query);
         }else {
             $name=site_url().'/Home';
@@ -423,6 +432,7 @@ class Sms_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->ViewSms();
+        $query['bulksms'] = $this->SelectData->ViewBulkSms();    
         $this->load->view('failedSms',$query);
         }else {
             $name=site_url().'/Home';

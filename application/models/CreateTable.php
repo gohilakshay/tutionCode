@@ -301,7 +301,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('Commercesubj_ID', TRUE);
         // gives PRIMARY KEY (Commercesubj_ID)
-        $this->dbforge->create_table('Commercesubject', TRUE); 
+        $this->dbforge->create_table('commercesubject', TRUE); 
     }
     function create_batch()
     { 
@@ -1658,6 +1658,10 @@ class CreateTable extends CI_Model {
                                                  'constraint' => '100',
                                           ),
                         'location' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'list_name' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),

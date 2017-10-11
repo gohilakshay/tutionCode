@@ -29,7 +29,7 @@ foreach($result as $value){
                         <center><a href="<?php echo site_url()."/Sms_cont/smsDetails" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #51d8dc; background-color:#51d8dc; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-primary btn-lg">Total<br><?php echo $total; ?></button></a>&emsp;
                             <a href="<?php echo site_url()."/Sms_cont/successSms" ?>"> <button type="button" style="border-radius:10px; color:black; border-color: #7ac29a; background-color:#7ac29a; padding:11px; padding-left:70px; padding-right:70px;" class="btn btn-success btn-lg">Success<br><?php echo $sent;?></button></a>&emsp;
                             <a href="<?php echo site_url()."/Sms_cont/failesSms" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #e44554; background-color:#e44554; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Failed<br><?php echo $failed;?></button></a>&emsp;
-                        <a href="<?php echo site_url()."/Sms_cont/sendSMS" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Send<br>SMS</button></a></center>
+                        <a href="<?php echo site_url()."/Sms_cont/sendSMS/1" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Send<br>SMS</button></a></center>
                     </div>
                 </div><br>
                 <div class="row">
@@ -52,14 +52,14 @@ foreach($result as $value){
                                         </div>
                                     </div>
                                 </div>
-                                <div class="table-responsive">
+                                 <div class="table-responsive">
                                     <table class="table table-bordered" >
                                         <thead>
                                             <tr style="font-weight: bold;">
                                                 <td><?php echo date("F j, Y");  ?>
                                                     <div class="pull-right"><?php echo form_open('Sms_cont/filterDate'); ?>
-                                                        <label>To :&emsp;</label><input type="date" name="to">
-                                                        <label>From :&emsp;</label><input type="date" name="from">
+                                                        <label>To :&emsp;</label><input type="date" name="to" value="<?php if(isset($_POST['to'])){echo $_POST['to'];} ?>">
+                                                        <label>From :&emsp;</label><input type="date" name="from" value="<?php if(isset($_POST['from'])){echo $_POST['from'];} ?>">
                                                         <button type="submit"> Search</button>
                                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                         <?php echo form_close();?>
@@ -67,9 +67,45 @@ foreach($result as $value){
                                                 </td>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <?php foreach($result as $value): 
-                                                if($value->status == 'failed'){
+                                        <tbody id="myTable">
+                                            <?php foreach($result as $value):
+                                            if($value->status != 'sent'){
+                                                if($value->bulkID != NULL){
+                                                    foreach($bulksms as $bulksmsDetails){
+                                                        if($bulksmsDetails->sms_ID==$value->bulkID){
+                                                        
+                                            ?>
+                                            <tr>
+                                                <td><i class="ti-user"></i>&nbsp;<?php echo "<strong>".$bulksmsDetails->cont_name."</strong>&emsp;(Bulk sms)"; ?>&emsp;<?php echo $scontact[$i]; ?>
+                                                  <span style="float:right;">
+                                                      &emsp;&emsp;
+                                                      <i class="ti-timer"></i>
+                                                      <?php echo $bulksmsDetails->time;?>&emsp;&emsp;<?php echo $bulksmsDetails->date;?></span>  
+                                                    <br>
+                                                    &emsp;&nbsp;<i class="ti-email"></i>&nbsp;<?php echo $bulksmsDetails->message?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                                        }
+                                                    }
+                                                
+                                                }
+                                            else if($value->teacher_name != NULL){
+                                                ?>
+                                            <tr>
+                                                <td><i class="ti-user"></i>&nbsp;<?php echo "<strong>".$value->teacher_name."</strong>&emsp;(Faculty sms)"; ?>&emsp;<?php echo $scontact[$i]; ?>
+                                                  <span style="float:right;">
+                                                     &emsp;&emsp;
+                                                      <i class="ti-timer"></i>
+                                                      <?php echo $value->time;?>&emsp;&emsp;<?php echo $value->date;?></span>  
+                                                    <br>
+                                                    &emsp;&nbsp;<i class="ti-email"></i>&nbsp;<?php echo $value->message?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                            }
+                                            
+                                            else{
                                             ?>
                                             <tr>
                                                 <?php $sname = explode(",",$value->student_name);
@@ -78,18 +114,19 @@ foreach($result as $value){
                                                 for($i=0;$i<$n;$i++){
                                                 ?>
                                                 
-                                                <td><i class="ti-email"></i>&emsp;<?php echo $sname[$i]; ?>&emsp;<?php echo $scontact[$i]; ?>
+                                                <td><i class="ti-user"></i>&nbsp;<?php echo "<strong>".$sname[$i]."</strong>&emsp;(Student sms)"; ?>&emsp;<?php echo $scontact[$i]; ?>
                                                   <span style="float:right;">
                                                       <b>BATCH NAME -> <?php $b = explode(",",$value->batch);echo $b[1]; ?></b>&emsp;&emsp;
                                                       <i class="ti-timer"></i>
                                                       <?php echo $value->time;?>&emsp;&emsp;<?php echo $value->date;?></span>  
                                                     <br>
-                                                    &emsp;&emsp;&emsp;&emsp;<?php echo $value->message?>
+                                                    &emsp;&nbsp;<i class="ti-email"></i>&nbsp;<?php echo $value->message?>
                                                 </td>
                                             </tr>
-                                            <?php }}endforeach;?>
+                                            <?php }}}endforeach;?>
+                                        </tbody>
                                     </table>    
-                                </div>                          
+                                </div>                           
                             </div>
                         </div>
                     </div>

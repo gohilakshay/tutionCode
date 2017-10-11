@@ -4,9 +4,9 @@
             <div class="col-lg-12 col-sm-12">
                     <ul><a href="<?php echo site_url()."/Sms_cont/sendSMS/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 1){echo 'border-color:black;';}else{ echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Students</button></a>&emsp;
                     <a href="<?php echo site_url()."/Sms_cont/sendSMS/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 2){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Faculties</button></a>&emsp;
-                    <a href="<?php echo site_url()."/Sms_cont/sendSMS/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 3){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Bulk SMS</button></a>&emsp;
-                    <a href="<?php echo site_url()."/Sms_cont/sendSMS/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 4){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Subscriber List</button></a>&emsp;
-                    <a href="<?php echo site_url()."/Sms_cont/sendSMS/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 5){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Enquiry</button></a>&emsp;
+                    <a href="<?php echo site_url()."/Sms_cont/sendSMS/3" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 3){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Add Contact List</button></a>&emsp;
+                    <a href="<?php echo site_url()."/Sms_cont/sendSMS/4" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 4){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Bulk SMS</button></a>&emsp;
+                    <!--<a href="<?php echo site_url()."/Sms_cont/sendSMS/5" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 5){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Enquiry</button></a>-->&emsp;
                 </ul>
             </div>
         </div>
@@ -253,16 +253,17 @@
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="col-md-3">
-                                              <input type="file" name="excel_file" id="file"> 
+                                            <div class="col-md-5">
+                                                <label>Enter list Name</label>
+                                              <input type="text" class="form-control border-input" name="list_name" required/> 
                                             </div>
-                                            <div class="col-md-1">
+                                            <div class="col-md-5"><label></label>
+                                              <input type="file" class="btn btn-default" name="excel_file" id="file"> 
+                                            </div>
+                                            <div class="col-md-1"><label></label>
                                                 <button type="submit" class="btn btn-success" style="margin-left:-15px;" name="excel_submit">Enter</button>
                                             </div><?php echo form_close();?>
-                                            <div class="col-md-5">
-                                                 <input type="text" id="teachersearch"
-                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>                        
@@ -272,6 +273,54 @@
                 </div>
             </div>
         </div>
+        
+        <?php }
+        else if($button == 4){ ?>
+            <?php echo form_open_multipart('Sms_cont/sendSMS/4'); ?>
+        <?php if($this->session->flashdata('success')) { ?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
+        <?php } ?>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+                        <div class="col-1">
+                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                                <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-5">
+                                              <!--<input type="text" class="form-control border-input" name="list_name" /> -->
+                                                <select class="form-control border-input" name="listSelect" required>
+                                                    <?php if(isset($_POST['listSelect'])){ ?>
+                                                       <option value="<?php echo $_POST['listSelect'] ?>"><?php echo $_POST['listSelect']?></option>
+                                                    <?php } ?>
+                                                    <option value="">---- Select Imported List ----</option>
+                                                    <?php foreach($ListContact as $listname){ ?>
+                                                    <option value="<?php echo $listname->list_name; ?>"><?php echo $listname->list_name; ?></option>
+                                                    <?php }?>
+                                                </select>
+                                            </div>
+                                            <!--<div class="col-md-5">
+                                              <input type="file" class="btn btn-default" name="excel_file" id="file"> 
+                                            </div>-->
+                                            <div class="col-md-1">
+                                                <button type="submit" class="btn btn-success" style="margin-left:-15px;" name="list_submit">Enter</button>
+                                            </div><?php echo form_close();?>
+                                            
+                                        </div>
+                                    </div>
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php if(isset($_POST['list_submit'])){ ?>
         <?php echo form_open('Sms_cont/sendBulkSMSSender');?>
         <div class="content">
             <div class="container-fluid">
@@ -279,6 +328,32 @@
                     <div class="card">
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                                
+                                <div class="row"><br>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <label>&emsp;SMS Route :</label>
+                                            <div class="row">
+                                                <div class="col-md-4"> &emsp;<input type="radio" name="route" value="3" checked>EnterpriseSMS</div>
+                                                <div class="col-md-4">&emsp;<input type="radio" name="route" value="1">Promotional</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                                 <input type="text" id="teachersearch"
+                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" >
+                                            </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>&emsp;Message :</label>
+                                            <div style="margin-left:15px; margin-right:15px;">
+                                                &emsp;<textarea rows="2" type="text" class="form-control border-input" name="msg" required><?php if(isset($_POST['msg'])){echo $_POST['msg'];} ?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered"  >
                                        <thead>
@@ -304,29 +379,7 @@
                                             </tbody>
                                         </table>  
                                     </div>
-                               
-                                <div class="row"><br><br>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>&emsp;SMS Route :</label>
-                                            <div class="row">
-                                                <div class="col-md-4"> &emsp;<input type="radio" name="route" value="3" checked>EnterpriseSMS</div>
-                                                <div class="col-md-4">&emsp;<input type="radio" name="route" value="1">Promotional</div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>&emsp;Message :</label>
-                                            <div style="margin-left:15px; margin-right:15px;">
-                                                &emsp;<textarea rows="2" type="text" class="form-control border-input" name="msg" required><?php if(isset($_POST['msg'])){echo $_POST['msg'];} ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -344,9 +397,8 @@
                 </div>
             </div>
         </div>
-        <?php echo form_close();?>
-        <?php }
-        else if($button == 4){ echo 4;}
+        <?php echo form_close();
+        }}
         else if($button == 5){ echo 5;}
         ?>
     </div>

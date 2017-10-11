@@ -69,7 +69,6 @@ foreach($result as $value){
                                                 if($value->bulkID != NULL){
                                                     foreach($bulksms as $bulksmsDetails){
                                                         if($bulksmsDetails->sms_ID==$value->bulkID){
-                                                            print_r();
                                                         
                                             ?>
                                             <tr>
