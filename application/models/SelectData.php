@@ -120,7 +120,8 @@ class SelectData extends CI_Model {
                 $n = count($name);$a=0;
                 for($i=0;$i<$n;$i++){
                     foreach($dbtype as $value){
-                        if($value == 'school'){
+                        if($row->standard_name <= 10 && $value == 'school' && $row->branch_name == NULL){
+                            
                             $q1 = $this->db->query("SELECT subject_name FROM `subject` where subject_ID = '$name[$i]'");
                             if($q1->num_rows() >0){
                                 foreach($q1->result() as $row1){
@@ -128,8 +129,9 @@ class SelectData extends CI_Model {
                                     $a++;
                                 }           
                             }
+                           
                         }
-                        else if($value == 'jrcolg_sci'){
+                        else if($row->standard_name >= 11 && $value == 'jrcolg_sci' && $row->branch_name == 'Science'){
                             $q1 = $this->db->query("SELECT subject_name FROM `jrColgSci` where    colgsubj_ID = '$name[$i]'");
                             if($q1->num_rows() >0){
                                 foreach($q1->result() as $row1){
@@ -138,7 +140,7 @@ class SelectData extends CI_Model {
                                 }           
                             }
                         }
-                        else if($value == 'jrcolg_com'){
+                        else if($row->standard_name >= 11 && $value == 'jrcolg_com'  && $row->branch_name == 'Commerce'){
                             $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$name[$i]'");
                             if($q1->num_rows() >0){
                                 foreach($q1->result() as $row1){
@@ -147,7 +149,7 @@ class SelectData extends CI_Model {
                                 }           
                             }
                         }
-                        else if($value == 'engicolg'){
+                        else if($row->standard_name == 'Engineering' && $value == 'engicolg'){
                             $q1 = $this->db->query("SELECT subject_name FROM `engisubject` where    engisubj_ID = '$name[$i]'");
                             if($q1->num_rows() >0){
                                 foreach($q1->result() as $row1){
@@ -156,7 +158,7 @@ class SelectData extends CI_Model {
                                 }           
                             }
                         }
-                        else if($value == 'comcolg'){
+                        else if($row->standard_name == 'Commerce' && $value == 'comcolg'){
                             $q1 = $this->db->query("SELECT subject_name FROM `commercesubject` where    Commercesubj_ID = '$name[$i]'");
                             if($q1->num_rows() >0){
                                 foreach($q1->result() as $row1){
