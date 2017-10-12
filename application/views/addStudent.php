@@ -158,7 +158,7 @@
                                             <label>Admission Course <span class="required" style="color:red;"> * </span></label>
                                             <div>
                                                 <select  class="form-control student_admission border-input" id="course_type" name="course_type" required>
-                                                    <option value="none">--Select Admission Course--</option>
+                                                    <option value="">--Select Admission Course--</option>
                                                     <option value="regularcourse">Regular Course</option>
                                                     <option value="crashcourse">Crash Course</option>  
                                                 </select>
@@ -180,7 +180,7 @@
                                         <div class="form-group">
                                             <label>Board <span class="required" style="color:red;"> * </span></label>
                                             <select  class="form-control student_admission border-input" id="board" name="board" required>
-                                                <option value="none">--Select Board--</option>
+                                                <option value="">--Select Board--</option>
                                                 <option value="maharashtra">Maharashtra State Board </option>
                                                 <option value="icse">ICSE</option>
                                                 <option value="cbse">CBSE</option>
@@ -198,7 +198,7 @@
                                             <div class="form-group">
                                                 <label>Batch <span class="required" style="color:red;"> * </span></label>
                                                 <select  class="form-control student_admission border-input" id="batch" name="batch" required>
-                                                    <option value="none">--Select Batch--</option>
+                                                    <option value="">--Select Batch--</option>
                                                     <?php foreach($result as $value) {?>
                                                     <option value="<?php echo $value->batch_ID; ?>"><?php echo $value->batch_name; ?></option>
                                                     <?php }?>
@@ -252,7 +252,7 @@
                                         </label>
                                         <div>
                                             <select  class="form-control student_payment border-input" id="Installment" name="Installment" required>
-                                                <option value="none">--Select Installment--</option>    
+                                                <option value="">--Select Installment--</option>    
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
                                             </select>
@@ -269,7 +269,7 @@
                                             <label>Select Installment Type</label>
                                             <div>
                                                 <select  class="form-control student_payment border-input" id="Payamount" name="installmenttype">
-                                                    <option value="none">--Select Installment Type--</option>
+                                                    <option value="">--Select Installment Type--</option>
                                                     <option value="2months">2</option>
                                                     <option value="3months">3</option>
                                                     <option value="4months">4</option>
@@ -286,8 +286,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Discount <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" onkeyup="allnumerics_1(discount, event)"  class="form-control student_payment border-input validnumbers_1"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>" required>
+                                        <label>Discount </label>
+                                        <input type="text" onkeyup="allnumerics_1(discount, event)"  class="form-control student_payment border-input validnumbers_1"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>">
                                     <?php echo form_error('discount', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div> 
                                 </div>
