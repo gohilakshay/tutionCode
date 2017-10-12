@@ -43,6 +43,7 @@ class CreateDbTable_cont extends CI_Controller
             $this->load->model('CreateTable');
             $this->CreateTable->create_standard();
             $this->load->model('InsertTable');
+                            $count=0;
             for($a=0;$a<$n;$a++){               //if class has more one type
                 $type = $ntype[$a];
                 if($type=='school'){
@@ -74,7 +75,17 @@ class CreateDbTable_cont extends CI_Controller
                         }
                     }
                 }
-                else if($type == 'jrcolg_sci' || $type == 'jrcolg_com'){
+                else if($type == 'jrcolg_sci'){
+                    $count++;
+                    for($i=11;$i<13;$i++)
+                    { 
+                        $data = array(
+                            'standard_name' => $i.'th'
+                        );
+                        $this->InsertTable->addStd($data);
+                    }
+                }
+                else if($type == 'jrcolg_com' && $count==0){
                     for($i=11;$i<13;$i++)
                     {
                         $data = array(
