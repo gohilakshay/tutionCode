@@ -247,7 +247,7 @@ class Student_cont extends CI_Controller
                            );
             $this->AddData->addStudentBatchItem($batch);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
-            redirect('Student_cont/addStudent');      
+            redirect('Student_cont/addStudent'); 
         }
             }else {
             $name=site_url().'/Home';

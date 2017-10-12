@@ -20,4 +20,13 @@
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="<?php echo base_url(); ?>assets/js/demo.js"></script>
     <!--Search script-->
-	<script src="<?php echo base_url(); ?>assets/js/searchScript.js"></script>  
+	<script src="<?php echo base_url(); ?>assets/js/searchScript.js"></script> 
+<script>
+
+ window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 1000)
+    
+</script>

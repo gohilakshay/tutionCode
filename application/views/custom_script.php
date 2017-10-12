@@ -1,5 +1,4 @@
 <script>
-
     // Activate Next Step
         $(document).ready(function() {
             var navListItems = $('ul.setup-panel li a'),
@@ -59,8 +58,6 @@
 
           var tempamount = document.getElementById('answer').value;
           document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
-         
-
 
           // for balance amount
 
@@ -137,5 +134,146 @@
         document.getElementById("activate-step-3").disabled=!pass?true:false;
         document.getElementById("activate-step-3").value=!pass?(passICount+passTCount) + " questions remains":"Go to next questions";
     }
-   
+    
+    
+    
+     function allLatters(surname, e)  
+    {  
+        var letters = /^[A-Za-z ]+$/;  
+        if(surname.value.match(letters))  
+        {  
+            return true;  
+        }
+        else if(e.keyCode===9){
+            return true;
+        }
+        else  
+        {  
+            alert("Enter only alphabets");
+            $(".validName").val('');
+            return false;  
+        }  
+    }  
+     
+    function allLatters_1(studentname, e)  
+    {  
+       
+        var letters = /^[A-Za-z ]+$/;  
+        if(studentname.value.match(letters))  
+        {  
+            return true;  
+        }
+        else if(e.keyCode===9){
+            return true;
+        }
+        else  
+        {  
+            alert("Enter only alphabets");
+            $(".validName_1").val('');
+            return false;  
+        }  
+    }  
+      
+    function allLatters_2(fathername, e)  
+    {  
+       
+        var letters = /^[A-Za-z ]+$/;  
+        if(fathername.value.match(letters))  
+        {  
+            return true;  
+        }
+        else if(e.keyCode===9){
+            return true;
+        }
+        else  
+        {  
+            alert("Enter only alphabets");
+            $(".validName_2").val('');
+            return false;  
+        }  
+    }  
+    
+       function allLatters_3(mothername, e)  
+    {  
+        var letters = /^[A-Za-z ]+$/;  
+        if(mothername.value.match(letters))  
+        {  
+            return true;  
+        }
+        else if(e.keyCode===9){
+            return true;
+        }
+        else  
+        {  
+            alert("Enter only alphabets");
+            $(".validName_3").val('');
+            return false;  
+        }  
+    }  
+    
+    function phoneno(){          
+        $('#phone').keypress(function(e) {
+            var a = [];
+            var k = e.which;
+            for (i = 48; i < 58; i++)
+                a.push(i);
+            if (!(a.indexOf(k)>=0))
+                e.preventDefault();
+            });
+    }
+    
+     function allnumerics(total_fees, e)  
+    {  
+        var numbers = /^[0-9]+$/; 
+        if(total_fees.value.match(numbers))  
+        {  
+            return true;  
+        }
+       else if(e.keyCode===9){
+           return true;
+        } 
+        else  
+        {  
+            alert("Enter only Digits");
+            $(".validnumbers").val('');
+            return false;  
+        }  
+    }  
+     
+    function allnumerics_1(discount, e)  
+    {  
+        var numbers = /^[0-9]+$/; 
+        if(discount.value.match(numbers))  
+        {  
+            return true;  
+        }
+       else if(e.keyCode===9){
+           return true;
+        } 
+        else  
+        {  
+            alert("Enter only Digits");
+            $(".validnumbers_1").val('');
+            return false;  
+        }  
+    }  
+     
+    function allnumerics_2(received, e)  
+    {  
+        var numbers = /^[0-9]+$/; 
+        if(received.value.match(numbers))  
+        {  
+            return true;  
+        }
+       else if(e.keyCode===9){
+           return true;
+        } 
+        else  
+        {  
+            alert("Enter only Digits");
+            $(".validnumbers_2").val('');
+            return false;  
+        }  
+    }
+    
 </script>
