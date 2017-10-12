@@ -23,8 +23,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Teacher's Name</label>
-                                    <input type="text" class="form-control border-input" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp; LastName  " required>
+                                    <label>Teacher's Name <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" onkeyup="allLatters(teachersname, event)" class="form-control border-input validName" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp; LastName  " required>
                                     
                                     <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Gender</label>
+                                    <label>Gender <span class="required" style="color:red;"> * </span></label>
                                     <div class="row">
                                         <div class="col-md-4"><input type="radio" name="gender" value="male" checked> Male</div>
                                         <div class="col-md-6"><input type="radio" name="gender" value="female"> Female</div>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>DOB</label>
+                                    <label>DOB <span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input" name="dob" value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
                                     <?php echo form_error('dob', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
@@ -53,15 +53,15 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label>EmailID</label>
+                                    <label>EmailID <span class="required" style="color:red;"> * </span></label>
                                     <input type="email" class="form-control border-input" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" placeholder="dummy@mail.com" required>
                                     <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Mobile</label>
-                                    <input type="text" class="form-control border-input" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" placeholder="9876541236" required>
+                                    <label>Mobile <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" onkeypress="phoneno()" id="phone"  maxlength="10" class="form-control border-input" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" placeholder="9876541236" required>
                                     <?php echo form_error('mobile', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -70,15 +70,15 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label>Qualification</label>
+                                    <label>Qualification <span class="required" style="color:red;"> * </span></label>
                                     <input type="text" class="form-control border-input" name="qualification" value="<?php if(isset($_POST['qualification'])){echo $_POST['qualification'];} ?>" placeholder="B.E" required>
                                     <?php echo form_error('qualification', '<div class="alert alert-danger contact-warning">',   '</div>'); ?>
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Salary</label>
-                                    <input type="text" class="form-control border-input" name="salary" value="<?php if(isset($_POST['salary'])){echo $_POST['salary'];} ?>" placeholder="10000" required>
+                                    <label>Salary <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" onkeyup="allnumerics(salary, event)" class="form-control border-input validnumbers" name="salary" value="<?php if(isset($_POST['salary'])){echo $_POST['salary'];} ?>" placeholder="10000" required>
                                     <?php echo form_error('salary', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Address</label>
+                                    <label>Address <span class="required" style="color:red;"> * </span></label>
                                     <textarea rows="2" type="text" class="form-control border-input" name="address" value="<?php if(isset($_POST['address'])){echo $_POST['address'];} ?>" required></textarea>
                                     <?php echo form_error('address', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
@@ -96,7 +96,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Joining Date</label>
+                                    <label>Joining Date <span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input" name="joiningdate" value="<?php if(isset($_POST['joiningdate'])){echo $_POST['joiningdate'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  MiddleName &emsp;&emsp;&emsp; LastName  " required>
                                     <?php echo form_error('joiningdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
@@ -117,14 +117,14 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Select Subjects</h4>
+                        <h4 class="title">Select Subjects </h4>
                     </div>
 
                     <div class="content">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Standard</label> 
+                                    <label>Standard <span class="required" style="color:red;"> * </span></label> 
                                     <select class="form-control border-input" id="standard" name="standard" required>
                                         <option value="">---Select Standard---</option>
                                         <?php foreach($result1  as $value): 
