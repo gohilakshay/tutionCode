@@ -171,13 +171,13 @@
     } 
     
     
-    $('#enterDisable').on('keyup',function(e){  
-                          debugger;
-        var keyCode = e.keyCode || e.which;
-        if(keyCode===13){
-            e.preventDefault();
-           return false;
-        }  
+    $(document).ready(function() {
+        $("#enter_disable").bind("keypress", function(e) {
+            if (e.keyCode == 13) {
+                return false;
+            }
+        });
     });
+    
     
 </script>

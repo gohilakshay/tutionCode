@@ -46,6 +46,8 @@
             $(this).remove();
         })
          });
+    
+    
         function Calculate()
         {
             
@@ -55,9 +57,18 @@
           var payamount = document.getElementById('Payamount').value;
          
           document.getElementById('answer').value=parseFloat(resources) - parseFloat(minutes);
-
+            
+            
           var tempamount = document.getElementById('answer').value;
-          document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
+            
+            if($('#Installments').val()==="yes")
+            {
+             document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
+            }
+            else
+            {
+                document.getElementById('result').value= 0 ;
+            }
 
           // for balance amount
 
@@ -65,18 +76,16 @@
           document.getElementById('balance').value=parseFloat(tempamount)-parseFloat(receive);
            document.form1.submitt();
         } 
- 
     
   $('#Installment').on('change',function(){
         if( $(this).val()==="yes"){
             $("#installmenttype").show()
-            
         }
         else{
             $("#installmenttype").hide()
-            
         }
-    }); 
+    });
+   
     /*NExt button diabled*/
     function validateInput() {
         var ins=document.getElementsByClassName("student_details");

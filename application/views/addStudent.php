@@ -82,7 +82,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>DOB <span class="required" style="color:red;"> * </span></label>
-                                        <input type="date" name="dob" id="enterDisable"  class="form-control border-input  student_details " value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
+                                        <input type="date" name="dob" id="enter_disable"  class="form-control border-input student_details " value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
                                         <?php echo form_error('dob', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Date</label>
-                                            <input type="date" class="form-control border-input"  name="date" value="<?php echo date("Y-m-d"); ?>" required>
+                                            <input type="date" id="enter_disable" class="form-control border-input"  name="date" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('date', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -251,7 +251,7 @@
                                         <label>Installment                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
                                         </label>
                                         <div>
-                                            <select  class="form-control student_payment border-input" id="Installment" name="Installment" required>
+                                            <select  class="form-control student_payment border-input" id="Installment" id="Installments" name="Installment" required>
                                                 <option value="">--Select Installment--</option>    
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
