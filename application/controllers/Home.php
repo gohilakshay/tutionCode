@@ -10,24 +10,29 @@ class Home extends CI_Controller
         $this->load->library('session');
         $username = $this->session->userdata('username');
         if(isset($username)){
-            $db = $this->session->userdata('db');
-            $this->load->database($db);//to avoid no database error load inside if
-           // print_r($db); to check if db is working
-            
-            if(isset($_POST['signout'])){
+            if(isset($_POST['signout'])){  
                 $this->session->unset_userdata('username'); 
             $this->load->view('login');
             }
-            else{
+            else{ 
+                $db = $this->session->userdata('db');
+                $this->load->database($db);//to avoid no database error load inside if
                 $this->load->view('mainPage');
             }
-            
         }
         else{
+            
             $this->session->unset_userdata('username'); 
             $this->load->view('login');
         }
         
+    }
+    function DeleteLogout(){
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->library('session');
+        $this->session->unset_userdata('username'); 
+            $this->load->view('login');
     }
     public function mainP()
     {
