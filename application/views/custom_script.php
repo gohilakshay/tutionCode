@@ -57,18 +57,11 @@
           var payamount = document.getElementById('Payamount').value;
          
           document.getElementById('answer').value=parseFloat(resources) - parseFloat(minutes);
-            
-            
+
           var tempamount = document.getElementById('answer').value;
-            
-            if($('#Installments').val()==="yes")
-            {
-             document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
-            }
-            else
-            {
-                document.getElementById('result').value= 0 ;
-            }
+          document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
+         
+
 
           // for balance amount
 
