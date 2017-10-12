@@ -168,6 +168,16 @@
             $(".validnumbers_2").val('');
             return false;  
         }  
-    }
+    } 
+    
+    
+    $('#enterDisable').on('keyup',function(e){  
+                          debugger;
+        var keyCode = e.keyCode || e.which;
+        if(keyCode===13){
+            e.preventDefault();
+           return false;
+        }  
+    });
     
 </script>

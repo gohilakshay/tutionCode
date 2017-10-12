@@ -82,7 +82,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>DOB <span class="required" style="color:red;"> * </span></label>
-                                        <input type="date" name="dob" class="form-control border-input  student_details " value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
+                                        <input type="date" name="dob" id="enterDisable"  class="form-control border-input  student_details " value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
                                         <?php echo form_error('dob', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
