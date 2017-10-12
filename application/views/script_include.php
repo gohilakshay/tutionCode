@@ -170,7 +170,6 @@
         }  
     } 
     
-    
     $(document).ready(function() {
         $("#enter_disable").bind("keypress", function(e) {
             if (e.keyCode == 13) {
