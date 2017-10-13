@@ -4,7 +4,7 @@
             <div class="col-lg-12 col-sm-12">
                 <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                     <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;     border-color: #9fcedc;">
-                        <h3 class="text-uppercase" style="margin-top: 10px;">Teacher</h3>
+                        <h3 class="text-uppercase" style="margin-top: 10px;">Faculty</h3>
                     </div>
                 </div>
             </div>

@@ -35,7 +35,7 @@
                                                 <button type="submit" class="btn btn-success" style="margin-left:-15px;" name="batch1">Enter</button>
                                             </div><?php echo form_close();?>
                                             <div class="col-md-5">
-                                                <input type="text" id="studentsearch" name="studentsearch" placeholder="Search..." style="width:100%; margin-top:5px;" >
+                                                <input type="text" class="form-control border-input" id="studentsearch" name="studentsearch" placeholder="Search..." style="width:100%; margin-top:5px;" >
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                                 <button type="submit" class="btn btn-success" style="margin-left:-15px;" name="t_submit">Enter</button>
                                             </div><?php echo form_close();?>
                                             <div class="col-md-5">
-                                                <input type="text" id="studentsearch" name="studentsearch" placeholder="Search..." style="width:100%; margin-top:5px;" >
+                                                <input type="text" class="form-control border-input" id="studentsearch" name="studentsearch" placeholder="Search..." style="width:100%; margin-top:5px;" >
                                             </div>
                                         </div>
                                     </div>

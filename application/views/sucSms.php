@@ -60,7 +60,7 @@ foreach($result as $value){
                                                     <div class="pull-right"><?php echo form_open('Sms_cont/filterDate'); ?>
                                                         <label>To :&emsp;</label><input type="date" name="to" value="<?php if(isset($_POST['to'])){echo $_POST['to'];} ?>">
                                                         <label>From :&emsp;</label><input type="date" name="from" value="<?php if(isset($_POST['from'])){echo $_POST['from'];} ?>">
-                                                        <button type="submit"> Search</button>
+                                                        <button type="submit" class="btn btn-success"> Search</button>
                                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                         <?php echo form_close();?>
                                                     </div>
