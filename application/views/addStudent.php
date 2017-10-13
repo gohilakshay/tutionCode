@@ -251,7 +251,7 @@
                                         <label>Installment                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
                                         </label>
                                         <div>
-                                            <select  class="form-control student_payment border-input" id="Installment" id="Installments" name="Installment" required>
+                                            <select  class="form-control student_payment border-input" id="Installment" name="Installment" required>
                                                 <option value="">--Select Installment--</option>    
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
