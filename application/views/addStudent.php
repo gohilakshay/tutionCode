@@ -34,7 +34,8 @@
                                 </a>
                             </li> 
                         </ul>
-                    </div>        
+                    </div>     
+                    <!--step 1-->
                     <div class="content">
                         <div class="setup-content " onload="validateInput()" onmousedown="validateInput()" onkeyup="validateInput()" id="step-1" >
                             <div class="row">
@@ -369,7 +370,7 @@
                             
                             <div class="row">
                                 <div class="text-center">
-                                    <button type="submit"  id="activate-step-3" class="btn btn-info btn-fill btn-wd">Submit</button>
+                                    <button type="submit"  id="activate-step-4" class="btn btn-info btn-fill btn-wd">Submit</button>
                                 </div>
                                 <div class="clearfix"></div>    
                             </div>
