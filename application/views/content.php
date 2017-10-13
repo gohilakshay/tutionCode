@@ -159,6 +159,7 @@
                 </div>
             </div>
             </a>
+            <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -185,6 +186,7 @@
                     </div>
                 </div>
             </div>
+         </a>
             <a href="<?php echo site_url("Upload_FileCont/upload") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
@@ -198,13 +200,12 @@
                             <div class="col-xs-7">
                                 <div class="numbers">
                                     <p>Upload Files</p>
-                                    
                                 </div>
                             </div>
                         </div>
                         <div class="footer"><hr>
                             <div class="stats">
-                                <a href="">
+                                <a href="<?php echo site_url("Upload_FileCont/upload") ?>">
                                     <i class="ti-plus"></i> Add Events
                                 </a>
                             </div>
