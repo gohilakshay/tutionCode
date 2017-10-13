@@ -7,6 +7,39 @@
 
 <div class="content">
     <div class="container-fluid">
+ <div class="row">
+          <a href="<?php echo site_url("Enquiry_cont/enquiry") ?>">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row"> 
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/enquiry.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p> Enquiry</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <a href="<?php echo site_url("Enquiry_cont/enquiryReply") ?>">
+                                    <i class="ti-plus"></i> Add Enquiry
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+     </div>
+       
+        
         <?php if($this->session->flashdata('success')) { ?>
               <div class="alert alert-success alert-dismissible" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
@@ -14,7 +47,7 @@
               </div>
         <?php } ?>
         <div class="row">
-            <div class="col-lg-offset-2 col-md-8 col-sm-12 col-xs-12">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="content">
                         <div class="row">
@@ -135,9 +168,6 @@
                     </div><hr>
                 </div>
             </div>
-
-            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            </div> 
         </div>
     </div>
 </div>

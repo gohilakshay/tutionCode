@@ -6,6 +6,37 @@
 <br>
 <div class="content">
     <div class="container-fluid">
+         <div class="row">
+            <a href="<?php echo site_url("Bar_cont/bar") ?>">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-warning text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/test.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Test Marks</p>
+                                    <!--Marks-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"><hr>
+                            <div class="stats">
+                                <a href="<?php echo site_url("Marks_cont/addMarks") ?>" >   
+                                    <i class="ti-plus"></i> Add Marks
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
         <?php echo form_open('Test_cont/updateTest'); ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

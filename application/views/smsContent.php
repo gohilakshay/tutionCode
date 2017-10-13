@@ -55,9 +55,9 @@ foreach($result as $value){
                                             <tr style="font-weight: bold;">
                                                 <td><?php echo date("F j, Y");  ?>
                                                     <div class="pull-right"><?php echo form_open('Sms_cont/filterDate'); ?>
-                                                        <label>To :&emsp;</label><input type="date" name="to" value="<?php if(isset($_POST['to'])){echo $_POST['to'];} ?>">
+                                                        <label>To :&emsp;</label><input type="date"  name="to" value="<?php if(isset($_POST['to'])){echo $_POST['to'];} ?>">
                                                         <label>From :&emsp;</label><input type="date" name="from" value="<?php if(isset($_POST['from'])){echo $_POST['from'];} ?>">
-                                                        <button type="submit"> Search</button>
+                                                        <button class="btn btn-success" type="submit"> Search</button>
                                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                         <?php echo form_close();?>
                                                     </div>
