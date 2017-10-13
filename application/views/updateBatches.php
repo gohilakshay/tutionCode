@@ -3,7 +3,6 @@
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 <br>
-
 <div class="content">   
     <div class="container-fluid">
         <?php echo form_open('Batch_cont/updateBatches'); ?>
@@ -34,6 +33,8 @@
                                 <div class="form-group">
                                     <label>Courses</label> 
                                     <select class="form-control border-input" id="course" name="course" required>
+                                        <option value="<?php echo $value->course_name;?>"><?php echo $value->course_name;?></option>
+                                        <option value="">--- Select Course ---</option>
                                         <?php foreach($result1 as $value){?>
                                         <option value="<?php echo $value->course_name;?>"><?php echo $value->course_name;?></option>
                                         <?php }?>
