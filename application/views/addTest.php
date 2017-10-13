@@ -92,8 +92,14 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Batch Name</label>
-                                    <input type="text" class="form-control border-input" name="batchname" value="<?php         if(isset($_POST['batchname'])){echo $_POST['batchname'];} ?>" required >
-                                    <?php echo form_error('batchname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    <select class="form-control border-input" name="batchname" required>
+                                        <?php if(isset($_POST['batchname'])){ ?>
+                                        <option value="<?php echo $batchName->batch_name; ?>"><?php echo $batchName->batch_name; ?></option>
+                                        <?php } ?><option value="">--- Select Batch ---</option>
+                                        <?php foreach($batch_details as $batchName): ?>
+                                        <option value="<?php echo $batchName->batch_name; ?>"><?php echo $batchName->batch_name; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-3">

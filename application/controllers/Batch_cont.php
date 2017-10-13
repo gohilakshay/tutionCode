@@ -15,9 +15,8 @@ class Batch_cont extends CI_Controller
         $this->load->model('SelectData');
         $query['result'] = $this->SelectData->ViewBatch();
         $query['result1'] = $this->SelectData->SelectBatchCourse(); 
-        $this->form_validation->set_rules('batchname', 'batchname', 'required|alpha_dash');
+        $this->form_validation->set_rules('batchname', 'batchname', 'required');
         $this->form_validation->set_rules('batch_timing', 'batch_timing', 'required');
-        $this->form_validation->set_message('alpha_dash','Please enter in the following format eg:IX-1');
         if($this->form_validation->run() == FALSE)
         {
             
@@ -56,9 +55,9 @@ class Batch_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         $query['result1'] = $this->SelectData->SelectBatchCourse();
-        $this->form_validation->set_rules('batchname', 'batchname', 'required|alpha_dash');
+        $this->form_validation->set_rules('batchname', 'batchname', 'required');
         $this->form_validation->set_rules('batch_timing', 'batch_timing', 'required');
-        $this->form_validation->set_message('alpha_dash','Please enter in the following format eg:IX-1');
+        
         if($this->form_validation->run() == FALSE)
         {
             $batch_id = $this->input->post('batch_id');
