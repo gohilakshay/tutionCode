@@ -235,14 +235,14 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- Step3 -->
+                    <!-- Step 3 -->
                     <div class="content">         
                         <div class="setup-content" onload="validateInput2()" onmousedown="validateInput2()" onkeyup="validateInput2()" id="step-3">           
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" onkeyup="allnumerics(total_fees, event)" class="form-control student_payment border-input validnumbers"  placeholder="Total Fees" name="total_fees" id='Resources' value="<?php if(isset($_POST['total_fees'])){echo $_POST['total_fees'];} ?>" required>
+                                        <input type="text" onkeyup="allnumerics(total_fees, event)" class="form-control student_payment student_payment_1 border-input validnumbers"  placeholder="Total Fees" name="total_fees" id='Resources' value="<?php if(isset($_POST['total_fees'])){echo $_POST['total_fees'];} ?>" required>
                                     <?php echo form_error('total_fees', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -252,7 +252,7 @@
                                         <label>Installment                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
                                         </label>
                                         <div>
-                                            <select  class="form-control student_payment border-input" id="Installment" name="Installment" required>
+                                            <select  class="form-control  border-input" id="Installment" id="Installments" name="Installment" required>
                                                 <option value="">--Select Installment--</option>    
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
@@ -269,7 +269,7 @@
                                         <div class="form-group">
                                             <label>Select Installment Type</label>
                                             <div>
-                                                <select  class="form-control student_payment border-input" id="Payamount" name="installmenttype">
+                                                <select  class="form-control border-input" id="Payamount" name="installmenttype">
                                                     <option value="">--Select Installment Type--</option>
                                                     <option value="2months">2</option>
                                                     <option value="3months">3</option>
@@ -288,7 +288,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Discount </label>
-                                        <input type="text" onkeyup="allnumerics_1(discount, event)"  class="form-control student_payment border-input validnumbers_1"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>">
+                                        <input type="text" onkeyup="allnumerics_1(discount, event)"  class="form-control student_payment student_payment_1 border-input validnumbers_1"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>">
                                     <?php echo form_error('discount', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div> 
                                 </div>
@@ -314,7 +314,7 @@
                                     <div class="form-group">
                                         <label>Payment Mode <span class="required" style="color:red;"> * </span></label>
                                         <div>
-                                            <select  class="form-control student_payment border-input" name="paymentmode">
+                                            <select  class="form-control student_payment student_payment_1 border-input" name="paymentmode">
                                                 <option value="">--Select Payment Mode--</option>
                                                 <option value="cash">Cash</option>
                                                 <option value="cheque">Cheque</option>
@@ -332,7 +332,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Received <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" onkeyup="allnumerics_2(received, event)" class="form-control student_payment border-input validnumbers_2"  placeholder="Total Fees" name="received" id="Received"  onblur='Calculate();' value="<?php if(isset($_POST['received'])){echo $_POST['received'];} ?>" required>
+                                        <input type="text" onkeyup="allnumerics_2(received, event)" class="form-control student_payment student_payment_1 border-input validnumbers_2"  placeholder="Total Fees" name="received" id="Received"  onblur='Calculate();' value="<?php if(isset($_POST['received'])){echo $_POST['received'];} ?>" required>
                                     <?php echo form_error('received', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -341,7 +341,7 @@
                                     <div class="form-group">
                                         <label>Balance <span class="required" style="color:red;"> * </span></label>
                                         <div>
-                                            <input type="text" class="form-control border-input"  placeholder="Total Fees "   id="balance"  name="balance"  readonly value="<?php if(isset($_POST['balance'])){echo $_POST['balance'];} ?>" required>
+                                            <input type="text" class="form-control border-input"  placeholder="Total Fees " id="balance"  name="balance"  readonly value="<?php if(isset($_POST['balance'])){echo $_POST['balance'];} ?>" required>
                                     <?php echo form_error('balance', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -352,7 +352,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Place <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" class="form-control student_payment border-input"  placeholder="Place " name="place"  value="<?php if(isset($_POST['place'])){echo $_POST['place'];} ?>" required>
+                                        <input type="text" class="form-control student_payment student_payment_1 border-input"  placeholder="Place " name="place"  value="<?php if(isset($_POST['place'])){echo $_POST['place'];} ?>" required>
                                     <?php echo form_error('place', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -370,7 +370,7 @@
                             
                             <div class="row">
                                 <div class="text-center">
-                                    <button type="submit"  id="activate-step-4" class="btn btn-info btn-fill btn-wd">Submit</button>
+                                    <button type="submit" id="activate-step-3" class="btn btn-info btn-fill btn-wd">Submit</button>
                                 </div>
                                 <div class="clearfix"></div>    
                             </div>
