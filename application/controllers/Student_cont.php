@@ -97,9 +97,12 @@ class Student_cont extends CI_Controller
                 'form_date' => $this->input->post('date')
                 
             );
+            $batch_edit = array(
+                'stud_ID' => $this->input->post('stud_id'),
+                'batch_id' => $this->input->post('batch'));
             $img = $_FILES['photo']['name'] ; 
             $this->ProfileImg->addImg($img,$name);
-             $this->AddData->UpdateStudentItem($data);
+             $this->AddData->UpdateStudentItem($data,$batch_edit);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Student_cont/student'); 
         }

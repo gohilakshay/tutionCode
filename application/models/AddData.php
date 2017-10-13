@@ -42,10 +42,14 @@ class AddData extends CI_Model {
         $this->db->insert('student_details', $data);
         return;
     }
-    function UpdateStudentItem($data){
+    function UpdateStudentItem($data,$batch_edit){
         $stud_id = $data['stud_ID'];
         $this->db->where('stud_ID',$stud_id);
         $this->db->update('student_details',$data);
+        $stud_id = $batch_edit['stud_ID'];
+        $this->db->where('stud_id',$stud_id);
+        $this->db->update('batch_student_mapping',$batch_edit);
+
         return;
     }
     function addStudentfeeItem($data1){

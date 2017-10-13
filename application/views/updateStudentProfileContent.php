@@ -190,7 +190,7 @@ $fee_data = end($result);
                                         </div>
                                     </div>
                                 </div>
-                                
+                               
                                 <!--Batch Timing we will display From Database from batch table-->
                                 <div class="row">
                                     <div class="form-group">
@@ -198,7 +198,8 @@ $fee_data = end($result);
                                             <div class="form-group">
                                                 <label>Batch</label>
                                                 <select  class="form-control border-input" id="batch" name="batch" required>
-                                                    <option value="<?php echo $batch_data->batch_name; ?>"><?php echo $batch_data->batch_name; ?></option>
+                                                    <option value="<?php echo $batch_data->batch_ID; ?>"><?php echo $batch_data->batch_name; ?></option>
+                                                    <option value="">--- Select Batch ---</option>
                                                     <?php foreach($ViewBatch as $value) {?>
                                                     <option value="<?php echo $value->batch_ID; ?>"><?php echo $value->batch_name; ?></option>
                                                     <?php }?>
