@@ -162,12 +162,14 @@
                     <button type="reset" class="btn btn-danger">Clear Form</button>	
                 </div>
             </div>
+<!--
              <div class="col-md-6">
                 <div class="form-group">
-                    <center><button type="submit" class="btn btn-success" name="send">Send</button></center>
-                    <!--<button type="reset" class="btn btn-danger">Clear Form</button>-->	
+                    <center><button type="submit" class="btn btn-success" name="send" disabled>Send</button></center>
+                    <button type="reset" class="btn btn-danger">Clear Form</button>	
                 </div>
             </div>
+-->
         </div>
     </div>
 </div>
