@@ -697,11 +697,14 @@ class SelectData extends CI_Model {
             }
         }
         
-        $q2 = $this->db->query("SELECT * FROM `teacher_subject_mapping` where subject_id LIKE '%$subj%' ");
+        $q2 = $this->db->query("SELECT * FROM `teacher_subject_mapping`");
             foreach($q2->result() as $row){
-                $tcm_id[] = $row->tcm_ID;
+                $subjIds = explode(",",$row->subject_id);
+                if(in_array($subj,$subjIds)){
+                    $tcm_id[] = $row->tcm_ID;
                 $teach_id[] = $row->teacher_id;
-            }
+                }
+             }
         foreach($teach_id as $id){
            $q1 = $this->db->query("SELECT * FROM  `teacher` WHERE t_ID = '$id'");
             foreach($q1->result() as $row){
@@ -713,6 +716,63 @@ class SelectData extends CI_Model {
             'name' => $name
         );
         return $new_data;
+    }
+    function teacher_subject_mapping_attend(){
+        $q1 = $this->db->query("SELECT * FROM  `teacher_subject_mapping` ");
+            foreach($q1->result() as $row){
+                if($row->standard_name <= 10 && is_numeric($row->standard_name)){
+                    $subIds = explode(",",$row->subject_id);
+                    foreach($subIds as $ids){
+                        $q1 = $this->db->query("SELECT subject_ID,subject_name FROM  `subject` WHERE subject_id = '$ids'");
+                        foreach($q1->result() as $row1){
+                            $subject[] = $row1;
+                        }
+                    }
+                } 
+                else if($row->standard_name > 10 && $row->standard_name <= 12){
+                    if($row->branch_name == 'Science'){
+                        $subIds = explode(",",$row->subject_id);
+                        foreach($subIds as $ids){
+                            $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrcolgsci` WHERE colgsubj_ID = '$ids'");
+                            foreach($q1->result() as $row1){
+                                $subject[] = $row1;
+                            }
+                        }
+    
+                    }
+                    else if($row->branch_name == 'Commerce'){
+                        $subIds = explode(",",$row->subject_id);
+                        foreach($subIds as $ids){
+                            $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrcolgcom` WHERE colgsubj_ID = '$ids'");
+                            foreach($q1->result() as $row1){
+                                $subject[] = $row1;
+                            }
+                        }
+    
+                    }
+                }
+                else if($row->standard_name == 'Engineering'){
+                    $subIds = explode(",",$row->subject_id);
+                        foreach($subIds as $ids){
+                            $q1 = $this->db->query("SELECT engisubj_ID,subject_name FROM  `engisubject` WHERE engisubj_ID = '$ids'");
+                            foreach($q1->result() as $row1){
+                                $subject[] = $row1;
+                            }
+                        }
+   
+                 }
+                else if($row->standard_name == 'Commerce'){
+                    $subIds = explode(",",$row->subject_id);
+                        foreach($subIds as $ids){
+                            $q1 = $this->db->query("SELECT Commercesubj_ID,subject_name FROM  `commercesubject` WHERE Commercesubj_ID = '$ids'");
+                            foreach($q1->result() as $row1){
+                                $subject[] = $row1;
+                            }
+                        }
+   
+                 }
+            }
+        return $subject;
     }
     function test_detail(){
         $q = $this->db->query("SELECT * FROM `test` ORDER BY test_ID DESC");

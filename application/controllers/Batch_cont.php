@@ -94,8 +94,13 @@ class Batch_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('deleteData'); // model for delete
         $batch_id = $this->input->post("batch_id");
-        $this->deleteData->deleteBatch($batch_id); // call function from model
-        if($this->db->affected_rows() > 0){
+        $result = $this->deleteData->deleteBatch($batch_id); // call function from model
+        if($result == 0){
+            $this->session->set_flashdata('success','Sorry Batch Cannot be DELETED.');
+            redirect('Batch_cont/addBatch'); 
+        }
+        else{
+            $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Batch_cont/addBatch'); 
         }
         }else {

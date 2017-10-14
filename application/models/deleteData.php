@@ -6,9 +6,17 @@ class deleteData extends CI_Model {
         return;
     }
     function deleteBatch($batch_id){
+        $this->db->db_debug = FALSE; //disable debugging for queries
         $this->db->where('batch_id', $batch_id);
-        $this->db->delete('batch');
-        return;
+        if(! $this->db->delete('batch')){
+            $this->db->db_debug = $db_debug; //restore setting
+            return 0;
+        }
+        else {
+            $this->db->db_debug = $db_debug; //restore setting
+            return 1;
+        }
+        
     }
     function DeleteList($list_name){
         $this->db->where('list_name', $list_name);

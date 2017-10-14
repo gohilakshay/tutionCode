@@ -6,8 +6,13 @@
 <br>
 <div class="content">   
     <div class="container-fluid">
-        <?php if($this->session->flashdata('success')) { ?>
+        <?php if($this->session->flashdata('success') == 'You have Successfully submitted data.') { ?>
         <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
+        <?php } else if ($this->session->flashdata('success') == 'Sorry Batch Cannot be DELETED.') { ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
             <h5><?php echo $this->session->flashdata('success'); ?></h5>
         </div>
