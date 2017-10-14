@@ -69,7 +69,7 @@
                 </div>
             </div>
             </a>
-            <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
+            <a href="<?php echo site_url("Attendance_cont/viewStudentAttendance") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
