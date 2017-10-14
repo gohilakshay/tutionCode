@@ -178,7 +178,7 @@ class Attendance_cont extends CI_Controller
             }
         }
         $ntype = explode(",",$type);    //seperating the database type and inserting into array $ntype
-        //$query['result'] = $this->SelectData->course();
+        $subjectNameId['subject'] =$this->SelectData->teacher_subject_mapping_attend();
         $this->load->library('form_validation');
         /*form validating begin*/
         $this->form_validation->set_rules('subject', 'subject', 'required');
@@ -189,7 +189,7 @@ class Attendance_cont extends CI_Controller
 		{
             $username = $this->session->userdata('username');
             if(isset($username)){
-            $this->load->view('addTeacherAttendance',$query);   //html filename before inserting values in html form
+            $this->load->view('addTeacherAttendance',$subjectNameId);   //html filename before inserting values in html form
              }else echo "Error 404 : Access Denied";
 		}
         /*after inserting values in html form*/

@@ -97,26 +97,23 @@
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php if(isset($_POST['subject'])){echo $_POST['subject'];}?>" placeholder="English" required>
-                                    <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                </div>
-                            </div>
-                           <!-- <div class="col-md-2">
-                                <div class="form-group">
-                                    <label>Courses</label> 
-                                    <select class="form-control border-input" id="course" name="course" required>
-                                        <option value="">---Select---</option>
-                                        <?php foreach($result as $value): ?>
-                                        <option value="<?php echo $value->course_ID ?>"><?php echo $value->course_name ?></option>
+                                    <!--<input type="text" class="form-control border-input" name="subject" value="<?php if(isset($_POST['subject'])){echo $_POST['subject'];}?>" placeholder="English" required>
+                                    <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>-->
+                                    <select name="subject" class="form-control border-input" required>
+                                        <?php if(isset($_POST['subject'])){ ?>
+                                        <option value="<?php echo $_POST['subject']; ?>"><?php echo $_POST['subject']; ?></option>
+                                        <?php } ?>
+                                        <option value="">--- Select Subject ---</option>
+                                        <?php foreach($subject as $subIdName): ?>
+                                            <option value="<?php echo $subIdName->subject_name; ?>"><?php echo $subIdName->subject_name; ?></option>
                                         <?php endforeach;?>
                                     </select>
-                                    <?php echo form_error('course', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
-                            </div>-->
-                            <div class="col-md-3">
+                            </div>
+                        <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Timing</label>
                                     <input type="text" class="form-control border-input" name="timing" value="<?php if(isset($_POST['timing'])){echo $_POST['timing'];} ?>" placeholder="Timing ">
