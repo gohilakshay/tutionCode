@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-xs-7">
                                 <div class="numbers">
-                                    <p>Attendance</p>
+                                    <p>View Attendance</p>
                                    <!--Present-->
                                 </div>
                             </div>
