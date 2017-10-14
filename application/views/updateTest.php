@@ -7,7 +7,7 @@
 <div class="content">
     <div class="container-fluid">
          <div class="row">
-            <a href="<?php echo site_url("Bar_cont/bar") ?>">
+            <a href="<?php echo site_url("Test_cont/addTest") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">

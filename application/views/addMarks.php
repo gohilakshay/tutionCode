@@ -20,15 +20,6 @@ if(isset($_POST['testid'])){
                 <h5><?php echo $this->session->flashdata('success'); ?></h5>
             </div>
         <?php } ?>
-          <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-                    <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;     border-color: #9fcedc;">
-                        <h3 class="text-uppercase" style="margin-top: 10px;">Add Marks</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
          <div class="row">
             <a href="<?php echo site_url("Student_cont/student") ?>">
             <div class="col-lg-3 col-sm-6">
@@ -57,7 +48,7 @@ if(isset($_POST['testid'])){
                 </div>
             </div>
             </a>
-            <a href="<?php echo site_url("Bar_cont/bar") ?>">
+            <a href="<?php echo site_url("Test_cont/addTest") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
                     <div class="content">
@@ -142,6 +133,16 @@ if(isset($_POST['testid'])){
             </div>
          </a>
         </div>
+         <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                    <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;     border-color: #9fcedc;">
+                        <h3 class="text-uppercase" style="margin-top: 10px;">Add Marks</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <?php echo form_open('Marks_cont/addMarks'); ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

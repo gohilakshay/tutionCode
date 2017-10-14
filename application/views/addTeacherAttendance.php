@@ -11,15 +11,7 @@
                 <h5><?php echo $this->session->flashdata('success'); ?></h5>
             </div>
         <?php } ?>
-          <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-                    <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;     border-color: #9fcedc;">
-                        <h3 class="text-uppercase" style="margin-top: 10px;">Add Faculty Attendance</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+         
         <div class="row">
             <a href="<?php echo site_url("Teacher_cont/teacher") ?>">
             <div class="col-lg-3 col-sm-6">
@@ -135,7 +127,15 @@
             </div>
             </a>
         </div>
-        
+         <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                    <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;     border-color: #9fcedc;">
+                        <h3 class="text-uppercase" style="margin-top: 10px;">Add Faculty Attendance</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--<div class="card">
             <div class="row" style="margin-top: 0px;">
                 <div class="col-md-12">
