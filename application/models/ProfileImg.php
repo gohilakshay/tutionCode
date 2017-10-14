@@ -7,8 +7,10 @@ class ProfileImg extends CI_Model {
                // $config['file_name'] = $_FILES['photo']['name'];
                 $config['file_name'] = $n;
                  $name = $_FILES['photo']['name'];
-                    $pathImg = "assets/profile/$n.jpg";
-                    if(file_exists($pathImg)){ unlink("assets/profile/$n.jpg");}else {echo 'NO';}
+                    $filename = explode(".",$_FILES['photo']['name']);
+                    $extn = end($filename);
+                    $pathImg = "assets/profile/$n.$extn";
+                    if(file_exists($pathImg)){ unlink("assets/profile/$n.$extn");}else {echo 'NO';}
                 //Load upload library and initialize configuration
                 $this->load->library('upload',$config);
                 $this->upload->initialize($config);

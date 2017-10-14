@@ -149,7 +149,10 @@ class Teacher_cont extends CI_Controller
                 $this->load->model('AddData');
                 $this->load->model('ProfileImg');
                 $name = strtolower(preg_replace('/\s+/', '', $this->input->post('teachersname')));
-                $img_address = 'assets/profile/'.$name.'.jpg';
+                /*for img to be any format */
+                    $filename = explode(".",$_FILES['photo']['name']);
+                    $extn = end($filename);
+                $img_address = 'assets/profile/'.$name.'.'.$extn;
                 $t_name = explode(" ",$this->input->post('teachersname'));
                 $data = array(
                     't_ID' => $this->input->post('teacher_id'),
@@ -291,7 +294,10 @@ class Teacher_cont extends CI_Controller
                 $this->load->model('AddData');
                 $this->load->model('ProfileImg');
                 $name = strtolower(preg_replace('/\s+/', '', $this->input->post('teachersname')));
-                $img_address = 'assets/profile/'.$name.'.jpg';
+                /*for img to be any extention*/
+                $filename = explode(".",$_FILES['photo']['name']);
+                    $extn = end($filename);
+                $img_address = 'assets/profile/'.$name.'.'.$extn;
                 $t_name = explode(" ",$this->input->post('teachersname'));
                 $data = array(
                     't_name' => $t_name[0],

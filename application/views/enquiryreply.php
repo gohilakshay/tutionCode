@@ -62,7 +62,7 @@
                             <div class="col-md-4" style="float:right">
                                 <div class="form-group">
                                     <label>Enquiry Date</label>
-                                   <input  class="form-control " type="date" name="enq_date" value="<?php echo date('Y-m-d');?>" readonly />
+                                   <input  class="form-control " type="date" name="enq_date" value="<?php echo date('Y-m-d');?>" />
                                 </div>
                             </div>
                         </div>

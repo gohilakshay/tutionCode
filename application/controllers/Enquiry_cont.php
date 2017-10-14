@@ -22,7 +22,8 @@ class Enquiry_cont extends CI_Controller
         $this->load->helper('url');  
         $username = $this->session->userdata('username');
         if(isset($username)){
-            $db = $this->session->userdata('db');//load db      
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
             $this->load->view('enquiryreply',$enquiry);      //html filename
         }else echo "Error 404 : Access Denied";
     }
