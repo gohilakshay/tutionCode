@@ -7,7 +7,13 @@
 
 <div class="content">
     <div class="container-fluid">
- <div class="row">
+        <?php if($this->session->flashdata('success')) { ?>
+              <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+                  <h5><?php echo $this->session->flashdata('success'); ?></h5>
+              </div>
+        <?php } ?>
+        <div class="row">
           <a href="<?php echo site_url("Enquiry_cont/enquiry") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
@@ -38,14 +44,6 @@
             </div>
         </a>
      </div>
-       
-        
-        <?php if($this->session->flashdata('success')) { ?>
-              <div class="alert alert-success alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
-                  <h5><?php echo $this->session->flashdata('success'); ?></h5>
-              </div>
-        <?php } ?>
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="card">

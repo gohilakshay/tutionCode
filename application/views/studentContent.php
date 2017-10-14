@@ -9,7 +9,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="row">
             <a href="<?php echo site_url("Student_cont/student") ?>">
             <div class="col-lg-3 col-sm-6">

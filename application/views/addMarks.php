@@ -14,7 +14,49 @@ if(isset($_POST['testid'])){
 ?>
 <div class="content">
     <div class="container-fluid">
+        <?php if($this->session->flashdata('success')) { ?>
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+                <h5><?php echo $this->session->flashdata('success'); ?></h5>
+            </div>
+        <?php } ?>
           <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                    <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;     border-color: #9fcedc;">
+                        <h3 class="text-uppercase" style="margin-top: 10px;">Add Marks</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <a href="<?php echo site_url("Student_cont/student") ?>">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-warning text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/students.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Student</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"><hr>
+                            <div class="stats">
+                                <a href="<?php echo site_url("Student_cont/addStudent") ?>" >
+                                    <i class="ti-plus"></i> Add Student
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
             <a href="<?php echo site_url("Bar_cont/bar") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
@@ -43,14 +85,63 @@ if(isset($_POST['testid'])){
                 </div>
             </div>
             </a>
-        </div>
-        
-        <?php if($this->session->flashdata('success')) { ?>
-            <div class="alert alert-success alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
-                <h5><?php echo $this->session->flashdata('success'); ?></h5>
+            <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/present.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Attendance</p>
+                                   <!--Present-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"><hr>
+                            <div class="stats">
+                                <a href="<?php echo site_url("Attendance_cont/markStudentAttendance") ?>">
+                                    <i class="ti-plus"></i> Mark Attendance
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <?php } ?>
+            </a>
+             <a  href="<?php echo site_url()."/Bar_cont/bar" ?>">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-info text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/performance.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Performance</p>
+                                    <!--Details-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer"><hr>
+                            <div class="stats">
+                                 <a href="<?php echo site_url()."/Bar_cont/bar" ?>">
+                                    <i class="ti-plus"></i> view Performance 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </a>
+        </div>
         <?php echo form_open('Marks_cont/addMarks'); ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

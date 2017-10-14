@@ -6,6 +6,12 @@
 <br>
 <div class="content">   
     <div class="container-fluid">
+        <?php if($this->session->flashdata('success')) { ?>
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right:25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
+        <?php } ?>
           <div class="row">
             <div class="col-lg-12 col-sm-12">
                 <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
@@ -128,12 +134,6 @@
             </div>
          </a>
         </div>
-        <?php if($this->session->flashdata('success')) { ?>
-        <div class="alert alert-success" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right:25px;"><span aria-hidden="true">&times;</span></button>
-            <h5><?php echo $this->session->flashdata('success'); ?></h5>
-        </div>
-        <?php } ?>
         <div class="row">
             <div class="col-lg-10 col-md-10 ">
                 <div class="card">

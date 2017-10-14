@@ -5,12 +5,17 @@
 <br>
 <div class="content">
     <div class="container-fluid">
-        
+        <?php if($this->session->flashdata('success')) { ?>
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+                <h5><?php echo $this->session->flashdata('success'); ?></h5>
+            </div>
+        <?php } ?>
          <div class="row">
             <div class="col-lg-12 col-sm-12">
                 <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                     <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;     border-color: #9fcedc;">
-                        <h3 class="text-uppercase" style="margin-top: 10px;">Faculty</h3>
+                        <h3 class="text-uppercase" style="margin-top: 10px;">Upload Assignments</h3>
                     </div>
                 </div>
             </div>
@@ -130,14 +135,6 @@
             </div>
             </a>
         </div>
-        
-        
-        <?php if($this->session->flashdata('success')) { ?>
-            <div class="alert alert-success alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
-                <h5><?php echo $this->session->flashdata('success'); ?></h5>
-            </div>
-        <?php } ?>
         <?php echo form_open_multipart('Upload_FileCont/uploadfile'); ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
