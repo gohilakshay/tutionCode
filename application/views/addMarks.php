@@ -156,9 +156,8 @@ if(isset($_POST['testid'])){
                                 <div class="form-group">
                                 <label>Test ID</label>
                                     <select name="testid" class="form-control border-input" required <?php if(isset($_POST['testid'])){echo 'readonly';} ?>>
-                                        <?php if(isset($_POST['testid'])){echo "<option>$testid </option>";} ?>
+                                        <?php if(isset($_POST['testid'])){echo "<option>$testid </option>";} ?><option value="">Test ID</option>
                                         <?php foreach($result1 as $testid): ?>
-                                        <option value="">Test ID</option>
                                         <option value="<?php echo $testid->test_ID; ?>"><?php echo $testid->test_ID; ?></option>
                                         <?php endforeach;?>
                                     </select>

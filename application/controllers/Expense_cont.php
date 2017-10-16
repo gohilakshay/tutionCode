@@ -78,6 +78,9 @@ class Expense_cont extends CI_Controller
         $this->load->library('session');
         $username = $this->session->userdata('username');
         if(isset($username)){
+            $db = $this->session->userdata('db');//load db   
+            $this->load->database($db);//call db
+            $this->load->view('expense');
         $this->load->view('updateStaffDetails');
         }else {
             $name=site_url().'/Home';
