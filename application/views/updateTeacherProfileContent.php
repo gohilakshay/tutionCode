@@ -144,7 +144,7 @@
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Add Faculty</h4>
+                        <h4 class="title">Update Faculty</h4>
                     </div>
                     <input type="hidden" value="<?php echo $teacher_data->t_ID;?>" name="teacher_id" >
                     <div class="content">
@@ -254,7 +254,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Standard</label> 
-                                    <select class="form-control border-input" id="standard" name="standard" required>
+                                    <select class="form-control border-input" id="standard" name="standard" >
                                         <option value="">---Select Standard---</option>
                                         <?php foreach($result1  as $value): 
                                         if ($value->standard_name=="Engineering"){

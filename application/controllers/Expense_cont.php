@@ -8,7 +8,9 @@ class Expense_cont extends CI_Controller
         $this->load->library('session');
         $username = $this->session->userdata('username');
         if(isset($username)){
-        $this->load->view('expense');
+            $db = $this->session->userdata('db');//load db   
+            $this->load->database($db);//call db
+            $this->load->view('expense');
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         
