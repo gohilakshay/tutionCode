@@ -115,7 +115,16 @@ class AddData extends CI_Model {
         return;
     }
     function addTest($data){
-         $this->db->insert('test', $data);
+        $this->db->db_debug = FALSE; //disable debugging for queries
+        if(! $this->db->insert('test', $data)){
+            $this->db->db_debug = $db_debug; //restore setting
+            return 0;
+        }
+        else {
+            $this->db->db_debug = $db_debug; //restore setting
+            return 1;
+        }
+         
         return;
     }
     function UpdateTest($data){

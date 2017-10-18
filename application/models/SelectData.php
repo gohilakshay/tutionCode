@@ -733,7 +733,7 @@ class SelectData extends CI_Model {
                     if($row->branch_name == 'Science'){
                         $subIds = explode(",",$row->subject_id);
                         foreach($subIds as $ids){
-                            $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrcolgsci` WHERE colgsubj_ID = '$ids'");
+                            $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrColgSci` WHERE colgsubj_ID = '$ids'");
                             foreach($q1->result() as $row1){
                                 $subject[] = $row1;
                             }
@@ -743,7 +743,7 @@ class SelectData extends CI_Model {
                     else if($row->branch_name == 'Commerce'){
                         $subIds = explode(",",$row->subject_id);
                         foreach($subIds as $ids){
-                            $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrcolgcom` WHERE colgsubj_ID = '$ids'");
+                            $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrColgCom` WHERE colgsubj_ID = '$ids'");
                             foreach($q1->result() as $row1){
                                 $subject[] = $row1;
                             }
