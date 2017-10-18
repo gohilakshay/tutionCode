@@ -38,7 +38,7 @@ webshims.polyfill('forms forms-ext');
   
      function allLatters(surname, e)  
     {  
-        var letters = /^[A-Za-z ]+$/;  
+        var letters = /^[A-Za-z]+$/;  
         if(surname.value.match(letters))  
         {  
             return true;  
@@ -57,7 +57,7 @@ webshims.polyfill('forms forms-ext');
     function allLatters_1(studentname, e)  
     {  
        
-        var letters = /^[A-Za-z ]+$/;  
+        var letters = /^[A-Za-z]+$/;  
         if(studentname.value.match(letters))  
         {  
             return true;  
@@ -76,7 +76,7 @@ webshims.polyfill('forms forms-ext');
     function allLatters_2(fathername, e)  
     {  
        
-        var letters = /^[A-Za-z ]+$/;  
+        var letters = /^[A-Za-z]+$/;  
         if(fathername.value.match(letters))  
         {  
             return true;  
@@ -94,7 +94,7 @@ webshims.polyfill('forms forms-ext');
     
        function allLatters_3(mothername, e)  
     {  
-        var letters = /^[A-Za-z ]+$/;  
+        var letters = /^[A-Za-z]+$/;  
         if(mothername.value.match(letters))  
         {  
             return true;  
@@ -182,6 +182,17 @@ webshims.polyfill('forms forms-ext');
             }
         });
     });
+    
+    
+    $(".UserName_field").on({
+  keydown: function(e) {
+    if (e.which === 32)
+      return false;
+  },
+  change: function() {
+    this.value = this.value.replace(/\s/g, "");
+  }
+});
     
     
 </script>

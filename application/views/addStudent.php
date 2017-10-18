@@ -207,7 +207,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>DOB <span class="required" style="color:red;"> * </span></label>
-                                        <input type="date" name="dob" id="enter_disable"  class="form-control border-input student_details " value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
+                                        <input type="date" name="dob" id="enter_disable"  class="form-control border-input student_details" value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
                                         <?php echo form_error('dob', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -217,14 +217,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Email address</label>
-                                        <input type="email" class="form-control border-input" placeholder="Email" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" >
+                                        <input type="email" class="form-control border-input UserName_field" placeholder="Email" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" >
                                         <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Contact Number <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" onkeypress="phoneno()" id="phone"  maxlength="10" class="form-control student_details border-input" placeholder="Contact Number" name="contactnumber" value="<?php if(isset($_POST['contactnumber'])){echo $_POST['contactnumber'];} ?>" required>
+                                        <input type="text" onkeypress="phoneno()" id="phone"  maxlength="10" class="form-control student_details border-input UserName_field" placeholder="Contact Number" name="contactnumber" value="<?php if(isset($_POST['contactnumber'])){echo $_POST['contactnumber'];} ?>" required>
                                         <?php echo form_error('contactnumber', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -233,7 +233,7 @@
                                 <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Address <span class="required" style="color:red;"> * </span></label>
-                                            <textarea rows=2 class="form-control  student_details border-input" placeholder="Home Address"  name = "address" name="address"  required><?php if(isset($_POST['address'])){echo $_POST['address'];} ?></textarea>
+                                            <textarea rows=2 class="form-control  student_details border-input UserName_field" placeholder="Home Address"  name = "address" name="address"  required><?php if(isset($_POST['address'])){echo $_POST['address'];} ?></textarea>
                                     <?php echo form_error('address', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -264,13 +264,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Admission Year <span class="required" style="color:red;"> * </span></label>
-                                            <input type="text" class="form-control student_admission border-input"  placeholder="Admission Year" name="admissionyear" value="<?php if(isset($_POST['admissionyear'])){echo $_POST['admissionyear'];} ?>" required>
+                                            <input type="month" class="form-control student_admission border-input UserName_field"  placeholder="Admission Year" name="admissionyear" value="<?php if(isset($_POST['admissionyear'])){echo $_POST['admissionyear'];} ?>" required>
                                     <?php echo form_error('admissionyear', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Date</label>
+                                            <label>Date <span class="required" style="color:red;"> * </span></label>
                                             <input type="date" id="enter_disable" class="form-control border-input"  name="date" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('date', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
@@ -297,7 +297,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>School Name/College <span class="required" style="color:red;"> * </span></label>
-                                            <input type="text" class="form-control student_admission border-input"  placeholder="School Name/College" name="school_college" value="<?php if(isset($_POST['school_college'])){echo $_POST['school_college'];} ?>" required>
+                                            <input type="text" class="form-control student_admission border-input UserName_field"  placeholder="School Name/College" name="school_college" value="<?php if(isset($_POST['school_college'])){echo $_POST['school_college'];} ?>" required>
                                     <?php echo form_error('school_college', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -476,7 +476,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Place <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" class="form-control student_payment student_payment_1 border-input"  placeholder="Place " name="place"  value="<?php if(isset($_POST['place'])){echo $_POST['place'];} ?>" required>
+                                        <input type="text" class="form-control student_payment student_payment_1 border-input UserName_field"  placeholder="Place " name="place"  value="<?php if(isset($_POST['place'])){echo $_POST['place'];} ?>" required>
                                     <?php echo form_error('place', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>

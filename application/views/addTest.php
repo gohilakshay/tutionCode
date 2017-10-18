@@ -147,36 +147,36 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                <label>Test ID</label>
-                                <input type="text" class="form-control border-input" name="testid" value="<?php         if(isset($_POST['testid'])){echo $_POST['testid'];} ?>" required>
+                                <label>Test ID <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" onkeyup="allnumerics(testid, event)" class="form-control border-input validnumbers" name="testid" value="<?php  if(isset($_POST['testid'])){echo $_POST['testid'];} ?>" required>
                                 <?php echo form_error('testid', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Test Date</label>
+                                    <label>Test Date <span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input" name="testdate" value="<?php   if(isset($_POST['testdate'])){echo $_POST['testdate'];} ?>" required >
                                     <?php echo form_error('testdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Test Time</label>
-                                    <input type="text" class="form-control border-input" name="testtime" value="<?php  if(isset($_POST['testtime'])){echo $_POST['testtime'];} ?>" required >
+                                    <label>Test Time <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" class="form-control border-input UserName_field" name="testtime" value="<?php  if(isset($_POST['testtime'])){echo $_POST['testtime'];} ?>" required >
                                     <?php echo form_error('testtime', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Total Marks</label>
-                                    <input type="text" class="form-control border-input" name="totalmarks" value="<?php   if(isset($_POST['totalmarks'])){echo $_POST['totalmarks'];} ?>" required >
+                                    <label>Total Marks <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text"  onkeyup="allnumerics_1(totalmarks, event)" class="form-control border-input validnumbers_1" name="totalmarks" value="<?php   if(isset($_POST['totalmarks'])){echo $_POST['totalmarks'];} ?>" required >
                                     <?php echo form_error('totalmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Passing Marks</label>
-                                    <input type="text" class="form-control border-input" name="passingmarks" value="<?php         if(isset($_POST['passingmarks'])){echo $_POST['passingmarks'];} ?>" required >
+                                    <label>Passing Marks <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" onkeyup="allnumerics_2(passingmarks, event)" class="form-control border-input validnumbers_2" name="passingmarks" value="<?php         if(isset($_POST['passingmarks'])){echo $_POST['passingmarks'];} ?>" required >
                                     <?php echo form_error('passingmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -185,7 +185,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Batch Name</label>
+                                    <label>Batch Name <span class="required" style="color:red;"> * </span></label>
                                     <select class="form-control border-input" name="batchname" required>
                                         <?php if(isset($_POST['batchname'])){ ?>
                                         <option value="<?php echo $batchName->batch_name; ?>"><?php echo $batchName->batch_name; ?></option>
@@ -198,16 +198,16 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject" value="<?php         if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" required >
+                                    <label>Subject <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" onkeyup="allLatters(subject, event)" class="form-control border-input validName" name="subject" value="<?php         if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" required >
                                     <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Supervisor Name</label>
-                                    <input type="text" class="form-control border-input" name="supervisorname" value="<?php         if(isset($_POST['supervisorname'])){echo $_POST['supervisorname'];} ?>" required >
+                                    <label>Supervisor Name <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text"  onkeyup="allLatters_1(supervisorname, event)" class="form-control border-input validName_1" name="supervisorname" value="<?php         if(isset($_POST['supervisorname'])){echo $_POST['supervisorname'];} ?>" required >
                                     <?php echo form_error('supervisorname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
