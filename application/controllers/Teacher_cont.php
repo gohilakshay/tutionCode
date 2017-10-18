@@ -299,10 +299,10 @@ class Teacher_cont extends CI_Controller
                 $filename = explode(".",$_FILES['photo']['name']);
                     $extn = end($filename);
                 $img_address = 'assets/profile/'.$name.'.'.$extn;
-                $t_name = explode(" ",$this->input->post('teachersname'));
+                //$t_name = explode(" ",$this->input->post('teachersname'));
                 $data = array(
-                    't_name' => $t_name[0],
-                    't_fathername' => $t_name[1],
+                    't_name' => $this->input->post('teachersname'),
+                    't_fathername' => $this->input->post('surname'),
                     't_surname' => $t_name[2],
                     't_gender' => $this->input->post('gender'),
                     't_dob' => $this->input->post('dob'),

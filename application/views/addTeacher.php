@@ -147,10 +147,17 @@
    
                     <div class="content">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Teacher's Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allLatters_only(teachersname, event)" class="form-control border-input validName_only" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp; LastName  " required>
+                                    <input type="text" onkeyup="allLatters(teachersname, event)" class="form-control border-input validName" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName" required>
+                                    <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Teacher's Surname <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" onkeyup="allLatters_only(surname, event)" class="form-control border-input validName_only" name="surname" value="<?php if(isset($_POST['surname'])){echo $_POST['surname'];} ?>" placeholder=" LastName" required>
                                     <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
