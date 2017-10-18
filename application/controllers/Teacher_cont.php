@@ -173,28 +173,29 @@ class Teacher_cont extends CI_Controller
                 $insert_id = $this->db->insert_id();
                 $img = $_FILES['photo']['name']; 
                 $this->ProfileImg->addImg($img,$name);
-                $engi_branch = $this->input->post('engi_branch');
-                $engisemester = $this->input->post('engisemester');
-                $commerce_branch = $this->input->post('commerce_branch');
-                $semester1 = $this->input->post('semester1');
-                $stream = $this->input->post('stream');
-                if(!empty($engi_branch)){ $branch_name = $engi_branch;} 
-                else if(!empty($commerce_branch)){ $branch_name = $commerce_branch;}
-                else if(!empty($stream)){ $branch_name = $stream;}
-                else $branch_name = NULL;
-                if(!empty($engisemester)){ $semester_name = $engisemester;}
-                else if(!empty($semester1)){ $semester_name = $semester1;}
-                else $semester_name = NULL;
-                $subject = implode(",",$this->input->post('subject'));
-                $data1 = array(
-                    'teacher_id' => $this->input->post('teacher_id'),
-                    'subject_id'=> $subject,
-                    'standard_name'=>$this->input->post('standard'),
-                    'branch_name'=>$branch_name,
-                    'semester_name'=>$semester_name
-                );
-
-                $this->AddData->UpdateTeacherSubjItem($data1);
+                if(!empty($this->input->post('subject'))){
+                    $engi_branch = $this->input->post('engi_branch');
+                    $engisemester = $this->input->post('engisemester');
+                    $commerce_branch = $this->input->post('commerce_branch');
+                    $semester1 = $this->input->post('semester1');
+                    $stream = $this->input->post('stream');
+                    if(!empty($engi_branch)){ $branch_name = $engi_branch;} 
+                    else if(!empty($commerce_branch)){ $branch_name = $commerce_branch;}
+                    else if(!empty($stream)){ $branch_name = $stream;}
+                    else $branch_name = NULL;
+                    if(!empty($engisemester)){ $semester_name = $engisemester;}
+                    else if(!empty($semester1)){ $semester_name = $semester1;}
+                    else $semester_name = NULL;
+                    $subject = implode(",",$this->input->post('subject'));
+                    $data1 = array(
+                        'teacher_id' => $this->input->post('teacher_id'),
+                        'subject_id'=> $subject,
+                        'standard_name'=>$this->input->post('standard'),
+                        'branch_name'=>$branch_name,
+                        'semester_name'=>$semester_name
+                    );
+                    $this->AddData->UpdateTeacherSubjItem($data1);
+                }
                 $this->session->set_flashdata('success','You have Successfully submitted data.');
                 redirect('Teacher_cont/teacher');  
             }

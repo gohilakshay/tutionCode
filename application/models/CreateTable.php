@@ -1176,10 +1176,12 @@ class CreateTable extends CI_Model {
                         'staff_contact' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '10',
+                                                 'null' => TRUE,
                                           ),
                         'staff_address' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
+                                                 'null' => TRUE,
                                           ),
                         'payment_mode' => array(
                                                  'type' => 'VARCHAR',
@@ -1677,6 +1679,37 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_key('import_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('import', TRUE); 
+    }
+    function createEvents()
+    {
+        /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'id' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'title' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'start' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'end' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                    
+                );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('id', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('events', TRUE); 
     }
 }
 ?>

@@ -63,6 +63,7 @@ function table()
     $this->CreateTable->createSms();
     $this->CreateTable->createImport();
     $this->CreateTable->createSmsBulk();
+    $this->CreateTable->createEvents();
     $this->load->view('mainPage');
     }else {
             $name=site_url().'/Home';

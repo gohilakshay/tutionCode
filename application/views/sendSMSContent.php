@@ -279,32 +279,6 @@
                     <div class="card">
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-                                
-                                <div class="row"><br>
-                                    <div class="col-md-9">
-                                        <div class="form-group">
-                                            <label>&emsp;SMS Route :</label>
-                                            <div class="row">
-                                                <div class="col-md-4"> &emsp;<input type="radio" name="route" value="3" checked>EnterpriseSMS</div>
-                                                <div class="col-md-4">&emsp;<input type="radio" name="route" value="1">Promotional</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                                 <input type="text" id="teachersearch"
-                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" >
-                                            </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>&emsp;Message :</label>
-                                            <div style="margin-left:15px; margin-right:15px;">
-                                                &emsp;<textarea rows="2" type="text" class="form-control border-input" name="msg" required><?php if(isset($_POST['msg'])){echo $_POST['msg'];} ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered"  >
                                        <thead>

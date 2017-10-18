@@ -80,6 +80,16 @@ foreach ($query->result() as $row) {
                               </ul>
                         </li>
                          <li>
+                            <a href="<?php echo site_url()."/Scheduler_cont" ?>" >
+                                <i class="ti-time"></i>
+								<p>Scheduler</p>
+                            </a>
+                           
+                                
+                                
+                            
+                        </li>
+                        <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="ti-user"></i>
 								<p>Profile</p>
