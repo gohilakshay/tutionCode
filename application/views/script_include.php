@@ -21,6 +21,11 @@
 	<script src="<?php echo base_url(); ?>assets/js/demo.js"></script>
     <!--Search script-->
 	<script src="<?php echo base_url(); ?>assets/js/searchScript.js"></script> 
+<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+<script>
+    webshims.setOptions('forms-ext', {types: 'date'});
+webshims.polyfill('forms forms-ext');
+</script>
 <script>
 
  window.setTimeout(function() {
