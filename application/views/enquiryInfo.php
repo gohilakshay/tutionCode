@@ -13,6 +13,39 @@
                   <h5><?php echo $this->session->flashdata('success'); ?></h5>
               </div>
         <?php } ?>
+        
+         <div class="row">
+          <a href="<?php echo site_url("Enquiry_cont/enquiry") ?>">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content" style="box-shadow: 0 2px 2px rgb(128, 191, 209)!important;">
+                        <div class="row"> 
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <img src="<?php echo base_url()?>assets/icon/enquiry.png"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p> Enquiry</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <a href="<?php echo site_url("Enquiry_cont/enquiryReply") ?>">
+                                    <i class="ti-plus"></i> Add Enquiry
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+     </div>
+        
         <div class="row">
             <div class="col-lg-offset-2 col-md-8 col-sm-12 col-xs-12">
                 <div class="card">
