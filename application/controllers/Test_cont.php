@@ -37,7 +37,6 @@ class Test_cont extends CI_Controller
                $this->load->model('SelectData');
                $batch_name = $this->input->post('batchname');
                $subject_name = $this->input->post('subject');
-               $this->session->set_flashdata('success','You have Successfully submitted data.');
                $batch_id = $this->SelectData->batchIDBatch($batch_name);
                //$subj_id = $this->SelectData->subjIDSubj($subject_name);
 
@@ -52,7 +51,16 @@ class Test_cont extends CI_Controller
                    'subject_name'=>$subject_name
                );
                $ti = $this->AddData->addTest($data);
-               redirect('Test_cont/addTest');
+                if($ti == 0){
+                    $this->session->set_flashdata('success','Test Id Already EXISTS.');
+                    redirect('Test_cont/addTest');
+                }
+                else{
+                    $this->session->set_flashdata('success','You have Successfully submitted data.');
+                    redirect('Test_cont/addTest');
+                }
+                 
+            //   
             }
             }else {
             $name=site_url().'/Home';
