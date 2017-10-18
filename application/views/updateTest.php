@@ -50,35 +50,35 @@
                                 <div class="form-group">
                                 <label>Test ID</label>
                                 <input type="text" class="form-control border-input" name="testid" value="<?php echo $value->test_ID; ?>" required readonly>
-                                <?php echo form_error('testid', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Test Date</label>
                                     <input type="date" class="form-control border-input" name="testdate" value="<?php echo $value->test_date; ?>" required >
-                                    <?php echo form_error('testdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Test Time</label>
                                     <input type="text" class="form-control border-input" name="testtime" value="<?php echo $value->test_time; ?>" required >
-                                    <?php echo form_error('testtime', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Total Marks</label>
                                     <input type="text" class="form-control border-input" name="totalmarks" value="<?php echo $value->total_marks; ?>" required >
-                                    <?php echo form_error('totalmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Passing Marks</label>
                                     <input type="text" class="form-control border-input" name="passingmarks" value="<?php echo $value->passing_marks; ?>" required >
-                                    <?php echo form_error('passingmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                                 <div class="form-group">
                                     <label>Subject</label>
                                     <input type="text" class="form-control border-input" name="subject" value="<?php echo $value->subject_name; ?>" required >
-                                    <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    
                                 </div>
                             </div>
                             
@@ -107,13 +107,13 @@
                                 <div class="form-group">
                                     <label>Supervisor Name</label>
                                     <input type="text" class="form-control border-input" name="supervisorname" value="<?php echo $value->supervisor_name; ?>" required >
-                                    <?php echo form_error('supervisorname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <br>
-                                    <center><button type="submit" class="btn btn-success" style="margin-top: 8px;">Update Test</button></center>
+                                    <center><button type="submit" name="updateTest" class="btn btn-success" style="margin-top: 8px;">Update Test</button></center>
                                 </div>
                             </div>
                         </div>

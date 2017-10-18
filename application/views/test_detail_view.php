@@ -297,31 +297,69 @@ foreach($data as $value){
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                     <h3 class="text-uppercase">Student Details</h3>
                                 </div>
+                                <?php
+                                // to get the id and marks of student in diffrent array
+                                foreach($categoryArray as $ids){
+                                    $studIds[] = $ids['label'];
+                                }
+                                foreach($dataseries1 as $marks){
+                                    $studMarks[] = $marks['value'];
+                                }
+                                $idCount=count($studIds);
+                                $globalCount = 1;
+                                $localCount = 0;
+                                $visistedId = array(); // to check if id is repeated
+                                $visistedAttempts = array(); // to check if id is repeated to make attempts
+                                ?>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered" >
                                         <thead>
                                             <tr style="font-weight: bold;">
                                                 <td>Sr No.</td>
                                                 <td>Student ID</td>
-                                                <td>Marks Obtained</td>
-                                            </tr>
+                                                <?php 
+                                                $temp=0;
+                                                for($i=0;$i<$idCount;$i++){
+                                                    if(in_array($studIds[$i],$visistedAttempts)){
+                                                       $globalCount++;
+                                                        $local++;
+                                                        if($local > $globalCount){
+                                                            $temp = $local;
+                                                            $local = $globalCount;
+                                                            $globalCount = $temp;
+                                                        }
+                                                    }
+                                                    else{
+                                                       // $globalCount++;
+                                                        $local=0;
+                                                        array_push($visistedAttempts,$studIds[$i]);
+                                                        
+                                                    }
+                                                }
+                                                for($k=0;$k<$globalCount;$k++){
+                                                    $j=$k+1;
+                                                    echo "<td>Marks Obtained (attempt $j)</td>";
+                                                }
+                                                
+                                                ?>
+                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $j=1;
-                                            $merge = array();
-                                    array_push($merge,array('stud'=>$stud_id,'marks'=>$marks_obtained));
-                                            foreach($merge as $value11):
-                                            $id = $value11['stud']; 
-                                            $n = count($value11['stud']);
-                                            $marks = $value11['marks'];
-                                            for($a=0;$a<$n;$a++){
+                                            <?php 
+                                            for($i=0;$i<$idCount;$i++){
+                                                $j = $i+1;
+                                                
+                                                if(!in_array($studIds[$i],$visistedId)){
+                                                    echo "<tr><td>$j</td>";
+                                                    echo "<td>$studIds[$i]</td>";
+                                                    array_push($visistedId,$studIds[$i]);
+                                                    echo "<td>$studMarks[$i]</td>";
+                                                }
+                                                else{
+                                                    echo "<td>$studMarks[$i]</td>";
+                                                }
+                                            }
                                             ?>
-                                            <tr>
-                                                <td><?php echo $j;$j++; ?></td>
-                                                <td> <?php echo $id[$a]; ?></td>
-                                                <td><?php echo $marks[$a]; ?></td>
-                                            </tr>
-                                            <?php }endforeach; ?>
                                         </tbody>
                                     </table>    
                                 </div> 
