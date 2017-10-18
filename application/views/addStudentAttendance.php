@@ -70,7 +70,7 @@
             <a href="<?php echo site_url("Attendance_cont/viewStudentAttendance") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
-                    <div class="content">
+                    <div class="content" style="box-shadow: 0 2px 2px rgb(128, 191, 209)!important;">
                         <div class="row">
                             <div class="col-xs-5">
                                 <div class="icon-big icon-success text-center">
@@ -124,6 +124,7 @@
             </div>
          </a>
         </div>
+<!--
          <div class="row">
             <div class="col-lg-12 col-sm-12">
                 <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
@@ -133,6 +134,7 @@
                 </div>
             </div>
         </div>
+-->
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
