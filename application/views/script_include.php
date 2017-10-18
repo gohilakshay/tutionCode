@@ -175,6 +175,28 @@
         }  
     } 
     
+    
+     function allLatters_only(surname, e)  
+    {  
+        var letters = /^[A-Za-z]+$/;  
+        if(surname.value.match(letters))  
+        {  
+            return true;  
+        }
+        else if(e.keyCode===9){
+            return true;
+        }
+        else  
+        {  
+            alert("Enter only alphabets");
+            $(".validName_only").val('');
+            return false;  
+        }  
+    }  
+     
+    
+    
+    
     $(document).ready(function() {
         $("#enter_disable").bind("keypress", function(e) {
             if (e.keyCode == 13) {
@@ -193,6 +215,6 @@
     this.value = this.value.replace(/\s/g, "");
   }
 });
-    
+     
     
 </script>

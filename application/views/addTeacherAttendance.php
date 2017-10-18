@@ -185,7 +185,7 @@
                         <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Timing</label>
-                                    <input type="text" class="form-control border-input" name="timing" value="<?php if(isset($_POST['timing'])){echo $_POST['timing'];} ?>" placeholder="Timing ">
+                                    <input type="text" class="form-control border-input UserName_field" name="timing" value="<?php if(isset($_POST['timing'])){echo $_POST['timing'];} ?>" placeholder="Timing ">
                                 </div>
                             </div>
                             <div class="col-md-3">

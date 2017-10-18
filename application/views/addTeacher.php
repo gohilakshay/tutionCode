@@ -150,8 +150,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Teacher's Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allLatters(teachersname, event)" class="form-control border-input validName" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp; LastName  " required>
-                                    
+                                    <input type="text" onkeyup="allLatters_only(teachersname, event)" class="form-control border-input validName_only" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp; LastName  " required>
                                     <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -180,14 +179,14 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label>EmailID <span class="required" style="color:red;"> * </span></label>
-                                    <input type="email" class="form-control border-input" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" placeholder="dummy@mail.com" required>
+                                    <input type="email" class="form-control border-input UserName_field" name="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" placeholder="dummy@mail.com" required>
                                     <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Mobile <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeypress="phoneno()" id="phone"  maxlength="10" class="form-control border-input" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" placeholder="9876541236" required>
+                                    <input type="text" onkeypress="phoneno()" id="phone"  maxlength="10" class="form-control border-input UserName_field" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" placeholder="9876541236" required>
                                     <?php echo form_error('mobile', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
