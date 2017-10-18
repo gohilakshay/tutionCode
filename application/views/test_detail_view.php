@@ -349,13 +349,13 @@ foreach($data as $value){
                                             for($i=0;$i<$idCount;$i++){
                                                 $j = $i+1;
                                                 
-                                                if(in_array($studIds[$i],$visistedId)){
-                                                    echo "<td>$studMarks[$i]</td>";
-                                                }
-                                                else{
+                                                if(!in_array($studIds[$i],$visistedId)){
                                                     echo "<tr><td>$j</td>";
                                                     echo "<td>$studIds[$i]</td>";
                                                     array_push($visistedId,$studIds[$i]);
+                                                    echo "<td>$studMarks[$i]</td>";
+                                                }
+                                                else{
                                                     echo "<td>$studMarks[$i]</td>";
                                                 }
                                             }
