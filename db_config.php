@@ -1,1 +1,1 @@
-<?php $bdd = new PDO("mysql:host=localhost;dbname=test2","root","");?>
+<?php $bdd = new PDO("mysql:host=localhost;dbname=testAllHard","root","");?>
