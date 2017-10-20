@@ -150,14 +150,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Teacher's Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allLatters(teachersname, event)" class="form-control border-input validName" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName" required>
+                                    <input type="text" class="form-control border-input surnameInput" name="teachersname" value="<?php if(isset($_POST['teachersname'])){echo $_POST['teachersname'];} ?>" placeholder="FirstName" required>
                                     <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Teacher's Surname <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allLatters_only(surname, event)" class="form-control border-input validName_only" name="surname" value="<?php if(isset($_POST['surname'])){echo $_POST['surname'];} ?>" placeholder=" LastName" required>
+                                    <input type="text"  class="form-control border-input surnameInput" name="surname" value="<?php if(isset($_POST['surname'])){echo $_POST['surname'];} ?>" placeholder=" LastName" required>
                                     <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Mobile <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeypress="phoneno()" id="phone"  maxlength="10" class="form-control border-input UserName_field" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" placeholder="9876541236" required>
+                                    <input type="text"  maxlength="10" class="form-control border-input phoneInput" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" placeholder="9876541236" required>
                                     <?php echo form_error('mobile', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -203,14 +203,14 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label>Qualification <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input" name="qualification" value="<?php if(isset($_POST['qualification'])){echo $_POST['qualification'];} ?>" placeholder="B.E" required>
+                                    <input type="text" class="form-control border-input UserName_field" name="qualification" value="<?php if(isset($_POST['qualification'])){echo $_POST['qualification'];} ?>" placeholder="B.E" required>
                                     <?php echo form_error('qualification', '<div class="alert alert-danger contact-warning">',   '</div>'); ?>
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Salary <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allnumerics(salary, event)" class="form-control border-input validnumbers" name="salary" value="<?php if(isset($_POST['salary'])){echo $_POST['salary'];} ?>" placeholder="10000" required>
+                                    <input type="text" class="form-control border-input phoneInput" name="salary" value="<?php if(isset($_POST['salary'])){echo $_POST['salary'];} ?>" placeholder="10000" required>
                                     <?php echo form_error('salary', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Address <span class="required" style="color:red;"> * </span></label>
-                                    <textarea rows="2" type="text" class="form-control border-input" name="address" value="<?php if(isset($_POST['address'])){echo $_POST['address'];} ?>" required></textarea>
+                                    <textarea rows="2" type="text" class="form-control border-input UserName_field" name="address" value="<?php if(isset($_POST['address'])){echo $_POST['address'];} ?>" required></textarea>
                                     <?php echo form_error('address', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -229,7 +229,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Joining Date <span class="required" style="color:red;"> * </span></label>
-                                    <input type="date" class="form-control border-input" name="joiningdate" value="<?php if(isset($_POST['joiningdate'])){echo $_POST['joiningdate'];} ?>" placeholder="FirstName &emsp;&emsp;&emsp;  MiddleName &emsp;&emsp;&emsp; LastName  " required>
+                                    <input type="date" class="form-control border-input" name="joiningdate" value="<?php if(isset($_POST['joiningdate'])){echo $_POST['joiningdate'];} ?>" placeholder="" required>
                                     <?php echo form_error('joiningdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>

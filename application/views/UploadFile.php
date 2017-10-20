@@ -149,13 +149,13 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>File Name</label>
-                                    <input type="text" class="form-control border-input" name="filename"  placeholder="Enter File Name" required>
+                                    <input type="text" class="form-control border-input UserName_field" name="filename"  placeholder="Enter File Name" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input type="text" class="form-control border-input" name="description"  placeholder="Enter Discription">
+                                    <input type="text" class="form-control border-input UserName_field" name="description"  placeholder="Enter Discription">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -167,7 +167,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Faculty Name</label>
-                                    <input type="text" class="form-control border-input" name="facultyname" placeholder="Enter Faculty name">
+                                    <input type="text" class="form-control border-input UserName_field" name="facultyname" placeholder="Enter Faculty name">
                                 </div>
                             </div>
                             <div class="col-md-3">

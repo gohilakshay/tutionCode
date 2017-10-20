@@ -69,43 +69,43 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" class="form-control border-input" name="enquirename" >
+                                    <label>Name <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" class="form-control border-input UserName_field" name="enquirename" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Gender</label><br>
+                                    <label>Gender <span class="required" style="color:red;"> * </span></label><br>
                                      <input type="radio" name="gender" value="male" checked> Male
                                     <input type="radio" name="gender" value="female"> Female
                                 </div>   
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group">
-                                    <label>EmailID</label>
-                                    <input type="email" class="form-control border-input" name="email">
+                                    <label>EmailID <span class="required" style="color:red;"> * </span></label>
+                                    <input type="email" class="form-control border-input UserName_field" name="email" required>
                                 </div>   
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Mobile</label>
-                                    <input type="text" class="form-control border-input" name="mobile">
+                                    <label>Mobile <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" class="form-control border-input phoneInput" name="mobile" maxlength="10" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Subject</label>
-                                    <input type="text" class="form-control border-input" name="subject">
+                                    <label>Subject <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" class="form-control border-input UserName_field" name="subject" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Fees Told / Asked</label>
-                                    <input type="text" class="form-control border-input" name="fees">
+                                    <input type="text" class="form-control border-input UserName_field" name="fees">
                                 </div>
                             </div>
                         </div>
@@ -113,37 +113,37 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Reference</label>
-                                    <input type="text" class="form-control border-input" name="reference">
+                                    <input type="text" class="form-control border-input UserName_field" name="reference">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>College</label>
-                                    <input type="text" class="form-control border-input" name="college">
+                                    <input type="text" class="form-control border-input UserName_field" name="college">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Query</label>
-                                    <input type="text"  class="form-control border-input" name="query">
+                                    <label>Query <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text"  class="form-control border-input UserName_field" name="query" required>
                                 </div>
                             </div>
                         </div>
                        <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Addresss</label>
-                                    <textarea rows="4" type="text" class="form-control border-input" name="address" required></textarea>
+                                    <label>Addresss <span class="required" style="color:red;"> * </span></label>
+                                    <textarea rows="4" type="text" class="form-control border-input UserName_field" name="address" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4" style="float:right">
                                 <div class="form-group">
-                                    <label>Followup Date</label>
-                                   <input  class="form-control border-input" type="date" name="followup_date"   />
+                                    <label>Followup Date <span class="required" style="color:red;"> * </span></label>
+                                   <input  class="form-control border-input" type="date" name="followup_date"  required/>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Reply By</label>
-                                    <input type="text"  class="form-control border-input" name="repliedby">
+                                    <input type="text"  class="form-control border-input UserName_field" name="repliedby">
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Reply</label>
-                                    <textarea rows="4" type="text" class="form-control border-input" name="reply" ></textarea>
+                                    <textarea rows="4" type="text" class="form-control border-input UserName_field" name="reply" ></textarea>
                                 </div>
                             </div>
                         </div>

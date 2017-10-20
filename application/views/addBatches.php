@@ -36,20 +36,20 @@
                             <div class="form-group">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Batch Name</label>
-                                    <input type="text" class="form-control border-input" name="batchname" value="<?php         if(isset($_POST['batchname'])){echo $_POST['batchname'];}?>" placeholder="IX-1" required>
+                                        <label>Batch Name <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" class="form-control border-input UserName_field" name="batchname" value="<?php if(isset($_POST['batchname'])){echo $_POST['batchname'];}?>" placeholder="IX-1" required>
                                     <?php echo form_error('batchname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label>Batch Timing</label>
-                                    <input type="text" class="form-control border-input"  placeholder="Batch Timing" name="batch_timing"  value="<?php         if(isset($_POST['batch_timing'])){echo $_POST['batch_timing'];} ?>" required>
+                                    <label>Batch Timing <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" class="form-control border-input UserName_field"  placeholder="Batch Timing" name="batch_timing"  value="<?php if(isset($_POST['batch_timing'])){echo $_POST['batch_timing'];} ?>" required>
                                     <?php echo form_error('batch_timing', '<div class="alert alert-danger contact-warning">', '</div>');?> 
                                 </div>
                              
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Courses</label> 
+                                    <label>Courses <span class="required" style="color:red;"> * </span></label> 
                                     <select class="form-control border-input" id="course" name="course" required>
                                         <option value="">---Select Course---</option>
                                         <?php foreach($result1 as $value){?>

@@ -260,9 +260,9 @@ if(isset($_POST['testid'])){
                                             ?>
                                             <tr>
                                                 <td><?php echo $j;?></td>
-                                                <td><input type="hidden" name="stud_id[]" value="<?php echo $value1->stud_id;?>"><?php echo $value1->stud_id;?></td>
+                                                <td><input type="hidden" class="UserName_field" name="stud_id[]" value="<?php echo $value1->stud_id;?>"><?php echo $value1->stud_id;?></td>
                                                 <td><?php echo $name[$i];?></td>
-                                                <td><input type="text" name="marks[]"></td>
+                                                <td><input type="text" class="UserName_field" name="marks[]"></td>
                                             </tr>
                                             <?php $i++;$j++; endforeach;?>
                                         </tbody>

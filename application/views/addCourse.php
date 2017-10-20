@@ -30,15 +30,15 @@
                             <div class="form-group">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Course Name</label>
-                                        <input type="text" class="form-control border-input"  placeholder="Course Name" name="course_name" value="<?php if(isset($_POST['course_name'])){echo $_POST['course_name'];} ?>" required>
+                                        <label>Course Name <span class="required" style="color:red;"> * </span></label>
+                                        <input type="text" class="form-control border-input UserName_field"  placeholder="Course Name" name="course_name" value="<?php if(isset($_POST['course_name'])){echo $_POST['course_name'];} ?>" required>
                                         <?php echo form_error('course_name', '<div class="alert alert-danger contact-warning">', '</div>');?> 
                                     </div>
                                 </div>
                                
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Admission Course</label>
+                                        <label>Admission Course <span class="required" style="color:red;"> * </span></label>
                                         <select  class="form-control border-input" id="coursetype" name="coursetype" required>
                                         <option value="">---Select Admission Course---</option>
                                         <option value="regular">Regular Course</option>
@@ -50,7 +50,7 @@
 
                                 <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Standard</label> 
+                                    <label>Standard <span class="required" style="color:red;"> * </span></label> 
                                     <select class="form-control border-input" id="standard" name="standard" required>
                                         <option value="">---Select Standard---</option>
                                         <?php foreach($result1  as $value): 

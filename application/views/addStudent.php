@@ -297,7 +297,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>School Name/College <span class="required" style="color:red;"> * </span></label>
-                                            <input type="text" class="form-control student_admission border-input"  placeholder="School Name/College" name="school_college" value="<?php if(isset($_POST['school_college'])){echo $_POST['school_college'];} ?>" required>
+                                            <input type="text" class="form-control student_admission border-input UserName_field"  placeholder="School Name/College" name="school_college" value="<?php if(isset($_POST['school_college'])){echo $_POST['school_college'];} ?>" required>
                                     <?php echo form_error('school_college', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
