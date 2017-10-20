@@ -228,11 +228,19 @@
     
     
     $('#payMode').on('change',function(){
+        $("#chqDetail").hide()
+            $("#transcDetail").hide()
         if( $(this).val()==="cheque"){
             $("#chqDetail").show()
         }
-        else{
-            $("#chqDetail").hide()
+        else if( $(this).val()==="credit"){
+            $("#transcDetail").show()
+        }
+        else if( $(this).val()==="debit"){
+            $("#transcDetail").show()
+        }
+        else if( $(this).val()==="netbanking"){
+            $("#transcDetail").show()
         }
     });
     
