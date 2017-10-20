@@ -101,9 +101,15 @@ class Course_cont extends CI_Controller
                 'semester' => $semester,
                 'subject_id'=>$subject_id,
             );
-            $this->AddData->addCourseItem($data);
-            $this->session->set_flashdata('success','You have Successfully submitted data.');
-            redirect('Course_cont/addCourse');      
+            $val = $this->AddData->addCourseItem($data);
+            if($val == 0){
+                $this->session->set_flashdata('success','Course Already Exits.');
+                redirect('Course_cont/addCourse');  
+            }
+            else{
+                $this->session->set_flashdata('success','You have Successfully submitted data.');
+                redirect('Course_cont/addCourse');
+            }
         }
         }else {
             $name=site_url().'/Home';

@@ -1,8 +1,14 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 class AddData extends CI_Model {
     function addBatchItem($data){
-        $this->db->insert('batch', $data);
-        return;
+        $query = $this->db->get_where('batch', array('batch_name' => $data['batch_name']));
+        if(!empty($query->result())){
+            return 0;
+        }
+        else{
+            $this->db->insert('batch', $data);
+            return 1;
+        }
     }
     function UpdateBatchItem($data){
         $batch_name = $data['batch_name'];
@@ -68,8 +74,14 @@ class AddData extends CI_Model {
         return;
     }
     function addCourseItem($data){
-        $this->db->insert('course', $data);
-        return;
+        $query = $this->db->get_where('course', array('course_name' => $data['course_name']));
+        if(!empty($query->result())){
+            return 0;
+        }
+        else{
+            $this->db->insert('course', $data);
+            return 1;
+        }
     }
     function updateCourseItem($data){
         $course_name = $data['course_name'];

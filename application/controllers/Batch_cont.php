@@ -34,9 +34,15 @@ class Batch_cont extends CI_Controller
                 'batch_timing' => $this->input->post('batch_timing'),
                 'course_name' => $this->input->post('course')
             );
-            $this->AddData->addBatchItem($data);
-            $this->session->set_flashdata('success','You have Successfully submitted data.');
-            redirect('Batch_cont/addBatch');      
+            $val = $this->AddData->addBatchItem($data);
+            if($val == 0){
+                $this->session->set_flashdata('success','Batch Already Exits.');
+                redirect('Batch_cont/addBatch');  
+            }
+            else{
+                $this->session->set_flashdata('success','You have Successfully submitted data.');
+                redirect('Batch_cont/addBatch'); 
+            }     
         }
         }else {
             $name=site_url().'/Home';

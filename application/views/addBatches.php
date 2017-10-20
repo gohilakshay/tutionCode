@@ -16,6 +16,11 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
             <h5><?php echo $this->session->flashdata('success'); ?></h5>
         </div>
+        <?php } else if ($this->session->flashdata('success') == 'Batch Already Exits.') { ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
         <?php } ?>
         <!--form-->
         <?php echo form_open('Batch_cont/addBatch'); ?>
