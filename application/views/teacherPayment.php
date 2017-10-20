@@ -189,22 +189,22 @@
                         <div class="row" id="chqDetail" style="display:none">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Cheque Date.</label>
-                                    <input type="text" class="form-control border-input" name="chq_no" value="" required>
+                                    <label>Cheque No.</label>
+                                    <input type="text" class="form-control border-input" name="chq_no" >
                                  </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Cheque No.</label>
-                                    <input type="date" class="form-control border-input" name="chq_date" value="" required>
+                                    <label>Cheque Date.</label>
+                                    <input type="date" class="form-control border-input" name="chq_date" >
                                  </div>
                             </div>
                         </div>
                         <div class="row" id="transcDetail" style="display:none">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Transactyion ID</label>
-                                    <input type="text" class="form-control border-input" name="transc_id" value="" required>
+                                    <label>Transaction ID</label>
+                                    <input type="text" class="form-control border-input" name="transc_id" >
                                  </div>
                             </div>
                         </div>
