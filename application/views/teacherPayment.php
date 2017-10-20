@@ -161,7 +161,7 @@
                                 <div class="form-group">
                                     <label>Payment Mode</label>
                                     <div>
-                                        <select  class="form-control border-input" name="paymentmode" required>
+                                        <select  class="form-control border-input" id="payMode" name="paymentmode" required>
                                             <option value="">Payment Mode</option>
                                             <option value="cash">Cash</option>
                                             <option value="cheque">Cheque</option>
@@ -184,6 +184,28 @@
                                     <br>
                                     <center><button type="submit" class="btn btn-success" name="pay" style="margin-top: 8px; margin-left: -15px;"> PAY</button></center>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row" id="chqDetail" style="display:none">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Cheque Date.</label>
+                                    <input type="text" class="form-control border-input" name="chq_no" value="" required>
+                                 </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Cheque No.</label>
+                                    <input type="date" class="form-control border-input" name="chq_date" value="" required>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row" id="transcDetail" style="display:none">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Transactyion ID</label>
+                                    <input type="text" class="form-control border-input" name="transc_id" value="" required>
+                                 </div>
                             </div>
                         </div>
                     </div><hr>
