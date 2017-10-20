@@ -226,4 +226,14 @@
 });
      
     
+    
+    $('#payMode').on('change',function(){
+        if( $(this).val()==="cheque"){
+            $("#chqDetail").show()
+        }
+        else{
+            $("#chqDetail").hide()
+        }
+    });
+    
 </script>
