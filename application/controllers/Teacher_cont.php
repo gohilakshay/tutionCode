@@ -388,6 +388,9 @@ class Teacher_cont extends CI_Controller
             'salary'=> $this->input->post('salary'),
             'payment_mode'=> $this->input->post('paymentmode'),
             'payment_date'=> $this->input->post('paymentdate'),
+            'chq_no'=> $this->input->post('chq_no'),
+            'chq_date'=> $this->input->post('chq_date'),
+            'transc_id'=> $this->input->post('transc_id'),
             ); 
             $this->AddData->teacherPaymentDetails($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
