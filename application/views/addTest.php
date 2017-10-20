@@ -153,7 +153,7 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                 <label>Test ID <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allnumerics(testid, event)" class="form-control border-input validnumbers" name="testid" value="<?php  if(isset($_POST['testid'])){echo $_POST['testid'];} ?>" required>
+                                    <input type="text" class="form-control border-input phoneInput" name="testid" value="<?php  if(isset($_POST['testid'])){echo $_POST['testid'];} ?>" required>
                                 <?php echo form_error('testid', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -174,14 +174,14 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Total Marks <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text"  onkeyup="allnumerics_1(totalmarks, event)" class="form-control border-input validnumbers_1" name="totalmarks" value="<?php   if(isset($_POST['totalmarks'])){echo $_POST['totalmarks'];} ?>" required >
+                                    <input type="text"  class="form-control border-input phoneInput" name="totalmarks" value="<?php   if(isset($_POST['totalmarks'])){echo $_POST['totalmarks'];} ?>" required >
                                     <?php echo form_error('totalmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Passing Marks <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allnumerics_2(passingmarks, event)" class="form-control border-input validnumbers_2" name="passingmarks" value="<?php         if(isset($_POST['passingmarks'])){echo $_POST['passingmarks'];} ?>" required >
+                                    <input type="text" class="form-control border-input phoneInput" name="passingmarks" value="<?php if(isset($_POST['passingmarks'])){echo $_POST['passingmarks'];} ?>" required >
                                     <?php echo form_error('passingmarks', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -204,7 +204,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Subject <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" onkeyup="allLatters(subject, event)" class="form-control border-input validName" name="subject" value="<?php         if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" required >
+                                    <input type="text" class="form-control border-input UserName_field" name="subject" value="<?php if(isset($_POST['subject'])){echo $_POST['subject'];} ?>" required >
                                     <?php echo form_error('subject', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Supervisor Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text"  onkeyup="allLatters_1(supervisorname, event)" class="form-control border-input validName_1" name="supervisorname" value="<?php         if(isset($_POST['supervisorname'])){echo $_POST['supervisorname'];} ?>" required >
+                                    <input type="text" class="form-control border-input UserName_field" name="supervisorname" value="<?php if(isset($_POST['supervisorname'])){echo $_POST['supervisorname'];} ?>" required >
                                     <?php echo form_error('supervisorname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>

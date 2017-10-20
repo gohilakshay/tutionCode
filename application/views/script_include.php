@@ -35,6 +35,17 @@
     }, 1000)
  
  
+ $('.surnameInput').keypress(function(key) {
+  
+     if((key.charCode < 97 || key.charCode > 122) && (key.charCode < 65 || key.charCode > 90) && (key.charCode != 45)) return false;
+});
+    
+     $('.phoneInput').keypress(function(key) {
+        if(key.charCode < 48 || key.charCode > 57) 
+        return false;
+    });
+ 
+ 
   
      function allLatters(surname, e)  
     {  
@@ -205,15 +216,13 @@
         });
     });
     
+      
     
     $(".UserName_field").on({
   keydown: function(e) {
-    if (e.which === 32)
-      return false;
+    if (this.value.length === 0 && e.which === 32)
+     e.preventDefault();
   },
-  change: function() {
-    this.value = this.value.replace(/\s/g, "");
-  }
 });
      
     

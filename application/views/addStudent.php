@@ -166,14 +166,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Surname</label>
-                                        <input type="text"  onkeyup="allLatters(surname, event)" class="form-control border-input validName"  placeholder="Surname" name="surname" value="<?php if(isset($_POST['surname'])){echo $_POST['surname'];} ?>">
+                                        <input type="text"  class="form-control border-input surnameInput"  placeholder="Surname" name="surname" value="<?php if(isset($_POST['surname'])){echo $_POST['surname'];} ?>">
                                         <?php echo form_error('surname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Student Name <span class="required" style="color:red;"> * </span></label>
-                                      <input type="text" class="form-control student_details border-input validName_1"  onkeyup="allLatters_1(studentname, event)" placeholder="Student Name" name="studentname" value="<?php if(isset($_POST['studentname'])){echo $_POST['studentname'];} ?>" required>
+                                      <input type="text" class="form-control student_details border-input surnameInput"  placeholder="Student Name" name="studentname" value="<?php if(isset($_POST['studentname'])){echo $_POST['studentname'];} ?>" required>
                                         <?php echo form_error('studentname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -182,14 +182,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Father Name <span class="required" style="color:red;"> * </span></label>
-                                      <input type="text" class="form-control student_details border-input validName_2" onkeyup="allLatters_2(fathername, event)"  placeholder="Father Name" name="fathername" value="<?php if(isset($_POST['fathername'])){echo $_POST['fathername'];} ?>" required>
+                                      <input type="text" class="form-control student_details border-input surnameInput"  placeholder="Father Name" name="fathername" value="<?php if(isset($_POST['fathername'])){echo $_POST['fathername'];} ?>" required>
                                         <?php echo form_error('fathername', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Mother Name</label>
-                                        <input type="text" class="form-control border-input validName_3" placeholder="Mother Name" onkeyup="allLatters_3(mothername, event)" name="mothername" value="<?php if(isset($_POST['mothername'])){echo $_POST['mothername'];} ?>" >
+                                        <input type="text" class="form-control border-input surnameInput" placeholder="Mother Name"  name="mothername" value="<?php if(isset($_POST['mothername'])){echo $_POST['mothername'];} ?>" >
                                         <?php echo form_error('mothername', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Contact Number <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" onkeypress="phoneno()" id="phone"  maxlength="10" class="form-control student_details border-input UserName_field" placeholder="Contact Number" name="contactnumber" value="<?php if(isset($_POST['contactnumber'])){echo $_POST['contactnumber'];} ?>" required>
+                                        <input type="text"  maxlength="10" class="form-control student_details border-input phoneInput" placeholder="Contact Number" name="contactnumber" value="<?php if(isset($_POST['contactnumber'])){echo $_POST['contactnumber'];} ?>" required>
                                         <?php echo form_error('contactnumber', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -297,7 +297,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>School Name/College <span class="required" style="color:red;"> * </span></label>
-                                            <input type="text" class="form-control student_admission border-input UserName_field"  placeholder="School Name/College" name="school_college" value="<?php if(isset($_POST['school_college'])){echo $_POST['school_college'];} ?>" required>
+                                            <input type="text" class="form-control student_admission border-input"  placeholder="School Name/College" name="school_college" value="<?php if(isset($_POST['school_college'])){echo $_POST['school_college'];} ?>" required>
                                     <?php echo form_error('school_college', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -366,7 +366,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" onkeyup="allnumerics(total_fees, event)" class="form-control student_payment student_payment_1 border-input validnumbers"  placeholder="Total Fees" name="total_fees" id='Resources' value="<?php if(isset($_POST['total_fees'])){echo $_POST['total_fees'];} ?>" required>
+                                        <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Total Fees" name="total_fees" id='Resources' value="<?php if(isset($_POST['total_fees'])){echo $_POST['total_fees'];} ?>" required>
                                     <?php echo form_error('total_fees', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -412,7 +412,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Discount </label>
-                                        <input type="text" onkeyup="allnumerics_1(discount, event)"  class="form-control student_payment student_payment_1 border-input validnumbers_1"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>">
+                                        <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>">
                                     <?php echo form_error('discount', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div> 
                                 </div>
@@ -456,7 +456,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Received <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" onkeyup="allnumerics_2(received, event)" class="form-control student_payment student_payment_1 border-input validnumbers_2"  placeholder="Total Fees" name="received" id="Received"  onblur='Calculate();' value="<?php if(isset($_POST['received'])){echo $_POST['received'];} ?>" required>
+                                        <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Total Fees" name="received" id="Received"  onblur='Calculate();' value="<?php if(isset($_POST['received'])){echo $_POST['received'];} ?>" required>
                                     <?php echo form_error('received', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -476,7 +476,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Place <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" class="form-control student_payment student_payment_1 border-input UserName_field"  placeholder="Place " name="place"  value="<?php if(isset($_POST['place'])){echo $_POST['place'];} ?>" required>
+                                        <input type="text" class="form-control student_payment student_payment_1 border-input surnameInput"  placeholder="Place " name="place"  value="<?php if(isset($_POST['place'])){echo $_POST['place'];} ?>" required>
                                     <?php echo form_error('place', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
