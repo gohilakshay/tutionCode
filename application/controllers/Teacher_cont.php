@@ -173,7 +173,7 @@ class Teacher_cont extends CI_Controller
                 $insert_id = $this->db->insert_id();
                 $img = $_FILES['photo']['name']; 
                 $this->ProfileImg->addImg($img,$name);
-                if(!empty($this->input->post('subject'))){
+                if(!null($this->input->post('subject'))){
                     $engi_branch = $this->input->post('engi_branch');
                     $engisemester = $this->input->post('engisemester');
                     $commerce_branch = $this->input->post('commerce_branch');

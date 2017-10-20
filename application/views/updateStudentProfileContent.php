@@ -16,7 +16,7 @@ $fee_data = end($result);
             <a href="<?php echo site_url("Student_cont/student") ?>">
             <div class="col-lg-3 col-sm-6">
                 <div class="card">
-                    <div class="content">
+                    <div class="content" style="box-shadow: 0 2px 2px rgb(128, 191, 209)!important;">
                         <div class="row">
                             <div class="col-xs-5">
                                 <div class="icon-big icon-warning text-center">
@@ -126,6 +126,7 @@ $fee_data = end($result);
          </a>
         </div>
         
+<!--
          <div class="row">
             <div class="col-lg-12 col-sm-12">
                 <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
@@ -135,6 +136,7 @@ $fee_data = end($result);
                 </div>
             </div>
         </div>
+-->
             <div class="row">
                 <div class="col-lg-10 col-md-10 ">
                     <div class="card">
