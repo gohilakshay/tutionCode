@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Staff Name</label>
+                                    <label>Staff Name <span class="required" style="color:red;"> * </span></label>
                                     <select name="staffname" class="form-control border-input"  required>
                                         <option value="">-- Select Staff Name --</option>
                                         <?php foreach($result as $staff): ?>
@@ -28,15 +28,15 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Staff Salary</label>
-                                    <input type="text" class="form-control border-input" name="staffsalary" value="<?php         if(isset($_POST['staffsalary'])){echo $_POST['staffsalary'];} ?>" required>
+                                    <label>Staff Salary <span class="required" style="color:red;"> * </span></label>
+                                    <input type="text" class="form-control border-input phoneInput" name="staffsalary" value="<?php if(isset($_POST['staffsalary'])){echo $_POST['staffsalary'];} ?>" required>
                                     <?php echo form_error('staffsalary', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
                             
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Payment Mode</label>
+                                    <label>Payment Mode <span class="required" style="color:red;"> * </span></label>
                                     <div>
                                         <select  class="form-control border-input" name="paymentmode" required>
                                             <option value="">Payment Mode</option>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Payment Date</label>
+                                    <label>Payment Date <span class="required" style="color:red;"> * </span></label>
                                     <input type="date" class="form-control border-input" name="paymentdate" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('paymentdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
