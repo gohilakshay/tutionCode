@@ -13,9 +13,8 @@
             <div class="col-lg-12 col-lg-12 ">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Add Course</h4>
+                        <h4 class="title">Update Course</h4>
                     </div>
-
                     <div class="content">
                         <div class="row">
                             <div class="form-group">

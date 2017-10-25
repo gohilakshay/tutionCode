@@ -214,7 +214,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Supervisor Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input UserName_field" name="supervisorname" value="<?php if(isset($_POST['supervisorname'])){echo $_POST['supervisorname'];} ?>" required >
+                                    <input type="text" class="form-control border-input surnameInput" name="supervisorname" value="<?php if(isset($_POST['supervisorname'])){echo $_POST['supervisorname'];} ?>" required >
                                     <?php echo form_error('supervisorname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
