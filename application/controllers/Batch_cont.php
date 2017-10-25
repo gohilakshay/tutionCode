@@ -21,7 +21,6 @@ class Batch_cont extends CI_Controller
         {
             
                 $this->load->view('addBatches',$query); 
-                
         }
         else
         {
