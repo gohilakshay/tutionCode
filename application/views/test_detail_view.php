@@ -345,10 +345,10 @@ foreach($data as $value){
                                              </tr>
                                         </thead>
                                         <tbody>
-                                            <?php 
+                                            <?php print_r($studMarks[$i]);
                                             for($i=0;$i<$idCount;$i++){
                                                 $j = $i+1;
-                                                
+                                                                                        
                                                 if(!in_array($studIds[$i],$visistedId)){
                                                     echo "<tr><td>$j</td>";
                                                     echo "<td>$studIds[$i]</td>";

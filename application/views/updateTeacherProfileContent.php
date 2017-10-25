@@ -141,7 +141,7 @@
         </div>
         
         
--->
+-->   
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="card">
@@ -151,11 +151,18 @@
                     <input type="hidden" value="<?php echo $teacher_data->t_ID;?>" name="teacher_id" >
                     <div class="content">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Teacher's Name</label>
-                                    <input type="text" class="form-control border-input" name="teachersname" value="<?php echo $teacher_data->t_name." ".$teacher_data->t_fathername." ".$teacher_data->t_surname; ?>" placeholder="FirstName &emsp;&emsp;&emsp; LastName  " required>
-                                    
+                                    <input type="text" class="form-control border-input" name="teachersname" value="<?php echo $teacher_data->t_name; ?>" placeholder="FirstName" required>
+                                    <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                </div>
+                            </div>  
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Teacher's Surname</label>
+                                    <input type="text" class="form-control border-input" name="surname" value="<?php echo $teacher_data->t_fathername; ?>" placeholder=" LastName" required>
                                     <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -236,7 +243,7 @@
                                 <div class="form-group">                   
                                 <label class="col-sm-6">Profile photo:</label>
                                 <div class="row">
-                                    <input type="file" class="form-control" name="photo" accept="image/jpeg"><br>
+                                    <input type="file" class="form-control" value="<?php echo $teacher_data->t_profile; ?>" name="photo" accept="image/jpeg"><br>
                                 </div>
                                 </div>
                             </div>

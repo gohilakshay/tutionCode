@@ -30,7 +30,6 @@
                     <div class="header">
                         <h4 class="title">Add Batches</h4>
                     </div>
-
                     <div class="content">
                         <div class="row">
                             <div class="form-group">

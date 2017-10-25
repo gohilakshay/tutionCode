@@ -1,5 +1,5 @@
 <?php include "header.php";?>
-<?php $page = 'seven';include "sidebar.php";?>
+<?php $page = 'five';include "sidebar.php";?>
 <?php include "nav.php";?>
 <?php $this->load->library('form_validation'); ?>
 

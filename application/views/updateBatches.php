@@ -13,13 +13,14 @@
                         <h4 class="title">Update Batches</h4>
                     </div>
                     <?php foreach($result as $value):?>
+            <input type="hidden" value="<?php echo $value->batch_ID;?>" name="batch_id" >
                     <div class="content">
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Batch Name</label>
-                                    <input type="text" class="form-control border-input" name="batchname" value="<?php echo $value->batch_name;?>" placeholder="IX-1" readonly>
+                                    <input type="text" class="form-control border-input" name="batchname" value="<?php echo $value->batch_name;?>" placeholder="batch_name" required>
                                     <?php echo form_error('batchname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -45,7 +46,7 @@
                         </div>
                         </div>
                         <div class="form-group">
-                             <button type="submit" class="btn btn-success">Update Batches</button>
+                             <button type="submit" name="btn_submit" class="btn btn-success">Update Batches</button>
                         </div>
                     </div>
                     <?php endforeach; ?>

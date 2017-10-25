@@ -17,16 +17,14 @@ fwrite($myfile, $file_write);
   font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
   }
  #calendar {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
      background-color: white;
   }
 </style>
-
-
-
- <h2>Scheduler</h2>
- <br/>
+    <br>
+    <h6>Scheduler</h6>
+<br>
  <div id='calendar'></div>
 <?php include_once "footer.php";?>
 </html>

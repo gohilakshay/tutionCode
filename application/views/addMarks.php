@@ -262,7 +262,7 @@ if(isset($_POST['testid'])){
                                                 <td><?php echo $j;?></td>
                                                 <td><input type="hidden" class="UserName_field" name="stud_id[]" value="<?php echo $value1->stud_id;?>"><?php echo $value1->stud_id;?></td>
                                                 <td><?php echo $name[$i];?></td>
-                                                <td><input type="text" class="UserName_field" name="marks[]"></td>
+                                                <td><input type="text" placeholder="Enter less than... <?php echo $value->total_marks; ?>" class="UserName_field" name="marks[]"></td>
                                             </tr>
                                             <?php $i++;$j++; endforeach;?>
                                         </tbody>

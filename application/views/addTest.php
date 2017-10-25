@@ -131,6 +131,7 @@
             </div>
          </a>
         </div>
+        
 <!--
          <div class="row">
             <div class="col-lg-12 col-sm-12">
@@ -164,6 +165,7 @@
                                     <?php echo form_error('testdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
+                            
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Test Time <span class="required" style="color:red;"> * </span></label>
