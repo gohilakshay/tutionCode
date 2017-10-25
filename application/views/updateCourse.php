@@ -39,11 +39,15 @@
 
                                 <div class="col-md-4">
                                 <div class="form-group">
+                                    
                                     <label>Standard</label> 
                                     <select class="form-control border-input" id="standard" name="standard" required>
+                                        <option value="<?php echo $v->standard_name; ?>"><?php echo $v->standard_name; ?></option>  
+                                        
+                                        <option value="">--- Select Standard ---</option>
                                         <?php foreach($result1  as $value): 
                                         if ($value->standard_name=="Engineering"){
-                                        ?>
+                                        ?>   
                                          <option value="Engineering"><?php echo $value->standard_name; ?></option>
                                    <?php }
                                         else if ($value->standard_name=="Commerce"){
@@ -78,6 +82,7 @@
                                     <div class="form-group">
                                         <label>Branch:</label>
                                         <select class="form-control border-input" id="stream" name="stream">
+                                            <option value="<?php echo $v->branch_name; ?>"><?php echo $v->branch_name; ?></option>
                                             <option value="">---Select Branch---</option>
                                             <option value="Science">Science</option>
                                             <option value="Commerce">Commerce</option>
@@ -92,6 +97,7 @@
                                         <div class="form-group">
                                             <label>Branch:</label>
                                             <select class="form-control border-input" id="engi_branch" name="engi_branch">
+                                                <option value="<?php echo $v->branch_name; ?>"><?php echo $v->branch_name; ?></option>
                                                 <?php foreach($result2  as $value): 
                                                 if($value->standard_name==="Engineering") :
                                                 ?>
@@ -129,7 +135,7 @@
                                     <div class="form-group">
                                         <label>Branch:</label>
                                             <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
-                                                
+                                                <option value="<?php echo $v->branch_name; ?>"><?php echo $v->branch_name; ?></option>
                                                 <?php foreach($result2  as $value): 
                                                    ?>
                                                 <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
