@@ -77,6 +77,7 @@ class Batch_cont extends CI_Controller
             $this->load->database($db);//call db
             $this->load->model('AddData');
             $data = array(
+                'batch_ID' => $this->input->post('batch_id'), 
                 'batch_name' => $this->input->post('batchname'),
                 'batch_timing' => $this->input->post('batch_timing'),
                 'course_name' => $this->input->post('course')

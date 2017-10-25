@@ -11,8 +11,8 @@ class AddData extends CI_Model {
         }
     }
     function UpdateBatchItem($data){
-        $batch_name = $data['batch_name'];
-        $this->db->where('batch_name',$batch_name);
+        $batch_id = $data['batch_ID'];
+        $this->db->where('batch_ID',$batch_id);
         $this->db->update('batch',$data);
         return;
     }
