@@ -48,26 +48,60 @@
          });
     
     
-        function Calculate()
-        {
-            
-          var resources = document.getElementById('Resources').value;
-          var minutes = document.getElementById('Minutes').value; 
-          
-          var payamount = document.getElementById('Payamount').value;
-         
-          document.getElementById('answer').value=parseFloat(resources) - parseFloat(minutes);
+//        function Calculate()
+//        {
+//            
+//          var resources = document.getElementById('Resources').value;
+//          var minutes = document.getElementById('Minutes').value; 
+//          
+//          var payamount = document.getElementById('Payamount').value;
+//         
+//          document.getElementById('answer').value=parseFloat(resources) - parseFloat(minutes);
+//
+//
+//          var tempamount = document.getElementById('answer').value;
+//          document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
+//         
+//          // for balance amount
+//
+//          var receive = document.getElementById('Received').value;
+//          document.getElementById('balance').value=parseFloat(tempamount)-parseFloat(receive);
+//           document.form1.submitt();
+//        } 
+    
+    
+    function calc_balance() {
 
+            var total_fees = parseInt(document.getElementById("Resources").value);
+            var discount = parseInt(document.getElementById("Minutes").value);
+            var final_amount = total_fees - discount;
 
-          var tempamount = document.getElementById('answer').value;
-          document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
-         
-          // for balance amount
+            document.getElementById("answer").value = final_amount;
+        }
+    
+     function calc_balance_1() {
 
-          var receive = document.getElementById('Received').value;
-          document.getElementById('balance').value=parseFloat(tempamount)-parseFloat(receive);
-           document.form1.submitt();
-        } 
+            var final_amount_1 = parseInt(document.getElementById("answer").value);
+            var recieved = parseInt(document.getElementById("Received").value);
+            var balance = final_amount_1 - recieved;
+
+            document.getElementById("balance").value = balance;
+        }
+    
+    
+     function calc_balance_2() {
+
+            var balance_1 = parseInt(document.getElementById("balance").value);
+            var pay_amount = parseInt(document.getElementById("Payamount").value);
+            var per_installment = balance_1/pay_amount;
+
+            document.getElementById("result").value = per_installment;
+        }
+    
+    
+    
+    
+    
     
   $('#Installment').on('change',function(){
         if( $(this).val()==="yes"){

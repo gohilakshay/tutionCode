@@ -363,17 +363,53 @@
                     <div class="content">         
                         <div class="setup-content" onload="validateInput2()" onmousedown="validateInput2()" onkeyup="validateInput2()" id="step-3">           
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
                                         <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Total Fees" name="total_fees" id='Resources' value="<?php if(isset($_POST['total_fees'])){echo $_POST['total_fees'];} ?>" required>
                                     <?php echo form_error('total_fees', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
-                                        
-                                <div class="col-md-6">
+                                
+                                   <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Installment                                         <label>Total Fees <span class="required" style="color:red;"> * </span></label>
+                                        <label>Discount </label>
+                                        <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>">
+                                    <?php echo form_error('discount', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    </div> 
+                                </div>
+                                
+                                
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Final Amount <span class="required" style="color:red;"> * </span></label>
+                                        <input type="text" class="form-control border-input"  placeholder="Final Amount " name="final" id='answer' onfocus="calc_balance()" readonly value="<?php if(isset($_POST['final'])){echo $_POST['final'];} ?>" required>
+                                    <?php echo form_error('final', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                             <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Received <span class="required" style="color:red;"> * </span></label>
+                                        <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Total Fees" name="received" id="Received"  onblur='Calculate();' value="<?php if(isset($_POST['received'])){echo $_POST['received'];} ?>" required>
+                                    <?php echo form_error('received', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    </div>
+                                </div>
+                                        
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Balance <span class="required" style="color:red;"> * </span></label>
+                                        <div>
+                                            <input type="text" class="form-control border-input"  placeholder="Total Fees " id="balance"  name="balance" onfocus="calc_balance_1()"  readonly value="<?php if(isset($_POST['balance'])){echo $_POST['balance'];} ?>" required>
+                                    <?php echo form_error('balance', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                        </div>
+                                    </div>
+                                </div>            
+                            <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Installment <label>Total Fees <span class="required" style="color:red;"> * </span></label>
                                         </label>
                                         <div>
                                             <select  class="form-control  border-input" id="Installment" id="Installments" name="Installment" required>
@@ -409,32 +445,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Discount </label>
-                                        <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Discount" name="discount" id='Minutes'  onblur='Calculate();'  value="<?php if(isset($_POST['discount'])){echo $_POST['discount'];} ?>">
-                                    <?php echo form_error('discount', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                    </div> 
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Final Amount <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text" class="form-control border-input"  placeholder="Final Amount " name="final" id='answer' readonly value="<?php if(isset($_POST['final'])){echo $_POST['final'];} ?>" required>
-                                    <?php echo form_error('final', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Amount Per Installment</label>
-                                        <input type="text" class="form-control border-input"  placeholder="Final Amount " name="result" id='result' readonly value="<?php if(isset($_POST['result'])){echo $_POST['result'];} ?>" >
-                                    <?php echo form_error('result', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                    </div>
-                                </div>
-                            </div> 
-                                     
-                            <!--payment mode-->
-                            <div class="row">
-                                <div class="col-md-12">
+                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Payment Mode <span class="required" style="color:red;"> * </span></label>
                                         <div>
@@ -450,27 +461,14 @@
                                         </div>
                                     </div> 
                                 </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Received <span class="required" style="color:red;"> * </span></label>
-                                        <input type="text"  class="form-control student_payment student_payment_1 border-input phoneInput"  placeholder="Total Fees" name="received" id="Received"  onblur='Calculate();' value="<?php if(isset($_POST['received'])){echo $_POST['received'];} ?>" required>
-                                    <?php echo form_error('received', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                        <label>Amount Per Installment</label>
+                                        <input type="text" class="form-control border-input"  placeholder="Final Amount " name="result" id='result' onfocus="calc_balance_2()" readonly value="<?php if(isset($_POST['result'])){echo $_POST['result'];} ?>" >
+                                    <?php echo form_error('result', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
-                                        
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Balance <span class="required" style="color:red;"> * </span></label>
-                                        <div>
-                                            <input type="text" class="form-control border-input"  placeholder="Total Fees " id="balance"  name="balance"  readonly value="<?php if(isset($_POST['balance'])){echo $_POST['balance'];} ?>" required>
-                                    <?php echo form_error('balance', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                        </div>
-                                    </div>
-                                </div>            
-                            </div>
+                            </div> 
                             <hr>
                             <div class="row">
                                 <div class="col-md-5">

@@ -34,14 +34,22 @@
         });
     }, 1000)
  
- 
+
  $('.surnameInput').keypress(function(key) {
-  
-     if((key.charCode < 97 || key.charCode > 122) && (key.charCode < 65 || key.charCode > 90) && (key.charCode != 45)) return false;
+
+     if (key.which === 32 && !this.value.length){
+          key.preventDefault();
+     }
+     
+     else if((key.charCode < 97 || key.charCode > 122) && (key.charCode < 65 || key.charCode > 90) && (key.charCode != 45) && (key.charCode != 0) && (key.charCode != 32)){
+         
+         return false;
+     }
+     return true;  
 });
     
      $('.phoneInput').keypress(function(key) {
-        if(key.charCode < 48 || key.charCode > 57) 
+        if((key.charCode < 48 || key.charCode > 57) && (key.charCode != 0)) 
         return false;
     });
  

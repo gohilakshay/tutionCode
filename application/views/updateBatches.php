@@ -19,7 +19,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Batch Name</label>
-                                    <input type="text" class="form-control border-input" name="batchname" value="<?php echo $value->batch_name;?>" placeholder="IX-1" readonly>
+                                    <input type="text" class="form-control border-input" name="batchname" value="<?php echo $value->batch_name;?>" placeholder="IX-1" required>
                                     <?php echo form_error('batchname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>

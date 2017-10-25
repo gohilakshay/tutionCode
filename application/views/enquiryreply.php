@@ -105,7 +105,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Fees Told / Asked</label>
-                                    <input type="text" class="form-control border-input UserName_field" name="fees">
+                                    <input type="text" class="form-control border-input phoneInput" name="fees">
                                 </div>
                             </div>
                         </div>

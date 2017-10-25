@@ -59,10 +59,10 @@
                                     <table class="table table-bordered" >
                                         <thead>
                                             <tr style="font-weight: bold;">
-                                                <td><input type="checkbox" id="ckbCheckAll">&emsp;Select All</td>
+                                                <td><input type="checkbox" onclick="toggle(this);">&emsp;Select All</td>
                                             </tr>
                                         </thead>
-                                        <p id="checkBoxes">
+                                        <p>
                                         <tbody>
                                             <?php foreach($result1 as $value): ?>
                                             <tr>
@@ -463,11 +463,19 @@ input[id=studentsearch]:focus {
 }
 </style>
 <script>
-function toggle(source) {
+    
+    function toggle(source) {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     for (var i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i] != source)
             checkboxes[i].checked = source.checked;
     }
 }
+//function toggle(source) {
+//    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+//    for (var i = 0; i < checkboxes.length; i++) {
+//        if (checkboxes[i] != source)
+//            checkboxes[i].checked = source.checked;
+//    }
+//}
 </script>

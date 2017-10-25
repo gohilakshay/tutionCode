@@ -37,7 +37,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Staff Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input UserName_field" name="staffname" value="<?php  if(isset($_POST['staffname'])){echo $_POST['staffname'];}?>" required>
+                                    <input type="text" class="form-control border-input surnameInput" name="staffname" value="<?php  if(isset($_POST['staffname'])){echo $_POST['staffname'];}?>" required>
                                     <?php echo form_error('staffname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
