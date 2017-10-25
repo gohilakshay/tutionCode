@@ -225,9 +225,11 @@ class SelectData extends CI_Model {
                             $data[] = $row;
                         }
                         else if($std_name == '11'){
+                            
                             foreach($subj_id as $subid){
-                                $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
-                                if($q1->num_rows() >0){
+                                
+                                if($row->branch_name == 'Commerce'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
                                     foreach($q1->result() as $row1){
                                    
                                         $bj[$a] = $row1->subject_name;
@@ -255,8 +257,9 @@ class SelectData extends CI_Model {
                         }
                         else if($std_name == '12'){
                             foreach($subj_id as $subid){
-                                $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
-                                if($q1->num_rows() >0){
+                                
+                                if($row->branch_name == 'Commerce'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
                                     foreach($q1->result() as $row1){
                                    
                                         $bj[$a] = $row1->subject_name;

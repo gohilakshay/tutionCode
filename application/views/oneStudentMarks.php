@@ -215,14 +215,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
                                 <?php $i=1; 
                                 $testid = $Student_marks_data['testIds'];
                                 $marks = $Student_marks_data['student_marks'];
                                 foreach($Student_marks_data['testDetails'] as $value):
+                                
                                 foreach($value as $v ){
                                 for($k=0;$k < $noOftest;$k++){
+                                    
                                     if($testid[$k] == $v->test_ID){
+                                        
                                 ?> 
                                 <tr>
                                     <td><?php echo $i++; ?></td>
@@ -235,8 +237,8 @@
                                     <td><?php echo $v->passing_marks;?></td>
                                     <td><?php echo $v->supervisor_name;?></td>
                                     <td><?php echo $v->subject_name;?></td>
-                                              
-                                </tr>  <?php }}}endforeach; ?>
+                                             
+                                </tr>  <?php  }}}break;endforeach; ?>
                             </tbody>
                         </table>    
                     </div>                                 

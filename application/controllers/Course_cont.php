@@ -43,7 +43,8 @@ class Course_cont extends CI_Controller
         $ntype = explode(",",$type);
         $n = count($ntype);
         $query['result9'] = $ntype;
-        $query['result'] = $this->SelectData->course($ntype); 
+        $query['result'] = $this->SelectData->course($ntype);
+            
         foreach($ntype as $value){
             $query['result1'] = $this->SelectData->standard();  
              $query['result2'] = $this->SelectData->branch(); 
@@ -87,11 +88,17 @@ class Course_cont extends CI_Controller
                 $branch = $this->input->post('commerce_branch'); 
                 $semester = $this->input->post('semester1');
             }
+            elseif($this->input->post('stream')!=''){
+                $branch = $this->input->post('stream'); 
+                $semester = NULL;
+            }
             else {
                 $branch = null;
                 $semester = NULL;
             }
+
             $subject = $this->input->post('subject');
+            print_r($subject);
             $subject_id = implode(",",$subject);
             $data = array(
                 'course_name' => $this->input->post('course_name'),
