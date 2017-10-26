@@ -1,29 +1,29 @@
 <?php
- defined('BASEPATH') OR exit('No direct script access allowed');
+/*
+details about attendance of student and teacher 
+*/
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Attendance_cont extends CI_Controller
 {
      public function markStudentAttendance()
     {
-        $this->load->library('session');
+         $this->load->library('session');
          $this->load->helper('url');
          $username = $this->session->userdata('username');   //session mane
-            if(isset($username)){
-        
-         $this->load->model('SelectData');
-        $this->load->library('form_validation');
-        $db = $this->session->userdata('db');   //load db   
-        $this->load->database($db); //call db
-         
-         /*validation starts*/
-       
-        $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
-		$this->form_validation->set_message('alpha_dash', 'Please enter in the following format eg:IX-1');
-         $query['result'] = $this->SelectData->ViewBatch(); 
-         /*validation ends*/
-		if(! isset($_POST['markattend']))
-		{ 
-            $this->load->view('addStudentAttendance',$query);		
-		}
+         if(isset($username)){
+            $this->load->model('SelectData');
+             $this->load->library('form_validation');
+             $db = $this->session->userdata('db');   //load db   
+             $this->load->database($db); //call db
+             /*validation starts*/
+             $this->form_validation->set_message('customAlpha', 'Only Alphabets Allowed');
+             $this->form_validation->set_message('alpha_dash', 'Please enter in the following format eg:IX-1');
+             $query['result'] = $this->SelectData->ViewBatch(); 
+             /*validation ends*/
+             if(! isset($_POST['markattend']))
+             { 
+                 $this->load->view('addStudentAttendance',$query);		//view file with query arrgument passed
+             }
         //form after giving right output
 		else
         {   

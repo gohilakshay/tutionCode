@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+//when on server base_url is classguru and on localhost dir is tutionCodeServer
 if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == "[::1]"){
     $config['base_url'] = 'http://localhost/tutionCodeServer';
 }
@@ -529,7 +530,8 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-
+//for multiple db configuration 
+//after setting this no need to declare db conn in database.php
 $config['sysdb'] =  array(
  'hostname'=>'','username'=>'','password'=>'',
  'database'=>'', /* and don't write anything in hostname; this will be changed "on the fly" in controler */

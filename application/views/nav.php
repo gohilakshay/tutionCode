@@ -8,7 +8,7 @@ foreach ($query->result() as $row) {
     $date2 = date('Y-m-d', strtotime("+1 days"));
    if($followDate >= $date1 && $followDate <= $date2){
        $enquiryTotal++;
-      $enquiry[] = array('followDate'=>$followDate,'name'=>$row->name,'id'=>$row->enquiry_ID);
+      $enquiry[] = array('followDate'=>$followDate,'name'=>$row->name,'id'=>$row->enquiry_ID,'status'=>$row->status);
    }
 } 
 ?>
@@ -64,6 +64,7 @@ foreach ($query->result() as $row) {
                                             <th><strong>Sr No.</strong></th>
                                             <th><strong>Name</strong></th>
                                             <th><strong>Follow Up Date</strong></th>
+                                            <th><strong>Status</strong></th>
                                           </thead>
                                           <tbody>
                                               <?php $i=1;foreach($enquiry as $value){
@@ -72,6 +73,7 @@ foreach ($query->result() as $row) {
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $i;$i++; ?></a></td>
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $value['name'] ?></a></td>                
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $value['followDate'] ?></a></td>
+                                                  <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $value['status'] ?></a></td>
                                               </tr>
                                               <?php } ?>
                                           </tbody>
@@ -79,16 +81,12 @@ foreach ($query->result() as $row) {
                                   </li>
                               </ul>
                         </li>
-                         <li>
+                         <!--<li>
                             <a href="<?php echo site_url()."/Scheduler_cont" ?>" >
                                 <i class="ti-time"></i>
 								<p>Scheduler</p>
                             </a>
-                           
-                                
-                                
-                            
-                        </li>
+                         </li>-->
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="ti-user"></i>
