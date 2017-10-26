@@ -199,23 +199,23 @@ class Course_cont extends CI_Controller
             $this->load->database($db);//call db
             $this->load->model('AddData'); 
             if($this->input->post('engi_branch')!= $this->input->post('course_branch')){ 
-                echo "if";
-                $branch = $this->input->post('engi_branch'); 
+               $branch = $this->input->post('engi_branch'); 
                 $semester = $this->input->post('engisemester'); 
             }
             
              else if($this->input->post('commerce_branch')!=$this->input->post('course_branch')){ 
-                echo "elseif 1";
                  $branch = $this->input->post('commerce_branch'); 
                 $semester = $this->input->post('semester1');
             }
             else if($this->input->post('stream')!= $this->input->post('course_branch')){
-                echo "else if 2";
                 $branch = $this->input->post('stream'); 
                 $semester = NULL;
             }
             else {
-            echo "else";
+                $branch = null;
+                $semester = NULL;
+            }
+            if($this->input->post('standard') < 11){
                 $branch = null;
                 $semester = NULL;
             }
