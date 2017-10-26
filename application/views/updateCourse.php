@@ -214,8 +214,6 @@
                                         <label>Subjects:</label>
                                         <div class="col-sm-12">
                                            <div class="row"> 
-                                               <input type="checkbox" value="1">
-                                            
                                                <?php foreach($result5 as $value):
                                                if($value->branch_ID == 'Science'){ ?>
                                                 <label class="checkbox-inline">
