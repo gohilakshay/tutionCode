@@ -84,8 +84,8 @@ class AddData extends CI_Model {
         }
     }
     function updateCourseItem($data){
-        $course_name = $data['course_name'];
-        $this->db->where('course_name',$course_name);
+        $course_id = $data['course_ID'];
+        $this->db->where('course_ID',$course_id);
         $this->db->update('course',$data);
         return;
     }

@@ -208,7 +208,7 @@ class Course_cont extends CI_Controller
                 $semester = $this->input->post('semester1');
             }
             else {
-                echo "BRAVO3";
+            
                 $branch = null;
                 $semester = NULL;
             }
@@ -217,6 +217,7 @@ class Course_cont extends CI_Controller
             $subject_id = implode(",",$subject);
             $data = array(
                 'course_name' => $this->input->post('course_name'),
+                'course_ID' => $this->input->post('course_id'),
                 'course_type' => $this->input->post('coursetype'),
                 'standard_name' => $this->input->post('standard'),
                 'branch_name' => $branch,
