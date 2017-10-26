@@ -5,7 +5,6 @@
 <br>
 
 <?php foreach($course as $v): ?>
-
 <!-- Start Add Course-->
 <div class="content">   
     <div class="container-fluid">
@@ -17,7 +16,6 @@
                         <h4 class="title">Update Course</h4>
                     </div>
                      <input type="hidden" value="<?php echo $v->course_ID;?>" name="course_id" >
-                     <input type="hidden" value="<?php echo $v->branch_name; ?>" name="course_branch" >
                     <div class="content">
                         <div class="row">
                             <div class="form-group">
