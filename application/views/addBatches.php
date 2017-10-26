@@ -36,7 +36,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Batch Name <span class="required" style="color:red;"> * </span></label>
-                                    <input type="text" class="form-control border-input UserName_field" name="batchname" value="<?php if(isset($_POST['batchname'])){echo $_POST['batchname'];}?>" placeholder="IX-1" required>
+                                    <input type="text" class="form-control border-input UserName_field" name="batchname" value="<?php if(isset($_POST['batchname'])){echo $_POST['batchname'];}?>" placeholder="eg. IX - 1" required>
                                     <?php echo form_error('batchname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>

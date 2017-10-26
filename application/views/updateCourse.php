@@ -5,7 +5,6 @@
 <br>
 
 <?php foreach($course as $v): ?>
-
 <!-- Start Add Course-->
 <div class="content">   
     <div class="container-fluid">
@@ -16,7 +15,7 @@
                     <div class="header">
                         <h4 class="title">Update Course</h4>
                     </div>
-                     <input type="text" value="<?php echo $v->course_ID;?>" name="course_id" >
+                     <input type="hidden" value="<?php echo $v->course_ID;?>" name="course_id" >
                     <div class="content">
                         <div class="row">
                             <div class="form-group">
@@ -197,7 +196,7 @@
                                            <div class="row">
                                                <?php foreach($result3 as $value): ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="<?php echo $value->subject_id ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
+                                                  <input type="checkbox" value="<?php echo $value->subject_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
                                                 </label>
                                                 <?php endforeach;?>
                                             </div>
