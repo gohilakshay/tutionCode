@@ -16,7 +16,8 @@
                     <div class="header">
                         <h4 class="title">Update Course</h4>
                     </div>
-                     <input type="text" value="<?php echo $v->course_ID;?>" name="course_id" >
+                     <input type="hidden" value="<?php echo $v->course_ID;?>" name="course_id" >
+                     <input type="hidden" value="<?php echo $v->branch_name; ?>" name="course_branch" >
                     <div class="content">
                         <div class="row">
                             <div class="form-group">
@@ -142,9 +143,10 @@
                                              <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
                                                 <option value="<?php echo $v->branch_name; ?>"><?php echo $v->branch_name; ?></option>
                                                 <?php foreach($result2  as $value): 
+                                                 if($value->standard_name==="Commerce") :
                                                    ?>
                                                 <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
-                                                 <?php  endforeach; ?>
+                                                 <?php endif; endforeach; ?>
                                             </select>
                                     </div>
                                 </div>
@@ -186,7 +188,7 @@
                                 </div>
                             </div>
                        
-                        
+                       
                         <!--end for branch   -->
                         <div id="schoolSubjects" style="display:none;">
                             <div class="row">
@@ -197,7 +199,7 @@
                                            <div class="row">
                                                <?php foreach($result3 as $value): ?>
                                                 <label class="checkbox-inline">
-                                                  <input type="checkbox" value="<?php echo $value->subject_id ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
+                                                  <input type="checkbox" value="<?php echo $value->subject_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
                                                 </label>
                                                 <?php endforeach;?>
                                             </div>
