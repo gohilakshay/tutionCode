@@ -75,7 +75,9 @@
             var total_fees = parseInt(document.getElementById("Resources").value);
             var discount = parseInt(document.getElementById("Minutes").value);
             var final_amount = total_fees - discount;
-
+            if (isNaN(final_amount)){
+                 final_amount = 0;
+             }
             document.getElementById("answer").value = final_amount;
         }
     
@@ -84,7 +86,9 @@
             var final_amount_1 = parseInt(document.getElementById("answer").value);
             var recieved = parseInt(document.getElementById("Received").value);
             var balance = final_amount_1 - recieved;
-
+            if (isNaN(balance)){
+                 balance = 0;
+             }
             document.getElementById("balance").value = balance;
         }
     
@@ -94,7 +98,9 @@
             var balance_1 = parseInt(document.getElementById("balance").value);
             var pay_amount = parseInt(document.getElementById("Payamount").value);
             var per_installment = balance_1/pay_amount;
-
+             if (isNaN(per_installment)){
+                 per_installment = 0;
+             }
             document.getElementById("result").value = per_installment;
         }
     

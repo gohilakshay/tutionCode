@@ -154,9 +154,6 @@
                     $dataseries1=array();
                     $dataseries2=array();
                     $dataseries3=array();
-                    /*foreach($Student_marks_data as $value1):*/
-                    /*if($value1->test_id == $category):
-                    $stud_id = explode(",",$value1->stud_id);*/
                     foreach($Student_marks_data['testIds'] as $value){
                         array_push($categoryArray, array(
                             "label" => $value
@@ -164,22 +161,15 @@
                         
                     }
                      $noOftest = count($Student_marks_data['testIds']);
-                    /*$marks_obtained = explode(",",$value1->marks_obtained);*/
                     foreach($Student_marks_data['student_marks'] as $marks){
                         array_push($dataseries1, array(
                             "value" => $marks
                         ));
                     }
-                    /*array_push($dataseries2, array(
-                    "value" => 50
-                    ));
-                    array_push($dataseries3, array(
-                    "value" => 60
-                    ));*/
-                   /* endforeach;*/
+                    
                     $arrData["categories"]=array(array("category"=>$categoryArray));
-                    // creating dataset object
-                    $arrData["dataset"] = array(array("seriesName"=> "Marks Obtained ", "data"=>$dataseries1)/*, array("seriesName"=> "Average",  "renderAs"=>"line", "data"=>$dataseries2),array("seriesName"=> "Failed",  "data"=>$dataseries3)*/);
+                    
+                    $arrData["dataset"] = array(array("seriesName"=> "Marks Obtained ", "data"=>$dataseries1));
                     /*JSON Encode the data to retrieve the string containing the JSON representation of     the data in the array. */
                     $jsonEncodedData = json_encode($arrData);
                     // chart object
@@ -215,16 +205,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i=1; 
+                                <?php  $i=1; $k = 0;
                                 $testid = $Student_marks_data['testIds'];
                                 $marks = $Student_marks_data['student_marks'];
                                 foreach($Student_marks_data['testDetails'] as $value):
-                                
                                 foreach($value as $v ){
-                                for($k=0;$k < $noOftest;$k++){
-                                    
-                                    if($testid[$k] == $v->test_ID){
-                                        
+                                if($testid[$k] == $v->test_ID){
                                 ?> 
                                 <tr>
                                     <td><?php echo $i++; ?></td>
@@ -237,8 +223,8 @@
                                     <td><?php echo $v->passing_marks;?></td>
                                     <td><?php echo $v->supervisor_name;?></td>
                                     <td><?php echo $v->subject_name;?></td>
-                                             
-                                </tr>  <?php  }}}break;endforeach; ?>
+                                </tr>  <?php  $k++;
+                                    }}endforeach; ?>
                             </tbody>
                         </table>    
                     </div>                                 

@@ -1,8 +1,8 @@
 <?php
+/*the chart render and information is sent here*/
 defined('BASEPATH') OR exit('No direct script access allowed');
     class Bar_cont extends CI_Controller
     {
-        
         public function bar()
         {
             $this->load->helper('url');

@@ -141,9 +141,10 @@
                                              <select class="form-control border-input" id="commerce_branch" name="commerce_branch">
                                                 <option value="<?php echo $v->branch_name; ?>"><?php echo $v->branch_name; ?></option>
                                                 <?php foreach($result2  as $value): 
+                                                 if($value->standard_name==="Commerce") :
                                                    ?>
                                                 <option value="<?php echo $value->branch_name;?>"><?php echo $value->branch_name;?></option>
-                                                 <?php  endforeach; ?>
+                                                 <?php endif; endforeach; ?>
                                             </select>
                                     </div>
                                 </div>
@@ -185,7 +186,7 @@
                                 </div>
                             </div>
                        
-                        
+                       
                         <!--end for branch   -->
                         <div id="schoolSubjects" style="display:none;">
                             <div class="row">
