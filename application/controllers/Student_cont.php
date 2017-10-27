@@ -173,6 +173,9 @@ class Student_cont extends CI_Controller
             else if($value == 'jrcolg_com'){
                 $query['result3'] = $this->SelectData->jrColgCom();
             }
+            else if($value == 'jrcolg_art'){
+                $query['result3'] = $this->SelectData->jrColgArt();
+            }
             else if($value == 'engicolg'){ 
                 $query['result3'] = $this->SelectData->engisubject();
             }

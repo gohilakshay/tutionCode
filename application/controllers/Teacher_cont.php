@@ -116,6 +116,9 @@ class Teacher_cont extends CI_Controller
                 else if($value == 'jrcolg_com'){
                     $query['result6'] = $this->SelectData->jrColgCom();
                 }
+                else if($value == 'jrcolg_art'){
+                    $query['result10'] = $this->SelectData->jrColgArt();
+                }
                 else if($value == 'engicolg'){ 
                     $query['result7'] = $this->SelectData->engisubject();
                 }
@@ -261,6 +264,9 @@ class Teacher_cont extends CI_Controller
                 }
                 else if($value == 'jrcolg_com'){
                     $query['result6'] = $this->SelectData->jrColgCom();
+                }
+                else if($value == 'jrcolg_art'){
+                    $query['result10'] = $this->SelectData->jrColgArt();
                 }
                 else if($value == 'engicolg'){ 
                     $query['result7'] = $this->SelectData->engisubject();

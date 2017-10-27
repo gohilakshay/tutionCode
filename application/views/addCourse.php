@@ -96,12 +96,16 @@
                                             <!--<option value="Science">Science</option>-->
                                             <option value="Commerce">Commerce</option>
                                             <?php }
-                                               else if($v == 'jrcolg_sci'){
-                                                  ?>
+                                            else if($v == 'jrcolg_sci'){
+                                            ?>
                                             <option value="Science">Science</option>
                                             <?php  
-                                                    
-                                                }
+                                            }
+                                            else if($v == 'jrcolg_art'){
+                                            ?>
+                                            <option value="Art">Arts</option>
+                                            <?php  
+                                            }
                                             endforeach; ?>
                                         </select>
                                     </div>
@@ -228,6 +232,26 @@
                                            <div class="row"> 
                                                <?php foreach($result6 as $value):
                                                if($value->branch_ID == 'Commerce'){ ?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->colgsubj_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
+                                                </label>
+                                                <?php } endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--for commerce college-->
+                        <div id="artSubjects" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                           <div class="row"> 
+                                               <?php foreach($result10 as $value):
+                                               if($value->branch_ID == 'Art'){ ?>
                                                 <label class="checkbox-inline">
                                                   <input type="checkbox" value="<?php echo $value->colgsubj_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
                                                 </label>

@@ -86,6 +86,16 @@ class CreateDbTable_cont extends CI_Controller
                     }
                 }
                 else if($type == 'jrcolg_com' && $count==0){
+                    $count++;
+                    for($i=11;$i<13;$i++)
+                    {
+                        $data = array(
+                            'standard_name' => $i.'th'
+                        );
+                        $this->InsertTable->addStd($data);
+                    }
+                }
+                else if($type == 'jrcolg_art' && $count==0){
                     for($i=11;$i<13;$i++)
                     {
                         $data = array(
@@ -297,6 +307,26 @@ class CreateDbTable_cont extends CI_Controller
                             $data = array(
                             'branch_name' => 'Commerce',
                             'standard_name' => 'Commerce'
+                        );
+                            $this->InsertTable->addBranch($data);
+                        }
+                    }
+
+                }
+                else if($type == 'jrcolg_art'){
+                    for($i=1;$i<3;$i++)
+                    {
+                        if($i==1){
+                            $data = array(
+                            'branch_name' => 'Arts',
+                            'standard_name' => 'Arts'
+                        );
+                            $this->InsertTable->addBranch($data);
+                        }
+                        else if($i==2){
+                            $data = array(
+                            'branch_name' => 'Arts',
+                            'standard_name' => 'Arts'
                         );
                             $this->InsertTable->addBranch($data);
                         }
@@ -672,6 +702,187 @@ class CreateDbTable_cont extends CI_Controller
                         );
                             $this->InsertTable->addComSubj($data);
                         }                                                 /*11th & 12th commerce ends*/
+                    }
+                }
+                else if($type=='jrcolg_art'){
+                    $this->CreateTable->create_jrColgArt();
+                    for($i=10;$i<32;$i++){
+                         if($i==10){                      //11th & 12th commerce
+                            $data = array(
+                                'subject_name' => 'English',
+                                'semester_ID' => '1',
+                                'branch_ID' => 'Art'
+                            );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==11){
+                            $data = array(
+                            'subject_name' => 'Hindi',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==12){
+                            $data = array(
+                            'subject_name' => 'Computers',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==13){
+                            $data = array(
+                            'subject_name' => 'Geography',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==14){
+                            $data = array(
+                            'subject_name' => 'History',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==15){
+                            $data = array(
+                            'subject_name' => 'Civics',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==16){
+                            $data = array(
+                            'subject_name' => 'Sociology',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==17){
+                            $data = array(
+                            'subject_name' => 'Political science',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==18){
+                            $data = array(
+                            'subject_name' => 'Public administration',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==19){
+                            $data = array(
+                            'subject_name' => 'English literature',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==20){
+                            $data = array(
+                            'subject_name' => 'Hindi literature',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==21){
+                            $data = array(
+                            'subject_name' => 'Sanskrit literature',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==22){
+                            $data = array(
+                            'subject_name' => 'Music',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==23){
+                            $data = array(
+                            'subject_name' => 'Arts and craft',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==24){
+                            $data = array(
+                            'subject_name' => 'Handicraft',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==25){
+                            $data = array(
+                            'subject_name' => 'Psychology',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==26){
+                            $data = array(
+                            'subject_name' => 'History',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==27){
+                            $data = array(
+                            'subject_name' => 'Economics',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==28){
+                            $data = array(
+                            'subject_name' => 'Mathematics',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==29){
+                            $data = array(
+                            'subject_name' => 'Home science',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else if($i==30){
+                            $data = array(
+                            'subject_name' => 'Philosophy',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }
+                        else {
+                            $data = array(
+                            'subject_name' => 'Computer Application',
+                            'semester_ID' => '1',
+                            'branch_ID' => 'Art'
+                        );
+                            $this->InsertTable->addArtSubj($data);
+                        }                                                 /*11th & 12th arts ends*/
                     }
                 }
                 else if($type=='engicolg'){
