@@ -75,7 +75,9 @@
                                         ?>
                                         <option value="<?php echo $value->standard_ID; ?>"><?php echo $value->standard_name; ?></option>
                                         <?php }
-                                        endforeach; ?> </select>
+                                        endforeach; ?>
+                                       <option value="others">others</option>
+                                    </select>
                                     <?php echo form_error('standard', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -1283,6 +1285,31 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        <div id="others" style="display:none;">
+                            <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Other Branch <span class="required" style="color:red;"> * </span></label>
+                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Course Name" name="course_name" value="<?php if(isset($_POST['course_name'])){echo $_POST['course_name'];} ?>" required>
+                                                <?php echo form_error('course_name', '<div class="alert alert-danger contact-warning">', '</div>');?> 
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Other Subject  <span class="required" style="color:red;"> * </span></label>
+                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Course Name" name="course_name" value="<?php if(isset($_POST['course_name'])){echo $_POST['course_name'];} ?>" required>
+                                                <?php echo form_error('course_name', '<div class="alert alert-danger contact-warning">', '</div>');?> 
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                             </div>
+                       
+                        
+                        
                         
                         <br>
                         <div class="form-group">
