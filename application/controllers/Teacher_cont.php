@@ -150,9 +150,14 @@ class Teacher_cont extends CI_Controller
                 $this->load->model('ProfileImg');
                 $name = strtolower(preg_replace('/\s+/', '', $this->input->post('teachersname')));
                 /*for img to be any format */
+                if(!empty($_FILES['photo']['name'])){
                     $filename = explode(".",$_FILES['photo']['name']);
                     $extn = end($filename);
-                $img_address = 'assets/profile/'.$name.'.'.$extn;
+                    $img_address = 'assets/profile/'.$name.'.'.$extn;
+                }
+                else{
+                    $img_address = $this->input->post('proImg');
+                }
                 $data = array(
                     't_ID' => $this->input->post('teacher_id'),
                     't_name' => $this->input->post('teachersname'),

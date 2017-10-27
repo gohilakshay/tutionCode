@@ -73,9 +73,15 @@ class Student_cont extends CI_Controller
             $this->load->model('ProfileImg');
             $name = strtolower(preg_replace('/\s+/', '', $this->input->post('studentname')));
             /*for img to be any extention*/
+            if(!empty($_FILES['photo']['name'])){
                 $filename = explode(".",$_FILES['photo']['name']);
-                    $extn = end($filename);
+                $extn = end($filename);
                 $img_address = 'assets/profile/'.$name.'.'.$extn;
+            }
+            else{
+               $img_address = $this->input->post('proImg');
+            }
+                
             $data = array(
                 'stud_ID' => $this->input->post('stud_id'),
                 'stud_surname' => $this->input->post('surname'),
@@ -107,7 +113,7 @@ class Student_cont extends CI_Controller
             $this->ProfileImg->addImg($img,$name);
              $this->AddData->UpdateStudentItem($data,$batch_edit);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
-            redirect('Student_cont/student'); 
+         //   redirect('Student_cont/student'); 
         }
             }else {
             $name=site_url().'/Home';

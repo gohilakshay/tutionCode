@@ -13,7 +13,6 @@
                 <h5><?php echo $this->session->flashdata('success'); ?></h5>
             </div>
         <?php } ?>
-            
         <div class="row">
             <a href="<?php echo site_url("Teacher_cont/teacher") ?>">
             <div class="col-lg-3 col-sm-6">
@@ -238,12 +237,12 @@
                                     <?php echo form_error('joiningdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
-                          
+                          <input type="hidden" name="proImg" value="<?php echo $teacher_data->t_profile; ?>" />
                             <div class="col-md-6">
                                 <div class="form-group">                   
                                 <label class="col-sm-6">Profile photo:</label>
                                 <div class="row">
-                                    <input type="file" class="form-control" value="<?php echo $teacher_data->t_profile; ?>" name="photo" accept="image/jpeg"><br>
+                                    <input type="file" class="form-control"  name="photo" accept="image/jpeg"><br>
                                 </div>
                                 </div>
                             </div>

@@ -239,12 +239,13 @@ $fee_data = end($result);
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="proImg" value="<?php echo  $student_data->stud_profile ;?>" />
                                 <div class="row">
                                     <div class="form-group">                    
                                     <label class="col-sm-6">Profile photo:</label>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <input type="file" value="<?php $student_data->stud_profile ;?>" class="form-control" name="photo" accept="image/*"><br>
+                                                <input type="file"  class="form-control" name="photo" accept="image/*"><br>
                                             </div>
                                         </div>
                                     </div>
