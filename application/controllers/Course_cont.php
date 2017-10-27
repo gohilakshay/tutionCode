@@ -219,6 +219,10 @@ class Course_cont extends CI_Controller
                 $branch = null;
                 $semester = NULL;
             }
+            else if($this->input->post('standard')>10 && $this->input->post('standard') < 13){
+                $branch = $this->input->post('stream');
+                $semester = NULL;
+            }
             $subject = $this->input->post('subject');
             print_r($subject);
             $subject_id = implode(",",$subject);
