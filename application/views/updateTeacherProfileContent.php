@@ -158,7 +158,6 @@
                                     <?php echo form_error('teachersname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>  
-                            
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Teacher's Surname</label>
@@ -239,6 +238,7 @@
                                     <?php echo form_error('joiningdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
+                          
                             <div class="col-md-6">
                                 <div class="form-group">                   
                                 <label class="col-sm-6">Profile photo:</label>

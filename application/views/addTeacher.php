@@ -235,10 +235,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">                   
-                                <label class="col-sm-6">Profile photo:</label>
-                                <div class="row">
-                                    <input type="file" class="form-control" name="photo" accept="image/jpeg"><br>
-                                </div>
+                                <label class="control-label">Profile photo:</label>
+                                    <input type="file" class="form-control border-input" name="photo" accept="image/jpeg"><br>
                                 </div>
                             </div>
                         </div>

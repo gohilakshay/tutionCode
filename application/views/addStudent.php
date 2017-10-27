@@ -240,12 +240,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group">                    
-                                    <label class="col-sm-6">Profile photo:</label>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <input type="file" class="form-control" name="photo" accept="image/*"><br>
+                                            <div class="col-sm-4">
+                                                 <label class="control-label">Profile photo:</label>
+                                                <input type="file" class="form-control border-input" name="photo" accept="image/*"><br>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
