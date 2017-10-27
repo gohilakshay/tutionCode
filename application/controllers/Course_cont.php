@@ -215,7 +215,7 @@ class Course_cont extends CI_Controller
                 $branch = null;
                 $semester = NULL;
             }
-            if($this->input->post('standard') < 11){
+            if(is_numeric($this->input->post('standard')) && $this->input->post('standard')<11){
                 $branch = null;
                 $semester = NULL;
             }
@@ -223,8 +223,15 @@ class Course_cont extends CI_Controller
                 $branch = $this->input->post('stream');
                 $semester = NULL;
             }
+            else if ($this->input->post('standard') == 'Engineering'){
+                $branch = $this->input->post('engi_branch'); 
+                $semester = $this->input->post('engisemester'); 
+            }
+            else if ($this->input->post('standard') == 'Commerce'){
+                $branch = $this->input->post('commerce_branch'); 
+                $semester = $this->input->post('semester1');
+            }
             $subject = $this->input->post('subject');
-            print_r($subject);
             $subject_id = implode(",",$subject);
             $data = array(
                 'course_name' => $this->input->post('course_name'),
