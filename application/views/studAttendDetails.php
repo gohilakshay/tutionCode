@@ -131,7 +131,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="col-1">
-                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                     <h3 class="text-uppercase">Student Details</h3>
                                 </div>

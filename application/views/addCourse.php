@@ -1275,7 +1275,7 @@
                     <div class="row">
                         <div class="card">
                             <div class="col-1">
-                                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                                <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
                                     <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -1285,8 +1285,8 @@
                                             <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
                                                          <input type="text" id="teachersearch"
-                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required> 
-                                                    </h3>
+                                                           onkeyup="myFunction()" placeholder="Search..." style="width:80%;" required> 
+                                                      </h3>
                                                 </div>
                                         </div>
                                     </div>

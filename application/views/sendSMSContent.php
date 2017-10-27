@@ -54,7 +54,7 @@
                     <div class="card">
                         <div class="col-1">
                             <input type="hidden" name="batch" value="<?php echo $_POST['batch']; ?>" >
-                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" >
                                         <thead>
