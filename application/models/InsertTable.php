@@ -24,6 +24,10 @@ class InsertTable extends CI_Model {
         $this->db->insert('jrColgCom', $data);
         return;
     }
+    function addArtSubj($data){
+        $this->db->insert('jrColgArt', $data);
+        return;
+    }
     function addSciSubj($data){
         $this->db->insert('jrColgSci', $data);
         return;

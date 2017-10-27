@@ -45,6 +45,7 @@
                                         <option value="school">School</option>
                                         <option value="jrcolg_sci">Jr. College (science)</option>
                                         <option value="jrcolg_com">Jr. College (commerce)</option>
+                                        <option value="jrcolg_art">Jr. College (Arts)</option>
                                         <option value="engicolg">Engineering College</option>
                                         <option value="comcolg">Commerce College</option>
                                         <!--<option value="school,jrcolg_sci">School & Jr. College (science)</option>          

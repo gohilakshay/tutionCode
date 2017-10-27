@@ -149,6 +149,15 @@ class SelectData extends CI_Model {
                                 }           
                             }
                         }
+                        else if($row->standard_name >= 11 && $value == 'jrcolg_art'  && $row->branch_name == 'Art'){
+                            $q1 = $this->db->query("SELECT subject_name FROM `jrColgArt` where    colgsubj_ID = '$name[$i]'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                }           
+                            }
+                        }
                         else if($row->standard_name == 'Engineering' && $value == 'engicolg'){
                             $q1 = $this->db->query("SELECT subject_name FROM `engisubject` where    engisubj_ID = '$name[$i]'");
                             if($q1->num_rows() >0){
@@ -237,6 +246,15 @@ class SelectData extends CI_Model {
                                     } 
                             
                                 }
+                                else if($row->branch_name == 'Art'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgArt` where    colgsubj_ID = '$subid'");
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }
                                 else
                                 {
                                     $q1 = $this->db->query("SELECT subject_name FROM `jrColgSci` where    colgsubj_ID = '$subid'");
@@ -260,6 +278,15 @@ class SelectData extends CI_Model {
                                 
                                 if($row->branch_name == 'Commerce'){
                                     $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }
+                                else if($row->branch_name == 'Art'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgArt` where    colgsubj_ID = '$subid'");
                                     foreach($q1->result() as $row1){
                                    
                                         $bj[$a] = $row1->subject_name;
@@ -353,8 +380,19 @@ class SelectData extends CI_Model {
                         }
                         else if($std_name == '11'){
                             foreach($subj_id as $subid){
-                                $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
-                                if($q1->num_rows() >0){
+                                
+                                
+                                if($row->branch_name == 'Commerce'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }
+                                else if($row->branch_name == 'Art'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgArt` where    colgsubj_ID = '$subid'");
                                     foreach($q1->result() as $row1){
                                    
                                         $bj[$a] = $row1->subject_name;
@@ -382,8 +420,18 @@ class SelectData extends CI_Model {
                         }
                         else if($std_name == '12'){
                             foreach($subj_id as $subid){
-                                $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
-                                if($q1->num_rows() >0){
+                                
+                                if($row->branch_name == 'Commerce'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgCom` where    colgsubj_ID = '$subid'");
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }
+                                else if($row->branch_name == 'Art'){
+                                    $q1 = $this->db->query("SELECT subject_name FROM `jrColgArt` where    colgsubj_ID = '$subid'");
                                     foreach($q1->result() as $row1){
                                    
                                         $bj[$a] = $row1->subject_name;
@@ -499,6 +547,15 @@ class SelectData extends CI_Model {
     }*/
     function jrColgCom(){
         $q = $this->db->query("SELECT * FROM `jrColgCom`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function jrColgArt(){
+        $q = $this->db->query("SELECT * FROM `jrColgArt`");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
                 $data[]=$row;
@@ -686,6 +743,12 @@ class SelectData extends CI_Model {
                     $subj = $row->colgsubj_ID;
                 }
             }
+            else if($value == 'jrcolg_art'){
+                $q = $this->db->query("SELECT colgsubj_ID FROM `jrColgArt` where subject_name =    '$subject'");
+                foreach($q->result() as $row){
+                    $subj = $row->colgsubj_ID;
+                }
+            }
             else if($value == 'engicolg'){
                 $q = $this->db->query("SELECT engisubj_ID FROM `engisubject` where subject_name =    '$subject'");
                 foreach($q->result() as $row){
@@ -747,6 +810,16 @@ class SelectData extends CI_Model {
                         $subIds = explode(",",$row->subject_id);
                         foreach($subIds as $ids){
                             $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrColgCom` WHERE colgsubj_ID = '$ids'");
+                            foreach($q1->result() as $row1){
+                                $subject[] = $row1;
+                            }
+                        }
+    
+                    }
+                    else if($row->branch_name == 'Art'){
+                        $subIds = explode(",",$row->subject_id);
+                        foreach($subIds as $ids){
+                            $q1 = $this->db->query("SELECT colgsubj_ID,subject_name FROM  `jrColgArt` WHERE colgsubj_ID = '$ids'");
                             foreach($q1->result() as $row1){
                                 $subject[] = $row1;
                             }

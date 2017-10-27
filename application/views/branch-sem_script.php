@@ -14,6 +14,7 @@
         $("#schoolSubjects").hide();
         $("#scienceSubjects").hide();
         $("#commerceSubjects").hide(); 
+        $("#artSubjects").hide(); 
         $("#engisem1").hide();
         $("#engisem2").hide();
         $("#engicomp3").hide();
@@ -69,12 +70,20 @@
                 {
                     $("#scienceSubjects").show();
                     $("#commerceSubjects").hide();
+                    $("#artSubjects").hide();
                     /*$("#schoolSubjects").hide();*/
                 }
                 else if($(str).val()==="Commerce")
                 {
                     $("#scienceSubjects").hide();
+                    $("#artSubjects").hide();
                     $("#commerceSubjects").show();
+                }
+                else if($(str).val()==="Art")
+                {
+                    $("#scienceSubjects").hide();
+                    $("#commerceSubjects").hide();
+                    $("#artSubjects").show();
                 }
             });
         }
