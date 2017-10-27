@@ -113,7 +113,7 @@ class Student_cont extends CI_Controller
             $this->ProfileImg->addImg($img,$name);
              $this->AddData->UpdateStudentItem($data,$batch_edit);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
-         //   redirect('Student_cont/student'); 
+           redirect('Student_cont/student'); 
         }
             }else {
             $name=site_url().'/Home';
