@@ -63,6 +63,7 @@ function table()
     $this->CreateTable->createSms();
     $this->CreateTable->createImport();
     $this->CreateTable->createSmsBulk();
+    $this->CreateTable->create_others();
     $this->CreateTable->createEvents();
     $this->load->view('mainPage');
     }else {
