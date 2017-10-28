@@ -23,6 +23,7 @@ class Student_cont extends CI_Controller
     public function studentProfile($n)
     {
         $this->load->library('session');
+        $this->load->library('form_validation');
         $this->load->helper('url');
         $username = $this->session->userdata('username');
         if(isset($username)){

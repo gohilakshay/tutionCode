@@ -2,6 +2,22 @@
 $student_data = $result[0];
 $batch_data = $result[1];
 $fee_data = end($result);
+/*Values for receipt genration*/
+$classesName = $this->db->database;
+$studentName = $student_data->stud_surname." ".$student_data->stud_name." ".$student_data->father_name." ".$student_data->mother_name;
+$admissionDate = $student_data->admission_date;
+$year = explode("-",$admissionDate);
+$stud_id = $student_data->stud_ID;
+$i = 0;
+$receipt1 = substr($year[0],2).'CG'.$stud_id.'0'.$i;
+$payMode = $fee_data->payment_mode;
+$FinalAmt = $fee_data->final_fee;
+$RecievedFee = $fee_data->recieved_fee;
+$BalanceFee = $fee_data->balance_fee;
+$chq_date = $fee_data->chq_date;
+$bank_name = $fee_data->bank_name;
+$chq_no = $fee_data->chq_no;
+$transc_id = $fee_data->transc_id;
 ?>
 <div class="content">
     <div class="container-fluid">
@@ -384,7 +400,30 @@ $fee_data = end($result);
                                     </li>
                                 </ul>
                             </div>
-                        </div>                        
+                            
+                        </div> 
+                        <?php echo form_open('PdfExport_cont'); ?>
+                        <input type="hidden" value="<?php echo $classesName; ?>" name="classes_name" />
+                        <input type="hidden"  value="<?php echo $admissionDate; ?>" name="admission_date" />
+                        <input type="hidden" value="<?php echo $receipt1; ?>" name="receipt_1" />
+                        <input type="hidden" value="<?php echo $studentName; ?>" name="student_name" /> 
+                        <input type="hidden" value="<?php echo $payMode; ?>" name="payMode" /> 
+                        <input type="hidden" value="<?php echo $FinalAmt; ?>" name="FinalAmt" /> 
+                        <input type="hidden" value="<?php echo $RecievedFee; ?>" name="RecievedFee" /> 
+                        <input type="hidden" value="<?php echo $BalanceFee; ?>" name="BalanceFee" /> 
+                        <input type="hidden" value="<?php echo $chq_date; ?>" name="chq_date" /> 
+                        <input type="hidden" value="<?php echo $bank_name; ?>" name="bank_name" /> 
+                        <input type="hidden" value="<?php echo $chq_no; ?>" name="chq_no" /> 
+                        <input type="hidden" value="<?php echo $transc_id; ?>" name="transc_id" /> 
+                        
+                        
+                        
+                        <div class="row">
+                            <div class="col-xs-*"><br>
+                               <a href="<?php echo site_url("Student_cont/updateStudentProfile/$id") ?>"><button class="btn btn-success">Print Reciept</button></a>
+                            </div>
+                        </div>
+                        <?php form_close(); ?>
                     </div>
                 </div>
             </div>
