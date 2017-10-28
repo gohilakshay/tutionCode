@@ -441,24 +441,22 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Payment Mode <span class="required" style="color:red;"> * </span></label>
-                                        <div>
-                                            <select  class="form-control student_payment student_payment_1 border-input" name="paymentmode">
-                                                <option value="">--Select Payment Mode--</option>
-                                                <option value="cash">Cash</option>
-                                                <option value="cheque">Cheque</option>
-                                                <option value="creditcard">Credit Card</option>
-                                                <option value="debitcard">Debit Card</option>
-                                                <option value="netbanking">Net Banking</option>
-                                            </select>
-                                            <?php echo form_error('paymentmode', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
-                                        </div>
-                                    </div> 
-                                </div>
+                                    <label>Payment Mode <span class="required" style="color:red;"> * </span></label>
+                                    <div>
+                                        <select id="payMode" class="form-control student_payment student_payment_1 border-input" name="paymentmode" required>
+                                            <option value="">Payment Mode</option>
+                                            <option value="cash">Cash</option>
+                                            <option value="cheque">Cheque</option>
+                                            <option value="credit">Credit Card</option>
+                                            <option value="debit">Debit Card</option>
+                                            <option value="netbanking">Net Banking</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                            </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Amount Per Installment</label>
@@ -466,7 +464,35 @@
                                     <?php echo form_error('result', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
+                        <div class="row" id="chqDetail" style="display:none;">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Cheque Date.</label>
+                                    <input type="date" class="form-control border-input" name="chq_date" >
+                                 </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Bank Name</label>
+                                    <input type="text" class="form-control border-input" name="bank_name" >
+                                 </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Cheque No.</label>
+                                    <input type="text" class="form-control border-input" name="chq_no" >
+                                 </div>
+                            </div>
+                            </div>
+                            <div class="row" id="transcDetail" style="display:none">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Transaction ID</label>
+                                        <input type="text" class="form-control border-input" name="transc_id" >
+                                     </div>
+                                </div>
+                            </div>
                             <hr>
                             <div class="row">
                                 <div class="col-md-5">

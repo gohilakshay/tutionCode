@@ -529,6 +529,26 @@ class CreateTable extends CI_Model {
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                           ),
+                        'chq_date' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
+                        'bank_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
+                        'chq_no' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
+                        'transc_id' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
                         'total_fee' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
@@ -968,6 +988,11 @@ class CreateTable extends CI_Model {
                                                  'constraint' => '100',
                                           ),
                         'chq_no' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,
+                                          ),
+                        'bank_name' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '100',
                                                  'null' => TRUE,
