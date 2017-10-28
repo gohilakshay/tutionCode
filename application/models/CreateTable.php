@@ -302,6 +302,35 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (colgsubj_ID)
         $this->dbforge->create_table('jrColgArt', TRUE); 
     }
+   
+    
+    function create_others()
+    { 
+    /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'colgsubj_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'subject_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '500',
+                                          ),
+                
+                        'branch_ID' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '500',
+                                          ),
+                     );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('colgsubj_ID', TRUE);   
+        // gives PRIMARY KEY (colgsubj_ID)
+        $this->dbforge->create_table('others', TRUE); 
+    }
     
     function create_Commercesubject()
     { 

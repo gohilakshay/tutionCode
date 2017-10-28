@@ -1308,9 +1308,6 @@
                                 </div>
                              </div>
                        
-                        
-                        
-                        
                         <br>
                         <div class="form-group">
                              <button type="submit" class="btn btn-success">Add Course</button>
