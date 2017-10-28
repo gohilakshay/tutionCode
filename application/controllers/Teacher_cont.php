@@ -399,6 +399,7 @@ class Teacher_cont extends CI_Controller
             'payment_mode'=> $this->input->post('paymentmode'),
             'payment_date'=> $this->input->post('paymentdate'),
             'chq_no'=> $this->input->post('chq_no'),
+            'bank_name'=> $this->input->post('bank_name'),
             'chq_date'=> $this->input->post('chq_date'),
             'transc_id'=> $this->input->post('transc_id'),
             ); 
