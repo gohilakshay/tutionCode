@@ -239,17 +239,29 @@ class Course_cont extends CI_Controller
             }
             $subject = $this->input->post('subject');
             $subject_id = implode(",",$subject);
-            $data = array(
-                'course_name' => $this->input->post('course_name'),
-                'course_ID' => $this->input->post('course_id'),
-                'course_type' => $this->input->post('coursetype'),
-                'standard_name' => $this->input->post('standard'),
-                'branch_name' => $branch,
-                'semester' => $semester,
-                'subject_id'=>$subject_id,
-            );
-           
-           $this->AddData->updateCourseItem($data);
+            echo "<br>".$subject_id;
+            if(!empty($subject)){
+                $data = array(
+                    'course_name' => $this->input->post('course_name'),
+                    'course_ID' => $this->input->post('course_id'),
+                    'course_type' => $this->input->post('coursetype'),
+                    'standard_name' => $this->input->post('standard'),
+                    'branch_name' => $branch,
+                    'semester' => $semester,
+                    'subject_id'=>$subject_id,
+                );
+            }
+            else{
+                $data = array(
+                    'course_name' => $this->input->post('course_name'),
+                    'course_ID' => $this->input->post('course_id'),
+                    'course_type' => $this->input->post('coursetype'),
+                    'standard_name' => $this->input->post('standard'),
+                    'branch_name' => $branch,
+                    'semester' => $semester,
+                );
+            }
+            $this->AddData->updateCourseItem($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }
