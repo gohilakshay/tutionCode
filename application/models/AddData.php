@@ -25,7 +25,14 @@ class AddData extends CI_Model {
         $this->db->where('t_ID',$t_id);
         $this->db->update('teacher',$data);
         return;
+    }  
+    
+    function addOtherItem($data){
+        $this->db->insert('others', $data);
+        $insert_id = $this->db->insert_id();
+        return $insert_id;
     }
+    
     function addTeacherSubjItem($data1){
         $this->db->insert('teacher_subject_mapping', $data1);
         return;
@@ -87,6 +94,11 @@ class AddData extends CI_Model {
         $course_id = $data['course_ID'];
         $this->db->where('course_ID',$course_id);
         $this->db->update('course',$data);
+        return;
+    }
+    function updateOtherItem($data,$newData){
+        $this->db->where('subject_name',$data);
+        $this->db->update('others',$newData);
         return;
     }
     //insert into stud_attend table

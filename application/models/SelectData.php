@@ -50,6 +50,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+   
     function student_batch_map() {
         $q = $this->db->query("SELECT * FROM `batch_student_mapping`");
         if($q->num_rows() >0){
@@ -346,6 +347,23 @@ class SelectData extends CI_Model {
                             $row->subject_id =$bj1;
                             $data[] = $row;
                         }
+                        else if($std_name == 'others'){
+                            foreach($subj_id as $subid){
+                                $q1 = $this->db->query("SELECT subject_name FROM `others` where colgsubj_ID = '$subid'");
+                                if($q1->num_rows() >0){
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }    
+                            }
+                            $bj1 = "<pre style='width:200px;'>".implode(",\n",$bj)."</pre>";
+                            unset($bj);
+                            $row->subject_id =$bj1;
+                            $data[] = $row;
+                        }
                     }   
                 }
                 return $data;         
@@ -491,6 +509,23 @@ class SelectData extends CI_Model {
                             $row->subject_id =$bj1;
                             $data[] = $row;
                         }
+                        else if($std_name == 'others'){
+                            foreach($subj_id as $subid){
+                                $q1 = $this->db->query("SELECT subject_name FROM `others` where colgsubj_ID = '$subid'");
+                                if($q1->num_rows() >0){
+                                    foreach($q1->result() as $row1){
+                                   
+                                        $bj[$a] = $row1->subject_name;
+                                        $a++;
+                                    } 
+                            
+                                }    
+                            }
+                            $bj1 = implode(",",$bj);
+                            unset($bj);
+                            $row->subject_id =$bj1;
+                            $data[] = $row;
+                        }
                     }   
                 }
         return $data;  
@@ -498,6 +533,21 @@ class SelectData extends CI_Model {
     /*
     start of different school,jrcolg,engi,comm  dbTypes
     */
+    
+    
+    
+     
+     function others() {
+        $q = $this->db->query("SELECT * FROM `others` ORDER BY colgsubj_ID DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;   
+            }
+        }
+        return $data;
+    }
+    
+    
     function standard(){
         $q = $this->db->query("SELECT * FROM `standard`");
         if($q->num_rows() >0){

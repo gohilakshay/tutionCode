@@ -99,19 +99,40 @@ class Course_cont extends CI_Controller
                 $branch = null;
                 $semester = NULL;
             }
-
-            $subject = $this->input->post('subject');
-            print_r($subject);
-            $subject_id = implode(",",$subject);
-            $data = array(
-                'course_name' => $this->input->post('course_name'),
-                'course_type' => $this->input->post('coursetype'),
-                'standard_name' => $this->input->post('standard'),
-                'branch_name' => $branch,
-                'semester' => $semester,
-                'subject_id'=>$subject_id,
-            );
-            $val = $this->AddData->addCourseItem($data);
+            if($this->input->post('standard') != 'others'){
+                $subject = $this->input->post('subject');
+                $subject_id = implode(",",$subject);
+                $data = array(
+                    'course_name' => $this->input->post('course_name'),
+                    'course_type' => $this->input->post('coursetype'),
+                    'standard_name' => $this->input->post('standard'),
+                    'branch_name' => $branch,
+                    'semester' => $semester,
+                    'subject_id'=>$subject_id,
+                );
+                 $val = $this->AddData->addCourseItem($data);
+            }
+            else{
+                $subject = $this->input->post('other_subject');
+                $subject_id = explode(",",$subject);
+                    foreach($subject_id as $subjName){
+                         $data1 = array(
+                             'branch_ID' => $this->input->post('other_branch'),
+                             'subject_name'=>$subjName
+                         );
+                        $subjId[] = $this->AddData->addOtherItem($data1);
+                }
+                $subjId = implode(",",$subjId);
+                $data = array(
+                    'course_name' => $this->input->post('course_name'),
+                    'course_type' => $this->input->post('coursetype'),
+                    'standard_name' => $this->input->post('standard'),
+                    'branch_name' => $this->input->post('other_branch'),
+                    'semester' => 'other',
+                    'subject_id'=>$subjId,
+                );
+                 $val = $this->AddData->addCourseItem($data);
+            }
             if($val == 0){
                 $this->session->set_flashdata('success','Course Already Exits.');
                 redirect('Course_cont/addCourse');  
@@ -237,9 +258,21 @@ class Course_cont extends CI_Controller
                 $branch = $this->input->post('commerce_branch'); 
                 $semester = $this->input->post('semester1');
             }
+            else if ($this->input->post('standard') == 'others'){
+                $branch = $this->input->post('other_branch'); 
+                $semester = 'other';
+                $otherSujts = $this->input->post('other_subject');
+                $subjtsAre1 = explode(",",$otherSujts);
+                $othrsubjname = $this->input->post('othrsubjname');
+                $subjtsAre = explode(",",$othrsubjname);
+                $i=0;
+                foreach($subjtsAre as $subName):
+                    $data = array('subject_name'=>$subjtsAre1[$i]);
+                    $this->AddData->updateOtherItem($subName,$data);
+                endforeach;
+            }
             $subject = $this->input->post('subject');
             $subject_id = implode(",",$subject);
-            echo "<br>".$subject_id;
             if(!empty($subject)){
                 $data = array(
                     'course_name' => $this->input->post('course_name'),
@@ -248,8 +281,9 @@ class Course_cont extends CI_Controller
                     'standard_name' => $this->input->post('standard'),
                     'branch_name' => $branch,
                     'semester' => $semester,
-                    'subject_id'=>$subject_id,
+                    'subject_id'=>$suject_id,
                 );
+                 $this->AddData->updateCourseItem($data);
             }
             else{
                 $data = array(
@@ -260,8 +294,9 @@ class Course_cont extends CI_Controller
                     'branch_name' => $branch,
                     'semester' => $semester,
                 );
+                 $this->AddData->updateCourseItem($data);
             }
-            $this->AddData->updateCourseItem($data);
+           
             $this->session->set_flashdata('success','You have Successfully submitted data.');
             redirect('Course_cont/addCourse');      
         }

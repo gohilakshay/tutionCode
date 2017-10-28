@@ -1293,15 +1293,15 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Other Branch <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Course Name" name="course_name" value="<?php if(isset($_POST['course_name'])){echo $_POST['course_name'];} ?>" required>
-                                                <?php echo form_error('course_name', '<div class="alert alert-danger contact-warning">', '</div>');?> 
+                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Other Branch" name="other_branch" value="<?php if(isset($_POST['other_branch'])){echo $_POST['other_branch'];} ?>">
+                                                <?php echo form_error('other_branch', '<div class="alert alert-danger contact-warning">', '</div>');?> 
                                             </div>
                                         </div> 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Other Subject  <span class="required" style="color:red;"> * </span></label>
-                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Course Name" name="course_name" value="<?php if(isset($_POST['course_name'])){echo $_POST['course_name'];} ?>" required>
-                                                <?php echo form_error('course_name', '<div class="alert alert-danger contact-warning">', '</div>');?> 
+                                                <label>Other Subjects<span class="required" style="color:red;"> * </span></label>
+                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Other Subject" name="other_subject" value="<?php if(isset($_POST['other_subject'])){echo $_POST['other_subject'];} ?>">
+                                                <?php echo form_error('other_subject', '<div class="alert alert-danger contact-warning">', '</div>');?> 
                                             </div>
                                         </div> 
                                     </div>

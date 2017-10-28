@@ -72,7 +72,9 @@
                                         ?>
                                         <option value="<?php echo $value->standard_ID; ?>"><?php echo $value->standard_name; ?></option>
                                         <?php }
-                                        endforeach; ?> </select>
+                                        endforeach; ?>
+                                        <option value="others">Others</option>
+                                    </select>
                                     <?php echo form_error('standard', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -1344,7 +1346,27 @@
                                 </div>
                             </div>
                         </div>
-                        
+                           <div id="others" style="display:none;">
+                            <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Other Branch <span class="required" style="color:red;"> * </span></label>
+                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Other Branch" name="other_branch" value="<?php echo $v->branch_name; ?>">
+                                                <?php echo form_error('other_branch', '<div class="alert alert-danger contact-warning">', '</div>');?> 
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Other Subjects<span class="required" style="color:red;"> * </span></label>
+                                                <input type="hidden" value="<?php echo $v->subject_id; ?>" name="othrsubjname"/>
+                                                <input type="text" class="form-control border-input UserName_field"  placeholder="Other Subject" name="other_subject" value="<?php echo $v->subject_id; ?>">
+                                                <?php echo form_error('other_subject', '<div class="alert alert-danger contact-warning">', '</div>');?> 
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                             </div>
                         <br>
                         <div class="form-group">
                              <button type="submit" class="btn btn-success">Add Course</button>
