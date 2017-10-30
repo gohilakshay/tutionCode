@@ -1,9 +1,12 @@
 <?php
+/* select or view multiple database 
+enter only if user == superadmin
+*/
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SelectDataBase_cont extends CI_Controller
 {
-    public function select(){
+    public function select(){ 
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
@@ -28,7 +31,7 @@ class SelectDataBase_cont extends CI_Controller
         $this->load->database($configdbfly);
             /* multi dp end; db selected*/
         $this->session->set_userdata('db',$configdbfly); //session for db
-        $this->load->view('createInitTable');
+        $this->load->view('createInitTable');   // html file
     }
 }
 
