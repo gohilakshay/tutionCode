@@ -1,14 +1,14 @@
 <?php
 class SelectData extends CI_Model {
     function SuperadminSelect($username,$password){
-        $q = $this->db->query("SELECT * FROM `admin_user` where admin_name = '$username' and admin_password ='$password'");
+        $q = $this->db->query("SELECT * FROM `admin_user` where admin_name = ".$this->db->escape($username)." and admin_password = ".$this->db->escape($password));
         if($q->num_rows() >0){
             return TRUE;
         }
         else return FALSE;       
     }
     function adminSelect($username,$password){
-        $q = $this->db->query("SELECT * FROM `admin` where username = '$username' and password ='$password'");
+        $q = $this->db->query("SELECT * FROM `admin` where username = ".$this->db->escape($username)." and password =".$this->db->escape($password));
         if($q->num_rows() >0){
             return TRUE;
         }

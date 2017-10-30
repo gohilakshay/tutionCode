@@ -17,6 +17,17 @@
         background-color: #68b3c8;
     }
 </style>
+
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var country = ["Australia", "Bangladesh", "Denmark", "Hong Kong", "Indonesia", "Netherlands", "New Zealand", "South Africa"];
+				$("#country").select2({
+				  data: country
+				});
+			});
+		</script>
 <body>
     <div class="container">
     <div class="row">
@@ -48,12 +59,7 @@
                                         <option value="jrcolg_art">Jr. College (Arts)</option>
                                         <option value="engicolg">Engineering College</option>
                                         <option value="comcolg">Commerce College</option>
-                                        <!--<option value="school,jrcolg_sci">School & Jr. College (science)</option>          
-                                        <option value="school,jrcolg_com">School & Jr. College (commerce)</option>          
-                                        <option value="jrcolg_sci,jrcolg_com">Jr. College (science) & Jr. College (commerce)</option>          
-                                        <option value="jrcolg_sci,engicolg">Jr. College (science) & Engineering college</option>          
-                                        <option value="jrcolg_com,comcolg">Jr. College (commerce) & Commerce college</option> -->         
-                                    </select>
+                                     </select>
                                 </div>
                             </div>
                         </div>
@@ -118,6 +124,17 @@
                         </div>
                         <?php endforeach;?>
                         <?php echo form_close(); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12" align="center" style="margin-top: 30px;">
+                <div class="card">
+                    <div class="content" padding-left="10px" style="margin-top:-25px">
+                        <div>
+			<select id="country" style="width:300px;">
+			<!-- Dropdown List Option -->
+			</select>
+		</div>
                     </div>
                 </div>
             </div>
