@@ -206,7 +206,7 @@ $fee_data = end($result);
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>DOB</label>
-                                            <input type="date" name="dob" class="form-control border-input" value="<?php echo $student_data->stud_dob; ?>" required>
+                                            <input type="date" name="dob" class="form-control border-input datepicker" value="<?php echo $student_data->stud_dob; ?>" required>
                                     <?php echo form_error('dob', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -273,7 +273,7 @@ $fee_data = end($result);
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Date</label>
-                                            <input type="date" class="form-control border-input"  name="date" value="<?php echo $student_data->admission_date; ?>" required>
+                                            <input type="date" class="form-control border-input datepicker"  name="date" value="<?php echo $student_data->admission_date; ?>" required>
                                     <?php echo form_error('date', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>

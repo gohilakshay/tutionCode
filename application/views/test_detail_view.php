@@ -243,7 +243,7 @@ foreach($data as $value){
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Test Date</label>
-                                    <input type="text" class="form-control border-input" name="testdate" value="<?php echo $value->test_date; ?>" required readonly>
+                                    <input type="text" class="form-control border-input datepicker" name="testdate" value="<?php echo $value->test_date; ?>" required readonly>
                                 </div>
                             </div>
                             <div class="col-md-2">

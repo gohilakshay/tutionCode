@@ -161,7 +161,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Test Date <span class="required" style="color:red;"> * </span></label>
-                                    <input type="date" class="form-control border-input" name="testdate" value="<?php   if(isset($_POST['testdate'])){echo $_POST['testdate'];} ?>" required >
+                                    <input type="date" class="form-control border-input datepicker" name="testdate" value="<?php   if(isset($_POST['testdate'])){echo $_POST['testdate'];} ?>" required >
                                     <?php echo form_error('testdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>

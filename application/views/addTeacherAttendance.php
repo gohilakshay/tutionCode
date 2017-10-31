@@ -191,7 +191,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="date" class="form-control border-input" name="date" value="<?php echo date("Y-m-d"); ?>">
+                                    <input type="date" class="form-control border-input datepicker" name="date" value="<?php echo date("Y-m-d"); ?>">
                                     <?php echo form_error('date', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>

@@ -65,7 +65,7 @@
                             <div class="col-md-4" style="float:right">
                                 <div class="form-group">
                                     <label>Enquiry Date</label>
-                                   <input  class="form-control " type="date" name="enq_date" value="<?php echo $enquiryDetail->enq_date; ?>" readonly />
+                                   <input  class="form-control datepicker" type="date" name="enq_date" value="<?php echo $enquiryDetail->enq_date; ?>" readonly />
                                 </div>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                             <div class="col-md-4" style="float:right">
                                 <div class="form-group">
                                     <label>Followup Date <span class="required" style="color:red;"> * </span></label>
-                                   <input  class="form-control border-input" type="date" name="followup_date" value="<?php echo $enquiryDetail->followup_date;  ?>"  required/>
+                                   <input  class="form-control border-input datepicker" type="date" name="followup_date" value="<?php echo $enquiryDetail->followup_date;  ?>"  required/>
                                 </div>
                             </div>
                         </div>

@@ -207,7 +207,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>DOB <span class="required" style="color:red;"> * </span></label>
-                                        <input type="date" name="dob" id="enter_disable"  class="form-control border-input student_details" value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
+                                        <input type="date"  name="dob" id="enter_disable"  class="form-control border-input student_details datepicker" value="<?php if(isset($_POST['dob'])){echo $_POST['dob'];} ?>" required>
                                         <?php echo form_error('dob', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -269,7 +269,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Date <span class="required" style="color:red;"> * </span></label>
-                                            <input type="date" id="enter_disable" class="form-control border-input"  name="date" value="<?php echo date("Y-m-d"); ?>" required>
+                                            <input type="date"  id="enter_disable" class="form-control border-input datepicker"  name="date" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('date', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -469,7 +469,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Cheque Date.</label>
-                                    <input type="date" class="form-control border-input" name="chq_date" >
+                                    <input type="date" class="form-control border-input datepicker" name="chq_date" >
                                  </div>
                             </div>
                             <div class="col-md-3">
@@ -507,7 +507,7 @@
                                     <div class="form-group">
                                         <label>Date</label>
                                         <div>
-                                            <input type="date" class="form-control border-input" name="date1" value="<?php echo date("Y-m-d"); ?>" required>
+                                            <input type="date" class="form-control border-input datepicker" name="date1" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('date1', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>

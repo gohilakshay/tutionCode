@@ -56,7 +56,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Test Date</label>
-                                    <input type="date" class="form-control border-input" name="testdate" value="<?php echo $value->test_date; ?>" required >
+                                    <input type="date" class="form-control border-input datepicker" name="testdate" value="<?php echo $value->test_date; ?>" required >
                                     
                                 </div>
                             </div>

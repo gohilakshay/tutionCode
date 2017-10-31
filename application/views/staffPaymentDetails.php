@@ -52,7 +52,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Payment Date <span class="required" style="color:red;"> * </span></label>
-                                    <input type="date" class="form-control border-input" name="paymentdate" value="<?php echo date("Y-m-d"); ?>" required>
+                                    <input type="date" class="form-control border-input datepicker" name="paymentdate" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('paymentdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
