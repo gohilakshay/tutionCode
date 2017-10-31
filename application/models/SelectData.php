@@ -15,7 +15,7 @@ class SelectData extends CI_Model {
         else return FALSE;       
     }
     function dbSelect(){
-        $q = $this->db->query("SELECT * FROM `admin` ");
+        $q = $this->db->query("SELECT * FROM `admin` ORDER BY db_ID DESC ");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
                 $data[]=$row;
