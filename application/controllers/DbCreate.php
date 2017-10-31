@@ -9,6 +9,7 @@ class DbCreate extends CI_Controller{
 }*/   
 function delete_db()
 {
+    /* delete tables */
     $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
     $this->load->model('CreateTable');
@@ -16,20 +17,17 @@ function delete_db()
 }   
 function table()
 {
+    /* create tables */
     $this->load->helper('url');
     $this->load->library('session');
     $username = $this->session->userdata('username');
     if(isset($username)){
     $db = $this->session->userdata('db');//load db      
     $this->load->database($db);//call db
-    $this->load->model('CreateTable');
-    //$this->CreateTable->create_branch();
-    //$this->CreateTable->create_semester();
-    //$this->CreateTable->create_engisubject();
-    //$this->CreateTable->create_collegesubject();
-    //$this->CreateTable->create_Commercesubject();
-    $this->CreateTable->create_batch();
-    $this->CreateTable->create_batch_student_mapping();
+        /* create all table except  standard, semester, branch & subject*/
+    $this->load->model('CreateTable'); 
+    $this->CreateTable->create_batch();  
+    $this->CreateTable->create_batch_student_mapping(); 
     $this->CreateTable->create_batch_course_mapping();
     $this->CreateTable->create_student_attend();
     $this->CreateTable->create_stud_attend_mapping();
@@ -37,14 +35,11 @@ function table()
     $this->CreateTable->create_fee_stud_mapping();
     $this->CreateTable->create_fee_cal();
     $this->CreateTable->create_student_details();
-    //$this->CreateTable->create_standard();
-    //$this->CreateTable->create_field_semester();
     $this->CreateTable->create_field_std_mapping();
     $this->CreateTable->create_course();
     $this->CreateTable->create_schedules();
     $this->CreateTable->create_teacher();
     $this->CreateTable->create_teacher_expense();
-    //$this->CreateTable->create_subject();
     $this->CreateTable->create_teacher_stubject_mapping();
     $this->CreateTable->create_test();
     $this->CreateTable->create_marks();
@@ -66,7 +61,7 @@ function table()
     $this->CreateTable->create_others();
     $this->CreateTable->createEvents();
     $this->load->view('mainPage');
-    }else {
+    }else { /* if session fails*/
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         
         }

@@ -20,9 +20,17 @@
 
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+
+          <?php foreach($result as $v):
+              $database_values[] = $v->dbName;
+              endforeach;
+             $dbName = json_encode($database_values);
+         ?>
+
 		<script type="text/javascript">
+             var database_name =<?php echo $dbName; ?>;
 			$(document).ready(function() {
-				var country = ["Australia", "Bangladesh", "Denmark", "Hong Kong", "Indonesia", "Netherlands", "New Zealand", "South Africa"];
+				var country = database_name ;
 				$("#country").select2({
 				  data: country
 				});
@@ -43,7 +51,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                 <label>Database Name</label>
-                                    <input type="text" class="form-control border-input" placeholder="Database Name" name="databasename" value="">
+                                    <input type="text" class="form-control border-input" placeholder="Database Name" name="databasename" value="" required>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +59,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Database Type</label>
-                                    <select  name="databasetype[]" id="lstFruits" multiple="multiple">
+                                    <select  name="databasetype[]" id="lstFruits" multiple="multiple" required>
                                         <!--<option value="">---Select Type---</option>-->
                                         <option value="school">School</option>
                                         <option value="jrcolg_sci">Jr. College (science)</option>
@@ -67,7 +75,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                 <label>Username</label>
-                                    <input type="text" class="form-control border-input" placeholder="Username" name="username" value="">
+                                    <input type="text" class="form-control border-input" placeholder="Username" name="username" value="" required>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +83,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Password</label>
-                                        <input type="password" class="form-control border-input" placeholder="Password" name="password" id="password" value="">
+                                        <input type="password" class="form-control border-input" placeholder="Password" name="password" id="password" value="" required>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +91,7 @@
                             <div class="col-md-10">
                                 <div class="form-group">
                                     <label>Re-Password</label>
-                                        <input type="password" class="form-control border-input" placeholder="Re Type Password" id="confirm_password" name="repassword" value="">
+                                        <input type="password" class="form-control border-input" placeholder="Re Type Password" id="confirm_password" name="repassword" value="" required>
                                 </div>
                             </div>
                             <div style="margin-top:29px;" class="col-md-2">
@@ -114,32 +122,25 @@
                 <div class="card">
                     <div class="content" padding-left="10px" style="margin-top:-25px">
                         <?php echo form_open('SelectDataBase_cont/select'); ?>
-                        <?php foreach($result as $value):?>
+                       
                         <div class="row" > 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-info btn-fill btn-wd" name="db" value="<?php echo $value->dbName; ?>"><?php echo $value->dbName; ?></button>
+                                     <select id="country"  name="db" style="width:300px;" required>
+                                         <option value="">----Select Database----</option>
+                                    </select>
+                                    <button type="submit"  class="btn btn-info btn-fill btn-wd"  >
+                                    Select</button>
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach;?>
+                     
                         <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12" align="center" style="margin-top: 30px;">
-                <div class="card">
-                    <div class="content" padding-left="10px" style="margin-top:-25px">
-                        <div>
-			<select id="country" style="width:300px;">
-			<!-- Dropdown List Option -->
-			</select>
-		</div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
+        </div>
     </div>
 </body>
 <script>
@@ -150,4 +151,3 @@ $('#password, #confirm_password').on('keyup', function () {
         $('#message').html('Not Matching').css('color', 'red');
 });
 </script>
-
