@@ -57,7 +57,7 @@ class Marks_cont extends CI_Controller
         );
         $this->AddData->addMarks($data);
         $this->session->set_flashdata('success','You have Successfully submitted data.');
-        $this->load->view('addMarks');         //html filename
+        redirect('Marks_cont/addMarks');       //html filename
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         

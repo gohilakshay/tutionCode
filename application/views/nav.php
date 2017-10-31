@@ -68,7 +68,7 @@ foreach ($query->result() as $row) {
                                             <th><strong>Follow Up Date</strong></th>
                                             <th><strong>Status</strong></th>
                                           </thead>
-                                          <tbody><?php print_r($enquiry); ?>
+                                          <tbody>
                                               <?php $i=1;foreach($enquiry as $value){
                                                     if($value['status']!='joined'){
                                                         $enqid = $value['id']; ?>
