@@ -210,7 +210,7 @@ class AddData extends CI_Model {
     function teacherpaymentDefault(){
         $this->db->set('salary_status', 'unpaid'); //value that used to update column  
         //$this->db->where('staff_name', $name); //which row want to upgrade  
-        $this->db->update('teacher_expense');  //table name
+        $this->db->update('teacher');  //table name
         return;
     }
     function uploadfile($data){

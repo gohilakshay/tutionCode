@@ -9,7 +9,7 @@
     <div class="col-sm-4 col-sm-offset-4" align="center" style="margin-top: 20px;">
         <div class="card">
             <div class="header" style=" border: 2px solid white; background: #193e77; border-radius: 20px; padding: 10px">
-                <h4 class="title" style="color: white; font-weight:800" >LogIn</h4>
+                <h4 class="title" style="color: white; font-weight:800" >Sign-In</h4>
             </div>
             <div class="content" padding-left="10px" >
                 <?php echo form_open('CreateNewDb/createDb'); ?>

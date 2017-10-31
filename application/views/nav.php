@@ -7,8 +7,10 @@ foreach ($query->result() as $row) {
     $date1 = date('Y-m-d', strtotime("-1 days"));
     $date2 = date('Y-m-d', strtotime("+1 days"));
    if($followDate >= $date1 && $followDate <= $date2){
+       if($row->status!='joined'){
        $enquiryTotal++;
       $enquiry[] = array('followDate'=>$followDate,'name'=>$row->name,'id'=>$row->enquiry_ID,'status'=>$row->status);
+       }
    }
 } 
 ?>
@@ -66,16 +68,17 @@ foreach ($query->result() as $row) {
                                             <th><strong>Follow Up Date</strong></th>
                                             <th><strong>Status</strong></th>
                                           </thead>
-                                          <tbody>
+                                          <tbody><?php print_r($enquiry); ?>
                                               <?php $i=1;foreach($enquiry as $value){
-                                              $enqid = $value['id']; ?>
+                                                    if($value['status']!='joined'){
+                                                        $enqid = $value['id']; ?>
                                               <tr>
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $i;$i++; ?></a></td>
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $value['name'] ?></a></td>                
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $value['followDate'] ?></a></td>
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $value['status'] ?></a></td>
                                               </tr>
-                                              <?php } ?>
+                                              <?php }} ?>
                                           </tbody>
                                       </table>
                                   </li>
