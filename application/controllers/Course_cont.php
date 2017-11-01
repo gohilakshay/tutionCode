@@ -281,7 +281,7 @@ class Course_cont extends CI_Controller
                     'standard_name' => $this->input->post('standard'),
                     'branch_name' => $branch,
                     'semester' => $semester,
-                    'subject_id'=>$suject_id,
+                    'subject_id'=>$subject_id,
                 );
                  $this->AddData->updateCourseItem($data);
             }
