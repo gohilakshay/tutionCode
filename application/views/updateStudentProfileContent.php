@@ -245,7 +245,7 @@ $fee_data = end($result);
                                     <label class="col-sm-6">Profile photo:</label>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <input type="file"  class="form-control" name="photo" accept="image/*"><br>
+                                                <input type="file"  class="form-control" style="height:auto;" name="photo" accept="image/*"><br>
                                             </div>
                                         </div>
                                     </div>

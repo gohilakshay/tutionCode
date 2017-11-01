@@ -242,7 +242,7 @@
                                 <div class="form-group">                   
                                 <label class="col-sm-6">Profile photo:</label>
                                 <div class="row">
-                                    <input type="file" class="form-control"  name="photo" accept="image/jpeg"><br>
+                                    <input type="file" class="form-control" style="height:auto;"  name="photo" accept="image/jpeg"><br>
                                 </div>
                                 </div>
                             </div>
