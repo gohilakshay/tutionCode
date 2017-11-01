@@ -131,7 +131,6 @@
             </div>
          </a>
         </div>
-        
 <!--
          <div class="row">
             <div class="col-lg-12 col-sm-12">
@@ -254,7 +253,9 @@
                                                 <td>Delete Data</td>
                                             </tr>
                                         </thead>
-                                        <tbody><?php $i=1;foreach($result as $value): ?>
+                                        <tbody>
+                                            
+                                            <?php $i=1;foreach($result as $value): ?>
                                             <tr>
                                                 <td><?php echo $i;$i++; ?></td>
                                                 <td><?php echo $value->test_ID; ?></td>
@@ -290,7 +291,6 @@
                 </div>
             </div>
         </div>
-       
     </div>
 </div>
 <?php include "footer.php";?>

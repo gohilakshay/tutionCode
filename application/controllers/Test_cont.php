@@ -38,11 +38,23 @@ class Test_cont extends CI_Controller
                $batch_name = $this->input->post('batchname');
                $subject_name = $this->input->post('subject');
                $batch_id = $this->SelectData->batchIDBatch($batch_name);
+                   
+               $test_date1 = $this->input->post('testdate');
+               $test_date_1 = explode("/",$test_date1);
+                   if(!empty($test_date_1[1])){
+                       $d = $test_date_1[1];
+                       $m = $test_date_1[0];
+                       $y = $test_date_1[2];
+                        $date = $y.'-'.$m.'-'.$d; 
+                   }
+                   else{
+                       $date = $test_date_1[0];
+                   }
+                
                //$subj_id = $this->SelectData->subjIDSubj($subject_name);
-
                $data = array(
                    'test_ID'=>$this->input->post('testid'),
-                   'test_date'=>$this->input->post('testdate'),
+                   'test_date'=>$date,
                    'test_time'=>$this->input->post('testtime'),
                    'batch_id'=>$batch_id,
                    'total_marks'=>$this->input->post('totalmarks'),
@@ -109,9 +121,21 @@ class Test_cont extends CI_Controller
             $batch_id = $this->SelectData->batchIDBatch($batch_name);
             //$subj_id = $this->SelectData->subjIDSubj($subject_name);
             
+            echo    $test_date1 = $this->input->post('testdate');
+            echo   $test_date_1 = explode("/",$test_date1);
+                   if(!empty($test_date_1[1])){
+                       $d = $test_date_1[1];
+                       $m = $test_date_1[0];
+                       $y = $test_date_1[2];
+                        $date = $y.'-'.$m.'-'.$d; 
+                   }
+                   else{
+                       $date = $test_date_1[0];
+                   }
+            
             $data = array(
                 'test_ID'=>$this->input->post('testid'),
-                'test_date'=>$this->input->post('testdate'),
+                'test_date'=>$date,
                 'test_time'=>$this->input->post('testtime'),
                 'batch_id'=>$batch_id,
                 'total_marks'=>$this->input->post('totalmarks'),

@@ -78,7 +78,6 @@
                                 <div class="form-group">
                                     <label>Passing Marks</label>
                                     <input type="text" class="form-control border-input" name="passingmarks" value="<?php echo $value->passing_marks; ?>" required >
-                                    
                                 </div>
                             </div>
                         </div>
