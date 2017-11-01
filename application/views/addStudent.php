@@ -262,7 +262,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Admission Year <span class="required" style="color:red;"> * </span></label>
-                                            <input type="month" class="form-control student_admission border-input UserName_field"  placeholder="Admission Year" name="admissionyear" value="<?php if(isset($_POST['admissionyear'])){echo $_POST['admissionyear'];} ?>" required>
+                                            <input type="text" class="form-control student_admission border-input UserName_field"  placeholder="Admission Year" name="admissionyear" value="<?php if(isset($_POST['admissionyear'])){echo $_POST['admissionyear'];} ?>" required>
                                     <?php echo form_error('admissionyear', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
