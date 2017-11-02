@@ -20,13 +20,13 @@ class Attendance_cont extends CI_Controller
              $this->form_validation->set_message('alpha_dash', 'Please enter in the following format eg:IX-1');
              $query['result'] = $this->SelectData->ViewBatch(); 
              /*validation ends*/
-             if(! isset($_POST['markattend']))
+             if(!isset($_POST['markattend']))
              { 
                  $this->load->view('addStudentAttendance',$query);		//view file with query arrgument passed
              }
         //form after giving right output
 		else
-        {   
+        { 
             $batch = explode(",",$this->input->post('batchname'));
             $batch_name = $batch[0];  //input
             $batch_timing = $batch[1];
