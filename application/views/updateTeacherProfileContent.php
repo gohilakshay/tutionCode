@@ -287,7 +287,9 @@
                                         ?>
                                         <option value="<?php echo $value->standard_ID; ?>"><?php echo $value->standard_name; ?></option>
                                         <?php }
-                                        endforeach; ?> </select>
+                                        endforeach; ?> 
+                                          <option value="others">others</option>
+                                    </select>
                                     <?php echo form_error('standard', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -371,6 +373,7 @@
                                             <option value="">---Select Branch---</option>
                                             <option value="Science">Science</option>
                                             <option value="Commerce">Commerce</option>
+                                              <option value="Art">Arts</option>
                                         </select>
                                     </div>
                                 </div>
@@ -418,7 +421,29 @@
                             </div>
                         </div>
                         
-                        <!--for commerce college-->
+                        <!--for arts college-->
+                          <div id="artSubjects" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                           <div class="row"> 
+                                               <?php foreach($result10 as $value):
+                                               if($value->branch_ID == 'Art'){ ?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->colgsubj_ID ;?>" name="subject[]" ><?php echo $value->subject_name ;?>
+                                                </label>
+                                                <?php } endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        
+                           <!--for commerce college-->
                         <div id="commerceSubjects" style="display:none;">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -1459,7 +1484,28 @@
                                 </div>
                             </div>
                         </div>
-                        </div> <!--content close-->
+                        
+                        
+                          <div id="other_sub" style="display:none;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Subjects:</label>
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                               <?php foreach($result11 as $value):
+                                                ?>
+                                                <label class="checkbox-inline">
+                                                  <input type="checkbox" value="<?php echo $value->colgsubj_ID; ?>" name="subject[]" ><?php echo $value->subject_name; ?>
+                                                </label>
+                                                <?php endforeach;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div> <!--content close-->
                 </div> <!--card close-->
             </div>
         </div>

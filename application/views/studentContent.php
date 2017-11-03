@@ -140,8 +140,16 @@
                                             </div>
                                             <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
-                                                         <input type="text" id="teachersearch"
-                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required> 
+                                                          <form action="" method="GET">
+                                                        <div class="input-group pull-right">
+                                                             <input type="text" class="form-control color_plac" placeholder="Search For data" style="background-color:#c5e2ea;" name="cityFilter" value="<?php if (!empty($_GET['cityFilter'])) { echo $_GET['cityFilter'];
+                                                             }
+                                                             ?>">
+                                                            <span class="input-group-btn">
+                                                                <button type="submit" class="btn btn-success"><i class="fa fa-search"></i>Search</button>
+                                                            </span>
+                                                        </div>
+                                                        </form>
                                                     </h3>
                                                 </div>
                                         </div>
@@ -190,7 +198,15 @@
                                             </tr>
                                             <?php endforeach;?>
                                         </tbody>
-                                    </table>    
+                                    </table>   
+                                      <ul class="pagination pull-right">
+                                          <!-- Show pagination links -->
+                                          <?php
+                                          foreach ($links as $link) {
+                                              echo "<li>" . $link . "</li>";
+                                          }
+                                          ?>
+                                    </ul>
                                 </div>                          
                             </div>
                         </div>
@@ -217,5 +233,24 @@ input[id=teachersearch] {
 
 input[id=studentsearch]:focus {
     width: 80%;
+}
+  ::-webkit-input-placeholder { /* Chrome */
+  color: black!important;
+ font-weight: lighter!important;
+}
+    
+    :-ms-input-placeholder { /* IE 10+ */
+  color: black!important;
+        font-weight: lighter!important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: black!important;
+  opacity: 1;
+    font-weight: lighter!important;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: black!important;
+  opacity: 1;
+    font-weight: lighter!important;
 }
 </style>

@@ -144,11 +144,9 @@
                                                 <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
                                                     <input type="text" id="teachersearch"
-                                                           onkeyup=" myFunction()"        placeholder="Search..." style="width:          80%;" required> 
-                                         
+                                                           onkeyup=" myFunction()" placeholder="Search..." style="width:80%;" required> 
                                                     </h3>
                                                 </div>
-                                            
                                         </div>
                                     </div>
                                 </div>

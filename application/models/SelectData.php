@@ -120,8 +120,17 @@ class SelectData extends CI_Model {
                 $name = explode(",",$subj_id);
                 $n = count($name);$a=0;
                 for($i=0;$i<$n;$i++){
-                    foreach($dbtype as $value){
-                        if($row->standard_name <= 10 && $value == 'school' && $row->branch_name == NULL){
+                    foreach($dbtype as $value){ 
+                        if($row->standard_name == 'others'){
+                            $q1 = $this->db->query("SELECT subject_name FROM `others` where    colgsubj_ID = '$name[$i]'");
+                            if($q1->num_rows() >0){
+                                foreach($q1->result() as $row1){
+                                    $bj[$a] = $row1->subject_name;
+                                    $a++;
+                                }           
+                            } break;
+                        }
+                      else if($row->standard_name <= 10 && $value == 'school' && $row->branch_name == NULL){
                             
                             $q1 = $this->db->query("SELECT subject_name FROM `subject` where subject_ID = '$name[$i]'");
                             if($q1->num_rows() >0){
@@ -176,9 +185,11 @@ class SelectData extends CI_Model {
                                     $a++;
                                 }           
                             }
-                        }
+                        } 
                     }    
                 }
+                
+           
                 $bj1 = "<pre style='width:200px;'>".implode(",\n",$bj)."</pre>";
                 unset($bj);
                 $row->subject_id =$bj1;
