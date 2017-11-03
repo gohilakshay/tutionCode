@@ -27,6 +27,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == "[::1]"){
     $config['base_url'] = 'http://localhost/tutionCodeServer';
 }
+else if($_SERVER['SERVER_NAME'] == '139.59.183.48'){
+    $config['base_url'] = 'http://139.59.183.48/tutionCode';
+}
 else{
     $config['base_url'] = 'http://classes.classguru.in/';
 }
