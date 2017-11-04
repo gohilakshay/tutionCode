@@ -41,7 +41,7 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
-    function student() {
+    /*function student() {
         $q = $this->db->query("SELECT * FROM `student_details` ORDER BY stud_ID DESC");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
@@ -49,8 +49,21 @@ class SelectData extends CI_Model {
             }
         }
         return $data;
+    }*/
+    function student(){
+        $this->db->select("*");
+        $this->db->from("student_details");
+        $query = $this->db->get(); 
+        return $query;
     }
-   
+    function StudCount($searchName){
+        $this->db->select("*");
+        $this->db->from("student_details");
+        $this->db->like('stud_name', $searchName);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    
     function student_batch_map() {
         $q = $this->db->query("SELECT * FROM `batch_student_mapping`");
         if($q->num_rows() >0){

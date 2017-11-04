@@ -140,16 +140,16 @@
                                             </div>
                                             <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
-                                                          <form action="" method="GET">
+                                                     <form action="<?php echo site_url().'/Student_cont/student/'; ?>" method="GET">
                                                         <div class="input-group pull-right">
-                                                             <input type="text" class="form-control color_plac" placeholder="Search For data" style="background-color:#c5e2ea;" name="cityFilter" value="<?php if (!empty($_GET['cityFilter'])) { echo $_GET['cityFilter'];
+                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="studFilter" value="<?php if (!empty($_GET['studFilter'])) { echo $_GET['studFilter'];
                                                              }
                                                              ?>">
                                                             <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-success"><i class="fa fa-search"></i>Search</button>
+                                                                <button type="submit" class="btn btn-success">Search</button>
                                                             </span>
                                                         </div>
-                                                        </form>
+                                                     </form>
                                                     </h3>
                                                 </div>
                                         </div>
@@ -220,37 +220,20 @@
 input[id=teachersearch] {
     width: 5px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 1px solid #c5e2ea;;
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
     background-image: url('<?php echo base_url()?>assets/icon/search.png');
-    background-position: 7px 1px; 
+    background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
+    
 }
 
 input[id=studentsearch]:focus {
     width: 80%;
 }
-  ::-webkit-input-placeholder { /* Chrome */
-  color: black!important;
- font-weight: lighter!important;
-}
-    
-    :-ms-input-placeholder { /* IE 10+ */
-  color: black!important;
-        font-weight: lighter!important;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: black!important;
-  opacity: 1;
-    font-weight: lighter!important;
-}
-:-moz-placeholder { /* Firefox 4 - 18 */
-  color: black!important;
-  opacity: 1;
-    font-weight: lighter!important;
-}
+  
 </style>

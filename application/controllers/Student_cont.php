@@ -1,24 +1,160 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Student_cont extends CI_Controller
-{
+{              
+    
+
+    
     public function student()
     {
         $this->load->library('session');
+        $this->load->library('pagination');
         $this->load->helper('url'); 
         $username = $this->session->userdata('username');
         if(isset($username)){
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('SelectData');
-        $query['result'] = $this->SelectData->student();
-        $query['result1'] = $this->SelectData->student_batch_map();
-        $query['result2'] = $this->SelectData->ViewBatch();
-        $this->load->view('student',$query);       //html filename
+           
+            if (!empty($_GET['studFilter'])) {
+                /*$this->db->like('stud_surname', $_GET['studFilter']);*/
+                $count = $this->SelectData->StudCount($_GET['studFilter']);
+                $studCount = $count->num_rows();
+               // $query['result'] = $count->result();
+            }else{
+                
+                $count = $this->SelectData->student();
+                $studCount = $count->num_rows();
+               // $query['result'] = $count->result();
+            }
+          $limit = 5; 
+             $totalRecords = $count->num_rows();
+        $config["total_rows"] = $totalRecords;
+        $config["per_page"] = $limit;
+        $config['use_page_numbers'] = TRUE;
+        $config['page_query_string'] = TRUE;
+        $config['enable_query_strings'] = TRUE;
+        $config['num_links'] = 2;
+        $config['cur_tag_open'] = '&nbsp;<li class="active"><a>';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['next_link'] = 'Next';
+        $config['prev_link'] = 'Previous';
+        $this->pagination->initialize($config);
+        $str_links = $this->pagination->create_links();
+        $links = explode('&nbsp;', $str_links);
+          
+        $offset = 0;
+        if (!empty($_GET['per_page'])) {
+            $pageNo = $_GET['per_page'];
+            $offset = ($pageNo - 1) * $limit;
+        }
+           if (!empty($_GET['studFilter'])) {
+                /*$this->db->like('stud_surname', $_GET['studFilter']);*/
+                $count = $this->SelectData->StudCount($_GET['studFilter']);
+                //$studCount = $count->num_rows();
+                //$query['result'] = $count->result();
+               $this->load->view('student', array(
+                    'totalResult' => $totalRecords,
+                    'result' => $count->result(),
+                    'links' => $links,
+                   'result1' => $this->SelectData->student_batch_map(),
+                   'result2' => $this->SelectData->ViewBatch()
+                ));
+            }else{
+                
+                $count = $this->SelectData->student();
+               // $studCount = $count->num_rows();
+               // $query['result'] = $count->result();
+               $this->load->view('student', array(
+                    'totalResult' => $totalRecords,
+                    'result' => $count->result(),
+                    'links' => $links,
+                   'result1' => $this->SelectData->student_batch_map(),
+                   'result2' => $this->SelectData->ViewBatch()
+                ));
+            }  
+            
+//        $this->db->select("*");
+//        $this->db->from("student_details");
+//        if (!empty($_GET['cityFilter'])) {
+//            $this->db->like('stud_surname', $_GET['cityFilter']);
+//        }
+//        $this->db->limit($limit, $offset);
+//        $cityRecords = $this->db->get();
+//        $this->load->view('studentContent', array(
+//            'totalResult' => $totalRecords,
+//            'results' => $cityRecords->result(),
+//            'links' => $links
+//        ));
+        
+        
+//        $query[] = $this->SelectData->student_batch_map();
+//        $query[] = $this->SelectData->ViewBatch();
+//        $this->load->view('student',$query);       //html filename
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";
         }
+                   
+//        
+//         //Get Total Records Count
+//          $this->db->select("*");
+//        $this->db->from("student_details");
+//        if (!empty($_GET['cityFilter'])) {
+//            $this->db->like('stud_surname', $_GET['cityFilter']);
+//        }
+//        $cityRecordsCount = $this->db->get();
+//
+//        $totalRecords = $cityRecordsCount->num_rows();
+//        $limit = 5;
+//
+//        if (!empty($_GET['cityFilter'])) {
+//            $config["base_url"] = base_url('Listing/index?cityFilter=' . $_GET['cityFilter']);
+//        } else {
+//            $config["base_url"] = base_url('Listing/index?cityFilter=');
+//        }
+//
+//        $config["total_rows"] = $totalRecords;
+//        $config["per_page"] = $limit;
+//        $config['use_page_numbers'] = TRUE;
+//        $config['page_query_string'] = TRUE;
+//        $config['enable_query_strings'] = TRUE;
+//        $config['num_links'] = 2;
+//        $config['cur_tag_open'] = '&nbsp;<li class="active"><a>';
+//        $config['cur_tag_close'] = '</a></li>';
+//        $config['next_link'] = 'Next';
+//        $config['prev_link'] = 'Previous';
+//        $this->pagination->initialize($config);
+//        $str_links = $this->pagination->create_links();
+//        $links = explode('&nbsp;', $str_links);
+//
+//        $offset = 0;
+//        if (!empty($_GET['per_page'])) {
+//            $pageNo = $_GET['per_page'];
+//            $offset = ($pageNo - 1) * $limit;
+//        }
+//        
+//        //Get actual result from all records with pagination
+//        $this->db->select("*");
+//        $this->db->from("student_details");
+//        if (!empty($_GET['cityFilter'])) {
+//            $this->db->like('stud_surname', $_GET['cityFilter']);
+//        }
+//        $this->db->limit($limit, $offset);
+//        $cityRecords = $this->db->get();
+//        $this->load->view('studentContent', array(
+//            'totalResult' => $totalRecords,
+//            'results' => $cityRecords->result(),
+//            'links' => $links
+//        ));
+//        
+//        
+//      
+        
+        
+        
+        
+        
     }
     public function studentProfile($n)
     {
