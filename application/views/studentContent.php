@@ -198,15 +198,18 @@
                                             </tr>
                                             <?php endforeach;?>
                                         </tbody>
-                                    </table>   
-                                      <ul class="pagination pull-right">
+                                    </table> 
+                                    <center>
+                                      <ul class="pagination">
                                           <!-- Show pagination links -->
                                           <?php
                                           foreach ($links as $link) {
+                                          
                                               echo "<li>" . $link . "</li>";
                                           }
                                           ?>
                                     </ul>
+                                    </center>
                                 </div>                          
                             </div>
                         </div>

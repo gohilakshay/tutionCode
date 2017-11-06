@@ -50,16 +50,18 @@ class SelectData extends CI_Model {
         }
         return $data;
     }*/
-    function student(){
+    function student($limit, $offset){
         $this->db->select("*");
         $this->db->from("student_details");
+        $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
     }
-    function StudCount($searchName){
+    function StudCount($searchName,$limit,$offset){
         $this->db->select("*");
         $this->db->from("student_details");
         $this->db->like('stud_name', $searchName);
+        $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
     }
