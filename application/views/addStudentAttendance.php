@@ -163,11 +163,11 @@
                                         <?php if(isset($_POST['markattend'])){ 
                                               $batch = explode(",",$_POST['batchname']);
                                         ?>
-                                        <option  value="<?php echo $batch[0].",".$batch[1]; ?>"><?php echo $batch[0]."------------------------".$batch[1] ?></option>
+                                        <option  value="<?php echo $batch[0].",".$batch[1]; ?>"><?php echo $batch[0]."------------".$batch[1] ?></option>
                                         <?php } ?>
                                         
                                         <option value="<?php echo $batchname.",".$batchtime; ?>">
-                                            <?php echo $batchname."------------------------".$batchtime; ?>
+                                            <?php echo $batchname."------------".$batchtime; ?>
                                         </option>
                                         <?php endforeach; ?>
                                     </select>

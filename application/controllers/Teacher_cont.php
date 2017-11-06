@@ -126,6 +126,7 @@ class Teacher_cont extends CI_Controller
                     $query['result8'] = $this->SelectData->commercesubject();
                 }
             }
+              $query['result11'] = $this->SelectData->others();
             $query['result'] = $this->SelectData->teacherProfile($tid,$ntype);
             $this->form_validation->set_rules('teachersname', 'teachersname', 'callback_customAlpha');
             $this->form_validation->set_rules('dob', 'dob', 'required');
@@ -273,10 +274,9 @@ class Teacher_cont extends CI_Controller
                 }
                 else if($value == 'comcolg'){ 
                     $query['result8'] = $this->SelectData->commercesubject();
-                }
+                } 
             }
-
-
+            $query['result11'] = $this->SelectData->others();
             //$query['result'] = $this->SelectData->course();
             $this->form_validation->set_rules('teachersname', 'teachersname', 'callback_customAlpha');
             $this->form_validation->set_rules('dob', 'dob', 'required');

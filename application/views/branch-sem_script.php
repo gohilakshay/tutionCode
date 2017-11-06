@@ -57,6 +57,7 @@
         $("#commerce").hide();
         $("#engineer").hide(); 
         $("#others").hide();
+         $("#other_sub").hide();
         
         if( $(obj).val()>0 && $(obj).val()<11 ){
             $("#schoolSubjects").show()
@@ -99,6 +100,7 @@
         
         else if( $(obj).val()==="others"){
             $("#others").show();
+             $("#other_sub").show();
         }
     }
 
@@ -160,7 +162,9 @@
         $("#engicivil6").hide();
         $("#engicivil7").hide();
         $("#engicivil8").hide();
-        $("#others").hide();
+        $("#others").hide(); 
+        $("#other_sub").hide();
+        
         if( $(obj).val()==="Computer Engineering"){   //Comp 
             if( $(comboEngineering).val()==="1"){
                     $("#engisem1").show();    
@@ -350,6 +354,7 @@
         $("#bmscommsem5").hide();
         $("#bmscommsem6").hide();
         $("#others").hide();
+         $("#other_sub").hide();
         if( $(obj).val()==="Bachelor of Accounting and Finance"){
             if( $(objComboBranch).val()==="1"){
                 $("#commsem1").show();
