@@ -232,6 +232,7 @@ input[id=teachersearch] {
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
+   
     
 }
 

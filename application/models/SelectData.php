@@ -23,15 +23,7 @@ class SelectData extends CI_Model {
         }
         return $data;       
     }
-    function teacher() {
-        $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
-        if($q->num_rows() >0){
-            foreach($q->result() as $row){
-                $data[]=$row;
-            }
-        }
-        return $data;
-    }
+  
     function teacherExpense($id) {
         $q = $this->db->query("SELECT * FROM `teacher_expense` WHERE teacher_id = '$id' ORDER BY t_exp_ID DESC");
         if($q->num_rows() >0){
@@ -50,6 +42,36 @@ class SelectData extends CI_Model {
         }
         return $data;
     }*/
+    
+//      function teacher() {
+//        $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
+//        if($q->num_rows() >0){
+//            foreach($q->result() as $row){
+//                $data[]=$row;
+//            }
+//        }
+//        return $data;
+//    }
+    
+    function teacher($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("teacher");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function TeachCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("teacher");
+        $this->db->like('t_ID', $searchName);
+        $this->db->or_like('t_name',$searchName);
+        $this->db->or_like('t_contact',$searchName);
+        $this->db->or_like('t_contact',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    
     function student($limit, $offset){
         $this->db->select("*");
         $this->db->from("student_details");
@@ -61,6 +83,12 @@ class SelectData extends CI_Model {
         $this->db->select("*");
         $this->db->from("student_details");
         $this->db->like('stud_name', $searchName);
+        $this->db->or_like('stud_contact',$searchName);
+        $this->db->or_like('stud_ID',$searchName);
+        $this->db->or_like('standard_name',$searchName);
+        $this->db->or_like('sch_coll_name',$searchName);
+        $this->db->or_like('board',$searchName);
+        $this->db->or_like('course_type',$searchName);
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
