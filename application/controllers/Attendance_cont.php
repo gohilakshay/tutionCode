@@ -1,5 +1,5 @@
 <?php
-/*
+/* this controller is used for attendance of both teacher and students
 details about attendance of student and teacher 
 */
 defined('BASEPATH') OR exit('No direct script access allowed');
