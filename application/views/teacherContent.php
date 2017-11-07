@@ -145,7 +145,7 @@
                                                     <h3>
                                                      <form action="<?php echo site_url().'/Teacher_cont/teacher/'; ?>" method="GET">
                                                         <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch_1"  name="teachFilter" value="<?php if (!empty($_GET['teachFilter'])) { echo $_GET['teachFilter'];
+                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="teachFilter" value="<?php if (!empty($_GET['teachFilter'])) { echo $_GET['teachFilter'];
                                                              }
                                                              ?>">
                                                             <span class="input-group-btn">
@@ -178,7 +178,6 @@
                                             </tr>
                                         <?php endforeach; ?></tbody>
                                     </table>
-                                    
                                      <center>
                                       <ul class="pagination">
                                           <!-- Show pagination links -->
@@ -201,7 +200,7 @@
 </div>
 
 <style> 
-input[id=teachersearch_1] {
+input[id=teachersearch] {
     width: 5px;
     box-sizing: border-box;
     border: 1px solid #c5e2ea;;
@@ -217,7 +216,4 @@ input[id=teachersearch_1] {
     
 }
 
-input[id=teachersearch]:focus {
-    width: 80%;
-}
 </style>

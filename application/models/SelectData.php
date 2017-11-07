@@ -66,7 +66,6 @@ class SelectData extends CI_Model {
         $this->db->like('t_ID', $searchName);
         $this->db->or_like('t_name',$searchName);
         $this->db->or_like('t_contact',$searchName);
-        $this->db->or_like('t_contact',$searchName);
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
