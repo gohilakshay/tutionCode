@@ -1,8 +1,4 @@
 <script>
-<<<<<<< HEAD
-
-=======
->>>>>>> e564b39973be990f3293080dd95f139625645085
     // Activate Next Step
         $(document).ready(function() {
             var navListItems = $('ul.setup-panel li a'),
@@ -50,30 +46,6 @@
             $(this).remove();
         })
          });
-<<<<<<< HEAD
-        function Calculate()
-        {
-            
-          var resources = document.getElementById('Resources').value;
-          var minutes = document.getElementById('Minutes').value; 
-          
-          var payamount = document.getElementById('Payamount').value;
-         
-          document.getElementById('answer').value=parseFloat(resources) - parseFloat(minutes);
-
-          var tempamount = document.getElementById('answer').value;
-          document.getElementById('result').value=parseFloat(tempamount)/parseFloat(payamount);
-         
-
-
-          // for balance amount
-
-          var receive = document.getElementById('Received').value;
-          document.getElementById('balance').value=parseFloat(tempamount)-parseFloat(receive);
-           document.form1.submitt();
-        } 
- 
-=======
     
     
 //        function Calculate()
@@ -136,27 +108,10 @@
     
     
     
->>>>>>> e564b39973be990f3293080dd95f139625645085
     
   $('#Installment').on('change',function(){
         if( $(this).val()==="yes"){
             $("#installmenttype").show()
-<<<<<<< HEAD
-            
-        }
-        else{
-            $("#installmenttype").hide()
-            
-        }
-    }); 
-   
-
-$(document).ready(function () {
-    $("#ckbCheckAll").click(function () {
-        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
-    });
-});
-=======
         }
         else{
             $("#installmenttype").hide()
@@ -222,5 +177,4 @@ $(document).ready(function () {
      }
     
     
->>>>>>> e564b39973be990f3293080dd95f139625645085
 </script>
