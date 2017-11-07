@@ -170,7 +170,7 @@
                                                 <th style="font-weight: bold;">course</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable"><?php $i=0;foreach($result as $value):?>
+                                        <tbody id="myTable"><?php $i=$offset;foreach($result as $value):?>
                                             <tr>
                                                 <td><?php $i++;echo $i;?></td>
                                                 <td><?php echo $value->stud_ID?></td>
@@ -232,11 +232,8 @@ input[id=teachersearch] {
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
+   
     
 }
 
-input[id=studentsearch]:focus {
-    width: 80%;
-}
-  
 </style>
