@@ -48,7 +48,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Payment Date</label>
-                                    <input type="date" class="form-control border-input" name="paymentdate" value="<?php echo date("Y-m-d"); ?>" required>
+                                    <input type="date" class="form-control border-input datepicker" name="paymentdate" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('paymentdate', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="col-1">
-                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
+                            <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                     <div class="row">
                                         <div class="col-md-12">

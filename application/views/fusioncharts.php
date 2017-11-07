@@ -1,4 +1,7 @@
-
+<script src="<?php echo base_url(); ?>assets/js/fusioncharts.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/fusioncharts.charts.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/fusioncharts.theme.zune.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap-notify.js"></script>
 <?php 
 class FusionCharts extends CI_Controller {
         
