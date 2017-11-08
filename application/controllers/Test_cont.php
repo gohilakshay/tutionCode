@@ -26,74 +26,68 @@ class Test_cont extends CI_Controller
             if($this->form_validation->run() == FALSE)
             {
              
-         $limit = 10; 
-            if (!empty($_GET['testFilter'])) {
-                $count = $this->SelectData->testCount($_GET['testFilter']);
-                $studCount = $count->num_rows();
-            }else{
-                
-                $count = $this->SelectData->test();
-                $studCount = $count->num_rows();
-            }
-         
-        $totalRecords = $count->num_rows();
-        $config["total_rows"] = $totalRecords;
-        $config["per_page"] = $limit;
-        $config['use_page_numbers'] = TRUE;
-        $config['page_query_string'] = TRUE;
-        $config['enable_query_strings'] = TRUE;
-        $config['num_links'] = 10;
-        $config['full_tag_open'] = "<ul class='pagination'>";
-        $config['full_tag_close'] ="</ul>";
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
-        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
-        $config['next_tag_open'] = "<li>";
-        $config['next_tagl_close'] = "</li>";
-        $config['prev_tag_open'] = "<li>";
-        $config['prev_tagl_close'] = "</li>";
-        $config['first_tag_open'] = "<li>";
-        $config['first_tagl_close'] = "</li>";
-        $config['last_tag_open'] = "<li>";
-        $config['last_tagl_close'] = "</li>";
-        $config['first_url'] = '?per_page=1'; 
-        $this->pagination->initialize($config);
-        $str_links = $this->pagination->create_links();
-        $links = explode('&nbsp;', $str_links);
-        $offset = 0;
-        if (!empty($_GET['per_page'])) {
-            $pageNo = $_GET['per_page'];
-            $offset = ($pageNo - 1) * $limit;
-        }
-           if (!empty($_GET['testFilter'])) {
-                $count = $this->SelectData->testCount($_GET['testFilter'],$limit, $offset);
-               $this->load->view('addTest', array(
-                    'totalResult' => $totalRecords,
-                    'result' => $count->result(),
-                    'links' => $links,
-                   'batch_details' => $this->SelectData->ViewBatch()
-                    'offset' => $offset
-                ));
-            }
-        
-        
-        else{
-                
-                $count = $this->SelectData->test($limit, $offset);
-               $this->load->view('addTest', array(
-                    'totalResult' => $totalRecords,
-                    'result' => $count->result(),
-                    'links' => $links,
-                   'batch_details' => $this->SelectData->ViewBatch()
-                    'offset' => $offset
-                ));
-        }
-         
-                
-//                       $this->load->view('addTest',$query);		//html filename	
+                 $limit = 10; 
+                    if (!empty($_GET['testFilter'])) {
+                        $count = $this->SelectData->testCount($_GET['testFilter']);
+                        $studCount = $count->num_rows();
+                    }else{
 
-            }
+                        $count = $this->SelectData->test();
+                        $studCount = $count->num_rows();
+                    }
+
+                $totalRecords = $count->num_rows();
+                $config["total_rows"] = $totalRecords;
+                $config["per_page"] = $limit;
+                $config['use_page_numbers'] = TRUE;
+                $config['page_query_string'] = TRUE;
+                $config['enable_query_strings'] = TRUE;
+                $config['num_links'] = 10;
+                $config['full_tag_open'] = "<ul class='pagination'>";
+                $config['full_tag_close'] ="</ul>";
+                $config['num_tag_open'] = '<li>';
+                $config['num_tag_close'] = '</li>';
+                $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+                $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+                $config['next_tag_open'] = "<li>";
+                $config['next_tagl_close'] = "</li>";
+                $config['prev_tag_open'] = "<li>";
+                $config['prev_tagl_close'] = "</li>";
+                $config['first_tag_open'] = "<li>";
+                $config['first_tagl_close'] = "</li>";
+                $config['last_tag_open'] = "<li>";
+                $config['last_tagl_close'] = "</li>";
+                $config['first_url'] = '?per_page=1'; 
+                $this->pagination->initialize($config);
+                $str_links = $this->pagination->create_links();
+                $links = explode('&nbsp;', $str_links);
+                $offset = 0;
+                if (!empty($_GET['per_page'])) {
+                    $pageNo = $_GET['per_page'];
+                    $offset = ($pageNo - 1) * $limit;
+                }
+               if (!empty($_GET['testFilter'])) {
+                    $count = $this->SelectData->testCount($_GET['testFilter'],$limit, $offset);
+                   $this->load->view('addTest', array(
+                       'totalResult' => $totalRecords,
+                       'result' => $count->result(),
+                       'links' => $links,
+                       'batch_details' => $this->SelectData->ViewBatch(),
+                       'offset' => $offset
+                    ));
+                }
+                else{
+                    $count = $this->SelectData->test($limit, $offset);
+                    $this->load->view('addTest', array(
+                        'totalResult' => $totalRecords,
+                        'result' => $count->result(),
+                        'links' => $links,
+                        'batch_details' => $this->SelectData->ViewBatch(),
+                        'offset' => $offset
+                    ));
+                }
+        //$this->load->view('addTest',$query);		//html filename	
+            }   
             else
                {
                $this->load->helper('form');
