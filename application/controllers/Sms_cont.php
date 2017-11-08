@@ -36,7 +36,7 @@ class Sms_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         if($button1==3){
-            $query = array('result'=> array($button1));
+            $query['button2'] = $button1;
             if(isset($_POST['excel_submit'])){
             $this->load->model('AddData');
              $filename = $_FILES['excel_file']["tmp_name"];
@@ -63,7 +63,7 @@ class Sms_cont extends CI_Controller
             
         }
             else if($button1==4){
-                $query = array('result'=> array($button1));
+                $query['button2'] = $button1;
                 $query['ListContact'] = $this->SelectData->ListContactView();
                 $ListName = $this->input->post('listSelect');
                 $query['importContact'] = $this->SelectData->ImportContactView($ListName);
@@ -72,7 +72,8 @@ class Sms_cont extends CI_Controller
         else{    
         $query['result'] = $this->SelectData->ViewBatch();
         $query['teacher'] = $this->SelectData->teacher();
-        array_push($query['result'],$button1);
+            $query['button2'] = $button1;
+        //array_push($query['result'],$button1);
             if($_POST['batch']){
         $this->form_validation->set_rules('batch', 'batch', 'required');
             }/*if($_POST['teacher']){

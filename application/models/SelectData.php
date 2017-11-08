@@ -1061,12 +1061,23 @@ class SelectData extends CI_Model {
     }
     
      function test($limit, $offset){
-        $this->db->select("*");
-        $this->db->from("test");
-        $this->db->order_by("test_ID","DESC");
-        $this->db->limit($limit, $offset);
-        $query = $this->db->get(); 
-        return $query;
+         $this->db->select("*");
+         $this->db->from("test");
+         $this->db->order_by("test_ID","DESC");
+         $this->db->limit($limit, $offset);
+         $query = $this->db->get();$i=0;
+         foreach($query->result() as $value){
+             $details = $query->result();
+             $this->db->select("*");
+             $this->db->from("batch");
+             $this->db->where("batch_ID",$value->batch_id);
+             $q1 = $this->db->get();
+             foreach($q1->result() as $row1){
+                 $batchName = $row1->batch_name;
+                 $details[$i]->batch_id = $batchName;
+             }
+          }
+         return $details;
     }
     function testCount($searchName,$limit,$offset){
         $this->db->select("*");
@@ -1081,8 +1092,8 @@ class SelectData extends CI_Model {
         $this->db->or_like('supervisor_name',$searchName);
         $this->db->or_like('subject_name',$searchName);
         $this->db->limit($limit, $offset);
-        $query = $this->db->get(); 
-        return $query;
+        $query = $this->db->get();
+        return $query->result();
     }
   
     
