@@ -1,4 +1,4 @@
-<div class="content"><?php  print_r($result);$button= end($result);  ?>
+<div class="content"><?php  $button= $button2;  ?>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-sm-12">
