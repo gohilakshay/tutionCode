@@ -51,11 +51,25 @@
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                    <div class="row">
+                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="col-md-12">
+                                            <div class="col-md-4">
                                                 <h3 class="text-uppercase">Enquiries</h3>
                                             </div>
+                                            <div class="col-md-8" style="margin-top:-2px;">
+                                                    <h3>
+                                                         <form action="<?php echo site_url().'/Enquiry_cont/enquiry/'; ?>" method="GET">
+                                                        <div class="input-group pull-right">
+                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="enquiryFilter" value="<?php if (!empty($_GET['enquiryFilter'])) { echo $_GET['enquiryFilter'];
+                                                             }
+                                                             ?>">
+                                                            <span class="input-group-btn">
+                                                                <button type="submit" class="btn btn-success">Search</button>
+                                                            </span>
+                                                        </div>
+                                                     </form>
+                                                    </h3>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -74,9 +88,9 @@
                                                 <td>Delete</td>
                                             </tr>
                                         </thead>
-                                        <tbody><?php $i=1; foreach($result as $value):?>
+                                        <tbody><?php $i=$offset; foreach($result as $value):?>
                                             <tr>
-                                                <td><?php echo $i;$i++;?></td>
+                                                <td><?php $i++;echo $i;?></td>
                                                 <td><?php echo $eid = $value->enquiry_ID;?></td>
                                                 <td><a href="<?php echo site_url("Enquiry_cont/enquiryInfo/").$value->enquiry_ID;?>"><?php echo $value->subject;?></a></td>
                                                 <td style="padding:10px"><?php echo $value->query;?></td>
@@ -99,7 +113,18 @@
                                                     </td>
                                             </tr><?php endforeach;?>
                                         </tbody>
-                                    </table>    
+                                    </table>  
+                                     <center>
+                                      <ul class="pagination">
+                                          <!-- Show pagination links -->
+                                          <?php
+                                          foreach ($links as $link) {
+                                          
+                                              echo "<li>" . $link . "</li>";
+                                          }
+                                          ?>
+                                    </ul>
+                                    </center>
                                 </div> 
                             </div>
                         </div>
@@ -110,5 +135,23 @@
     </div>
 </div>
 <?php include "footer.php";?>
+<style> 
+input[id=teachersearch] {
+    width: 5px;
+    box-sizing: border-box;
+    border: 1px solid #c5e2ea;;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('<?php echo base_url()?>assets/icon/search.png');
+    background-position: 11px 7px; 
+    background-repeat: no-repeat;
+    background-size: 21px;
+    padding-left: 35px;
+  
+    
+}
+
+</style>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>

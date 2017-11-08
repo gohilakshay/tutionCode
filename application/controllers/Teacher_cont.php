@@ -62,6 +62,7 @@ class Teacher_cont extends CI_Controller
                     'totalResult' => $totalRecords,
                     'result' => $count->result(),
                     'links' => $links,
+                    'offset' => $offset
                   
                 ));
             }else{
@@ -71,6 +72,7 @@ class Teacher_cont extends CI_Controller
                     'totalResult' => $totalRecords,
                     'result' => $count->result(),
                     'links' => $links,
+                    'offset' => $offset
                    
                 ));
             }

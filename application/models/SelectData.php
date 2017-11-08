@@ -56,6 +56,7 @@ class SelectData extends CI_Model {
     function teacher($limit, $offset){
         $this->db->select("*");
         $this->db->from("teacher");
+        $this->db->order_by("t_ID","DESC");
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
@@ -63,6 +64,7 @@ class SelectData extends CI_Model {
     function TeachCount($searchName,$limit,$offset){
         $this->db->select("*");
         $this->db->from("teacher");
+        $this->db->order_by("t_ID","DESC");
         $this->db->like('t_ID', $searchName);
         $this->db->or_like('t_name',$searchName);
         $this->db->or_like('t_contact',$searchName);
@@ -74,6 +76,7 @@ class SelectData extends CI_Model {
     function student($limit, $offset){
         $this->db->select("*");
         $this->db->from("student_details");
+         $this->db->order_by("stud_ID","DESC");
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
@@ -81,6 +84,7 @@ class SelectData extends CI_Model {
     function StudCount($searchName,$limit,$offset){
         $this->db->select("*");
         $this->db->from("student_details");
+         $this->db->order_by("stud_ID","DESC");
         $this->db->like('stud_name', $searchName);
         $this->db->or_like('stud_contact',$searchName);
         $this->db->or_like('stud_ID',$searchName);
@@ -742,7 +746,7 @@ class SelectData extends CI_Model {
           return $data;
     }
     //replacing batch_id with batch_name in student
-    function student_attend_batch(){
+    /*function student_attend_batch(){
         $q = $this->db->query("SELECT * FROM `student_attend` ORDER BY attend_date DESC");
         if($q->num_rows() >0){
             foreach($q->result() as $row){
@@ -755,6 +759,24 @@ class SelectData extends CI_Model {
             }
         }
         return $data;
+    }*/
+    function studAttend($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("student_attend");
+        $this->db->order_by("attend_date","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function studAttendCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("student_attend");
+        $this->db->order_by("attend_date","DESC");
+        $this->db->like('batch_id', $searchName);
+        $this->db->or_like('attend_date',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
     }
     function student_attend_oneAttendOneStudent($attendId){
         $q = $this->db->query("SELECT * FROM `student_attend` WHERE attend_ID = '$attendId'");
@@ -805,6 +827,31 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    
+    function batch($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("batch");
+        $this->db->order_by("batch_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function BatchCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("batch");
+        $this->db->order_by("batch_ID","DESC");
+        $this->db->like('batch_ID', $searchName);
+        $this->db->or_like('batch_name',$searchName);
+        $this->db->or_like('batch_timing',$searchName);
+        $this->db->or_like('course_name',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+  
+    
+    
+    
     function UpdateBatch($id){
         $q = $this->db->query("SELECT * FROM `batch` WHERE batch_ID = '$id'");
         if($q->num_rows() >0){
@@ -967,6 +1014,33 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    
+     function test($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("test");
+        $this->db->order_by("test_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function testCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("test");
+        $this->db->order_by("test_ID","DESC");
+        $this->db->like('test_ID', $searchName);
+        $this->db->or_like('test_date',$searchName);
+        $this->db->or_like('test_time',$searchName);
+        $this->db->or_like('batch_id',$searchName);
+        $this->db->or_like('total_marks',$searchName);
+        $this->db->or_like('passing_marks',$searchName);
+        $this->db->or_like('supervisor_name',$searchName);
+        $this->db->or_like('subject_name',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+  
+    
     function marks_detail(){
         $q = $this->db->query("SELECT * FROM `marks` ORDER BY marks_ID DESC");
         if($q->num_rows() >0){
@@ -1130,15 +1204,39 @@ class SelectData extends CI_Model {
         }
           return $data;
     }
-    function enquiry(){
-        $sql = $this->db->query("SELECT * FROM enquiry");
-        if($sql->num_rows() > 0){
-             foreach($sql->result() as $row){
-                $data[]=$row;
-            }
-        }
-          return $data;
+//    function enquiry(){
+//        $sql = $this->db->query("SELECT * FROM enquiry");
+//        if($sql->num_rows() > 0){
+//             foreach($sql->result() as $row){
+//                $data[]=$row;
+//            }
+//        }
+//          return $data;
+//    }
+//    
+     function enquiry($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("enquiry");
+         $this->db->order_by("enquiry_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
     }
+    function enquiryCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("enquiry");
+         $this->db->order_by("enquiry_ID","DESC");
+        $this->db->like('enquiry_ID', $searchName);
+        $this->db->or_like('subject',$searchName);
+        $this->db->or_like('query',$searchName);
+        $this->db->or_like('followup_date',$searchName);
+        $this->db->or_like('enq_date',$searchName);
+        $this->db->or_like('reference',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+   
     function enquiryselect($id){
         $sql = $this->db->query("SELECT * FROM enquiry where enquiry_ID = '$id'");
         if($sql->num_rows() > 0){
