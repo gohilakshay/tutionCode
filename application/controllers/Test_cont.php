@@ -26,17 +26,16 @@ class Test_cont extends CI_Controller
             if($this->form_validation->run() == FALSE)
             {
              
-                 $limit = 10; 
-                    if (!empty($_GET['testFilter'])) {
-                        $count = $this->SelectData->testCount($_GET['testFilter']);
-                        $studCount = $count->num_rows();
-                    }else{
+                $limit = 10; 
+                if (!empty($_GET['testFilter'])) {
+                    $count = $this->SelectData->testCount($_GET['testFilter']);
+                    $studCount = count($count);
+                }else{
+                    $count = $this->SelectData->test();
+                    $studCount = count($count);
+                }
 
-                        $count = $this->SelectData->test();
-                        $studCount = $count->num_rows();
-                    }
-
-                $totalRecords = $count->num_rows();
+                $totalRecords = $studCount;
                 $config["total_rows"] = $totalRecords;
                 $config["per_page"] = $limit;
                 $config['use_page_numbers'] = TRUE;
@@ -70,7 +69,7 @@ class Test_cont extends CI_Controller
                     $count = $this->SelectData->testCount($_GET['testFilter'],$limit, $offset);
                    $this->load->view('addTest', array(
                        'totalResult' => $totalRecords,
-                       'result' => $count->result(),
+                       'result' => $count,
                        'links' => $links,
                        'batch_details' => $this->SelectData->ViewBatch(),
                        'offset' => $offset
@@ -80,7 +79,7 @@ class Test_cont extends CI_Controller
                     $count = $this->SelectData->test($limit, $offset);
                     $this->load->view('addTest', array(
                         'totalResult' => $totalRecords,
-                        'result' => $count->result(),
+                        'result' => $count,
                         'links' => $links,
                         'batch_details' => $this->SelectData->ViewBatch(),
                         'offset' => $offset
