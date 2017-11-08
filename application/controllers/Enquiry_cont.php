@@ -15,7 +15,7 @@ class Enquiry_cont extends CI_Controller
             $this->load->model('SelectData');
 //            $enquiry['result'] = $this->SelectData->enquiry();
 //            $this->load->view('enquiry',$enquiry);
-               $limit = 1; 
+               $limit = 10; 
             if (!empty($_GET['enquiryFilter'])) {
                 $count = $this->SelectData->enquiryCount($_GET['enquiryFilter']);
                 $studCount = $count->num_rows();
