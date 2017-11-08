@@ -5,7 +5,7 @@ class Teacher_cont extends CI_Controller
     public function teacher()
     {
         $this->load->library('session');
-          $this->load->library('pagination');
+         $this->load->library('pagination');
         $this->load->helper('url');  
         $username = $this->session->userdata('username');
         if(isset($username)){
@@ -22,7 +22,7 @@ class Teacher_cont extends CI_Controller
                 $studCount = $count->num_rows();
             }else{
                 
-                $count = $this->SelectData->teacher();
+                $count = $this->SelectData->teacher1();
                 $studCount = $count->num_rows();
             }
          
@@ -67,7 +67,7 @@ class Teacher_cont extends CI_Controller
                 ));
             }else{
                 
-                $count = $this->SelectData->teacher($limit, $offset);
+                $count = $this->SelectData->teacher1($limit, $offset);
                $this->load->view('teacher', array(
                     'totalResult' => $totalRecords,
                     'result' => $count->result(),
@@ -77,8 +77,6 @@ class Teacher_cont extends CI_Controller
                 ));
             }
         
-       
-       
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         
@@ -428,6 +426,7 @@ class Teacher_cont extends CI_Controller
     }
     public function TeacherPaymentDetails(){
         $this->load->helper('url');
+         $this->load->library('pagination');
         $this->load->library('form_validation');
         $this->load->library('session');
         $username = $this->session->userdata('username');
@@ -435,7 +434,7 @@ class Teacher_cont extends CI_Controller
         $db = $this->session->userdata('db');//load db   
         $this->load->database($db);//call db
         $this->load->model('SelectData');
-        $query['result'] =$this->SelectData->teacher();
+//        $query['result'] =$this->SelectData->teacher();
         $this->form_validation->set_rules('teachername','teachername','numeric');
         $this->form_validation->set_rules('salary', 'salary', 'required|numeric');
         if($this->form_validation->run() == FALSE)
@@ -457,7 +456,69 @@ class Teacher_cont extends CI_Controller
                         $this->AddData->teacherpaymentDefault();
                     }
                 }
-             $this->load->view('teacherPayment',$query);
+            
+                $limit = 10; 
+                if (!empty($_GET['paymentFilter'])) {
+                $count = $this->SelectData->paymentCount($_GET['paymentFilter']);
+                $studCount = $count->num_rows();
+                }else{
+
+                $count = $this->SelectData->payment();
+                $studCount = $count->num_rows();
+                }
+
+                $totalRecords = $count->num_rows();
+                $config["total_rows"] = $totalRecords;
+                $config["per_page"] = $limit;
+                $config['use_page_numbers'] = TRUE;
+                $config['page_query_string'] = TRUE;
+                $config['enable_query_strings'] = TRUE;
+                $config['num_links'] = 10;
+                $config['full_tag_open'] = "<ul class='pagination'>";
+                $config['full_tag_close'] ="</ul>";
+                $config['num_tag_open'] = '<li>';
+                $config['num_tag_close'] = '</li>';
+                $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+                $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+                $config['next_tag_open'] = "<li>";
+                $config['next_tagl_close'] = "</li>";
+                $config['prev_tag_open'] = "<li>";
+                $config['prev_tagl_close'] = "</li>";
+                $config['first_tag_open'] = "<li>";
+                $config['first_tagl_close'] = "</li>";
+                $config['last_tag_open'] = "<li>";
+                $config['last_tagl_close'] = "</li>";
+                $config['first_url'] = '?per_page=1'; 
+                $this->pagination->initialize($config);
+                $str_links = $this->pagination->create_links();
+                $links = explode('&nbsp;', $str_links);
+                $offset = 0;
+                if (!empty($_GET['per_page'])) {
+                $pageNo = $_GET['per_page'];
+                $offset = ($pageNo - 1) * $limit;
+                }
+                if (!empty($_GET['paymentFilter'])) {
+                $count = $this->SelectData->paymentCount($_GET['paymentFilter'],$limit, $offset);
+                $this->load->view('teacherPayment', array(
+                'totalResult' => $totalRecords,
+                'result' => $count->result(),
+                'links' => $links,
+                'offset' => $offset
+
+                ));
+                }else{
+
+                $count = $this->SelectData->payment($limit, $offset);
+                $this->load->view('teacherPayment', array(
+                'totalResult' => $totalRecords,
+                'result' => $count->result(),
+                'links' => $links,
+                'offset' => $offset
+
+                ));
+                }
+        
+//             $this->load->view('teacherPayment',$query);
         }
         else
          {

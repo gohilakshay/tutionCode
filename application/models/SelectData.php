@@ -43,17 +43,38 @@ class SelectData extends CI_Model {
         return $data;
     }*/
     
-//      function teacher() {
-//        $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
-//        if($q->num_rows() >0){
-//            foreach($q->result() as $row){
-//                $data[]=$row;
-//            }
-//        }
-//        return $data;
-//    }
+      function teacher() {
+        $q = $this->db->query("SELECT * FROM `teacher` ORDER BY t_ID DESC");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
     
-    function teacher($limit, $offset){
+      function payment($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("teacher");
+         $this->db->order_by("t_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function paymentCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("teacher");
+         $this->db->order_by("t_ID","DESC");
+        $this->db->like('t_ID', $searchName);
+        $this->db->or_like('t_name',$searchName);
+        $this->db->or_like('t_contact',$searchName);
+        $this->db->or_like('salary',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+   
+    function teacher1($limit, $offset){
         $this->db->select("*");
         $this->db->from("teacher");
         $this->db->order_by("t_ID","DESC");
@@ -254,6 +275,30 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    
+    
+     function teacherAttend($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("teacher_attend");
+        $this->db->order_by("date","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function teacherAttendCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("teacher_attend");
+        $this->db->order_by("date","DESC");
+        $this->db->like('date', $searchName);
+        $this->db->or_like('timing',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    
+    
+    
+    
     //select all from t_attend_mapping table
     function teacherAttendMap($n){
         $q = $this->db->query("SELECT * FROM `t_attend_mapping` WHERE t_attend_id = '$n'");
@@ -1194,6 +1239,10 @@ class SelectData extends CI_Model {
 
     //      return $data;
     // } 
+    
+    
+    
+    
     function staffPaidDetails(){
         // echo $data['staff_name'];
         $sql = $this->db->query("SELECT * FROM staff");

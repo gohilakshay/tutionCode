@@ -313,6 +313,7 @@ class Attendance_cont extends CI_Controller
     }
     public function viewTeacherAttendance(){
         $this->load->helper('url');
+         $this->load->library('pagination');
         $this->load->library('session');
         $username = $this->session->userdata('username');   //session mane
         if(isset($username)){
@@ -320,8 +321,71 @@ class Attendance_cont extends CI_Controller
         $db = $this->session->userdata('db');   //load db     
         $this->load->database($db); //call db
         $this->load->model('SelectData');   //load model to select data from db
-        $query['result'] = $this->SelectData->teacher_attend(); //select all teacher from teacher_attend table
-        $this->load->view('teacherAttendView',$query); //html filename
+//        $query['result'] = $this->SelectData->teacher_attend(); //select all teacher from teacher_attend table
+//        $this->load->view('teacherAttendView',$query); //html filename
+                $limit = 10; 
+            if (!empty($_GET['teacherFilter'])) {
+                $count = $this->SelectData->teacherAttendCount($_GET['teacherFilter']);
+                $studCount = $count->num_rows();
+            }else{
+                
+                $count = $this->SelectData->teacherAttend();
+                $studCount = $count->num_rows();
+            }
+         
+        $totalRecords = $count->num_rows();
+        $config["total_rows"] = $totalRecords;
+        $config["per_page"] = $limit;
+        $config['use_page_numbers'] = TRUE;
+        $config['page_query_string'] = TRUE;
+        $config['enable_query_strings'] = TRUE;
+        $config['num_links'] = 10;
+        $config['full_tag_open'] = "<ul class='pagination'>";
+        $config['full_tag_close'] ="</ul>";
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+        $config['next_tag_open'] = "<li>";
+        $config['next_tagl_close'] = "</li>";
+        $config['prev_tag_open'] = "<li>";
+        $config['prev_tagl_close'] = "</li>";
+        $config['first_tag_open'] = "<li>";
+        $config['first_tagl_close'] = "</li>";
+        $config['last_tag_open'] = "<li>";
+        $config['last_tagl_close'] = "</li>";
+        $config['first_url'] = '?per_page=1'; 
+        $this->pagination->initialize($config);
+        $str_links = $this->pagination->create_links();
+        $links = explode('&nbsp;', $str_links);
+        $offset = 0;
+        if (!empty($_GET['per_page'])) {
+            $pageNo = $_GET['per_page'];
+            $offset = ($pageNo - 1) * $limit;
+        }
+           if (!empty($_GET['teacherFilter'])) {
+                $count = $this->SelectData->teacherAttendCount($_GET['teacherFilter'],$limit, $offset);
+               $this->load->view('teacherAttendView', array(
+                    'totalResult' => $totalRecords,
+                    'result' => $count->result(),
+                    'links' => $links,
+                    'offset' => $offset
+                  // 'result' => $this->SelectData->student_attend_batch() 
+                ));
+            }
+        
+        else{
+                
+               $count = $this->SelectData->teacherAttend($limit, $offset);
+               $this->load->view('teacherAttendView', array(
+                    'totalResult' => $totalRecords,
+                    'result' => $count->result(),
+                    'links' => $links,
+                    'offset' => $offset
+                  // 'result' => $this->SelectData->student_attend_batch() 
+                ));
+        }
+          
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         

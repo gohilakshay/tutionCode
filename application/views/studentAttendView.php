@@ -167,9 +167,9 @@
                                                 
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable"><?php $i=1; foreach($result  as $value): ?>
+                                        <tbody id="myTable"><?php $i=$offset; foreach($result  as $value): ?>
                                             <tr>
-                                                <td><?php echo $i; $i++; ?></td>
+                                                   <td><?php $i++;echo $i;?></td>
                                                 <td><a href="<?php echo site_url().'/Attendance_cont/viewAttendanceDetail/'.$value->attend_ID; ?>"><?php echo $value->attend_date; ?></a></td>
                                                 <td><?php echo $value->batch_id; ?></td>
                                             </tr><?php endforeach; ?>

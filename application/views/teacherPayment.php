@@ -227,18 +227,26 @@
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                    <div class="row">
+                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-4">
-                                                <h3 class="text-uppercase">Payments Details&emsp;</h3>
+                                                <h3 class="text-uppercase">Payment Details</h3>
                                             </div>
                                             <div class="col-md-8" style="margin-top:-2px;">
                                                     <h3>
-                                                         <input type="text" id="teachersearch"
-                                                           onkeyup="myFunction()"        placeholder="Search..." style="width:          80%;" required> 
+                                                     <form action="<?php echo site_url().'/Teacher_cont/TeacherPaymentDetails/'; ?>" method="GET">
+                                                        <div class="input-group pull-right">
+                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="paymentFilter" value="<?php if (!empty($_GET['paymentFilter'])) { echo $_GET['paymentFilter'];
+                                                             }
+                                                             ?>">
+                                                            <span class="input-group-btn">
+                                                                <button type="submit" class="btn btn-success">Search</button>
+                                                            </span>
+                                                        </div>
+                                                     </form>
                                                     </h3>
                                                 </div>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -253,9 +261,9 @@
                                                 <th style="font-weight: bold;">Status</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="myTable"><?php $i=1;foreach($result as $value):?>
+                                        <tbody id="myTable"><?php $i=$offset;foreach($result as $value):?>
                                             <tr>
-                                                <td><?php echo $i;$i++;?></td>
+                                               <td><?php $i++;echo $i;?></td>
                                                 <td><?php echo $value->t_ID;?></td>
                                                 <td><?php echo $value->t_name;?></td>
                                                 <td><?php echo $value->t_contact;?></td>
@@ -268,7 +276,18 @@
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
-                                    </table>    
+                                    </table> 
+                                     <center>
+                                      <ul class="pagination">
+                                          <!-- Show pagination links -->
+                                          <?php
+                                          foreach ($links as $link) {
+                                          
+                                              echo "<li>" . $link . "</li>";
+                                          }
+                                          ?>
+                                    </ul>
+                                    </center>
                                 </div> 
                             </div>
                         </div>
@@ -282,6 +301,7 @@
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
 <style> 
+/*
 input[id=staffPaymentSearch] {
     width: 5px;
     box-sizing: border-box;
@@ -305,25 +325,22 @@ input[id=staffPaymentSearch]:focus {
   width: 60px;
   height: 34px;
 }
+*/
+
 
 input[id=teachersearch] {
     width: 5px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 1px solid #c5e2ea;;
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
     background-image: url('<?php echo base_url()?>assets/icon/search.png');
-    background-position: 7px 1px; 
+    background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
+  
 }
-
-input[id=studentsearch]:focus {
-    width: 80%;
-}
-
-
 
 </style>

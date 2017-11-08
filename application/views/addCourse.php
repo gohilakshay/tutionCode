@@ -1334,7 +1334,7 @@
                                                     <h3>
                                                          <form action="<?php echo site_url().'/Course_cont/addCourse/'; ?>" method="GET">
                                                         <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="addFilter" value="<?php if (!empty($_GET['addFilter'])) { echo $_GET['addFilter'];
+                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="courseFilter" value="<?php if (!empty($_GET['courseFilter'])) { echo $_GET['courseFilter'];
                                                              }
                                                              ?>">
                                                             <span class="input-group-btn">
@@ -1416,7 +1416,6 @@
                     </div>
                 </div>
             </div>
-       
     </div>
 </div>
     <style> 

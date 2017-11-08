@@ -12,7 +12,6 @@ class Course_cont extends CI_Controller
         $this->load->database($db);//call db
         $this->load->model('SelectData');
         
-        
         $this->db->close();
         $configdbfly=$this->config->config['sysdb'];
         /*localHost*/
