@@ -210,7 +210,6 @@
                                 
                                 <?php $i=$offset;
                                     foreach($reult1 as $v):
-                                    
                                 ?> 
                                 <tr>
                                     <td><?php $i++;echo $i;?></td>
