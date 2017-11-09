@@ -1460,6 +1460,31 @@ class SelectData extends CI_Model {
         }
           return $data;
     }
+    
+    function uploadView1($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("upload");
+         $this->db->order_by("upload_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    
+     function uploadViewCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("upload");
+         $this->db->order_by("upload_ID","DESC");
+        $this->db->like('upload_ID', $searchName);
+        $this->db->or_like('filename',$searchName);
+        $this->db->or_like('discription',$searchName);
+        $this->db->or_like('date',$searchName);
+        $this->db->or_like('facultyname',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+   
+    
     function ImportContactView($listname){
         $sql = $this->db->query("SELECT * FROM `import` WHERE list_name='$listname'");
         if($sql->num_rows() > 0){
