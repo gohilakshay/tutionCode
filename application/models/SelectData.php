@@ -1067,15 +1067,14 @@ class SelectData extends CI_Model {
          $this->db->limit($limit, $offset);
          $query = $this->db->get();$i=0;
          foreach($query->result() as $value){
-             $details = $query->result();
              $this->db->select("*");
              $this->db->from("batch");
              $this->db->where("batch_ID",$value->batch_id);
              $q1 = $this->db->get();
              foreach($q1->result() as $row1){
-                 $batchName = $row1->batch_name;
-                 $details[$i]->batch_id = $batchName;
+                $value->batch_id = $row1->batch_name;  
              }
+             $details[]=$value;
           }
          return $details;
     }
