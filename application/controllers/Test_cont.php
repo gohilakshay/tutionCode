@@ -34,7 +34,6 @@ class Test_cont extends CI_Controller
                     $count = $this->SelectData->test();
                     $studCount = count($count);
                 }
-
                 $totalRecords = $studCount;
                 $config["total_rows"] = $totalRecords;
                 $config["per_page"] = $limit;
