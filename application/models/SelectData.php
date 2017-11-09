@@ -1074,17 +1074,16 @@ class SelectData extends CI_Model {
          $this->db->from("test");
          $this->db->order_by("test_ID","DESC");
          $this->db->limit($limit, $offset);
-         $query = $this->db->get();$i=0;
+         $query = $this->db->get();
          foreach($query->result() as $value){
-             $details = $query->result();
              $this->db->select("*");
              $this->db->from("batch");
              $this->db->where("batch_ID",$value->batch_id);
              $q1 = $this->db->get();
              foreach($q1->result() as $row1){
-                 $batchName = $row1->batch_name;
-                 $details[$i]->batch_id = $batchName;
+                $value->batch_id = $row1->batch_name;  
              }
+             $details[]=$value;
           }
          return $details;
     }
@@ -1095,14 +1094,41 @@ class SelectData extends CI_Model {
         $this->db->like('test_ID', $searchName);
         $this->db->or_like('test_date',$searchName);
         $this->db->or_like('test_time',$searchName);
-        $this->db->or_like('batch_id',$searchName);
         $this->db->or_like('total_marks',$searchName);
         $this->db->or_like('passing_marks',$searchName);
         $this->db->or_like('supervisor_name',$searchName);
         $this->db->or_like('subject_name',$searchName);
         $this->db->limit($limit, $offset);
         $query = $this->db->get();
-        return $query->result();
+        if($query->num_rows() === 0){
+            $this->db->select("batch_ID");
+            $this->db->from("batch");
+            $this->db->where("batch_name",$searchName);
+            $q1 = $this->db->get();
+            $batch = $q1->result_array();
+            $batchID = $batch[0];
+            $this->db->select("*");
+            $this->db->from("test");
+            $this->db->where("batch_id",$batchID['batch_ID']);
+            $this->db->order_by("test_ID","DESC");
+            $q1 = $this->db->get();
+            foreach($q1->result() as $value){
+                $value->batch_id = $searchName;
+                $data[] = $value;
+            }
+            return $data;
+        }
+        foreach($query->result() as $value){
+            $this->db->select("*");
+            $this->db->from("batch");
+            $this->db->where("batch_ID",$value->batch_id);
+            $q1 = $this->db->get();
+            foreach($q1->result() as $row1){
+                $value->batch_id = $row1->batch_name;  
+            }
+            $details[]=$value;
+        }
+        return $details;
     }
   
     
