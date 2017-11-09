@@ -1350,9 +1350,9 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $i=1; foreach($result  as $value): ?>
+                                                <?php $i=$offset; foreach($result  as $value): ?>
                                                 <tr>
-                                                    <td><?php echo $i;$i++; ?></td>
+                                                     <td><?php $i++;echo $i;?></td>
                                                     <td><?php echo $value->course_ID; ?></td>
                                                     <td><?php echo $value->course_name; ?></td>
                                                     <td><?php echo $value->course_type; ?></td>

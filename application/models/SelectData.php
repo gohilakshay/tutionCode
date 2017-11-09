@@ -814,13 +814,24 @@ class SelectData extends CI_Model {
         }
         return $data;
     }*/
+    
     function studAttend($limit, $offset){
         $this->db->select("*");
         $this->db->from("student_attend");
         $this->db->order_by("attend_date","DESC");
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
-        return $query;
+         foreach($query->result() as $value){
+             $this->db->select("*");
+             $this->db->from("batch");
+             $this->db->where("batch_ID",$value->batch_id);
+             $q1 = $this->db->get();
+             foreach($q1->result() as $row1){
+                $value->batch_id = $row1->batch_name;  
+             }
+             $details[]=$value;
+          }
+         return $details;
     }
     function studAttendCount($searchName,$limit,$offset){
         $this->db->select("*");
@@ -830,8 +841,37 @@ class SelectData extends CI_Model {
         $this->db->or_like('attend_date',$searchName);
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
-        return $query;
+       if($query->num_rows() === 0){
+            $this->db->select("batch_ID");
+            $this->db->from("batch");
+            $this->db->where("batch_name",$searchName);
+            $q1 = $this->db->get();
+            $batch = $q1->result_array();
+            $batchID = $batch[0];
+            $this->db->select("*");
+            $this->db->from("student_attend");
+            $this->db->where("batch_id",$batchID['batch_ID']);
+            $this->db->order_by("attend_date","DESC");
+            $q1 = $this->db->get();
+            foreach($q1->result() as $value){
+                $value->batch_id = $searchName;
+                $data[] = $value;
+            }
+            return $data;
+        }
+        foreach($query->result() as $value){
+            $this->db->select("*");
+            $this->db->from("batch");
+            $this->db->where("batch_ID",$value->batch_id);
+            $q1 = $this->db->get();
+            foreach($q1->result() as $row1){
+                $value->batch_id = $row1->batch_name;  
+            }
+            $details[]=$value;
+        }
+        return $details;
     }
+    
     function student_attend_oneAttendOneStudent($attendId){
         $q = $this->db->query("SELECT * FROM `student_attend` WHERE attend_ID = '$attendId'");
         if($q->num_rows() >0){
@@ -1068,6 +1108,24 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function test_detail1($limit, $offset){
+        $this->db->select("*");
+         $this->db->from("test");
+         $this->db->order_by("test_ID","DESC");
+         $this->db->limit($limit, $offset);
+         $query = $this->db->get();
+         foreach($query->result() as $value){
+             $this->db->select("*");
+             $this->db->from("batch");
+             $this->db->where("batch_ID",$value->batch_id);
+             $q1 = $this->db->get();
+             foreach($q1->result() as $row1){
+                $value->batch_id = $row1->batch_name;  
+             }
+             $details[]=$value;
+          }
+         return $details;
+    }
     
      function test($limit, $offset){
          $this->db->select("*");
@@ -1141,6 +1199,17 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    
+//     function marks_detail1($limit, $offset){
+//        $this->db->select("*");
+//        $this->db->from("marks");
+//        $this->db->order_by("marks_ID","DESC");
+//        $this->db->limit($limit, $offset);
+//        $query = $this->db->get(); 
+//        return $query;
+//    }
+    
+    
     function selectTest($id){
          $q = $this->db->query("SELECT * FROM `test` where test_ID = '$id'");
         if($q->num_rows() >0){

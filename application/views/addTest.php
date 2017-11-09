@@ -278,7 +278,7 @@
                                             
                                             <?php $i=$offset;foreach($result as $value): ?>
                                             <tr>
-                                                  <td><?php $i++;echo $i;?></td>
+                                                 <td><?php $i++;echo $i;?></td>
                                                 <td><?php echo $value->test_ID; ?></td>
                                                 <td><?php echo $value->test_date; ?></td>
                                                 <td><?php echo $value->batch_id ; ?></td>

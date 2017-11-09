@@ -194,7 +194,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered" >
                             <thead>
-                                <tr style="font-weight: bold;">
+                                <tr style="font-weight:bold;">
                                     <td>Sr No.</td>
                                     <td>Test ID</td>
                                     <td>Test Date</td>
@@ -208,30 +208,41 @@
                             </thead>
                             <tbody>
                                 
-                                <?php $i=1; 
-                                    foreach($result as $value):
-                                    $test = $value["test_detail"];
-                                    foreach($test as $v):
+                                <?php $i=$offset;
+                                    foreach($reult1 as $v):
+                                    
                                 ?> 
                                 <tr>
-                                    <td><?php echo $i++; ?></td>
+                                    <td><?php $i++;echo $i;?></td>
                                     <td><a href="<?php echo site_url();?>/Test_cont/TestMarkDetail/<?php echo $v->test_ID;?>"><?php echo $v->test_ID; ?></a></td>
                                     <td><?php echo $v->test_date; ?></td>
-                                    <td><?php echo $v->test_time; ?>  </td>
+                                    <td><?php echo $v->test_time; ?> </td>
                                     <td><?php echo $v->batch_id; ?></td>
                                     <td><?php echo $v->total_marks;?></td>
                                     <td><?php echo $v->passing_marks;?></td>
                                     <td><?php echo $v->supervisor_name;?></td>
                                     <td><?php echo $v->subject_name;?></td>
                                               
-                                </tr>  <?php endforeach; break;endforeach; ?>
+                                </tr>  <?php endforeach; ?>
                             </tbody>
-                        </table>    
+                        </table> 
+                        <center>
+                            <ul class="pagination">
+                                <!-- Show pagination links -->
+                                <?php
+                                foreach ($links as $link) {
+                                          
+                                    echo "<li>" . $link . "</li>";
+                                }
+                                ?>
+                            </ul>
+                        </center>
                     </div>                                 
                 </div>
             </div>
         </div>
     </div>
+<!--
     <style> 
 input[id=studentsearch] {
     width: 5px;
@@ -251,6 +262,7 @@ input[id=studentsearch]:focus {
     width: 80%;
 }
 </style>
+-->
 <?php include_once "footer.php";?>
    
 <?php include_once "script_include.php";?>

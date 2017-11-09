@@ -163,7 +163,7 @@
                                             <tr style="font-weight: bold;">
                                                 <td>Sr No.</td>
                                                 <td>Attend Date</td>
-                                                <td>Batch ID</td>
+                                                <td>Batch Name</td>
                                                 
                                             </tr>
                                         </thead>

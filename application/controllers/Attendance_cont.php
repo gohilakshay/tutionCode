@@ -91,14 +91,14 @@ class Attendance_cont extends CI_Controller
                   $limit = 10; 
             if (!empty($_GET['attendFilter'])) {
                 $count = $this->SelectData->studAttendCount($_GET['attendFilter']);
-                $studCount = $count->num_rows();
+                $studCount = count($count);
             }else{
                 
                 $count = $this->SelectData->studAttend();
-                $studCount = $count->num_rows();
+                $studCount = count($count);
             }
          
-        $totalRecords = $count->num_rows();
+        $totalRecords = $studCount;
         $config["total_rows"] = $totalRecords;
         $config["per_page"] = $limit;
         $config['use_page_numbers'] = TRUE;
@@ -132,7 +132,7 @@ class Attendance_cont extends CI_Controller
                 $count = $this->SelectData->studAttendCount($_GET['attendFilter'],$limit, $offset);
                $this->load->view('studentAttendView', array(
                     'totalResult' => $totalRecords,
-                    'result' => $count->result(),
+                    'result' => $count,
                     'links' => $links,
                     'offset' => $offset
                   // 'result' => $this->SelectData->student_attend_batch() 
@@ -145,7 +145,7 @@ class Attendance_cont extends CI_Controller
                $count = $this->SelectData->studAttend($limit, $offset);
                $this->load->view('studentAttendView', array(
                     'totalResult' => $totalRecords,
-                    'result' => $count->result(),
+                    'result' => $count,
                     'links' => $links,
                     'offset' => $offset
                   // 'result' => $this->SelectData->student_attend_batch() 
