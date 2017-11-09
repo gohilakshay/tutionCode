@@ -5,13 +5,6 @@
 
 <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
     type="text/javascript"></script>
-<script type="text/javascript">
-    $(function () {
-        $('#lstFruits').multiselect({
-            includeSelectAllOption: true
-        });
-    });
-</script>
 <style>
     .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
         background-color: #68b3c8;
@@ -55,11 +48,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" >                        
+                            <!--<div class="col-md-6">
+                                <div class="form-group">
+                                <label>Branch ?? </label>
+                                    <input type="checkbox" class="form-control border-input" name="checkbox" id="d-checkbox">
+                                </div>
+                            </div>-->
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Database Type</label>
-                                    <select  name="databasetype[]" id="lstFruits" multiple="multiple" required>
+                                    <select  name="databasetype[]" class="lstFruits" multiple="multiple"  required>
                                         <!--<option value="">---Select Type---</option>-->
                                         <option value="school">School</option>
                                         <option value="jrcolg_sci">Jr. College (science)</option>
@@ -150,4 +149,9 @@ $('#password, #confirm_password').on('keyup', function () {
     } else 
         $('#message').html('Not Matching').css('color', 'red');
 });
+    $(function () {
+        $('.lstFruits').multiselect({
+            includeSelectAllOption: true
+        });
+    });  
 </script>
