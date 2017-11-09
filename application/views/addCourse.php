@@ -1330,20 +1330,6 @@
                                             <div class="col-md-4">
                                                 <h3 class="text-uppercase">Course Details&emsp;</h3>
                                             </div>
-                                            <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                         <form action="<?php echo site_url().'/Course_cont/addCourse/'; ?>" method="GET">
-                                                        <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="courseFilter" value="<?php if (!empty($_GET['courseFilter'])) { echo $_GET['courseFilter'];
-                                                             }
-                                                             ?>">
-                                                            <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-success">Search</button>
-                                                            </span>
-                                                        </div>
-                                                     </form>
-                                                      </h3>
-                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1418,23 +1404,6 @@
             </div>
     </div>
 </div>
-    <style> 
-input[id=teachersearch] {
-    width: 5px;
-    box-sizing: border-box;
-    border: 1px solid #c5e2ea;;
-    border-radius: 50px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('<?php echo base_url()?>assets/icon/search.png');
-    background-position: 11px 7px; 
-    background-repeat: no-repeat;
-    background-size: 21px;
-    padding-left: 35px;
-}
-
-</style>            <!--End View Course-->
-
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>

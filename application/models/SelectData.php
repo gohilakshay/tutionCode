@@ -310,10 +310,19 @@ class SelectData extends CI_Model {
         }
        return($data);
     }
-    function course($ntype) {
+    
+    function course1($limit, $offset){
+         $this->db->select("*");
+        $this->db->from("course");
+        $this->db->order_by("course_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function course($limit,$offset,$ntype) {
         $dbtype = $ntype;
          $n = count($dbtype);$a=0;
-                $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC");
+                $q = $this->db->query("SELECT * FROM `course` ORDER BY course_ID DESC LIMIT $limit OFFSET $offset");
                 if($q->num_rows() >0){ 
                     foreach($q->result() as $row){
                         $subj_id = $row->subject_id;

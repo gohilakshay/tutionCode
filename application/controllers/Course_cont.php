@@ -6,6 +6,7 @@ class Course_cont extends CI_Controller
     {
         $this->load->library('session');
         $this->load->helper('url');
+        $this->load->library('pagination');
         $username = $this->session->userdata('username');
         if(isset($username)){
         $db = $this->session->userdata('db');//load db      
@@ -42,7 +43,7 @@ class Course_cont extends CI_Controller
         $ntype = explode(",",$type);
         $n = count($ntype);
         $query['result9'] = $ntype;
-        $query['result'] = $this->SelectData->course($ntype);
+//        $query['result'] = $this->SelectData->course($ntype);
             
         foreach($ntype as $value){
             $query['result1'] = $this->SelectData->standard();  
@@ -66,7 +67,6 @@ class Course_cont extends CI_Controller
                 $query['result8'] = $this->SelectData->commercesubject();
             }
         }
-        
         $this->load->library('form_validation');
         $this->form_validation->set_rules('course_name', 'course_name', 'callback_customAlphanumeric');
         $this->form_validation->set_rules('coursetype','coursetype','required');
@@ -74,7 +74,49 @@ class Course_cont extends CI_Controller
         if($this->form_validation->run() == FALSE)
         {
             
-                $this->load->view('addCourse',$query);       //html filename   
+                $limit = 10; 
+                $count1 = $this->SelectData->course1();
+                $studCount = $count1->num_rows();
+               
+                $totalRecords = $studCount;
+                $config["total_rows"] = $totalRecords;
+                $config["per_page"] = $limit;
+                $config['use_page_numbers'] = TRUE;
+                $config['page_query_string'] = TRUE;
+                $config['enable_query_strings'] = TRUE;
+                $config['num_links'] = 10;
+                $config['full_tag_open'] = "<ul class='pagination'>";
+                $config['full_tag_close'] ="</ul>";
+                $config['num_tag_open'] = '<li>';
+                $config['num_tag_close'] = '</li>';
+                $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+                $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+                $config['next_tag_open'] = "<li>";
+                $config['next_tagl_close'] = "</li>";
+                $config['prev_tag_open'] = "<li>";
+                $config['prev_tagl_close'] = "</li>";
+                $config['first_tag_open'] = "<li>";
+                $config['first_tagl_close'] = "</li>";
+                $config['last_tag_open'] = "<li>";
+                $config['last_tagl_close'] = "</li>";
+                $config['first_url'] = '?per_page=1'; 
+                $this->pagination->initialize($config);
+                $str_links = $this->pagination->create_links();
+                $links = explode('&nbsp;', $str_links);
+                $offset=0;
+                if (!empty($_GET['per_page'])) {
+                $pageNo = $_GET['per_page'];
+                $offset = ($pageNo - 1) * $limit;
+                }
+               
+                $count = $this->SelectData->course($limit,$offset,$ntype);
+                $this->load->view('addCourse', array(
+                'totalResult' => $totalRecords,
+                'result' => $count,
+                'links' => $links,
+                'offset' => $offset
+                ));
+
         }
         else
         {
