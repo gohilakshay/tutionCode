@@ -52,24 +52,68 @@
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                      <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-4">
+                                        <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <h3 class="text-uppercase">Enquiries</h3>
                                             </div>
-                                            <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                         <form action="<?php echo site_url().'/Enquiry_cont/enquiry/'; ?>" method="GET">
-                                                        <div class="input-group pull-right">
-                                                             <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="enquiryFilter" value="<?php if (!empty($_GET['enquiryFilter'])) { echo $_GET['enquiryFilter'];
+                                        </div>
+                                         <div class="col-md-8">
+                                             <h3>
+                                                 <form action="<?php echo    site_url().'/Enquiry_cont/enquiry/'; ?>" method="GET">
+                                                     <div class="input-group pull-right">
+                                                         <input type="text" class="form-control"  placeholder="Search..." id="teachersearch"  name="enquiryFilter" value="<?php if (!empty($_GET['enquiryFilter'])) { echo $_GET['enquiryFilter'];
                                                              }
                                                              ?>">
-                                                            <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-success">Search</button>
-                                                            </span>
-                                                        </div>
-                                                     </form>
-                                                    </h3>
+                                                         <span class="input-group-btn">
+                                                             <button type="submit" class="btn btn- success">Search</button>
+                                                         </span>
+                                                     </div>
+                                                 </form>
+                                             </h3>
+                                         </div>
+                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form action="<?php echo    site_url().'/Enquiry_cont/enquiry/'; ?>" method="GET">
+                                                <div class="col-md-3" >
+                                                    <label>To</label>
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control" id="Tosearch"  name="todate" value="<?php if (!empty($_GET['todate'])) { echo $_GET['todate'];
+                                                             }
+                                                             ?>">
+                                                    </div>
                                                 </div>
+                                                <div class="col-md-3">
+                                                    <label>From</label>
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control"  placeholder="Search..." id="Tosearch"  name="fromDate" value="<?php if (!empty($_GET['fromDate'])) { echo $_GET['fromDate'];
+                                                             }
+                                                             ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <label>Status</label>
+                                                    <div class="input-group pull-right">
+                                                        <select name="statusSearch" class="form-control" id="teachersearch">
+                                                            <?php if (!empty($_GET['statusSearch'])) { ?>
+                                                            <option value="<?php echo $_GET['statusSearch']; ?>"><?php echo $_GET['statusSearch']; ?></option>
+                                                            <?php
+                                                             }
+                                                             ?>
+                                                            <option value="">--Select Status--</option>
+                                                            <option value="followdate">FollowUp Date</option>
+                                                            <option value="enqdate">Enquiry Date</option>
+                                                            <option value="inprocess">Inprocess</option>
+                                                            <option value="joined">Joined</option>
+                                                            <option value="notjoined">Not Joined</option>
+                                                        </select>
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-success" value="1" name="extraSearch">Search</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -84,6 +128,7 @@
                                                 <td>Reference</td>
                                                 <td>Followup Date</td>
                                                 <td>Enquiry Date</td>
+                                                <td>Status</td>
                                                 <td>Modify</td>
                                                 <td>Delete</td>
                                             </tr>
@@ -97,6 +142,17 @@
                                                 <td><?php echo $value->reference;?></td>
                                                 <td><?php echo $value->followup_date;?></td>
                                                 <td><?php echo $value->enq_date;?></td>
+                                                <td>
+                                                    <?php 
+                                                    if($value->status == 'inprocess'){
+                                                        echo "<font color='#d0b965'>".$value->status."</font>";
+                                                    }else if($value->status == 'joined'){
+                                                        echo "<font color='green'>".$value->status."</font>";
+                                                    }else{
+                                                        echo "<font color='red'>".$value->status."</font>";
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td>
                                                         <?php echo form_open('Enquiry_cont/updateEnquiry'); ?>
                                                             <div class="text-center">
@@ -148,8 +204,19 @@ input[id=teachersearch] {
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
-  
-    
+}
+input[id=Tosearch] {
+    width: 5px;
+    box-sizing: border-box;
+    border: 1px solid #c5e2ea;;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('<?php echo base_url()?>assets/icon/calender.png');
+    background-position: 11px 7px; 
+    background-repeat: no-repeat;
+    background-size: 21px;
+    padding-left: 35px;
 }
 
 </style>

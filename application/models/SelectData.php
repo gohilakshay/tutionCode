@@ -1419,7 +1419,7 @@ class SelectData extends CI_Model {
         $query = $this->db->get(); 
         return $query;
     }
-    function enquiryCount($searchName,$limit,$offset){
+    function enquiryCount($searchName,$limit,$offset){     
         $this->db->select("*");
         $this->db->from("enquiry");
          $this->db->order_by("enquiry_ID","DESC");
@@ -1429,11 +1429,30 @@ class SelectData extends CI_Model {
         $this->db->or_like('followup_date',$searchName);
         $this->db->or_like('enq_date',$searchName);
         $this->db->or_like('reference',$searchName);
+        $this->db->or_like('status',$searchName);
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
     }
-   
+   function enquirySearchCount($todate,$fromDate,$statusSearch,$limit,$offset){
+      // echo "<br>".$todate."<br>".$fromDate."<br>".$statusSearch."<br>";
+       if($statusSearch == 'followdate'){
+           $sql = $this->db->query("SELECT * FROM enquiry WHERE `followup_date` BETWEEN '$todate' AND '$fromDate'");
+           //$result = $sql->result();
+           return $sql;
+       }
+       else if($statusSearch == 'enqdate'){
+           $sql = $this->db->query("SELECT * FROM enquiry WHERE `enq_date` BETWEEN '$todate' AND '$fromDate'");
+           //$result = $sql->result();
+           return $sql;
+       }
+       else{
+           $sql = $this->db->query("SELECT * FROM enquiry WHERE `followup_date` BETWEEN '$todate' AND '$fromDate' AND `status`='$statusSearch'");
+           //$result = $sql->result();
+           return $sql;
+          //  echo "<br>".$todate."<br>".$fromDate."<br>".$statusSearch."<br>status";
+       }
+   }
     function enquiryselect($id){
         $sql = $this->db->query("SELECT * FROM enquiry where enquiry_ID = '$id'");
         if($sql->num_rows() > 0){
