@@ -1199,17 +1199,6 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
-    
-//     function marks_detail1($limit, $offset){
-//        $this->db->select("*");
-//        $this->db->from("marks");
-//        $this->db->order_by("marks_ID","DESC");
-//        $this->db->limit($limit, $offset);
-//        $query = $this->db->get(); 
-//        return $query;
-//    }
-    
-    
     function selectTest($id){
          $q = $this->db->query("SELECT * FROM `test` where test_ID = '$id'");
         if($q->num_rows() >0){
@@ -1274,7 +1263,7 @@ class SelectData extends CI_Model {
     }
 
 
-    public function staff()
+    /*public function staff()
     {
         $sql = $this->db->query("SELECT * FROM staff_details order by staffDetail_ID DESC");
         if($sql->num_rows() > 0){
@@ -1283,81 +1272,135 @@ class SelectData extends CI_Model {
             }
         }
         return $data;
-    }   
-     public function utilities()
-    {
-        $sql = $this->db->query("SELECT * FROM utilities order by utilities_ID DESC");
-        if($sql->num_rows() > 0){
-             foreach($sql->result() as $row){
-                $data[]=$row;
-            }
-        }
-        return $data;
-    }   
-    public function transport()
-    {
-        $sql = $this->db->query("SELECT * FROM transport order by transport_ID DESC");
-        if($sql->num_rows() > 0){
-             foreach($sql->result() as $row){
-                $data[]=$row;
-            }
-        }
-        return $data;
-    } 
-       
-    public function mealsentertain()
-    {
-        $sql = $this->db->query("SELECT * FROM meals_entertain order by meals_entertain_ID DESC");
-        if($sql->num_rows() > 0){
-             foreach($sql->result() as $row){
-                $data[]=$row;
-            }
-        }
-        return $data;
-    }  
-     public function maintenance()
-    {
-        $sql = $this->db->query("SELECT * FROM maintenance order by maintenance_ID DESC");
-        if($sql->num_rows() > 0){
-             foreach($sql->result() as $row){
-                $data[]=$row;
-            }
-        }
-        return $data;
-    }   
-     public function rent()
-    {
-        $sql = $this->db->query("SELECT * FROM rent order by rent_ID DESC");
-        if($sql->num_rows() > 0){
-             foreach($sql->result() as $row){
-                $data[]=$row;
-            }
-        }
-        return $data;
+    } */ 
+    function staff($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("staff_details");
+        $this->db->order_by("staffDetail_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
     }
-    // public function staffpayment()
-    // {
-    //     $sql = $this->db->query("SELECT * FROM staff_details order by staff_ID DESC");
-    //     if($sql->num_rows() > 0){
-    //          foreach($sql->result() as $row){
-    //             $data[]=$row;
-    //         }
-
-    //      } 
-    //       // return $data;
-    //      $sql = $this->db->query("SELECT * FROM staff");
-    //     if($sql->num_rows() > 0){
-    //          foreach($sql->result() as $row){
-    //             $data[]=$row;
-    //         }
-    //     }
-
-    //      return $data;
-    // } 
+    function StaffCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("staff_details");
+        $this->db->order_by("staffDetail_ID","DESC");
+        $this->db->like('staffDetail_ID', $searchName);
+        $this->db->or_like('staff_name',$searchName);
+        $this->db->or_like('staff_salary',$searchName);
+        $this->db->or_like('staff_contact',$searchName);
+        $this->db->or_like('staff_address',$searchName);
+        $this->db->or_like('status',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
     
-    
-    
-    
+    function utilities($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("utilities");
+        $this->db->order_by("utilities_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function UtilitiesCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("utilities");
+        $this->db->order_by("utilities_ID","DESC");
+        $this->db->like('utilities_ID', $searchName);
+        $this->db->or_like('title',$searchName);
+        $this->db->or_like('amount',$searchName);
+        $this->db->or_like('payment_mode',$searchName);
+        $this->db->or_like('payment_date',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function transport($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("transport");
+        $this->db->order_by("transport_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function TransportCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("transport");
+        $this->db->order_by("transport_ID","DESC");
+        $this->db->like('transport_ID', $searchName);
+        $this->db->or_like('title',$searchName);
+        $this->db->or_like('amount',$searchName);
+        $this->db->or_like('payment_mode',$searchName);
+        $this->db->or_like('payment_date',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }   
+    function mealsentertain($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("meals_entertain");
+        $this->db->order_by("meals_entertain_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function MealsentertainCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("meals_entertain");
+        $this->db->order_by("meals_entertain_ID","DESC");
+        $this->db->like('meals_entertain_ID', $searchName);
+        $this->db->or_like('message',$searchName);
+        $this->db->or_like('amount',$searchName);
+        $this->db->or_like('payment_mode',$searchName);
+        $this->db->or_like('payment_date',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }  
+    function maintenance($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("maintenance");
+        $this->db->order_by("maintenance_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function MaintenanceCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("maintenance");
+        $this->db->order_by("maintenance_ID","DESC");
+        $this->db->like('maintenance_ID', $searchName);
+        $this->db->or_like('title',$searchName);
+        $this->db->or_like('amount',$searchName);
+        $this->db->or_like('payment_mode',$searchName);
+        $this->db->or_like('payment_date',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    } 
+    function rent($limit, $offset){
+        $this->db->select("*");
+        $this->db->from("rent");
+        $this->db->order_by("rent_ID","DESC");
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    }
+    function RentCount($searchName,$limit,$offset){
+        $this->db->select("*");
+        $this->db->from("rent");
+        $this->db->order_by("rent_ID","DESC");
+        $this->db->like('rent_ID', $searchName);
+        $this->db->or_like('title',$searchName);
+        $this->db->or_like('amount',$searchName);
+        $this->db->or_like('payment_mode',$searchName);
+        $this->db->or_like('payment_date',$searchName);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get(); 
+        return $query;
+    } 
     function staffPaidDetails(){
         // echo $data['staff_name'];
         $sql = $this->db->query("SELECT * FROM staff");
@@ -1368,16 +1411,6 @@ class SelectData extends CI_Model {
         }
           return $data;
     }
-//    function enquiry(){
-//        $sql = $this->db->query("SELECT * FROM enquiry");
-//        if($sql->num_rows() > 0){
-//             foreach($sql->result() as $row){
-//                $data[]=$row;
-//            }
-//        }
-//          return $data;
-//    }
-//    
      function enquiry($limit, $offset){
         $this->db->select("*");
         $this->db->from("enquiry");

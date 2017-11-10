@@ -228,6 +228,7 @@
                                                 <th style="font-weight: bold;">Discription</th>
                                                 <th style="font-weight: bold;">Faculty Name</th>
                                                 <th style="font-weight: bold;">Upload Date</th>
+                                                <th style="font-weight: bold;">Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody id="myTable"><?php $i=$offset;foreach($files as $value):?>
@@ -238,6 +239,12 @@
                                                 <td><?php echo $value->discription;?></td>
                                                 <td><?php echo $value->facultyname;?></td>
                                                 <td><?php echo $value->date;?></td>
+                                                <td>
+                                                    <?php echo form_open('Upload_FileCont/DeleteUploads'); ?>
+                                                    <input type="hidden" value="<?php echo $value->upload_ID; ?>" name="upload_id" >
+                                                    <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                    <?php echo form_close(); ?>
+                                                </td>
                                              </tr>
                                             <?php endforeach;?>
                                         </tbody>

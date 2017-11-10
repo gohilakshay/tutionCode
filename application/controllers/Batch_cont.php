@@ -6,7 +6,7 @@ class Batch_cont extends CI_Controller
     public function addBatch()
     {
         $this->load->library('session');
-           $this->load->library('pagination');
+        $this->load->library('pagination');
         $this->load->helper('url');
         $this->load->library('form_validation');
         $db = $this->session->userdata('db');//load db 

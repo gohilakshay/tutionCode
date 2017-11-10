@@ -89,13 +89,20 @@
                                             <div class="col-md-4">
                                                 <h3 class="text-uppercase">Staff Details&emsp;</h3>
                                             </div>
-                                            <form name="search">
-                                                <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                        <input type="text" id="staffsearch" name="staffsearch" placeholder="Search..." style="width: 80%;" required> 
-                                                        <button type="submit" class="btn btn-success">search</button></h3>
-                                                </div>
-                                            </form>
+                                            <div class="col-md-8" style="margin-top:-2px;">
+                                            <h3>
+                                                <form action="<?php echo site_url().'/Expense_cont/staffDetails/'; ?>" method="GET">
+                                                    <div class="input-group pull-right">
+                                                        <input type="text" class="form-control"  placeholder="Search..." id="staffsearch"  name="staffFilter" value="<?php if (!empty($_GET['staffFilter'])) { echo $_GET['staffFilter'];
+                                                             }
+                                                             ?>">
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-success">Search</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </h3>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -110,8 +117,8 @@
                                                 <td>Address</td>
                                             </tr>
                                         </thead>
-                                        <tbody><?php $i=1; ?>
-                                            <tr><?php foreach ($result as $key):  ?>
+                                        <tbody><?php $i=$offset; ?>
+                                            <tr><?php $i++;foreach ($result as $key):  ?>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><a href="<?php echo site_url()."/Expense_cont/updateStaffDetails" ?>">
                                                     <?php  echo $key->staff_name; ?>
@@ -120,14 +127,19 @@
                                                 <td><?php  echo $key->staff_salary; ?></td>
                                                 <td><?php  echo $key->staff_address; ?></td>
                                             </tr><?php endforeach; ?>
-                                            <!-- <tr>
-                                                <td>2.</td>
-                                                <td>Ramesh</td>
-                                                <td>5896236512</td>
-                                                <td>2000</td>
-                                            </tr> -->
                                         </tbody>
-                                    </table>    
+                                    </table> 
+                                    <center>
+                                      <ul class="pagination">
+                                          <!-- Show pagination links -->
+                                          <?php
+                                          foreach ($links as $link) {
+                                          
+                                              echo "<li>" . $link . "</li>";
+                                          }
+                                          ?>
+                                    </ul>
+                                    </center>
                                 </div> 
                             </div>
                         </div>
@@ -137,26 +149,24 @@
         </div>
     </div>
 </div>
-<?php include "footer.php";?>
-<?php include "addModel.php";?>
-<?php include "script_include.php";?>
-<?php include "custom_script.php";?>
 <style> 
 input[id=staffsearch] {
     width: 5px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 1px solid #c5e2ea;;
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
     background-image: url('<?php echo base_url()?>assets/icon/search.png');
-    background-position: 7px 1px; 
+    background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
-}
-
-input[id=staffsearch]:focus {
-    width: 80%;
+  
+    
 }
 </style>
+<?php include "footer.php";?>
+<?php include "addModel.php";?>
+<?php include "script_include.php";?>
+<?php include "custom_script.php";?>

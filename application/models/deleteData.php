@@ -18,6 +18,11 @@ class deleteData extends CI_Model {
         }
         
     }
+    function deleteUpload($upload_id){
+       $this->db->where('upload_ID', $upload_id);
+        $this->db->delete('upload');
+        return;
+     }
     function DeleteList($list_name){
         $this->db->where('list_name', $list_name);
         $this->db->delete('import');

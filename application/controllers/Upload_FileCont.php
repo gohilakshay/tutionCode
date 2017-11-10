@@ -106,6 +106,24 @@ class Upload_FileCont extends CI_Controller
         else
         {echo "<h1> Upload Failed </h1>" ;}
     }
+    function DeleteUploads(){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+        $this->load->helper('form');
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('deleteData'); // model for delete
+        $upload_id = $this->input->post("upload_id");
+        $result = $this->deleteData->deleteUpload($upload_id); // call function from model
+            $this->session->set_flashdata('success','You have Successfully Deleted data.');
+            redirect('Upload_FileCont/upload'); 
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
+    }
 }
 
 ?>

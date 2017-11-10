@@ -79,13 +79,29 @@
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <div class="col-md-12">
                                                 <h3 class="text-uppercase">Utilities Details</h3>
                                             </div>
                                         </div>
+                                        <div class="col-md-8" style="margin-top:-2px;">
+                                            <h3>
+                                                <form action="<?php echo site_url().'/Expense_cont/utilities/'; ?>" method="GET">
+                                                    <div class="input-group pull-right">
+                                                        <input type="text" class="form-control"  placeholder="Search..." id="utilityrsearch"  name="utilityFilter" value="<?php if (!empty($_GET['utilityFilter'])) { echo $_GET['utilityFilter'];
+                                                             }
+                                                             ?>">
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-success">Search</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </h3>
+                                        </div>
                                     </div>
+                                    
                                 </div>
+                                
                                 <div class="table-responsive">
                                     <table class="table table-bordered" >
                                         <thead>
@@ -97,23 +113,27 @@
                                                 <td>Payment Date</td>
                                             </tr>
                                         </thead>
-                                        <tbody><?php $i=1; ?>
-                                            <tr><?php foreach ($result as $value):  ?>
+                                        <tbody><?php $i=$offset; ?>
+                                            <tr><?php $i++;foreach ($result as $value):  ?>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->title ?></td>
                                                 <td><?php echo $value->amount ?></td>
                                                 <td><?php echo $value->payment_mode ?></td>
                                                 <td><?php echo $value->payment_date ?></td>
                                             </tr><?php endforeach; ?>
-                                            <!-- <tr>
-                                                <td>2.</td>
-                                                <td>Pen</td>
-                                                <td>20</td>
-                                                <td>cash</td>
-                                                <td>07/08/2017</td>
-                                            </tr> -->
                                         </tbody>
-                                    </table>    
+                                    </table> 
+                                     <center>
+                                      <ul class="pagination">
+                                          <!-- Show pagination links -->
+                                          <?php
+                                          foreach ($links as $link) {
+                                          
+                                              echo "<li>" . $link . "</li>";
+                                          }
+                                          ?>
+                                    </ul>
+                                    </center>
                                 </div> 
                             </div>
                         </div>
@@ -123,6 +143,23 @@
         </div>
     </div>
 </div>
+<style> 
+input[id=utilityrsearch] {
+    width: 5px;
+    box-sizing: border-box;
+    border: 1px solid #c5e2ea;;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('<?php echo base_url()?>assets/icon/search.png');
+    background-position: 11px 7px; 
+    background-repeat: no-repeat;
+    background-size: 21px;
+    padding-left: 35px;
+  
+    
+}
+</style>
 <?php include "footer.php";?>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
