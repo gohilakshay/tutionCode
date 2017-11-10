@@ -139,6 +139,12 @@
                 </div>
             </div>
         </div>
+        <center>
+            <form action="<?php echo site_url("Home") ?>" method="post">
+                <input type="hidden" name="signout" />
+                <button class="btn btn-primary">Sign Out</button>
+            </form>  
+        </center>
         </div>
     </div>
 </body>

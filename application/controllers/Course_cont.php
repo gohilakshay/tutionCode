@@ -42,31 +42,32 @@ class Course_cont extends CI_Controller
         }
         $ntype = explode(",",$type);
         $n = count($ntype);
-        $query['result9'] = $ntype;
+        $result9 = $ntype;
 //        $query['result'] = $this->SelectData->course($ntype);
             
         foreach($ntype as $value){
-            $query['result1'] = $this->SelectData->standard();  
-             $query['result2'] = $this->SelectData->branch(); 
+            $result1 = $this->SelectData->standard();  
+             $result2 = $this->SelectData->branch(); 
             if($value == 'school'){
-                $query['result3'] = $this->SelectData->subject();
+                $result3 = $this->SelectData->subject();
             }
             else if($value == 'jrcolg_sci'){
-                $query['result5'] = $this->SelectData->jrColgSci();
+                $result5 = $this->SelectData->jrColgSci();
             }
             else if($value == 'jrcolg_com'){
-                $query['result6'] = $this->SelectData->jrColgCom();
+                $result6 = $this->SelectData->jrColgCom();
             }
             else if($value == 'jrcolg_art'){
-                $query['result10'] = $this->SelectData->jrColgArt();
+                $result10 = $this->SelectData->jrColgArt();
             }
             else if($value == 'engicolg'){ 
-                $query['result7'] = $this->SelectData->engisubject();
+                $result7 = $this->SelectData->engisubject();
             }
             else if($value == 'comcolg'){ 
-                $query['result8'] = $this->SelectData->commercesubject();
+                $result8 = $this->SelectData->commercesubject();
             }
         }
+            
         $this->load->library('form_validation');
         $this->form_validation->set_rules('course_name', 'course_name', 'callback_customAlphanumeric');
         $this->form_validation->set_rules('coursetype','coursetype','required');
@@ -114,7 +115,16 @@ class Course_cont extends CI_Controller
                 'totalResult' => $totalRecords,
                 'result' => $count,
                 'links' => $links,
-                'offset' => $offset
+                'offset' => $offset,
+                'result1' => $result1,
+                'result2' => $result2,
+                'result3' => $result3,
+                'result5' => $result5,
+                'result6' => $result6,
+                'result9' => $result9,
+                'result10' => $result10,
+                'result7' => $result7,
+                'result8' => $result8
                 ));
 
         }

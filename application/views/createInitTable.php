@@ -2,9 +2,15 @@
 
 <body>
     <div class="container">
+        <div class="row" style="margin-top: 30px;" align="right">
+            <form action="<?php echo site_url("Home") ?>" method="post">
+                <input type="hidden" name="signout" />
+                <button class="btn btn-primary">Sign Out</button>
+            </form>  
+        </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="col-sm-4 col-sm-offset-4" style="margin-top: 52px;">
+                <div class="col-sm-4 col-sm-offset-4" style="margin-top: 35px;">
                     <center><h2><b style="color: #68B3C8;">Create Database Tables</b></h2></center>
                 </div>
                 <div class="col-sm-4 col-sm-offset-4" align="center" style="margin-top: 30px;">
