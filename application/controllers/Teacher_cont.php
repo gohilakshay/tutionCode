@@ -221,7 +221,7 @@ class Teacher_cont extends CI_Controller
                 $this->load->model('ProfileImg');
                 $name = strtolower(preg_replace('/\s+/', '', $this->input->post('teachersname')));
                 /*for img to be any format */
-                if(!null($_FILES['photo']['name'])){
+                if(!empty($_FILES['photo']['name'])){
                     $filename = explode(".",$_FILES['photo']['name']);
                     $extn = end($filename);
                     $img_address = 'assets/profile/'.$name.'.'.$extn;
@@ -248,18 +248,18 @@ class Teacher_cont extends CI_Controller
                 $insert_id = $this->db->insert_id();
                 $img = $_FILES['photo']['name']; 
                 $this->ProfileImg->addImg($img,$name);
-                if(!null($this->input->post('subject'))){
+                if(!empty($this->input->post('subject'))){
                     $engi_branch = $this->input->post('engi_branch');
                     $engisemester = $this->input->post('engisemester');
                     $commerce_branch = $this->input->post('commerce_branch');
                     $semester1 = $this->input->post('semester1');
                     $stream = $this->input->post('stream');
-                    if(!null($engi_branch)){ $branch_name = $engi_branch;} 
-                    else if(!null($commerce_branch)){ $branch_name = $commerce_branch;}
-                    else if(!null($stream)){ $branch_name = $stream;}
+                    if(!empty($engi_branch)){ $branch_name = $engi_branch;} 
+                    else if(!empty($commerce_branch)){ $branch_name = $commerce_branch;}
+                    else if(!empty($stream)){ $branch_name = $stream;}
                     else $branch_name = NULL;
-                    if(!null($engisemester)){ $semester_name = $engisemester;}
-                    else if(!null($semester1)){ $semester_name = $semester1;}
+                    if(!empty($engisemester)){ $semester_name = $engisemester;}
+                    else if(!empty($semester1)){ $semester_name = $semester1;}
                     else $semester_name = NULL;
                     $subject = implode(",",$this->input->post('subject'));
                     $data1 = array(
@@ -401,11 +401,11 @@ class Teacher_cont extends CI_Controller
                 $commerce_branch = $this->input->post('commerce_branch');
                 $semester1 = $this->input->post('semester1');
                 $stream = $this->input->post('stream');
-                if(!null($engi_branch)){ $branch_name = $engi_branch;} 
-                else if(!null($commerce_branch)){ $branch_name = $commerce_branch;}
-                else if(!null($stream)){ $branch_name = $stream;} 
-                if(!null($engisemester)){ $semester_name = $engisemester;}
-                else if(!null($semester1)){ $semester_name = $semester1;}
+                if(!empty($engi_branch)){ $branch_name = $engi_branch;} 
+                else if(!empty($commerce_branch)){ $branch_name = $commerce_branch;}
+                else if(!empty($stream)){ $branch_name = $stream;} 
+                if(!empty($engisemester)){ $semester_name = $engisemester;}
+                else if(!empty($semester1)){ $semester_name = $semester1;}
                 $subject = implode(",",$this->input->post('subject'));
                 $data1 = array(
                     'teacher_id' => $insert_id,
