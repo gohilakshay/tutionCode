@@ -229,20 +229,44 @@ class Teacher_cont extends CI_Controller
                 else{
                     $img_address = $this->input->post('proImg');
                 }
+                
+                $date = $this->input->post('dob');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            } 
+                $date3 = $this->input->post('joiningdate');
+            $date2 = explode("/",$date3);
+            if(!empty($date2[1])){
+                $d = $date2[1];
+                $m = $date2[0];
+                $y = $date2[2];
+                $date2 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date2 = $date2[0];
+            }
+                
                 $data = array(
                     't_ID' => $this->input->post('teacher_id'),
                     't_name' => $this->input->post('teachersname'),
                     't_fathername' => $this->input->post('surname'),
                     't_surname' => NULL,
                     't_gender' => $this->input->post('gender'),
-                    't_dob' => $this->input->post('dob'),
+                    't_dob' => $date1,
                     't_email' => $this->input->post('email'),
                     't_contact' => $this->input->post('mobile'),
                     'qualification' => $this->input->post('qualification'),
                     'salary' => $this->input->post('salary'),
                     't_address' => $this->input->post('address'),
                     't_profile' => $img_address,
-                    'join_date' => $this->input->post('joiningdate'),
+                    'join_date' => $date2,
                 );
                 $this->AddData->UpdateTeacherItem($data);
                 $insert_id = $this->db->insert_id();
@@ -377,19 +401,41 @@ class Teacher_cont extends CI_Controller
                     $extn = end($filename);
                 $img_address = 'assets/profile/'.$name.'.'.$extn;
                 //$t_name = explode(" ",$this->input->post('teachersname'));
+                 $date = $this->input->post('dob');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            } 
+                $date3 = $this->input->post('joiningdate');
+            $date2 = explode("/",$date3);
+            if(!empty($date2[1])){
+                $d = $date2[1];
+                $m = $date2[0];
+                $y = $date2[2];
+                $date2 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date2 = $date2[0];
+            }
                 $data = array(
                     't_name' => $this->input->post('teachersname'),
                     't_fathername' => $this->input->post('surname'),
                     't_surname' => $t_name[2],
                     't_gender' => $this->input->post('gender'),
-                    't_dob' => $this->input->post('dob'),
+                    't_dob' => $date1,
                     't_email' => $this->input->post('email'),
                     't_contact' => $this->input->post('mobile'),
                     'qualification' => $this->input->post('qualification'),
                     'salary' => $this->input->post('salary'),
                     't_address' => $this->input->post('address'),
                     't_profile' => $img_address,
-                    'join_date' => $this->input->post('joiningdate'),
+                    'join_date' => $date2,
                     'salary_status' => 'unpaid'
                 );
                 $this->AddData->addTeacherItem($data);
@@ -523,14 +569,36 @@ class Teacher_cont extends CI_Controller
         else
          {
             $this->load->model('AddData');
+             $date =$this->input->post('paymentdate');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            } 
+                $date3 =$this->input->post('chq_date');
+            $date2 = explode("/",$date3);
+            if(!empty($date2[1])){
+                $d = $date2[1];
+                $m = $date2[0];
+                $y = $date2[2];
+                $date2 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date2 = $date2[0];
+            }
             $data = array(
             'teacher_id'=> $this->input->post('teacherid'),
             'salary'=> $this->input->post('salary'),
             'payment_mode'=> $this->input->post('paymentmode'),
-            'payment_date'=> $this->input->post('paymentdate'),
+            'payment_date'=> $date1,
             'chq_no'=> $this->input->post('chq_no'),
             'bank_name'=> $this->input->post('bank_name'),
-            'chq_date'=> $this->input->post('chq_date'),
+            'chq_date'=> $date2,
             'transc_id'=> $this->input->post('transc_id'),
             ); 
             $this->AddData->teacherPaymentDetails($data);

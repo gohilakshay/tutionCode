@@ -166,11 +166,22 @@ class Expense_cont extends CI_Controller
         else
          {
             $this->load->model('AddData');
+             $date = $this->input->post('paymentdate');
+             $date1 = explode("/",$date);
+             if(!empty($date1[1])){
+                 $d = $date1[1];
+                 $m = $date1[0];
+                 $y = $date1[2];
+                 $date1 = $y.'-'.$m.'-'.$d; 
+             }
+             else{
+                 $date1 = $date1[0];
+             }
             $data = array(
-            'staff_name'=> $this->input->post('staffname'),
-            'salary'=> $this->input->post('staffsalary'),
-            'payment_mode'=> $this->input->post('paymentmode'),
-            'payment_date'=> $this->input->post('paymentdate'),
+                'staff_name'=> $this->input->post('staffname'),
+                'salary'=> $this->input->post('staffsalary'),
+                'payment_mode'=> $this->input->post('paymentmode'),
+                'payment_date'=> $date1,
             ); 
             $this->AddData->staffPaymentDetails($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
@@ -266,11 +277,22 @@ class Expense_cont extends CI_Controller
             $this->load->helper('form');
             
             $this->load->model('AddData');
+            $date = $this->input->post('paymentdate');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
             $data = array(
             'message'=> $this->input->post('message'),
             'amount'=> $this->input->post('amt'),
             'payment_mode'=> $this->input->post('paymentmode'),
-            'payment_date'=> $this->input->post('paymentdate'),
+            'payment_date'=> $date1,
             );
             $this->AddData-> mealsDetails($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
@@ -361,11 +383,22 @@ class Expense_cont extends CI_Controller
         {
             $this->load->helper('form');
             $this->load->model('AddData');
+            $date = $this->input->post('paymentdate');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
             $data = array(
             'title'=> $this->input->post('title'),
             'amount'=> $this->input->post('amt'),
             'payment_mode'=> $this->input->post('paymentmode'),
-            'payment_date'=> $this->input->post('paymentdate'),
+            'payment_date'=> $date1,
             );
             $this->AddData->maintenanceDetails($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
@@ -457,11 +490,22 @@ class Expense_cont extends CI_Controller
             $this->load->helper('form');
            
             $this->load->model('AddData');
+            $date = $this->input->post('paymentdate');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
             $data = array(
             'title'=> $this->input->post('title'),
             'amount'=> $this->input->post('amt'),
             'payment_mode'=> $this->input->post('paymentmode'),
-            'payment_date'=> $this->input->post('paymentdate'),
+            'payment_date'=> $date1,
             );
             $this->AddData->transportDetails($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
@@ -553,11 +597,22 @@ class Expense_cont extends CI_Controller
              $this->load->helper('form');
            
             $this->load->model('AddData');
+            $date = $this->input->post('paymentdate');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
             $data = array(
             'title'=> $this->input->post('title'),
             'amount'=> $this->input->post('amt'),
             'payment_mode'=> $this->input->post('paymentmode'),
-            'payment_date'=> $this->input->post('paymentdate'),
+            'payment_date'=> $date1,
             );
             $this->AddData->rentDetails($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');
@@ -650,11 +705,22 @@ class Expense_cont extends CI_Controller
         {   
             $this->load->helper('form');
             $this->load->model('AddData');
+            $date = $this->input->post('paymentdate');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
             $data = array(
             'title'=> $this->input->post('title'),
             'amount'=> $this->input->post('amt'),
             'payment_mode'=> $this->input->post('paymentmode'),
-            'payment_date'=> $this->input->post('paymentdate'),
+            'payment_date'=> $date1,
             );
             $this->AddData->utilitiesDetails($data);
             $this->session->set_flashdata('success','You have Successfully submitted data.');

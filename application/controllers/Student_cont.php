@@ -144,7 +144,28 @@ class Student_cont extends CI_Controller
             else{
                $img_address = $this->input->post('proImg');
             }
-                
+            $dob = $this->input->post('dob');
+            $dob1 = explode("/",$dob);
+            if(!empty($dob1[1])){
+                $d = $dob1[1];
+                $m = $dob1[0];
+                $y = $dob1[2];
+                $dob = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $dob = $dob1[0];
+            } 
+            $date = $this->input->post('date');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }    
             $data = array(
                 'stud_ID' => $this->input->post('stud_id'),
                 'stud_surname' => $this->input->post('surname'),
@@ -152,13 +173,13 @@ class Student_cont extends CI_Controller
                 'father_name' => $this->input->post('fathername'),
                 'mother_name' => $this->input->post('mothername'),
                 'stud_gender' => $this->input->post('gender'),
-                'stud_dob' => $this->input->post('dob'),
+                'stud_dob' => $dob,
                 'stud_email' => $this->input->post('email'),
                 'stud_contact' => $this->input->post('contactnumber'),
                 'stud_address' => $this->input->post('address'),
                 'stud_profile' => $img_address,
                 'admission_year' => $this->input->post('admissionyear'),
-                'admission_date' => $this->input->post('date'),
+                'admission_date' => $date1,
                 'course_type' => $this->input->post('course_type'),
                 'sch_coll_name' => $this->input->post('school_college'),
                 'board' => $this->input->post('board'),
@@ -166,7 +187,7 @@ class Student_cont extends CI_Controller
                 // 'batch_timing' => $this->input->post('batch_timing'),
                  'standard_name' => $this->input->post('standard'),
                 //'place' => $this->input->post('place'),
-                'form_date' => $this->input->post('date')
+                'form_date' => $date1
                 
             );
             $batch_edit = array(
@@ -282,19 +303,41 @@ class Student_cont extends CI_Controller
                 $filename = explode(".",$_FILES['photo']['name']);
                     $extn = end($filename);
                 $img_address = 'assets/profile/'.$name.'.'.$extn;
+            $dob = $this->input->post('dob');
+            $dob1 = explode("/",$dob);
+            if(!empty($dob1[1])){
+                $d = $dob1[1];
+                $m = $dob1[0];
+                $y = $dob1[2];
+                $dob = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $dob = $dob1[0];
+            } 
+            $date = $this->input->post('date');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
             $data = array(
                 'stud_surname' => $this->input->post('surname'),
                 'stud_name' => $this->input->post('studentname'),
                 'father_name' => $this->input->post('fathername'),
                 'mother_name' => $this->input->post('mothername'),
                 'stud_gender' => $this->input->post('gender'),
-                'stud_dob' => $this->input->post('dob'),
+                'stud_dob' => $dob,
                 'stud_email' => $this->input->post('email'),
                 'stud_contact' => $this->input->post('contactnumber'),
                 'stud_address' => $this->input->post('address'),
                 'stud_profile' => $img_address,
                 'admission_year' => $this->input->post('admissionyear'),
-                'admission_date' => $this->input->post('date'),
+                'admission_date' => $date1,
                 'course_type' => $this->input->post('course_type'),
                 'sch_coll_name' => $this->input->post('school_college'),
                 'board' => $this->input->post('board'),
@@ -302,13 +345,24 @@ class Student_cont extends CI_Controller
                 // 'batch_timing' => $this->input->post('batch_timing'),
                  'standard_name' => $this->input->post('standard'),
                 'place' => $this->input->post('place'),
-                'form_date' => $this->input->post('date')
+                'form_date' => $date1
                 
             );
             $img = $_FILES['photo']['name'] ; 
             $this->ProfileImg->addImg($img,$name);
              $this->AddData->addStudentItem($data);
             $n = $this->db->insert_id();
+            $chq_date = $this->input->post('chq_date');
+            $chq_date1 = explode("/",$chq_date);
+            if(!empty($chq_date1[1])){
+                $d = $chq_date1[1];
+                $m = $chq_date1[0];
+                $y = $chq_date1[2];
+                $chq_date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $chq_date1 = $dob1[0];
+            }
             $data1 = array(
                 'stud_ID'=>$n,
             	'total_fee' => $this->input->post('total_fees'),
@@ -320,7 +374,7 @@ class Student_cont extends CI_Controller
                 'payment_mode' => $this->input->post('paymentmode'),
                 'recieved_fee' => $this->input->post('received'),
                 'balance_fee' => $this->input->post('balance'),
-                'chq_date' => $this->input->post('chq_date'),
+                'chq_date' => $chq_date1,
                 'bank_name' => $this->input->post('bank_name'),
                 'chq_no' => $this->input->post('chq_no'),
                 'transc_id' => $this->input->post('transc_id'),

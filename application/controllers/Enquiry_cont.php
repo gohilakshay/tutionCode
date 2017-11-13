@@ -18,7 +18,42 @@ class Enquiry_cont extends CI_Controller
                 $count = $this->SelectData->enquiryCount($_GET['enquiryFilter']);
                 $studCount = $count->num_rows();
             }else if(!empty($_GET['extraSearch'])){
-                $count = $this->SelectData->enquirySearchCount($_GET['todate'],$_GET['fromDate'],$_GET['statusSearch'],$limit, $offset);
+                $date = $_GET['todate'];
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+               $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
+                 $date2 = $_GET['statusSearch'];
+            $date3 = explode("/",$date2);
+            if(!empty($date3[1])){
+                $d = $date3[1];
+                $m = $date3[0];
+                $y = $date3[2];
+                $date3 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date3 = $date3[0];
+            }
+                 $date4 = $_GET['fromDate'];
+            $date5 = explode("/",$date4);
+            if(!empty($date5[1])){
+                $d = $date5[1];
+                $m = $date5[0];
+                $y = $date5[2];
+                $date5 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date5 = $date5[0];
+            }
+                
+                
+                $count = $this->SelectData->enquirySearchCount($date1,$date5,$date3,$limit, $offset);
                 $studCount = $count->num_rows();
             }
             else{
@@ -122,6 +157,30 @@ class Enquiry_cont extends CI_Controller
             $this->load->helper('url');
             $this->load->helper('form');
             $this->load->model('AddData');
+            
+            $date = $this->input->post('enq_date');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
+            $date2 = $this->input->post('followup_date');
+            $date3 = explode("/",$date2);
+            if(!empty($date3[1])){
+                $d = $date3[1];
+                $m = $date3[0];
+                $y = $date3[2];
+                $date3 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date3 = $date3[0];
+            }
+            
             $data = array (
                 'name' => $this->input->post('enquirename'),
                 'senderEmail' => $this->input->post('email'),
@@ -130,31 +189,53 @@ class Enquiry_cont extends CI_Controller
                 'repledBy' => $this->input->post('repliedby'),
                 'reply' => $this->input->post('reply'),
                 'status' => $this->input->post('status'),
-                'enq_date' => $this->input->post('enq_date'),
+                'enq_date' => $date1,
                 'fees' => $this->input->post('fees'),
                 'reference' => $this->input->post('reference'),
                 'college' => $this->input->post('college'),
                 'gender' => $this->input->post('gender'),
                 'query' => $this->input->post('query'),
                 'address' => $this->input->post('address'),
-                'followup_date' => $this->input->post('followup_date'),
+                'followup_date' => $date3,
                 'action' => 'saved'
             );
             $this->AddData->enquirySave($data);
             redirect('Enquiry_cont/enquiry');
         }
         else{
-        $this->load->library('session');
-        $this->load->helper('url');
-        $this->load->helper('form');
-        $Name = $this->input->post('enquirename');
-        $email = $this->input->post('email');
-        $Phone = $this->input->post('mobile');
-        $Subject = $this->input->post('subject');
-        $replyBy = $this->input->post('repliedby');
-        $Message = $this->input->post('reply');
-        /*add the email sent data to db also*/
-        $this->load->model('AddData');
+            $this->load->library('session');
+            $this->load->helper('url');
+            $this->load->helper('form');
+            $Name = $this->input->post('enquirename');
+            $email = $this->input->post('email');
+            $Phone = $this->input->post('mobile');
+            $Subject = $this->input->post('subject');
+            $replyBy = $this->input->post('repliedby');
+            $Message = $this->input->post('reply');
+            /*add the email sent data to db also*/
+            $this->load->model('AddData');
+            $date = $this->input->post('enq_date');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
+            $date2 = $this->input->post('followup_date');
+            $date3 = explode("/",$date2);
+            if(!empty($date3[1])){
+                $d = $date3[1];
+                $m = $date3[0];
+                $y = $date3[2];
+                $date3 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date3 = $date3[0];
+            }
             $data = array (
                 'name' => $this->input->post('enquirename'),
                 'senderEmail' => $this->input->post('email'),
@@ -163,13 +244,13 @@ class Enquiry_cont extends CI_Controller
                 'repledBy' => $this->input->post('repliedby'),
                 'reply' => $this->input->post('reply'),
                 'status' => $this->input->post('status'),
-                'enq_date' => $this->input->post('enq_date'),
+                'enq_date' => $date1,
                 'fees' => $this->input->post('fees'),
                 'reference' => $this->input->post('reference'),
                 'college' => $this->input->post('college'),
                 'query' => $this->input->post('query'),
                 'address' => $this->input->post('address'),
-                'followup_date' => $this->input->post('followup_date'),
+                'followup_date' => $date3,
                 'action'=>'sent'
             );
             $this->AddData->enquirySave($data);
@@ -266,6 +347,28 @@ class Enquiry_cont extends CI_Controller
             $this->load->view('enquiryInfo',$enquiry);
             if(isset($_POST['edit'])){
                 $this->load->model('AddData');
+                $date = $this->input->post('enq_date');
+                $date1 = explode("/",$date);
+                if(!empty($date1[1])){
+                    $d = $date1[1];
+                    $m = $date1[0];
+                    $y = $date1[2];
+                    $date1 = $y.'-'.$m.'-'.$d; 
+                }
+                else{
+                    $date1 = $date1[0];
+                }
+                $date2 = $this->input->post('followup_date');
+                $date3 = explode("/",$date2);
+                if(!empty($date3[1])){
+                    $d = $date3[1];
+                    $m = $date3[0];
+                    $y = $date3[2];
+                    $date3 = $y.'-'.$m.'-'.$d; 
+                }
+                else{
+                    $date3 = $date3[0];
+                }
                 $data = array(
                     'enquiry_ID'=>$this->input->post("e_id"),
                     'name' => $this->input->post('enquirename'),
@@ -275,13 +378,13 @@ class Enquiry_cont extends CI_Controller
                     'repledBy' => $this->input->post('repliedby'),
                     'reply' => $this->input->post('reply'),
                     'status' => $this->input->post('status'),
-                    'enq_date' => $this->input->post('enq_date'),
+                    'enq_date' => $date1,
                     'fees' => $this->input->post('fees'),
                     'reference' => $this->input->post('reference'),
                     'college' => $this->input->post('college'),
                     'query' => $this->input->post('query'),
                     'address' => $this->input->post('address'),
-                    'followup_date' => $this->input->post('followup_date')
+                    'followup_date' => $date3
                 );
                 $this->AddData->UpdateEnq($data);
                 $name=site_url().'/Enquiry_cont/enquiry';

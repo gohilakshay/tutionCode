@@ -34,10 +34,21 @@ class Attendance_cont extends CI_Controller
             $this->load->model('AddData');  //to insert or update data from db
             //getting batch_ID from bbatch name and time
             $res = $this->SelectData->batchIDStudAttend($batch_name,$batch_timing);
+            $date = $this->input->post('date');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            } 
             $data = array(
                 'batch_id'=>$res,
                 /*'faculty_name'=>$this->input->post('facultyname'),*/
-                'attend_date'=>$this->input->post('date')
+                'attend_date'=>$date1
             );
             //insert into stud_attend table
             $this->AddData->addStudentAttendItem($data);    //passing $data to AddData model
@@ -269,10 +280,21 @@ class Attendance_cont extends CI_Controller
                 );
             $teacher_map = $this->SelectData->AttendSubjTeacher($data); //select subject_id according to subject name and dbtype
             $t_name['result'] = $teacher_map['name'];   //subject name to an array
+            $date = $this->input->post('date');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            }
             $data1 = array(
                 'tcm_id' => $teacher_map['tcm_id'],
                 'timing' =>$this->input->post('timing'),
-                'date' => $this->input->post('date')
+                'date' => $date1
             );
             $this->AddData->TeacherAttend($data1);  //insert in teacher_attend
             $this->session->set_flashdata('success','You have Successfully submitted data.'); //if successfully inserted

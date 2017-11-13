@@ -92,10 +92,22 @@ class Upload_FileCont extends CI_Controller
         $file = $_FILES['filename']['name'] ;
         $n = $this->UploadFileModel->addFile($file,$name);
         if($n == 1){
+              $date = $this->input->post('date');
+            $date1 = explode("/",$date);
+            if(!empty($date1[1])){
+                $d = $date1[1];
+                $m = $date1[0];
+                $y = $date1[2];
+                $date1 = $y.'-'.$m.'-'.$d; 
+            }
+            else{
+                $date1 = $date1[0];
+            } 
+            
             $data = array(
                 'filename' => $this->input->post('filename'),
                 'discription'=>$this->input->post('description'),
-                'date'=>$this->input->post('date'),
+                'date'=>$date1,
                 'facultyname'=>$this->input->post('facultyname'),
                 'fileLink'=>$file_address
             );
