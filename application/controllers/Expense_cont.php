@@ -65,7 +65,7 @@ class Expense_cont extends CI_Controller
             $config['use_page_numbers'] = TRUE;
             $config['page_query_string'] = TRUE;
             $config['enable_query_strings'] = TRUE;
-            $config['num_links'] = 10;
+            $config['num_links'] = 5;
             $config['full_tag_open'] = "<ul class='pagination'>";
             $config['full_tag_close'] ="</ul>";
             $config['num_tag_open'] = '<li>';
@@ -216,7 +216,7 @@ class Expense_cont extends CI_Controller
             $config['use_page_numbers'] = TRUE;
             $config['page_query_string'] = TRUE;
             $config['enable_query_strings'] = TRUE;
-            $config['num_links'] = 10;
+            $config['num_links'] = 5;
             $config['full_tag_open'] = "<ul class='pagination'>";
             $config['full_tag_close'] ="</ul>";
             $config['num_tag_open'] = '<li>';
@@ -312,7 +312,7 @@ class Expense_cont extends CI_Controller
             $config['use_page_numbers'] = TRUE;
             $config['page_query_string'] = TRUE;
             $config['enable_query_strings'] = TRUE;
-            $config['num_links'] = 10;
+            $config['num_links'] = 5;
             $config['full_tag_open'] = "<ul class='pagination'>";
             $config['full_tag_close'] ="</ul>";
             $config['num_tag_open'] = '<li>';
@@ -407,7 +407,7 @@ class Expense_cont extends CI_Controller
             $config['use_page_numbers'] = TRUE;
             $config['page_query_string'] = TRUE;
             $config['enable_query_strings'] = TRUE;
-            $config['num_links'] = 10;
+            $config['num_links'] = 5;
             $config['full_tag_open'] = "<ul class='pagination'>";
             $config['full_tag_close'] ="</ul>";
             $config['num_tag_open'] = '<li>';
@@ -503,7 +503,7 @@ class Expense_cont extends CI_Controller
             $config['use_page_numbers'] = TRUE;
             $config['page_query_string'] = TRUE;
             $config['enable_query_strings'] = TRUE;
-            $config['num_links'] = 10;
+            $config['num_links'] = 5;
             $config['full_tag_open'] = "<ul class='pagination'>";
             $config['full_tag_close'] ="</ul>";
             $config['num_tag_open'] = '<li>';
@@ -599,7 +599,7 @@ class Expense_cont extends CI_Controller
             $config['use_page_numbers'] = TRUE;
             $config['page_query_string'] = TRUE;
             $config['enable_query_strings'] = TRUE;
-            $config['num_links'] = 10;
+            $config['num_links'] = 5;
             $config['full_tag_open'] = "<ul class='pagination'>";
             $config['full_tag_close'] ="</ul>";
             $config['num_tag_open'] = '<li>';

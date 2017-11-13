@@ -54,7 +54,7 @@
                                      <div class="row">
                                         <div class="col-md-4">
                                             <div class="col-md-12">
-                                                <h3 class="text-uppercase">Enquiries <?php echo "<h6>Count : $totalResult</h6>"; ?></h3>
+                                                <h3 class="text-uppercase">Enquiries &nbsp;  <?php echo "<small>Count: $totalResult</small>"; ?></h3>
                                             </div>
                                         </div>
                                          <div class="col-md-8">
@@ -65,7 +65,7 @@
                                                              }
                                                              ?>">
                                                          <span class="input-group-btn">
-                                                             <button type="submit" class="btn btn- success">Search</button>
+                                                             <button type="submit" class="btn btn-success">Search</button>
                                                          </span>
                                                      </div>
                                                  </form>
@@ -75,44 +75,55 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <form action="<?php echo    site_url().'/Enquiry_cont/enquiry/'; ?>" method="GET">
-                                                <div class="col-md-3" >
-                                                    <label>To</label>
-                                                    <div class="input-group">
-                                                        <input type="date" class="form-control" id="Tosearch"  name="todate" value="<?php if (!empty($_GET['todate'])) { echo $_GET['todate'];
+                                                  <div class="form-group">
+                                                      <div class="col-md-3">
+                                                          <div class="form-group">
+                                                              <label>To <span class="required" style="color:red;"> * </span></label>
+                                                              <input type="date" class="form-control border-input datepicker" name="todate" value="<?php if (!empty($_GET['todate'])) { echo $_GET['todate'];
                                                              }
-                                                             ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label>From</label>
-                                                    <div class="input-group">
-                                                        <input type="date" class="form-control"  placeholder="Search..." id="Tosearch"  name="fromDate" value="<?php if (!empty($_GET['fromDate'])) { echo $_GET['fromDate'];
+                                                             ?>" required>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-3">
+                                                          <div class="form-group">
+                                                              <label>From<span class="required" style="color:red;"> * </span></label>
+                                                              <input type="date" class="form-control border-input datepicker"  name="fromDate" value="<?php if (!empty($_GET['fromDate'])) { echo $_GET['fromDate'];
                                                              }
-                                                             ?>">
-                                                    </div>
+                                                             ?>" required>
+                                                          </div>
+                                                      </div>
+                             
+                                                      <div class="col-md-3">
+                                                          <div class="form-group">
+                                                              <label>Status <span class="required" style="color:red;"> * </span></label> 
+                                                              <select name="statusSearch" class="form-control border-input" required>
+                                                                  <?php if (!empty($_GET['statusSearch'])) { ?>
+                                                                  <option value="<?php echo $_GET['statusSearch']; ?>"><?php echo $_GET['statusSearch']; ?></option>
+                                                                  <?php
+                                                                                                           }
+                                                                  ?>
+                                                                  <option value="">--Select Status--</option>
+                                                                  <option value="followdate">FollowUp Date</option>
+                                                                  <option value="enqdate">Enquiry Date</option>
+                                                                  <option value="inprocess">Inprocess</option>
+                                                                  <option value="joined">Joined</option>
+                                                                  <option value="notjoined">Not Joined</option>
+                                                              </select>
+                               
+                                                          </div>
+                                                      </div>
+                                                      
+                                                      <div class="col-md-2">
+                                                          <div class="form-group">
+                                                              <button type="submit" class="btn btn-success style_btn" value="1" name="extraSearch">Filter</button>
+                                                          </div>
+                                                      </div> 
+                                                      <div class="col-md-1">
+                                                          <div class="form-group">
+                                                              <button type="submit" class="btn btn-danger style_btn" value="1" name="">Reset</button>
+                                                          </div>
+                                                      </div>
                                                 </div>
-                                                <div class="col-md-5">
-                                                    <label>Status</label>
-                                                    <div class="input-group pull-right">
-                                                        <select name="statusSearch" class="form-control" id="teachersearch">
-                                                            <?php if (!empty($_GET['statusSearch'])) { ?>
-                                                            <option value="<?php echo $_GET['statusSearch']; ?>"><?php echo $_GET['statusSearch']; ?></option>
-                                                            <?php
-                                                             }
-                                                             ?>
-                                                            <option value="">--Select Status--</option>
-                                                            <option value="followdate">FollowUp Date</option>
-                                                            <option value="enqdate">Enquiry Date</option>
-                                                            <option value="inprocess">Inprocess</option>
-                                                            <option value="joined">Joined</option>
-                                                            <option value="notjoined">Not Joined</option>
-                                                        </select>
-                                                        <span class="input-group-btn">
-                                                            <button type="submit" class="btn btn-success" value="1" name="extraSearch">Search</button>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                
                                             </form>
                                         </div>
                                     </div>
@@ -205,19 +216,10 @@ input[id=teachersearch] {
     background-size: 21px;
     padding-left: 35px;
 }
-input[id=Tosearch] {
-    width: 5px;
-    box-sizing: border-box;
-    border: 1px solid #c5e2ea;;
-    border-radius: 50px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('<?php echo base_url()?>assets/icon/calender.png');
-    background-position: 11px 7px; 
-    background-repeat: no-repeat;
-    background-size: 21px;
-    padding-left: 35px;
-}
+    .style_btn{
+        margin-top: 24px;
+    }
+    
 
 </style>
 <?php include "addModel.php";?>

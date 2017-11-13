@@ -40,7 +40,7 @@ class Test_cont extends CI_Controller
                 $config['use_page_numbers'] = TRUE;
                 $config['page_query_string'] = TRUE;
                 $config['enable_query_strings'] = TRUE;
-                $config['num_links'] = 10;
+                $config['num_links'] = 5;
                 $config['full_tag_open'] = "<ul class='pagination'>";
                 $config['full_tag_close'] ="</ul>";
                 $config['num_tag_open'] = '<li>';
@@ -179,8 +179,8 @@ class Test_cont extends CI_Controller
             $batch_id = $this->SelectData->batchIDBatch($batch_name);
             //$subj_id = $this->SelectData->subjIDSubj($subject_name);
             
-            echo    $test_date1 = $this->input->post('testdate');
-            echo   $test_date_1 = explode("/",$test_date1);
+                $test_date1 = $this->input->post('testdate');
+               $test_date_1 = explode("/",$test_date1);
                    if(!empty($test_date_1[1])){
                        $d = $test_date_1[1];
                        $m = $test_date_1[0];
