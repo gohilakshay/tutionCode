@@ -91,6 +91,7 @@ class Upload_FileCont extends CI_Controller
         $file_address = 'assets/upload/'.$name.'.'.$extintion;
         $file = $_FILES['filename']['name'] ;
         $n = $this->UploadFileModel->addFile($file,$name);
+        print_r($n);
         if($n == 1){
               $date = $this->input->post('date');
             $date1 = explode("/",$date);
