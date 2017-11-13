@@ -53,8 +53,8 @@
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
                                      <div class="row">
                                         <div class="col-md-4">
-                                            <div class="col-md-3">
-                                                <h3 class="text-uppercase">Enquiries</h3>
+                                            <div class="col-md-12">
+                                                <h3 class="text-uppercase">Enquiries <?php echo "<h6>Count : $totalResult</h6>"; ?></h3>
                                             </div>
                                         </div>
                                          <div class="col-md-8">
