@@ -244,6 +244,28 @@ $transc_id = $fee_data->transc_id;
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-6">
+                                                Discount Fees
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <b><?php echo $fee_data->discount; ?></b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                Final Fees
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-3 text-right">
+                                                <b><?php echo $fee_data->final_fee; ?></b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6">
                                                 Payment Received
                                                 <br>
                                             </div>

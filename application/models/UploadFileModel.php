@@ -23,7 +23,7 @@ class UploadFileModel extends CI_Model {
                     echo "dataEmpty";
                // return false;
             }
-        //return true;
+        return true;
         }   
 }
 ?>
