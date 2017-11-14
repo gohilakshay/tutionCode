@@ -444,7 +444,7 @@ class CreateDbTable_cont extends CI_Controller
         }
         $ntype = explode(",",$type);
         $n = count($ntype);
-        if ($this->db->table_exists('engisubject') || $this->db->table_exists('jrColgCom') || $this->db->table_exists('jrColgSci') || $this->db->table_exists('commercesubject') || $this->db->table_exists('subject') ){
+        if ($this->db->table_exists('engisubject') || $this->db->table_exists('jrColgCom') || $this->db->table_exists('jrColgArt') || $this->db->table_exists('jrColgSci') || $this->db->table_exists('commercesubject') || $this->db->table_exists('subject')){
             echo "<script>alert('Subjects Table Exists')</script>";
         }
         else{
@@ -887,7 +887,7 @@ class CreateDbTable_cont extends CI_Controller
                 }
                 else if($type=='engicolg'){
                     $this->CreateTable->create_engisubject();
-                    for($i=1;$i<200;$i++)
+                    for($i=1;$i<208;$i++)
                     {
                         if($i==1){
                             $data = array(
@@ -1099,8 +1099,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==27){
                             $data = array(
-                            'subject_name' => 'Structured and Object Oriented  Analysis and
-            Design',
+                            'subject_name' => 'Structured and Object Oriented  Analysis and Design',
                             'semester_ID' => '5',
                             'branch_ID' => 'Computer Engineering'
                         );
@@ -1132,8 +1131,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==31){
                             $data = array(
-                            'subject_name' => 'System Programming and Compiler
-            Construction',
+                            'subject_name' => 'System Programming and Compiler Construction',
                             'semester_ID' => '6',
                             'branch_ID' => 'Computer Engineering'
                         );
@@ -1333,8 +1331,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==56){
                             $data = array(
-                            'subject_name' => 'Embedded Systems
-            ',
+                            'subject_name' => 'Embedded Systems',
                             'semester_ID' => '8',
                             'branch_ID' => 'Computer Engineering'
                         );
@@ -1382,8 +1379,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==62){
                             $data = array(                                    
-                            'subject_name' => 'Principles of Analog &
-            Digital Communication',
+                            'subject_name' => 'Principles of Analog & Digital Communication',
                             'semester_ID' => '3',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1415,8 +1411,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==66){
                             $data = array(                                    
-                            'subject_name' => 'Computer Graphics
-            and Virtual Reality',
+                            'subject_name' => 'Computer Graphics and Virtual Reality',
                             'semester_ID' => '5',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1424,8 +1419,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==67){
                             $data = array(                                    
-                            'subject_name' => 'Microcontroller and
-            Embedded Systems',
+                            'subject_name' => 'Microcontroller and Embedded Systems',
                             'semester_ID' => '5',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1433,8 +1427,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==68){
                             $data = array(                                    
-                            'subject_name' => 'Advanced Database
-            Management Systems',
+                            'subject_name' => 'Advanced Database Management Systems',
                             'semester_ID' => '5',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1442,8 +1435,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==69){
                             $data = array(                                   
-                            'subject_name' => 'Open Source
-            Technologies',
+                            'subject_name' => 'Open Source Technologies',
                             'semester_ID' => '5',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1459,8 +1451,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==71){
                             $data = array(                                    
-                            'subject_name' => 'System & Web
-            Security',
+                            'subject_name' => 'System & Web Security',
                             'semester_ID' => '6',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1468,8 +1459,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==72){
                             $data = array(                                    
-                            'subject_name' => 'Data Mining &
-            Business Intelligence',
+                            'subject_name' => 'Data Mining & Business Intelligence',
                             'semester_ID' => '6',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1477,8 +1467,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==73){
                             $data = array(                                   
-                            'subject_name' => 'Advance Internet
-            Technology',
+                            'subject_name' => 'Advance Internet Technology',
                             'semester_ID' => '6',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1494,8 +1483,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==75){
                             $data = array(                                    
-                            'subject_name' => 'Wireless
-            Technology',
+                            'subject_name' => 'Wireless Technology',
                             'semester_ID' => '7',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -1503,8 +1491,7 @@ class CreateDbTable_cont extends CI_Controller
                         }
                         else if($i==76){
                             $data = array(                                    
-                            'subject_name' => 'Storage Network Management and
-            Retrieval',
+                            'subject_name' => 'Storage Network Management and Retrieval',
                             'semester_ID' => '8',
                             'branch_ID' => 'Information Technology Engineering'
                         );
@@ -2489,30 +2476,77 @@ class CreateDbTable_cont extends CI_Controller
                         );
                             $this->InsertTable->addEngiSubj($data);        
                         }
-                        else if($i==198){                                                                                                                   
-                            $data = array(                                   
+                        else if($i==198){                                                                 $data = array(                                   
                             'subject_name' => 'Transportation Engg. – II',
                             'semester_ID' => '6',
                             'branch_ID' => 'Civil Engineering'
                         );
                             $this->InsertTable->addEngiSubj($data);        
                         }
-                        else if($i==199){                                                                                                                   
-                            $data = array(                                   
+                        else if($i==199){                                                                 $data = array(                                   
                             'subject_name' => 'Environmental Engg – I',
                             'semester_ID' => '6',
                             'branch_ID' => 'Civil Engineering'
                         );
                             $this->InsertTable->addEngiSubj($data);        
                         }
-                        else {                                                                                                                   
-                            $data = array(                                   
+                        else if($i==200){                                                                 $data = array(                                   
                             'subject_name' => 'Theory of Reinforced Prestressed Concrete',
                             'semester_ID' => '6',
                             'branch_ID' => 'Civil Engineering'
                         );
                             $this->InsertTable->addEngiSubj($data);        
-                        }                                //Civil Ends sem7 & 8 subjects are not available
+                        }
+                        else if($i==201){                                                                 $data = array(                                   
+                            'subject_name' => 'Limit State Method for Reinforced Concrete Structures',
+                            'semester_ID' => '7',
+                            'branch_ID' => 'Civil Engineering'
+                        );
+                            $this->InsertTable->addEngiSubj($data);        
+                        }
+                        else if($i==202){                                                                 $data = array(                                   
+                            'subject_name' => 'Quantity Survey, Estimation and Valuation',
+                            'semester_ID' => '7',
+                            'branch_ID' => 'Civil Engineering'
+                        );
+                            $this->InsertTable->addEngiSubj($data);        
+                        }
+                        else if($i==203){                                                                 $data = array(                                   
+                            'subject_name' => 'Irrigation Engineering',
+                            'semester_ID' => '7',
+                            'branch_ID' => 'Civil Engineering'
+                        );
+                            $this->InsertTable->addEngiSubj($data);        
+                        }
+                        else if($i==204){                                                                 $data = array(                                   
+                            'subject_name' => 'Environmental Engineering-II',
+                            'semester_ID' => '7',
+                            'branch_ID' => 'Civil Engineering'
+                        );
+                            $this->InsertTable->addEngiSubj($data);        
+                        }
+                        else if($i==205){                                                                 $data = array(                                   
+                            'subject_name' => 'Design and Drawing of Reinforced Concrete Structures',
+                            'semester_ID' => '8',
+                            'branch_ID' => 'Civil Engineering'
+                        );
+                            $this->InsertTable->addEngiSubj($data);        
+                        }
+                        else if($i==206){                                                                 $data = array(                                   
+                            'subject_name' => 'Construction Engineering',
+                            'semester_ID' => '8',
+                            'branch_ID' => 'Civil Engineering'
+                        );
+                            $this->InsertTable->addEngiSubj($data);        
+                        }
+                        else{                                                                 
+                            $data = array(                                   
+                            'subject_name' => 'Construction Management',
+                            'semester_ID' => '8',
+                            'branch_ID' => 'Civil Engineering'
+                        );
+                            $this->InsertTable->addEngiSubj($data);        
+                        }                            
                     }
                 }
                 else if($type=='comcolg'){
