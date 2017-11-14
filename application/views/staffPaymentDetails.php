@@ -75,18 +75,25 @@
                         <div class="col-1">
                             <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden" style="overflow:auto;">
                                 <div class="panel-heading templatemo-position-relative" style="background-color: #ffffff;">
-                                    <div class="row">
+                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-4">
-                                                <h3 class="text-uppercase">Payments Details&emsp;</h3>
+                                                <h3 class="text-uppercase">Payment Details</h3>
                                             </div>
-                                            <form name="search">
-                                                <div class="col-md-8" style="margin-top:-2px;">
-                                                    <h3>
-                                                        <input type="text" id="staffPaymentSearch" name="staffPaymentSearch" placeholder="Search..." style="width: 80%;" required> 
-                                                        <button type="submit" class="btn btn-success">search</button></h3>
-                                                </div>
-                                            </form>
+                                            <div class="col-md-8" style="margin-top:-2px;">
+                                            <h3>
+                                                <form action="<?php echo site_url().'/Expense_cont/staffPaymentDetails/'; ?>" method="GET">
+                                                    <div class="input-group pull-right">
+                                                        <input type="text" class="form-control"  placeholder="Search..." id="staffsearch"  name="staffpayFilter" value="<?php if (!empty($_GET['staffpayFilter'])) { echo $_GET['staffpayFilter'];
+                                                             }
+                                                             ?>">
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-success">Search</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </h3>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +122,18 @@
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
-                                    </table>    
+                                    </table> 
+                                     <center>
+                                      <ul class="pagination">
+                                          <!-- Show pagination links -->
+                                          <?php
+                                          foreach ($links as $link) {
+                                          
+                                              echo "<li>" . $link . "</li>";
+                                          }
+                                          ?>
+                                    </ul>
+                                    </center>
                                 </div> 
                             </div>
                         </div>
@@ -129,23 +147,22 @@
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
 <style> 
-input[id=staffPaymentSearch] {
+input[id=staffsearch] {
     width: 5px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 1px solid #c5e2ea;;
     border-radius: 50px;
     font-size: 16px;
     background-color: white;
     background-image: url('<?php echo base_url()?>assets/icon/search.png');
-    background-position: 7px 1px; 
+    background-position: 11px 7px; 
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
+  
+    
 }
 
-input[id=staffPaymentSearch]:focus {
-    width: 80%;
-}
     .switch {
   position: relative;
   display: inline-block;
