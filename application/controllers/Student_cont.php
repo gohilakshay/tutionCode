@@ -438,17 +438,17 @@ class Student_cont extends CI_Controller
             $amount=$this->input->post('amount');
             $query = $this->SelectData->studentProfile($studentid);
             $stud_name = $query[0]->stud_surname.$query[0]->stud_name.$query[0]->father_name.$query[0]->mother_name;
-            if($input_name == $stud_name){
-                $recieved_fee = $amount + $query[2]->recieved_fee."<br>";
-                $balance_fee =  $query[2]->balance_fee - $amount;
+            /*if($input_name == $stud_name){*/
+                $recieved_fee = $amount + $query[1]->recieved_fee;
+                $balance_fee =  $query[1]->balance_fee - $amount;
                 $data = array(
                     'stud_id' => $studentid,
                     'recieved_fee' => $recieved_fee,
-                    'balance_fee' => $balance_fee,
+                    'balance_fee' => $balance_fee
                 );
                 $this->AddData->updateStudFee($data);
                 redirect('Student_cont/feeDetail/3');         //html filename
-            }else echo "<h2>Error : Student ID and Name does not Match</h2>";
+           /* }else echo "<h2>Error : Student ID and Name does not Match</h2>";*/
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";
