@@ -7,7 +7,7 @@ foreach ($query->result() as $row) {
     $date1 = date('Y-m-d', strtotime("-1 days"));
     $date2 = date('Y-m-d', strtotime("+1 days"));
    if($followDate >= $date1 && $followDate <= $date2){
-       if($row->status!='joined'){
+       if($row->status=='inprocess'){
        $enquiryTotal++;
       $enquiry[] = array('followDate'=>$followDate,'name'=>$row->name,'id'=>$row->enquiry_ID,'status'=>$row->status);
        }
@@ -70,7 +70,7 @@ foreach ($query->result() as $row) {
                                           </thead>
                                           <tbody>
                                               <?php $i=1;foreach($enquiry as $value){
-                                                    if($value['status']!='joined'){
+                                                    if($value['status']=='inprocess'){
                                                         $enqid = $value['id']; ?>
                                               <tr>
                                                   <td><a href="<?php echo site_url()."/Enquiry_cont/enquiryInfo/$enqid" ?>"><?php echo $i;$i++; ?></a></td>
