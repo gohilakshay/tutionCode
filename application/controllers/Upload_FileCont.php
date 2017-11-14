@@ -73,7 +73,6 @@ class Upload_FileCont extends CI_Controller
                 ));
             } 
             
-            
 //            $this->load->view('UploadFile',$uploadView);
         }else echo "Error 404 : Access Denied";
     }
