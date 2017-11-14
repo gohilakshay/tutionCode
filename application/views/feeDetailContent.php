@@ -61,7 +61,7 @@
                                                 <td><?php echo $value->stud_name;?></td>
                                                 <td><?php echo $value->standard_name;?></td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->total_fee;?></td>
-                                                <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->final_fee;?></td>
+                                                <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->discount;?></td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->final_fee;?></td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->recieved_fee;?></td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" >0</td>
