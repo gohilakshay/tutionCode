@@ -1,6 +1,11 @@
 <div class="content">
     <div class="container-fluid">
-       
+       <?php if($this->session->flashdata('success') == 'Enter Batch First.') { ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
+        <?php }?>
         <div class="row">
             <a href="<?php echo site_url("Student_cont/student") ?>">
             <div class="col-lg-3 col-sm-6">

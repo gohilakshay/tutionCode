@@ -245,149 +245,155 @@ class Student_cont extends CI_Controller
         $ntype = explode(",",$type);
         $n = count($ntype);
         $query['result'] = $this->SelectData->ViewBatch();
-        foreach($ntype as $value){
-            $query['result1'] = $this->SelectData->standard(); 
-            $query['result2'] = $this->SelectData->branch();
-            if($value == 'school'){
-                $query['result3'] = $this->SelectData->subject();
+            //if batch is created than enter else exit
+            if(!empty($query['result'])){
+                foreach($ntype as $value){
+                    $query['result1'] = $this->SelectData->standard(); 
+                    $query['result2'] = $this->SelectData->branch();
+                    if($value == 'school'){
+                        $query['result3'] = $this->SelectData->subject();
+                    }
+                    else if($value == 'jrcolg_sci'){
+                        $query['result3'] = $this->SelectData->jrColgSci();
+                    }
+                    else if($value == 'jrcolg_com'){
+                        $query['result3'] = $this->SelectData->jrColgCom();
+                    }
+                    else if($value == 'jrcolg_art'){
+                        $query['result3'] = $this->SelectData->jrColgArt();
+                    }
+                    else if($value == 'engicolg'){ 
+                        $query['result3'] = $this->SelectData->engisubject();
+                    }
+                    else if($value == 'comcolg'){ 
+                        $query['result3'] = $this->SelectData->commercesubject();
+                    }
+                }
+                //$this->form_validation->set_rules('surname', 'surname', 'callback_custom_Alpha');
+            $this->form_validation->set_rules('studentname', 'studentname', 'callback_custom_Alpha');
+            $this->form_validation->set_rules('fathername', 'fathername', 'callback_custom_Alpha');
+            //$this->form_validation->set_rules('mothername', 'mothername', 'callback_custom_Alpha');
+            $this->form_validation->set_rules('dob', 'dob', 'required');
+            $this->form_validation->set_rules('email', 'email', 'valid_email');
+            $this->form_validation->set_rules('contactnumber', 'contactnumber', 'required|numeric|exact_length[10]');
+            $this->form_validation->set_rules('address', 'address', 'required');
+            $this->form_validation->set_rules('admissionyear', 'admissionyear', 'required');
+            $this->form_validation->set_rules('date', 'date', 'required');
+            $this->form_validation->set_rules('school_college', 'school_college', 'required');
+            $this->form_validation->set_rules('total_fees', 'total_fees', 'required|numeric');
+            $this->form_validation->set_rules('discount', 'discount', 'required|numeric');
+            $this->form_validation->set_rules('final', 'final', 'required|numeric');
+            $this->form_validation->set_rules('received', 'received', 'required|numeric');
+            $this->form_validation->set_rules('balance', 'balance', 'required|numeric');
+              $this->form_validation->set_message('custom_Alpha', 'Only Alphabets Allowed');
+            $this->form_validation->set_rules('place', 'place', 'required');
+            $this->form_validation->set_rules('date', 'date', 'required');
+            if($this->form_validation->run() == FALSE)
+            { 
+                $this->load->view('addStudent',$query);
             }
-            else if($value == 'jrcolg_sci'){
-                $query['result3'] = $this->SelectData->jrColgSci();
-            }
-            else if($value == 'jrcolg_com'){
-                $query['result3'] = $this->SelectData->jrColgCom();
-            }
-            else if($value == 'jrcolg_art'){
-                $query['result3'] = $this->SelectData->jrColgArt();
-            }
-            else if($value == 'engicolg'){ 
-                $query['result3'] = $this->SelectData->engisubject();
-            }
-            else if($value == 'comcolg'){ 
-                $query['result3'] = $this->SelectData->commercesubject();
-            }
-        }
-        
-        //$this->form_validation->set_rules('surname', 'surname', 'callback_custom_Alpha');
-        $this->form_validation->set_rules('studentname', 'studentname', 'callback_custom_Alpha');
-        $this->form_validation->set_rules('fathername', 'fathername', 'callback_custom_Alpha');
-        //$this->form_validation->set_rules('mothername', 'mothername', 'callback_custom_Alpha');
-        $this->form_validation->set_rules('dob', 'dob', 'required');
-        $this->form_validation->set_rules('email', 'email', 'valid_email');
-        $this->form_validation->set_rules('contactnumber', 'contactnumber', 'required|numeric|exact_length[10]');
-        $this->form_validation->set_rules('address', 'address', 'required');
-        $this->form_validation->set_rules('admissionyear', 'admissionyear', 'required');
-        $this->form_validation->set_rules('date', 'date', 'required');
-        $this->form_validation->set_rules('school_college', 'school_college', 'required');
-        $this->form_validation->set_rules('total_fees', 'total_fees', 'required|numeric');
-        $this->form_validation->set_rules('discount', 'discount', 'required|numeric');
-        $this->form_validation->set_rules('final', 'final', 'required|numeric');
-        $this->form_validation->set_rules('received', 'received', 'required|numeric');
-        $this->form_validation->set_rules('balance', 'balance', 'required|numeric');
-          $this->form_validation->set_message('custom_Alpha', 'Only Alphabets Allowed');
-        $this->form_validation->set_rules('place', 'place', 'required');
-        $this->form_validation->set_rules('date', 'date', 'required');
-        if($this->form_validation->run() == FALSE)
-        { 
-            $this->load->view('addStudent',$query);
-        }
-        else
-        {
-            $this->load->helper('form');
-            $db = $this->session->userdata('db');//load db 
-            $this->load->database($db);//call db
-            $this->load->model('AddData');
-            $this->load->model('ProfileImg');
-            $name = strtolower(preg_replace('/\s+/', '', $this->input->post('studentname')));
-            /*for img to be any extention*/
-                $filename = explode(".",$_FILES['photo']['name']);
-                    $extn = end($filename);
-                $img_address = 'assets/profile/'.$name.'.'.$extn;
-            $dob = $this->input->post('dob');
-            $dob1 = explode("/",$dob);
-            if(!empty($dob1[1])){
-                $d = $dob1[1];
-                $m = $dob1[0];
-                $y = $dob1[2];
-                $dob = $y.'-'.$m.'-'.$d; 
-            }
-            else{
-                $dob = $dob1[0];
-            } 
-            $date = $this->input->post('date');
-            $date1 = explode("/",$date);
-            if(!empty($date1[1])){
-                $d = $date1[1];
-                $m = $date1[0];
-                $y = $date1[2];
-                $date1 = $y.'-'.$m.'-'.$d; 
-            }
-            else{
-                $date1 = $date1[0];
-            }
-            $data = array(
-                'stud_surname' => $this->input->post('surname'),
-                'stud_name' => $this->input->post('studentname'),
-                'father_name' => $this->input->post('fathername'),
-                'mother_name' => $this->input->post('mothername'),
-                'stud_gender' => $this->input->post('gender'),
-                'stud_dob' => $dob,
-                'stud_email' => $this->input->post('email'),
-                'stud_contact' => $this->input->post('contactnumber'),
-                'stud_address' => $this->input->post('address'),
-                'stud_profile' => $img_address,
-                'admission_year' => $this->input->post('admissionyear'),
-                'admission_date' => $date1,
-                'course_type' => $this->input->post('course_type'),
-                'sch_coll_name' => $this->input->post('school_college'),
-                'board' => $this->input->post('board'),
-                // 'batch_id' => $this->input->post('batch'),
-                // 'batch_timing' => $this->input->post('batch_timing'),
-                 'standard_name' => $this->input->post('standard'),
-                'place' => $this->input->post('place'),
-                'form_date' => $date1
-                
-            );
-            $img = $_FILES['photo']['name'] ; 
-            $this->ProfileImg->addImg($img,$name);
-             $this->AddData->addStudentItem($data);
-            $n = $this->db->insert_id();
-            $chq_date = $this->input->post('chq_date');
-            $chq_date1 = explode("/",$chq_date);
-            if(!empty($chq_date1[1])){
-                $d = $chq_date1[1];
-                $m = $chq_date1[0];
-                $y = $chq_date1[2];
-                $chq_date1 = $y.'-'.$m.'-'.$d; 
-            }
-            else{
-                $chq_date1 = $dob1[0];
-            }
-            $data1 = array(
-                'stud_ID'=>$n,
-            	'total_fee' => $this->input->post('total_fees'),
-                'installment_option' => $this->input->post('Installment'),
-                'installment_type' => $this->input->post('installmenttype'),
-                'discount' => $this->input->post('discount'),
-                'final_fee' => $this->input->post('final'),
-                'amountper_installment' => $this->input->post('result'),
-                'payment_mode' => $this->input->post('paymentmode'),
-                'recieved_fee' => $this->input->post('received'),
-                'balance_fee' => $this->input->post('balance'),
-                'chq_date' => $chq_date1,
-                'bank_name' => $this->input->post('bank_name'),
-                'chq_no' => $this->input->post('chq_no'),
-                'transc_id' => $this->input->post('transc_id'),
+            else
+            {
+                $this->load->helper('form');
+                $db = $this->session->userdata('db');//load db 
+                $this->load->database($db);//call db
+                $this->load->model('AddData');
+                $this->load->model('ProfileImg');
+                $name = strtolower(preg_replace('/\s+/', '', $this->input->post('studentname')));
+                /*for img to be any extention*/
+                    $filename = explode(".",$_FILES['photo']['name']);
+                        $extn = end($filename);
+                    $img_address = 'assets/profile/'.$name.'.'.$extn;
+                $dob = $this->input->post('dob');
+                $dob1 = explode("/",$dob);
+                if(!empty($dob1[1])){
+                    $d = $dob1[1];
+                    $m = $dob1[0];
+                    $y = $dob1[2];
+                    $dob = $y.'-'.$m.'-'.$d; 
+                }
+                else{
+                    $dob = $dob1[0];
+                } 
+                $date = $this->input->post('date');
+                $date1 = explode("/",$date);
+                if(!empty($date1[1])){
+                    $d = $date1[1];
+                    $m = $date1[0];
+                    $y = $date1[2];
+                    $date1 = $y.'-'.$m.'-'.$d; 
+                }
+                else{
+                    $date1 = $date1[0];
+                }
+                $data = array(
+                    'stud_surname' => $this->input->post('surname'),
+                    'stud_name' => $this->input->post('studentname'),
+                    'father_name' => $this->input->post('fathername'),
+                    'mother_name' => $this->input->post('mothername'),
+                    'stud_gender' => $this->input->post('gender'),
+                    'stud_dob' => $dob,
+                    'stud_email' => $this->input->post('email'),
+                    'stud_contact' => $this->input->post('contactnumber'),
+                    'stud_address' => $this->input->post('address'),
+                    'stud_profile' => $img_address,
+                    'admission_year' => $this->input->post('admissionyear'),
+                    'admission_date' => $date1,
+                    'course_type' => $this->input->post('course_type'),
+                    'sch_coll_name' => $this->input->post('school_college'),
+                    'board' => $this->input->post('board'),
+                    // 'batch_id' => $this->input->post('batch'),
+                    // 'batch_timing' => $this->input->post('batch_timing'),
+                     'standard_name' => $this->input->post('standard'),
+                    'place' => $this->input->post('place'),
+                    'form_date' => $date1
+
                 );
-            $this->AddData->addStudentfeeItem($data1);
-             $batch = array(
-                 'batch_id' => $this->input->post('batch'),
-                 'stud_ID'=>$n
-                           );
-            $this->AddData->addStudentBatchItem($batch);
-            $this->session->set_flashdata('success','You have Successfully submitted data.');
-            redirect('Student_cont/addStudent'); 
-        }
+                $img = $_FILES['photo']['name'] ; 
+                $this->ProfileImg->addImg($img,$name);
+                 $this->AddData->addStudentItem($data);
+                $n = $this->db->insert_id();
+                $chq_date = $this->input->post('chq_date');
+                $chq_date1 = explode("/",$chq_date);
+                if(!empty($chq_date1[1])){
+                    $d = $chq_date1[1];
+                    $m = $chq_date1[0];
+                    $y = $chq_date1[2];
+                    $chq_date1 = $y.'-'.$m.'-'.$d; 
+                }
+                else{
+                    $chq_date1 = $dob1[0];
+                }
+                $data1 = array(
+                    'stud_ID'=>$n,
+                    'total_fee' => $this->input->post('total_fees'),
+                    'installment_option' => $this->input->post('Installment'),
+                    'installment_type' => $this->input->post('installmenttype'),
+                    'discount' => $this->input->post('discount'),
+                    'final_fee' => $this->input->post('final'),
+                    'amountper_installment' => $this->input->post('result'),
+                    'payment_mode' => $this->input->post('paymentmode'),
+                    'recieved_fee' => $this->input->post('received'),
+                    'balance_fee' => $this->input->post('balance'),
+                    'chq_date' => $chq_date1,
+                    'bank_name' => $this->input->post('bank_name'),
+                    'chq_no' => $this->input->post('chq_no'),
+                    'transc_id' => $this->input->post('transc_id'),
+                    );
+                $this->AddData->addStudentfeeItem($data1);
+                 $batch = array(
+                     'batch_id' => $this->input->post('batch'),
+                     'stud_ID'=>$n
+                               );
+                $this->AddData->addStudentBatchItem($batch);
+                $this->session->set_flashdata('success','You have Successfully submitted data.');
+                redirect('Student_cont/addStudent'); 
+            }
+            }
+            else{
+                $this->session->set_flashdata('success','Enter Batch First.');
+                redirect('Student_cont/student'); 
+            }
             }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";

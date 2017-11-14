@@ -78,7 +78,7 @@
                                                   <div class="form-group">
                                                       <div class="col-md-3">
                                                           <div class="form-group">
-                                                              <label>To <span class="required" style="color:red;"> * </span></label>
+                                                              <label>From <span class="required" style="color:red;"> * </span></label>
                                                               <input type="date" class="form-control border-input datepicker" name="todate" value="<?php if (!empty($_GET['todate'])) { echo $_GET['todate'];
                                                              }
                                                              ?>" required>
@@ -86,7 +86,7 @@
                                                       </div>
                                                       <div class="col-md-3">
                                                           <div class="form-group">
-                                                              <label>From<span class="required" style="color:red;"> * </span></label>
+                                                              <label>To<span class="required" style="color:red;"> * </span></label>
                                                               <input type="date" class="form-control border-input datepicker"  name="fromDate" value="<?php if (!empty($_GET['fromDate'])) { echo $_GET['fromDate'];
                                                              }
                                                              ?>" required>

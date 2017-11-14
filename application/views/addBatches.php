@@ -21,8 +21,18 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
             <h5><?php echo $this->session->flashdata('success'); ?></h5>
         </div>
-        <?php } ?>
-        <!--form-->
+        <?php } else if (empty($result1)) { ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo "Create Course First"; ?></h5>
+        </div>
+        <?php }?>
+        <!--form--><?php
+//echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
+
+$browser = get_browser(null, true);
+print_r($browser);
+?>
         <?php echo form_open('Batch_cont/addBatch'); ?>
         <div class="row">
             <div class="col-lg-12 col-lg-12 ">
