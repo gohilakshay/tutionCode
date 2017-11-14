@@ -49,7 +49,8 @@
                                                 <td>Final Fees </td>
                                                 <td>Paid Fees</td>
                                                 <td>Uncleared</td>
-                                                <td>Balance</td>
+                                                <td>Balance</td>  
+                                                <td>Payment</td>
                                             </tr>
                                             
                                         </thead><?php foreach($fee as $value1): ?>
@@ -66,6 +67,7 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->recieved_fee;?></td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" >0</td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->balance_fee;?></td>
+                                                <td><input type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success" value="P"></td>
                                                <?php endif;?>
                                             </tr>
                                             <?php $i++;endforeach; ?>
@@ -436,3 +438,6 @@
     </div>
 </div>
 <?php }?>
+
+  
+  
