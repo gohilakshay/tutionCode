@@ -173,7 +173,6 @@
                                                         <?php echo form_close(); ?>
                                                     </td>
                                                     <td>
-                                                      
                                                         <?php echo form_open('Enquiry_cont/DeleteEnquiry'); ?>
                                                         <input type="hidden" value="<?php echo $eid; ?>" name="e_id" >
                                                         <center><button type="delete" class="btn btn-danger">Delete</button></center>
@@ -220,8 +219,6 @@ input[id=teachersearch] {
     .style_btn{
         margin-top: 24px;
     }
-    
-
 </style>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>

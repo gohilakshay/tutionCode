@@ -110,7 +110,9 @@ print_r($browser);
                                     </div>
                                 </div>
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered">
+                                        
+                                        <table class="table table-striped table-bordered"  >
+                                       
                                             <thead>
                                                 <tr class="header" >
                                                     <th style="font-weight: bold;">Sr No.</th>
@@ -122,6 +124,7 @@ print_r($browser);
                                                     <th style="font-weight: bold;">Delete Data</th>
                                                 </tr>
                                             </thead>
+                                        
                                             <tbody id="myTable">
                                                 <?php $i=$offset; foreach($result as $value) {?>
                                                 <tr>
@@ -139,16 +142,10 @@ print_r($browser);
                                                         <?php echo form_close(); ?>
                                                     </td>
                                                     <td>
-                                                        <a title="" class="btn btn-danger change-project" href="javascript:;"  data-original-title="Are You sure want to delete ?" >Delete</a>        
-                                                        <div class="hide" id="select-div">
-                                                            <div class="clearfix col-sm-10" style="margin:8px 0;">
                                                         <?php echo form_open('Batch_cont/DeleteBatches'); ?>
-                                                                <input type="hidden" value="<?php echo $value->batch_ID; ?>" name="batch_id">
-                                                                <button type="submit" class="btn btn-danger" data-toggle="popover" >Yes</button>
-                                                                <button type="button" class="btn btn-success btn-cancel-option">No</button>
-                                                            <?php echo form_close(); ?>
-                                                            </div>
-                                                        </div>
+                                                        <input type="hidden" value="<?php echo $value->batch_ID; ?>" name="batch_id" >
+                                                        <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                        <?php echo form_close(); ?>
                                                     </td>
                                                 </tr><?php }?>
                                             </tbody>
@@ -193,6 +190,5 @@ input[id=teachersearch] {
 <?php include "footer.php";?>
 <?php include "addModel.php"?>
 <?php include "script_include.php"; ?>
-
 <!--<?php include "subject_script.php";?>-->
 <?php include "branch-sem_script.php";?>
