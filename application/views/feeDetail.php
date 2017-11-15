@@ -4,7 +4,7 @@
 <?php include_once "feeDetailContent.php";?>
 <?php include_once "footer.php";?>
  <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog" style="display:none">
+<div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
@@ -56,7 +56,7 @@
                     <div class="col-sm-4 ">
                         <div class="form-group">
                             <label>Balance</label>
-                            <input type="text" id="balModal" class="form-control border-input" name="balance" value="<?php echo $_GET['bal']; ?>" readonly>
+                            <input type="text" id="balModal" class="form-control border-input" name="balance_fee" value="<?php echo $_GET['bal']; ?>" readonly>
                         </div>
                     </div>
                 </div>
