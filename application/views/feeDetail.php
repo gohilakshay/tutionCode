@@ -16,12 +16,11 @@
             <div class="content">
                 <?php echo form_open('Student_cont/Payfee'); ?>
                  <!--  <input type="hidden" value="<?php echo $student_data->stud_ID; ?>" name="stud_id" >-->
-<!--                <?php echo $_GET['balance_fees']."asdfsafsadfsadfsdf"; ?>-->
                 <div class="row" >                        
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Student ID</label>
-                            <input type="text" class="form-control border-input"  name="studentid" value="" readonly>
+                            <input type="text" class="form-control border-input"  name="studentid" value="<?php echo $_GET['id']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -29,7 +28,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Student Name</label>
-                            <input type="text" class="form-control border-input" name="studentname" value="" readonly>
+                            <input type="text" class="form-control border-input" name="studentname" value="<?php echo $_GET['name']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -37,13 +36,13 @@
                     <div class="col-sm-4 col-sm-offset-2">
                         <div class="form-group">
                             <label>Final Fees</label>
-                            <input type="text" class="form-control border-input" name="final_fees" value="" readonly>
+                            <input type="text" class="form-control border-input" name="final_fees" value="<?php echo $_GET['final']; ?>" readonly>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Discount Fees</label>
-                            <input type="text" class="form-control border-input" name="discount_fees" value="" readonly>
+                            <input type="text" class="form-control border-input" name="discount_fees" value="<?php echo $_GET['discount']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -51,13 +50,13 @@
                     <div class="col-sm-4 col-sm-offset-2">
                         <div class="form-group">
                             <label>Paid Fees</label>
-                            <input type="text" class="form-control border-input" name="paid_fees" value="" readonly>
+                            <input type="text" class="form-control border-input" name="paid_fees" value="<?php echo $_GET['paid']; ?>" readonly>
                         </div>
                     </div>
                     <div class="col-sm-4 ">
                         <div class="form-group">
                             <label>Balance</label>
-                            <input type="text" class="form-control border-input" name="balance" value="" readonly>
+                            <input type="text" id="balModal" class="form-control border-input" name="balance" value="<?php echo $_GET['bal']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -65,7 +64,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Amount</label>
-                            <input type="text" class="form-control border-input" name="amount" value="" >
+                            <input type="text" id="Amtmodal" class="form-control border-input" name="amount" value="" >
                         </div>
                     </div>
                 </div>
@@ -84,3 +83,12 @@
   </div>
 <?php include_once "addModel.php"?>
 <?php include_once "script_include.php"; ?>
+<script>
+$('#Amtmodal').keyup(function(){
+    var bal = $('#balModal').val();
+    var ba = parseInt(bal);
+    if ($(this).val() > ba){
+    $(this).val(ba);
+  }
+});
+</script>

@@ -67,7 +67,17 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->recieved_fee;?></td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" >0</td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->balance_fee;?></td>
-                                                <td><input type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success" value="P"></td>
+                                                <td>
+                                                    <form action="#" method="get">
+                                                        <input type="hidden" name="id" value="<?php echo $value->stud_ID;?>" />
+                                                        <input type="hidden" name="name" value="<?php echo $value->stud_name;?>" />
+                                                        <input type="hidden" name="bal" value="<?php echo $value1->balance_fee;?>" />
+                                                        <input type="hidden" name="paid" value="<?php echo $value1->recieved_fee;?>" />
+                                                        <input type="hidden" name="final" value="<?php echo $value1->final_fee;?>" />
+                                                        <input type="hidden" name="discount" value="<?php echo $value1->discount;?>" />
+                                                        <input type="submit" data-toggle="modal" data-target="#myModal" id="myBtn" class="btn btn-success" value="Pay">
+                                                    </form>
+                                                </td>
                                                <?php endif;?>
                                             </tr>
                                             <?php $i++;endforeach; ?>
