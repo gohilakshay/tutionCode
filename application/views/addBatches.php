@@ -193,6 +193,6 @@ input[id=teachersearch] {
 <?php include "footer.php";?>
 <?php include "addModel.php"?>
 <?php include "script_include.php"; ?>
-<?php include "popover.php";?>
+
 <!--<?php include "subject_script.php";?>-->
 <?php include "branch-sem_script.php";?>

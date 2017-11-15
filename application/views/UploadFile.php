@@ -240,16 +240,10 @@
                                                 <td><?php echo $value->facultyname;?></td>
                                                 <td><?php echo $value->date;?></td>
                                                 <td>
-                                                    <a title="" class="btn btn-danger change-project" href="javascript:;"  data-original-title="Are You sure want to delete ?" >Delete</a>        
-                                                    <div class="hide" id="select-div">
-                                                        <div class="clearfix col-sm-10" style="margin:8px 0;">
-                                                        <?php echo form_open('Upload_FileCont/DeleteUploads'); ?>
-                                                            <input type="hidden" value="<?php echo $value->upload_ID; ?>" name="upload_id">
-                                                            <button type="submit" class="btn btn-danger" data-toggle="popover" >Yes</button>
-                                                            <button type="button" class="btn btn-success btn-cancel-option">No</button>
-                                                            <?php echo form_close(); ?>
-                                                        </div>
-                                                    </div>
+                                                    <?php echo form_open('Upload_FileCont/DeleteUploads'); ?>
+                                                    <input type="hidden" value="<?php echo $value->upload_ID; ?>" name="upload_id" >
+                                                    <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                    <?php echo form_close(); ?>
                                                 </td>
                                              </tr>
                                             <?php endforeach;?>
@@ -304,7 +298,6 @@
 </script>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
-<?php include "popover.php";?>
 <style> 
     .modal-dialog{text-align:center;}
     .modal-content{display:inline-block;}

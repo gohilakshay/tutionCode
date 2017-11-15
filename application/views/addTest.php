@@ -296,16 +296,11 @@
                                                     <?php echo form_close(); ?>
                                                 </td>
                                                 <td>
-                                                    <a title="" class="btn btn-danger change-project" href="javascript:;"  data-original-title="Are You sure want to delete ?" >Delete</a>        
-                                                    <div class="hide" id="select-div">
-                                                        <div class="clearfix col-sm-10" style="margin:8px 0;">
-                                                            <?php echo form_open('Test_cont/deleteTest'); ?>
-                                                            <input type="hidden" value="<?php echo $value->test_ID; ?>" name="test_id">
-                                                            <button type="submit" class="btn btn-danger" data-toggle="popover" >Yes</button>
-                                                            <button type="button" class="btn btn-success btn-cancel-option">No</button>
-                                                            <?php echo form_close(); ?>
-                                                        </div>
-                                                    </div>
+                                                    <?php echo form_open('Test_cont/deleteTest'); ?>
+                                                        <center>
+                                                        <input type="hidden" value="<?php echo $value->test_ID;?>" name="test_id">
+                                                        <button type="submit" class="btn btn-danger">Delete</button></center>
+                                                        <?php echo form_close(); ?>
                                                </td>
                                             </tr>
                                         <?php endforeach; ?></tbody>
@@ -344,10 +339,12 @@ input[id=teachersearch] {
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
+  
     
 }
 
 </style>
+
+
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
-<?php include "popover.php";?>
