@@ -4,6 +4,7 @@
 <?php include_once "feeDetailContent.php";?>
 <?php include_once "footer.php";?>
  <!-- Modal -->
+
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -20,7 +21,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Student ID</label>
-                            <input type="text" class="form-control border-input"  name="studentid" value="<?php echo $_GET['id']; ?>" readonly>
+                            <input type="text" class="form-control border-input"  name="stud_id" value="<?php echo $_GET['id']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -56,7 +57,7 @@
                     <div class="col-sm-4 ">
                         <div class="form-group">
                             <label>Balance</label>
-                            <input type="text" id="balModal" class="form-control border-input" name="balance" value="<?php echo $_GET['bal']; ?>" readonly>
+                            <input type="text" id="balModal" class="form-control border-input" name="balance_fee" value="<?php echo $_GET['bal']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Amount</label>
-                            <input type="text" id="Amtmodal" class="form-control border-input" name="amount" value="" >
+                            <input type="text" id="Amtmodal" class="form-control border-input" name="recieved_fee" value="" >
                         </div>
                     </div>
                 </div>
