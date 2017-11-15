@@ -4,7 +4,7 @@
 <?php include_once "feeDetailContent.php";?>
 <?php include_once "footer.php";?>
  <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="myModal" role="dialog" style="display:none">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">

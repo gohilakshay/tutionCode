@@ -1375,11 +1375,17 @@
                                                         <?php echo form_close(); ?>
                                                     </td>
                                                     <td>
+                                                          
+                                                        <a title="" class="btn btn-danger change-project" href="javascript:;"  data-original-title="Are You sure want to delete ?" >Delete</a>        
+                                                        <div class="hide" id="select-div">
+                                                            <div class="clearfix col-sm-10" style="margin:8px 0;">
                                                         <?php echo form_open('Course_cont/deleteCourse'); ?>
-                                                        <center>
-                                                        <input type="hidden" value="<?php echo $value->course_ID; ?>" name="course_id">
-                                                        <button type="submit" class="btn btn-danger">Delete</button></center>
-                                                        <?php echo form_close(); ?>
+                                                                <input type="hidden" value="<?php echo $value->course_ID; ?>" name="course_id">
+                                                                <button type="submit" class="btn btn-danger" data-toggle="popover" >Yes</button>
+                                                                <button type="button" class="btn btn-success btn-cancel-option">No</button>
+                                                            <?php echo form_close(); ?>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                  <?php endforeach; ?></tr>
                                             </tbody>
@@ -1405,6 +1411,15 @@
     </div>
 </div>
 <?php include "footer.php";?>
+<style type="text/css">
+	.bs-example{
+    	margin: 150px 50px;
+    }
+	.popover-demo{
+        margin-bottom: 20px;
+    }
+</style>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<?php include "popover.php";?>
 <?php include "branch-sem_script.php";?>

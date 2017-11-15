@@ -154,7 +154,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                    
-                                    <label>Batch Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Timing</label>
+                                    <label>Batch Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Timing</label>
                                     <select  name="batchname" class="form-control border-input"  required <?php if(isset($_POST['markattend'])){ echo 'readonly'; } ?> >
                                     <?php foreach($result as $value): ?>
                                           

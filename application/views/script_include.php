@@ -2,11 +2,10 @@
 
     <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js" type="text/javascript"></script>
-
+<!--   <script src="<?php echo base_url(); ?>assets/js/confirmation.js" type="text/javascript"></script>-->
+   
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap-checkbox-radio.js"></script>
-
-
 
     <!--  Notifications Plugin    -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap-notify.js"></script>
@@ -86,9 +85,7 @@
      e.preventDefault();
   },
 });
-     
-    
-    
+  
     $('#payMode').on('change',function(){
         $("#chqDetail").hide()
             $("#transcDetail").hide()
@@ -105,5 +102,5 @@
             $("#transcDetail").show()
         }
     });
-    
+   
 </script>

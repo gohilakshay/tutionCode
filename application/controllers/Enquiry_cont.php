@@ -323,7 +323,7 @@ class Enquiry_cont extends CI_Controller
         $e_id = $this->input->post("e_id");
         $this->DeleteData->DeleteEnqy($e_id); // call function from model
         if($this->db->affected_rows() > 0){
-            echo "<script>alert('deleted Successfully')</script>;";
+//            echo "<script>alert('deleted Successfully')</script>;";
             $name=site_url().'/Enquiry_cont/enquiry';
             echo "<script>window.location.href='$name';</script>"; 
         }

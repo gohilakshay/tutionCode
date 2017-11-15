@@ -165,19 +165,25 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                        <?php echo form_open('Enquiry_cont/updateEnquiry'); ?>
-                                                            <div class="text-center">
-                                                                <input type="hidden" value="<?php echo $eid; ?>" name="e_id" >
-                                                                <center><button type="submit" class="btn btn-success">Edit</button></center>
-                                                            </div>
-                                                        <?php echo form_close(); ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo form_open('Enquiry_cont/DeleteEnquiry'); ?>
+                                                    <?php echo form_open('Enquiry_cont/updateEnquiry'); ?>
+                                                    <div class="text-center">
                                                         <input type="hidden" value="<?php echo $eid; ?>" name="e_id" >
-                                                        <center><button type="delete" class="btn btn-danger">Delete</button></center>
-                                                        <?php echo form_close(); ?>
-                                                    </td>
+                                                        <center><button type="submit" class="btn btn-success">Edit</button></center>
+                                                    </div>
+                                                    <?php echo form_close(); ?>
+                                                </td>
+                                                <td>
+                                                    <a title="" class="btn btn-danger change-project" href="javascript:;"  data-original-title="Are You sure want to delete ?" >Delete</a>        
+                                                    <div class="hide" id="select-div">
+                                                        <div class="clearfix col-sm-10" style="margin:8px 0;">
+                                                        <?php echo form_open('Enquiry_cont/DeleteEnquiry'); ?>
+                                                            <input type="hidden" value="<?php echo $eid; ?>" name="e_id">
+                                                            <button type="submit" class="btn btn-danger" data-toggle="popover" >Yes</button>
+                                                            <button type="button" class="btn btn-success btn-cancel-option">No</button>
+                                                            <?php echo form_close(); ?>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr><?php endforeach;?>
                                         </tbody>
                                     </table>  
@@ -202,8 +208,8 @@
     </div>
 </div>
 <?php include "footer.php";?>
-<style> 
-input[id=teachersearch] {
+    <style> 
+    input[id=teachersearch] {
     width: 5px;
     box-sizing: border-box;
     border: 1px solid #c5e2ea;;
@@ -215,12 +221,11 @@ input[id=teachersearch] {
     background-repeat: no-repeat;
     background-size: 21px;
     padding-left: 35px;
-}
+    }
     .style_btn{
         margin-top: 24px;
     }
-    
-
 </style>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<?php include "popover.php";?>
