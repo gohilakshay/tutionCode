@@ -21,7 +21,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Student ID</label>
-                            <input type="text" class="form-control border-input"  name="stud_id" value="<?php echo $_GET['id']; ?>" readonly>
+                            <input type="text" class="form-control border-input"  name="studentid" value="<?php echo $_GET['id']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Amount</label>
-                            <input type="text" id="Amtmodal" class="form-control border-input" name="recieved_fee" value="" >
+                            <input type="text" id="Amtmodal" class="form-control border-input" name="amount" value="" >
                         </div>
                     </div>
                 </div>
