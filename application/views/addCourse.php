@@ -1405,25 +1405,7 @@
     </div>
 </div>
 <?php include "footer.php";?>
-<style type="text/css">
-	.bs-example{
-    	margin: 150px 50px;
-    }
-	.popover-demo{
-        margin-bottom: 20px;
-    }
-</style>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
-<script>
-function doconfirm()
-{
-    job=confirm("Are you sure to delete permanently?");
-    if(job!=true)
-    {
-        return false;
-    }
-}
-</script>
 <?php include "branch-sem_script.php";?>
 

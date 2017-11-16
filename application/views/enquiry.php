@@ -175,7 +175,7 @@
                                                     <td>
                                                         <?php echo form_open('Enquiry_cont/DeleteEnquiry'); ?>
                                                         <input type="hidden" value="<?php echo $eid; ?>" name="e_id" >
-                                                        <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                        <center><button type="delete" onClick="return doconfirm();" class="btn btn-danger">Delete</button></center>
                                                         <?php echo form_close(); ?>
                                                     </td>
                                             </tr><?php endforeach;?>
@@ -222,3 +222,4 @@ input[id=teachersearch] {
 </style>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+  
