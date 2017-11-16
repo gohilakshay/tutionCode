@@ -242,7 +242,7 @@
                                                 <td>
                                                     <?php echo form_open('Upload_FileCont/DeleteUploads'); ?>
                                                     <input type="hidden" value="<?php echo $value->upload_ID; ?>" name="upload_id" >
-                                                    <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                    <center><button type="delete" onClick="return doconfirm();" class="btn btn-danger">Delete</button></center>
                                                     <?php echo form_close(); ?>
                                                 </td>
                                              </tr>

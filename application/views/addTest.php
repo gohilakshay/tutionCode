@@ -299,7 +299,7 @@
                                                     <?php echo form_open('Test_cont/deleteTest'); ?>
                                                         <center>
                                                         <input type="hidden" value="<?php echo $value->test_ID;?>" name="test_id">
-                                                        <button type="submit" class="btn btn-danger">Delete</button></center>
+                                                        <button type="submit" onClick="return doconfirm();" class="btn btn-danger">Delete</button></center>
                                                         <?php echo form_close(); ?>
                                                </td>
                                             </tr>

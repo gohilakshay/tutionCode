@@ -144,7 +144,7 @@ print_r($browser);
                                                     <td>
                                                         <?php echo form_open('Batch_cont/DeleteBatches'); ?>
                                                         <input type="hidden" value="<?php echo $value->batch_ID; ?>" name="batch_id" >
-                                                        <center><button type="delete" class="btn btn-danger">Delete</button></center>
+                                                        <center><button type="delete" onClick="return doconfirm();" class="btn btn-danger">Delete</button></center>
                                                         <?php echo form_close(); ?>
                                                     </td>
                                                 </tr><?php }?>
