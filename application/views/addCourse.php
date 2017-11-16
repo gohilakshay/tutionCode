@@ -1378,7 +1378,7 @@
                                                         <?php echo form_open('Course_cont/deleteCourse'); ?>
                                                         <center>
                                                         <input type="hidden" value="<?php echo $value->course_ID; ?>" name="course_id">
-                                                        <button type="submit" class="btn btn-danger" >Delete</button></center>
+                                                        <button type="submit" onClick="return doconfirm();" class="btn btn-danger" >Delete</button></center>
                                                         <?php echo form_close(); ?>
                                                     </td>
                                                  <?php endforeach; ?></tr>
@@ -1415,4 +1415,15 @@
 </style>
 <?php include "addModel.php";?>
 <?php include "script_include.php";?>
+<script>
+function doconfirm()
+{
+    job=confirm("Are you sure to delete permanently?");
+    if(job!=true)
+    {
+        return false;
+    }
+}
+</script>
 <?php include "branch-sem_script.php";?>
+
