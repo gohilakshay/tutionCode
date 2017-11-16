@@ -516,9 +516,15 @@
                             
                             <div class="row">
                                 <div class="text-center">
-                                    <button type="submit" id="activate-step-3" class="btn btn-info btn-fill btn-wd">Submit</button>
+                                    <button type="submit" id="activate-step-3" name="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
                                 </div>
-                                <div class="clearfix"></div>    
+                                <div class="clearfix"></div>   
+                            </div>
+                            <div class="row">
+                                <div class="text-right">
+                                    <button type="submit" name="print"  class="btn btn-success btn-fill btn-wd">Print</button>
+                                </div>
+                                <div class="clearfix"></div>   
                             </div>
                         </div>
                     </div>
@@ -528,7 +534,6 @@
         </div>
     </div>
 </div>
-
 <?php echo form_close();?>
 <?php include_once "footer.php";?>
 <?php include_once "addModel.php"?>

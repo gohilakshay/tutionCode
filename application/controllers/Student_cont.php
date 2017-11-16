@@ -386,9 +386,46 @@ class Student_cont extends CI_Controller
                      'stud_ID'=>$n
                                );
                 $this->AddData->addStudentBatchItem($batch);
-                $this->session->set_flashdata('success','You have Successfully submitted data.');
-                redirect('Student_cont/addStudent'); 
-            }
+                if(isset($_POST['print'])){
+                    $this->load->library('fpdf_gen');
+                    $this->load->library('session');
+                    $this->load->library('form_validation');
+                    $this->load->helper('url');
+                    $this->load->model('AddStudentModelPdf');
+                    /*Student Recipt Details*/
+                    $year = explode("-",$date1);
+                    $stud_id = $n;
+                    $i = 0;
+                    $receipt1 = substr($year[0],2).'CG'.$n.'0'.$i;
+                    $toDydate = $date1;
+                    $studName = $this->input->post('surname')." ".$this->input->post('studentname')." ".$this->input->post('fathername')." ".$this->input->post('mothername');
+                    $data = array(
+                        'className' => $this->db->database,
+                        'dateRecipt' => array($toDydate,'Receipt No.'.$receipt1),
+                        'studName' => $studName,
+                        'amountFrom' => "Amount Recieved From => $studName",
+                        'payMode' => $this->input->post('paymentmode'),
+                        'FinalAmt' => $this->input->post('final'),
+                        'RecievedFee' => $this->input->post('received'),
+                        'BalanceFee' =>  $this->input->post('balance'),
+                        'chq_date' =>  $this->input->post('chq_date'),
+                        'bank_name' => $this->input->post('bank_name'),
+                        'chq_no' =>  $this->input->post('chq_no'),
+                        'transc_id' => $this->input->post('transc_id'),
+                        'stud_id'=> $n,
+                        'receipt1'=>$receipt1
+                        
+                    );
+                   
+                    $q = $this->AddStudentModelPdf->pdfRedirect($data);
+                    //redirect('Student_cont/addStudent');
+                }
+                else{
+                    $this->session->set_flashdata('success','You have Successfully submitted data.');
+                    redirect('Student_cont/addStudent');
+                }
+               
+                }
             }
             else{
                 $this->session->set_flashdata('success','Enter Batch First.');

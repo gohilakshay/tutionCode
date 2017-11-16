@@ -89,6 +89,7 @@ class SelectData extends CI_Model {
         $this->db->like('t_ID', $searchName);
         $this->db->or_like('t_name',$searchName);
         $this->db->or_like('t_contact',$searchName);
+        $this->db->or_like('t_fathername',$searchName);
         $this->db->limit($limit, $offset);
         $query = $this->db->get(); 
         return $query;
@@ -107,6 +108,9 @@ class SelectData extends CI_Model {
         $this->db->from("student_details");
          $this->db->order_by("stud_ID","DESC");
         $this->db->like('stud_name', $searchName);
+        $this->db->or_like('stud_surname', $searchName);
+        $this->db->or_like('father_name', $searchName);
+        $this->db->or_like('mother_name', $searchName);
         $this->db->or_like('stud_contact',$searchName);
         $this->db->or_like('stud_ID',$searchName);
         $this->db->or_like('standard_name',$searchName);
