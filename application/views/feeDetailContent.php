@@ -6,6 +6,12 @@
 <?php if($table==3){?>
 <div class="content">
     <div class="container-fluid">
+         <?php if($this->session->flashdata('success')) { ?>
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right:25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
+        <?php } ?>
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                <center>
@@ -68,15 +74,15 @@
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" >0</td>
                                                 <td><img src="<?php echo base_url()."/assets/icon/rupee.png"?>" ><?php echo $value1->balance_fee;?></td>
                                                 <td>
-                                                    <form action="#" method="get">
+                                                   <?php echo form_open('Student_cont/feeDetail/7'); ?>
                                                         <input type="hidden" name="id" value="<?php echo $value->stud_ID;?>" />
                                                         <input type="hidden" name="name" value="<?php echo $value->stud_name;?>" />
                                                         <input type="hidden" name="bal" value="<?php echo $value1->balance_fee;?>" />
                                                         <input type="hidden" name="paid" value="<?php echo $value1->recieved_fee;?>" />
                                                         <input type="hidden" name="final" value="<?php echo $value1->final_fee;?>" />
                                                         <input type="hidden" name="discount" value="<?php echo $value1->discount;?>" />
-                                                        <input type="submit" data-toggle="modal" data-target="#myModal" id="myBtn" class="btn btn-success" value="Pay">
-                                                    </form>
+                                                        <input type="submit" id="myBtn" class="btn btn-success" value="Pay">
+                                                    <?php echo form_close(); ?>
                                                 </td>
                                                <?php endif;?>
                                             </tr>
@@ -401,45 +407,66 @@
                             <h4 class="title">Payment Status</h4>
                         </div>
 
-                        <div class="content">
-                            <?php echo form_open('Student_cont/Payfee'); ?>
-                                <div class="row" >                        
-                                    <div class="col-sm-8 col-sm-offset-2">
-                                        <div class="form-group">
-                                        <label>Student ID</label>
-                                            <input type="text" class="form-control border-input"  name="studentid" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-2">
-                                        <div class="form-group">
-                                            <label>Student Name</label>
-                                                <input type="text" class="form-control border-input" name="studentname" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--<div class="row">
-                                    <div class="col-sm-8 col-sm-offset-2">
-                                        <div class="form-group">
-                                            <label>Batch</label>
-                                                <input type="text" class="form-control border-input" name="batch" value="" >
-                                        </div>
-                                    </div>
-                                </div>-->
-                                <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-2">
-                                        <div class="form-group">
-                                            <label>Amount</label>
-                                                <input type="text" class="form-control border-input" name="amount" value="" >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
-                                </div>
-                                <div class="clearfix"></div>
-                            <?php echo form_close(); ?>
+                         <div class="content">
+                <?php echo form_open('Student_cont/Payfee'); ?>
+                 <!--  <input type="hidden" value="<?php echo $student_data->stud_ID; ?>" name="stud_id" >-->
+                <div class="row" >                        
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Student ID</label>
+                            <input type="text" class="form-control border-input"  name="studentid" value="<?php echo $_POST['id']; ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Student Name</label>
+                            <input type="text" class="form-control border-input" name="studentname" value="<?php echo $_POST['name']; ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Final Fees</label>
+                            <input type="text" class="form-control border-input" name="final_fees" value="<?php echo $_POST['final']; ?>" readonly>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Discount Fees</label>
+                            <input type="text" class="form-control border-input" name="discount_fees" value="<?php echo $_POST['discount']; ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Paid Fees</label>
+                            <input type="text" class="form-control border-input" name="paid_fees" value="<?php echo $_POST['paid']; ?>" readonly>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <div class="form-group">
+                            <label>Balance</label>
+                            <input type="text" id="balModal" class="form-control border-input" name="balance_fee" value="<?php echo $_POST['bal']; ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Amount</label>
+                            <input type="text" id="Amtmodal" class="form-control border-input" name="amount" value="" >
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
+                </div>
+                <div class="clearfix"></div>
+                <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>

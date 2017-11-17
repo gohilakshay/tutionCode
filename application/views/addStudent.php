@@ -228,6 +228,22 @@
                                         <?php echo form_error('contactnumber', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Parent's Email</label>
+                                        <input type="email" class="form-control border-input UserName_field" placeholder="Email" name="pemail" value="<?php if(isset($_POST['pemail'])){echo $_POST['pemail'];} ?>" >
+                                        <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Parent's Contact Number <span class="required" style="color:red;"> * </span></label>
+                                        <input type="text"  maxlength="10" class="form-control student_details border-input phoneInput" placeholder="Contact Number" name="pcontactnumber" value="<?php if(isset($_POST['pcontactnumber'])){echo $_POST['pcontactnumber'];} ?>" required>
+                                        <?php echo form_error('contactnumber', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

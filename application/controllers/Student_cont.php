@@ -447,6 +447,7 @@ class Student_cont extends CI_Controller
                     'balance_fee' => $balance_fee
                 );
                 $this->AddData->updateStudFee($data);
+             $this->session->set_flashdata('success','You have Successfully paid the amount.');
                 redirect('Student_cont/feeDetail/3');         //html filename
            /* }else echo "<h2>Error : Student ID and Name does not Match</h2>";*/
         }else {
