@@ -1,30 +1,29 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class PdfExport_cont extends CI_Controller {
-	   public function index() {	
-		$this->load->library('fpdf_gen');
-        $this->load->library('session');
-        $this->load->library('form_validation');
-        $this->load->helper('url');
-		$pdf = new FPDF();
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+class AddStudentModelPdf extends CI_Model {
+    function pdfRedirect($data1){
+        
+        $pdf = new FPDF();
         $pdf->AddPage();
         /*Student Recipt Details*/
-        $className = $this->input->post('classes_name');
-        $toDydate = $this->input->post('admission_date'); 
-        $reciept = $this->input->post('receipt_1');
-        $dateRecipt = array($toDydate,'Receipt No.'.$reciept);
-        $studName = $this->input->post('student_name');
-        $amountFrom = "Amount Recieved From => $studName";
-        
-        $payMode = $this->input->post('payMode');
-        $FinalAmt= $this->input->post('FinalAmt');
-        $RecievedFee = $this->input->post('RecievedFee');
-        $BalanceFee = $this->input->post('BalanceFee');
-        $chq_date = $this->input->post('chq_date');
-        $bank_name = $this->input->post('bank_name');
-        $chq_no = $this->input->post('chq_no');
-        $transc_id = $this->input->post('transc_id');
-           
+        /*$year = explode("-",$date1);
+        $stud_id = $n;
+        $i = 0;
+        $receipt1 = substr($year[0],2).'CG'.$n.'0'.$i;*/
+        $className = $data1['className'];
+       // $toDydate = $date1;
+        $dateRecipt = $data1['dateRecipt'];
+        $studName = $data1['studName'];
+        $amountFrom = $data1['amountFrom'];
+
+        $payMode = $data1['payMode'];
+        $FinalAmt= $data1['FinalAmt'];
+        $RecievedFee =$data1['RecievedFee'];
+        $BalanceFee = $data1['BalanceFee'];
+        $chq_date = $data1['chq_date'];
+        $bank_name = $data1['bank_name'];
+        $chq_no = $data1['chq_no'];
+        $transc_id = $data1['transc_id'];
+
         $paymentDetails = array("Final Amount : $FinalAmt","Received Amount : $RecievedFee","Balance Amount : $BalanceFee");   
         $paymentMode = array('Payment Mode',"$payMode");
         $note = "Fees once paid will not be refundable";
@@ -81,8 +80,10 @@ class PdfExport_cont extends CI_Controller {
         $pdf->Ln();
         $pdf->SetFont('Arial','',12);
         $pdf->Cell(150,8,'Sign', 0, 0, 'R'); // For Sign
-
+        $pdfName = $data1['stud_id']."_".$data1['receipt1']."_".$studName.".pdf";
+         //$pdf->Output($pdfName,'D');
          $pdf->Output();
-            }
+        return TRUE;
+    }
 }
 ?>
