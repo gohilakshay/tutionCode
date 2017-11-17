@@ -458,7 +458,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Amount</label>
-                            <input type="text" id="Amtmodal" class="form-control border-input" name="amount" value="" >
+                            <input type="text" id="Amtmodal" class="form-control border-input phoneInput" name="amount" value="" >
                         </div>
                     </div>
                 </div>
