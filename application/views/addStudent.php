@@ -166,14 +166,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Surname</label>
-                                        <input type="text"  class="form-control border-input surnameInput"  placeholder="Surname" name="surname" value="<?php if(isset($_POST['surname'])){echo $_POST['surname'];} ?>">
+                                        <input type="text"  class="form-control border-input surnameInput" id="SnameStud" placeholder="Surname" name="surname" value="<?php if(isset($_POST['surname'])){echo $_POST['surname'];} ?>">
                                         <?php echo form_error('surname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Student Name <span class="required" style="color:red;"> * </span></label>
-                                      <input type="text" class="form-control student_details border-input surnameInput"  placeholder="Student Name" name="studentname" value="<?php if(isset($_POST['studentname'])){echo $_POST['studentname'];} ?>" required>
+                                      <input type="text" class="form-control student_details border-input surnameInput"  id="StnameStud"  placeholder="Student Name" name="studentname" value="<?php if(isset($_POST['studentname'])){echo $_POST['studentname'];} ?>" required>
                                         <?php echo form_error('studentname', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -182,14 +182,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Father Name <span class="required" style="color:red;"> * </span></label>
-                                      <input type="text" class="form-control student_details border-input surnameInput"  placeholder="Father Name" name="fathername" value="<?php if(isset($_POST['fathername'])){echo $_POST['fathername'];} ?>" required>
+                                      <input type="text" class="form-control student_details border-input surnameInput"  placeholder="Father Name" name="fathername" value="<?php if(isset($_POST['fathername'])){echo $_POST['fathername'];} ?>" id="FnameStud" required>
                                         <?php echo form_error('fathername', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Mother Name</label>
-                                        <input type="text" class="form-control border-input surnameInput" placeholder="Mother Name"  name="mothername" value="<?php if(isset($_POST['mothername'])){echo $_POST['mothername'];} ?>" >
+                                        <input type="text" class="form-control border-input surnameInput" placeholder="Mother Name" id="MnameStud" name="mothername" value="<?php if(isset($_POST['mothername'])){echo $_POST['mothername'];} ?>" >
                                         <?php echo form_error('mothername', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                     </div>
                                 </div>
@@ -485,19 +485,19 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Cheque Date.</label>
-                                    <input type="date" class="form-control border-input datepicker" name="chq_date" >
+                                    <input type="date" id="chqDate" class="form-control border-input datepicker" name="chq_date" >
                                  </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Bank Name</label>
-                                    <input type="text" class="form-control border-input" name="bank_name" >
+                                    <input type="text" id="bankName" class="form-control border-input" name="bank_name" >
                                  </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Cheque No.</label>
-                                    <input type="text" class="form-control border-input" name="chq_no" >
+                                    <input type="text" id="chqNo" class="form-control border-input" name="chq_no" >
                                  </div>
                             </div>
                             </div>
@@ -505,7 +505,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Transaction ID</label>
-                                        <input type="text" class="form-control border-input" name="transc_id" >
+                                        <input type="text" id="tranId" class="form-control border-input" name="transc_id" >
                                      </div>
                                 </div>
                             </div>
@@ -523,7 +523,7 @@
                                     <div class="form-group">
                                         <label>Date</label>
                                         <div>
-                                            <input type="date" class="form-control border-input datepicker" name="date1" value="<?php echo date("Y-m-d"); ?>" required>
+                                            <input type="date" class="form-control border-input datepicker" id="dateRecp" name="date1" value="<?php echo date("Y-m-d"); ?>" required>
                                     <?php echo form_error('date1', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
                                         </div>
                                     </div>
@@ -538,7 +538,9 @@
                             </div>
                             <div class="row">
                                 <div class="text-right">
-                                    <button type="submit" name="print"  class="btn btn-success btn-fill btn-wd">Print</button>
+                                    
+                                    <button type="submit" onclick="myF()"
+ name="print"  class="btn btn-success btn-fill btn-wd">Print</button>
                                 </div>
                                 <div class="clearfix"></div>   
                             </div>
@@ -557,3 +559,33 @@
 <?php include "custom_script.php";?>
 <?php include "subject_script.php";?>
 <?php include "branch-sem_script.php";?>
+<?php  ?>
+<script>
+    function myF(){
+        var sname = document.getElementById('SnameStud').value;
+        var stname = document.getElementById('StnameStud').value;
+        var fname = document.getElementById('FnameStud').value;
+        var mname = document.getElementById('MnameStud').value;
+        var name = sname+','+stname+','+fname+','+mname;
+        /*var Totfee = document.getElementById('Resources').value;
+        var Discfee = document.getElementById('Minutes').value;*/
+         var Finalfee = document.getElementById('answer').value;
+         var Recfee = document.getElementById('Received').value;
+         var Balfee = document.getElementById('balance').value;
+        /*var Installfee = document.getElementById('Installment').value;
+        var InstallTypefee = document.getElementById('Payamount').value;*/
+         var payMode = document.getElementById('payMode').value;
+         var chqDate = document.getElementById('chqDate').value;
+         var bankName = document.getElementById('bankName').value;
+         var chqNo = document.getElementById('chqNo').value;
+         var tranId = document.getElementById('tranId').value;
+         var dateRecp = document.getElementById('dateRecp').value;
+        /*var AmtperInstal = document.getElementById('result').value;*/
+        
+        
+        var url = 'pdfPrint/?name=' + name +'&Finalfee='+Finalfee+'&Recfee='+Recfee+'&Balfee='+Balfee+'&payMode='+payMode+'&chqDate='+chqDate+'&bankName='+bankName+'&chqNo='+chqNo+'&tranId='+tranId+'&dateRecp='+dateRecp;
+        window.open(url);
+        
+    }
+
+</script>

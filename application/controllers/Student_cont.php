@@ -386,45 +386,8 @@ class Student_cont extends CI_Controller
                      'stud_ID'=>$n
                                );
                 $this->AddData->addStudentBatchItem($batch);
-                if(isset($_POST['print'])){
-                    $this->load->library('fpdf_gen');
-                    $this->load->library('session');
-                    $this->load->library('form_validation');
-                    $this->load->helper('url');
-                    $this->load->model('AddStudentModelPdf');
-                    /*Student Recipt Details*/
-                    $year = explode("-",$date1);
-                    $stud_id = $n;
-                    $i = 0;
-                    $receipt1 = substr($year[0],2).'CG'.$n.'0'.$i;
-                    $toDydate = $date1;
-                    $studName = $this->input->post('surname')." ".$this->input->post('studentname')." ".$this->input->post('fathername')." ".$this->input->post('mothername');
-                    $data = array(
-                        'className' => $this->db->database,
-                        'dateRecipt' => array($toDydate,'Receipt No.'.$receipt1),
-                        'studName' => $studName,
-                        'amountFrom' => "Amount Recieved From => $studName",
-                        'payMode' => $this->input->post('paymentmode'),
-                        'FinalAmt' => $this->input->post('final'),
-                        'RecievedFee' => $this->input->post('received'),
-                        'BalanceFee' =>  $this->input->post('balance'),
-                        'chq_date' =>  $this->input->post('chq_date'),
-                        'bank_name' => $this->input->post('bank_name'),
-                        'chq_no' =>  $this->input->post('chq_no'),
-                        'transc_id' => $this->input->post('transc_id'),
-                        'stud_id'=> $n,
-                        'receipt1'=>$receipt1
-                        
-                    );
-                   
-                    $q = $this->AddStudentModelPdf->pdfRedirect($data);
-                    //redirect('Student_cont/addStudent');
-                }
-                else{
-                    $this->session->set_flashdata('success','You have Successfully submitted data.');
-                    redirect('Student_cont/addStudent');
-                }
-               
+                $this->session->set_flashdata('success','You have Successfully submitted data.');
+                redirect('Student_cont/addStudent');
                 }
             }
             else{
@@ -490,6 +453,52 @@ class Student_cont extends CI_Controller
         }else {
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";
+        }
+    }
+    function pdfPrint(){
+        $this->load->library('fpdf_gen');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
+            $this->load->model('AddStudentModelPdf');
+            /*Student Recipt Details*/
+            $year = explode("-",$_GET['dateRecp']);
+            $last = $this->db->select('stud_ID')
+                        ->order_by('stud_ID',"desc")
+                        ->limit(1)
+                        ->get('student_details');
+                $result = $last->result_array();
+            $id = $result[0];
+            $stud_id = $id['stud_ID'];
+            $i = 0;
+            $receipt1 = substr($year[0],2).'CG'.$stud_id.'0'.$i;
+            $toDydate = $_GET['dateRecp'];
+            /*$studName = $this->input->post('surname')." ".$this->input->post('studentname')." ".$this->input->post('fathername')." ".$this->input->post('mothername');*/
+            $arryName = explode(",",$_GET['name']);
+            $strName = implode (" ",$arryName);
+            $data = array(
+                'className' => $this->db->database,
+                'dateRecipt' => array($toDydate,'Receipt No.'.$receipt1),
+                'studName' => $strName,
+                'amountFrom' => "Amount Recieved From => $strName",
+                'payMode' => $_GET['payMode'],
+                'FinalAmt' => $_GET['Finalfee'],
+                'RecievedFee' => $_GET['Recfee'],
+                'BalanceFee' => $_GET['Balfee'],
+                'chq_date' =>  $_GET['chqDate'],
+                'bank_name' => $_GET['bankName'],
+                'chq_no' =>  $_GET['chqNo'],
+                'transc_id' => $_GET['tranId'],
+                'stud_id'=> $n,
+                'receipt1'=>$receipt1
+
+            );
+
+            $q = $this->AddStudentModelPdf->pdfRedirect($data);
         }
     }
 }
