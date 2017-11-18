@@ -20,7 +20,7 @@
     right: 'month,agendaWeek,agendaDay'
    },
 
-   events: "<?php  echo base_url(); ?>/scheduler_db/events.php",
+   events: "<?php  echo base_url(); ?>scheduler_db/events.php",
 
    eventRender: function(event, element, view) {
     if (event.allDay === 'true') {
@@ -38,7 +38,7 @@
    var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
    var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
    $.ajax({
-	   url: '<?php echo base_url(); ?>/scheduler_db/add_events.php',
+	   url: '<?php echo base_url(); ?>scheduler_db/add_events.php',
 	   data: 'title='+ title+'&start='+ start +'&end='+ end,
 	   type: "POST",
 	   success: function(json) {
@@ -63,7 +63,7 @@
    var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
    var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
    $.ajax({
-	   url: '<?php echo base_url(); ?>/scheduler_db/update_events.php',
+	   url: '<?php echo base_url(); ?>scheduler_db/update_events.php',
 	   data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
 	   type: "POST",
 	   success: function(json) {
@@ -76,7 +76,7 @@
 	if (decision) {
 	$.ajax({
 		type: "POST",
-		url: "<?php echo base_url(); ?>/scheduler_db/delete_event.php",
+		url: "<?php echo base_url(); ?>scheduler_db/delete_event.php",
 		data: "&id=" + event.id,
 		 success: function(json) {
 			 $('#calendar').fullCalendar('removeEvents', event.id);
@@ -88,7 +88,7 @@
 	   var start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
 	   var end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
 	   $.ajax({
-	    url: '<?php echo base_url(); ?>/scheduler_db/update_events.php',
+	    url: '<?php echo base_url(); ?>scheduler_db/update_events.php',
 	    data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
 	    type: "POST",
 	    success: function(json) {
