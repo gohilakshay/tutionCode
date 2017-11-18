@@ -84,12 +84,12 @@ foreach ($query->result() as $row) {
                                   </li>
                               </ul>
                         </li>
-                         <!--<li>
+                         <li>
                             <a href="<?php echo site_url()."/Scheduler_cont" ?>" >
-                                <i class="ti-time"></i>
-								<p>Scheduler</p>
+                                <i class="ti-timer"></i>
+								
                             </a>
-                         </li>-->
+                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="ti-user"></i>

@@ -11,6 +11,9 @@ class Scheduler_cont extends CI_Controller
         $db = $this->session->userdata('db');//load db      
         $this->load->database($db);//call db
             $this->load->view('scheduler.php');
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
         }
      }
 }

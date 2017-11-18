@@ -36,24 +36,6 @@
                             <p>Attendance</p>
                         </a>
                     </li>
-                    <!--<li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-plus"></i>
-									<p>ADD Details</p>
-                              </a>
-                              <ul class="dropdown-menu" style="background-color:#d2caca">
-                                  <li <?php if($page == 'seven'){ echo ' class="active"';}?>>
-                                      <a href="<?php echo site_url("Course_cont/addCourse") ?>">
-                                          <p><img src="<?php echo base_url()?>assets/icon/coursesidebar.png"> &emsp;Add Courses</p>
-                                      </a>
-                                  </li>
-                                  <li <?php if($page == 'eight'){ echo ' class="active"';}?>>
-                                      <a href="<?php echo site_url("Batch_cont/addBatch") ?>">
-                                          <p><img src="<?php echo base_url()?>assets/icon/batchessidebar.png"> &emsp;Add Batches</p>
-                                      </a>
-                                  </li>
-                              </ul>
-                    </li>-->
                     <li <?php if($page == 'seven'){ echo ' class="active"';}?>>
                         <a href="<?php echo site_url("Course_cont/addCourse") ?>">
                             <p><img src="<?php echo base_url()?>assets/icon/coursesidebar.png"> &emsp;Add Courses</p>
