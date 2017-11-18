@@ -36,6 +36,7 @@
                             <p>Attendance</p>
                         </a>
                     </li>
+                    
                     <li <?php if($page == 'seven'){ echo ' class="active"';}?>>
                         <a href="<?php echo site_url("Course_cont/addCourse") ?>">
                             <p><img src="<?php echo base_url()?>assets/icon/coursesidebar.png"> &emsp;Add Courses</p>
