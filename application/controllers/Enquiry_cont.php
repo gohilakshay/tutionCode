@@ -119,10 +119,10 @@ class Enquiry_cont extends CI_Controller
                    'offset' => $offset
                 ));
             }  
-        }
-      
-            
-        else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function enquiryReply($id)
     {
@@ -133,7 +133,10 @@ class Enquiry_cont extends CI_Controller
             $db = $this->session->userdata('db');//load db 
             $this->load->database($db);//call db
             $this->load->view('enquiryreply',$enquiry);      //html filename
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function enquiryInfo($id)
     {
@@ -146,7 +149,10 @@ class Enquiry_cont extends CI_Controller
             $this->load->model('SelectData');
             $enquiry['result'] = $this->SelectData->enquiryselect($id);
             $this->load->view('enquiryInfo',$enquiry);      //html filename
-        }else echo "Error 404 : Access Denied";
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";         
+        } 
     }
     public function enquirySend()
     {
