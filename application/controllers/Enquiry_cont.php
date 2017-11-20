@@ -375,6 +375,12 @@ class Enquiry_cont extends CI_Controller
                 else{
                     $date3 = $date3[0];
                 }
+                if(empty($this->input->post('reply'))){
+                    $reply = $this->input->post('repliedby');
+                }
+                else{
+                    $reply = $this->input->post('reply');
+                }
                 $data = array(
                     'enquiry_ID'=>$this->input->post("e_id"),
                     'name' => $this->input->post('enquirename'),
@@ -382,7 +388,7 @@ class Enquiry_cont extends CI_Controller
                     'mobile' => $this->input->post('mobile'),
                     'subject' => $this->input->post('subject'),
                     'repledBy' => $this->input->post('repliedby'),
-                    'reply' => $this->input->post('reply'),
+                    'reply' => $reply,
                     'status' => $this->input->post('status'),
                     'enq_date' => $date1,
                     'fees' => $this->input->post('fees'),
