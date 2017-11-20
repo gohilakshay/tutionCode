@@ -164,16 +164,16 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Reply By</label>
-                                    <input type="text"  class="form-control border-input UserName_field" name="repliedby" value="<?php echo $enquiryDetail->repledBy; ?>">
+                                    <label>Previous Reply</label>
+                                    <input type="text"  class="form-control border-input UserName_field" name="repliedby" value="<?php echo $enquiryDetail->reply; ?>" readonly>
                                 </div>
                             </div>
                         </div>
                        <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Reply</label>
-                                    <textarea rows="4" type="text" class="form-control border-input UserName_field" name="reply" ><?php echo $enquiryDetail->reply; ?></textarea>
+                                    <label>New Reply</label>
+                                    <textarea rows="4" type="text" class="form-control border-input UserName_field" name="reply" ></textarea>
                                 </div>
                             </div>
                         </div>
