@@ -383,6 +383,28 @@ $transc_id = $fee_data->transc_id;
                                     <li>
                                         <div class="row">
                                             <div class="col-xs-3">
+                                                Parent Contact
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b><?php echo $student_data->pcontactnumber ;?></b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                Parent Email
+                                                <br>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <b><?php echo $student_data->pemail;?></b>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-3">
                                                 School / College Name
                                                 <br>
                                             </div>

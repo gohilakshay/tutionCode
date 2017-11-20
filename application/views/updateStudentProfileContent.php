@@ -229,7 +229,22 @@ $fee_data = end($result);
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Parent's Email</label>
+                                        <input type="email" class="form-control border-input UserName_field" placeholder="Email" name="pemail" value="<?php echo $student_data->pemail; ?>" >
+                                        <?php echo form_error('email', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Parent's Contact Number </label>
+                                        <input type="text"  maxlength="10" class="form-control student_details border-input phoneInput" placeholder="Contact Number" name="pcontactnumber" value="<?php echo $student_data->pcontactnumber; ?>" required>
+                                        <?php echo form_error('contactnumber', '<div class="alert alert-danger contact-warning">', '</div>'); ?>
+                                    </div>
+                                </div>
+                            </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">

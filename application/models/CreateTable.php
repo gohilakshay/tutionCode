@@ -689,7 +689,16 @@ class CreateTable extends CI_Model {
                                                  'constraint' => '100',
                                                  'null' => TRUE,     
                                           ),
+                        'pemail' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,     
+                                          ),
                         'stud_contact' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '10',
+                                          ),
+                        'pcontactnumber' => array(
                                                  'type' => 'VARCHAR',
                                                  'constraint' => '10',
                                           ),

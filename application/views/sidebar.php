@@ -8,7 +8,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="" class="simple-text">
-                       Class Guru
+                       <?php echo $this->db->database; ?>
                     </a>
                 </div>
                 <ul class="nav">
