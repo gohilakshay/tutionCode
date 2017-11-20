@@ -435,12 +435,12 @@ class Student_cont extends CI_Controller
             $this->load->model('SelectData');
             $studentid = $this->input->post('studentid');
             $input_name = $studentname = preg_replace('/\s+/', '',strtolower($this->input->post('studentname')));
-            $amount=$this->input->post('amount');
+            echo $amount=$this->input->post('amount');
             $query = $this->SelectData->studentProfile($studentid);
             $stud_name = $query[0]->stud_surname.$query[0]->stud_name.$query[0]->father_name.$query[0]->mother_name;
             /*if($input_name == $stud_name){*/
-                $recieved_fee = $amount + $query[1]->recieved_fee;
-                $balance_fee =  $query[1]->balance_fee - $amount;
+                $recieved_fee = $amount + $query[2]->recieved_fee;
+                $balance_fee =  $query[2]->balance_fee - $amount;
                 $data = array(
                     'stud_id' => $studentid,
                     'recieved_fee' => $recieved_fee,
