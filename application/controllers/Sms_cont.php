@@ -106,7 +106,7 @@ class Sms_cont extends CI_Controller
         $this->load->model('AddData');
         //Your authentication key
         $username = "peaceinfotech";
-        $password = "peaceinfotech";
+        $password = "1234@";
         //Sender ID,While using route4 sender id should be 6 characters long.
         $senderId = "classG";
         $batch_IDname = $this->input->post('batch');
@@ -205,7 +205,7 @@ class Sms_cont extends CI_Controller
         $this->load->model('AddData');
         //Your authentication key
         $username = "peaceinfotech";
-        $password = "peaceinfotech";
+        $password = "1234@";
         //Sender ID,While using route4 sender id should be 6 characters long.
          $senderId = "classG";
          $teacher_IDname = $this->input->post('teacherid');
@@ -303,7 +303,7 @@ class Sms_cont extends CI_Controller
         $this->load->model('AddData');
         //Your authentication key
         $username = "peaceinfotech";
-        $password = "peaceinfotech";
+        $password = "1234@";
         //Sender ID,While using route4 sender id should be 6 characters long.
          $senderId = "classG";
         // $teacher_IDname = $this->input->post('teacherid');
