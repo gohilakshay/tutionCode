@@ -120,10 +120,24 @@ class Sms_cont extends CI_Controller
         foreach($contact as $value){
             $c = explode(",",$value);
             $contac[] = $c[0];
+            $pcontac[] = $c[2];
                $student[] = $c[1];
         }
         //Multiple mobiles numbers separated by comma
-        $mobileNumber = implode(",",$contac);
+        
+        if($send == 'both'){
+            $mobileS = implode(",",$contac);
+            $mobileP = implode(",",$pcontac);
+            $mobileNumber = $mobileP.",".$mobileS;
+        }
+        else if($send == 'parents'){
+            $mobileP = implode(",",$pcontac);
+            $mobileNumber = $mobileP;
+        }
+        else{
+            $mobileS = implode(",",$contac);
+            $mobileNumber = $mobileS;
+        }
         $student = implode(",",$student);
         //Define route 
         $route = 3;
@@ -207,7 +221,23 @@ class Sms_cont extends CI_Controller
         $username = "peaceinfotech";
         $password = "1234@";
         //Sender ID,While using route4 sender id should be 6 characters long.
-         $senderId = "classG";
+        $clasname = $this->db->database;
+        $patterns = array (
+          '/\W+/', // match any non-alpha-numeric character sequence, except underscores
+          '/\d+/', // match any number of decimal digits
+          '/_+/',  // match any number of underscores
+          '/\s+/'  // match any number of white spaces
+        );
+
+        $replaces = array (
+          '', // remove
+          '', // remove
+          '', // remove
+          ' ' // leave only 1 space
+        );
+        $SendId = trim(preg_replace($patterns, $replaces, strip_tags($clasname) ) );
+        
+         $senderId = substr($SendId,0,6);
          $teacher_IDname = $this->input->post('teacherid');
          $contact = $this->input->post('t_contact');
         //$student = $this->input->post('student');

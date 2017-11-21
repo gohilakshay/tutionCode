@@ -27,7 +27,12 @@ foreach($result as $value){
                         <center><a href="<?php echo site_url()."/Sms_cont/smsDetails" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #51d8dc; background-color:#51d8dc; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-primary btn-lg">Total<br><?php echo $total; ?></button></a>&emsp;
                       <a href="<?php echo site_url()."/Sms_cont/successSms" ?>">  <button type="button" style="border-radius:10px; color:black; border-color: #7ac29a; background-color:#7ac29a; padding:11px; padding-left:70px; padding-right:70px;" class="btn btn-success btn-lg">Success<br><?php echo $sent;?></button></a>&emsp;
                       <a href="<?php echo site_url()."/Sms_cont/failesSms" ?>">  <button type="button" style="border-radius:10px; color:black; border-color: #e44554; background-color:#e44554; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Failed<br><?php echo $failed;?></button> </a>&emsp;
-                        <a href="<?php echo site_url()."/Sms_cont/sendSMS/1" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg">Send<br>SMS</button></a></center>
+                    <?php if($total >= 1000){
+                        ?><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">Send<br>SMS</button><?php 
+                    }else{ ?>
+                        <a href="<?php echo site_url()."/Sms_cont/sendSMS/1" ?>"><button type="button" style="border-radius:10px; color:black; border-color: #f3de26; background-color:#f3de26; padding:11px; padding-left:80px; padding-right:80px;" class="btn btn-danger btn-lg" >Send<br>SMS</button></a>
+                    <?php } ?>
+                        </center>
                     </div>
                 </div><br>
                 <div class="row">

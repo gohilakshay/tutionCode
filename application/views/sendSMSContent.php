@@ -66,7 +66,7 @@
                                         <tbody>
                                             <?php foreach($result1 as $value): ?>
                                             <tr>
-                                                <td><input type="checkbox" class="checkBoxClass" value="<?php echo $value->stud_contact.",".$value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name; ?>" name="contact[]">&emsp;<?php echo $value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name;?>
+                                                <td><input type="checkbox" class="checkBoxClass" value="<?php echo $value->stud_contact.",".$value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name.",".$value->pcontactnumber; ?>" name="contact[]">&emsp;<?php echo $value->stud_surname." ".$value->stud_name." ".$value->father_name." ".$value->mother_name;?>
                                                 </td>
                                             </tr>
                                             <?php endforeach;?>
