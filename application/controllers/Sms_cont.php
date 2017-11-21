@@ -108,7 +108,23 @@ class Sms_cont extends CI_Controller
         $username = "peaceinfotech";
         $password = "1234@";
         //Sender ID,While using route4 sender id should be 6 characters long.
-        $senderId = "classG";
+        $clasname = $this->db->database;
+        $patterns = array (
+          '/\W+/', // match any non-alpha-numeric character sequence, except underscores
+          '/\d+/', // match any number of decimal digits
+          '/_+/',  // match any number of underscores
+          '/\s+/'  // match any number of white spaces
+        );
+
+        $replaces = array (
+          '', // remove
+          '', // remove
+          '', // remove
+          ' ' // leave only 1 space
+        );
+        $SendId = trim(preg_replace($patterns, $replaces, strip_tags($clasname) ) );
+        
+         $senderId = substr($SendId,0,6);
         $batch_IDname = $this->input->post('batch');
         $contact = $this->input->post('contact');
         $student = $this->input->post('student');
@@ -335,7 +351,23 @@ class Sms_cont extends CI_Controller
         $username = "peaceinfotech";
         $password = "1234@";
         //Sender ID,While using route4 sender id should be 6 characters long.
-         $senderId = "classG";
+         $clasname = $this->db->database;
+        $patterns = array (
+          '/\W+/', // match any non-alpha-numeric character sequence, except underscores
+          '/\d+/', // match any number of decimal digits
+          '/_+/',  // match any number of underscores
+          '/\s+/'  // match any number of white spaces
+        );
+
+        $replaces = array (
+          '', // remove
+          '', // remove
+          '', // remove
+          ' ' // leave only 1 space
+        );
+        $SendId = trim(preg_replace($patterns, $replaces, strip_tags($clasname) ) );
+        
+         $senderId = substr($SendId,0,6);
         // $teacher_IDname = $this->input->post('teacherid');
          $contact = $this->input->post('contact');
         //$student = $this->input->post('student');
