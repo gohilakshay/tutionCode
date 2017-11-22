@@ -23,7 +23,22 @@ class SelectData extends CI_Model {
         }
         return $data;       
     }
-  
+    function smsLimit(){
+        $smsCount = $this->db->count_all('sms');
+        $q = $this->db->query("SELECT * FROM `SmsLimit`");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $row->balanceLimit = $row->previousLimit - $smsCount;
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function smsCountFromDb(){
+        $this->db->select('previousLimit');
+        $query = $this->db->get('smslimit');
+        return $query->result();
+    }
     function teacherExpense($id) {
         $q = $this->db->query("SELECT * FROM `teacher_expense` WHERE teacher_id = '$id' ORDER BY t_exp_ID DESC");
         if($q->num_rows() >0){

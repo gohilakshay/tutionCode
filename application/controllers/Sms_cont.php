@@ -104,11 +104,12 @@ class Sms_cont extends CI_Controller
         $db = $this->session->userdata('db');//load db 
         $this->load->database($db);//call db
         $this->load->model('AddData');
+        $this->load->model('SelectData');
         //Your authentication key
         $username = "peaceinfotech";
         $password = "1234@";
         //Sender ID,While using route4 sender id should be 6 characters long.
-        $clasname = $this->db->database;
+        $clasname = $this->db->database; 
         $patterns = array (
           '/\W+/', // match any non-alpha-numeric character sequence, except underscores
           '/\d+/', // match any number of decimal digits
@@ -124,14 +125,13 @@ class Sms_cont extends CI_Controller
         );
         $SendId = trim(preg_replace($patterns, $replaces, strip_tags($clasname) ) );
         
-         $senderId = substr($SendId,0,6);
+        $senderId = substr($SendId,0,6);
         $batch_IDname = $this->input->post('batch');
         $contact = $this->input->post('contact');
         $student = $this->input->post('student');
         $send = $this->input->post('send');
         $route = $this->input->post('route');
-         $message = $this->input->post('msg'); //Your message to send, Add URL encoding here.
-        
+        $message = $this->input->post('msg'); //Your message to send, Add URL encoding here.
         $i=0;
         foreach($contact as $value){
             $c = explode(",",$value);
@@ -139,88 +139,96 @@ class Sms_cont extends CI_Controller
             $pcontac[] = $c[2];
                $student[] = $c[1];
         }
+        $contactsCount = count($contac) + count($pcontac);
         //Multiple mobiles numbers separated by comma
-        
-        if($send == 'both'){
-            $mobileS = implode(",",$contac);
-            $mobileP = implode(",",$pcontac);
-            $mobileNumber = $mobileP.",".$mobileS;
-        }
-        else if($send == 'parents'){
-            $mobileP = implode(",",$pcontac);
-            $mobileNumber = $mobileP;
-        }
-        else{
-            $mobileS = implode(",",$contac);
-            $mobileNumber = $mobileS;
-        }
-        $student = implode(",",$student);
-        //Define route 
-        $route = 3;
-        //Prepare you post parameters
-        $postData = array(
-            'username' => $username,
-            'password' => $password,
-            'number' => $mobileNumber,
-            'message' => $message,
-            'senderid' => $senderId,
-            'route' => $route
-        );
-        //API URL
-        $url="http://text.bluemedia.in/http-api.php";
-
-        // init the resource
-        $ch = curl_init();
-        curl_setopt_array($ch, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $postData
-            //,CURLOPT_FOLLOWLOCATION => true
-        ));
-
-        //Ignore SSL certificate verification
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        //get response
-        $output = curl_exec($ch);
-        //Print error if any
-        if(curl_errno($ch))
-        {
-            echo 'error:' . curl_error($ch);
-        }
-        curl_close($ch);
-        $result = (explode(" ",$output));
-            if($result[0] == 'msg-id'){
-                $data = array(
-                'batch'=>$batch_IDname,
-                'student_name'=>$student,
-                'student_cont'=>$mobileNumber,
-                'sms_sent_to'=>$send,
-                'message'=>$message,
-                'date'=>date('Y-m-d'),
-                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
-                'status'=>'sent'
+        $smsCount = $this->db->count_all('sms');
+        $count = $this->SelectData->smsCountFromDb();
+        $limit = $count[0]->previousLimit;
+        $smsLimit = $smsCount + $contactsCount;
+        if($smsLimit > $limit){
+            $this->session->set_flashdata('success', 'Sorry you have exceeded your  SMS limit');             redirect('Sms_cont/sendSMS/1');
+        }else{
+            if($send == 'both'){
+                $mobileS = implode(",",$contac);
+                $mobileP = implode(",",$pcontac);
+                $mobileNumber = $mobileP.",".$mobileS;
+            }
+            else if($send == 'parents'){
+                $mobileP = implode(",",$pcontac);
+                $mobileNumber = $mobileP;
+            }
+            else{
+                $mobileS = implode(",",$contac);
+                $mobileNumber = $mobileS;
+            }
+            $student = implode(",",$student);
+            //Define route 
+            $route = 3;
+            //Prepare you post parameters
+            $postData = array(
+                'username' => $username,
+                'password' => $password,
+                'number' => $mobileNumber,
+                'message' => $message,
+                'senderid' => $senderId,
+                'route' => $route
             );
-            $this->AddData->smsAdd($data);    
-            redirect('Sms_cont/sendSMS/1');
-        }
-        else 
-        {
+            //API URL
+            $url="http://text.bluemedia.in/http-api.php";
+
+            // init the resource
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => $postData
+                //,CURLOPT_FOLLOWLOCATION => true
+            ));
+
+            //Ignore SSL certificate verification
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            //get response
+            $output = curl_exec($ch);
+            //Print error if any
+            if(curl_errno($ch))
+            {
+                echo 'error:' . curl_error($ch);
+            }
+            curl_close($ch);
             $result = (explode(" ",$output));
-            if($result[0] == 'msg-id'){
-                $data = array(
-                'batch'=>$batch_IDname,
-                'student_name'=>$student,
-                'student_cont'=>$mobileNumber,
-                'sms_sent_to'=>$send,
-                'message'=>$message,
-                'date'=>date('Y-m-d'),
-                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
-                'status'=>'failed'
-               );
-            $this->AddData->smsAdd($data);
-            echo $output;
+                if($result[0] == 'msg-id'){
+                    $data = array(
+                    'batch'=>$batch_IDname,
+                    'student_name'=>$student,
+                    'student_cont'=>$mobileNumber,
+                    'sms_sent_to'=>$send,
+                    'message'=>$message,
+                    'date'=>date('Y-m-d'),
+                    'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                    'status'=>'sent'
+                );
+                $this->AddData->smsAdd($data);    
+                redirect('Sms_cont/sendSMS/1');
+            }
+            else 
+            {
+                $result = (explode(" ",$output));
+                if($result[0] == 'msg-id'){
+                    $data = array(
+                    'batch'=>$batch_IDname,
+                    'student_name'=>$student,
+                    'student_cont'=>$mobileNumber,
+                    'sms_sent_to'=>$send,
+                    'message'=>$message,
+                    'date'=>date('Y-m-d'),
+                    'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                    'status'=>'failed'
+                   );
+                $this->AddData->smsAdd($data);
+                echo $output;
+                }
             }
         }
      }
@@ -266,78 +274,86 @@ class Sms_cont extends CI_Controller
             $contac[] = $c[0];
                $teacher_name[] = $c[1];
         }
-        //Multiple mobiles numbers separated by comma
-        $mobileNumber = implode(",",$contac);
-        $teacher_name = implode(",",$teacher_name);
-        //Define route 
-        $route = 3;
-        //Prepare you post parameters
-        $postData = array(
-            'username' => $username,
-            'password' => $password,
-            'number' => $mobileNumber,
-            'message' => $message,
-            'senderid' => $senderId,
-            'route' => $route
-        );
-        //API URL
-        $url="http://text.bluemedia.in/http-api.php";
-
-        // init the resource
-        $ch = curl_init();
-        curl_setopt_array($ch, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $postData
-            //,CURLOPT_FOLLOWLOCATION => true
-        ));
-
-        //Ignore SSL certificate verification
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        //get response
-        $output = curl_exec($ch);
-        //Print error if any
-        if(curl_errno($ch))
-        {
-            echo 'error:' . curl_error($ch);
-        }
-        curl_close($ch);
-        $result = (explode(" ",$output));
-            if($result[0] == 'msg-id'){
-                $data = array(
-                //'batch'=>$batch_IDname,
-                'teacher_name'=>$teacher_name,
-                'teacher_cont'=>$mobileNumber,
-                //'sms_sent_to'=>$send,
-                'message'=>$message,
-                'date'=>date('Y-m-d'),
-                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
-                'status'=>'sent'
+        $contactsCount = count($contac);
+        $smsCount = $this->db->count_all('sms');
+        $count = $this->SelectData->smsCountFromDb();
+        $limit = $count[0]->previousLimit;
+        $smsLimit = $smsCount + $contactsCount;
+        if($smsLimit > $limit){
+            $this->session->set_flashdata('success', 'Sorry you have exceeded your  SMS limit');             redirect('Sms_cont/sendSMS/2');
+        }else{
+            //Multiple mobiles numbers separated by comma
+            $mobileNumber = implode(",",$contac);
+            $teacher_name = implode(",",$teacher_name);
+            //Define route 
+            $route = 3;
+            //Prepare you post parameters
+            $postData = array(
+                'username' => $username,
+                'password' => $password,
+                'number' => $mobileNumber,
+                'message' => $message,
+                'senderid' => $senderId,
+                'route' => $route
             );
-            $this->AddData->smsAdd($data);    
-            redirect('Sms_cont/sendSMS/2');
-        }
-        else 
-        {
+            //API URL
+            $url="http://text.bluemedia.in/http-api.php";
+
+            // init the resource
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => $postData
+                //,CURLOPT_FOLLOWLOCATION => true
+            ));
+
+            //Ignore SSL certificate verification
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            //get response
+            $output = curl_exec($ch);
+            //Print error if any
+            if(curl_errno($ch))
+            {
+                echo 'error:' . curl_error($ch);
+            }
+            curl_close($ch);
             $result = (explode(" ",$output));
-            if($result[0] == 'msg-id'){
-                $data = array(
-               // 'batch'=>$batch_IDname,
-                'teacher_name'=>$teacher_name,
-                'teacher_cont'=>$mobileNumber,
-                //'sms_sent_to'=>$send,
-                'message'=>$message,
-                'date'=>date('Y-m-d'),
-                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
-                'status'=>'failed'
-               );
-            $this->AddData->smsAdd($data);
-            echo $output;
+                if($result[0] == 'msg-id'){
+                    $data = array(
+                    //'batch'=>$batch_IDname,
+                    'teacher_name'=>$teacher_name,
+                    'teacher_cont'=>$mobileNumber,
+                    //'sms_sent_to'=>$send,
+                    'message'=>$message,
+                    'date'=>date('Y-m-d'),
+                    'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                    'status'=>'sent'
+                );
+                $this->AddData->smsAdd($data);    
+                redirect('Sms_cont/sendSMS/2');
+            }
+            else 
+            {
+                $result = (explode(" ",$output));
+                if($result[0] == 'msg-id'){
+                    $data = array(
+                   // 'batch'=>$batch_IDname,
+                    'teacher_name'=>$teacher_name,
+                    'teacher_cont'=>$mobileNumber,
+                    //'sms_sent_to'=>$send,
+                    'message'=>$message,
+                    'date'=>date('Y-m-d'),
+                    'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                    'status'=>'failed'
+                   );
+                $this->AddData->smsAdd($data);
+                echo $output;
+                }
             }
         }
-       
      }
     /*for bulk sms*/
     function sendBulkSMSSender(){
@@ -378,77 +394,85 @@ class Sms_cont extends CI_Controller
         foreach($contact as $value){
             $c = explode(",",$value);
             $contac[] = $c[0];
-               $cont_name[] = $c[1];
         }
-        //Multiple mobiles numbers separated by comma
-        $mobileNumber = implode(",",$contac);
-        $cont_name = implode(",",$cont_name);
-        //Define route 
-        $route = 3;
-        //Prepare you post parameters
-        $postData = array(
-            'username' => $username,
-            'password' => $password,
-            'number' => $mobileNumber,
-            'message' => $message,
-            'senderid' => $senderId,
-            'route' => $route
-        );
-        //API URL
-        $url="http://text.bluemedia.in/http-api.php";
-
-        // init the resource
-        $ch = curl_init();
-        curl_setopt_array($ch, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $postData
-            //,CURLOPT_FOLLOWLOCATION => true
-        ));
-
-        //Ignore SSL certificate verification
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        //get response
-        $output = curl_exec($ch);
-        //Print error if any
-        if(curl_errno($ch))
-        {
-            echo 'error:' . curl_error($ch);
-        }
-        curl_close($ch);
-        $result = (explode(" ",$output));
-            if($result[0] == 'msg-id'){
-                $data = array(
-                //'batch'=>$batch_IDname,
-                'cont_name'=>$cont_name,
-                'contact'=>$mobileNumber,
-                //'sms_sent_to'=>$send,
-                'message'=>$message,
-                'date'=>date('Y-m-d'),
-                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
-                'status'=>'sent'
+        $contactsCount = count($contac);
+        $smsCount = $this->db->count_all('sms');
+        $count = $this->SelectData->smsCountFromDb();
+        $limit = $count[0]->previousLimit;
+        $smsLimit = $smsCount + $contactsCount;
+        if($smsLimit > $limit){
+            $this->session->set_flashdata('success', 'Sorry you have exceeded your  SMS limit');             redirect('Sms_cont/sendSMS/4');
+        }else{
+            //Multiple mobiles numbers separated by comma
+            $mobileNumber = implode(",",$contac);
+            $cont_name = implode(",",$cont_name);
+            //Define route 
+            $route = 3;
+            //Prepare you post parameters
+            $postData = array(
+                'username' => $username,
+                'password' => $password,
+                'number' => $mobileNumber,
+                'message' => $message,
+                'senderid' => $senderId,
+                'route' => $route
             );
-            $this->AddData->smsBulkAdd($data);    
-            redirect('Sms_cont/sendSMS/4');
-        }
-        else 
-        {
+            //API URL
+            $url="http://text.bluemedia.in/http-api.php";
+
+            // init the resource
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => $postData
+                //,CURLOPT_FOLLOWLOCATION => true
+            ));
+
+            //Ignore SSL certificate verification
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            //get response
+            $output = curl_exec($ch);
+            //Print error if any
+            if(curl_errno($ch))
+            {
+                echo 'error:' . curl_error($ch);
+            }
+            curl_close($ch);
             $result = (explode(" ",$output));
-            if($result[0] == 'msg-id'){
-                $data = array(
-               // 'batch'=>$batch_IDname,
-                'cont_name'=>$cont_name,
-                'contact'=>$mobileNumber,
-                //'sms_sent_to'=>$send,
-                'message'=>$message,
-                'date'=>date('Y-m-d'),
-                'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
-                'status'=>'failed'
-               );
-            $this->AddData->smsBulkAdd($data);
-            echo $output;
+                if($result[0] == 'msg-id'){
+                    $data = array(
+                    //'batch'=>$batch_IDname,
+                    'cont_name'=>$cont_name,
+                    'contact'=>$mobileNumber,
+                    //'sms_sent_to'=>$send,
+                    'message'=>$message,
+                    'date'=>date('Y-m-d'),
+                    'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                    'status'=>'sent'
+                );
+                $this->AddData->smsBulkAdd($data);    
+                redirect('Sms_cont/sendSMS/4');
+            }
+            else 
+            {
+                $result = (explode(" ",$output));
+                if($result[0] == 'msg-id'){
+                    $data = array(
+                   // 'batch'=>$batch_IDname,
+                    'cont_name'=>$cont_name,
+                    'contact'=>$mobileNumber,
+                    //'sms_sent_to'=>$send,
+                    'message'=>$message,
+                    'date'=>date('Y-m-d'),
+                    'time'=>date('H:i:s', strtotime('+5 hours,+30 minutes')),
+                    'status'=>'failed'
+                   );
+                $this->AddData->smsBulkAdd($data);
+                echo $output;
+                }
             }
         }
     }
@@ -523,5 +547,26 @@ class Sms_cont extends CI_Controller
             $name=site_url().'/Home';
             echo "<script>window.location.href='$name';</script>";         
         } 
+    }
+    function SmsLimit(){
+        $this->load->helper('url');
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+            $this->load->helper('form');
+            $db = $this->session->userdata('db');//load db 
+            $this->load->database($db);//call db
+            echo $this->db->database;
+            $this->load->model('AddData'); // model for delete
+            $data = array(
+                'previousLimit'=>$this->input->post("newLimit"),
+                'balanceLimit'=>$this->input->post("balance"),
+                'recharge'=>$this->input->post("recharge"),
+               
+            );
+            $this->AddData->smslimit1($data); 
+            redirect('Home');
+        }
+        //$this->load->view('createInitTable');
     }
 }

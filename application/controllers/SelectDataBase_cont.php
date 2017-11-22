@@ -31,7 +31,9 @@ class SelectDataBase_cont extends CI_Controller
         $this->load->database($configdbfly);
             /* multi dp end; db selected*/
         $this->session->set_userdata('db',$configdbfly); //session for db
-        $this->load->view('createInitTable');   // html file
+        $this->load->model('SelectData');
+        $limitDetails = $this->SelectData->smsLimit();
+        $this->load->view('createInitTable',array('limitDetails'=>$limitDetails));   // html file
     }
 }
 

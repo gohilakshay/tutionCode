@@ -1,6 +1,12 @@
 <div class="content"><?php  $button= $button2;  ?>
     <div class="container-fluid">
         <div class="row">
+            <?php if($this->session->flashdata('success') == 'Sorry you have exceeded your  SMS limit') { ?>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+                <h5><?php echo $this->session->flashdata('success'); ?></h5>
+            </div>
+            <?php } ?>
             <div class="col-lg-12 col-sm-12">
                     <ul><a href="<?php echo site_url()."/Sms_cont/sendSMS/1" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 1){echo 'border-color:black;';}else{ echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Students</button></a>&emsp;
                     <a href="<?php echo site_url()."/Sms_cont/sendSMS/2" ?>"> <button type="button" style="border-radius:10px; background-color:#b7ddfb; <?php if($button == 2){echo 'border-color:black;';}else{echo 'border-color: #b7ddfb;';}?> color:black; padding:11px; padding-left:15px; padding-right:15px;" class="btn btn-primary btn-lg">Faculties</button></a>&emsp;
@@ -238,7 +244,12 @@
         }}
         else if($button == 3){ ?>
         <?php echo form_open_multipart('Sms_cont/sendSMS/3'); ?>
-        <?php if($this->session->flashdata('success')) { ?>
+        <?php if($this->session->flashdata('success') == 'Deleted successfully !!!!') { ?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
+            <h5><?php echo $this->session->flashdata('success'); ?></h5>
+        </div>
+        <?php }else if($this->session->flashdata('success') == 'Imported successfully !!!!') { ?>
         <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
             <h5><?php echo $this->session->flashdata('success'); ?></h5>
@@ -317,12 +328,6 @@
         <?php }
         else if($button == 4){ ?>
             <?php echo form_open_multipart('Sms_cont/sendSMS/4'); ?>
-        <?php if($this->session->flashdata('success')) { ?>
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 25px;"><span aria-hidden="true">&times;</span></button>
-            <h5><?php echo $this->session->flashdata('success'); ?></h5>
-        </div>
-        <?php } ?>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -344,9 +349,6 @@
                                                     <?php }?>
                                                 </select>
                                             </div>
-                                            <!--<div class="col-md-5">
-                                              <input type="file" class="btn btn-default" name="excel_file" id="file"> 
-                                            </div>-->
                                             <div class="col-md-1">
                                                 <button type="submit" class="btn btn-success" style="margin-left:-15px;" name="list_submit">Enter</button>
                                             </div><?php echo form_close();?>

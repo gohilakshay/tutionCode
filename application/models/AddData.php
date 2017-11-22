@@ -1,5 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 class AddData extends CI_Model {
+    function smslimit1($data){
+        $this->db->update('SmsLimit',$data);
+        return;
+    }
     function addBatchItem($data){
         $query = $this->db->get_where('batch', array('batch_name' => $data['batch_name']));
         if(!empty($query->result())){
