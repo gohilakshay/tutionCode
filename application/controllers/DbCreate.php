@@ -60,6 +60,7 @@ function table()
     $this->CreateTable->createSmsBulk();
     $this->CreateTable->create_others();
     $this->CreateTable->createEvents();
+    $this->CreateTable->createSmsLimit();
     $this->load->view('mainPage');
     }else { /* if session fails*/
             $name=site_url().'/Home';

@@ -1819,5 +1819,51 @@ class CreateTable extends CI_Model {
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('events', TRUE); 
     }
+    function createSmsLimit()
+    {
+        /* Load db_forge - used to create databases and tables */
+    $this->load->dbforge();
+      $fields = array(
+                        'limit_ID' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => 11,
+                                                 'unsigned' => TRUE,
+                                                 'auto_increment' => TRUE
+                                          ),
+                        'previousLimit' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'default' => '1000',
+                                          ),
+                        'balanceLimit' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'default' => '0',
+                                          ),
+                        'recharge' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'default' => '0',
+                                          ),
+                        'newlimit' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'default' => '0',
+                                          ),
+                    
+                );
+      
+        $this->dbforge->add_field($fields);
+        $this->dbforge->add_key('limit_ID', TRUE);
+        // gives PRIMARY KEY (batch_ID)
+        $this->dbforge->create_table('SmsLimit', TRUE); 
+        $datainsert = array(
+            'previousLimit'=>1000,
+            'balanceLimit'=>0,
+            'recharge'=>0,
+            'newlimit'=>0,
+        );
+        $this->db->insert("SmsLimit",$datainsert);
+    }
 }
 ?>
