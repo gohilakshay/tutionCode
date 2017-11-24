@@ -418,7 +418,7 @@ class CreateTable extends CI_Model {
         $this->dbforge->add_key('bsm_ID', TRUE);
         // gives PRIMARY KEY (batch_ID)
         $this->dbforge->create_table('batch_student_mapping', TRUE); 
-        /*$this->db->query("ALTER TABLE `batch_student_mapping` ADD CONSTRAINT `FOREIGN KEY` FOREIGN KEY (`batch_id`) REFERENCES `batch`(`batch_ID`);");*/
+        $this->db->query("ALTER TABLE `batch_student_mapping` ADD CONSTRAINT `FOREIGN KEY` FOREIGN KEY (`batch_id`) REFERENCES `batch`(`batch_ID`);");
     }  
     function create_batch_course_mapping()
     { 
