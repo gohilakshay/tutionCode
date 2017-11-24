@@ -5,8 +5,6 @@
 <br><br>
 <div class="content">
     <div class="container-fluid" style="margin-top:-50px;">
-        
-         
         <div class="row">
             <a href="<?php echo site_url("Teacher_cont/teacher") ?>">
             <div class="col-lg-3 col-sm-6">
@@ -205,7 +203,6 @@
                                     <input type="text" class="form-control border-input" name="chq_no" >
                                  </div>
                             </div>
-                            
                         </div>
                         <div class="row" id="transcDetail" style="display:none">
                             <div class="col-md-3">

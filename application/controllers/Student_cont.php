@@ -99,6 +99,22 @@ class Student_cont extends CI_Controller
             echo "<script>window.location.href='$name';</script>";
         }
     }
+    public function studentPayHistry($n){
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $this->load->helper('url');
+        $username = $this->session->userdata('username');
+        if(isset($username)){
+        $db = $this->session->userdata('db');//load db 
+        $this->load->database($db);//call db
+        $this->load->model('SelectData');
+        $query['result'] = $this->SelectData->studentFeeDetail($n);
+        $this->load->view('studPayHistry',$query);     //html filename
+        }else {
+            $name=site_url().'/Home';
+            echo "<script>window.location.href='$name';</script>";
+        }
+    }
     public function updateStudentProfile($n)
     {
         $this->load->library('session');
@@ -450,7 +466,22 @@ class Student_cont extends CI_Controller
                     'recieved_fee' => $recieved_fee,
                     'balance_fee' => $balance_fee
                 );
+                $data1 = array(
+                    'stud_id'=>$studentid,
+                    'payment_mode'=>$this->input->post('paymentmode'),
+                    'paydate'=>$this->input->post('paydate'),
+                    'chq_date'=>$this->input->post('chq_date'),
+                    'bank_name'=>$this->input->post('bank_name'),
+                    'chq_no'=>$this->input->post('chq_no'),
+                    'transc_id'=>$this->input->post('transc_id'),
+                    'discount'=>$this->input->post('discount_fees'),
+                    'final_fee'=>$this->input->post('final_fees'),
+                    'recieved_fee'=>$recieved_fee,
+                    'balance_fee'=>$balance_fee,
+                    'paid_fee'=>$this->input->post('amount')
+                );
                 $this->AddData->updateStudFee($data);
+                $this->AddData->StudFeeHistry($data1);
              $this->session->set_flashdata('success','You have Successfully paid the amount.');
                 redirect('Student_cont/feeDetail/3');         //html filename
            /* }else echo "<h2>Error : Student ID and Name does not Match</h2>";*/

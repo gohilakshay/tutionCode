@@ -454,6 +454,55 @@
                         </div>
                     </div>
                 </div>
+                             <div class="row">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Payment Mode</label>
+                            <select  class="form-control border-input" id="payMode" name="paymentmode" required>
+                                <option value="">Payment Mode</option>
+                                <option value="cash">Cash</option>
+                                <option value="cheque">Cheque</option>
+                                <option value="credit">Credit Card</option>
+                                <option value="debit">Debit Card</option>
+                                <option value="netbanking">Net Banking</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Payment Date</label>
+                            <input type="date" class="form-control border-input datepicker" value="<?php echo date('Y-m-d'); ?>" name="paydate" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="chqDetail" style="display:none;">
+                    <div class="col-sm-3 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Cheque Date.</label>
+                            <input type="date" class="form-control border-input datepicker" name="chq_date" >
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Bank Name</label>
+                            <input type="text" class="form-control border-input" name="bank_name" >
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Cheque No.</label>
+                            <input type="text" class="form-control border-input" name="chq_no" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="transcDetail" style="display:none">
+                    <div class="col-sm-2 col-sm-offset-2">
+                        <div class="form-group">
+                            <label>Transaction ID</label>
+                            <input type="text" class="form-control border-input" name="transc_id" >
+                        </div>
+                    </div>
+               </div>
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">

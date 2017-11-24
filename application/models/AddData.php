@@ -81,6 +81,10 @@ class AddData extends CI_Model {
         $this->db->update('stud_fee');  //table name
       //  return;
     }
+    function StudFeeHistry($data){
+        $this->db->insert('fee_cal',$data);
+        return;
+    }
     function addStudentBatchItem($data){
         $this->db->insert('batch_student_mapping',$data);
         return;

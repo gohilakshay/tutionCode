@@ -190,6 +190,21 @@ class SelectData extends CI_Model {
         }
         return $data;
     }
+    function studentFeeDetail($n) {
+        $q = $this->db->query("SELECT * FROM `stud_fee` WHERE stud_id = '$n'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        $q = $this->db->query("SELECT * FROM `fee_cal` WHERE stud_id = '$n'");
+        if($q->num_rows() >0){
+            foreach($q->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
     
     function teacherProfile($n,$dbtype){
         $q = $this->db->query("SELECT * FROM `teacher` WHERE t_ID = '$n'");

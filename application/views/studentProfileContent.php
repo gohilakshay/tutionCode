@@ -285,13 +285,13 @@ $transc_id = $fee_data->transc_id;
                                             </div>
                                         </div>
                                     </li>
-                                    <!--<li>
+                                    <li>
                                         <div class="row">                                        
                                             <div class="col-xs-11 text-right">
-                                                <a>more Details</a>
+                                                <a href="<?php echo site_url();?>/Student_cont/studentPayHistry/<?php echo $student_data->stud_ID; ?>">more Details</a>
                                             </div>
                                         </div>
-                                    </li>-->
+                                    </li>
                                 </ul>
                             </div>
                         </div>

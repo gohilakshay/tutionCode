@@ -621,15 +621,44 @@ class CreateTable extends CI_Model {
                                                  'unsigned' => TRUE,
                                                  'auto_increment' => TRUE
                                           ),
-                        'outstanding_fee' => array(
+                        'stud_id' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
-                        'overdue_fee' => array(
+                        'payment_mode' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'paydate' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
+                        'chq_date' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
+                        'bank_name' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
+                        'chq_no' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,    
+                                          ),
+                        'transc_id' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '100',
+                                                 'null' => TRUE,
+                                          ),
+                        'discount' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
-                        'overall_fee' => array(
+                        'final_fee' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
@@ -637,10 +666,15 @@ class CreateTable extends CI_Model {
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
-                        'uncleared' => array(
+                        'balance_fee' => array(
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
+                        'paid_fee' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '100',
+                                          ),
+
                      );
       
         $this->dbforge->add_field($fields);
