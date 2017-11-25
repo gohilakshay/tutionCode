@@ -532,15 +532,7 @@
                             
                             <div class="row">
                                 <div class="text-center">
-                                    <button type="submit" id="activate-step-3" name="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
-                                </div>
-                                <div class="clearfix"></div>   
-                            </div>
-                            <div class="row">
-                                <div class="text-right">
-                                    
-                                    <button type="submit" onclick="myF()"
- name="print"  class="btn btn-success btn-fill btn-wd">Print</button>
+                                    <button type="submit" onclick="myF()" id="activate-step-3" name="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
                                 </div>
                                 <div class="clearfix"></div>   
                             </div>

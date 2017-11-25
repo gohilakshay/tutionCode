@@ -512,10 +512,8 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
+                    <button type="submit" onclick="myFp()" class="btn btn-info btn-fill btn-wd">Submit</button>
                 </div>
-                             <button type="submit" onclick="myFp()"
- name="print"  class="btn btn-success btn-fill btn-wd">Print</button>
                 <div class="clearfix"></div>
                 <?php echo form_close(); ?>
                         </div>

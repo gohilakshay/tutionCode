@@ -399,7 +399,7 @@ class Student_cont extends CI_Controller
                     'bank_name' => $this->input->post('bank_name'),
                     'chq_no' => $this->input->post('chq_no'),
                     'transc_id' => $this->input->post('transc_id'),
-                    'payment_date' => $date1
+                    'paydate' => $date1
                     );
                 $this->AddData->addStudentfeeItem($data1);
                  $batch = array(
