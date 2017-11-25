@@ -382,7 +382,7 @@ class Student_cont extends CI_Controller
                     $chq_date1 = $y.'-'.$m.'-'.$d; 
                 }
                 else{
-                    $chq_date1 = $dob1[0];
+                    $chq_date1 = $chq_date[0];
                 }
                 $data1 = array(
                     'stud_ID'=>$n,
@@ -399,6 +399,7 @@ class Student_cont extends CI_Controller
                     'bank_name' => $this->input->post('bank_name'),
                     'chq_no' => $this->input->post('chq_no'),
                     'transc_id' => $this->input->post('transc_id'),
+                    'payment_date' => $date1
                     );
                 $this->AddData->addStudentfeeItem($data1);
                  $batch = array(

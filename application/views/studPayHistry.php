@@ -172,7 +172,7 @@
             </div>
             </a>
         </div>
-    </div>
+    </div><?php print_r($result[0]); ?>
     <div class="content"> <?php $Firstpay = $result[0];?>
         <div class="container-fluid">
             <div class="row">

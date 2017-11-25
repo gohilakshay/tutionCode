@@ -577,6 +577,10 @@ class CreateTable extends CI_Model {
                                                  'type' => 'INT',
                                                  'constraint' => '100',
                                           ),
+                        'paydate' => array(
+                                                 'type' => 'INT',
+                                                 'constraint' => '100',
+                                          )
                      );
       
         $this->dbforge->add_field($fields);

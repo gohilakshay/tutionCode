@@ -422,7 +422,7 @@
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="form-group">
                             <label>Student Name</label>
-                            <input type="text" class="form-control border-input" name="studentname" value="<?php echo $_POST['name']; ?>" readonly>
+                            <input type="text" id="StnameStud" class="form-control border-input" name="studentname" value="<?php echo $_POST['name']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -430,7 +430,7 @@
                     <div class="col-sm-4 col-sm-offset-2">
                         <div class="form-group">
                             <label>Final Fees</label>
-                            <input type="text" class="form-control border-input" name="final_fees" value="<?php echo $_POST['final']; ?>" readonly>
+                            <input type="text" class="form-control border-input" id="answer" name="final_fees" value="<?php echo $_POST['final']; ?>" readonly>
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -444,13 +444,13 @@
                     <div class="col-sm-4 col-sm-offset-2">
                         <div class="form-group">
                             <label>Paid Fees</label>
-                            <input type="text" class="form-control border-input" name="paid_fees" value="<?php echo $_POST['paid']; ?>" readonly>
+                            <input type="text" class="form-control border-input" id="Received" name="paid_fees" value="<?php echo $_POST['paid']; ?>" readonly>
                         </div>
                     </div>
                     <div class="col-sm-4 ">
                         <div class="form-group">
                             <label>Balance</label>
-                            <input type="text" id="balModal" class="form-control border-input" name="balance_fee" value="<?php echo $_POST['bal']; ?>" readonly>
+                            <input type="text" id="balModal"  class="form-control border-input" name="balance_fee" value="<?php echo $_POST['bal']; ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -471,7 +471,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Payment Date</label>
-                            <input type="date" class="form-control border-input datepicker" value="<?php echo date('Y-m-d'); ?>" name="paydate" />
+                            <input type="date" class="form-control border-input datepicker" value="<?php echo date('Y-m-d'); ?>" id="dateRecp" name="paydate" />
                         </div>
                     </div>
                 </div>
@@ -479,19 +479,19 @@
                     <div class="col-sm-3 col-sm-offset-2">
                         <div class="form-group">
                             <label>Cheque Date.</label>
-                            <input type="date" class="form-control border-input datepicker" name="chq_date" >
+                            <input type="date" id="chqDate" class="form-control border-input datepicker" name="chq_date" >
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group">
                             <label>Bank Name</label>
-                            <input type="text" class="form-control border-input" name="bank_name" >
+                            <input type="text" id="bankName" class="form-control border-input" name="bank_name" >
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group">
                             <label>Cheque No.</label>
-                            <input type="text" class="form-control border-input" name="chq_no" >
+                            <input type="text" id="chqNo" class="form-control border-input" name="chq_no" >
                         </div>
                     </div>
                 </div>
@@ -499,7 +499,7 @@
                     <div class="col-sm-2 col-sm-offset-2">
                         <div class="form-group">
                             <label>Transaction ID</label>
-                            <input type="text" class="form-control border-input" name="transc_id" >
+                            <input type="text" class="form-control border-input" id="tranId" name="transc_id" >
                         </div>
                     </div>
                </div>
@@ -514,6 +514,8 @@
                 <div class="text-center">
                     <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
                 </div>
+                             <button type="submit" onclick="myFp()"
+ name="print"  class="btn btn-success btn-fill btn-wd">Print</button>
                 <div class="clearfix"></div>
                 <?php echo form_close(); ?>
                         </div>
@@ -524,6 +526,7 @@
     </div>
 </div>
 <?php }?>
+
 
   
   
