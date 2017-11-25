@@ -5,7 +5,6 @@
 <?php include_once "footer.php";?>
 <?php include_once "addModel.php"?>
 <?php include_once "script_include.php"; ?>
-<?php echo site_url(); ?>
 <script>
 $('#Amtmodal').keyup(function(){
     var bal = $('#balModal').val();
